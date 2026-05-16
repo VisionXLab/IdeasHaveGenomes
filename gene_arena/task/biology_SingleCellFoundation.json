@@ -1,0 +1,164 @@
+{
+  "trace_id": "biology_SingleCellFoundation",
+  "domain": "biology",
+  "direction": "SingleCellFoundation",
+  "subfield": "Computational Biology / Single-Cell Genomics",
+  "frontier_justification": "Single-cell foundation models have become one of the hottest research frontiers in computational biology (2023-2025). The field has rapidly evolved from task-specific deep learning (scVI) to billion-parameter pretrained transformers (CellFM), driven by growing single-cell atlases and the success of language model pretraining. These models are reshaping how we analyze gene expression, predict perturbation effects, and discover therapeutic targets.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Deep generative modeling for single-cell transcriptomics",
+      "year": 2018,
+      "venue": "Nature Methods 2018",
+      "arxiv_id": "N/A (Nature Methods doi:10.1038/s41592-018-0229-2)",
+      "paper_type": "research",
+      "key_contribution": "scVI: first deep generative model for single-cell transcriptomics; uses a variational autoencoder to learn low-dimensional cell representations while accounting for batch effects and dropout, enabling scalable probabilistic analysis of scRNA-seq data.",
+      "idea_genome": {
+        "problem_genome": "Single-cell RNA-seq data suffer from technical noise (batch effects, dropout events, variable library size), and traditional dimensionality reduction methods (PCA, t-SNE) lack a principled probabilistic framework to handle these confounders at scale.",
+        "mechanism_genome": "Hierarchical Bayesian model with conditional distributions parameterized by deep neural networks (variational autoencoder); encodes each cell's transcriptome into a low-dimensional latent space while modeling library size and batch as explicit latent variables; trained via stochastic variational inference.",
+        "observation_genome": "scVI achieves high accuracy on batch correction, clustering, visualization, and differential expression; scales to millions of cells; becomes the foundation of the scvi-tools ecosystem widely adopted in the single-cell community.",
+        "limitation_genome": "VAE architecture limits expressiveness for capturing complex gene-gene dependencies; no large-scale pretraining on diverse cell atlases; requires task-specific model design; cannot transfer learned representations to new datasets or tasks without retraining."
+      }
+    },
+    {
+      "title": "scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data",
+      "year": 2022,
+      "venue": "Nature Machine Intelligence 2022",
+      "arxiv_id": "N/A (Nat Mach Intell doi:10.1038/s42256-022-00534-z)",
+      "paper_type": "research",
+      "key_contribution": "scBERT: first Transformer-based pretrained model for single-cell RNA-seq; adapts BERT masked language modeling to gene expression tokens, pretrained on ~1 million cells and fine-tuned for cell type annotation with superior performance and robustness to batch effects.",
+      "idea_genome": {
+        "problem_genome": "Cell type annotation of scRNA-seq data requires large labeled datasets; existing methods (scVI, scANVI) are generative but not pretrained at scale; NLP breakthroughs in BERT-style pretraining have not yet been adapted to single-cell biology.",
+        "mechanism_genome": "Treats each gene as a token and applies BERT-style masked language modeling on gene expression profiles; pretrained on ~1M unlabeled single-cell transcriptomes from public databases; fine-tuned with limited labeled data for cell type annotation.",
+        "observation_genome": "scBERT outperforms existing methods on cell type annotation benchmarks; demonstrates robustness to batch effects; the pretraining-finetuning paradigm transfers well to novel cell types and datasets.",
+        "limitation_genome": "Pretrained on only ~1M cells (small by later standards); limited to cell type annotation as the primary task; BERT-style bidirectional attention is compute-intensive; no multi-omic data integration capability."
+      }
+    },
+    {
+      "title": "Transfer learning enables predictions in network biology",
+      "year": 2023,
+      "venue": "Nature 2023",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-023-06139-9)",
+      "paper_type": "research",
+      "key_contribution": "Geneformer: context-aware transformer pretrained on ~30 million single-cell transcriptomes; learns network hierarchy via self-supervised rank-value encoding of gene expression; transfer learning enables predictions in network biology including therapeutic target discovery for cardiomyopathy.",
+      "idea_genome": {
+        "problem_genome": "Predicting gene network dynamics and therapeutic targets requires large labeled datasets that are scarce in network biology; the pretrain-then-finetune paradigm from NLP could address this but requires scaling single-cell pretraining 30× beyond scBERT.",
+        "mechanism_genome": "Rank-value encoding: genes are ranked by expression level within each cell and tokenized; transformer pretrained via masked gene prediction on 30M single-cell transcriptomes from Genecorpus-30M; attention weights encode gene network hierarchy in a fully self-supervised manner.",
+        "observation_genome": "Geneformer accurately predicts gene dosage sensitivity, chromatin dynamics, and network interactions; fine-tuned on limited patient data, it identifies candidate therapeutic targets for cardiomyopathy validated by experiments.",
+        "limitation_genome": "Encoder-only model with no generative capability; limited to transcriptomics (no multi-omic integration); requires task-specific fine-tuning for each downstream application; rank-value encoding discards absolute expression magnitude information."
+      }
+    },
+    {
+      "title": "scGPT: toward building a foundation model for single-cell multi-omics using generative AI",
+      "year": 2024,
+      "venue": "Nature Methods 2024",
+      "arxiv_id": "N/A (Nature Methods doi:10.1038/s41592-024-02201-0)",
+      "paper_type": "research",
+      "key_contribution": "scGPT: first GPT-style generative pretrained transformer for single-cell biology; pretrained autoregressively on 33 million cells; supports multi-task fine-tuning for cell annotation, perturbation prediction, multi-omic integration, and gene network inference.",
+      "idea_genome": {
+        "problem_genome": "Geneformer and scBERT use bidirectional (BERT-style) pretraining which cannot generate new cell states; the autoregressive GPT paradigm could enable generative capabilities (cell state generation, perturbation response prediction) but has not been applied to single-cell data at scale.",
+        "mechanism_genome": "Autoregressive transformer pretrained on 33M cells from CellXGene; gene tokens are generated left-to-right conditioned on preceding genes; supports multi-task fine-tuning with task-specific prompts; integrates multi-omic data (RNA-seq + ATAC-seq) via shared embedding space.",
+        "observation_genome": "scGPT achieves competitive or superior performance on cell annotation, multi-batch integration, perturbation prediction, and gene network inference; the autoregressive paradigm enables zero-shot cell generation and conditional generation.",
+        "limitation_genome": "Autoregressive generation is slower than bidirectional encoding for inference; unidirectional attention misses some bidirectional gene-gene dependencies; perturbation prediction accuracy remains moderate; the 33M cell pretraining corpus may be insufficient for rare cell types."
+      }
+    },
+    {
+      "title": "Large-scale foundation model on single-cell transcriptomics",
+      "year": 2024,
+      "venue": "Nature Methods 2024",
+      "arxiv_id": "N/A (Nature Methods doi:10.1038/s41592-024-02305-7)",
+      "paper_type": "research",
+      "key_contribution": "scFoundation (xTrimoGene): 100-million-parameter asymmetric transformer pretrained on over 50 million human single-cell transcriptomic profiles; introduces a read-depth recovery pretraining task beyond standard masked language modeling to handle technical variability across datasets.",
+      "idea_genome": {
+        "problem_genome": "Existing single-cell FMs (scBERT, Geneformer, scGPT) use standard masked prediction but ignore the critical read-depth variability across sequencing protocols and datasets; a more biologically grounded pretraining objective is needed alongside architectural scale-up.",
+        "mechanism_genome": "Asymmetric transformer architecture (xTrimoGene) with separate encoder and decoder; dual pretraining: masked gene expression prediction + read-depth recovery task that harmonizes read-depth differences across datasets; covers ~20,000 genes; pretrained on 50M cells.",
+        "observation_genome": "scFoundation achieves state-of-the-art on gene expression enhancement, tissue drug response prediction, cell type annotation, and perturbation prediction; the read-depth recovery task significantly improves cross-dataset generalization.",
+        "limitation_genome": "Encoder-focused architecture; 100M parameters require substantial compute; limited to transcriptomic data (no epigenomic or proteomic integration); diminishing returns from dataset scale-up suggest architectural innovations may matter more than data scale."
+      }
+    },
+    {
+      "title": "CellFM: a large-scale foundation model pre-trained on transcriptomics of 100 million human cells",
+      "year": 2025,
+      "venue": "Nature Communications 2025",
+      "arxiv_id": "N/A (Nature Comms doi:10.1038/s41467-025-59926-5)",
+      "paper_type": "research",
+      "key_contribution": "CellFM: 800-million-parameter foundation model pretrained on 100 million human cells using a modified RetNet (ERetNet) architecture with linear complexity; represents an 8× parameter and 2× data scale-up over scFoundation; outperforms all prior single-cell FMs on cell annotation, perturbation prediction, and gene function prediction.",
+      "idea_genome": {
+        "problem_genome": "Prior single-cell FMs (scFoundation: 100M params/50M cells) showed strong performance but the Transformer's quadratic attention complexity limits further scaling; a more efficient architecture is needed to scale to hundreds of millions of parameters and cells.",
+        "mechanism_genome": "ERetNet (Enhanced Retention Network) backbone with linear complexity replaces standard Transformer attention; pretrained on 100M human cells (2× largest prior dataset) with 800M parameters (8× scFoundation); trained on MindSpore platform for efficiency.",
+        "observation_genome": "CellFM outperforms scGPT, Geneformer, and scFoundation across cell annotation, perturbation prediction, gene function prediction, and gene-gene relationship capturing; demonstrates that efficient architectures enable further beneficial scaling.",
+        "limitation_genome": "Enormous computational cost for training (800M params on 100M cells); RetNet architecture is less established than Transformer in the biology community; still limited to transcriptomics; question of whether further scaling yields proportional gains remains open."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "scBERT diverges from scVI's variational autoencoder paradigm to a fundamentally different model family — Transformer with BERT-style masked language modeling — for single-cell analysis, splitting the field into generative (VAE) and discriminative pretrained (Transformer) lineages."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Geneformer applies the same BERT masked-prediction paradigm as scBERT but scales pretraining data 30× (1M → 30M cells) and introduces rank-value gene encoding, extending downstream applications from cell annotation to network biology and therapeutic target discovery."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "scGPT diverges from Geneformer's bidirectional BERT-style pretraining to autoregressive GPT-style generation — a fundamentally different pretraining paradigm that enables generative capabilities (cell state generation, conditional perturbation prediction) not possible with encoder-only models."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "scFoundation hybridizes BERT-style masked pretraining (from scBERT/Geneformer lineage) with a novel read-depth recovery task unique to single-cell biology, and uses an asymmetric encoder-decoder architecture (xTrimoGene) that combines elements from both bidirectional and generative paradigms."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "CellFM performs an 8× parameter scale-up (100M → 800M) and 2× data scale-up (50M → 100M cells), replacing the Transformer backbone with RetNet (linear complexity) for efficiency — an architectural refinement within the same large-scale pretraining paradigm established by scFoundation."
+    }
+  ],
+  "open_question": "CellFM achieves state-of-the-art performance through massive scale (800M parameters, 100M cells) but remains limited to transcriptomics. What mechanism would enable a truly multi-modal single-cell foundation model that jointly pretrains on transcriptomics, epigenomics (ATAC-seq, methylation), proteomics (CITE-seq), and spatial transcriptomics within a unified framework, while preserving cell-type-specific resolution and enabling cross-modal generative transfer?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Biology / Single-Cell Genomics."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Speciation": 2,
+    "Mutation": 2,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "CellFM: a large-scale foundation model pre-trained on transcriptomics of 100 million human cells",
+      "year": 2025,
+      "venue": "Nature Communications 2025",
+      "identifier": "N/A (Nature Comms doi:10.1038/s41467-025-59926-5)",
+      "unresolved_gap": "Enormous computational cost for training (800M params on 100M cells); RetNet architecture is less established than Transformer in the biology community; still limited to transcriptomics; question of whether further scaling yields proportional gains remains open.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

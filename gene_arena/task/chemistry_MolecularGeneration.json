@@ -1,0 +1,164 @@
+{
+  "trace_id": "chemistry_MolecularGeneration",
+  "domain": "chemistry",
+  "direction": "MolecularGeneration",
+  "subfield": "Computational Chemistry / Generative Molecular Design",
+  "frontier_justification": "Generative molecular design for drug-like compounds is an active research area in 2025-2026. Language model approaches (MolGPT, ChemLLM) and 3D diffusion methods (GeoDiff, TargetDiff) compete to generate synthesizable, target-binding molecules.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules",
+      "year": 2018,
+      "venue": "ACS Central Science 2018",
+      "arxiv_id": "1610.02415",
+      "paper_type": "research",
+      "key_contribution": "First continuous latent space for molecules (SMILES VAE); enables gradient-based molecular optimization in latent space; Bayesian optimization over molecular properties.",
+      "idea_genome": {
+        "problem_genome": "Molecular space is discrete (graphs/SMILES); cannot apply gradient-based optimization for drug property optimization directly.",
+        "mechanism_genome": "VAE encodes SMILES strings to continuous latent space z; decoder generates SMILES from z; Gaussian process surrogate models property in latent space; Bayesian optimization.",
+        "observation_genome": "Finds molecules with optimized logP and QED scores in latent space; continuous optimization produces valid molecules; demonstrates drug-like property optimization.",
+        "limitation_genome": "SMILES VAE generates many invalid molecules; latent space not semantically organized; ignores 3D structure; no binding target conditioning."
+      }
+    },
+    {
+      "title": "Junction Tree Variational Autoencoder for Molecular Graph Generation",
+      "year": 2018,
+      "venue": "ICML 2018",
+      "arxiv_id": "1802.04364",
+      "paper_type": "research",
+      "key_contribution": "JT-VAE: decomposes molecular graph into junction tree of ring/chain substructures; generates valid molecules by tree-then-graph assembly; 100% validity guaranteed.",
+      "idea_genome": {
+        "problem_genome": "SMILES VAE generates many invalid SMILES strings; no guarantee of chemical validity during generation.",
+        "mechanism_genome": "Two-level VAE: encode/decode junction tree (scaffold) then assemble full graph via subgraph attachment; validity enforced by construction.",
+        "observation_genome": "100% validity; better optimization of molecular properties than SMILES VAE; enables constrained optimization (modify scaffold while preserving ring system).",
+        "limitation_genome": "Substructure vocabulary must be predefined; limited to 2D graph topology; no 3D conformation; no explicit binding target conditioning."
+      }
+    },
+    {
+      "title": "Graph Convolutional Policy Network for Goal-Directed Molecular Graph Generation",
+      "year": 2018,
+      "venue": "NeurIPS 2018",
+      "arxiv_id": "1806.02473",
+      "paper_type": "research",
+      "key_contribution": "GCPN: reinforcement learning over stepwise molecular graph construction; reward combines molecular property score with chemical validity and drug-likeness constraints.",
+      "idea_genome": {
+        "problem_genome": "JT-VAE is VAE-based and requires expensive posterior optimization; cannot directly optimize non-differentiable molecular property objectives.",
+        "mechanism_genome": "RL agent adds atoms/bonds sequentially to build molecular graph; GCN encodes current graph state; reward from property scores + validity penalties; PPO training.",
+        "observation_genome": "GCPN generates molecules with drug-like properties (QED, penalized logP) superior to JT-VAE; directly optimizes property targets.",
+        "limitation_genome": "RL is sample-inefficient; still 2D graph only; no protein target conditioning; exploration in discrete molecular space remains challenging."
+      }
+    },
+    {
+      "title": "TargetDiff: 3D Equivariant Diffusion for Target-Aware Molecule Generation and Affinity Prediction",
+      "year": 2023,
+      "venue": "ICLR 2023",
+      "arxiv_id": "2303.03543",
+      "paper_type": "research",
+      "key_contribution": "TargetDiff: generates 3D molecules conditioned on protein binding pocket; equivariant diffusion over atom types and 3D positions; explicit pocket-aware molecule design.",
+      "idea_genome": {
+        "problem_genome": "GCPN generates 2D molecules without 3D awareness; cannot design molecules that fit into specific protein binding pockets.",
+        "mechanism_genome": "SE(3)-equivariant diffusion over atom positions and types; conditions generation on protein pocket point cloud; joint denoising of molecule geometry and chemistry.",
+        "observation_genome": "TargetDiff generates binding-aware 3D molecules for target proteins; significantly outperforms 2D methods in protein-ligand binding affinity prediction.",
+        "limitation_genome": "Slow generation (many diffusion steps); synthesizability not guaranteed; limited to the training distribution of pocket geometries."
+      }
+    },
+    {
+      "title": "Navigating the Design Space of Equivariant Diffusion-Based Generative Models for De Novo 3D Molecule Generation",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "arxiv_id": "2309.17296",
+      "paper_type": "research",
+      "key_contribution": "Systematic study of design choices in equivariant diffusion for 3D molecule generation; introduces EDM++ with improved noise schedules and architecture; synthesizability conditioning.",
+      "idea_genome": {
+        "problem_genome": "TargetDiff and EDM have many design choices (architecture, noise schedule, conditioning); no systematic analysis of what matters most for generation quality.",
+        "mechanism_genome": "Ablation study of: noise schedules (linear, cosine, learned), equivariant architectures (E-GNN, EGNN, PaiNN), conditioning strategies; incorporates synthesizability score.",
+        "observation_genome": "Cosine noise schedule + PaiNN architecture + synthesizability reward significantly improves drug-like generation; provides design guidelines for 3D mol-gen.",
+        "limitation_genome": "Still requires known protein pocket; challenging optimization of multiple objectives (binding, synthesizability, toxicity) simultaneously."
+      }
+    },
+    {
+      "title": "Breaking the Bottlenecks: Scalable Diffusion Models for 3D Molecular Generation",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "arxiv_id": "2601.08963",
+      "paper_type": "research",
+      "key_contribution": "Directly Denoising Diffusion Model (DDDM): replaces stochastic MCMC reverse steps with deterministic denoising via Reverse Transition Kernel (RTK); substantially reduces inference time for 3D equivariant diffusion; achieves faster convergence and superior structural fidelity on GEOM-DRUGS without sacrificing chemical validity.",
+      "idea_genome": {
+        "problem_genome": "EDM++ and TargetDiff use stochastic MCMC reverse sampling requiring many denoising steps; numerical instability and stochastic variance slow convergence and limit scalability.",
+        "mechanism_genome": "Reverse Transition Kernel (RTK) framework reframes DDDM as deterministic denoising; well-conditioned kernels ensure numerical stability; SE(3)-equivariant denoisers maintain geometric validity; removes stochastic variance from inference.",
+        "observation_genome": "RTK-guided deterministic denoising achieves faster convergence and superior structural fidelity compared to stochastic alternatives; maintains chemical validity on GEOM-DRUGS; code and models publicly available.",
+        "limitation_genome": "Reverse Transition Kernel requires pre-computed forward process statistics; conditioning on target protein pocket at inference time requires forward process recomputation, limiting real-time conditional generation."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "JT-VAE mutates SMILES VAE by replacing string encoding with junction-tree molecular decomposition; same VAE latent optimization paradigm, enforces validity by construction."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "GCPN hybridizes graph generation (from JT-VAE) with reinforcement learning (from RL literature); direct reward optimization replaces VAE posterior sampling."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "TargetDiff replaces 2D graph RL generation with 3D equivariant diffusion conditioned on protein pocket; paradigm shift from topology generation to 3D structure-aware molecular design."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "EDM++ systematically improves TargetDiff's diffusion framework via better noise schedules and architecture choices; adds synthesizability conditioning; same equivariant diffusion paradigm."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "DDDM improves EDM++'s inference efficiency via deterministic Reverse Transition Kernel denoising; same SE(3)-equivariant diffusion paradigm, replaces stochastic MCMC with numerically stable deterministic denoising."
+    }
+  ],
+  "open_question": "DDDM accelerates 3D molecular generation via deterministic denoising but the Reverse Transition Kernel requires pre-computed forward process statistics. What mechanism would enable real-time conditional molecular generation for previously unseen targets while jointly preserving 3D validity, pocket interaction constraints, ADMET feasibility, and synthesizability without forward-process recomputation?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Chemistry / Generative Molecular Design."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Mutation": 3,
+    "Hybridization": 1,
+    "Speciation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Breaking the Bottlenecks: Scalable Diffusion Models for 3D Molecular Generation",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "identifier": "2601.08963",
+      "unresolved_gap": "Reverse Transition Kernel requires pre-computed forward process statistics; conditioning on target protein pocket at inference time requires forward process recomputation, limiting real-time conditional generation.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

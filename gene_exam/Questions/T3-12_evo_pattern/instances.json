@@ -1,0 +1,950 @@
+[
+  {
+    "instance_id": "T3-12_evo_pattern_0021",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: quantitative_finance_domain — \"Both papers operate in quantitative finance and aim to improve systematic invest\"\n  KEPT: structure_exploiting_design — \"Both methods explicitly exploit an assumed structure in the problem space to imp\"\n  CHANGED: core_optimization_object — \"Discovering novel interpretable alpha factors in a\" → \"Transforming signed alpha signals into portfolio w\"\n  CHANGED: structural_representation — \"A modular skill architecture with structured exper\" → \"A sparse rooted tree derived from a correlation-di\"\n  NEW: rooted_tree_portfolio_construction — \"B introduces portfolio construction through a non-binary rooted tree rather than\"\n  NEW: signed_signal_propagation — \"B explicitly supports propagation of signed long/short signals through the hiera\"\n  REMOVED: self_evolving_agent_loop — \"B drops the autonomous retrieve-generate-evaluate-distill agent loop used for it\"\n\nStep 2:\n  KEPT: financial_prediction_task — \"Both papers operate in finance and use structured model outputs to support predi\"\n  KEPT: signal_aggregation — \"Both methods combine multiple intermediate signals into a final decision rule ra\"\n  CHANGED: mechanism — \"Sparse rooted tree construction over correlation-d\" → \"Three zero-shot LLM agents emit sentiment, confide\"\n  CHANGED: prediction_target — \"Portfolio weights for long/short, market-neutral, \" → \"Next-day stock return direction from corporate dis\"\n  NEW: zero_shot_llm_agents — \"B introduces multiple zero-shot LLM agents as primary signal generators for fina\"\n  NEW: agent_confidence_and_rationale_features — \"Each agent provides not just a label but also confidence and rationale-derived i\"\n  REMOVED: tree_topology_inductive_bias — \"The rooted-tree market structure assumption and correlation-topology constructio\"\n\nStep 3:\n  CHANGED: core_method — \"Three zero-shot LLM agents produce labels/confiden\" → \"An approximate binomial SURE objective is derived \"\n  CHANGED: problem_domain — \"Corporate disclosure classification for predicting\" → \"Compound estimation of many binomial means with he\"\n  NEW: binomial_sure_derivation — \"B introduces an approximate Stein's Unbiased Risk Estimator tailored to binomial\"\n  NEW: direct_binomial_shrinkage — \"B directly tunes linear shrinkage estimators on binomial observations without re\"\n  REMOVED: llm_ensemble — \"The multi-agent zero-shot LLM architecture and meta-classifier aggregation are d\"\n\nStep 4:\n  KEPT: asymptotic_inference_orientation — \"Both papers center rigorous asymptotic guarantees for procedures applied to comp\"\n  KEPT: robustness_to_data_irregularities — \"Both address settings with important practical complications rather than idealiz\"\n  CHANGED: core_statistical_task — \"Estimating many binomial means via compound-decisi\" → \"Testing whether intraday volatility is fully expla\"\n  CHANGED: data_domain — \"Binomial count data with heterogeneous sample size\" → \"Noisy high-frequency financial returns from jump-d\"\n  NEW: diurnal_pattern_null_hypothesis — \"A formal nonparametric test of whether deterministic diurnal variation fully acc\"\n  NEW: preaveraged_jump_truncated_bipower_variation — \"Extension of bipower variation to settings with both microstructure noise and ju\"\n  REMOVED: compound_shrinkage_estimation — \"The successor no longer estimates many related means through shrinkage.\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "q-fin.TR",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0026",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: ordered_learned_indexing_goal — \"Both papers inherit the core idea of using learned models to index ordered key s\"\n  CHANGED: model_based_position_prediction — \"A hierarchical learned index uses lightweight regr\" → \"A single-pass index uses an error-bounded piecewis\"\n  CHANGED: target_niche — \"Dynamic ordered key-value indexing supporting look\" → \"Fast and memory-efficient indexing for ordered imm\"\n  NEW: single_pass_construction — \"B introduces a strictly sequential one-pass build procedure over sorted keys.\"\n  NEW: error_bounded_spline_index — \"B introduces a bounded-error piecewise linear approximation of the key-to-positi\"\n  REMOVED: dynamic_update_support — \"B discards A's support for insertions and updates via gap-buffered leaf arrays a\"\n\nStep 2:\n  KEPT: dynamic_learned_indexing — \"Both papers retain the core idea of using a learned index in a mutable setting, \"\n  CHANGED: mechanism_genome_field — \"A learned piecewise key-to-rank predictor augmente\" → \"A distribution-driven learned index that partition\"\n  CHANGED: niche_genome_field — \"Dynamic ordered indexing for mutable datasets wher\" → \"Learned index lookup in dynamic key-value data wit\"\n  NEW: distribution_aware_partitioning — \"B introduces partition construction driven by observed local key-density pattern\"\n  NEW: adaptive_model_capacity_allocation — \"B adds the idea of assigning more modeling capacity to locally complex or dense \"\n  REMOVED: update_tracking_metadata — \"B discards A's explicit update-aware metadata for tracking positional shifts cau\"\n\nStep 3:\n  KEPT: learned_index_core — \"Both papers retain the core idea of using a learned model to predict where a key\"\n  CHANGED: prediction_target — \"A hierarchical model predicts fine-grained key pos\" → \"The model predicts page-aligned bounded search reg\"\n  CHANGED: storage_co_design — \"The learned index is co-designed with persistent-m\" → \"The learned index is co-designed with on-disk bloc\"\n  NEW: page_navigator_model — \"Paper B introduces the idea of treating the learned model as a bounded-error nav\"\n  NEW: model_error_layout_io_cooptimization — \"Paper B newly emphasizes jointly optimizing model error, page layout, and block \"\n  REMOVED: pm_crash_consistency_protocols — \"Paper B does not retain A's crash-consistent structural modification protocols t\"\n\nStep 4:\n  CHANGED: learned_model_as_bounded_search_navigator — \"A uses a learned model to predict bounded search r\" → \"B uses compact local predictors within disjoint ke\"\n  CHANGED: layout_or_partition_co_optimization — \"A co-optimizes model error with page-aligned on-di\" → \"B jointly optimizes segment boundaries and per-seg\"\n  NEW: optimal_disjoint_segmentation — \"B introduces a globally optimized set of non-overlapping key-space segments rath\"\n  NEW: local_predictor_per_segment — \"B adds a compact predictor attached to each segment as the core representation o\"\n  REMOVED: disk_native_page_navigation — \"B discards A's page-aligned block-oriented navigation and small-number-of-block \"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Adaptive Radiation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Database Systems",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Adaptive Radiation",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0027",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: pattern-evolution focus — \"Both papers study how complex spatial structure evolves over time and seek princ\"\n  KEPT: comparison-to-baseline literature — \"Both position themselves against prior approaches that were limited to special a\"\n  CHANGED: mechanism — \"Image-based crack-graph extraction, hierarchy clas\" → \"Exact free-fermion unitary dynamics plus a per-eig\"\n  CHANGED: niche — \"Planar hierarchical crack networks in drying thin \" → \"Macroscopic irreversibility and free-expansion equ\"\n  NEW: arbitrary-initial-state irreversibility proof — \"B introduces a proof of equilibration and irreversibility that holds for arbitra\"\n  NEW: free-fermion exact dynamics — \"The successor uses exact solvable quantum dynamics rather than phenomenological \"\n  REMOVED: image/graph pipeline — \"The successor drops image-derived crack extraction and graph-based generation cl\"\n\nStep 2:\n  KEPT: irreversible_dissipative_emergence — \"Both papers explain how microscopic dynamics give rise to emergent macroscopic i\"\n  KEPT: response_transport_focus — \"Both connect underlying dynamics to observable transport-like macroscopic quanti\"\n  CHANGED: mechanistic_formalism — \"Exact unitary free-fermion dynamics plus large-dev\" → \"Stochastic field theory for dipole-field dynamics \"\n  CHANGED: target_observable — \"Coarse-grained particle density equilibration to s\" → \"Viscosity and dielectric relaxation in highly pola\"\n  NEW: dielectric_viscosity_link — \"Paper B directly links viscosity prediction to the dielectric function in highly\"\n  NEW: body_force_green_kubo — \"It reformulates the Green-Kubo viscosity relation in terms of body-force correla\"\n  REMOVED: integrable_quantum_chain_specificity — \"The specific setting of a noninteracting nearest-neighbor fermion chain and its \"\n\nStep 3:\n  CHANGED: mechanism — \"A stochastic field-theory and Green-Kubo framework\" → \"An experimental thin-film characterization pipelin\"\n  CHANGED: niche — \"Predicting viscosity from dielectric response in h\" → \"Explaining and predicting wetting and optical beha\"\n  NEW: thin-film fabrication context — \"B introduces magnetron-sputtered Cu, Ag, and CuAg thin films on textured silicon\"\n  NEW: machine-learning morphology analysis — \"B adds K-Means clustering for morphology categorization and Random Forest regres\"\n  REMOVED: dipolar-hydrodynamic theory — \"The predecessor's thermal dipole-field dynamics, Kubo response derivation, and v\"\n\nStep 4:\n  KEPT: materials/physics domain anchor — \"Both papers remain situated within the broader physics research ecosystem, with \"\n  KEPT: data-to-guidance orientation — \"Both works use synthesized evidence to produce actionable conclusions: Paper A l\"\n  CHANGED: mechanism — \"Experimental thin-film fabrication and characteriz\" → \"Conference-based multi-stakeholder synthesis used \"\n  CHANGED: niche — \"Explaining wetting and optical behavior in Cu/Ag/C\" → \"Improving reproducibility and replicability across\"\n  NEW: reproducibility/replicability governance — \"Paper B introduces policy and procedural guidance focused on reproducibility and\"\n  NEW: multi-stakeholder consensus process — \"The successor adds input from researchers, journalists, legal professionals, pub\"\n  REMOVED: specific material system — \"The Cu, Ag, and CuAg thin-film system on textured silicon is no longer part of t\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "cond-mat.dis-nn",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0028",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: image_restoration_super_resolution_niche — \"Both papers operate in low-level image restoration and include single-image supe\"\n  KEPT: deep_residual_backbone — \"Both use deep residual-style convolutional hierarchies with skip-connected block\"\n  CHANGED: restoration_backbone_design — \"A BN-free residual-in-residual generator optimized\" → \"A hierarchy of residual groups and residual blocks\"\n  CHANGED: context_modeling — \"Implicit long-range context captured only through \" → \"Explicit pairwise feature correlation across all s\"\n  NEW: non_local_attention_module — \"B introduces explicit non-local operators that compute global pairwise feature a\"\n  NEW: global_self_similarity_modeling — \"B adds a mechanism for exploiting repeated structures and long-range dependencie\"\n  REMOVED: adversarial_training — \"B discards the discriminator-based Model-GAN training setup used in A.\"\n\nStep 2:\n  CHANGED: niche_genome_field — \"Low-level image restoration tasks such as super-re\" → \"Blind real-world single-image super-resolution und\"\n  NEW: high_order_degradation_pipeline — \"A multi-order stochastic synthetic degradation process combining blur, resize, n\"\n  NEW: synthetic_only_blind_sr_training — \"Training entirely on synthetic low/high-resolution pairs designed to support bli\"\n  REMOVED: non_local_attention_backbone — \"The residual backbone augmented with non-local self-attention mechanism modules for image-\"\n\nStep 3:\n  KEPT: blind_real_world_restoration — \"Both works center on blind restoration under real-world, complex, unknown degrad\"\n  CHANGED: niche_genome_field — \"Blind real-world single-image super-resolution wit\" → \"Blind restoration of flash-degraded portrait image\"\n  CHANGED: genome_fingerprint — \"A blind real-image super-resolution method defined\" → \"A flash-portrait restoration challenge benchmark t\"\n  NEW: flash_specific_realistic_degradation_setting — \"B introduces a restoration setting centered on flash-induced compound portrait d\"\n  NEW: paired_train_validation_benchmark_data — \"B contributes a paired dataset and challenge infrastructure for training and val\"\n  REMOVED: synthetic_high_order_degradation_pipeline — \"B does not retain A's hand-designed multi-order stochastic degradation generator\"\n\nStep 4:\n  KEPT: benchmark_challenge_framing — \"Both papers are organized around NTIRE-style challenge benchmarking of restorati\"\n  CHANGED: niche_genome_field — \"Blind restoration of flash-degraded portrait image\" → \"Benchmark-based evaluation of real-world face rest\"\n  CHANGED: mechanism_genome_field — \"A benchmark system for flash-specific realistic de\" → \"A challenge-analysis mechanism centered on hybrid \"\n  NEW: degradation_aware_generative_pipeline_pattern — \"B introduces the explicit architectural template of degradation-aware encoders c\"\n  NEW: perceptual_adversarial_supervision — \"B adds perceptual and adversarial training objectives as a core explanatory axis\"\n  REMOVED: flash_specific_degradation_setting — \"The explicit focus on flash-induced illumination, color, and artifact correction\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Vision",
+      "dynamics_sequence": [
+        "Hybridization",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0029",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: adversarial_perturbation_under_norm_constraint — \"Both papers center on adversarial examples as small norm-bounded input perturbat\"\n  CHANGED: mechanism_genome_field — \"A first-order linearity analysis explains adversar\" → \"DeepFool iteratively linearizes the classifier aro\"\n  CHANGED: niche_genome_field — \"This paper targets understanding why deep neural n\" → \"This paper targets the evaluation of local adversa\"\n  NEW: minimal_perturbation_robustness_metric — \"Paper B introduces the norm of the smallest adversarial perturbation as an expli\"\n  NEW: iterative_nearest_boundary_search — \"Paper B introduces an iterative procedure that repeatedly recomputes the closest\"\n  REMOVED: limitation_genome_field — \"The predecessor's explicit emphasis on being primarily a conceptual diagnosis wi\"\n\nStep 2:\n  KEPT: adversarial robustness evaluation focus — \"Both papers are centered on evaluating adversarial robustness of image/neural-ne\"\n  CHANGED: niche_genome_field — \"This paper targets the evaluation of local adversa\" → \"This paper targets the reliable evaluation of adve\"\n  CHANGED: genome_fingerprint — \"An untargeted robustness-evaluation method that de\" → \"The paper's heritable core is the idea that advers\"\n  NEW: gradient-obfuscation taxonomy — \"B introduces a systematic classification of defenses into shattered, stochastic,\"\n  NEW: adaptive attack protocol — \"B adds a defense-evaluation methodology based on sanity checks and adaptive atta\"\n  REMOVED: DeepFool local-linearization attack mechanism — \"B discards A's specific iterative nearest-boundary attack based on local affine \"\n\nStep 3:\n  KEPT: adversarial_robustness_focus — \"Both papers center on robustness to adversarial perturbations in image classific\"\n  CHANGED: niche_genome_field — \"Reliable evaluation of adversarial-example defense\" → \"Certifying the robustness of image classifiers aga\"\n  CHANGED: genome_fingerprint — \"Adversarial-defense evaluation must diagnose and d\" → \"A model-agnostic certified defense wraps a classif\"\n  NEW: randomized_smoothing_wrapper — \"B introduces the idea of converting any base classifier into a smoothed classifi\"\n  NEW: certified_l2_radius — \"B introduces a provable ℓ2 robustness certificate derived from noisy class proba\"\n  REMOVED: obfuscated_gradients_taxonomy — \"The explicit taxonomy of shattered, stochastic, and vanishing/exploding gradient\"\n\nStep 4:\n  CHANGED: niche_genome_field — \"This paper targets certifying the robustness of im\" → \"This paper targets the reliable measurement of adv\"\n  NEW: mechanism_genome_field — \"B introduces a robustness-evaluation mechanism based on diverse adaptive attack \"\n  NEW: delta_genome_field — \"B explicitly frames its contribution as replacing single-attack or weakly tuned \"\n  REMOVED: mechanism_genome_field — \"B discards Gaussian randomized smoothing, Monte Carlo class-probability estimati\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Security",
+      "dynamics_sequence": [
+        "Mutation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0031",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: autoregressive_code_model_core — \"Both papers center on large autoregressive language models over source code as t\"\n  CHANGED: mechanism_genome_field — \"Autoregressive code language model evaluation trea\" → \"AlphaCode uses a large autoregressive code model t\"\n  CHANGED: niche_genome_field — \"This paper targets the evaluation of whether large\" → \"This paper targets solving difficult competitive p\"\n  NEW: massive_stochastic_sampling — \"B introduces generating very large numbers of candidate programs per problem as \"\n  NEW: execution_based_filtering — \"B adds compilation and execution checks as a first-class selection mechanism for\"\n  REMOVED: evaluation_first_orientation — \"Paper A's primary emphasis on systematic benchmarking across scales, prompts, an\"\n\nStep 2:\n  KEPT: candidate_sampling_for_code_generation — \"B inherits the core idea of sampling multiple candidate programs from a generati\"\n  KEPT: execution_based_selection_signal — \"B preserves the use of program execution outcomes, rather than model likelihood \"\n  CHANGED: selection_mechanism — \"Massively sample programs, filter by compilation a\" → \"Sample programs, generate synthetic input-output t\"\n  CHANGED: test_source — \"Evaluation relies on available execution checks an\" → \"Evaluation is augmented by tests generated by the \"\n  NEW: synthetic_test_generation — \"B introduces generation of input-output test cases as a first-class inference-ti\"\n  NEW: dual_use_of_same_model — \"B uses the same modeling framework for both candidate program synthesis and synt\"\n  REMOVED: behavioral_clustering — \"B does not retain AlphaCode's explicit clustering of candidates by behavioral si\"\n\nStep 3:\n  KEPT: functional_correctness_objective — \"Both papers target code generation methods that prioritize selecting or producin\"\n  KEPT: execution_based_evaluation_signal — \"Both papers use program execution against test cases as the core signal for asse\"\n  CHANGED: use_of_tests — \"Synthetic tests are generated by the model at infe\" → \"Test cases provide execution rewards during reinfo\"\n  CHANGED: selection_strategy — \"Sample many candidate programs and choose among th\" → \"Optimize the generator itself through RL so genera\"\n  NEW: reinforcement_learning_fine_tuning — \"B introduces deep RL to treat code generation as sequential decision-making and \"\n  NEW: learned_critic — \"B adds a critic model that predicts program quality to provide dense reward shap\"\n  REMOVED: synthetic_test_generation — \"B does not retain A's core idea of generating test cases with the same model as \"\n\nStep 4:\n  CHANGED: learning_from_interaction_feedback — \"A pretrained code generator is fine-tuned with rei\" → \"A policy is incrementally evolved from persistent \"\n  CHANGED: training_regime_scope — \"Optimization is performed for a specific code-gene\" → \"Optimization becomes open-ended continual policy e\"\n  NEW: persistent_interaction_memory — \"B introduces a long-lived store of agent-environment interactions as the substra\"\n  NEW: experience_to_training_target_conversion — \"Accumulated experience and self-generated trajectories are transformed into reus\"\n  REMOVED: pretrained_code_language_model — \"B no longer centers on initializing a pretrained code language model for program\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Mutation",
+        "Hybridization",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Software Engineering",
+      "dynamics_sequence": [
+        "Adaptive Radiation",
+        "Mutation",
+        "Hybridization",
+        "Adaptive Radiation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0032",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: niche_genome_field — \"Both papers target high-quality generative modeling and likelihood-based sample \"\n  CHANGED: forward_corruption_process — \"A fixed discrete-time Gaussian forward Markov chai\" → \"A continuous-time forward noising process formulat\"\n  CHANGED: reverse_generation_parameterization — \"A timestep-conditioned neural network parameterize\" → \"A time-conditioned neural network learns the score\"\n  NEW: probability_flow_ode — \"A deterministic ODE counterpart to the reverse stochastic process is introduced \"\n  NEW: predictor_corrector_sampling — \"A predictor-corrector integration scheme is introduced to refine sample generati\"\n  REMOVED: explicit_discrete_reverse_chain — \"The explicit discrete reverse Markov chain formulation with fixed stepwise trans\"\n\nStep 2:\n  KEPT: diffusion_noise_prediction_core — \"B retains the core DDPM idea of training a denoising diffusion model to predict \"\n  KEPT: attention_augmented_denoiser — \"B preserves the use of attention mechanism within the denoising network to model image str\"\n  CHANGED: diffusion_domain — \"Iterative diffusion and denoising are performed di\" → \"Iterative diffusion and denoising are performed in\"\n  CHANGED: generation_niche — \"High-quality and high-coverage natural image synth\" → \"Efficient high-resolution image synthesis and cont\"\n  NEW: perceptual_autoencoder_frontend — \"B introduces a pretrained perceptual autoencoder that separates perceptual compr\"\n  NEW: latent_semantic_decoupling — \"B explicitly decouples perceptual representation learning from semantic generati\"\n  REMOVED: pixel_space_diffusion_commitment — \"B discards the assumption that diffusion must be carried out directly on raw ima\"\n\nStep 3:\n  CHANGED: generative_image_synthesis_core — \"A high-resolution latent text-to-image diffusion s\" → \"Hybrid face restoration pipelines that use degrada\"\n  CHANGED: application_niche — \"High-resolution text-to-image synthesis with stron\" → \"Benchmark-based evaluation of real-world face rest\"\n  NEW: degradation_aware_conditioning — \"B introduces explicit modeling of unknown real-world degradations through degrad\"\n  NEW: identity_consistent_face_detail_synthesis — \"B adds a face-specific objective of restoring identity-consistent high-frequency\"\n  REMOVED: text_conditioning_pathway — \"The stronger text-conditioning and prompt-adherence machinery central to A is ab\"\n\nStep 4:\n  CHANGED: conditional_state_modeling — \"degradation-aware encoders condition a generative \" → \"current latent state, memory, and uncertainty-awar\"\n  CHANGED: generative_synthesis_core — \"a restoration decoder/generative prior synthesizes\" → \"a conditional decoder synthesizes the next plausib\"\n  NEW: progressive_latent_rollout — \"future change is modeled as a sequence of small temporally coherent latent trans\"\n  NEW: memory_conditioned_transition — \"each future step uses accumulated memory to guide long-range evolution\"\n  REMOVED: face_specific_priors — \"facial-component emphasis, identity preservation, and face-domain generative pri\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization",
+        "Hybridization",
+        "Niche Competition"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Machine Learning",
+      "dynamics_sequence": [
+        "Hybridization",
+        "Hybridization",
+        "Hybridization",
+        "Niche Competition"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0034",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: diffusion_noise_prediction_core — \"B retains the core DDPM idea of training a denoising diffusion model to predict \"\n  KEPT: attention_augmented_denoiser — \"B preserves the use of attention mechanism within the denoising network to model image str\"\n  CHANGED: diffusion_domain — \"Iterative diffusion and denoising are performed di\" → \"Iterative diffusion and denoising are performed in\"\n  CHANGED: generation_niche — \"High-quality and high-coverage natural image synth\" → \"Efficient high-resolution image synthesis and cont\"\n  NEW: perceptual_autoencoder_frontend — \"B introduces a pretrained perceptual autoencoder that separates perceptual compr\"\n  NEW: latent_semantic_decoupling — \"B explicitly decouples perceptual representation learning from semantic generati\"\n  REMOVED: pixel_space_diffusion_commitment — \"B discards the assumption that diffusion must be carried out directly on raw ima\"\n\nStep 2:\n  CHANGED: generative_image_synthesis_core — \"A high-resolution latent text-to-image diffusion s\" → \"Hybrid face restoration pipelines that use degrada\"\n  CHANGED: application_niche — \"High-resolution text-to-image synthesis with stron\" → \"Benchmark-based evaluation of real-world face rest\"\n  NEW: degradation_aware_conditioning — \"B introduces explicit modeling of unknown real-world degradations through degrad\"\n  NEW: identity_consistent_face_detail_synthesis — \"B adds a face-specific objective of restoring identity-consistent high-frequency\"\n  REMOVED: text_conditioning_pathway — \"The stronger text-conditioning and prompt-adherence machinery central to A is ab\"\n\nStep 3:\n  CHANGED: conditional_state_modeling — \"degradation-aware encoders condition a generative \" → \"current latent state, memory, and uncertainty-awar\"\n  CHANGED: generative_synthesis_core — \"a restoration decoder/generative prior synthesizes\" → \"a conditional decoder synthesizes the next plausib\"\n  NEW: progressive_latent_rollout — \"future change is modeled as a sequence of small temporally coherent latent trans\"\n  NEW: memory_conditioned_transition — \"each future step uses accumulated memory to guide long-range evolution\"\n  REMOVED: face_specific_priors — \"facial-component emphasis, identity preservation, and face-domain generative pri\"\n\nStep 4:\n  CHANGED: structured state-transition modeling — \"Long-range visual change is modeled as a rollout o\" → \"Application behavior is modeled through controlled\"\n  CHANGED: long-horizon characterization objective — \"Generate plausible future visual states over exten\" → \"Systematically characterize workload behavior acro\"\n  NEW: multidimensional workload taxonomy — \"B introduces interpretable behavior classes spanning compute, memory, communicat\"\n  NEW: portable telemetry and hardware-counter profiling — \"B adds fine-grained runtime telemetry and hardware-counter collection as primary\"\n  REMOVED: iterative future synthesis — \"B discards autoregressive rollout and conditional visual decoding of future stat\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization",
+        "Niche Competition",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Vision",
+      "dynamics_sequence": [
+        "Hybridization",
+        "Hybridization",
+        "Niche Competition",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0038",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: continuous_integration_context — \"Paper B retains the continuous-integration setting from Paper A as the surroundi\"\n  CHANGED: mechanism_genome_field — \"Continuous integration is a development practice i\" → \"An empirical repository-mining analysis operationa\"\n  CHANGED: niche_genome_field — \"This paper targets the problem of reducing softwar\" → \"This paper targets the problem of quantifying the \"\n  NEW: repository_mining_operationalization — \"Paper B introduces a concrete empirical method for measuring build maintenance t\"\n  NEW: build_maintenance_effort_as_first_class_object — \"Paper B newly frames build-system evolution and maintenance burden as a primary \"\n  REMOVED: shared_mainline_merge_discipline — \"Paper A's emphasis on frequent small merges into a shared mainline is not itself\"\n\nStep 2:\n  CHANGED: mechanism_genome_field — \"An empirical repository-mining analysis operationa\" → \"An empirical qualitative factor analysis treats th\"\n  CHANGED: niche_genome_field — \"This paper targets the problem of quantifying the \" → \"This paper targets understanding which properties \"\n  NEW: delta_genome_field — \"B explicitly positions itself against prior build-maintenance framing and introd\"\n  NEW: ci_configuration_first_class_concept — \"B introduces CI configuration itself as the central analytical object whose prop\"\n  REMOVED: limitation_genome_field — \"The repository-mining-specific limitation about only observing committed artifac\"\n\nStep 3:\n  NEW: github_pull_request_workflow_focus — \"Paper B introduces GitHub pull requests as the primary unit of analysis, targeti\"\n  NEW: large_scale_repository_mining — \"Paper B introduces many-repository mining of GitHub metadata, pull request histo\"\n  REMOVED: ci_configuration_as_first_class_artifact — \"Paper A's focus on CI configuration properties as the central object of analysis\"\n\nStep 4:\n  KEPT: large_scale_repository_mining — \"Both papers rely on large-scale empirical mining of software repository traces t\"\n  KEPT: observational_statistical_empiricism — \"Both papers use observational data and quantitative comparison/modeling rather t\"\n  CHANGED: mechanism_genome_field — \"It uses large-scale mining of GitHub repository me\" → \"It uses a large-scale repository-mining before/aft\"\n  CHANGED: niche_genome_field — \"This paper targets understanding what determines w\" → \"This paper targets understanding how the adoption \"\n  NEW: ci_adoption_event_detection — \"B introduces identification of the continuous integration adoption point as the \"\n  NEW: before_after_natural_intervention_design — \"B introduces a longitudinal before/after design that treats CI adoption as a nat\"\n  REMOVED: pull_request_outcome_decomposition — \"B discards A's specific separation of pull request acceptance versus integration\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Speciation",
+        "Niche Competition",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Software Engineering",
+      "dynamics_sequence": [
+        "Adaptive Radiation",
+        "Speciation",
+        "Niche Competition",
+        "Adaptive Radiation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0039",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: global_average_pooling — \"Both architectures use global average pooling before the final classifier as a p\"\n  KEPT: large_scale_image_recognition_niche — \"Both papers target large-scale image classification/recognition with deep convol\"\n  CHANGED: deep_vision_backbone — \"Hand-designed Inception modules composed of parall\" → \"Residual blocks that learn F(x) and combine it wit\"\n  CHANGED: parameter_efficiency_strategy — \"1×1 convolutions are used primarily as dimensional\" → \"Bottleneck residual blocks use reduced-width inter\"\n  NEW: identity_skip_connections — \"Model-R introduces shortcut connections that pass input features directly across \"\n  NEW: residual_function_learning — \"Instead of learning a full direct mapping, each block learns a residual correcti\"\n  REMOVED: parallel_multi_branch_inception_paths — \"The explicit parallel 1×1, 3×3, 5×5, and pooling branches fused by channel conca\"\n\nStep 2:\n  KEPT: image_recognition_deep_cnn_niche — \"Both papers target very deep convolutional networks for large-scale image recogn\"\n  KEPT: bottleneck_efficiency_modules — \"Both architectures use bottleneck-style layers as an efficiency device inside ve\"\n  CHANGED: skip_connectivity_pattern — \"Residual blocks learn F(x) and fuse it with an ide\" → \"Each layer in a dense block receives all preceding\"\n  CHANGED: feature_propagation_strategy — \"Deep convolutional architecture training is framed as residual correction\" → \"Deep convolutional architecture training is framed as explicit feature re\"\n  NEW: all_to_all_within_block_concatenation — \"Dense blocks introduce direct concatenative connections from every earlier layer\"\n  NEW: growth_rate_control — \"A growth-rate parameter governs how many new feature channels each layer contrib\"\n  REMOVED: additive_identity_shortcuts — \"The defining residual addition of shortcut and transformed path from Model-R is d\"\n\nStep 3:\n  KEPT: cnn_image_classification_niche — \"Both papers operate in the convolutional architecture image recognition/classification setting and aim \"\n  CHANGED: efficiency_strategy — \"Efficiency is achieved inside the architecture via\" → \"Efficiency is achieved at the family level via a p\"\n  CHANGED: model_scaling_view — \"Network capacity grows through within-block accumu\" → \"Network capacity grows through a single global coe\"\n  NEW: compound_scaling_rule — \"EfficientNet introduces a single global scaling coefficient with fixed exponents\"\n  NEW: nas_discovered_seed_baseline — \"The model family is anchored on an efficient baseline architecture obtained thro\"\n  REMOVED: dense_block_all_to_all_concatenation — \"The defining DenseNet mechanism of connecting each layer to all previous layers \"\n\nStep 4:\n  KEPT: visual_classification_niche — \"Both papers target image recognition/classification as the core application sett\"\n  CHANGED: niche_genome_field — \"Improving image classification model accuracy unde\" → \"Large-scale image recognition and transfer learnin\"\n  NEW: patch_tokenization — \"B introduces representing an image as a sequence of non-overlapping fixed-size p\"\n  NEW: positional_encoding_for_images — \"B adds positional encodings to patch tokens so a transformer architecture can process image s\"\n  REMOVED: compound_scaling — \"The joint scaling of convolutional architecture depth, width, and input resolution with a single global\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Vision",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0041",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: attention-based neural relation extraction — \"Both papers retain the core idea of using neural sentence representations combin\"\n  CHANGED: selective attention mechanism — \"Relation-conditioned selective attention mechanism over mult\" → \"Position-aware attention mechanism that computes weights usi\"\n  CHANGED: supervision regime — \"Distant supervision with noisy bag labels for enti\" → \"Task-specific supervised training data for slot fi\"\n  NEW: entity-relative positional attention signals — \"B introduces explicit use of each token's relative distance to the target entiti\"\n  NEW: slot-filling query formulation — \"B frames extraction around finding fillers for a query entity-slot pair rather t\"\n  REMOVED: multi-instance bag modeling — \"B no longer centers the model on aggregating multiple sentences in a distantly s\"\n\nStep 2:\n  CHANGED: niche_genome_field — \"This paper targets relation extraction for knowled\" → \"This paper targets learning and representing seman\"\n  NEW: masked entity-pair context construction — \"B creates relation-centric examples by masking or abstracting entity mentions so\"\n  NEW: similarity-trained relation embedding space — \"B learns embeddings where contexts expressing the same relation are close togeth\"\n  REMOVED: position-aware attention mechanism — \"B discards the neural selective-attention mechanism architecture that weights tokens using\"\n\nStep 3:\n  CHANGED: entity_representation_learning — \"Entity pairs are represented indirectly through ma\" → \"Entities are represented directly as first-class s\"\n  CHANGED: learning_signal — \"Similarity-based distributional learning over cont\" → \"Self-supervised pretraining over text and linked e\"\n  NEW: entity_as_sequence_token — \"Linked entity mentions are inserted as first-class tokens in the same sequence a\"\n  NEW: entity_aware_self_attention — \"Self-attention mechanism uses separate parameterizations for word-word, word-entity, entit\"\n  REMOVED: relation_similarity_objective — \"The explicit objective of clustering or matching entity-pair contexts in embeddi\"\n\nStep 4:\n  KEPT: entity-centric contextual semantic augmentation — \"Both papers center entity understanding as a first-class objective and enrich to\"\n  CHANGED: entity integration mechanism — \"Entity information is injected inside the encoder \" → \"Entity-relevant information is obtained externally\"\n  CHANGED: task niche — \"General contextual language understanding requirin\" → \"Named entity recognition under limited local conte\"\n  NEW: external LLM knowledge querying — \"B introduces prompted retrieval of span- and type-relevant semantic cues from an\"\n  NEW: knowledge filtering and structuring pipeline — \"B adds a stage that cleans, selects, and organizes LLM-returned knowledge before\"\n  REMOVED: first-class entity sequence tokens — \"B no longer inserts linked entity mentions as dedicated tokens in the main input\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation",
+        "Hybridization",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Natural Language Processing",
+      "dynamics_sequence": [
+        "Hybridization",
+        "Speciation",
+        "Hybridization",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0045",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: 3D EM neuron segmentation — \"Both papers target automated segmentation/reconstruction of neurites in large 3D\"\n  KEPT: learned voxel-level prediction — \"Both methods use deep neural networks operating on 3D image data to produce dens\"\n  CHANGED: core segmentation representation — \"A recurrent flood-filling network iteratively grow\" → \"A 3D U-Net predicts local shape descriptors, toget\"\n  CHANGED: object reasoning signal — \"Object identity is maintained implicitly through r\" → \"Object information is encoded explicitly as local \"\n  NEW: local shape descriptor prediction — \"The successor introduces voxel-wise prediction of local object statistics captur\"\n  NEW: multitask descriptor-plus-affinity learning — \"The method jointly learns local shape descriptors with direct-neighbor affinitie\"\n  REMOVED: single-object recurrent flood filling — \"The successor no longer centers segmentation on iterative recurrent expansion of\"\n\nStep 2:\n  KEPT: 3D_U-Net_backbone — \"Both methods use a 3D U-Net-style network as the core predictor for volumetric n\"\n  KEPT: affinity_based_segmentation — \"Both pipelines rely on voxel-level affinity prediction as a key representation f\"\n  CHANGED: shape_context_prediction — \"A 3D U-Net predicts local shape descriptors such a\" → \"The network instead focuses on multi-scale affinit\"\n  CHANGED: learning_objective — \"Prediction is driven by local descriptor and/or af\" → \"Affinity learning is trained with a constrained MA\"\n  NEW: constrained_MALIS_loss — \"The successor introduces constrained MALIS as a structured loss for training aff\"\n  NEW: percentile_RAG_agglomeration — \"A percentile-based region adjacency graph merging rule is added as a specific ag\"\n  REMOVED: explicit_local_shape_descriptors — \"The predecessor's explicit prediction of voxel-wise size, centroid offset, and c\"\n\nStep 3:\n  KEPT: 3D_EM_context_learning — \"Both methods learn from 3D electron microscopy subvolumes using convolutional ne\"\n  KEPT: connectomics_reconstruction_goal — \"Both target reconstruction of neuronal structure in large-scale EM connectomics \"\n  CHANGED: prediction_target — \"Voxel affinities for boundary-aware segmentation.\" → \"Continuous neurite steering commands and membrane \"\n  CHANGED: inference_unit — \"Global volume partitioning into fragments followed\" → \"Local neurite-centered recurrent centerline extens\"\n  NEW: bishop_curvature_control — \"The successor predicts continuous Bishop-curvature steering commands to control \"\n  NEW: recurrent_policy_integration — \"Predictions are integrated recurrently over time to produce a tracing path rathe\"\n  REMOVED: affinity_graph_agglomeration_pipeline — \"The explicit watershed fragment generation, region adjacency graph construction,\"\n\nStep 4:\n  KEPT: electron_microscopy_applicability — \"Both papers operate on electron microscopy data as an important target domain.\"\n  KEPT: learned_microscopy_modeling — \"Both rely on trained deep neural models to interpret microscopy imagery rather t\"\n  CHANGED: core_prediction_target — \"Neurite-centered recurrent tracing via continuous \" → \"Promptable and automatic mask/instance prediction \"\n  CHANGED: model_architecture — \"Orientation-aligned 3D convolutional architecture with recurrent integrat\" → \"Fine-tuned ViT-based SAM encoder/prompt/mask stack\"\n  NEW: foundation_model_adaptation — \"The successor repurposes Segment Anything as a microscopy foundation model by fi\"\n  NEW: promptable_interactive_segmentation — \"It introduces user-prompt-driven interactive segmentation as a first-class capab\"\n  REMOVED: recurrent_centerline_tracing — \"The explicit sequential neurite-following process with recurrent state updates a\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_dynamics": [
+        "Mutation",
+        "Mutation",
+        "Mutation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "电镜神经元分割",
+      "dynamics_sequence": [
+        "Mutation",
+        "Mutation",
+        "Mutation",
+        "Adaptive Radiation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0048",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  KEPT: transformer_self_attention_backbone — \"B inherits the core transformer architecture computation based on stacked self-attention mechanism laye\"\n  CHANGED: architecture_scope — \"A full attention mechanism-only seq2seq encoder–decoder with\" → \"A deep transformer architecture encoder-only network with fully\"\n  CHANGED: attention_directionality — \"Decoder self-attention mechanism is masked for autoregressiv\" → \"Self-attention mechanism is fully bidirectional across the i\"\n  NEW: masked_language_modeling — \"B introduces MLM as a denoising-style pre-training objective for learning bidire\"\n  NEW: next_sentence_prediction — \"B introduces NSP to train inter-sentence relationship modeling during pre-traini\"\n  REMOVED: encoder_decoder_structure — \"B discards the explicit encoder–decoder split and the cross-attention mechanism pathway fr\"\n\nStep 2:\n  CHANGED: niche_genome_field — \"This paper targets building broadly useful open la\" → \"This paper targets principled semantic alignment a\"\n  NEW: indra_representation_hypothesis — \"A new theoretical framework positing an explicit intermediate multimodal represe\"\n  NEW: factorized_multimodal_latent_space — \"Inputs are decomposed into modality-agnostic semantic factors and modality-speci\"\n  REMOVED: decoder_only_llm_family — \"The scaled decoder-only autoregressive transformer architecture family and its base/chat mode\"\n\nStep 3:\n  CHANGED: latent_factorization — \"A factorized multimodal latent space separating mo\" → \"A factorized temporal latent process in which futu\"\n  CHANGED: consistency_constraint — \"Cross-modal consistency and topology-preserving al\" → \"Temporal coherence and consistency-preserving deco\"\n  NEW: progressive_future_rollout — \"B introduces long-horizon future generation as an explicit rollout of many small\"\n  NEW: memory_conditioned_transition — \"Each future step is conditioned on accumulated memory, enabling long-range depen\"\n  REMOVED: multimodal_semantic_alignment — \"The explicit goal of aligning semantics across heterogeneous modalities such as \"\n\nStep 4:\n  CHANGED: pipeline_structuring_atom — \"A stepwise rollout process that advances predictio\" → \"A staged adaptation chain that advances processing\"\n  CHANGED: optimization_objective_atom — \"Maintain temporally coherent long-horizon visual s\" → \"Optimize per-request LLM adaptation utility under \"\n  NEW: dynamic_chain_optimization_atom — \"B introduces Dynamic Chain Optimization, treating adaptation as a controllable c\"\n  NEW: marginal_utility_controller_atom — \"A controller estimates each stage's marginal utility and resource cost to decide\"\n  REMOVED: latent_future_rollout_atom — \"Progressive future-envisioning via small temporally coherent latent transitions \"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Natural Language Processing",
+      "dynamics_sequence": [
+        "Adaptive Radiation",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_0070",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "4 consecutive evolutionary steps from a research lineage are shown.\nWhat overall evolutionary pattern does this lineage follow?\n\nStep 1:\n  CHANGED: analytical_framework — \"A simple pedagogical neutronics calculation based \" → \"A Schwinger-Keldysh full-counting-statistics frame\"\n  CHANGED: target_system — \"Critical radius and mass of a spherical fissile ma\" → \"Krylov operator growth and Krylov complexity under\"\n  NEW: open_quantum_systems_setting — \"B introduces Lindblad dynamics and environmental coupling as the central setting\"\n  NEW: schwinger_keldysh_fcs_method — \"B adds a Schwinger-Keldysh full-counting-statistics derivation of effective dyna\"\n  REMOVED: fissile_criticality_problem — \"The focus on computing critical radius and critical mass for nuclear assemblies \"\n\nStep 2:\n  CHANGED: mechanism — \"A Schwinger-Keldysh full-counting-statistics treat\" → \"A supersymmetric factorization of the generalized \"\n  CHANGED: niche — \"Open quantum-system Krylov growth and complexity u\" → \"One-dimensional generalized Dirac oscillator model\"\n  NEW: DSR embedding — \"The generalized Dirac oscillator is placed within doubly special relativity usin\"\n  NEW: pseudo-Hermitian/PT-symmetric solvable sector — \"The work explicitly studies complex interaction functions and solvable pseudo-He\"\n  REMOVED: open-system dissipation focus — \"The Lindblad/dephasing environment and stochastic operator-growth interpretation\"\n\nStep 3:\n  KEPT: constraint-through-formal-structure — \"Both papers use a formal theoretical framework to derive hard limits on what kin\"\n  KEPT: nontrivial-boundary-effect — \"Both emphasize that an external high-level physical structure changes admissibil\"\n  CHANGED: mechanism — \"Factorization of the generalized Dirac oscillator \" → \"Representation of consciousness-supporting impleme\"\n  CHANGED: niche — \"One-dimensional relativistic quantum models under \" → \"Philosophy of mind and consciousness theory under \"\n  NEW: consciousness-as-causal-graph — \"B newly formalizes consciousness-relevant physical implementations as effective \"\n  NEW: event-horizon-unity-test — \"B introduces black hole event horizons as a decisive geometric test for whether \"\n  REMOVED: supersymmetric-spectral-solver — \"The SUSY-QM factorization and exact solvable spectral analysis machinery are dro\"\n\nStep 4:\n  CHANGED: mechanism — \"It models consciousness-relevant physical implemen\" → \"It measures fragment anion yields for 1-propanol o\"\n  CHANGED: niche — \"The paper addresses whether a single unified consc\" → \"The paper studies low-energy electron-induced diss\"\n  NEW: delta — \"B introduces an explicit comparative contribution claim: the first detailed frag\"\n  REMOVED: limitation — \"The predecessor's explicit discussion of theory-internal scope limits, alternati\"\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "physics.pop-ph",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L4-3_evolutionary_pattern",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_900",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"ORB-SLAM is a feature-based monocular SLAM system that uses ORB features in three parallel threads for tracking, local mapping, and loop closing, with [text omitted]\"\n  Niche: \"This paper targets real-time monocular simultaneous localization and mapping with accurate tracking, relocalization, and loop closing across small and [text omitted]\"\n\nPaper 2:\n  Mechanism: \"ORB-SLAM2 is a unified multi-threaded feature-based SLAM system that uses ORB keypoints for tracking, keyframe-based local mapping and bundle adjustme [text omitted]\"\n  Niche: \"This paper targets real-time visual SLAM for camera localization and sparse map building across monocular, stereo, and RGB-D sensing in long, loop-ric [text omitted]\"\n\nPaper 3:\n  Mechanism: \"ORB-SLAM3 is a unified feature-based keyframe SLAM system that uses sparse ORB landmarks with tightly coupled visual-inertial MAP estimation and bundl [text omitted]\"\n  Niche: \"This paper targets real-time simultaneous localization and mapping across monocular, stereo, RGB-D, and visual-inertial settings, including long-term [text omitted]\"\n\nPaper 4:\n  Mechanism: \"DROID-SLAM uses a learned recurrent update operator over a factor graph of image-to-image constraints, combining correlation volumes and differentiabl [text omitted]\"\n  Niche: \"This paper targets visual simultaneous localization and mapping across monocular, stereo, and RGB-D camera setups in challenging real-world conditions [text omitted]\"\n\nPaper 5:\n  Mechanism: \"VGGT-SLAM 2.0 uses a low-latency feed-forward dense geometry pipeline that jointly predicts per-pixel depth/correspondence and frame-to-frame pose, th [text omitted]\"\n  Niche: \"This paper targets real-time dense 3D scene reconstruction and camera localization from streaming visual input in an online SLAM setting [text omitted].\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Hybridization",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "Robotics",
+      "dynamics_sequence": [
+        "Adaptive Radiation",
+        "Hybridization",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_901",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"It analyzes the normalized logarithm of the Laplacian determinant under Benjamini-Schramm-type local convergence while controlling degeneration throug [text omitted]\"\n  Niche: \"The paper studies asymptotic behavior of Laplacian determinants for sequences of compact hyperbolic surfaces with growing volume that locally converge [text omitted]\"\n\nPaper 2:\n  Mechanism: \"It uses number-theoretic and structural analysis of finite abelian groups and their automorphism counts to derive necessary constraints on any rationa [text omitted]\"\n  Niche: \"The paper studies which positive rational numbers can occur as the ratio of the automorphism-group size to the group size for finite abelian groups [text omitted].\"\n\nPaper 3:\n  Mechanism: \"It defines multi-metric spaces on multisets with distances valued in a multi-real number system so that multiplicity information is explicitly incorpo [text omitted]\"\n  Niche: \"The paper addresses frequency-sensitive duplicate detection in data domains such as transactional databases, sensor logs, and record linkage where rep [text omitted]\"\n\nPaper 4:\n  Mechanism: \"It introduces parabolic weak porosity and proves the characterization using a stopping time argument together with translation and doubling properties [text omitted]\"\n  Niche: \"The paper addresses the characterization of parabolic Muckenhoupt A_1 weights with time-lag via geometric properties of closed sets in the parabolic s [text omitted]\"\n\nPaper 5:\n  Mechanism: \"It develops a recursive characterization of admissible binary parity sequences to uniquely generate such integers and derive bounds on their stopping [text omitted]\"\n  Niche: \"The paper studies stopping times and possible cycle structure in the normalized 3n+1/Collatz process, especially for integers congruent to 3 modulo 4 [text omitted].\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "math.SP",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "mathematics",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_902",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"It proposes an analogical synthesis that maps emergence, geometric frustration, competing interactions, spin-glasses, and Mott insulators onto social [text omitted]\"\n  Niche: \"This paper addresses the problem of reinterpreting scientific socialism and dialectical social theory using concepts from modern condensed matter phys [text omitted]\"\n\nPaper 2:\n  Mechanism: \"It reconstructs Fermi's path by analyzing his early interests in the absolute entropy constant, his engagement with shortcomings of Sommerfeld's quant [text omitted]\"\n  Niche: \"This paper addresses the historical and conceptual origins of Enrico Fermi's formulation of the statistics of an ideal monatomic gas [text omitted].\"\n\nPaper 3:\n  Mechanism: \"The authors combine molecular dynamics simulations of Lennard-Jones and covalently bonded nanoclusters with a continuum-theory treatment of oblique im [text omitted]\"\n  Niche: \"This paper addresses how to correctly characterize the normal restitution coefficient in oblique collisions of nanoclusters, where standard macroscopi [text omitted]\"\n\nPaper 4:\n  Mechanism: \"Using 9 fb−1 of LHCb pp collision data, the study reconstructs χc1(3872) candidates in the J/ψμ+μ− final state and measures the decay rate relative to [text omitted]\"\n  Niche: \"This paper addresses the experimental observation and relative branching-fraction measurement of the rare decay χc1(3872)→J/ψμ+μ− in proton-proton col [text omitted]\"\n\nPaper 5:\n  Mechanism: \"The method uses a machine-learned predictor for the leftmost Hessian eigenvector to guide transition-state searches, with uncertainty-triggered fallba [text omitted]\"\n  Niche: \"This paper addresses efficient and robust transition-state optimization in computational chemistry when full Hessian calculations are too expensive fo [text omitted]\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "physics.pop-ph",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "physics",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_903",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"It constructs period-luminosity diagrams from stars with parallax errors below 20 percent and well-determined periods, then compares the resulting seq [text omitted]\"\n  Niche: \"This paper studies the period-luminosity behavior of nearby Mira and semiregular variable stars using accurate Hipparcos parallaxes and K-band photome [text omitted]\"\n\nPaper 2:\n  Mechanism: \"It constructs a unified Combined CMB baseline from Planck, ACT DR6, and SPT-3G and compares that reference against compiled 2019-2026 measurements fro [text omitted]\"\n  Niche: \"This paper reviews the 2026 status of the cosmological S8 tension between early-universe CMB constraints and late-universe large-scale-structure probe [text omitted]\"\n\nPaper 3:\n  Mechanism: \"It derives coupled linear perturbation equations for multiple interacting fluid species and obtains exact and approximate solutions for two-component [text omitted]\"\n  Niche: \"This paper addresses gravitational instability and density-perturbation growth in a self-gravitating multicomponent fluid within an expanding Newtonia [text omitted]\"\n\nPaper 4:\n  Mechanism: \"Using Gaia DR3 astrometry, the authors compare HV 11417's proper motion and inferred transverse motion to the SMC and to nearby massive and evolved st [text omitted]\"\n  Niche: \"This paper addresses whether the TZO candidate HV 11417 is truly a member of the Small Magellanic Cloud and what its kinematics imply about its evolut [text omitted]\"\n\nPaper 5:\n  Mechanism: \"It systematically recomputes and compares DB white dwarf analyses under different He I profile assumptions, including frequency sampling, Doppler broa [text omitted]\"\n  Niche: \"The paper addresses how He I line-profile modeling affects the photometric and spectroscopic determination of atmospheric parameters in DB white dwarf [text omitted]\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "astro-ph",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "astronomy",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_904",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"Improved transmon qubit design; optimized pulse sequences; cross-resonance two-qubit gates; fidelity benchmarking via randomized benchmarking [text omitted].\"\n  Niche: \"Surface code theory requires <1% physical error rates; superconducting qubits historically far above this threshold [text omitted].\"\n\nPaper 2:\n  Mechanism: \"21-qubit linear chain; cyclic repetition code (distance 5,7,11); repeated syndrome extraction cycles; correlated error decoding [text omitted].\"\n  Niche: \"Threshold crossing in 2-qubit gates does not guarantee that error suppression improves with code size in practice [text omitted].\"\n\nPaper 3:\n  Mechanism: \"72-qubit Sycamore; distance-3 (17 qubits) vs distance-5 (49 qubits) surface codes; repeated QEC cycles; minimum-weight perfect matching decoder [text omitted].\"\n  Niche: \"1D repetition code (2021) is insufficient; need 2D surface code demonstration showing quality improves with scale [text omitted].\"\n\nPaper 4:\n  Mechanism: \"105-qubit 'Willow' processor; improved qubit coherence (T1>100μs); optimized readout; Sycamore-3 architecture; rapid classical decoding (1μs per round [text omitted]\"\n  Niche: \"2023 paper showed scaling works partially; need clear demonstration that both X and Z error rates decrease exponentially with code distance [text omitted].\"\n\nPaper 5:\n  Mechanism: \"[[7,1,3]] Steane error correction code on trapped-ion hardware (Quantinuum H2 and Helios); fault-tolerant QAOA and HHL implementation with error-corre [text omitted]\"\n  Niche: \"Willow demonstrates below-threshold QEC memory, but running actual quantum algorithms on logical qubits — with logical gate operations including T gat [text omitted]\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Mutation",
+        "Mutation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "Quantum Computing / Superconducting Qubits",
+      "dynamics_sequence": [
+        "Mutation",
+        "Mutation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "physics",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_905",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"T-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI); reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor; ELBO training [text omitted].\"\n  Niche: \"GANs are unstable to train and mode-collapse; VAEs have blurry outputs; need a principled probabilistic generative model for high-quality images [text omitted].\"\n\nPaper 2:\n  Mechanism: \"It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous [text omitted]\"\n  Niche: \"This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images [text omitted].\"\n\nPaper 3:\n  Mechanism: \"It uses a denoising diffusion probabilistic model in which a U-Net-like network with attention is trained across many timesteps to predict added Gauss [text omitted]\"\n  Niche: \"This paper targets high-quality and high-coverage natural image synthesis with strong likelihood performance [text omitted].\"\n\nPaper 4:\n  Mechanism: \"Train VAE to compress images 8x; apply DDIM diffusion in latent space (64×64 latents); text conditioning via cross-attention with CLIP text encoder [text omitted].\"\n  Niche: \"Pixel-space diffusion is computationally prohibitive at high resolution; 512×512 generation too slow for practical use [text omitted].\"\n\nPaper 5:\n  Mechanism: \"SDXL is a staged latent diffusion system that trains a larger high-resolution base model with a stronger text-conditioning pathway and revised denoisi [text omitted]\"\n  Niche: \"This paper targets high-resolution text-to-image synthesis with strong prompt adherence, coherent composition, and robust handling of varied aspect ra [text omitted]\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization",
+        "Hybridization",
+        "Niche Competition"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "Deep Learning",
+      "dynamics_sequence": [
+        "Hybridization",
+        "Hybridization",
+        "Hybridization",
+        "Niche Competition"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_906",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"AlphaCode uses a large autoregressive code model to massively sample candidate programs per task, then filters them through compilation and execution [text omitted]\"\n  Niche: \"This paper targets solving difficult competitive programming problems from natural-language statements and example input-output behavior under hidden- [text omitted]\"\n\nPaper 2:\n  Mechanism: \"CodeT samples multiple candidate programs and separately generates input-output test cases with the same modeling framework, then executes candidates [text omitted]\"\n  Niche: \"This paper targets natural-language-to-code generation, specifically selecting functionally correct programs for a given specification when no hand-wr [text omitted]\"\n\nPaper 3:\n  Mechanism: \"CodeRL initializes a pretrained code language model and then fine-tunes it with deep reinforcement learning using execution-based rewards from test ca [text omitted]\"\n  Niche: \"This paper targets neural code generation from programming task specifications, with the goal of producing functionally correct programs rather than m [text omitted]\"\n\nPaper 4:\n  Mechanism: \"FLEX is a forward-learning continual evolution framework that stores a persistent history of agent-environment interactions, converts accumulated expe [text omitted]\"\n  Niche: \"This paper targets open-ended continual improvement of agents from ongoing interaction experience rather than solving a single fixed predefined task [text omitted].\"\n\nPaper 5:\n  Mechanism: \"TritonRL is a reinforcement-learning training framework that improves a code model by having it first produce reasoning traces and then Triton code, w [text omitted]\"\n  Niche: \"This paper targets training language models to generate correct and efficient Triton GPU kernels for tensor computation tasks [text omitted].\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_dynamics": [
+        "Mutation",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "Software Engineering",
+      "dynamics_sequence": [
+        "Mutation",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_907",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"A large autoregressive Transformer decoder with causal masked self-attention is trained on massive web text using next-token prediction, and downstrea [text omitted]\"\n  Niche: \"This paper targets general-purpose zero-shot transfer across many NLP tasks using only raw text pretraining and no task-specific supervision [text omitted].\"\n\nPaper 2:\n  Mechanism: \"GPT-3 is a massively scaled decoder-only autoregressive transformer trained on next-token prediction over a huge diverse text corpus and evaluated by [text omitted]\"\n  Niche: \"This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than [text omitted]\"\n\nPaper 3:\n  Mechanism: \"A family of decoder-only autoregressive transformers is pretrained at scale on expanded public text-and-code corpora and then split into base models a [text omitted]\"\n  Niche: \"This paper targets building broadly useful open large language models for general text generation and aligned multi-turn conversational assistance sui [text omitted]\"\n\nPaper 4:\n  Mechanism: \"The Indra Representation Hypothesis introduces a factorized multimodal latent space in which encoders decompose inputs into modality-agnostic semantic [text omitted]\"\n  Niche: \"This paper targets principled semantic alignment and compositional reasoning across heterogeneous modalities such as text, vision, and audio [text omitted].\"\n\nPaper 5:\n  Mechanism: \"A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step [text omitted]\"\n  Niche: \"This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence ove [text omitted]\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_dynamics": [
+        "Mutation",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "Natural Language Processing",
+      "dynamics_sequence": [
+        "Mutation",
+        "Hybridization",
+        "Adaptive Radiation",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_908",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"mT5 scales the T5 text-to-text framework to multilingual web text by pretraining a large encoder-decoder Transformer with span-corruption denoising us [text omitted]\"\n  Niche: \"This paper targets general-purpose multilingual natural language understanding and generation across a very large set of languages within a single mod [text omitted]\"\n\nPaper 2:\n  Mechanism: \"ERNIE-M uses a shared multilingual encoder with a unified vocabulary, trained by masked language modeling on monolingual text plus explicit cross-ling [text omitted]\"\n  Niche: \"This paper targets multilingual language representation learning for cross-lingual understanding and transfer when parallel data is limited but monoli [text omitted]\"\n\nPaper 3:\n  Mechanism: \"A shared multilingual encoder is jointly finetuned on multiple supervised tasks with mostly shared parameters and task-specific output heads, using mu [text omitted]\"\n  Niche: \"This paper targets improving zero-shot and few-shot crosslingual generalization for supervised NLP tasks, especially for low-resource or unseen target [text omitted]\"\n\nPaper 4:\n  Mechanism: \"BLOOM is a 176B-parameter decoder-only Transformer trained with multilingual next-token prediction on a carefully curated and deduplicated multi-langu [text omitted]\"\n  Niche: \"This paper targets large-scale open-access multilingual generative language modeling for broad zero-shot and few-shot use across many natural and prog [text omitted]\"\n\nPaper 5:\n  Mechanism: \"It introduces a multilingual evaluation framework that compares language models across typologically diverse languages using a battery of task familie [text omitted]\"\n  Niche: \"This paper targets the problem of evaluating language model quality in a way that reflects real multilingual capability rather than relying on perplex [text omitted]\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "Natural Language Processing",
+      "dynamics_sequence": [
+        "Hybridization",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_909",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"SRCNN uses a shallow three-layer fully convolutional network applied to an interpolated low-resolution image to jointly perform patch feature extracti [text omitted]\"\n  Niche: \"This paper targets single-image super-resolution, i.e. reconstructing a high-resolution image from one low-resolution input image [text omitted].\"\n\nPaper 2:\n  Mechanism: \"It proposes a deeply-recursive convolutional network (DRCN) that applies the same convolutional inference block repeatedly between feature embedding a [text omitted]\"\n  Niche: \"This paper targets single-image super-resolution, i.e., reconstructing a high-resolution image from one low-resolution input image [text omitted].\"\n\nPaper 3:\n  Mechanism: \"VDSR uses a very deep stack of small-kernel convolutional layers on an interpolated low-resolution image and trains the network to predict the high-fr [text omitted]\"\n  Niche: \"This paper targets single-image super-resolution, i.e. reconstructing a high-resolution image from one low-resolution input image [text omitted].\"\n\nPaper 4:\n  Mechanism: \"It introduces an Efficient Sub-Pixel Convolutional Neural Network (ESPCN) that performs feature extraction entirely in low-resolution space and then u [text omitted]\"\n  Niche: \"This paper targets real-time single-image and video super-resolution, i.e., reconstructing high-resolution outputs from low-resolution visual inputs [text omitted].\"\n\nPaper 5:\n  Mechanism: \"SRGAN uses a deep residual convolutional generator trained with a joint loss that combines adversarial supervision from a discriminator with perceptua [text omitted]\"\n  Niche: \"This paper targets single-image super-resolution with the goal of recovering visually convincing high-resolution images from a single low-resolution i [text omitted]\"\n\nAnalyze the transitions between consecutive papers to determine:\n\nPart 1: Overall pattern\nA. Gradual Refinement — mostly incremental mutations and improvements\nB. Radical Paradigm Shift — contains a speciation event (fundamental rethinking)\nC. Diversifying Radiation — contains adaptive radiation (branching into new niches)\nD. Competitive Displacement — contains niche competition (displacing existing approaches)\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "Gradual Refinement",
+      "B": "Radical Paradigm Shift",
+      "C": "Diversifying Radiation",
+      "D": "Competitive Displacement"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "Computer Vision",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Hybridization"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-12_evo_pattern_910",
+    "task_type": "T3-12_evo_pattern",
+    "prompt": "Lineage sequence (in chronological order):\n\nPaper 1:\n  Mechanism: \"It incorporates the ISEW into the COMPASS ecological macroeconomic model and simulates business-as-usual and policy scenarios involving a carbon tax, [text omitted]\"\n  Niche: \"The paper addresses how to dynamically model the Index of Sustainable Economic Welfare within an ecological macroeconomic framework to evaluate social [text omitted]\"\n\nPaper 2:\n  Mechanism: \"It characterizes the optimal dynamic mechanism by frontloading expected surplus extraction before realizations occur and, under FOSD ordering, regular [text omitted]\"\n  Niche: \"The paper studies multidimensional sequential screening by a monopolist selling multiple goods to a buyer who first privately knows the distribution o [text omitted]\"\n\nPaper 3:\n  Mechanism: \"It develops a correction framework that removes correlated errors-in-variables from transaction-price-based signals and return denominators and elimin [text omitted]\"\n  Niche: \"This paper addresses the replication and validity of reported corporate bond factor premia in empirical asset pricing research [text omitted].\"\n\nPaper 4:\n  Mechanism: \"The paper builds a diffusion generative model whose score function is decomposed through time-varying orthogonal projections onto a low-dimensional la [text omitted]\"\n  Niche: \"High-dimensional financial return scenario generation under small-sample conditions using latent factor structure [text omitted].\"\n\nPaper 5:\n  Mechanism: \"The authors extend a prior agent-based artificial financial market model by adding additional agents, split into additional fundamental agents and add [text omitted]\"\n  Niche: \"This paper studies how increasing the number of investors who use the same fundamental or technical trading strategy affects each investor's profit in [text omitted]\"\n\nWhat is the correct dynamics sequence for the transitions between consecutive papers?\n\nA. Speciation → Hybridization → Hybridization → Mutation\nB. Niche Competition → Mutation → Mutation → Adaptive Radiation\nC. Speciation → Speciation → Speciation → Speciation\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C]\nDynamics = [Step1Label, Step2Label, Step3Label, Step4Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "33%",
+      "subfield": "econ.GN",
+      "dynamics_sequence": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ],
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-12_evo_pattern",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "display_title": "Evolutionary Pattern"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  }
+]

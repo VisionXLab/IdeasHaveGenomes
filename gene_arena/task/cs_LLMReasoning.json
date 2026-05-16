@@ -1,0 +1,164 @@
+{
+  "trace_id": "cs_LLMReasoning",
+  "domain": "cs",
+  "direction": "LLMReasoning",
+  "subfield": "Natural Language Processing / Reasoning",
+  "frontier_justification": "Reasoning capabilities of LLMs are at the center of AI research in 2025-2026. The lineage from CoT to RL-based reasoning (o1/DeepSeek-R1) defines the current frontier, with active debate on whether test-time compute scaling continues to yield returns.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "arxiv_id": "2201.11903",
+      "paper_type": "research",
+      "key_contribution": "Intermediate reasoning steps (chain-of-thought) in prompts dramatically improve LLM performance on complex reasoning tasks.",
+      "idea_genome": {
+        "problem_genome": "LLMs fail on multi-step reasoning tasks (math, commonsense, symbolic) when prompted to answer directly.",
+        "mechanism_genome": "Provide exemplars with step-by-step reasoning traces in the prompt; the model imitates this structure at inference time.",
+        "observation_genome": "Few-shot CoT prompting yields large gains on GSM8K, MATH, and symbolic reasoning; emerges only in models >100B parameters.",
+        "limitation_genome": "CoT relies on sampling a single reasoning chain; stochastic errors compound across steps; no verification of intermediate steps."
+      }
+    },
+    {
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "year": 2023,
+      "venue": "ICLR 2023",
+      "arxiv_id": "2203.11171",
+      "paper_type": "research",
+      "key_contribution": "Sample diverse reasoning paths with CoT and take the majority vote answer, replacing greedy decoding.",
+      "idea_genome": {
+        "problem_genome": "A single CoT reasoning chain is fragile; a wrong intermediate step invalidates the final answer.",
+        "mechanism_genome": "Sample k diverse chains via temperature sampling, aggregate final answers by majority vote; no model change needed.",
+        "observation_genome": "Self-consistency gains +10–20% on GSM8K, MATH, and commonsense benchmarks over greedy CoT; ensemble of chains.",
+        "limitation_genome": "k chains cost k× inference compute; all chains still start from the same flat sequential structure; no tree search."
+      }
+    },
+    {
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "year": 2023,
+      "venue": "NeurIPS 2023",
+      "arxiv_id": "2305.10601",
+      "paper_type": "research",
+      "key_contribution": "Organize LLM reasoning as a tree where each node is a partial thought; use BFS/DFS with self-evaluation for deliberate problem solving.",
+      "idea_genome": {
+        "problem_genome": "Flat sequential CoT cannot backtrack or explore alternative reasoning paths; struggles on planning tasks.",
+        "mechanism_genome": "Decompose reasoning into a tree of thoughts; generate multiple continuations per node; LLM evaluates node promise; BFS/DFS search.",
+        "observation_genome": "ToT solves 74% of Game of 24 vs 4% for CoT; significant gains on creative writing and crossword tasks.",
+        "limitation_genome": "Combinatorial search cost; LLM-as-evaluator is unreliable; no learned value function for node scoring."
+      }
+    },
+    {
+      "title": "Let's Verify Step by Step",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "arxiv_id": "2305.20050",
+      "paper_type": "research",
+      "key_contribution": "Process Reward Models (PRMs) trained with step-level human feedback outperform outcome-level ORMs for mathematical reasoning verification.",
+      "idea_genome": {
+        "problem_genome": "Outcome-based reward models cannot detect which step in a reasoning chain is wrong; search requires reliable intermediate scoring.",
+        "mechanism_genome": "Collect human labels for correctness at each reasoning step; train a PRM to score step quality; use PRM to rerank or guide beam search.",
+        "observation_genome": "PRM800K dataset; PRMs achieve >70% accuracy on MATH competition problems; substantially better than ORMs for search.",
+        "limitation_genome": "Step-level annotation is expensive; PRM may overfit to annotation artifacts; requires combining with separate generator."
+      }
+    },
+    {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "arxiv_id": "2501.12948",
+      "paper_type": "research",
+      "key_contribution": "Pure RL (GRPO) on reasoning tasks without supervised chain-of-thought distillation produces frontier reasoning capabilities; open-weights model matching o1.",
+      "idea_genome": {
+        "problem_genome": "SFT-distilled CoT models plateau; process reward models require costly annotation; need scalable RL for reasoning.",
+        "mechanism_genome": "GRPO (group relative policy optimization): sample multiple outputs per prompt, use correctness as reward signal, normalize by group baseline; no PRM needed.",
+        "observation_genome": "DeepSeek-R1 achieves 79.8% on AIME 2024, matching o1; emergent long chain-of-thought reasoning with self-verification.",
+        "limitation_genome": "Requires high-quality verifiable reward signal (math/code); language mixing artifacts in reasoning chains; RL training instability."
+      }
+    },
+    {
+      "title": "The Molecular Structure of Thought: Mapping the Topology of Long Chain-of-Thought Reasoning",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "arxiv_id": "2601.06002",
+      "paper_type": "research",
+      "key_contribution": "Identifies stable structural patterns (Deep-Reasoning, Self-Reflection, Self-Exploration) in Long CoT; introduces Mole-Syn for synthesizing structured Long CoT training data; provides mechanistic analysis of why RLVR reasoning succeeds.",
+      "idea_genome": {
+        "problem_genome": "LLMs struggle to learn extended reasoning chains from imitation; unclear why RLVR produces emergent Long CoT; no principled framework for understanding Long CoT structure.",
+        "mechanism_genome": "Graph-based topology analysis of Long CoT trajectories identifies three interaction bond types (Deep-Reasoning, Self-Reflection, Self-Exploration); Mole-Syn synthesizes training data with controlled structural composition.",
+        "observation_genome": "Stable structural patterns emerge naturally during fine-tuning rather than keyword mimicry; Mole-Syn-generated training data improves performance and training stability over unstructured Long CoT.",
+        "limitation_genome": "Structural topology identifies patterns post-hoc but cannot predict which structure a problem requires; no mechanism for adaptive structure selection at inference time."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Adds majority voting over sampled reasoning chains to CoT; same prompting paradigm, improves reliability without structural change."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Replaces flat sequential sampling with tree-structured search; fundamentally new reasoning paradigm with backtracking and node evaluation."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Adds learned step-level verification (PRM) to guide tree search; same tree-based reasoning structure with better node scoring."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Combines RL training (from alignment literature) with CoT reasoning and process-level reward signals into end-to-end reasoning model training."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Mechanistic analysis of Long CoT structural topology and synthetic data improvement on top of R1's RLVR recipe; same RL-based reasoning paradigm, adds structural understanding and synthesis."
+    }
+  ],
+  "open_question": "Mole-Syn identifies structural patterns in successful Long CoT but cannot predict which reasoning structure a given problem requires. What mechanism would enable adaptive reasoning architecture selection — dynamically choosing, verifying, and stopping Deep-Reasoning, Self-Reflection, and Self-Exploration modes based on problem structure while maintaining calibrated reliability on unfamiliar tasks?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Natural Language Processing / Reasoning."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Mutation": 3,
+    "Speciation": 1,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "The Molecular Structure of Thought: Mapping the Topology of Long Chain-of-Thought Reasoning",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "identifier": "2601.06002",
+      "unresolved_gap": "Structural topology identifies patterns post-hoc but cannot predict which structure a problem requires; no mechanism for adaptive structure selection at inference time.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

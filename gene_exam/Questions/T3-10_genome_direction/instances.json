@@ -1,0 +1,858 @@
+[
+  {
+    "instance_id": "T3-10_genome_direction_000",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors, with multi-scale fusion, facial-component emphasis, and perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details.\"\n\nGenome B:\n Mechanism: \"It introduces the NTIRE 2026 RAIM AI Flash Portrait challenge as a benchmark system with a flash-specific realistic degradation setting, paired train/validation data, and an evaluation protocol that ranks single-pipeline methods jointly correcting illumination, facial detail, color, and flash artifacts.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Hybridization",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Computer Vision",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_001",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"The method combines supervised fine-tuning on human-written instruction demonstrations with reinforcement learning from a learned reward model trained on pairwise human preference rankings, using a KL penalty to keep the policy close to the supervised model during policy optimization.\"\n\nGenome B:\n Mechanism: \"Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Hybridization",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Natural Language Processing",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_002",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"Using Gaia DR3 astrometry, the authors compare HV 11417's proper motion and inferred transverse motion to the SMC and to nearby massive and evolved stellar populations to assess membership and runaway status.\"\n\nGenome B:\n Mechanism: \"It derives coupled linear perturbation equations for multiple interacting fluid species and obtains exact and approximate solutions for two-component and many-component cases under cosmic expansion.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "astro-ph",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_003",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"The paper benchmarks a deep-stacked MeshGraphNet-style local message-passing baseline against three architectures that add explicit region-level interaction to better capture long-range biomechanical dependencies under matched compute budgets.\"\n\nGenome B:\n Mechanism: \"It derives exact solutions for graviton-photon conversion in a refractive medium and applies them to estimate prompt and delayed low-frequency radio emission generated as supernova gravitons traverse terrestrial, Jovian, and random interstellar magnetic fields.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "astro-ph.SR",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_004",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"The authors use Q-learning agents in repeated two-person Prisoner's Dilemma games and compare cooperative dynamics across three information perception scenarios, including asymmetric information.\"\n\nGenome B:\n Mechanism: \"It builds an OWL ontology in Protege, augments it with SWRL rules for rule-based inference, and evaluates reasoning using SPARQL queries over six sample patient scenarios.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "q-bio.BM",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_005",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"DREBIN performs lightweight static analysis of Android application packages to extract sparse, interpretable manifest- and code-derived features and applies a linear classifier that scores apps by weighted feature presence for efficient, explainable malware detection.\"\n\nGenome B:\n Mechanism: \"A behavior-based malware analysis framework executes programs in a controlled environment, converts traces of system calls, file, registry, process, and network activity into machine-learning features, and uses statistical clustering or classification to group samples by behavioral similarity.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Adaptive Radiation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_006",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It applies a one-class SVM to sparse text features, learning a maximum-margin boundary around positive documents by separating them from the origin while permitting a controlled fraction of outliers via regularization.\"\n\nGenome B:\n Mechanism: \"It introduces the one-class SVM, which maps data into an RKHS with a positive definite kernel and solves a convex maximum-margin optimization that separates the samples from the origin with slack controlled by a parameter nu to estimate a high-density support region.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Adaptive Radiation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Machine Learning",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_007",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It extracts crack graphs from images, classifies crack generations using connection hierarchy, and compares three hierarchy-aware generators: random uniform partitioning, recursive Voronoi partitioning, and a crack growth simulation model.\"\n\nGenome B:\n Mechanism: \"It proves that for sufficiently large typical times the coarse-grained particle density becomes nearly uniform with probability extremely close to one by combining exact free-fermion dynamics with a large-deviation bound that holds for every energy eigenstate.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "cond-mat.dis-nn",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_008",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It uses numerically unbiased auxiliary-field quantum Monte Carlo and jointly analyzes thermodynamic and dynamical observables across the temperature-interaction plane.\"\n\nGenome B:\n Mechanism: \"The authors combine angle-resolved photoemission spectroscopy with density-functional theory to resolve the reconstructed interface structure and trace how Sb-Au hybridization folds Au-derived bands and modifies spin splitting.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "cond-mat",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_009",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"Angelix performs test-driven fault localization, infers angelic values for suspicious expressions from failing executions, uses symbolic execution to derive path-sensitive semantic constraints, and then applies component-based synthesis to generate consistent multiline source-code patches without enumerating syntax-space edits directly.\"\n\nGenome B:\n Mechanism: \"A learning-based patch generation method mines historical human-written bug fixes as AST-level edit patterns, learns contextual features that predict which transformations fit a given buggy code state, synthesizes candidate patches under local syntactic and semantic constraints, and ranks them before test-based validation.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Software Engineering",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "niche": "INHERITED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_010",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It applies Singular Learning Theory and the local learning coefficient to characterize competing near-zero-loss basins and track training dynamics as a phase transition between them.\"\n\nGenome B:\n Mechanism: \"It proposes a top-down tree-ordered testing procedure that starts at the overall null, recursively tests grouped and then individual block hypotheses, stops exploring branches after non-rejection, and uses path-based diagnostics with adaptive alpha adjustment when needed for strong FWER control.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "stat.ML",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_011",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It derives a generic-rate criterion for how adding one dependent species affects non-vacuous ACR in nondegenerate networks and gives a structural classification of all non-redundant zero-one networks of dimension at most two by counting distinct stoichiometric rows.\"\n\nGenome B:\n Mechanism: \"The paper uses a commentary-style overview to synthesize recent developments in generative AI and synthetic data and map their potential uses and risks for infectious disease research.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "q-bio.BM",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_012",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It analyzes the effect of neutrino flavor conversion inside the proto-neutron star on convection and predicts the resulting changes in gravitational-wave emission amplitude and frequency content during the post-bounce phase.\"\n\nGenome B:\n Mechanism: \"The authors generate mock observations of a simulated barred galaxy to measure orientation-dependent changes in mass-weighted λ_R and then compare weakly and strongly barred galaxies in the SAMI survey using stellar age, λ_R, and specific star formation rate within one effective radius.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "astro-ph.GA",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_013",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"The paper estimates a squeezed integrated bispectrum by correlating CHIME small-scale 21cm position-dependent power with large-scale Planck CMB lensing to avoid the foreground-dominated line-of-sight modes that hinder standard projected-field cross-correlations.\"\n\nGenome B:\n Mechanism: \"It uses multiple-lens-plane simulations with Monte Carlo generated cluster light cones modeled by truncated NFW halos, combined with semi-numerical and EOS source light cones, and measures lensed versus unlensed bubble size distributions via the Mean Free Path method.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "astro-ph.GA",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_014",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"A large-scale self-supervised deep grasp predictor is trained on about 50K autonomous grasp attempts to map camera observations and candidate gripper motions to binary grasp-success probabilities, then selects at test time the motion with the highest predicted success.\"\n\nGenome B:\n Mechanism: \"A deep grasp-success prediction model is trained on large-scale real robot trial data to score candidate end-effector motions from camera observations, and the robot executes actions in closed loop by choosing motions with highest predicted success probability.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Mutation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Robotics",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "INHERITED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_015",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It extends ASAFind into ASAFind 2.0 by adding optional PPC prediction, compatibility with SignalP 5.0 and TargetP 2.0 outputs, and a Python-based workflow for generating and applying custom scoring matrices with simplified score cut-offs.\"\n\nGenome B:\n Mechanism: \"The paper synthesizes evidence from cancer biology, normal mammalian physiology, and microbial metabolism to propose a resource-allocation and cost-benefit framework, potentially coupled with dynamical systems modeling, for analyzing metabolic strategy choice.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "q-bio.SC",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_016",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"DTC-SpMM restructures unstructured sparse operands into fine-grained compact tiles and schedules them onto tensor core matrix instructions through sparse reordering, workload decomposition, and pipelined on-chip accumulation to reduce padding, divergence, and control overhead.\"\n\nGenome B:\n Mechanism: \"It uses a real-system full-stack evaluation framework for processing-in-memory that decomposes runtime into computation, data movement, and control costs while measuring host-device communication, memory contention, kernel launch/scheduling overheads, data placement constraints, and CPU–near-memory interaction across workloads and scaling regimes.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Computer Architecture",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "LOST",
+        "niche": "LOST",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_017",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"NuNER pre-trains a discriminative sequence-labeling encoder on large-scale token/span annotations generated by an instruction-following LLM, with post-processing and filtering to normalize labels and suppress hallucinated or inconsistent spans before standard NER fine-tuning.\"\n\nGenome B:\n Mechanism: \"The method instruction-tunes a large generative language model to perform biomedical NER as an instruction-following text generation task, using natural-language task definitions, annotation guidelines, and output format constraints to directly generate entity spans and types instead of token-level labels.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Information Extraction and Relation Mining",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_018",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"Using linked population-wide administrative records from Romagna (2017-2023), it anchors event time at each patient's first CHF admission and applies dynamic event-study methods plus an interaction-weighted staggered-adoption difference-in-differences design, with HonestDiD sensitivity checks for parallel-trends violations.\"\n\nGenome B:\n Mechanism: \"It applies a fourth-order compact finite-difference discretization for the local spatial operators within an IMEX Crank-Nicolson time-stepping scheme and uses Simpson quadrature to evaluate the jump integral.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "A came first",
+      "B": "B came first"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "econ.GN",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L2-2_genome_direction",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "niche",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_900",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It proposes a variational autoencoder for collaborative filtering that encodes each user's sparse interaction vector into an amortized Gaussian latent distribution and decodes it with a multinomial likelihood over all items, trained with a variational objective using a tunable KL weight.\"\n\nGenome B:\n Mechanism: \"A graph convolutional recommender learns user and item embeddings on a bipartite interaction graph by iteratively aggregating transformed neighbor messages over multiple hops, using sampled mini-batch subgraphs and optional node features, then scores pairs with a lightweight similarity-based decoder under ranking-oriented training objectives.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Data Mining",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-10_genome_direction",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_901",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It proposes a stochastic trust model based on a Lévy process that combines Brownian motion for continuous fluctuations, Poisson jump intensity for shock arrivals, and random jump-size distributions for shock magnitudes, evaluated through simulation and sensitivity analysis.\"\n\nGenome B:\n Mechanism: \"It formulates timescale separation as generalized eigenvalue problems using variance stationarity and tail stationarity criteria to extract components associated with different temporal dynamics.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "q-fin.MF",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-10_genome_direction",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "LOST",
+        "niche": "LOST",
+        "limitation": "LOST",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_902",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"SE(3)-equivariant GNN processes protein and ligand separately; cross-attention predicts binding geometry; rigid-body alignment to protein pocket.\"\n\nGenome B:\n Mechanism: \"Generative diffusion over 3D pose space: separate diffusion processes for translation (R³), rotation (SO(3)), and torsion angles; confidence ranking of generated poses.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Computational Chemistry / Structure-Based Drug Design",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-10_genome_direction",
+      "source": "supplement_v1",
+      "domain": "chemistry",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_903",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"SDXL is a staged latent diffusion system that trains a larger high-resolution base model with a stronger text-conditioning pathway and revised denoising architecture in latent space, then applies a separate refiner model to add local detail and perceptual sharpness.\"\n\nGenome B:\n Mechanism: \"ControlNet augments a pretrained latent diffusion model with parallel copies of selected denoising blocks that ingest condition maps and are connected through zero-initialized convolutions so multi-scale control features can be learned while the original backbone stays largely frozen.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "Computer Vision",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-10_genome_direction",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST",
+        "observation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_904",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"The method uses a machine-learned predictor for the leftmost Hessian eigenvector to guide transition-state searches, with uncertainty-triggered fallback to a full Hessian update from the machine-learned potential when the prediction is unreliable.\"\n\nGenome B:\n Mechanism: \"Using 9 fb−1 of LHCb pp collision data, the study reconstructs χc1(3872) candidates in the J/ψμ+μ− final state and measures the decay rate relative to the reference mode χc1(3872)→J/ψπ+π−.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "physics.pop-ph",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-10_genome_direction",
+      "source": "supplement_v1",
+      "domain": "physics",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "LOST",
+        "niche": "MUTATED",
+        "limitation": "MUTATED",
+        "observation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-10_genome_direction_905",
+    "task_type": "T3-10_genome_direction",
+    "prompt": "Two genomes from the same lineage (year hidden). Only the mechanism genome field is shown.\nWhich came FIRST?\n\nGenome A:\n Mechanism: \"It uses full 3D finite element simulations to test the common design assumptions that asperities act independently and are supported by a linear elastic half-space, while systematically varying asperity layout, spacing, and base size.\"\n\nGenome B:\n Mechanism: \"The paper restricts hypergraph product constructions to products involving cyclic codes, performs exhaustive search over C2 and CxR families under these global symmetries, and exploits the resulting cyclic structure to build a constant-depth planar syndrome-extraction layout.\"\n\nPart 1: Which came first? Answer A or B\n Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n Primary driver: mechanism | niche | observation | limitation\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "50%",
+      "subfield": "physics.optics",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-10_genome_direction",
+      "source": "supplement_v1",
+      "domain": "physics",
+      "display_title": "Directional Genome Choice"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "driver": "mechanism",
+      "source_genome_status": {
+        "mechanism": "LOST",
+        "niche": "LOST",
+        "limitation": "MUTATED",
+        "observation": "LOST"
+      }
+    }
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "trace_id": "math_AIforCombinatorics",
+  "domain": "math",
+  "direction": "AIforCombinatorics",
+  "subfield": "AI for Combinatorics and Discrete Mathematics",
+  "frontier_justification": "This direction remains a May 2026 frontier because AI systems have begun to discover nontrivial mathematical constructions at scale, but mathematical value depends on proof, explanation, and theory formation. The next frontier is coupling evolutionary search with formal verification, invariant mining, and human-interpretable conjecture generation.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Deep Learning for Symbolic Mathematics",
+      "year": 2020,
+      "venue": "ICLR 2020",
+      "arxiv_id": "1912.01412",
+      "paper_type": "research",
+      "key_contribution": "Demonstrates that sequence-to-sequence transformers can solve symbolic integration and differential equations, outperforming commercial computer algebra systems like Mathematica.",
+      "idea_genome": {
+        "problem_genome": "Symbolic mathematics (integration, ODE solving) is traditionally handled by rule-based computer algebra systems with hand-engineered heuristics; neural networks have not been applied to these structured mathematical tasks.",
+        "mechanism_genome": "Represent mathematical expressions as token sequences; generate large synthetic datasets of integration and ODE problems with known solutions; train seq2seq transformers to map problems to solutions.",
+        "observation_genome": "Transformers solve 99.7% of integration problems and significantly outperform Mathematica and Matlab on hard instances; first demonstration that neural networks can perform non-trivial symbolic mathematics.",
+        "limitation_genome": "Limited to fixed function classes seen during training; cannot discover new mathematical structures or conjectures; no interpretability of the learned computation; purely input-output mapping without mathematical understanding."
+      }
+    },
+    {
+      "title": "Advancing mathematics by guiding human intuition with AI",
+      "year": 2021,
+      "venue": "Nature 2021",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "Establishes a framework for using ML to discover patterns in mathematical objects and guide human mathematicians toward new conjectures, producing genuine theorems in knot theory and representation theory.",
+      "idea_genome": {
+        "problem_genome": "Mathematical conjecture formulation relies on human intuition about patterns in mathematical data; ML has not been systematically used to augment this intuitive process in pure mathematics.",
+        "mechanism_genome": "Train supervised ML models to predict relationships between properties of mathematical objects (knots, representations); use gradient-based attribution to identify which input features drive predictions; mathematicians interpret attributions to formulate and prove conjectures.",
+        "observation_genome": "Discovers a new relationship between algebraic and geometric invariants of knots (proved as a theorem); identifies a conjectured relationship in representation theory; demonstrates the human-AI collaboration loop for mathematical discovery.",
+        "limitation_genome": "Requires expert mathematicians to interpret ML attributions and formulate conjectures; ML models are not generative (cannot produce constructions); limited to pattern detection in pre-computed datasets of mathematical objects."
+      }
+    },
+    {
+      "title": "Constructions in combinatorics via neural networks",
+      "year": 2021,
+      "venue": "arXiv 2021",
+      "arxiv_id": "2104.14516",
+      "paper_type": "research",
+      "key_contribution": "Uses reinforcement learning (deep cross-entropy method) to find explicit counterexamples to open conjectures in extremal combinatorics and improve the Ramsey multiplicity bound for K4.",
+      "idea_genome": {
+        "problem_genome": "Many open problems in extremal combinatorics and graph theory ask for explicit constructions or counterexamples; brute-force search is infeasible for large instances; human construction methods rely on ad hoc insight.",
+        "mechanism_genome": "Frame construction problems as sequential decision processes; use the deep cross-entropy method (a form of RL) to train a neural network policy that builds combinatorial objects step by step, optimizing for the target property.",
+        "observation_genome": "Refutes conjectures by Brualdi-Cao on pattern-avoiding matrices; provides the first improvement to the Ramsey multiplicity upper bound of K4 in 25 years; demonstrates RL as a practical tool for combinatorial construction.",
+        "limitation_genome": "Each problem requires custom reward engineering and problem-specific encoding; does not generalize across problem types; cannot produce proofs or explain why constructions work; limited to problems encodable as sequential decisions."
+      }
+    },
+    {
+      "title": "Mathematical discoveries from program search with large language models",
+      "year": 2024,
+      "venue": "Nature 2024",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "FunSearch uses LLM-guided evolutionary search over programs to discover new constructions for the cap set problem (best in 20 years) and improved bin packing algorithms, producing interpretable programs rather than opaque solutions.",
+      "idea_genome": {
+        "problem_genome": "RL-based construction methods produce opaque solutions specific to single problem instances; they cannot generalize, scale to larger instances, or provide mathematical insight about why solutions work.",
+        "mechanism_genome": "Evolutionary search in program space: LLM proposes modifications to Python programs (heuristics/constructions); programs are evaluated on the target mathematical objective; an evolutionary algorithm selects and recombines successful programs; search operates on code rather than raw solutions.",
+        "observation_genome": "Discovers cap set constructions surpassing the best known results (first improvement in 20 years for asymptotic lower bounds); finds new bin packing algorithms; programs are interpretable and generalizable to larger instances.",
+        "limitation_genome": "Requires a well-defined evaluator for fitness scoring; LLM modifications are local and lack mathematical reasoning; evolutionary search is slow and compute-intensive; no formal proof that discovered constructions are optimal."
+      }
+    },
+    {
+      "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "arxiv_id": "2506.13131",
+      "paper_type": "research",
+      "key_contribution": "General-purpose evolutionary coding agent that discovers novel algorithms and mathematical constructions at scale, including the first improvement to Strassen's matrix multiplication algorithm in 56 years.",
+      "idea_genome": {
+        "problem_genome": "FunSearch's evolutionary search is limited by single-LLM program modification; cannot handle multi-file codebases, complex evaluation pipelines, or problems requiring deep algorithmic reasoning across multiple abstraction levels.",
+        "mechanism_genome": "Multi-agent evolutionary pipeline: Gemini models propose code modifications at multiple granularities (line, function, file level); automated evaluators score solutions; evolutionary selection with island-based population diversity; continuous feedback loop enables open-ended exploration.",
+        "observation_genome": "First improvement to 4x4 complex matrix multiplication over Strassen (48 multiplications) in 56 years; discovers new solutions to over 50 open math problems; improves Google datacenter scheduling; 75% of known-best solutions rediscovered, 20% improved.",
+        "limitation_genome": "Requires well-defined automated evaluators; cannot generate mathematical proofs of optimality; discovered constructions may be numerically fragile; massive compute requirements for each problem domain."
+      }
+    },
+    {
+      "title": "Mathematical exploration and discovery at scale",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "arxiv_id": "2511.02864",
+      "paper_type": "research",
+      "key_contribution": "Systematically applies AlphaEvolve to 67 open problems across analysis, combinatorics, geometry, and number theory, rediscovering best-known solutions in most cases and improving several, with Terence Tao providing mathematical validation.",
+      "idea_genome": {
+        "problem_genome": "AlphaEvolve demonstrated broad capability but lacked systematic mathematical evaluation; unclear how LLM-guided evolutionary search compares to human mathematical insight across a diverse problem portfolio.",
+        "mechanism_genome": "Apply AlphaEvolve systematically to 67 curated open problems spanning analysis, combinatorics, geometry, and number theory; combine LLM evolutionary search with expert mathematician (Tao) validation; in some cases generalize finite discoveries to universal formulas.",
+        "observation_genome": "Rediscovers best-known solutions for 75% of problems; improves upon best-known results in 20% of cases; advances the 300-year-old kissing number problem; demonstrates that AI can generalize specific numerical discoveries into general formulas.",
+        "limitation_genome": "Still requires human mathematicians for proof and validation; cannot autonomously determine problem significance or choose which problems to attack; formula generalization is post-hoc and not automated; no integration with formal proof systems."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "A fundamental speciation from neural symbolic computation to ML-guided mathematical discovery. While Lample-Charton trains networks to solve known problem types (integration, ODEs), Davies et al. create an entirely new paradigm: using ML to discover unknown relationships in pure mathematics, shifting from computation to conjecture. The output changes from solutions to theorems."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "Wagner's RL-based construction approach competes with Davies et al.'s supervised pattern-detection framework for the same ecological niche: AI-assisted mathematical discovery. While Davies et al. use supervised ML to detect patterns that humans then prove, Wagner uses RL to directly construct mathematical objects that refute conjectures. Both target open problems in combinatorics but occupy competing methodological niches."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "FunSearch hybridizes Wagner's RL-based combinatorial construction approach with the generative capabilities of large language models. Instead of training a task-specific RL policy from scratch (Wagner), FunSearch uses a pretrained LLM to propose program modifications within an evolutionary loop, combining the construction-generation paradigm with LLM priors over code. The output shifts from opaque numerical constructions to interpretable programs."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "AlphaEvolve is a direct evolution of FunSearch's LLM-guided evolutionary program search, scaling it from single-function optimization to a multi-agent, multi-file coding pipeline with richer evolutionary operators. The core paradigm (LLM proposes code changes, evaluator scores, evolution selects) is preserved but substantially enhanced in scope and capability."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The AlphaEvolve framework radiates from algorithm discovery into systematic mathematical exploration. Rather than targeting individual problems, Georgiev et al. deploy AlphaEvolve across 67 diverse open problems spanning four mathematical subfields, with expert mathematician collaboration (Terence Tao). This represents an adaptive radiation of the evolutionary coding agent paradigm into the broader ecosystem of open mathematical research."
+    }
+  ],
+  "open_question": "AlphaEvolve-style evolutionary coding agents can discover mathematical constructions at scale, but they often provide empirical artifacts rather than proofs or explanatory theory. What neuro-symbolic discovery loop would couple LLM-guided search with proof assistants and invariant mining so new combinatorial objects arrive with certificates, conjectures, and human-readable structure?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in AI for Combinatorics and Discrete Mathematics."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Speciation": 1,
+    "Niche Competition": 1,
+    "Hybridization": 1,
+    "Mutation": 1,
+    "Adaptive Radiation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Mathematical exploration and discovery at scale",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "identifier": "2511.02864",
+      "unresolved_gap": "LLM-guided evolutionary search can discover constructions, but it does not yet reliably prove optimality, extract explanatory structure, or convert artifacts into certified mathematics.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

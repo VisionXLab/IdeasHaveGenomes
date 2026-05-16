@@ -1,0 +1,164 @@
+{
+  "trace_id": "medicine_DrugRepurposing",
+  "domain": "medicine",
+  "direction": "DrugRepurposing",
+  "subfield": "Computational Medicine / AI-Driven Drug Repurposing",
+  "frontier_justification": "AI-driven drug repurposing has evolved from network proximity methods (2018) through deep learning on knowledge graphs (2019-2020) to foundation models like TxGNN (2024) that achieve zero-shot drug-disease prediction for 17,000+ diseases. The latest work (2025) integrates causal inference with deep subgrouping for precision drug repurposing, bridging computational predictions with real-world clinical trial emulation at population scale.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Network-based approach to prediction and population-based validation of in silico drug repurposing",
+      "year": 2018,
+      "venue": "Nature Communications 2018",
+      "arxiv_id": "N/A (Nature Communications doi:10.1038/s41467-018-05116-5)",
+      "paper_type": "research",
+      "key_contribution": "First systematic network medicine approach to drug repurposing: quantifies proximity between drug targets and disease genes in the human protein interactome to identify repurposable drug candidates, validated on population-scale claims data for 900+ FDA-approved drugs.",
+      "idea_genome": {
+        "problem_genome": "Traditional drug repurposing relied on serendipitous clinical observations or isolated molecular similarity; no systematic computational framework existed to leverage the topology of molecular interaction networks for predicting new drug-disease associations at scale.",
+        "mechanism_genome": "Computes network proximity between drug targets and disease-associated genes in the human protein-protein interactome; uses shortest path distances with degree-preserving randomization for statistical significance; validates predictions against population-scale insurance claims data.",
+        "observation_genome": "Identifies hundreds of new drug-disease associations for 900+ FDA-approved drugs; network proximity significantly discriminates known drug-disease pairs from random pairs; population-based validation on claims data confirms predicted associations with reduced disease outcomes.",
+        "limitation_genome": "Relies on static protein interactome topology without considering dynamics or tissue specificity; cannot capture complex multi-target drug mechanisms or drug-drug interactions; limited to diseases with known genetic associations; no learning-based component to generalize from patterns."
+      }
+    },
+    {
+      "title": "deepDR: a network-based deep learning approach to in silico drug repositioning",
+      "year": 2019,
+      "venue": "Bioinformatics 2019",
+      "arxiv_id": "N/A (Bioinformatics doi:10.1093/bioinformatics/btz418)",
+      "paper_type": "research",
+      "key_contribution": "deepDR: first deep learning framework for drug repositioning that integrates 10 drug-related networks via multi-modal deep autoencoders and collective variational autoencoders, achieving 0.908 AUROC for drug-disease association prediction.",
+      "idea_genome": {
+        "problem_genome": "Network proximity methods like Cheng et al. use hand-crafted topological features and cannot learn latent representations from heterogeneous drug networks; they also treat each network independently rather than integrating diverse drug-drug, drug-target, and drug-disease relationships.",
+        "mechanism_genome": "Multi-modal deep autoencoder (MDA) fuses PPMI matrices from 10 drug networks (drug-disease, drug-side-effect, drug-target, and 7 drug-drug similarity networks) into compact low-dimensional representations; collective variational autoencoder (cVAE) predicts drug-disease associations from fused embeddings.",
+        "observation_genome": "deepDR achieves 0.908 AUROC for drug-disease prediction, outperforming network-based and conventional machine learning methods; identifies novel drug candidates for Alzheimer's disease validated by literature evidence; demonstrates that multi-network integration substantially improves prediction accuracy.",
+        "limitation_genome": "Operates on pre-computed drug similarity networks without end-to-end learning from raw molecular or clinical data; cannot handle new drugs not in the training networks (transductive only); no causal reasoning about treatment effects; limited to drug-level predictions without patient-level personalization."
+      }
+    },
+    {
+      "title": "Repurpose Open Data to Discover Therapeutics for COVID-19 Using Deep Learning",
+      "year": 2020,
+      "venue": "Journal of Proteome Research 2020",
+      "arxiv_id": "2005.10831",
+      "paper_type": "research",
+      "key_contribution": "CoV-KGE: integrative knowledge graph embedding framework for COVID-19 drug repurposing that builds a 15-million-edge biomedical knowledge graph from 24 million PubMed publications and identifies 41 repurposable drug candidates validated by transcriptomics and clinical trials.",
+      "idea_genome": {
+        "problem_genome": "The COVID-19 pandemic created urgent need for therapeutic candidates, but deepDR and similar methods operated on static drug networks that could not incorporate rapidly emerging SARS-CoV-2 molecular interaction data or leverage the full breadth of biomedical literature at scale.",
+        "mechanism_genome": "Constructs a comprehensive knowledge graph with 15 million edges across 39 relationship types from 24 million PubMed publications; applies knowledge graph embedding (KGE) methods to learn entity and relation representations; ranks drugs by predicted association strength with COVID-19 pathways and targets.",
+        "observation_genome": "Identifies 41 repurposable drugs for COVID-19 including dexamethasone (later confirmed in RECOVERY trial), indomethacin, niclosamide, and toremifene; predictions validated by transcriptomic and proteomic data from SARS-CoV-2-infected cells; several candidates entered clinical trials.",
+        "limitation_genome": "Knowledge graph embeddings capture correlational patterns without causal mechanisms; predictions are population-level without patient stratification; no integration with real-world clinical outcomes data; relies on completeness and quality of the curated knowledge graph."
+      }
+    },
+    {
+      "title": "A deep learning framework for drug repurposing via emulating clinical trials on real-world patient data",
+      "year": 2021,
+      "venue": "Nature Machine Intelligence 2021",
+      "arxiv_id": "N/A (Nature Machine Intelligence doi:10.1038/s42256-020-00276-w)",
+      "paper_type": "research",
+      "key_contribution": "DeepIPW: first deep learning framework to emulate randomized clinical trials on real-world patient data for drug repurposing; uses inverse probability weighting with deep patient representations to identify drugs that improve outcomes for coronary artery disease from millions of patient claims records.",
+      "idea_genome": {
+        "problem_genome": "Knowledge graph approaches (CoV-KGE, deepDR) predict drug-disease associations from molecular networks but lack direct evidence of clinical efficacy; real-world treatment outcomes in electronic health records contain confounding that prevents naive association with drug benefit.",
+        "mechanism_genome": "Deep learning model learns patient representations from longitudinal claims data; inverse probability weighting (IPW) via propensity scores removes treatment selection bias; emulates target trials by constructing treatment and control cohorts from observational data; estimates average treatment effects for each candidate drug.",
+        "observation_genome": "Successfully identifies drugs and drug combinations that significantly improve coronary artery disease outcomes from millions of patient records; per-patient cost drops to ~$44 compared to traditional clinical trials; identified candidates align with emerging clinical evidence; framework generalizable to any disease with sufficient EHR data.",
+        "limitation_genome": "Treats the patient population as homogeneous — estimates average treatment effect rather than identifying which subgroups benefit most; limited to diseases and drugs well-represented in claims data; does not incorporate molecular mechanism information; propensity score estimation may be insufficient for strong unmeasured confounders."
+      }
+    },
+    {
+      "title": "A foundation model for clinician-centered drug repurposing",
+      "year": 2024,
+      "venue": "Nature Medicine 2024",
+      "arxiv_id": "N/A (Nature Medicine doi:10.1038/s41591-024-03233-x)",
+      "paper_type": "research",
+      "key_contribution": "TxGNN: graph foundation model for zero-shot drug repurposing across 17,080 diseases; improves indication prediction by 49.2% and contraindication prediction by 35.1% over prior methods; introduces TxGNN Explorer for clinician-facing interpretability.",
+      "idea_genome": {
+        "problem_genome": "DeepIPW and earlier methods require disease-specific training data, limiting applicability to well-studied diseases; rare diseases (which number ~7,000 with few or no treatments) cannot be addressed by methods that need substantial training examples per disease; no prior model could generalize to unseen diseases.",
+        "mechanism_genome": "Graph neural network trained on a comprehensive medical knowledge graph connecting drugs, diseases, proteins, and biological pathways; metric learning module enables zero-shot transfer to diseases with no known treatments; contrastive learning distinguishes indications from contraindications; TxGNN Explorer provides explainable reasoning paths for clinicians.",
+        "observation_genome": "TxGNN improves indication prediction accuracy by 49.2% and contraindication prediction by 35.1% over 8 baseline methods under zero-shot evaluation; predictions align with off-label prescriptions in a large healthcare system; enables drug candidate identification for thousands of rare diseases simultaneously.",
+        "limitation_genome": "Predictions are at the population level without patient subgroup stratification; relies on knowledge graph completeness (missing edges can cause blind spots); zero-shot predictions for rare diseases lack clinical validation; does not incorporate real-world treatment outcomes or longitudinal patient data for causal effect estimation."
+      }
+    },
+    {
+      "title": "A Deep Subgrouping Framework for Precision Drug Repurposing via Emulating Clinical Trials on Real-world Patient Data",
+      "year": 2025,
+      "venue": "KDD 2025",
+      "arxiv_id": "2412.20373",
+      "paper_type": "research",
+      "key_contribution": "STEDR: first framework integrating patient subgroup discovery with treatment effect estimation for precision drug repurposing; identifies 14 Alzheimer's disease drug candidates with subgroup-specific benefits from 8 million patient records, bridging population-level AI predictions with precision medicine.",
+      "idea_genome": {
+        "problem_genome": "TxGNN identifies drug candidates at the population level but patients respond heterogeneously to treatments; DeepIPW emulates trials but estimates only average treatment effects, potentially missing drugs that benefit specific subgroups while showing no population-level signal.",
+        "mechanism_genome": "STEDR combines dual-level attention (covariate-level and visit-level) to encode temporal patient data into representations; variational autoencoder-based subgrouping network identifies patient subgroups by learning unique local distributions; treatment effect estimation within each subgroup via causal inference; end-to-end joint optimization of subgroup discovery and treatment effect estimation.",
+        "observation_genome": "STEDR identifies 14 drug candidates with subgroup-specific beneficial effects for Alzheimer's disease from 8+ million patient records; outperforms existing drug repurposing methods on both candidate identification and subgroup characterization; discovered subgroups correspond to clinically meaningful AD risk factor profiles.",
+        "limitation_genome": "Applied only to Alzheimer's disease as proof-of-concept; subgroup definitions are learned rather than clinically pre-specified, requiring clinical interpretation; does not integrate molecular mechanism knowledge (knowledge graphs) with real-world outcomes; prospective clinical trial validation of identified candidates not yet performed."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "deepDR hybridizes the network medicine paradigm from Cheng et al. with deep representation learning. While Cheng et al. used hand-crafted network proximity metrics on the protein interactome, deepDR imports deep autoencoders from the representation learning literature to fuse 10 heterogeneous drug networks into learned embeddings — combining the biological insight of network medicine with the pattern recognition power of deep learning, creating a new hybrid species of computational drug repurposing."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "CoV-KGE radiates the deep learning drug repurposing approach into the pandemic response niche. Starting from deepDR's multi-network integration paradigm, it scales dramatically — from 10 curated networks to a 15-million-edge knowledge graph mined from 24 million publications — and specializes for COVID-19 by incorporating virus-host interaction data. Like a species radiating into a suddenly available ecological niche (the pandemic), it adapts the ancestral deep learning drug repurposing machinery to a new, urgent therapeutic landscape."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "DeepIPW represents a speciation event: it diverges from the knowledge-graph-based lineage entirely and evolves a fundamentally different survival strategy. Instead of predicting drug-disease associations from molecular networks, it directly emulates clinical trials on real-world patient data using causal inference. This is a reproductive isolation from the molecular prediction lineage — the data source (claims records vs. knowledge graphs), the methodology (causal inference vs. link prediction), and the output (treatment effect estimates vs. association scores) are all distinct, creating a new species of drug repurposing AI."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "TxGNN hybridizes the knowledge graph approach (from the Cheng/Zeng lineage) with foundation model methodology. It takes the graph-based disease-drug-protein representation from the molecular tradition and combines it with zero-shot learning and metric learning techniques from the foundation model era, producing an offspring that inherits the biological interpretability of knowledge graphs and the generalization power of foundation models — enabling predictions for 17,080 diseases including thousands never seen in training."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "STEDR hybridizes TxGNN's broad disease coverage with DeepIPW's clinical trial emulation methodology. From TxGNN it inherits the ambition of comprehensive drug-disease prediction, and from DeepIPW it inherits causal reasoning on real-world patient data — but it adds a critical new capability: patient subgrouping via variational autoencoders. This three-way hybridization produces the first framework that simultaneously identifies drug candidates AND characterizes which patient subgroups benefit, unifying molecular prediction and clinical evidence into precision drug repurposing."
+    }
+  ],
+  "open_question": "STEDR demonstrates precision drug repurposing for Alzheimer's disease, but its learned subgroups require post-hoc clinical interpretation and it does not integrate molecular mechanism knowledge. What framework would enable end-to-end integration of knowledge graph-based molecular reasoning, real-world clinical trial emulation, and patient subgroup discovery — producing drug repurposing candidates with both molecular mechanistic explanations and clinically validated subgroup-specific efficacy estimates, ready for prospective clinical trial design?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Medicine / AI-Driven Drug Repurposing."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Hybridization": 3,
+    "Adaptive Radiation": 1,
+    "Speciation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "A Deep Subgrouping Framework for Precision Drug Repurposing via Emulating Clinical Trials on Real-world Patient Data",
+      "year": 2025,
+      "venue": "KDD 2025",
+      "identifier": "2412.20373",
+      "unresolved_gap": "Applied only to Alzheimer's disease as proof-of-concept; subgroup definitions are learned rather than clinically pre-specified, requiring clinical interpretation; does not integrate molecular mechanism knowledge (knowledge graphs) with real-world outcomes; prospective clinical trial validation of identified candidates not yet performed.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "trace_id": "cs_NativeMultimodal",
+  "domain": "cs",
+  "direction": "NativeMultimodal",
+  "subfield": "Computer Vision / Multimodal Learning",
+  "frontier_justification": "Native multimodal models (those trained jointly on vision and language from scratch) represent the current frontier in 2025-2026, with Gemini 2.5, GPT-4o, and InternVL3 competing. The lineage from contrastive pretraining to native generation is actively evolving.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Learning Transferable Visual Models From Natural Language Supervision",
+      "year": 2021,
+      "venue": "ICML 2021",
+      "arxiv_id": "2103.00020",
+      "paper_type": "research",
+      "key_contribution": "CLIP: contrastive pretraining on 400M image-text pairs enables zero-shot visual classification by aligning visual and language representations.",
+      "idea_genome": {
+        "problem_genome": "Supervised vision models require large labeled datasets; do not generalize to new visual concepts.",
+        "mechanism_genome": "Contrastive learning: image and text encoders trained to maximize cosine similarity of matched pairs and minimize unmatched pairs via InfoNCE loss.",
+        "observation_genome": "CLIP matches ResNet-101 on ImageNet zero-shot; strong transfer across 30 datasets; robust to distribution shift.",
+        "limitation_genome": "Encodes image as a single vector; cannot generate language; no spatial understanding; no multi-turn dialogue capability."
+      }
+    },
+    {
+      "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "arxiv_id": "2204.14198",
+      "paper_type": "research",
+      "key_contribution": "Flamingo: bridges frozen vision encoder and frozen LLM via Perceiver Resampler and cross-attention; few-shot visual question answering.",
+      "idea_genome": {
+        "problem_genome": "CLIP-type models cannot generate language; VLMs require full fine-tuning, destroying general capabilities.",
+        "mechanism_genome": "Freeze both vision encoder (NFNet) and LLM (Chinchilla); insert Perceiver Resampler to compress visual tokens; cross-attention layers in LLM for visual conditioning.",
+        "observation_genome": "Flamingo achieves state-of-the-art few-shot results on VQA, COCO captioning, and video QA; interleaved text-image inputs.",
+        "limitation_genome": "Heavy architectural complexity; frozen LLM limits joint optimization; one-way: vision→language, no visual generation; expensive inference."
+      }
+    },
+    {
+      "title": "Visual Instruction Tuning",
+      "year": 2023,
+      "venue": "NeurIPS 2023",
+      "arxiv_id": "2304.08485",
+      "paper_type": "research",
+      "key_contribution": "LLaVA: simple linear projection connecting CLIP encoder to LLaMA; instruction tuning on GPT-4-generated visual conversations.",
+      "idea_genome": {
+        "problem_genome": "Flamingo's Perceiver Resampler adds complexity; need simpler, open-source VLM with strong instruction following.",
+        "mechanism_genome": "Linear projection layer maps CLIP visual tokens to LLM token space; fine-tune on GPT-4-generated multimodal instruction data.",
+        "observation_genome": "LLaVA matches Flamingo on VQA tasks despite 10x fewer parameters; strong conversational VQA; open-source.",
+        "limitation_genome": "Low image resolution (224×224); single image input; linear projection loses spatial structure; limited OCR capability."
+      }
+    },
+    {
+      "title": "LLaVA-NeXT: Improved Reasoning, OCR, and World Knowledge",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "N/A (blog 2024.01)",
+      "paper_type": "research",
+      "key_contribution": "LLaVA-NeXT: dynamic high-resolution (up to 4× tiles), improved data curation (558K LAION + curated instruction data), better reasoning and OCR.",
+      "idea_genome": {
+        "problem_genome": "LLaVA 1.5 limited to 336×336 resolution; poor OCR, chart reading, and high-resolution detail understanding.",
+        "mechanism_genome": "Dynamic high-resolution: split images into tiles (up to 2×2 + thumbnail); process each tile independently with same CLIP encoder; concatenate tokens.",
+        "observation_genome": "LLaVA-NeXT outperforms LLaVA-1.5 on OCR (+23%), chart QA (+15%), and document understanding benchmarks.",
+        "limitation_genome": "Token count scales with number of tiles, increasing memory; still two-stage training; no video; limited cross-tile spatial reasoning."
+      }
+    },
+    {
+      "title": "InternVL2.5: Expanding Performance Boundaries of Open-Source Multimodal Models with Model, Data, and Test-Time Scaling",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "2412.05271",
+      "paper_type": "research",
+      "key_contribution": "InternVL2.5: progressively scaled vision encoder (InternViT-6B) + MLP connector + InternLM2; achieves frontier open-source multimodal performance.",
+      "idea_genome": {
+        "problem_genome": "Open-source VLMs lag proprietary models (GPT-4V, Gemini); bottleneck in vision encoder capacity and training data quality.",
+        "mechanism_genome": "Scale vision encoder to 6B parameters (InternViT-6B); progressive training with dynamic high-resolution; curated multi-task instruction data at scale.",
+        "observation_genome": "InternVL2.5-78B achieves top open-source results on MMBench, MathVista, OCRBench, VideoMME; competitive with GPT-4o.",
+        "limitation_genome": "Still two-stage vision+language; inference overhead from large ViT; not natively trained on interleaved video+text; no audio modality."
+      }
+    },
+    {
+      "title": "InternVL-U: Democratizing Unified Multimodal Models for Understanding, Reasoning, Generation and Editing",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "arxiv_id": "2603.09877",
+      "paper_type": "research",
+      "key_contribution": "4B unified multimodal model supporting understanding, generation, and editing in a single framework; extends InternVL toward native image generation without separate generative model; outperforms unified baselines 3× larger such as BAGEL-14B.",
+      "idea_genome": {
+        "problem_genome": "Two-stage VLMs (InternVL2.5) separate understanding and generation; no single open-source model unifies all four tasks (understanding, reasoning, generation, editing) efficiently.",
+        "mechanism_genome": "Modality-specific design with decoupled visual representations and reasoning-focused data synthesis pipeline; integrates understanding VLM with image generation capability in a unified 4B framework.",
+        "observation_genome": "InternVL-U 4B consistently outperforms unified baseline models >3× larger; maintains strong comprehension abilities while enabling generation and editing.",
+        "limitation_genome": "4B scale trades off against frontier-level performance; unified architecture has not been demonstrated at 70B+ scale where specialized models still dominate on both understanding and generation benchmarks."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "CLIP's visual representations radiated to VLM generation task: frozen NFNet-F6 vision encoder (pretrained with contrastive loss) used as foundation for language-conditional visual reasoning via cross-attention."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Simplifies Flamingo's Perceiver Resampler to a single linear projection; same frozen-encoder + bridge + LLM paradigm, but dramatically simpler and open-source."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Dynamic high-resolution tiling addresses LLaVA's resolution limitation; same architecture (CLIP + projection + LLM), extends input processing."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Combines dynamic resolution (LLaVA-NeXT) with scaled vision encoder (InternViT-6B inspired by earlier work) and progressive multi-task training into a unified open-source frontier model."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "InternVL-U hybridizes InternVL2.5's understanding VLM with image generation capability; fuses two previously separate lineages (understanding VLMs and generative image models) into a single unified 4B framework."
+    }
+  ],
+  "open_question": "InternVL-U unifies understanding and generation but at 4B scale trades off against frontier-level performance. What architecture and training regime would enable a frontier-scale multimodal model to support understanding, reasoning, generation, and editing without catastrophic cross-task interference, modality imbalance, or safety regressions compared with specialized systems?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computer Vision / Multimodal Learning."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Adaptive Radiation": 1,
+    "Mutation": 2,
+    "Hybridization": 2
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "InternVL-U: Democratizing Unified Multimodal Models for Understanding, Reasoning, Generation and Editing",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "identifier": "2603.09877",
+      "unresolved_gap": "4B scale trades off against frontier-level performance; unified architecture has not been demonstrated at 70B+ scale where specialized models still dominate on both understanding and generation benchmarks.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

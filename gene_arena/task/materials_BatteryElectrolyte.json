@@ -1,0 +1,205 @@
+{
+  "trace_id": "materials_BatteryElectrolyte",
+  "domain": "materials",
+  "direction": "Battery Materials and Solid-State Electrolytes",
+  "subfield": "Materials Science / Energy Storage",
+  "frontier_justification": "This direction remains a May 2026 frontier because solid-state batteries need electrolytes that satisfy several coupled constraints at once: room-temperature ionic conductivity, phase stability, Li-metal and cathode interface compatibility, dendrite suppression, and manufacturable synthesis. ML-guided high-entropy garnet discovery broadens the search space, but closed-loop, interface-aware, synthesis-aware validation remains unresolved.",
+  "verified": false,
+  "papers": [
+    {
+      "title": "A lithium superionic conductor",
+      "year": 2011,
+      "venue": "Nature Materials (2011)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper reported Li10GeP2S12 (LGPS), a sulfide solid electrolyte with exceptionally high lithium-ion conductivity approaching that of liquid electrolytes. It established a landmark target for atomistic modeling and later computational screening of superionic conductors.",
+      "idea_genome": {
+        "problem_genome": "How can one discover solid electrolytes with room-temperature Li-ion conductivity high enough for practical all-solid-state batteries?",
+        "mechanism_genome": "Experimental synthesis and structural/transport characterization of a new thio-LISICON-type crystal, identifying a framework that supports fast Li diffusion.",
+        "observation_genome": "LGPS exhibited very high bulk Li-ion conductivity, demonstrating that crystalline solids can reach liquid-like transport regimes.",
+        "limitation_genome": "The work did not provide a general computational discovery framework, and interfacial stability and broader chemical design rules remained unclear."
+      }
+    },
+    {
+      "title": "The Electrochemical Stability of Solid Electrolytes in Solid-State Batteries",
+      "year": 2015,
+      "venue": "ACS Applied Materials & Interfaces (2015)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper used first-principles thermodynamics to compute electrochemical stability windows of solid electrolytes and clarified that many candidate SSEs are only metastable against electrodes. It helped shift the field from conductivity-only optimization toward interface-aware design.",
+      "idea_genome": {
+        "problem_genome": "Even if a solid electrolyte has high ionic conductivity, will it remain chemically and electrochemically stable against battery electrodes?",
+        "mechanism_genome": "Density functional theory combined with grand-potential phase stability analysis to evaluate decomposition reactions and electrochemical windows.",
+        "observation_genome": "Many promising solid electrolytes were predicted to decompose outside limited voltage ranges, implying that interphases are intrinsic and must be engineered.",
+        "limitation_genome": "The framework was thermodynamic and largely equilibrium-based, leaving kinetics, transport across interphases, and mechanical failure unresolved."
+      }
+    },
+    {
+      "title": "Interface re-engineering of Li10GeP2S12 electrolyte and lithium anode for all-solid-state lithium batteries with ultralong cycle life",
+      "year": 2016,
+      "venue": "Nature Energy (2016)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper demonstrated that the LGPS/Li interface can be stabilized by interfacial engineering, enabling long-cycle solid-state battery operation. It provided direct evidence that interface chemistry, not just bulk electrolyte conductivity, governs practical performance.",
+      "idea_genome": {
+        "problem_genome": "How can highly conductive but interfacially reactive sulfide electrolytes be paired with lithium metal without rapid failure?",
+        "mechanism_genome": "Interfacial modification and cell engineering to suppress parasitic reactions and stabilize Li plating/stripping at the LGPS anode interface.",
+        "observation_genome": "The engineered interface significantly improved cycling stability, showing that unstable SSEs can still be usable if their interphases are controlled.",
+        "limitation_genome": "The approach was system-specific and did not yet provide predictive, scalable rules for screening interface-stable electrolyte chemistries."
+      }
+    },
+    {
+      "title": "Learning from the Crowd: A Comparative Study of Electrolyte Screening Methods",
+      "year": 2018,
+      "venue": "Journal of Chemical Information and Modeling (2018)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper benchmarked data-driven and physics-based strategies for electrolyte screening, illustrating how machine learning can accelerate materials down-selection relative to brute-force computation alone. It marked the transition from hand-curated DFT studies toward comparative ML-assisted screening workflows.",
+      "idea_genome": {
+        "problem_genome": "How can electrolyte candidate evaluation be accelerated beyond expensive one-by-one first-principles calculations and experiments?",
+        "mechanism_genome": "Comparative assessment of multiple screening models and descriptors using available electrolyte data to identify efficient predictive workflows.",
+        "observation_genome": "Data-driven models can recover useful screening performance and reduce the search burden, especially when combined with domain-informed descriptors.",
+        "limitation_genome": "Available datasets were limited and heterogeneous, and the study was not yet focused on large-scale generative discovery of solid-state electrolyte crystals."
+      }
+    },
+    {
+      "title": "Benchmarking the accuracy of machine learning models for the prediction of ionic conductivity in solid-state electrolytes",
+      "year": 2020,
+      "venue": "npj Computational Materials (2020)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper systematically evaluated machine-learning models for predicting ionic conductivity in solid electrolytes, clarifying what could and could not be learned from available data. It helped formalize conductivity prediction as a benchmark task for AI-driven SSE discovery.",
+      "idea_genome": {
+        "problem_genome": "Can machine learning reliably predict ionic conductivity of solid electrolytes well enough to guide discovery?",
+        "mechanism_genome": "Construction and benchmarking of supervised learning models on curated solid-electrolyte datasets with composition/structure-derived descriptors.",
+        "observation_genome": "ML models showed meaningful predictive power but also strong sensitivity to data quality, representation choice, and limited training diversity.",
+        "limitation_genome": "Conductivity prediction alone remained insufficient because interface stability, dendrite behavior, and synthesizability were still weakly captured."
+      }
+    },
+    {
+      "title": "A graph network for predicting chemical stability of solid-state battery electrolytes",
+      "year": 2021,
+      "venue": "Nature Communications (2021)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced a graph neural network model to predict chemical stability of solid-state electrolytes at scale, reducing dependence on expensive DFT calculations for decomposition analysis. It extended ML screening from conductivity-focused ranking to stability-aware discovery.",
+      "idea_genome": {
+        "problem_genome": "How can one rapidly evaluate the chemical stability of many candidate solid electrolytes without full first-principles calculations for each?",
+        "mechanism_genome": "Graph-network learning on crystal-structure representations to predict stability-related properties relevant to solid-state battery electrolytes.",
+        "observation_genome": "The model enabled scalable prediction of electrolyte stability and demonstrated that structure-aware ML can approximate key screening signals used in DFT workflows.",
+        "limitation_genome": "Predicted bulk stability still did not fully resolve interfacial reaction kinetics, dendrite initiation, or the generation of entirely new candidate chemistries."
+      }
+    },
+    {
+      "title": "MatterGen: a generative model for inorganic materials design",
+      "year": 2025,
+      "venue": "Nature (2025)",
+      "arxiv_id": "2312.03687",
+      "paper_type": "research",
+      "key_contribution": "This paper presented a generative model for inorganic crystal design that can propose novel materials conditioned on target properties, moving beyond screening known compounds. It is directly relevant to battery materials because it enables inverse design of new solid electrolytes and interphase-compatible compounds rather than only ranking existing databases.",
+      "idea_genome": {
+        "problem_genome": "How can materials discovery move from screening existing candidates to generating new inorganic crystals with desired battery-relevant properties?",
+        "mechanism_genome": "Property-conditioned generative modeling of crystal structures and compositions, followed by computational validation of generated candidates.",
+        "observation_genome": "The model generated novel, plausible inorganic materials with improved property targeting compared with prior search strategies, demonstrating practical inverse-design capability.",
+        "limitation_genome": "For battery electrolytes specifically, generative outputs still require robust validation for ionic conductivity, interface stability, dendrite resistance, and synthesizability under realistic processing conditions."
+      }
+    },
+    {
+      "title": "Cation-Disordered High-Entropy Garnet Structures as Solid-State Electrolytes for All-Solid-State Batteries: Machine Learning-Driven Discovery.",
+      "year": 2025,
+      "venue": "ACS Applied Materials and Interfaces",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Paper B introduces a machine-learning-driven discovery framework for identifying cation-disordered high-entropy garnet solid-state electrolytes with promising properties for all-solid-state batteries across a vast compositional space.",
+      "idea_genome": {
+        "problem_genome": "Paper B addresses the difficulty of efficiently exploring and optimizing the enormous compositional space of high-entropy garnet solid-state electrolytes that is impractical to study using only experiments or DFT.",
+        "mechanism_genome": "Its core approach combines machine learning with the high-entropy, cation-disordered garnet design concept to predict and screen candidate electrolyte compositions. This hybrid strategy uses data-driven modeling to navigate complex multicomponent chemical spaces and prioritize promising SSE materials for further validation.",
+        "observation_genome": "The study finds that machine learning can successfully identify promising cation-disordered high-entropy garnet compositions, indicating this class of materials as a viable route toward high-performance solid-state electrolytes.",
+        "limitation_genome": "A key open challenge is that ML-predicted candidates still require thorough experimental and atomistic validation of ionic conductivity, phase stability, interfacial compatibility, and practical synthesizability."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "After the discovery of a superionic conductor with outstanding bulk transport, the field mutated toward first-principles analysis of whether such materials are electrochemically stable in real batteries. The focus expanded from conductivity maximization to decomposition and interface compatibility."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "The thermodynamic insight that many SSEs are unstable against electrodes led to a practical branch focused on interface engineering. This paper specialized the stability problem into experimentally controlling the LGPS/Li interface to enable long-lived cycling."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Once interface limitations became clear, the field broadened into faster candidate-screening methodologies rather than optimizing one chemistry at a time. ML-assisted electrolyte screening emerged as a scalable response to the growing design space."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Comparative screening studies evolved into targeted benchmarking of ML for a core battery-electrolyte property: ionic conductivity. The emphasis shifted from general screening efficiency to quantifying predictive reliability on a canonical SSE task."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Having benchmarked conductivity prediction, the next step hybridized structure-aware graph learning with battery thermodynamics to predict chemical stability. This broadened ML screening from transport-only models to multi-criterion electrolyte evaluation."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Stability-prediction models still ranked existing compounds; generative modeling mutated the paradigm toward proposing entirely new inorganic crystals conditioned on desired properties. This is the transition from accelerated screening to inverse design."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "From A to B, the advance is a hybridization of generative/data-driven materials discovery with a domain-specific high-entropy garnet electrolyte design strategy, shifting from general inorganic generation to targeted ML-guided exploration of complex battery SSE chemistries."
+    }
+  ],
+  "open_question": "Machine-learning discovery of cation-disordered high-entropy garnet electrolytes expands the solid-state battery search space, but predicted candidates still require validation of room-temperature ionic conductivity, phase stability, Li-metal/cathode interface compatibility, dendrite suppression, and synthesizability. What closed-loop generative discovery system would optimize these coupled electrolyte and interface constraints together rather than treating them as separate proxy tasks?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Materials Science / Energy Storage."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 8 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 3,
+    "Speciation": 1,
+    "Adaptive Radiation": 1,
+    "Hybridization": 2
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Cation-Disordered High-Entropy Garnet Structures as Solid-State Electrolytes for All-Solid-State Batteries: Machine Learning-Driven Discovery.",
+      "year": 2025,
+      "venue": "ACS Applied Materials and Interfaces",
+      "identifier": "N/A",
+      "unresolved_gap": "ML-guided high-entropy garnet discovery expands the candidate space, but practical solid-state electrolytes still need joint validation of conductivity, stability, interfaces, dendrite suppression, and synthesizability.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

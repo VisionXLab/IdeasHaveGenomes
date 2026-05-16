@@ -1,0 +1,662 @@
+[
+  {
+    "instance_id": "T4-08_citation_consistency_0016",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B synthesizes and categorizes various attacks, including those exploiting microarchitectural vulnerabilities like LVI, to provide a comprehensive overview of SGX security failures, moving from specific attack mechanisms to a broader understanding of attack surfaces.\"\n\nPaper Y's genes:\n G1. LVI is a transient-execution attack that induces faults or assists on victim loads and arranges microarchitectural state so attacker-controlled stale values are forwarded into the victim’s transient dataflow, which is then used to encode secrets into side channels such as the cache\n G2. This paper targets the problem of extracting secrets from isolated or protected code during transient execution, especially in trusted-execution environments such as enclaves.\n G3. The attack depends on creating specific fault/assist conditions and precise microarchitectural forwarding states at suitable victim load sites, which constrains exploitability and makes deployment highly platform- and code-path-dependent.\n G4. Compared with prior speculative attacks that mainly mistrained control flow or exploited victim-initiated secret-dependent accesses, this work changes the attack model by actively injecting the value consumed by a transient load to steer the victim’s speculative computation.\n G5. The key insight is that before a faulting or assist-generating load is architecturally resolved, dependent transient instructions can consume injected microarchitectural values and thereby leak victim secrets even from enclave-like protected regions.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n B. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n C. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "B": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.",
+      "C": "Paper X proposes an alternative solution in the same problem niche as Paper Y."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "MUTATED",
+        "G3": "LOST",
+        "G4": "MUTATED",
+        "G5": "LOST"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0043",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B significantly refines the cache side-channel attack methodology by introducing a more precise and robust technique (FLUSH+RELOAD) specifically targeting the L3 cache, building upon the foundational concept of cache-timing attacks established in Paper A.\"\n\nPaper Y's genes:\n G1. A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache behavior\n G2. This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\n G3. The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-table implementations.\n G4. Compared with earlier side-channel work that inferred only coarse implementation properties or relied on more direct leakage sources, this paper shows full practical attackability of a specific mainstream AES software implementation using only aggregate remote-style timing tied to cache effects.\n G5. The key insight is that AES T-table software implementations leak key-dependent timing because secret-influenced table indices determine cache-line residency and thus total encryption time, even when only external timing is observed.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n B. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n C. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "B": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "C": "Paper X proposes an alternative solution in the same problem niche as Paper Y."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "LOST",
+        "G3": "MUTATED",
+        "G4": "LOST",
+        "G5": "LOST"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0020",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper A focuses on learning motion representations for video understanding, while Paper B addresses high-performance visual tracking using a Siamese region proposal network; both were published in the same year and tackle distinct computer vision problems without direct dependency or sequential evolution.\"\n\nPaper Y's genes:\n G1. It introduces an end-to-end architecture that embeds a differentiable frame-to-frame motion estimation module inside a video recognition network so pixel-level temporal displacement features and appearance features are learned jointly under the final recognition loss\n G2. This paper targets video understanding tasks such as action or event recognition that require effective modeling of motion across frames.\n G3. Because the motion representation is optimized only through downstream recognition supervision rather than direct motion labels, the learned displacement features may be less explicitly accurate or interpretable as general-purpose optical flow.\n G4. Compared with prior two-stage video systems and tracking-focused motion models, this work replaces external optical-flow preprocessing with an integrated trainable motion-estimation component coupled directly to the recognition network.\n G5. The paper finds that learning motion representations jointly with recognition yields more efficient and better task-aligned video features than using separately precomputed optical flow or handcrafted temporal pipelines.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n B. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n C. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "B": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "C": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "MUTATED",
+        "G3": "LOST",
+        "G4": "MUTATED",
+        "G5": "LOST"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0027",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper A introduces a disk-optimized data structure for write-intensive workloads, while Paper B introduces a main-memory optimized data structure for efficient indexing, addressing different but complementary aspects of database performance.\"\n\nPaper Y's genes:\n G1. The Log-Structured Merge-Tree (LSM-Tree) buffers updates in an in-memory sorted component and periodically merges them into a hierarchy of larger on-disk sorted components, reconciling newer and older entries in batch to turn random updates into sequential writes\n G2. This paper targets high-performance indexing and storage for databases with write-heavy workloads dominated by inserts, updates, and deletes while still supporting lookups and range queries.\n G3. The design increases read-path complexity because queries may need to search multiple components and rely on background merge maintenance, so read latency and lookup cost can worsen relative to a single balanced tree.\n G4. Compared with prior immediate-update balanced on-disk tree structures, this work replaces per-update in-place rebalancing and random disk writes with deferred propagation through multi-level sorted components merged in large batches.\n G5. The key insight is that batching and merging updates across sorted levels exploits the large sequential-over-random disk I/O advantage, yielding much higher sustained write throughput and lower amortized update cost than update-in-place balanced trees.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n B. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n C. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "B": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "C": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "MUTATED",
+        "G3": "LOST",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0044",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B applies the understanding of CSP's limitations and the prevalence of client-side vulnerabilities, as highlighted in Paper A, to investigate the real-world impact of persistent client-side XSS.\"\n\nPaper Y's genes:\n G1. It combines a systematic empirical analysis of deployed CSP host whitelists with a capability-oriented CSP redesign in which individual scripts are explicitly trusted via cryptographic or structural signals and can safely delegate loading to their descendants through inheritance rules instead of origin allowlists\n G2. This paper targets the problem of securing client-side script execution and resource loading on the web under Content Security Policy deployments.\n G3. The proposed capability-based redesign depends on explicit script trust annotations and inheritance semantics, leaving open the practical challenge of broad deployment and migration from existing whitelist-centric CSP configurations.\n G4. Compared with prior CSP approaches that grant execution based on approved source origins, this work replaces location-based trust with per-script trust and delegated loading, motivated by an empirical demonstration that host whitelists are fundamentally brittle.\n G5. The study finds that real-world whitelist-based CSPs are frequently bypassable because trusted origins often expose attacker-influenceable endpoints such as JSONP, redirects, uploads, and hosted content that can be chained into arbitrary script execution.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n B. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n C. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X proposes an alternative solution in the same problem niche as Paper Y.",
+      "B": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "C": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction."
+    },
+    "gold_answer": {
+      "claim_label": "B",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "MUTATED",
+        "G3": "LOST",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0040",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper A focuses on a specific application of computer vision (maritime panoramic perception for autonomous surface vehicles), while Paper B introduces a new evaluation metric for a different computer vision task (semantic Human-Object Interaction open-vocabulary evaluation), indicating they are developing along separate but related lines within the broader field.\"\n\nPaper Y's genes:\n G1. It proposes a joint panoramic perception framework that simultaneously performs multi-camera video stitching and object detection with shared cross-view geometric alignment, temporal feature association\n G2. detection-aware fusion to build temporally consistent panoramas while preserving object-level detail\n G3. This paper targets wide-field maritime visual perception for autonomous surface vehicles, specifically improving navigation-relevant scene understanding and target recognition under unstable horizons, reflections, and scale-varying objects.\n G4. The framework appears to depend on accurate multi-camera alignment and temporally coherent motion cues, so performance may degrade when calibration is poor or when severe scene dynamics break the assumed consistency used for joint stitching and detection.\n G5. Compared with prior maritime or generic spatio-temporal pipelines that first stitch views and then run detection as separate stages, this work changes the design to a unified detection-aware panoramic video model with shared temporal features.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n B. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n C. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "B": "Paper X proposes an alternative solution in the same problem niche as Paper Y.",
+      "C": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new."
+    },
+    "gold_answer": {
+      "claim_label": "C",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "LOST",
+        "G3": "LOST",
+        "G4": "LOST",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0022",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B provides a comprehensive survey and future outlook on Approximate Query Processing, integrating and generalizing concepts from specific research like AQP++ (Paper A) into a broader understanding of the field.\"\n\nPaper Y's genes:\n G1. AQP++ is a hybrid interactive analytics system whose planner jointly selects and uses precomputed aggregate views with online approximate query processing, treating stored aggregates as control variates, partial answers, or fallbacks to optimize latency, storage\n G2. This paper targets low-latency interactive analytical query answering for aggregation-heavy workloads where exact execution is too slow and pure approximation is unreliable on some queries or groups.\n G3. The approach depends on having representative workload structure to choose useful aggregates offline, so its benefits are reduced for ad hoc queries that are poorly covered by the precomputed view set.\n G4. Compared with prior AQP systems centered on generic samples or synopses, this work changes the architecture to tightly integrate aggregate precomputation and runtime approximation under a single planning framework rather than treating them as separate accelerators.\n G5. The key insight is that workload-aware precomputed aggregates substantially improve approximate answers, especially for varying selectivities and group-by queries with many small or rare groups where sampling-only AQP is unstable.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n B. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n C. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "B": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "C": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "MUTATED",
+        "G3": "LOST",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0054",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B challenged the validity of gradient-masking-based defenses against adversarial examples by demonstrating that obfuscated gradients create a false sense of security, directly undermining defenses that appeared robust under the C&W attack framework introduced in Paper A.\"\n\nPaper Y's genes:\n G1. DeepFool iteratively linearizes the classifier around the current input and, in the binary or multiclass case, computes the smallest norm-bounded step to the nearest locally affine decision boundary, repeating until the label changes\n G2. This paper targets the evaluation of local adversarial robustness of neural network classifiers by measuring how much input perturbation is needed to change a prediction.\n G3. Because the method relies on local first-order linearization and available gradients, its perturbation estimates can degrade for highly nonlinear regions and it is not directly applicable to non-differentiable models.\n G4. Compared with prior fast gradient-sign style attacks, the paper replaces a single coarse gradient-based perturbation with an iterative nearest-boundary computation under explicit L2 and L-infinity norm control, especially for multiclass classifiers.\n G5. The paper finds that this iterative boundary-linearization procedure produces substantially smaller and more accurate adversarial perturbations than earlier one-step gradient-based attacks, yielding a more faithful robustness estimate.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n B. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n C. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "B": "Paper X proposes an alternative solution in the same problem niche as Paper Y.",
+      "C": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "MUTATED",
+        "G3": "LOST",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0036",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"DDPMs replaced VAEs' encoder-decoder latent inference with an iterative Markov chain denoising process, offering a fundamentally different generative mechanism that achieves superior sample quality without posterior collapse.\"\n\nPaper Y's genes:\n G1. Variational Autoencoder (Auto-Encoding Variational Bayes): jointly train an encoder network that amortizes variational posterior inference and a decoder generative network by maximizing the ELBO, using the reparameterization trick to express latent sampling as a differentiable transformation of fixed noise\n G2. This paper targets scalable learning and inference for continuous latent-variable probabilistic generative models on large datasets.\n G3. The method as presented is mainly suited to continuous latent variables with simple approximate posteriors such as diagonal Gaussians, limiting expressiveness and making discrete latents less directly tractable.\n G4. Compared with earlier variational Bayes methods that used per-datapoint variational parameters or expensive iterative inference, this work replaces them with a shared inference network and backpropagation-friendly reparameterized sampling.\n G5. The paper shows that reparameterized amortized variational inference enables efficient low-variance end-to-end optimization of nonlinear latent-variable models and works well empirically for generative modeling and representation learning.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n B. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n C. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "B": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "C": "Paper X proposes an alternative solution in the same problem niche as Paper Y."
+    },
+    "gold_answer": {
+      "claim_label": "C",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "MUTATED",
+        "G3": "LOST",
+        "G4": "MUTATED",
+        "G5": "LOST"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Niche Competition",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0008",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B improves upon the end-to-end tracking paradigm by introducing iterative mixed attention, potentially offering a more robust and efficient approach compared to the diffusion-based point set tracking in Paper A.\"\n\nPaper Y's genes:\n G1. DiffusionTrack models the target state as a spatial point set and uses a template/search-conditioned diffusion denoising network to iteratively refine noisy point samples into a structured configuration from which the final object state is inferred\n G2. This paper targets visual object tracking under challenging conditions such as non-rigid deformation, occlusion, and ambiguous object boundaries.\n G3. Because the tracker predicts an intermediate point set and recovers the final object state from iterative denoising, it likely incurs extra inference complexity and depends on accurate point-to-object reconstruction compared with direct box predictors.\n G4. Compared with prior trackers that mainly regress bounding boxes or adapt large pre-trained backbones through task-specific fine-tuning, this work replaces direct state prediction with generative diffusion-based inference over structured point sets.\n G5. The paper finds that probabilistic point-set diffusion yields more robust tracking than deterministic box regression, especially in difficult scenarios where a single committed estimate is brittle.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n B. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n C. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "B": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "C": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "MUTATED",
+        "G3": "MUTATED",
+        "G4": "MUTATED",
+        "G5": "LOST"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0021",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"SQuAD provided a large-scale, crowdsourced benchmark dataset that operationalized the reading comprehension task introduced by Hermann et al., enabling standardized evaluation of machine comprehension models.\"\n\nPaper Y's genes:\n G1. It introduces a neural reader that uses recurrent sequence encoders for both document and query and predicts an answer token or span by conditioning the document representation on the query in an end-to-end supervised model trained from raw text\n G2. This paper targets machine reading comprehension, where a system must answer a question about a given document.\n G3. The model depends heavily on large-scale automatically constructed supervision and mainly predicts answers already present in the passage, limiting its applicability to settings without such data or with more abstractive reasoning demands.\n G4. Compared with prior work that mostly formulated the task or relied on shallow lexical matching and hand-engineered pipelines, this paper shifts to end-to-end learned recurrent document–query modeling with query-conditioned contextual reasoning.\n G5. The study finds that query-conditioned recurrent neural readers trained on large automatically generated document–question datasets substantially outperform earlier shallow matching and simpler baseline approaches on reading comprehension.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n B. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n C. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "B": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.",
+      "C": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope."
+    },
+    "gold_answer": {
+      "claim_label": "C",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "INHERITED",
+        "G3": "MUTATED",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0005",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper A focuses on data platform architecture (Lakehouse) for analytics, while Paper B examines the economic and equity implications of Large Language Models in healthcare, representing distinct research trajectories within computer science and its applications.\"\n\nPaper Y's genes:\n G1. The lakehouse architecture places transactional table metadata over open-format files in cloud object storage, using ACID transaction logs, schema enforcement, versioned snapshots\n G2. physical layout optimizations so multiple engines can read and write the same governed tables with warehouse-like semantics\n G3. This paper targets the problem of supporting both data warehousing and advanced analytics workloads over a single shared data repository in the cloud.\n G4. Because this work is primarily an architectural pattern rather than a fully standardized end-to-end system, it leaves open questions about cross-engine interoperability details and how uniformly warehouse-level performance and semantics can be achieved across implementations.\n G5. Compared with prior data lakes that exposed raw files and weak governance, this work introduces database-style table semantics and optimization directly on open object storage, and compared with classic warehouses it removes the need to copy data into proprietary closed storage systems.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n B. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n C. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "B": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "C": "Paper X proposes an alternative solution in the same problem niche as Paper Y."
+    },
+    "gold_answer": {
+      "claim_label": "B",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "LOST",
+        "G3": "MUTATED",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0013",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B improves upon Paper A by extending 6-DOF grasp generation to cluttered scenes and enhancing efficiency, likely through contact-based reasoning.\"\n\nPaper Y's genes:\n G1. 6-DOF GraspNet uses a conditional variational encoder-decoder that embeds object geometry together with successful grasp poses into a latent space and decodes latent samples conditioned on the object into multiple candidate end-effector poses\n G2. This paper targets generating feasible full 6-DOF robotic grasps for object manipulation directly from 3D object observations.\n G3. Because the method generates grasps from learned reconstruction and latent regularization rather than explicit physical evaluation, it still requires downstream ranking or feasibility filtering to select execution-ready grasps.\n G4. Compared with prior grasp pipelines that searched over synthetic grasp candidates and scored them with analytic quality metrics, this work replaces explicit search-and-score planning with conditional generative modeling of the grasp distribution from 3D observations.\n G5. The key finding is that learning a variational distribution over grasps captures multimodal valid grasp configurations for a single object and enables efficient sampling of diverse executable 6-DOF grasp hypotheses.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n B. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n C. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "B": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.",
+      "C": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains."
+    },
+    "gold_answer": {
+      "claim_label": "C",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "INHERITED",
+        "G3": "MUTATED",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Adaptive Radiation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0029",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B introduces a novel method for generating diverse and high-quality instruction-following data using the model itself, significantly improving upon the manual or semi-manual data collection methods often used in approaches like Paper A.\"\n\nPaper Y's genes:\n G1. Starting from pretrained autoregressive language models, the method performs supervised instruction tuning on a large mixture of heterogeneous datasets rewritten as natural-language instruction–output pairs within a unified text-to-text format\n G2. systematically varying model scale and task diversity\n G3. This paper targets improving language models' ability to follow natural-language instructions and generalize to unseen tasks across diverse NLP problem types.\n G4. The study relies on supervised instruction datasets reformulated from existing tasks, leaving open how well the approach covers real user intents and whether performance extends beyond the curated instruction mixtures used for finetuning and evaluation.\n G5. Compared with prior alignment approaches centered on preference optimization or AI-generated feedback, this work shifts to direct supervised finetuning on many natural-language-instructed tasks and evaluates scaling-driven cross-task generalization to unseen instructions.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n B. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n C. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "B": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "C": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "LOST",
+        "G3": "INHERITED",
+        "G4": "LOST",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0003",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Velox significantly improves upon the concepts of high-performance, columnar data processing and unified execution, which Apache Arrow championed, by extending them to a broader range of data processing systems and workloads at Meta.\"\n\nPaper Y's genes:\n G1. The approach redesigns dataframe internals around Apache Arrow-style standardized in-memory columnar representation using contiguous typed buffers, explicit schemas, bitmap nulls\n G2. variable-length/nested layouts to enable zero-copy sharing and vectorized execution across runtimes\n G3. This paper targets the inefficiency of high-level tabular data processing for common analytical workloads, especially in a popular pandas-like dataframe setting.\n G4. The work is largely a systems argument and architectural proposal centered on columnar analytical workloads, leaving compatibility with pandas-style object semantics and non-columnar use cases only partially resolved.\n G5. Compared with prior convenience-oriented dataframe structures and earlier cross-language memory efforts, this work shifts the focus to a full dataframe/systems redesign that makes Arrow's shared columnar layout the primary internal representation instead of boxed Python objects and serialized interchange.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n B. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n C. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "B": "Paper X proposes an alternative solution in the same problem niche as Paper Y.",
+      "C": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new."
+    },
+    "gold_answer": {
+      "claim_label": "C",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "MUTATED",
+        "G3": "MUTATED",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0019",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B improves upon the contextual analysis of security events by leveraging provenance graphs and representation learning for more comprehensive intrusion detection, building on the semi-supervised contextual analysis introduced in Paper A.\"\n\nPaper Y's genes:\n G1. DeepCASE is a semi-supervised sequence-modeling method that encodes preceding security event histories into latent context embeddings and uses sparse analyst labels to cluster, classify\n G2. propagate supervision across related alert sequences\n G3. This paper targets contextual analysis and prioritization of security alert streams in intrusion detection settings where many events are available but only a small fraction can be labeled by analysts.\n G4. The approach depends on the quality and informativeness of learned event-history embeddings, so rare or weakly contextualized attack behaviors may remain hard to distinguish when only limited labels are available.\n G5. Compared with prior intrusion-detection pipelines based on handcrafted rules, signatures, or shallow alert aggregation, this work replaces manual context engineering with learned sequence embeddings combined with semi-supervised label propagation from sparse analyst feedback.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n B. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n C. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "B": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "C": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope."
+    },
+    "gold_answer": {
+      "claim_label": "C",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "LOST",
+        "G3": "MUTATED",
+        "G4": "LOST",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0030",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B significantly improved upon the deep convolutional neural network architecture introduced in Paper A by exploring the effect of increased depth with very small convolution filters on classification accuracy.\"\n\nPaper Y's genes:\n G1. A deep supervised convolutional neural network is trained end-to-end on GPUs using stacked convolution and overlapping pooling layers, ReLU activations, fully connected classifiers, dropout, data augmentation\n G2. This paper targets large-scale natural image classification over the ImageNet benchmark's very large label space.\n G3. The model depends on heavy computation and multi-GPU model parallelism to train a very large architecture, making the approach resource-intensive and cumbersome to reproduce.\n G4. Compared with prior image recognition systems using hand-crafted descriptors or smaller tanh-based neural networks, this work increases network depth and capacity and combines ReLUs, dropout, aggressive augmentation, and GPU-based parallel training at ImageNet scale.\n G5. The study finds that scaling up deep learned hierarchical visual features with GPU training dramatically reduces top-1 and top-5 ImageNet classification error compared with hand-engineered and shallower baselines.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n B. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n C. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.",
+      "B": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.",
+      "C": "Paper X proposes an alternative solution in the same problem niche as Paper Y."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "INHERITED",
+        "G3": "MUTATED",
+        "G4": "MUTATED",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Mutation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0046",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B addresses a specific technical challenge (flaky tests) that can hinder the effective implementation and benefits of Continuous Delivery, a concept discussed in Paper A.\"\n\nPaper Y's genes:\n G1. A structured continuous delivery capability model decomposes end-to-end release engineering into coordinated practices spanning automated build, test, packaging, deployment, release orchestration, version-controlled infrastructure, environment standardization, feedback loops\n G2. risk-mitigation mechanisms such as staged rollout and rollback\n G3. This paper targets the problem of operationalizing frequent and reliable software releases across the full delivery lifecycle, beyond code integration alone.\n G4. Because the work is primarily a synthesized characterization rather than a concrete algorithm or controlled evaluation, it does not quantify the relative impact of individual delivery practices or provide a prescriptive implementation path.\n G5. Compared with earlier continuous integration-centered perspectives, this paper expands the focus to full-lifecycle delivery by explicitly incorporating provisioning, acceptance testing, dependency management, operational validation, and release governance.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n B. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n C. Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "B": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.",
+      "C": "Paper X takes Paper Y's core idea and diversifies it across multiple new applications or domains."
+    },
+    "gold_answer": {
+      "claim_label": "C",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "LOST",
+        "G3": "MUTATED",
+        "G4": "LOST",
+        "G5": "LOST"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Adaptive Radiation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0053",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B introduces neural network architectures with selective attention for relation extraction, significantly improving upon theational methods discussed in Paper A for knowledge base population.\"\n\nPaper Y's genes:\n G1. It uses a pipeline-oriented KBP system that decomposes the task into document retrieval, entity and mention detection, coreference, slot filling, temporal reasoning\n G2. weakly supervised relation extraction via aligning existing KB facts to text and schema-driven filtering and evidence aggregation across documents\n G3. This paper targets end-to-end knowledge base population from large, heterogeneous text collections by constructing entity entries with attributes and relations.\n G4. Because the approach is organized as separately optimized pipeline components with noisy weak supervision, it remains vulnerable to error propagation and does not fully solve joint inference across subtasks.\n G5. Compared with earlier sentence-level or narrow-inventory relation extraction work, this paper shifts to a full end-to-end KB population pipeline that jointly evaluates retrieval, entity resolution, slot filling, temporal normalization, and confidence aggregation over multiple documents.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n B. Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.\n C. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.",
+      "B": "Paper X inherits and modifies core mechanisms from Paper Y, keeping the same research direction.",
+      "C": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new."
+    },
+    "gold_answer": {
+      "claim_label": "A",
+      "source_genome_status": {
+        "G1": "LOST",
+        "G2": "MUTATED",
+        "G3": "MUTATED",
+        "G4": "LOST",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Speciation",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-08_citation_consistency_0025",
+    "task_type": "T4-08_citation_consistency",
+    "prompt": "Paper X evolved from Paper Y. Below is a description of how Paper X relates to Paper Y, followed by Paper Y's gene descriptions.\n\nEvolution context:\n\"Paper B, a challenge report, evaluates and compares various efficient super-resolution methods, including those potentially inspired by or building upon techniques like SwinIR, within a competitive framework.\"\n\nPaper Y's genes:\n G1. SwinIR uses a hierarchical Swin Transformer restoration network that performs self-attention within non-overlapping local windows, alternates shifted-window attention across layers for cross-window communication\n G2. combines this deep transformer trunk with residual connections, shallow feature extraction\n G3. This paper targets low-level image restoration tasks such as super-resolution, denoising, and compression artifact reduction.\n G4. Because SwinIR restricts attention to local windows and relies on shifted-window propagation rather than true global attention, long-range interactions are only captured indirectly and may remain suboptimal for very large spatial dependencies.\n G5. Compared with earlier CNN-based image restoration pipelines and heavier global-attention transformers, SwinIR replaces convolution-dominant deep reconstruction with residual Swin Transformer blocks using local window attention, shifted windows, and relative position bias tailored to restoration.\n\nPart 1: Which claim best describes the evolutionary relationship?\n\n A. Paper X proposes an alternative solution in the same problem niche as Paper Y.\n B. Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.\n C. Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nG1 = [INHERITED|MUTATED|LOST]\nG2 = [INHERITED|MUTATED|LOST]\nG3 = [INHERITED|MUTATED|LOST]\nG4 = [INHERITED|MUTATED|LOST]\nG5 = [INHERITED|MUTATED|LOST]\n",
+    "choices": {
+      "A": "Paper X proposes an alternative solution in the same problem niche as Paper Y.",
+      "B": "Paper X combines ideas from Paper Y with techniques from a different lineage to create something new.",
+      "C": "Paper X branches into a new subfield or application domain, diverging from Paper Y's original scope."
+    },
+    "gold_answer": {
+      "claim_label": "B",
+      "source_genome_status": {
+        "G1": "MUTATED",
+        "G2": "MUTATED",
+        "G3": "MUTATED",
+        "G4": "LOST",
+        "G5": "MUTATED"
+      }
+    },
+    "metadata": {
+      "level": "L2",
+      "capability": "Lineage Verification",
+      "source_domain": "cs",
+      "gold_dynamics": "Hybridization",
+      "original_task_type": "C3_citation_consistency",
+      "domain": "cs",
+      "display_title": "Citation Consistency"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "evidence_integrity"
+  }
+]

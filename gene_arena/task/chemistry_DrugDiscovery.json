@@ -1,0 +1,165 @@
+{
+  "trace_id": "chemistry_DrugDiscovery",
+  "domain": "chemistry",
+  "direction": "DrugDiscovery",
+  "subfield": "Computational Chemistry / Structure-Based Drug Design",
+  "frontier_justification": "Structure-based drug design via deep learning (DiffDock, AlphaFold3) is a 2025-2026 frontier in computational chemistry. The ability to generate drug-like molecules that bind specific protein pockets with high affinity is actively transforming pharmaceutical discovery pipelines.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Neural Message Passing for Quantum Chemistry",
+      "year": 2017,
+      "venue": "ICML 2017",
+      "arxiv_id": "1704.01212",
+      "paper_type": "research",
+      "key_contribution": "MPNN: unified message passing framework for molecular property prediction; state-of-the-art on QM9 quantum chemical properties.",
+      "idea_genome": {
+        "problem_genome": "No unified framework for applying deep learning to molecular graphs; diverse architectures prevent systematic comparison.",
+        "mechanism_genome": "Abstract message passing: node features updated by aggregating transformed neighbor messages; readout function pools atom features to molecular properties.",
+        "observation_genome": "MPNN achieves state-of-the-art on 11 of 13 QM9 targets; unifies ConvMol, Weave, and other graph NNs under single framework.",
+        "limitation_genome": "Predicts molecular properties from 2D graphs; cannot model 3D structure; no binding affinity prediction; no protein-ligand interaction."
+      }
+    },
+    {
+      "title": "Atomic Convolutional Networks for Predicting Protein-Ligand Binding Affinity",
+      "year": 2017,
+      "venue": "arXiv 2017",
+      "arxiv_id": "1703.10603",
+      "paper_type": "research",
+      "key_contribution": "AtomConv: applies MPNN-style graph convolutions to 3D protein-ligand complexes; predicts binding affinity from co-crystal structures.",
+      "idea_genome": {
+        "problem_genome": "MPNN predicts isolated molecular properties; drug discovery requires protein-ligand binding affinity from 3D complex structure.",
+        "mechanism_genome": "Atomic convolution over protein-ligand complex: atom features updated by distance-weighted 3D neighbor messages; separate encoders for protein and ligand atoms.",
+        "observation_genome": "AtomConv matches or exceeds Random Forest baselines on PDBbind binding affinity prediction; demonstrates DL applicability to structure-based design.",
+        "limitation_genome": "Requires co-crystal structure (rarely available for new targets); cannot predict docked pose; limited to small molecule ligands."
+      }
+    },
+    {
+      "title": "EquiBind: Geometric Deep Learning for Drug Binding Structure Prediction",
+      "year": 2022,
+      "venue": "ICML 2022",
+      "arxiv_id": "2202.05146",
+      "paper_type": "research",
+      "key_contribution": "EquiBind: predicts protein-ligand binding pose directly without exhaustive docking search; SE(3)-equivariant GNN for both protein and ligand.",
+      "idea_genome": {
+        "problem_genome": "Classical docking (AutoDock) requires exhaustive conformational search; AtomConv cannot predict binding pose, only score given poses.",
+        "mechanism_genome": "SE(3)-equivariant GNN processes protein and ligand separately; cross-attention predicts binding geometry; rigid-body alignment to protein pocket.",
+        "observation_genome": "1200× faster than traditional docking; competitive RMSD on PDBbind test set; enables screening large compound libraries.",
+        "limitation_genome": "Ligand flexibility poorly handled (rigid docking assumption); lower accuracy than physics-based methods on difficult targets; no uncertainty quantification."
+      }
+    },
+    {
+      "title": "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking",
+      "year": 2023,
+      "venue": "ICLR 2023",
+      "arxiv_id": "2210.01776",
+      "paper_type": "research",
+      "key_contribution": "DiffDock: diffusion over SE(3) ligand pose (translation, rotation, torsion angles); generates diverse binding pose hypotheses; surpasses all prior blind docking methods.",
+      "idea_genome": {
+        "problem_genome": "EquiBind produces single rigid-body pose; real binding is flexible; need multi-modal pose distribution over all degrees of freedom.",
+        "mechanism_genome": "Generative diffusion over 3D pose space: separate diffusion processes for translation (R³), rotation (SO(3)), and torsion angles; confidence ranking of generated poses.",
+        "observation_genome": "DiffDock achieves 38% top-1 success rate on PDBbind vs 23% for Glide (commercial); generates diverse pose hypotheses; state-of-the-art blind docking.",
+        "limitation_genome": "Slow sampling (multiple denoising steps); still requires known protein structure; cannot generate novel ligands; no co-design of protein and ligand."
+      }
+    },
+    {
+      "title": "Accurate structure prediction of biomolecular interactions with AlphaFold 3",
+      "year": 2024,
+      "venue": "Nature 2024",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-024-07487-w)",
+      "paper_type": "research",
+      "key_contribution": "AlphaFold3: unified diffusion-based model for structure prediction of proteins, DNA, RNA, small molecules, and their complexes; covers all biomolecular interaction types.",
+      "idea_genome": {
+        "problem_genome": "DiffDock requires separate protein structure prediction (AlphaFold2) and ligand docking; no unified model for all biomolecular complex types.",
+        "mechanism_genome": "Diffusion over 3D atomic coordinates for all molecule types; Pairformer trunk encodes inter-chain relationships; trained on PDB structures of all complex types.",
+        "observation_genome": "AlphaFold3 improves by 50% over best prior methods on protein-ligand binding structure prediction; covers DNA/RNA/small molecule complexes.",
+        "limitation_genome": "Not freely available for commercial drug discovery; does not model binding kinetics (only thermodynamic structures); cannot generate novel ligands."
+      }
+    },
+    {
+      "title": "Interaction-constrained 3D Molecular Generation Using a Diffusion Model Enables Structure-Based Pharmacophore Modeling",
+      "year": 2026,
+      "venue": "npj Drug Discovery 2026",
+      "arxiv_id": "N/A (npj Drug Discovery doi:10.1038/s44386-026-00040-x)",
+      "paper_type": "research",
+      "key_contribution": "DiffPharma: conditional diffusion model with interaction-specific neural networks generates drug candidates satisfying pharmacophore constraints derived from protein-ligand structures; moves beyond AlphaFold3 structure prediction to structure-conditioned molecular generation.",
+      "idea_genome": {
+        "problem_genome": "AlphaFold3 predicts binding structures but cannot generate novel ligands; DiffDock generates binding poses but not molecular structures; no model combines pharmacophore-constrained generation with 3D structural awareness.",
+        "mechanism_genome": "Conditional diffusion with interaction-specific neural networks that enforce pharmacophore constraints from protein-ligand structures; generates drug candidates satisfying geometric and chemical interaction requirements derived from the binding pocket.",
+        "observation_genome": "DiffPharma generates pharmacophore-satisfying 3D molecules conditioned on protein-ligand structural information; advances structure-based drug design beyond pose prediction to active molecular generation.",
+        "limitation_genome": "Optimizes for binding geometry (pharmacophore satisfaction) without explicit ADMET property optimization; binding geometry does not guarantee in vivo efficacy; multi-objective drug design (affinity + ADMET + synthesizability) not addressed."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "MPNN's molecular graph convolution framework radiates from isolated molecular property prediction to protein-ligand complex binding affinity prediction in 3D."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "EquiBind extends AtomConv from scoring given poses to directly predicting binding geometry; same SE(3)-equivariant GNN framework, adds cross-attention for pose prediction."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "DiffDock replaces EquiBind's direct regression of single pose with diffusion over the full SE(3) pose distribution; generates diverse multi-modal hypotheses — fundamentally new generative paradigm."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "AlphaFold3 hybridizes DiffDock's diffusion-over-coordinates with AlphaFold2's Evoformer structure prediction into a unified model covering all biomolecular complex types."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "DiffPharma radiates AlphaFold3's structure prediction framework to structure-conditioned molecular generation: leverages protein-ligand structural information not just for prediction but to actively generate pharmacophore-satisfying drug candidates."
+    }
+  ],
+  "open_question": "DiffPharma generates pharmacophore-constrained molecules but optimizes only for binding geometry without explicit ADMET property optimization. What mechanism would enable joint multi-objective drug design — simultaneously satisfying pharmacophore constraints, binding affinity, ADMET properties, and synthetic accessibility within a single diffusion framework?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Chemistry / Structure-Based Drug Design."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Adaptive Radiation": 2,
+    "Mutation": 1,
+    "Speciation": 1,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Interaction-constrained 3D Molecular Generation Using a Diffusion Model Enables Structure-Based Pharmacophore Modeling",
+      "year": 2026,
+      "venue": "npj Drug Discovery 2026",
+      "identifier": "N/A (npj Drug Discovery doi:10.1038/s44386-026-00040-x)",
+      "unresolved_gap": "Optimizes for binding geometry (pharmacophore satisfaction) without explicit ADMET property optimization; binding geometry does not guarantee in vivo efficacy; multi-objective drug design (affinity + ADMET + synthesizability) not addressed.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

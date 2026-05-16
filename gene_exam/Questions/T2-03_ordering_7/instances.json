@@ -1,0 +1,704 @@
+[
+  {
+    "instance_id": "T2-03_ordering_7_0045",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: Hyperband allocates a fixed budget across multiple successive-halving brackets, each starting with randomly sampled hyperparameter configurations evaluated at small resource levels and repeatedly promoting only the top fraction to larger budgets, with different brackets trading off number of configurations versus training depth.\n    Niche: This paper targets hyperparameter optimization when evaluating configurations is expensive and only limited computational budget is available.\n[2] Mechanism: NASNet uses reinforcement-learning-based neural architecture search to discover two repeatable cell types—normal and reduction cells—modeled as small directed acyclic graphs over a restricted operation set, learned on a proxy dataset and then stacked to form deep networks for larger tasks.\n    Niche: This paper targets scalable automated architecture design for large-scale image classification by learning models that can transfer from small benchmarks to larger visual recognition tasks.\n[3] Mechanism: Efficient Neural Architecture Search (ENAS) uses a recurrent controller trained with policy gradients to sample architectures as subgraphs of a single over-parameterized supergraph, with all sampled models inheriting and updating shared weights instead of being trained independently.\n    Niche: This paper targets the problem of efficiently searching for high-performing neural network architectures under limited computational budgets.\n[4] Mechanism: DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights with bi-level gradient descent on validation and training splits respectively.\n    Niche: This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\n[5] Mechanism: Network In Network replaces simple linear convolutional filters with per-location micro multilayer perceptrons implemented by stacked 1×1 convolutions and nonlinearities, and uses global average pooling instead of large fully connected classifier layers.\n    Niche: This paper targets image classification and visual recognition with convolutional neural networks.\n[6] Mechanism: Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs.\n    Niche: This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n[7] Mechanism: GoogLeNet/Inception uses repeated multi-branch modules that run 1×1, 3×3, 5×5, and pooling paths in parallel, applies 1×1 convolutions for dimensionality reduction before costly spatial filters, concatenates branch outputs, and trains with auxiliary classifiers plus global average pooling.\n    Niche: This paper targets large-scale image classification and visual recognition with deep convolutional networks.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        7,
+        1,
+        6,
+        2,
+        3,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0043",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: Passive dynamic walking models a two-link biped descending a shallow slope as a hybrid dynamical system with continuous gravity-driven swing/stance motion and discrete heel-strike collision maps, then analyzes periodic step cycles and their stability from the mechanism's physical parameters alone.\n    Niche: This paper targets the problem of explaining and achieving stable legged walking in a minimal bipedal system.\n[2] Mechanism: It introduces a hybrid feedback control framework that stabilizes periodic bipedal gaits by continuously regulating reduced-order gait variables and virtual joint constraints during swing and stance, while applying event-based corrections at foot impact and analyzing step-to-step stability with return maps.\n    Niche: This paper targets the problem of achieving robust, repeatable dynamic walking in underactuated bipedal robots subject to impacts and phase-dependent locomotion dynamics.\n[3] Mechanism: A quadruped system is built around an actuator with switchable transmission that actively changes gear ratio between high-torque stance mode and low-impedance, high-speed swing mode, combined with proximal actuation, lightweight compliant legs, and morphology tuned to spring-mass running templates.\n    Niche: This paper targets the design of a quadrupedal robot capable of highly dynamic running, bounding, and galloping with both strong stance support and rapid leg swing.\n[4] Mechanism: The method uses a hierarchical whole-body MPC architecture that optimizes reduced-order centroidal dynamics and contact forces over a receding horizon, then tracks the resulting plan with full-body inverse-dynamics torque control under friction, support, and actuator constraints.\n    Niche: This paper targets real-time whole-body locomotion and manipulation for a torque-controlled humanoid robot operating in cluttered, uneven, and only partially modeled environments.\n[5] Mechanism: Hybrid zero-dynamics embedding: the method imposes feedback-enforced virtual constraints on an asymmetric hopper and constructs an impact-invariant reduced manifold so the closed-loop hybrid system evolves exactly as a Spring Loaded Inverted Pendulum template.\n    Niche: This paper targets explaining and realizing low-dimensional hopping locomotion behavior within a more detailed asymmetric legged mechanism across stance and flight phases.\n[6] Mechanism: A balance-centered feedback control method uses simplified whole-body dynamics to regulate center-of-mass motion, body orientation, and ground reaction/contact forces across hybrid support phases instead of tracking fully precomputed gait trajectories.\n    Niche: This paper targets the problem of maintaining upright balance and disturbance-robust locomotion in articulated legged robots during standing and walking.\n[7] Mechanism: A sim-to-real reinforcement learning method trains a closed-loop policy entirely in simulation to map onboard state observations directly to low-level motor commands while using dynamics randomization, sensor/actuator noise injection, and reward shaping to induce transfer-robust locomotion.\n    Niche: This paper targets robust real-world quadruped locomotion that can be deployed directly on physical robots for stable, disturbance-tolerant movement.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        6,
+        1,
+        2,
+        5,
+        3,
+        4,
+        7
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0010",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It uses a one-class kernel support estimation method that maps data into a reproducing kernel feature space and solves a regularized convex optimization problem to find a decision boundary enclosing most observations while permitting a specified fraction to lie outside as outliers.\n    Niche: The paper targets unsupervised anomaly or novelty detection by estimating the region of feature space occupied by normal data in the presence of contamination.\n[2] Mechanism: Variational Autoencoder (Auto-Encoding Variational Bayes): jointly train an encoder network that amortizes variational posterior inference and a decoder generative network by maximizing the ELBO, using the reparameterization trick to express latent sampling as a differentiable transformation of fixed noise.\n    Niche: This paper targets scalable learning and inference for continuous latent-variable probabilistic generative models on large datasets.\n[3] Mechanism: Isolation Forest detects anomalies by building an ensemble of random binary partition trees from small subsamples, where each split picks a feature and threshold uniformly at random, and scoring points by their normalized average root-to-leaf path length.\n    Niche: This paper targets unsupervised anomaly detection in large, high-dimensional datasets.\n[4] Mechanism: It introduces the one-class SVM, which maps data into an RKHS with a positive definite kernel and solves a convex maximum-margin optimization that separates the samples from the origin with slack controlled by a parameter nu to estimate a high-density support region.\n    Niche: The paper targets unsupervised estimation of the support of a high-dimensional probability distribution, i.e. finding a compact region containing most normal data while rejecting outliers.\n[5] Mechanism: AnoGAN learns a Model-GAN on normal data only and, at inference, iteratively optimizes a latent code for each query so that the generated sample matches it, then scores anomaly as a weighted combination of input-space residual error and discriminator feature-space discrepancy.\n    Niche: This paper targets unsupervised detection of abnormal samples and localization of atypical regions in domains where training data are mostly normal, to support downstream marker discovery.\n[6] Mechanism: It applies a one-class SVM to sparse text features, learning a maximum-margin boundary around positive documents by separating them from the origin while permitting a controlled fraction of outliers via regularization.\n    Niche: This paper targets document classification settings where only examples of the target category are available and negative documents are scarce, noisy, or ill-defined.\n[7] Mechanism: Generative Adversarial Networks train a generator that maps simple random noise to data samples and a discriminator that classifies real versus generated inputs, with both optimized jointly through a minimax adversarial objective so the generator implicitly matches the data distribution without explicit likelihoods.\n    Niche: This paper targets unsupervised generative modeling of complex data distributions, especially learning to synthesize realistic samples from high-dimensional data such as images.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        6,
+        4,
+        1,
+        3,
+        2,
+        7,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0035",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It uses a systematic empirical workload characterization methodology that implements representative kernels and applications in CUDA and analyzes their behavior under the GPU execution model, including thread grouping, shared memory use, memory access regularity, branch divergence, latency hiding, and host-device transfer costs.\n    Niche: This paper targets understanding which classes of general-purpose applications achieve high performance on CUDA-programmed GPUs and which do not.\n[2] Mechanism: Fermi is a many-core CUDA architecture that scales streaming multiprocessors while adding coherent hardware-managed caches, configurable on-chip local memory, improved warp scheduling, stronger atomics and concurrency, ECC memory, and much higher double-precision capability.\n    Niche: This paper targets making GPUs broadly effective for general-purpose parallel computing workloads, especially irregular, memory-intensive, and high-performance scientific applications.\n[3] Mechanism: The Kepler GK110 architecture redesigns the streaming multiprocessor and memory subsystem by increasing warp residency, instruction issue width, register capacity, double-precision and atomic throughput, concurrent kernel execution, and cache/shared-memory flexibility to raise delivered performance per watt and programmability.\n    Niche: This paper targets high-performance, throughput-oriented computing for both graphics workloads and general-purpose scientific and parallel applications on an accelerator.\n[4] Mechanism: CUDA is a GPU programming system that exposes a hierarchy of kernels, threads, thread blocks, grids, and distinct memory spaces so programmers can write data-parallel code whose blocks are dynamically scheduled across multiprocessors and whose cooperating threads use fast shared memory with local synchronization.\n    Niche: This paper targets general-purpose high-throughput computation on graphics processors across a broad range of non-graphics workloads.\n[5] Mechanism: Brook for GPUs introduces a stream programming system in which programmers write kernels over stream elements while a compiler and runtime map streams to textures and kernels to fragment programs, managing execution through the graphics pipeline.\n    Niche: This paper targets making general-purpose data-parallel computation on graphics processors practical and accessible for non-graphics applications.\n[6] Mechanism: It uses a reverse-engineering microbenchmarking methodology in which many tightly controlled kernels and instruction-level timing probes independently stress specific Volta subsystems—pipelines, caches, shared memory, registers, schedulers, translation paths, synchronization, and tensor units—to infer undocumented latency, throughput, granularity, and contention properties.\n    Niche: This paper targets the problem of obtaining an accurate, programmer-relevant characterization of the NVIDIA Volta GPU's real microarchitectural behavior and performance limits.\n[7] Mechanism: The Volta V100 architecture introduces Tensor Cores inside each SM to execute mixed-precision matrix fused multiply-add operations at very high throughput, alongside a redesigned SM, cache/memory hierarchy, and high-bandwidth HBM2 memory system to keep those units fed efficiently.\n    Niche: This paper targets data-center acceleration for both high-performance scientific computing and deep learning training/inference workloads.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        4,
+        2,
+        1,
+        3,
+        7,
+        6
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0028",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: Delta Lake uses an append-only transaction log beside immutable columnar data files, with MVCC snapshot reconstruction, optimistic concurrency control for commits, and periodic checkpoints to materialize table metadata state.\n    Niche: This paper targets reliable transactional management of large analytical tables stored in cloud object-store-based data lakes.\n[2] Mechanism: It uses a machine-learning-based integration framework that converts value similarity, schema correspondences, structural context, source behavior, and transformation history into features for statistical match prediction while maintaining provenance links over candidate matches and intermediate decisions.\n    Niche: The paper targets integrating data from multiple heterogeneous sources by deciding which records, fields, and schema mappings correspond across sources.\n[3] Mechanism: TSIMMIS uses a mediator-wrapper architecture in which source-specific wrappers convert diverse source formats and access methods into a common self-describing object-like representation, and mediators then restructure, combine, and filter that representation to answer cross-source queries.\n    Niche: This paper targets practical interoperability and query answering across autonomous, heterogeneous information sources such as databases, files, and semi-structured repositories.\n[4] Mechanism: A declarative schema-mapping framework models data integration through source-to-target mappings, global schemas, and integrity constraints, and uses these logical specifications to define inference and query-answering semantics under alternative architectures such as mediated and warehouse-based integration.\n    Niche: This paper targets the problem of giving a formal semantic and logical account of integrating heterogeneous autonomous data sources into a coherent target view.\n[5] Mechanism: Goods is a shared metadata system that models datasets as first-class entities and automatically harvests identity, schema, ownership, usage, and derivation metadata from existing storage and pipeline systems into a graph for search, lineage, and governance workflows.\n    Niche: This paper targets organization, discovery, understanding, and governance of large numbers of heterogeneous internal datasets in a rapidly growing enterprise data ecosystem.\n[6] Mechanism: A semantic-values interoperability method attaches structured machine-interpretable semantic descriptors to exchanged data elements and uses semantic comparison plus value-level transformation rules to determine equivalence, comparability, or convertibility across local schemas without requiring a single global schema.\n    Niche: This paper targets interoperability among independently developed heterogeneous information systems that must exchange data despite differences in schemas, terminology, context, and units.\n[7] Mechanism: A two-pass approximate dictionary matching method first applies learned or hand-crafted string transforms to generate normalized forms or index keys for aggressive candidate pruning, then performs a more discriminative edit-sensitive or weighted similarity check on the reduced candidate set.\n    Niche: This paper targets efficient and accurate approximate dictionary matching under noisy lexical variation such as spelling, orthographic, morphological, and token-level distortions.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        6,
+        3,
+        4,
+        7,
+        2,
+        5,
+        1
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0024",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It introduces a neural multi-instance relation extraction model that encodes each sentence with word and entity-position features, then applies relation-conditioned selective attention mechanism to weight and sum sentence representations within an entity-pair bag for bag-level classification.\n    Niche: This paper targets distantly supervised relation extraction from text, especially the problem of predicting a relation for an entity pair when many aligned sentences are noisy or do not express the labeled relation.\n[2] Mechanism: It uses a position-aware attention mechanism neural model that builds sentence representations from word embeddings while computing attention mechanism weights from both token semantics and each token’s relative distance to the query entities, trained with task-specific supervised slot-filling data.\n    Niche: This paper targets relation extraction for knowledge-base slot filling, where the goal is to identify the correct filler for a query entity-slot pair from text.\n[3] Mechanism: It uses a pipeline-oriented KBP system that decomposes the task into document retrieval, entity and mention detection, coreference, slot filling, temporal reasoning, and confidence calibration, with weakly supervised relation extraction via aligning existing KB facts to text and schema-driven filtering and evidence aggregation across documents.\n    Niche: This paper targets end-to-end knowledge base population from large, heterogeneous text collections by constructing entity entries with attributes and relations.\n[4] Mechanism: The shortest path dependency kernel computes similarity between candidate entity pairs by extracting the shortest dependency path between them in a parsed sentence and applying a structured kernel over the sequence of path nodes and dependency edges annotated with lexical, POS, and dependency-label information.\n    Niche: This paper targets sentence-level semantic relation extraction between pairs of entities mentioned in text.\n[5] Mechanism: Distant supervision trains a multi-class relation classifier by aligning known entity-relation facts from a structured knowledge base with sentences in an unlabeled corpus that mention the corresponding entity pairs, using those co-occurrences as noisy positive and null-labeled examples with lexical and syntactic features.\n    Niche: This paper targets relation extraction from text without requiring manually labeled training sentences.\n[6] Mechanism: A multi-knowledge feature-based relation extraction method builds separate representations from lexical context, shallow syntactic cues, dependency structure, and relational links between arguments, then evaluates classifiers using each source alone and in combination.\n    Niche: This paper targets supervised classification of semantic relations between entity mentions in text.\n[7] Mechanism: It uses high-precision lexico-syntactic pattern matching over shallowly parsed text to detect noun phrases in diagnostic constructions like 'such as,' 'including,' appositives, and enumerations, then converts those contexts into candidate hyponym–hypernym pairs.\n    Niche: The paper targets automatic acquisition of hyponym–hypernym relations for building lexical taxonomies from unrestricted large text corpora.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        7,
+        4,
+        6,
+        5,
+        3,
+        1,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0027",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It performs a forensic statistical audit of the KDD Cup 99 dataset by quantifying duplicate and near-duplicate records, class imbalance, feature and class distributions, and train-test composition mismatches at record and attack-category levels.\n    Niche: This paper targets the problem of determining whether the KDD Cup 99 benchmark is a valid and rigorous evaluation resource for network intrusion detection methods.\n[2] Mechanism: Kitsune detects anomalies by extracting packet-level temporal statistics, partitioning correlated features into small groups, training an ensemble of tiny online autoencoders on those groups, and feeding their reconstruction errors into a second-stage autoencoder to produce an anomaly score.\n    Niche: This paper targets real-time unsupervised network intrusion detection from streaming packet traffic on resource-constrained devices.\n[3] Mechanism: It proposes a staged benchmark-generation framework that treats dataset creation as an engineering process with explicit requirements, environment modeling, benign behavior synthesis, attack injection, traffic capture, provenance-preserving labeling, and validation to ensure realism, coverage, reproducibility, and traceable ground truth.\n    Niche: This paper targets the problem of generating benchmark datasets for intrusion detection that faithfully represent operational network environments and support reliable evaluation.\n[4] Mechanism: A statistical anomaly detection method uses counting Bloom filters to compactly sketch packet or flow feature frequencies over successive time windows and applies statistical deviation tests to these compressed distributions to flag abnormal traffic patterns.\n    Niche: This paper targets real-time detection of anomalies in high-speed network traffic by characterizing changes in traffic behavior over time.\n[5] Mechanism: The approach builds a realistic testbed to capture benign and attack traffic, converts packet traces into labeled bidirectional network flows with statistical and header-derived features, and trains standard machine-learning classifiers for intrusion detection.\n    Niche: This paper targets the creation and evaluation of a modern benchmark for supervised network intrusion detection in enterprise-like traffic conditions.\n[6] Mechanism: It applies supervised statistical learning to network traffic features and evaluates multiple classifiers using train/test protocols that explicitly separate known attacks from temporally or semantically novel attack classes to measure out-of-distribution detection.\n    Niche: This paper targets network intrusion detection under realistic open-world conditions where future attack types may differ from those seen during training.\n[7] Mechanism: It implements a deep learning–based network traffic classifier over streamlined flow features within a continuous monitoring pipeline whose predictions are directly mapped to automated prevention actions such as blocking or filtering suspicious traffic.\n    Niche: This paper targets real-time network attack detection and immediate intrusion prevention in live traffic environments under strict latency constraints.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        4,
+        6,
+        3,
+        1,
+        5,
+        2,
+        7
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0015",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: The method mines CI and repository histories, repeatedly re-executes tests, and analyzes temporal failure patterns together with features from test code, execution traces, and build metadata to rank or classify tests as genuinely flaky rather than deterministic regressions.\n    Niche: This paper targets the problem of identifying and characterizing flaky tests in continuous integration, where tests intermittently pass and fail without code changes.\n[2] Mechanism: It uses large-scale mining of GitHub repository metadata, pull request histories, and discussion traces combined with statistical modeling that treats pull request acceptance and integration latency as separate dependent variables and relates them to technical, social, contributor-level, and project-level factors.\n    Niche: This paper targets understanding what determines whether GitHub pull requests are accepted and how long they take to be integrated in large-scale distributed collaborative software development.\n[3] Mechanism: It uses a large-scale repository-mining before/after observational design that identifies the point of continuous integration adoption in many projects and compares longitudinal changes in commit behavior, pull requests, issue handling, and testing activity around that event.\n    Niche: This paper targets understanding how the adoption of continuous integration affects surrounding software development practices in collaborative software projects.\n[4] Mechanism: An empirical repository-mining analysis operationalizes build maintenance effort by identifying and measuring version-history changes to build scripts, configuration files, dependency declarations, and related metadata, then comparing their evolution over time with general development activity.\n    Niche: This paper targets the problem of quantifying the maintenance burden of automated build systems in software projects practicing ongoing integration.\n[5] Mechanism: Continuous integration is a development practice in which developers merge small changes into a single shared mainline frequently, and every merge triggers an automated build and broad regression test suite with immediate repair of any broken build.\n    Niche: This paper targets the problem of reducing software integration risk and maintaining quality during iterative team-based development.\n[6] Mechanism: An empirical qualitative factor analysis treats the CI configuration as a first-class artifact and derives adoption-relevant factors by comparing practitioner-facing evidence across project integration setups.\n    Niche: This paper targets understanding which properties of continuous integration configurations affect whether CI is successfully adopted and accepted in software projects.\n[7] Mechanism: A structured continuous delivery capability model decomposes end-to-end release engineering into coordinated practices spanning automated build, test, packaging, deployment, release orchestration, version-controlled infrastructure, environment standardization, feedback loops, and risk-mitigation mechanisms such as staged rollout and rollback.\n    Niche: This paper targets the problem of operationalizing frequent and reliable software releases across the full delivery lifecycle, beyond code integration alone.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        4,
+        6,
+        2,
+        3,
+        7,
+        1
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0032",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: A web-architecture threat analysis decomposes XSS into attacker-controlled input injection, server reflection or storage of that input in generated pages, and browser execution of the resulting script under the trusted site's origin and privileges.\n    Niche: This paper targets the problem of understanding and characterizing cross-site scripting vulnerabilities in web applications and browsers.\n[2] Mechanism: Blueprint is a client-side system that interposes on document and DOM processing in the browser environment to mediate multiple script-introduction channels and enforce strict separation so untrusted strings cannot be reinterpreted as executable code via dynamic updates, event handlers, or script-bearing markup.\n    Niche: This paper targets prevention of cross-site scripting attacks in existing web applications running on legacy, unmodified browsers.\n[3] Mechanism: It introduces an attack-centric taxonomy method that classifies SQL injection attacks by the way malicious input transforms the syntactic or semantic structure of server-side SQL queries and explicitly maps each class to corresponding countermeasure families across validation, query construction, analysis, and runtime enforcement layers.\n    Niche: This paper targets the problem of understanding and defending against SQL injection vulnerabilities in web applications that construct database queries from untrusted input.\n[4] Mechanism: It presents a large-scale dynamic analysis system that crawls real websites, injects attacker-controlled inputs, tracks their propagation through client-side storage and application logic with taint-style monitoring, and validates whether they later reach executable DOM or script sinks after persistence and reactivation.\n    Niche: This paper targets the real-world prevalence and exploitability of persistent client-side cross-site scripting in deployed web applications, especially attacks that survive across page loads, sessions, or user interactions.\n[5] Mechanism: Noncespaces assigns fresh unpredictable tokens to fine-grained syntactic regions of a page and enforces in the browser that markup, attributes, and script-bearing contexts only accept content carrying the correct token relationships, so injected strings cannot cross parsing-context boundaries into active code.\n    Niche: This paper targets browser-side prevention of cross-site scripting by stopping untrusted page data from being interpreted in executable or otherwise privileged web document contexts.\n[6] Mechanism: The method is a CSRF request-binding defense that embeds unpredictable session-associated nonces in sensitive requests and validates them server-side, optionally supplemented by provenance checks such as the Referer header while exempting safe read-only operations.\n    Niche: This paper targets the problem of preventing cross-site request forgery against authenticated web applications, especially for state-changing user actions.\n[7] Mechanism: It combines a systematic empirical analysis of deployed CSP host whitelists with a capability-oriented CSP redesign in which individual scripts are explicitly trusted via cryptographic or structural signals and can safely delegate loading to their descendants through inheritance rules instead of origin allowlists.\n    Niche: This paper targets the problem of securing client-side script execution and resource loading on the web under Content Security Policy deployments.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        3,
+        6,
+        5,
+        2,
+        7,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0030",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: A large-scale self-supervised deep grasp predictor is trained on about 50K autonomous grasp attempts to map camera observations and candidate gripper motions to binary grasp-success probabilities, then selects at test time the motion with the highest predicted success.\n    Niche: This paper targets robotic object grasping in cluttered real-world settings using visual input to choose successful pick actions.\n[2] Mechanism: A deep grasp-success prediction model is trained on large-scale real robot trial data to score candidate end-effector motions from camera observations, and the robot executes actions in closed loop by choosing motions with highest predicted success probability.\n    Niche: This paper targets vision-based robotic grasping in cluttered, unstructured real-world environments.\n[3] Mechanism: 6-DOF GraspNet uses a conditional variational encoder-decoder that embeds object geometry together with successful grasp poses into a latent space and decodes latent samples conditioned on the object into multiple candidate end-effector poses.\n    Niche: This paper targets generating feasible full 6-DOF robotic grasps for object manipulation directly from 3D object observations.\n[4] Mechanism: A constructive grasp-synthesis optimization searches over contact placements and associated wrench constraints using geometric wrench-space structure and algebraic form-closure conditions to jointly enforce feasibility and maximize grasp-quality criteria without exhaustive contact enumeration.\n    Niche: This paper targets the synthesis of optimal frictionless form-closure grasps that immobilize rigid polygonal or polyhedral objects.\n[5] Mechanism: Dex-Net 2.0 trains a grasp-success predictor by rendering large synthetic depth datasets from 3D object models, sampling grasp-centered parallel-jaw candidates, labeling them with an analytic robustness metric under uncertainty, and using a convolutional architecture on local grasp-centered image crops to rank grasps at test time.\n    Niche: This paper targets robust parallel-jaw grasp planning for previously unseen objects from depth or point-cloud observations.\n[6] Mechanism: A geometric-algebraic grasp closure analysis models each contact by a local friction force cone, maps the combined contact forces into object wrench space, and tests closure through convex hull, spanning, and rank conditions in a coordinate-invariant rigid-body formulation.\n    Niche: This paper targets the problem of determining when a multi-contact robotic grasp can either resist arbitrary external disturbances or immobilize an object under frictional contact.\n[7] Mechanism: Contact-GraspNet takes a raw scene point cloud, learns per-point local surface features, and predicts dense contact-centered grasp hypotheses with orientation, gripper width, and quality that are then collision-filtered and ranked.\n    Niche: Generating 6-DoF robotic grasps for previously unseen objects in densely cluttered scenes from partial 3D observations.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        6,
+        4,
+        1,
+        2,
+        5,
+        3,
+        7
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0050",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: MTCIE uses a dual-branch encoder with CNNs, Vision Transformers, and CBAM/self-attention mechanism to extract modality-specific features, fuses them with a convolutional feature fusion module, and predicts Gaussian mean and standard deviation trained by negative log-likelihood.\n    Niche: Probabilistic estimation of tropical cyclone intensity from multi-source infrared and microwave satellite imagery.\n[2] Mechanism: The PMW-IE algorithm uses basin-specific stepwise multiple linear regression to fuse selected inner-core 85-GHz ice-scattering and passive microwave rain-rate metrics, with predictor and core-radius choices optimized for correlation and low collinearity.\n    Niche: Objective estimation of current and 6-hour future tropical cyclone maximum sustained surface wind in the North Atlantic and northeastern/central Pacific using TRMM TMI inner-core passive microwave observations.\n[3] Mechanism: It derives an axisymmetric physical relation linking intensity, size, and relative vorticity, decomposes TC fullness into an intensity-constrained critical fullness (TCF0) and an individualized ratio of fullness (Rf), and then statistically analyzes their distributions and co-evolution with intensification using quality-controlled global best-track data and a TCF–TCF0 diagram.\n    Niche: The paper addresses predicting and interpreting tropical cyclone intensification rate from storm wind structure by jointly modeling intensity, size configuration, and vorticity through the concept of TC fullness.\n[4] Mechanism: DeepMicroNet uses an AlexNet-inspired convolutional neural network with convolution, max-pooling, batch normalization, Leaky ReLU, and fully connected layers to map one- or two-channel microwave images to a softmax distribution over discrete MSW classes, trained with cross-entropy against uncertainty-aware target distributions and augmented by translations and rotations.\n    Niche: Probabilistic estimation of tropical cyclone maximum sustained wind intensity from 37- and 89-GHz passive microwave satellite imagery, including cases with partial storm coverage and center-location error.\n[5] Mechanism: It defines tropical cyclone fullness as TCF = 1 - (RMW/R17), groups storms into four fullness classes FS1-FS4, and evaluates the metric with correlation analysis, power-law fitting, and cluster analysis of structure-intensity evolution.\n    Niche: This paper addresses the problem of representing tropical cyclone wind structure in a way that better explains and predicts cyclone intensity and intensification than traditional single-radius metrics.\n[6] Mechanism: The method builds a 3-D convolutional architecture without pooling or dropout, fuses IR/WV/PMW channels with 3-D convolutions, applies CBAM channel and spatial attention mechanism sequentially, and uses fully connected layers for end-to-end regression after normalization, center cropping, and rotation augmentation.\n    Niche: Automatic estimation of tropical cyclone intensity from multichannel satellite imagery using the 3-D structure of IR, WV, and PMW observations.\n[7] Mechanism: DeepTCNet uses a VGGNet-style deep convolutional backbone with multitask learning and auxiliary physics-informed inputs such as TC fullness to jointly predict intensity metrics and multiple wind radii from preprocessed IR images.\n    Niche: Estimating tropical cyclone intensity and wind radii directly from infrared satellite imagery in an accurate, objective, and operationally practical way.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        6,
+        2,
+        7,
+        4,
+        1,
+        5,
+        3
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0036",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: Quickr is a lazy approximate query processing system that performs progressive sampling during query execution and incrementally refines result estimates with error bounds until a budget, deadline, or confidence-based stopping condition is met.\n    Niche: This paper targets approximate execution of complex, previously unseen ad-hoc analytical queries in big-data clusters under user-specified latency or accuracy goals.\n[2] Mechanism: Sample+Seek is a two-phase approximate query processing method that first estimates aggregates from a randomized sample and then adaptively seeks additional tuples in uncertainty-dominant regions until the estimated aggregate can be certified to satisfy a distribution-level precision guarantee.\n    Niche: This paper targets approximate aggregate query processing where the goal is to guarantee fidelity to the underlying result distribution under a user-specified precision target.\n[3] Mechanism: BlinkDB is a distributed approximate query processing system that precomputes a family of workload-aware multi-dimensional stratified samples and, at query time, uses an optimizer to choose the smallest sample predicted to meet a user-specified latency or accuracy bound while returning aggregates with confidence estimates.\n    Niche: This paper targets interactive ad hoc aggregation analytics over very large distributed datasets for users who require either bounded error or bounded response time.\n[4] Mechanism: It proposes a one-pass streaming wavelet synopsis that incrementally updates and retains only the most significant hierarchical wavelet coefficients of the evolving frequency signal to support approximate reconstruction and aggregate estimation without materializing the full data.\n    Niche: This paper targets approximate point and range aggregate query answering over high-speed frequency data streams under strict one-pass and bounded-memory constraints.\n[5] Mechanism: It introduces random sampling as a first-class relational operation, defining tuple-selection procedures with characterized inclusion probabilities under database storage constraints, including sequential access, limited memory, and both with- and without-replacement sampling, while analyzing interaction with relational operators.\n    Niche: This paper targets the problem of obtaining representative random subsets of large database relations for approximate analysis and query answering without fully materializing or scanning data in impractical ways.\n[6] Mechanism: The method constructs a congressional sample, a composite synopsis that combines a population-proportional sample with a group-coverage-oriented component and answers group-by aggregates by appropriately weighting sampled tuples.\n    Niche: This paper targets approximate evaluation of aggregate SQL group-by queries over very large or rapidly changing relational data where exact computation is too costly.\n[7] Mechanism: AQP++ is a hybrid interactive analytics system whose planner jointly selects and uses precomputed aggregate views with online approximate query processing, treating stored aggregates as control variates, partial answers, or fallbacks to optimize latency, storage, and estimation error.\n    Niche: This paper targets low-latency interactive analytical query answering for aggregation-heavy workloads where exact execution is too slow and pure approximation is unreliable on some queries or groups.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        4,
+        6,
+        3,
+        1,
+        2,
+        7
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0044",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It uses an adversarial representation-learning framework with an encoder, a target-label predictor, and a sensitive-attribute adversary, training the encoder to maximize target performance while minimizing the adversary’s ability to recover protected information from the latent code.\n    Niche: The paper targets learning fair predictive models whose internal features suppress sensitive-attribute information while remaining useful for the main task and reusable across downstream settings.\n[2] Mechanism: It introduces a certify-and-repair preprocessing method that tests disparate impact by measuring how accurately the protected class can be inferred from non-protected features, then optimizes a transformed representation—via rank-preserving distributional repair for ordered attributes—to reduce that predictability while retaining task utility.\n    Niche: This paper targets detecting and mitigating disparate impact in predictive decision-making when protected attributes are omitted but may still be encoded in other features.\n[3] Mechanism: The hard-debiasing method estimates a low-dimensional gender bias subspace from definitional male–female word pairs, then neutralizes designated gender-neutral words by projecting out that subspace and equalizes selected gendered word pairs so they are symmetrically positioned relative to the gender direction.\n    Niche: This paper targets the problem of mitigating socially problematic gender bias encoded in pretrained word embeddings while preserving useful semantic structure.\n[4] Mechanism: The method introduces equality of opportunity, a fairness constraint requiring equal true positive rates across protected groups conditional on the true label being positive, and analyzes satisfying it via group-specific thresholds on calibrated risk scores.\n    Niche: This paper targets the problem of defining and enforcing fairness in supervised binary classification for protected groups when decisions allocate beneficial outcomes.\n[5] Mechanism: Fairness-constrained classification augments empirical risk minimization with explicit optimization constraints based on statistical dependence between predictions, labels, and protected attributes, using tractable surrogate forms so standard classifier training can directly enforce group fairness criteria.\n    Niche: This paper targets supervised classification under group fairness requirements, where predictions should avoid undesirable dependence on sensitive attributes while retaining accuracy.\n[6] Mechanism: Fairness Through Awareness imposes a Lipschitz-style individual fairness constraint requiring that a randomized decision rule map nearby individuals under a task-specific similarity metric to similar outcome distributions while optimizing utility subject to that constraint.\n    Niche: This paper targets the problem of defining and enforcing fairness in classification and ranking decisions at the level of individuals rather than only protected groups.\n[7] Mechanism: A disparate-impact analysis framework evaluates fairness by comparing group-level selection rates and acceptance probabilities, then studies mitigation through constrained rules, threshold adjustment, and post hoc auditing rather than by changing the predictive model itself.\n    Niche: This paper targets the problem of identifying and mitigating unequal decision outcomes across protected groups in scoring, ranking, and threshold-based selection systems.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        7,
+        6,
+        2,
+        4,
+        3,
+        5,
+        1
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0019",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: Stochastic Variational Inference uses mean-field variational inference in conditionally conjugate exponential-family models, optimizing local variables for sampled observations and updating global variational parameters with unbiased mini-batch natural-gradient estimates of the ELBO under a decreasing step-size schedule.\n    Niche: This paper targets scalable approximate Bayesian posterior inference for hierarchical probabilistic models with continuous latent variables and very large datasets.\n[2] Mechanism: Latent Dirichlet Allocation is a hierarchical Bayesian generative model in which each document draws a topic-proportion vector from a Dirichlet prior, each word token draws a latent topic from that mixture, and the observed word is then drawn from the selected topic's multinomial word distribution, with approximate posterior inference via variational EM or sampling.\n    Niche: This paper targets the problem of discovering latent thematic structure in discrete data collections, especially representing documents that mix multiple topics.\n[3] Mechanism: Hierarchical Dirichlet Processes use a corpus-level Dirichlet process to generate a shared discrete set of atoms and document- or group-level Dirichlet processes centered on that random measure so each group has its own mixing proportions over the same potentially unbounded components, with posterior inference via Chinese-restaurant-franchise-style sampling and marginalization.\n    Niche: This paper targets grouped mixture modeling such as topic discovery across multiple documents when the number of shared latent components is unknown in advance.\n[4] Mechanism: Probabilistic programming represents a probabilistic model as an executable program with primitives for random choice and conditioning, and performs generic inference over the resulting execution traces using reusable algorithms such as exact, Monte Carlo, MCMC, importance, and variational methods.\n    Niche: This paper targets the problem of specifying complex stochastic models with latent variables and performing inference in a unified, general-purpose framework.\n[5] Mechanism: Black Box Variational Inference optimizes the ELBO with stochastic gradient ascent using Monte Carlo score-function gradient estimators from samples of the variational distribution, combined with variance-reduction baselines/control variates and requiring only evaluation of the differentiable joint log density and variational sampling.\n    Niche: This paper targets approximate posterior inference in complex probabilistic latent-variable models, especially nonconjugate models where model-specific variational updates are hard or unavailable.\n[6] Mechanism: Automatic Differentiation Variational Inference (ADVI) performs variational inference by transforming constrained latent variables to an unconstrained Euclidean space, sampling variational draws through a differentiable reparameterization from simple noise, and optimizing the ELBO with Monte Carlo pathwise gradients computed by reverse-mode automatic differentiation.\n    Niche: This paper targets scalable variational posterior inference for complex differentiable probabilistic models with continuous latent variables, including large-data settings.\n[7] Mechanism: Pyro is a deep universal probabilistic programming system built on PyTorch that represents models and variational guides as stochastic programs and performs inference via effect-handler-based program transformations plus stochastic-gradient ELBO optimization with automatic differentiation, amortization, and reparameterized estimators when possible.\n    Niche: This paper targets scalable probabilistic modeling and inference for latent-variable models that combine Bayesian uncertainty with deep neural network components in dynamic programs.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        2,
+        3,
+        1,
+        5,
+        6,
+        7,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0029",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It proposes an end-to-end machine reading system that combines statistical entity recognition, relation extraction, coreference resolution, and confidence-aware evidence aggregation to populate a growing knowledge base from web-scale corpora.\n    Niche: The paper targets open-domain machine reading: automatically constructing structured, queryable knowledge from large volumes of unstructured free text.\n[2] Mechanism: BiDAF uses contextual word-plus-character embeddings and recurrent encoders for passage and question, then builds a full passage-question similarity matrix to derive both context-to-query and query-to-context attention mechanism without early compression, fuses these token-level signals through modeling layers, and predicts answer start and end positions.\n    Niche: This paper targets extractive machine reading comprehension, where a system must answer a question by selecting a text span from a supporting passage.\n[3] Mechanism: It introduces a neural reader that uses recurrent sequence encoders for both document and query and predicts an answer token or span by conditioning the document representation on the query in an end-to-end supervised model trained from raw text.\n    Niche: This paper targets machine reading comprehension, where a system must answer a question about a given document.\n[4] Mechanism: Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads.\n    Niche: This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\n[5] Mechanism: SQuAD constructs a benchmark by collecting crowd-authored questions on Wikipedia passages and defining each answer as a contiguous text span in the passage, enabling supervised training and evaluation as span prediction with exact match and token-overlap metrics.\n    Niche: This paper targets large-scale machine reading comprehension from natural text passages, where a system must answer questions about a given passage.\n[6] Mechanism: It proposes a theory-driven NLIDB framework that decomposes processing into user-intent representation, schema-level semantic interpretation, and translation into executable formal database queries, mediated by constrained intermediate semantic forms.\n    Niche: This paper targets natural language access to relational databases by treating user questions over structured data as a well-defined question answering task.\n[7] Mechanism: A reusable QA test collection construction procedure adapts classical IR test-collection methodology by assembling natural-language questions, a large corpus, and human relevance judgments that mark answer-bearing documents or snippets while accounting for paraphrase, ambiguity, and multiple valid answer forms.\n    Niche: This paper targets the problem of creating a standardized evaluation benchmark for open-domain question answering over a fixed document corpus.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        7,
+        6,
+        1,
+        3,
+        5,
+        2,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0009",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: Noise-conditional score-based generative modeling learns a neural network to estimate the score (gradient of log density) of Gaussian-perturbed data at multiple noise scales and generates samples by annealed Langevin dynamics that progressively denoise random initialization from coarse to fine scales.\n    Niche: This paper targets high-quality generative modeling and sampling of complex multimodal data distributions without requiring explicit likelihood evaluation or adversarial training.\n[2] Mechanism: Diffusion probabilistic modeling defines a fixed forward Markov chain that gradually adds small Gaussian noise to data until it reaches a simple tractable distribution, then learns a parameterized reverse Markov chain with shared parameters by optimizing a variational log-likelihood bound to invert each noising step.\n    Niche: This paper targets unsupervised generative modeling of complex high-dimensional data distributions such as natural images.\n[3] Mechanism: It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous forward noising process and generating data by simulating the corresponding reverse-time SDE or its probability-flow ODE, with predictor-corrector refinement.\n    Niche: This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images.\n[4] Mechanism: It uses a denoising diffusion probabilistic model in which a U-Net-like network with attention mechanism is trained across many timesteps to predict added Gaussian noise under a carefully designed variance schedule, then samples by iteratively reversing the fixed noising process from pure noise.\n    Niche: This paper targets high-quality and high-coverage natural image synthesis with strong likelihood performance.\n[5] Mechanism: Latent Diffusion Models generate images by training a diffusion noise-prediction network in the continuous latent space of a pretrained perceptual autoencoder, with attention mechanism and cross-attention mechanism used to model spatial structure and inject conditioning signals such as text or class labels.\n    Niche: This paper targets efficient high-resolution image synthesis and controllable image generation without sacrificing visual fidelity.\n[6] Mechanism: Denoising Diffusion Probabilistic Models define a fixed Gaussian forward Markov chain that gradually corrupts data and train a timestep-conditioned neural network to parameterize the reverse chain by predicting the added noise under a simplified variational objective.\n    Niche: The paper targets high-quality likelihood-based generative modeling and sample synthesis for complex data distributions such as images.\n[7] Mechanism: Improved DDPM trains a diffusion generative model by reversing a fixed Gaussian noising process with a neural network that predicts the added noise at each timestep, while using a hybrid variational-plus-simplified denoising objective, learned or controlled reverse variances, and importance-sampled timesteps.\n    Niche: This paper targets high-quality and likelihood-competitive generative modeling of complex data, especially images, with more stable training and practical sampling.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        2,
+        1,
+        6,
+        3,
+        7,
+        4,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0026",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It adapts Prime+Probe to JavaScript by using high-resolution timers, large typed arrays, and architecture-aware strided memory accesses to build eviction and probing sets that monitor last-level cache occupancy without privileged cache instructions.\n    Niche: This paper targets remote microarchitectural side-channel surveillance of user and process activity from within the browser’s sandbox using ordinary web-delivered code.\n[2] Mechanism: FLUSH+RELOAD repeatedly flushes a chosen shared last-level-cache line with a cross-core invalidating instruction and then reloads the same shared address while timing the access, so fast reloads reveal that the victim accessed that exact cache line in the interim.\n    Niche: This paper targets high-resolution cross-core monitoring of a victim process's memory access and execution behavior for cache side-channel analysis.\n[3] Mechanism: A timing side-channel attack statistically correlates many observed execution times of modular exponentiation and related arithmetic with hypotheses about secret-dependent intermediate operations caused by branches, loop lengths, carries, and reduction behavior.\n    Niche: This paper targets the problem of recovering long-term secret keys from practical implementations of public-key cryptosystems such as Diffie-Hellman, RSA, and DSS.\n[4] Mechanism: It introduces a cache-timing attack that repeatedly measures access latency to chosen memory locations to detect cache hits and evictions caused by victim secret-dependent table lookups, then statistically maps those cache traces to key-dependent intermediate values.\n    Niche: This paper targets the extraction of secret information from software cryptographic implementations running on shared hardware by exploiting microarchitectural side channels.\n[5] Mechanism: A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache behavior.\n    Niche: This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\n[6] Mechanism: Rowhammer.js is a software-only rowhammer method that uses JavaScript-implemented cache eviction, high-resolution timing, and memory massaging with large typed arrays to force rapid DRAM row activations and induce bit flips from sandboxed code.\n    Niche: This paper targets the problem of triggering hardware memory disturbance faults remotely from within a standard web browser's JavaScript environment.\n[7] Mechanism: Meltdown performs a faulting load from kernel-mapped memory in user mode, lets transient out-of-order instructions use the fetched secret to touch a cache-line-indexed probe array, then recovers from the exception and decodes the secret via cache timing.\n    Niche: This paper targets the problem of extracting privileged kernel memory contents from an unprivileged user-space process on modern CPUs.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        3,
+        4,
+        5,
+        2,
+        1,
+        6,
+        7
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0031",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: AlphaCode uses a large autoregressive code model to massively sample candidate programs per task, then filters them through compilation and execution checks, clusters them by behavioral similarity, and ranks a small diverse subset likely to generalize.\n    Niche: This paper targets solving difficult competitive programming problems from natural-language statements and example input-output behavior under hidden-test evaluation.\n[2] Mechanism: CodeT samples multiple candidate programs and separately generates input-output test cases with the same modeling framework, then executes candidates on those generated tests and reranks or filters them by pass-rate-based consensus.\n    Niche: This paper targets natural-language-to-code generation, specifically selecting functionally correct programs for a given specification when no hand-written tests are available at inference time.\n[3] Mechanism: It introduces a decision-tree-based probabilistic code model that factorizes the probability of each code element into a sequence of learned context-conditioned branching decisions over sparse lexical and syntactic features.\n    Niche: This paper targets probabilistic modeling and next-element prediction for source code in the presence of large vocabularies and structured program context.\n[4] Mechanism: CodeBERT is an encoder-only transformer architecture jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings.\n    Niche: This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\n[5] Mechanism: A phrase-based statistical machine translation approach is trained on parallel code–pseudo-code pairs to learn token/phrase alignments, translation probabilities, and a target-side language model, then decodes pseudo-code by jointly optimizing faithfulness to source code and fluency.\n    Niche: This paper targets automatic generation of human-readable pseudo-code descriptions from program source code.\n[6] Mechanism: It uses a syntax-driven neural decoder that generates code as a sequence of grammar-constrained actions over an abstract syntax tree, predicting nonterminal expansions, production rules, and terminals while conditioning on the encoded input and the partially built tree, with copying or specialized handling for open-vocabulary tokens.\n    Niche: This paper targets general-purpose code generation from natural language or other source inputs into executable programs.\n[7] Mechanism: Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code, and systematically probes them across scales, prompts, and task formats using both open-ended generation and constrained prediction benchmarks.\n    Niche: This paper targets the evaluation of whether large language models can perform practically useful software engineering tasks such as code generation, completion, and problem solving.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        3,
+        6,
+        5,
+        4,
+        7,
+        1,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0014",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: ESRGAN trains a deep residual-in-residual super-resolution generator without batch normalization using a joint objective of adversarial loss, content consistency, and perceptual loss computed from high-level features of a pretrained recognition network against a discriminator on natural high-resolution images.\n    Niche: This paper targets single-image super-resolution with the goal of producing visually realistic high-resolution images rather than merely minimizing reconstruction distortion.\n[2] Mechanism: SRCNN uses a shallow fully convolutional network that takes an interpolated low-resolution image and jointly learns patch extraction, nonlinear low-to-high feature mapping, and image reconstruction end-to-end with supervised pixel-wise regression.\n    Niche: This paper targets single-image super-resolution, i.e. reconstructing a high-resolution image from a single low-resolution input.\n[3] Mechanism: EDSR uses a very deep residual convolutional architecture built from stacked residual blocks without batch normalization, performs most computation in low-resolution feature space, applies residual scaling to stabilize very deep/wide training, and upsamples near the output, with a multi-scale variant sharing one backbone across several scale factors.\n    Niche: This paper targets single-image super-resolution, i.e., reconstructing a high-resolution image from one low-resolution input across common enlargement factors.\n[4] Mechanism: It introduces an Efficient Sub-Pixel Convolutional Neural Network (ESPCN) that performs feature extraction entirely in low-resolution space and then uses a learned final convolution followed by a deterministic sub-pixel pixel-shuffle rearrangement to generate the high-resolution image.\n    Niche: This paper targets real-time single-image and video super-resolution, i.e., reconstructing high-resolution outputs from low-resolution visual inputs.\n[5] Mechanism: It proposes a very deep Residual Channel attention mechanism Network (RCAN) that stacks residual blocks into residual groups with short and long skip connections, inserts channel-attention mechanism modules using global pooling and gating to rescale feature channels, and performs upsampling only at the end in low-resolution feature space.\n    Niche: This paper targets single-image super-resolution, i.e., reconstructing a high-resolution image from a single low-resolution input.\n[6] Mechanism: SRGAN uses a deep residual convolutional generator trained with a joint loss that combines adversarial supervision from a discriminator with perceptual content loss measured in the feature space of a pretrained recognition network rather than only pixel-wise error.\n    Niche: This paper targets single-image super-resolution with the goal of recovering visually convincing high-resolution images from a single low-resolution input.\n[7] Mechanism: VDSR uses a very deep stack of small-kernel convolutional layers on an interpolated low-resolution image and trains the network to predict the high-frequency residual to the ground-truth image, with high learning rates stabilized by gradient clipping.\n    Niche: This paper targets single-image super-resolution, i.e. reconstructing a high-resolution image from one low-resolution input image.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        2,
+        7,
+        4,
+        6,
+        3,
+        5,
+        1
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0012",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: RadixSpline builds in a single sequential pass a bounded-error piecewise linear spline over sorted keys and a radix directory from key prefixes to spline segments, so a lookup predicts position with the spline and then performs a short bounded local search.\n    Niche: This paper targets fast and memory-efficient indexing for ordered immutable key-value datasets, especially where bulk loading and low-overhead point lookups are needed.\n[2] Mechanism: It introduces learned index structures, especially a recursive model index that trains hierarchical models to approximate the key-to-position mapping given by the data CDF and then uses tracked error bounds with bounded local search to recover exact results.\n    Niche: This paper targets the problem of building efficient database index structures for ordered key lookup, range access, and membership testing.\n[3] Mechanism: PGM-index models the monotone key-to-position map with piecewise linear segments bounded by a user-chosen error, organizes those segments recursively into a hierarchy for routing, and answers queries by prediction plus bounded local search while maintaining the structure under insertions and deletions.\n    Niche: This paper targets memory-efficient support for predecessor, membership, and range queries over ordered key sets under both queries and updates with worst-case guarantees.\n[4] Mechanism: DILI is a distribution-driven learned index that constructs and adapts its model partitions according to observed key-density patterns, allocating more modeling capacity to locally complex regions so key-to-position predictions have smaller residual search ranges and can be updated under distribution drift without full retraining.\n    Niche: This paper targets learned index lookup in dynamic key-value data with skewed, nonuniform, and shifting key distributions.\n[5] Mechanism: It introduces a seven-dimensional analytical taxonomy that decomposes hashing methods by hash behavior, bucket organization, collision handling, storage layout, workload sensitivity, update support, and query semantics, then uses this framework to map index design choices to query-processing requirements.\n    Niche: This paper targets the problem of understanding and comparing hashing-based access methods for database query processing across diverse workloads and system constraints.\n[6] Mechanism: ALEX is a hierarchical learned index that uses lightweight regression models to route keys to leaf nodes, where sorted arrays with reserved gaps absorb inserts locally, while cost models trigger local expansion, retraining, or splitting based on access and update behavior.\n    Niche: This paper targets dynamic ordered key-value indexing that must support efficient point lookups, range queries, insertions, and updates under changing workloads.\n[7] Mechanism: The method uses a learned piecewise key-to-rank predictor augmented with update-aware metadata and local correction structures that track positional shifts, so prediction is separated from efficient exact rank recovery after updates.\n    Niche: This paper targets dynamic ordered indexing for mutable datasets where lookups must return exact record positions or ranks under insertions and deletions.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        2,
+        5,
+        6,
+        1,
+        3,
+        7,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0046",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: Conditional Random Fields are globally normalized log-linear models that directly parameterize p(y|x) over entire label sequences using transition and state feature functions over labels and arbitrary overlapping input properties, with exact linear-chain inference via forward-backward and Viterbi dynamic programming.\n    Niche: This paper targets sequence segmentation and labeling problems where an observed input sequence must be assigned a structured output label sequence.\n[2] Mechanism: Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads.\n    Niche: This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\n[3] Mechanism: It uses a unified end-to-end neural network with shared learned word embeddings, multilayer nonlinear feature extraction over local windows or sentence-level contexts, and task-specific structured decoding when label dependencies matter, trained directly from raw or minimally processed text.\n    Niche: This paper targets a broad set of NLP sequence labeling and classification tasks, including POS tagging, chunking, named entity recognition, semantic role labeling, and language modeling.\n[4] Mechanism: A Model-B-based NER model fine-tunes the full bidirectional pretrained transformer architecture with subword tokenization and a simple token-level classification head to label each token in medical text end to end.\n    Niche: This paper targets named entity recognition in clinical and biomedical text, where entities must be identified in noisy, abbreviation-heavy medical narratives.\n[5] Mechanism: It reformulates NER as word-word relation classification by encoding tokens with a pretrained language model, scoring pairwise structural relations between token pairs, and decoding the resulting relation graph into entity spans and types.\n    Niche: This paper targets unified named entity recognition across both flat and nested annotation settings.\n[6] Mechanism: A neural end-to-end NER architecture composes each token from word embeddings plus character-level representations, contextualizes the sequence with a bidirectional recurrent encoder, and often decodes jointly with a sequence-level label model to enforce valid tag transitions.\n    Niche: This paper targets named entity recognition as a sequence labeling problem over sentences.\n[7] Mechanism: It extends a BiLSTM-CRF sequence tagger with hard parameter sharing across related tagging tasks and a jointly optimized semi-supervised auxiliary objective on unlabeled sequences so that shared lower layers learn general token representations while task-specific output layers handle each label space.\n    Niche: The paper targets low-resource sequence labeling tasks such as token-level tagging where annotated data is scarce but related tasks and unlabeled text are available.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        3,
+        6,
+        7,
+        2,
+        4,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0025",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: MnasNet uses reinforcement-learning-based neural architecture search over a hierarchical mobile convolutional architecture search space and optimizes a multi-objective reward that explicitly combines validation accuracy with measured on-device latency on the target hardware.\n    Niche: This paper targets the design of image classification neural networks that achieve high accuracy under real inference-time constraints on mobile devices.\n[2] Mechanism: Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs.\n    Niche: This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n[3] Mechanism: ProxylessNAS performs differentiable architecture search with a stochastic over-parameterized supernetwork in which each layer contains discrete operator candidates but only one binarized path is active at a time, and it alternates updates of shared weights and architecture parameters while optimizing an accuracy-plus-hardware-cost objective using a device-specific latency predictor.\n    Niche: The paper targets neural architecture search for image models that must be optimized directly for a specific target task and deployment hardware rather than through proxy settings.\n[4] Mechanism: Efficient Neural Architecture Search (ENAS) uses a recurrent controller trained with policy gradients to sample architectures as subgraphs of a single over-parameterized supergraph, with all sampled models inheriting and updating shared weights instead of being trained independently.\n    Niche: This paper targets the problem of efficiently searching for high-performing neural network architectures under limited computational budgets.\n[5] Mechanism: DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights with bi-level gradient descent on validation and training splits respectively.\n    Niche: This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\n[6] Mechanism: Once-for-All trains a single supernet with progressive shrinking across depth, width, kernel size, and input resolution so that many deployment-ready subnetworks can directly inherit weights, aided by in-place distillation and staged subnetwork sampling.\n    Niche: This paper targets efficient deployment of neural networks across diverse hardware platforms and resource constraints without needing to retrain or rerun architecture search for each target.\n[7] Mechanism: PC-DARTS performs differentiable architecture search by applying mixed candidate operations only to a randomly selected subset of feature channels, bypassing the rest with cheap identity-style propagation, and then using channel shuffling so all channels participate over time during joint optimization of architecture and network weights.\n    Niche: This paper targets reducing the memory and computation burden of differentiable neural architecture search while maintaining effective architecture optimization.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        2,
+        4,
+        5,
+        1,
+        3,
+        7,
+        6
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0041",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: SentiWordNet labels each WordNet synset with normalized positivity, negativity, and objectivity scores by semi-supervisedly expanding a small set of paradigm sentiment terms through lexical and gloss cues, running multiple sentiment classifiers, and combining their outputs so the three scores sum to one.\n    Niche: This paper targets the creation of a broad-coverage lexical resource for fine-grained opinion mining by assigning prior sentiment to individual word senses.\n[2] Mechanism: It uses a recursive neural tensor network over syntactic parse trees that composes child distributed representations into parent phrase vectors and predicts sentiment labels at every tree node with supervision on all labeled constituents.\n    Niche: This paper targets fine-grained sentiment analysis of sentences and phrases where sentiment depends on compositional semantic interactions such as negation, intensification, and contrast.\n[3] Mechanism: An attention mechanism-based bidirectional LSTM architecture encodes the sentence in both directions and computes an attention mechanism-weighted aggregation of hidden states, using word embeddings and position features to emphasize tokens most informative for the entity relation.\n    Niche: This paper targets sentence-level relation classification between two marked entities in text.\n[4] Mechanism: A sentence convolutional architecture encodes a sentence as a matrix of word embeddings, applies multiple 1D convolutional filters over contiguous token windows spanning the full embedding dimension, performs max-over-time pooling on each feature map, concatenates the pooled features, and feeds them to a softmax classifier with dropout and an ℓ2 norm constraint, optionally using static and trainable embedding channels.\n    Niche: This paper targets supervised sentence-level text classification across tasks such as sentiment and question categorization.\n[5] Mechanism: It uses a two-stage subjectivity-summarization pipeline in which sentence-level subjectivity scores are combined with inter-sentence coherence links in a source/sink graph and a minimum cut selects the optimal subjective extract, which is then fed to a standard polarity classifier.\n    Niche: This paper targets document-level sentiment classification for texts such as reviews that contain a mixture of opinionated and objective content.\n[6] Mechanism: It models each review as a high-dimensional sparse lexical feature vector and trains supervised classifiers such as Naive Bayes, maximum entropy, and support vector machines to predict positive versus negative polarity while comparing unigram, bigram, and POS-informed encodings.\n    Niche: This paper targets document-level binary sentiment classification of user-written reviews.\n[7] Mechanism: Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads.\n    Niche: This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        6,
+        5,
+        1,
+        2,
+        4,
+        3,
+        7
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0017",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: It uses an end-to-end trained multilayer convolutional neural network with local receptive fields, shared weights, alternating learned filtering and subsampling stages, and backpropagation to jointly optimize feature extraction and classification from raw pixels.\n    Niche: This paper targets document recognition, especially handwritten character and word reading within practical document-processing tasks.\n[2] Mechanism: DenseNet connects each layer within a dense block to all preceding layers by concatenating their feature maps, with each layer adding only a small number of new channels controlled by a growth rate and using bottleneck and transition layers for efficiency.\n    Niche: This paper targets accurate and efficient training of very deep convolutional networks for image recognition by addressing optimization and parameter-efficiency issues.\n[3] Mechanism: A deep supervised convolutional neural network is trained end-to-end on GPUs using stacked convolution and overlapping pooling layers, ReLU activations, fully connected classifiers, dropout, data augmentation, and model parallelism.\n    Niche: This paper targets large-scale natural image classification over the Data-I benchmark's very large label space.\n[4] Mechanism: GoogLeNet/Inception uses repeated multi-branch modules that run 1×1, 3×3, 5×5, and pooling paths in parallel, applies 1×1 convolutions for dimensionality reduction before costly spatial filters, concatenates branch outputs, and trains with auxiliary classifiers plus global average pooling.\n    Niche: This paper targets large-scale image classification and visual recognition with deep convolutional networks.\n[5] Mechanism: VGG uses a homogeneous deep convolutional architecture that stacks many small 3x3 convolutions, with occasional 1x1 convolutions and sparse pooling, followed by fully connected classification layers.\n    Niche: This paper targets large-scale image classification and visual recognition on datasets such as Data-I.\n[6] Mechanism: Model-R uses residual blocks that learn a residual function F(x) and add it elementwise to an identity or projected shortcut x, with bottleneck blocks for very deep models and global average pooling before the classifier.\n    Niche: This paper targets large-scale image recognition with very deep neural networks, addressing the training degradation that appears as depth increases.\n[7] Mechanism: Data-I constructs a hierarchical image dataset by mapping object categories to the WordNet lexical taxonomy, automatically harvesting candidate web images via query expansion and search, and then using distributed human verification to filter and label them at scale.\n    Niche: This paper targets the creation of a large-scale benchmark resource for visual object recognition spanning many categories and semantic levels.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        7,
+        3,
+        5,
+        4,
+        6,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-03_ordering_7_0022",
+    "task_type": "T2-03_ordering_7",
+    "prompt": "Below are 7 genomes from one lineage (RANDOM order). Only mechanism and niche shown.\n\n[1] Mechanism: The transformer architecture is an encoder–decoder architecture built entirely from stacked multi-head self-attention mechanism, encoder–decoder attention mechanism, and position-wise feed-forward layers, with positional encodings added to represent token order and masking used for autoregressive decoding.\n    Niche: This paper targets sequence transduction tasks such as machine translation that require modeling dependencies between input and output token sequences.\n[2] Mechanism: A large autoregressive transformer architecture decoder with causal masked self-attention mechanism is trained on massive web text using next-token prediction, and downstream tasks are performed by formatting inputs and desired outputs as a single text prompt for conditional generation without parameter updates.\n    Niche: This paper targets general-purpose zero-shot transfer across many NLP tasks using only raw text pretraining and no task-specific supervision.\n[3] Mechanism: GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters.\n    Niche: This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n[4] Mechanism: Constitutional AI trains an assistant with a written constitution by having the model self-critique and revise its answers under those rules for supervised finetuning, then generate constitution-based preference comparisons to train a preference model and optimize the assistant with reinforcement learning.\n    Niche: This paper targets the problem of making a conversational language model more harmless and aligned with explicit behavioral constraints during dialogue.\n[5] Mechanism: The method combines supervised fine-tuning on human-written instruction demonstrations with reinforcement learning from a learned reward model trained on pairwise human preference rankings, using a KL penalty to keep the policy close to the supervised model during policy optimization.\n    Niche: This paper targets adapting large language models to reliably follow natural-language instructions and align their outputs with human preferences for helpfulness, relevance, and harmlessness.\n[6] Mechanism: Starting from pretrained autoregressive language models, the method performs supervised instruction tuning on a large mixture of heterogeneous datasets rewritten as natural-language instruction–output pairs within a unified text-to-text format, while systematically varying model scale and task diversity.\n    Niche: This paper targets improving language models' ability to follow natural-language instructions and generalize to unseen tasks across diverse NLP problem types.\n[7] Mechanism: Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior.\n    Niche: This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n\nPart 1: Arrange them in correct chronological order (earliest -> latest).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number, sixth_genome_number, seventh_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        2,
+        3,
+        7,
+        5,
+        4,
+        6
+      ]
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "n": 7,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-17_ordering_7_minimal",
+      "display_title": "Seven-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  }
+]

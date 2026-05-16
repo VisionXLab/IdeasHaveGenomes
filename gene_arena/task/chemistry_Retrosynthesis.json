@@ -1,0 +1,250 @@
+{
+  "trace_id": "chemistry_Retrosynthesis",
+  "domain": "chemistry",
+  "direction": "Retrosynthesis",
+  "subfield": "Computational Chemistry / Retrosynthesis Prediction",
+  "frontier_justification": "AI-driven retrosynthesis prediction is one of the most impactful applications of deep learning in chemistry (2017-2025). The field has evolved from LSTM sequence models through template-based neural networks and graph-native methods to billion-scale generative pretrained transformers, with RSGPT (2025, Nature Communications) achieving 63.4% top-1 accuracy through pretraining on 10 billion synthetic reaction datapoints — representing a paradigm shift toward LLM-scale chemistry models.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models",
+      "year": 2017,
+      "venue": "ACS Central Science 2017",
+      "arxiv_id": "1706.01643",
+      "paper_type": "research",
+      "key_contribution": "First neural sequence-to-sequence model for retrosynthesis: treats retrosynthetic prediction as a machine translation problem from product SMILES to reactant SMILES using LSTM encoder-decoder; achieves 37.4% top-1 accuracy on USPTO-50k, comparable to rule-based expert systems.",
+      "idea_genome": {
+        "problem_genome": "Retrosynthesis planning — predicting which reactants produce a target molecule — traditionally relies on hand-coded reaction rules (expert systems) that are brittle, incomplete, and require extensive human curation of chemical knowledge.",
+        "mechanism_genome": "LSTM-based encoder-decoder sequence-to-sequence model; product molecules represented as SMILES strings (input) are translated to reactant SMILES (output); trained on 50,000 reactions from USPTO patent literature spanning 10 reaction types.",
+        "observation_genome": "Achieves 37.4% top-1 accuracy on USPTO-50k benchmark, performing comparably to rule-based expert systems (35.4%); demonstrates that retrosynthesis can be framed as a data-driven sequence translation problem without explicit chemical rules.",
+        "limitation_genome": "LSTM encoder-decoder lacks attention mechanism and struggles with long SMILES strings; limited to single-step retrosynthesis; no mechanism for handling stereochemistry; accuracy insufficient for practical synthesis planning."
+      }
+    },
+    {
+      "title": "Computer-Assisted Retrosynthesis Based on Molecular Similarity",
+      "year": 2017,
+      "venue": "ACS Central Science 2017",
+      "arxiv_id": "N/A (ACS Cent. Sci. 3(12):1237-1245)",
+      "paper_type": "research",
+      "key_contribution": "Template-based neural retrosynthesis using molecular fingerprint similarity: instead of generating SMILES strings, the model ranks known reaction templates by comparing molecular fingerprints of the query product to precedent reactions; achieves 74.1% top-10 accuracy on 5,000 test reactions from USPTO patent data.",
+      "idea_genome": {
+        "problem_genome": "Liu 2017's sequence-to-sequence approach generates reactant SMILES freely, which can produce chemically invalid molecules; an alternative paradigm is to leverage known reaction templates and use neural networks to select the most appropriate template for a given target molecule.",
+        "mechanism_genome": "Molecular fingerprint-based similarity model that retrieves and ranks reaction templates from a database of 40,000 precedent reactions; neural network learns to compute molecular similarity scores between target product and template preconditions; templates ensure chemical validity of predicted reactants.",
+        "observation_genome": "Achieves 74.1% top-10 accuracy on 5,000 test reactions; the template-based approach guarantees chemically valid predictions and provides interpretable reaction types, complementing the template-free sequence approach of Liu 2017.",
+        "limitation_genome": "Constrained to templates present in the training database — cannot predict novel reaction types not seen during training; template extraction requires cheminformatics preprocessing; the fingerprint similarity metric is a shallow representation of molecular reactivity."
+      }
+    },
+    {
+      "title": "Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction",
+      "year": 2019,
+      "venue": "ACS Central Science 2019",
+      "arxiv_id": "1811.02633",
+      "paper_type": "research",
+      "key_contribution": "Molecular Transformer: replaces LSTM with self-attention Transformer for chemical reaction prediction; achieves 90.4% top-1 accuracy on forward reaction prediction and sets new SOTA for retrosynthesis; provides uncertainty calibration via beam search likelihood.",
+      "idea_genome": {
+        "problem_genome": "The LSTM encoder-decoder in Liu 2017 lacks the capacity to capture long-range dependencies in molecular SMILES; attention mechanisms from NLP (Transformer) could dramatically improve reaction prediction accuracy but have not been adapted to chemistry.",
+        "mechanism_genome": "Standard Transformer encoder-decoder architecture applied to SMILES-to-SMILES translation; self-attention replaces LSTM recurrence, enabling direct modeling of long-range atom dependencies; beam search provides multiple predictions ranked by confidence; trained on USPTO reaction datasets.",
+        "observation_genome": "Achieves 90.4% top-1 accuracy on forward reaction prediction (far surpassing LSTM); sets new SOTA for single-step retrosynthesis; beam search confidence correlates well with prediction accuracy, providing uncertainty estimates.",
+        "limitation_genome": "Treats molecules as flat SMILES strings without explicit 2D/3D molecular structure; retrosynthesis accuracy still limited by SMILES representation ambiguity; no interpretability of which atoms/bonds change; cannot explain reaction mechanisms."
+      }
+    },
+    {
+      "title": "Retrosynthesis Prediction with Conditional Graph Logic Network",
+      "year": 2019,
+      "venue": "NeurIPS 2019",
+      "arxiv_id": "2001.01408",
+      "paper_type": "research",
+      "key_contribution": "Conditional Graph Logic Network (GLN): a conditional graphical model built on graph neural networks that treats reaction templates as logical rules and models the joint probability of rule selection and reactant generation; achieves state-of-the-art template-based retrosynthesis accuracy on USPTO-50k.",
+      "idea_genome": {
+        "problem_genome": "Coley 2017's fingerprint-based template retrieval uses shallow molecular representations; a deeper approach would treat template selection as probabilistic inference over a graphical model, jointly modeling the relationship between molecular graph structure, template applicability, and reactant feasibility.",
+        "mechanism_genome": "Conditional graphical model combining graph neural networks with logical rules derived from reaction templates; models the joint probability P(template, reactants | product) using message passing on molecular graphs; templates are represented as first-order logic rules governing bond changes.",
+        "observation_genome": "Achieves state-of-the-art accuracy among template-based methods on USPTO-50k; the probabilistic graphical model provides principled uncertainty estimates and interpretable template selection; outperforms both fingerprint-based retrieval and pure sequence models.",
+        "limitation_genome": "Still constrained to pre-extracted reaction templates — cannot discover novel reaction types; template extraction and canonicalization require significant cheminformatics engineering; the graphical model inference is computationally expensive for large template libraries."
+      }
+    },
+    {
+      "title": "Learning Graph Models for Retrosynthesis Prediction",
+      "year": 2021,
+      "venue": "NeurIPS 2021",
+      "arxiv_id": "2006.07038",
+      "paper_type": "research",
+      "key_contribution": "GraphRetro: a two-stage graph-based semi-template approach that first predicts graph edits (bond changes) to produce synthons, then completes synthons into full reactants by attaching leaving groups from a compact vocabulary; achieves 53.7% top-1 accuracy on USPTO-50k without reaction class.",
+      "idea_genome": {
+        "problem_genome": "Template-based methods (Coley 2017, GLN) are limited by pre-extracted templates; pure sequence models (Molecular Transformer) lack molecular graph awareness; a semi-template approach that decomposes retrosynthesis into graph edit prediction and synthon completion could combine the strengths of both paradigms.",
+        "mechanism_genome": "Two-stage graph neural network: (1) Edit Prediction identifies bond changes on the product molecular graph to produce synthons (incomplete molecules), (2) Synthon Completion attaches leaving groups from a precomputed vocabulary (170 entries covering 99.7% of test set) to form complete reactants.",
+        "observation_genome": "Achieves 53.7% top-1 accuracy on USPTO-50k (no reaction class), outperforming prior template-free and semi-template methods; the compact leaving group vocabulary demonstrates remarkable redundancy in organic chemistry reaction patterns.",
+        "limitation_genome": "The leaving group vocabulary is fixed and dataset-dependent; the two-stage decomposition means errors in edit prediction cannot be corrected in the completion stage; accuracy still below template-based methods on certain reaction classes."
+      }
+    },
+    {
+      "title": "Deep Retrosynthetic Reaction Prediction using Local Reactivity and Global Attention",
+      "year": 2021,
+      "venue": "JACS Au 2021",
+      "arxiv_id": "N/A (JACS Au doi:10.1021/jacsau.1c00246)",
+      "paper_type": "research",
+      "key_contribution": "LocalRetro: template-based retrosynthesis guided by local atom/bond reactivity predictions; a graph neural network first identifies reactive atoms and bonds, then retrieves appropriate local reaction templates; achieves 89.5% top-1 round-trip accuracy and 53.4% top-1 exact match on USPTO-50k.",
+      "idea_genome": {
+        "problem_genome": "Prior template-based methods (GLN) apply templates globally to the entire molecule; chemical intuition suggests that reactions are local events centered on specific atoms and bonds, so predicting local reactivity first and then applying local templates should be more accurate and interpretable.",
+        "mechanism_genome": "Graph neural network trained to predict atom-level and bond-level reactivity scores; local reaction templates are extracted and stored in atom-template and bond-template stores; at inference, the GNN identifies reactive sites and retrieves matching local templates to generate reactants.",
+        "observation_genome": "Achieves 89.5% top-1 round-trip accuracy and 53.4% exact match on USPTO-50k; the local reactivity prediction aligns with chemical intuition about reaction mechanisms; at top-3 and top-5, LocalRetro outperforms all prior methods by significant margins.",
+        "limitation_genome": "Still relies on pre-extracted local templates — cannot predict reactions with novel local transformations; template extraction requires careful atom-mapping preprocessing; the local focus may miss long-range electronic effects that influence reactivity."
+      }
+    },
+    {
+      "title": "Root-aligned SMILES: A Tight Representation for Chemical Reaction Prediction",
+      "year": 2022,
+      "venue": "Chemical Science 2022",
+      "arxiv_id": "2203.11444",
+      "paper_type": "research",
+      "key_contribution": "Root-aligned SMILES (R-SMILES): a molecular representation that aligns product and reactant SMILES strings by choosing a common root atom, reducing edit distance by 21% and enabling Transformer models to focus on chemical changes rather than syntactic differences; significantly boosts retrosynthesis prediction accuracy when combined with data augmentation.",
+      "idea_genome": {
+        "problem_genome": "The Molecular Transformer treats SMILES as arbitrary strings, but the same molecule can have many different SMILES representations depending on the starting atom; this ambiguity forces the model to learn complex syntax rules rather than focusing on chemical transformations.",
+        "mechanism_genome": "Aligns product and reactant SMILES by selecting the atom with maximum common substructure as the root, creating a one-to-one mapping that minimizes edit distance; combined with 20x data augmentation at training and test time; applied to standard Transformer architecture.",
+        "observation_genome": "Reduces minimum edit distance from 17.9 to 14.1 on USPTO-50k (21% reduction); significantly improves retrosynthesis prediction accuracy over standard SMILES; demonstrates that representation engineering can be as impactful as architectural innovation.",
+        "limitation_genome": "The alignment requires atom-mapping between products and reactants, which is not always available; the data augmentation strategy is computationally expensive (20x); the representation improvement is specific to SMILES-based models and does not benefit graph-based approaches."
+      }
+    },
+    {
+      "title": "Retroformer: Pushing the Limits of Interpretable End-to-end Retrosynthesis Transformer",
+      "year": 2022,
+      "venue": "ICML 2022",
+      "arxiv_id": "2201.12475",
+      "paper_type": "research",
+      "key_contribution": "Retroformer: introduces a local attention head that jointly encodes molecular sequence and molecular graph, enabling the Transformer to focus on reactive regions while maintaining global context; achieves new SOTA for end-to-end template-free retrosynthesis.",
+      "idea_genome": {
+        "problem_genome": "The Molecular Transformer treats molecules as flat SMILES strings, missing the explicit 2D graph structure that determines reactivity; encoding both sequence and graph information could improve retrosynthesis prediction by directing attention to reactive bonds and atoms.",
+        "mechanism_genome": "Adds a local attention head to the Transformer encoder that operates on the molecular graph adjacency; jointly encodes SMILES sequence (global context) and molecular graph (local reactive region); end-to-end template-free prediction without cheminformatics preprocessing.",
+        "observation_genome": "Achieves new state-of-the-art for end-to-end template-free retrosynthesis on USPTO-50k; improves molecule validity and reaction validity over Molecular Transformer; local attention provides interpretability by highlighting reactive bonds.",
+        "limitation_genome": "Graph encoding is limited to 2D molecular topology (no 3D conformation); still fundamentally a sequence-generation model with graph as auxiliary input; cannot handle multi-step retrosynthesis planning; accuracy gap with template-based methods on certain reaction classes."
+      }
+    },
+    {
+      "title": "Retrosynthesis prediction using an end-to-end graph generative architecture for molecular graph editing",
+      "year": 2023,
+      "venue": "Nature Communications 2023",
+      "arxiv_id": "N/A (Nat Comms doi:10.1038/s41467-023-38851-5)",
+      "paper_type": "research",
+      "key_contribution": "Graph2Edits: end-to-end graph generative architecture that predicts retrosynthetic edits (bond breaking/forming) directly on the molecular graph, inspired by arrow-pushing formalism in reaction mechanisms; achieves 55.1% top-1 accuracy on USPTO-50k as a graph-native approach.",
+      "idea_genome": {
+        "problem_genome": "Retroformer and Molecular Transformer still fundamentally generate SMILES strings, which is an indirect representation of molecular changes; reaction mechanisms in chemistry are described as graph edits (arrow-pushing on bonds), suggesting a graph-native approach would be more natural and interpretable.",
+        "mechanism_genome": "Graph neural network predicts sequential edits to the product molecular graph (bond breaking, bond forming, atom changes) in an autoregressive manner; combines graph-level perception with edit-level generation; inspired by the arrow-pushing formalism that chemists use to describe reaction mechanisms.",
+        "observation_genome": "Achieves 55.1% top-1 accuracy on USPTO-50k for semi-template-based retrosynthesis (SOTA for graph-native methods); predictions are highly interpretable as they mirror the arrow-pushing notation chemists learn; handles complex reactions with multiple bond changes.",
+        "limitation_genome": "Graph-native generation is computationally expensive for complex molecules; 55.1% accuracy still below best template-based methods; limited to single-step retrosynthesis; the autoregressive edit generation can accumulate errors."
+      }
+    },
+    {
+      "title": "RSGPT: a generative transformer model for retrosynthesis planning pre-trained on ten billion datapoints",
+      "year": 2025,
+      "venue": "Nature Communications 2025",
+      "arxiv_id": "N/A (Nat Comms doi:10.1038/s41467-025-62308-6)",
+      "paper_type": "research",
+      "key_contribution": "RSGPT: generative pretrained transformer for retrosynthesis, pretrained on 10 billion synthetically generated reaction datapoints; achieves 63.4% top-1 accuracy on USPTO-50k, substantially outperforming all previous methods; introduces reinforcement learning fine-tuning to capture product-reactant-template relationships.",
+      "idea_genome": {
+        "problem_genome": "Prior retrosynthesis models (Molecular Transformer, Retroformer, Graph2Edits) are trained on limited reaction datasets (50k-1M); LLM-scale pretraining on massive synthetic reaction data could dramatically improve accuracy, analogous to how GPT scaling transformed NLP.",
+        "mechanism_genome": "Generative pretrained transformer pretrained on 10 billion computationally generated reaction datapoints; reinforcement learning fine-tuning aligns the model with chemical validity by rewarding correct product-reactant-template relationships; template-free SMILES-to-SMILES generation at inference.",
+        "observation_genome": "Achieves 63.4% top-1 accuracy on USPTO-50k benchmark, substantially outperforming all prior methods; the 10B-scale pretraining combined with RL fine-tuning proves that LLM-scale data strategies can transform reaction prediction accuracy.",
+        "limitation_genome": "Still limited to single-step retrosynthesis; 63.4% accuracy means 36.6% of predictions are incorrect, particularly for stereoselective and multi-step reactions; relies on computationally generated data whose distribution may differ from real experimental reactions; enormous pretraining compute cost."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Coley 2017 diverges from Liu 2017's template-free sequence generation to a fundamentally different paradigm — template-based retrieval using molecular fingerprint similarity. Both address single-step retrosynthesis but with incompatible mechanisms: one generates SMILES freely, the other ranks known reaction templates. This speciation event creates two parallel lineages."
+    },
+    {
+      "from_idx": 0,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Molecular Transformer replaces Liu 2017's LSTM encoder-decoder with a self-attention Transformer within the same template-free SMILES-to-SMILES retrosynthesis framework — a targeted architectural improvement that dramatically boosts accuracy (37% → 90%) while maintaining the core sequence translation formulation. Continues the template-free lineage."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "GLN advances Coley 2017's template-based paradigm from fingerprint similarity retrieval to a conditional graphical model built on GNNs, replacing shallow fingerprint matching with deep probabilistic inference over template applicability — a significant mechanism improvement within the template-based lineage."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "LocalRetro refines GLN's template-based GNN approach by shifting from global template selection to local atom/bond reactivity prediction, aligning template application with chemical intuition about local reaction sites — an incremental improvement that achieves superior top-k accuracy within the template-based lineage."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 6,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "R-SMILES improves the Molecular Transformer's SMILES-based approach not through architectural changes but through a better molecular representation — root-aligned SMILES that reduce edit distance by 21%, demonstrating that representation engineering within the same Transformer framework can yield substantial accuracy gains. Continues the template-free lineage."
+    },
+    {
+      "from_idx": [
+        2,
+        3
+      ],
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "GraphRetro hybridizes ideas from both lineages: it uses graph neural network representations (from the GNN-based template methods like GLN) with a semi-template decomposition strategy that avoids full template dependence (from the template-free paradigm), combining graph-level edit prediction with a learned synthon completion step — bridging the template-based and template-free lineages."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 7,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Retroformer hybridizes the Molecular Transformer's SMILES sequence encoding with molecular graph structural encoding via a novel local attention head, jointly processing both representations to focus attention on chemically reactive regions while maintaining global sequence context — merging sequence-level and graph-level paradigms."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 8,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Graph2Edits refines GraphRetro's two-stage graph decomposition into a single end-to-end graph generative model that autoregressively predicts molecular edits, inspired by the arrow-pushing formalism — an incremental improvement within the graph-native semi-template paradigm, making generation fully end-to-end."
+    },
+    {
+      "from_idx": [
+        6,
+        5
+      ],
+      "to_idx": 9,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "RSGPT hybridizes insights from both lineages: LLM-scale generative pretraining on 10 billion synthetic datapoints (scaling the template-free sequence approach to GPT-level data) with reinforcement learning fine-tuning that encodes template knowledge (product-reactant-template relationships from the template-based lineage), unifying both paradigms at unprecedented scale."
+    }
+  ],
+  "open_question": "RSGPT achieves 63.4% top-1 accuracy through massive pretraining but still fails on over a third of reactions, particularly stereoselective transformations and multi-step routes. What mechanism would enable retrosynthesis models to jointly reason about single-step reactivity, stereochemical outcomes, reaction conditions, and multi-step synthetic planning in a unified end-to-end framework?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Chemistry / Retrosynthesis Prediction."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 10 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Speciation": 1,
+    "Mutation": 5,
+    "Hybridization": 3
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "RSGPT: a generative transformer model for retrosynthesis planning pre-trained on ten billion datapoints",
+      "year": 2025,
+      "venue": "Nature Communications 2025",
+      "identifier": "N/A (Nat Comms doi:10.1038/s41467-025-62308-6)",
+      "unresolved_gap": "Still limited to single-step retrosynthesis; 63.4% accuracy means 36.6% of predictions are incorrect, particularly for stereoselective and multi-step reactions; relies on computationally generated data whose distribution may differ from real experimental reactions; enormous pretraining compute cost.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

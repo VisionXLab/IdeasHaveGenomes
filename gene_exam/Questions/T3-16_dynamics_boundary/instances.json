@@ -1,0 +1,589 @@
+[
+  {
+    "instance_id": "T3-16_dynamics_boundary_000",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. The method is a CSRF request-binding defense that embeds unpredictable session-associated nonces in sensitive requests and validates them server-side, optionally supplemented by provenance checks such as the Referer header while exemptin [text omitted]\nG2. This paper targets the problem of preventing cross-site request forgery against authenticated web applications, especially for state-changing user actions.\n\nGenome B gene candidates:\nG1. Noncespaces assigns fresh unpredictable tokens to fine-grained syntactic regions of a page and enforces in the browser that markup, attributes\nG2. script-bearing contexts only accept content carrying the correct token relationships, so injected strings cannot cross parsing-context boundaries into active code\n\nCase 2:\nGenome A gene candidates:\nG1. GPT-3 is a massively scaled decoder-only autoregressive transformer trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples di [text omitted]\nG2. This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n\nGenome B gene candidates:\nG1. Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language i [text omitted]\nG2. This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_001",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. This paper targets top-N recommendation from sparse implicit user–item interaction data.\nG2. It extends a lightweight bipartite graph collaborative filtering model with self-supervised contrastive learning by creating perturbed graph views via node/edge dropout and jointly optimizing recommendation loss plus agreement between co [text omitted]\n\nGenome B gene candidates:\nG1. jointly optimizes recommendation loss and cross-view contrastive alignment while mitigating false negatives among similar nodes\nG2. It proposes a robust graph contrastive recommendation method that generates reliability-aware graph views by preserving informative structure and down-weighting suspected noisy edges\n\nCase 2:\nGenome A gene candidates:\nG1. GPT-3 is a massively scaled decoder-only autoregressive transformer trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples di [text omitted]\nG2. This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n\nGenome B gene candidates:\nG1. Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language i [text omitted]\nG2. This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_002",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\nG2. DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights w [text omitted]\n\nGenome B gene candidates:\nG1. ProxylessNAS performs differentiable architecture search with a stochastic over-parameterized supernetwork in which each layer contains discrete operator candidates but only one binarized path is active at a time\nG2. it alternates updates of shared weights and architecture parameters while optimizing an accuracy-plus-hardware-cost objective using a device-specific latency predictor\n\nCase 2:\nGenome A gene candidates:\nG1. ControlNet augments a pretrained latent diffusion model with parallel copies of selected denoising blocks that ingest condition maps and are connected through zero-initialized convolutions so multi-scale control features can be learned w [text omitted]\nG2. This paper targets fine-grained spatially controllable text-to-image generation from structured external conditions such as edges, depth, segmentation, and pose.\n\nGenome B gene candidates:\nG1. applies a separate refiner model to add local detail and perceptual sharpness\nG2. SDXL is a staged latent diffusion system that trains a larger high-resolution base model with a stronger text-conditioning pathway and revised denoising architecture in latent space\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_003",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. This paper targets making GPUs broadly effective for general-purpose parallel computing workloads, especially irregular, memory-intensive, and high-performance scientific applications.\nG2. Fermi is a many-core CUDA architecture that scales streaming multiprocessors while adding coherent hardware-managed caches, configurable on-chip local memory, improved warp scheduling, stronger atomics and concurrency, ECC memory\n\nGenome B gene candidates:\nG1. It uses a systematic empirical workload characterization methodology that implements representative kernels and applications in CUDA and analyzes their behavior under the GPU execution model, including thread grouping, shared memory use, [text omitted]\nG2. This paper targets understanding which classes of general-purpose applications achieve high performance on CUDA-programmed GPUs and which do not.\n\nCase 2:\nGenome A gene candidates:\nG1. environment interactions to explore realistic systems code\nG2. KLEE is a symbolic execution system that runs programs on symbolic inputs at the compiler IR level, accumulates path constraints, systematically negates branch conditions, solves the resulting formulas to generate new concrete tests\n\nGenome B gene candidates:\nG1. retains inputs that trigger new coverage and mutates them with deterministic and randomized strategies in an evolutionary queue\nG2. AFL is a greybox fuzzing system that uses lightweight compile-time or binary instrumentation to record approximate edge coverage in a shared-memory bitmap\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_005",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. Residual Non-local Attention Networks use a deep hierarchy of residual groups and residual blocks with extensive skip connections, into which non-local attention modules are inserted to compute pairwise feature correlations across all sp [text omitted]\nG2. This paper targets low-level image restoration tasks such as super-resolution, denoising, and compression artifact reduction, with emphasis on recovering fine structures from degraded images.\n\nGenome B gene candidates:\nG1. Real-ESRGAN trains a GAN-based super-resolution model entirely on synthetic pairs generated by a high-order stochastic degradation pipeline that composes multiple blur, resize, noise, compression\nG2. perceptual losses for realistic reconstruction\n\nCase 2:\nGenome A gene candidates:\nG1. Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatc [text omitted]\nG2. This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\n\nGenome B gene candidates:\nG1. independent noise is injected at each layer and style mixing is used during training\nG2. StyleGAN replaces direct latent input to the generator with a learned mapping network that produces an intermediate latent code whose per-layer style parameters modulate each convolution via adaptive normalization\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_006",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. Generative Adversarial Networks train a generator that maps simple random noise to data samples and a discriminator that classifies real versus generated inputs\nG2. both optimized jointly through a minimax adversarial objective so the generator implicitly matches the data distribution without explicit likelihoods\n\nGenome B gene candidates:\nG1. Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatc [text omitted]\nG2. This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\n\nCase 2:\nGenome A gene candidates:\nG1. browser execution of the resulting script under the trusted site's origin and privileges\nG2. A web-architecture threat analysis decomposes XSS into attacker-controlled input injection, server reflection or storage of that input in generated pages\n\nGenome B gene candidates:\nG1. This paper targets the problem of understanding and defending against SQL injection vulnerabilities in web applications that construct database queries from untrusted input.\nG2. It introduces an attack-centric taxonomy method that classifies SQL injection attacks by the way malicious input transforms the syntactic or semantic structure of server-side SQL queries and explicitly maps each class to corresponding co [text omitted]\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_007",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. This paper targets real-time single-image and video super-resolution, i.e., reconstructing high-resolution outputs from low-resolution visual inputs.\nG2. It introduces an Efficient Sub-Pixel Convolutional Neural Network (ESPCN) that performs feature extraction entirely in low-resolution space and then uses a learned final convolution followed by a deterministic sub-pixel pixel-shuffle rea [text omitted]\n\nGenome B gene candidates:\nG1. This paper targets single-image super-resolution with the goal of recovering visually convincing high-resolution images from a single low-resolution input.\nG2. SRGAN uses a deep residual convolutional generator trained with a joint loss that combines adversarial supervision from a discriminator with perceptual content loss measured in the feature space of a pretrained recognition network rather [text omitted]\n\nCase 2:\nGenome A gene candidates:\nG1. Noise-conditional score-based generative modeling learns a neural network to estimate the score (gradient of log density) of Gaussian-perturbed data at multiple noise scales and generates samples by annealed Langevin dynamics that progre [text omitted]\nG2. This paper targets high-quality generative modeling and sampling of complex multimodal data distributions without requiring explicit likelihood evaluation or adversarial training.\n\nGenome B gene candidates:\nG1. T-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI)\nG2. reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_008",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. It extends attention-based sequence-to-sequence RNN summarization with stronger source alignment and copy-style decoding mechanisms, plus training and inference modifications that help preserve salient entities and phrases while generati [text omitted]\nG2. This paper targets abstractive summarization of long, information-dense documents into concise fluent summaries.\n\nGenome B gene candidates:\nG1. This paper targets abstractive summarization of long source documents, especially improving factual faithfulness and handling of rare or unseen source words.\nG2. Pointer-generator networks augment an attention-based seq2seq summarizer with a learned timestep-wise gate that mixes fixed-vocabulary generation with copying from the source via the attention distribution, plus a coverage vector and pen [text omitted]\n\nCase 2:\nGenome A gene candidates:\nG1. DCGAN uses a fully convolutional GAN in which the generator maps latent vectors to images with stacked fractional-stride convolutions and the discriminator classifies images with strided convolutions, combined with architectural constrai [text omitted]\nG2. asymmetric activations to stabilize training\n\nGenome B gene candidates:\nG1. pix2pix uses a conditional GAN that generates a target image from a source image, trains a discriminator on input-output pairs to judge real versus synthesized outputs, combines adversarial loss with an L1 reconstruction loss\nG2. uses a U-Net generator with a PatchGAN discriminator\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_009",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. both optimized jointly through a minimax adversarial objective so the generator implicitly matches the data distribution without explicit likelihoods\nG2. Generative Adversarial Networks train a generator that maps simple random noise to data samples and a discriminator that classifies real versus generated inputs\n\nGenome B gene candidates:\nG1. This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\nG2. Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatc [text omitted]\n\nCase 2:\nGenome A gene candidates:\nG1. This paper addresses the experimental observation and relative branching-fraction measurement of the rare decay χc1(3872)→J/ψμ+μ− in proton-proton collisions at LHCb.\nG2. Using 9 fb−1 of LHCb pp collision data, the study reconstructs χc1(3872) candidates in the J/ψμ+μ− final state and measures the decay rate relative to the reference mode χc1(3872)→J/ψπ+π−\n\nGenome B gene candidates:\nG1. The method uses a machine-learned predictor for the leftmost Hessian eigenvector to guide transition-state searches\nG2. uncertainty-triggered fallback to a full Hessian update from the machine-learned potential when the prediction is unreliable\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_010",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. uncertainty-aware context before a conditional decoder synthesizes the next visual state\nG2. A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory\n\nGenome B gene candidates:\nG1. schedule lightweight frozen-backbone updates across heterogeneous on-device resources under latency, memory, energy\nG2. Dynamic Chain Optimization decomposes LLM adaptation into modular inference/specialization stages and uses a controller to estimate each stage's marginal utility and resource cost so it can selectively route, reorder, skip\n\nCase 2:\nGenome A gene candidates:\nG1. PointNetGPD represents each grasp candidate by the raw scene points inside the gripper closing region transformed into the candidate’s local grasp frame\nG2. uses a PointNet-style permutation-invariant network to predict that candidate’s grasp quality score directly from the localized point set\n\nGenome B gene candidates:\nG1. GraspNet-1Billion builds a large-scale dataset and benchmark by densely representing grasping as 6-DoF grasp pose prediction, generating candidate grasps from object-surface geometry, validating them with physics-based criteria\nG2. using the resulting multimodal annotations to supervise visual grasp prediction from depth or RGB-D input\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_011",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. applies class-specific linear classifiers and bounding-box regression\nG2. R-CNN uses bottom-up category-agnostic region proposals, warps each proposed region to a fixed size, extracts deep CNN features from each region with a network pretrained for image classification\n\nGenome B gene candidates:\nG1. Fast R-CNN computes a single convolutional feature map for the whole image, uses RoI pooling to extract fixed-length features for each region proposal\nG2. jointly trains classification and bounding-box regression with one end-to-end multi-task network\n\nCase 2:\nGenome A gene candidates:\nG1. It proves structural results by analyzing spherical conjugacy classes and growth in abelian-by-cyclic semidirect products, then contrasts these with an explicit one-sided Følner sequence construction in BS(1,2)\nG2. The paper studies conjugacy ratio behavior in finitely generated abelian-by-cyclic groups of the form K ⋊ ⟨t⟩ with respect to natural generating sets built from a finite symmetric subset of the abelian kernel.\n\nGenome B gene candidates:\nG1. It introduces a new formal language of universes, induced communities, cells, and spots and uses this framework to derive a proof of the conjecture\nG2. The paper addresses the union-closed sets conjecture for finite universes and induced communities, asking whether some element appears in at least half of the sets.\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_012",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. AlphaCode uses a large autoregressive code model to massively sample candidate programs per task\nG2. filters them through compilation and execution checks, clusters them by behavioral similarity\n\nGenome B gene candidates:\nG1. This paper targets neural code generation from programming task specifications, with the goal of producing functionally correct programs rather than merely likely token sequences.\nG2. CodeRL initializes a pretrained code language model and then fine-tunes it with deep reinforcement learning using execution-based rewards from test cases plus a learned critic that predicts program quality to provide denser feedback duri [text omitted]\n\nCase 2:\nGenome A gene candidates:\nG1. cache/shared-memory flexibility to raise delivered performance per watt and programmability\nG2. The Kepler GK110 architecture redesigns the streaming multiprocessor and memory subsystem by increasing warp residency, instruction issue width, register capacity, double-precision and atomic throughput, concurrent kernel execution\n\nGenome B gene candidates:\nG1. The Volta V100 architecture introduces Tensor Cores inside each SM to execute mixed-precision matrix fused multiply-add operations at very high throughput, alongside a redesigned SM, cache/memory hierarchy\nG2. high-bandwidth HBM2 memory system to keep those units fed efficiently\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_013",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors\nG2. perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details\n\nGenome B gene candidates:\nG1. A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory\nG2. uncertainty-aware context before a conditional decoder synthesizes the next visual state\n\nCase 2:\nGenome A gene candidates:\nG1. performs statistical hypothesis testing or likelihood ranking over candidate key-length classes to identify the most plausible secret length\nG2. Percival profiles implementation-dependent leakage features such as timing, operation counts\n\nGenome B gene candidates:\nG1. This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\nG2. A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache [text omitted]\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Niche Competition",
+        "Niche Competition"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_014",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. T-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI)\nG2. reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor\n\nGenome B gene candidates:\nG1. samples by iteratively reversing the fixed noising process from pure noise\nG2. It uses a denoising diffusion probabilistic model in which a U-Net-like network with attention is trained across many timesteps to predict added Gaussian noise under a carefully designed variance schedule\n\nCase 2:\nGenome A gene candidates:\nG1. Boundary control of distributed port-Hamiltonian systems with nonlinear or partially unknown PDE dynamics is addressed.\nG2. The paper learns the unknown Hamiltonian structure from data using a Gaussian Process distributed port-Hamiltonian model and integrates its posterior uncertainty into boundary control by interconnection with an energy-based robustness an [text omitted]\n\nGenome B gene candidates:\nG1. The paper formulates driving as a potential-game GT-MPC problem and seeks Nash equilibria via potential-function optimization or best-response dynamics, using Newton and Newton–Kantorovich iterations distributed across sampling times for [text omitted]\nG2. Real-time game-theoretic model predictive control for multi-agent autonomous driving, especially fast interaction scenarios such as intersection crossing.\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_015",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. GraspGen uses a diffusion-based generative model that iteratively denoises grasp poses in rigid-body pose space conditioned on object geometry\nG2. it is trained with on-generator optimization over its own sampled grasps rather than only fixed offline labels\n\nGenome B gene candidates:\nG1. It introduces a unified comparative evaluation framework that categorizes geometric, neural implicit, radiance-based\nG2. foundation-model scene representations and assesses them against robotics-specific criteria including geometric fidelity, semantic richness, updateability, decision support, computational cost\n\nCase 2:\nGenome A gene candidates:\nG1. then using channel shuffling so all channels participate over time during joint optimization of architecture and network weights\nG2. PC-DARTS performs differentiable architecture search by applying mixed candidate operations only to a randomly selected subset of feature channels, bypassing the rest with cheap identity-style propagation\n\nGenome B gene candidates:\nG1. input resolution so that many deployment-ready subnetworks can directly inherit weights, aided by in-place distillation and staged subnetwork sampling\nG2. Once-for-All trains a single supernet with progressive shrinking across depth, width, kernel size\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_016",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. text conditioning via cross-attention with CLIP text encoder\nG2. apply DDIM diffusion in latent space (64×64 latents)\n\nGenome B gene candidates:\nG1. This paper targets fine-grained spatially controllable text-to-image generation from structured external conditions such as edges, depth, segmentation, and pose.\nG2. ControlNet augments a pretrained latent diffusion model with parallel copies of selected denoising blocks that ingest condition maps and are connected through zero-initialized convolutions so multi-scale control features can be learned w [text omitted]\n\nCase 2:\nGenome A gene candidates:\nG1. PointNetGPD represents each grasp candidate by the raw scene points inside the gripper closing region transformed into the candidate’s local grasp frame\nG2. uses a PointNet-style permutation-invariant network to predict that candidate’s grasp quality score directly from the localized point set\n\nGenome B gene candidates:\nG1. using the resulting multimodal annotations to supervise visual grasp prediction from depth or RGB-D input\nG2. GraspNet-1Billion builds a large-scale dataset and benchmark by densely representing grasping as 6-DoF grasp pose prediction, generating candidate grasps from object-surface geometry, validating them with physics-based criteria\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_017",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. it is trained with on-generator optimization over its own sampled grasps rather than only fixed offline labels\nG2. GraspGen uses a diffusion-based generative model that iteratively denoises grasp poses in rigid-body pose space conditioned on object geometry\n\nGenome B gene candidates:\nG1. foundation-model scene representations and assesses them against robotics-specific criteria including geometric fidelity, semantic richness, updateability, decision support, computational cost\nG2. It introduces a unified comparative evaluation framework that categorizes geometric, neural implicit, radiance-based\n\nCase 2:\nGenome A gene candidates:\nG1. output format constraints to directly generate entity spans and types instead of token-level labels\nG2. The method instruction-tunes a large generative language model to perform biomedical NER as an instruction-following text generation task, using natural-language task definitions, annotation guidelines\n\nGenome B gene candidates:\nG1. NuNER pre-trains a discriminative sequence-labeling encoder on large-scale token/span annotations generated by an instruction-following LLM\nG2. post-processing and filtering to normalize labels and suppress hallucinated or inconsistent spans before standard NER fine-tuning\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_018",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. selects at test time the motion with the highest predicted success\nG2. A large-scale self-supervised deep grasp predictor is trained on about 50K autonomous grasp attempts to map camera observations and candidate gripper motions to binary grasp-success probabilities\n\nGenome B gene candidates:\nG1. A deep grasp-success prediction model is trained on large-scale real robot trial data to score candidate end-effector motions from camera observations\nG2. the robot executes actions in closed loop by choosing motions with highest predicted success probability\n\nCase 2:\nGenome A gene candidates:\nG1. morphology-driven control in which passive body mechanics and environmental contact perform part of sensing, adaptation\nG2. Soft robotics paradigm: replace rigid-link, jointed, transmission-centric robot architectures with elastomeric or continuum bodies, distributed actuation\n\nGenome B gene candidates:\nG1. This paper targets the problem of achieving task-capable locomotion with multiple distinct gaits in a fully soft-bodied robot.\nG2. A monolithic multigait soft robot uses elastomeric body segments with embedded fluidic channel networks that are selectively pressurized in different temporal patterns to produce distributed bending, anchoring\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Niche Competition",
+        "Niche Competition"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_019",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Two compact gene transitions are shown. Classify the evolutionary dynamics for each case. Use the gene transformation pattern, not paper identity.\n\nCase 1:\nGenome A gene candidates:\nG1. perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details\nG2. The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors\n\nGenome B gene candidates:\nG1. A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory\nG2. uncertainty-aware context before a conditional decoder synthesizes the next visual state\n\nCase 2:\nGenome A gene candidates:\nG1. Constitutional AI trains an assistant with a written constitution by having the model self-critique and revise its answers under those rules for supervised finetuning\nG2. generate constitution-based preference comparisons to train a preference model and optimize the assistant with reinforcement learning\n\nGenome B gene candidates:\nG1. validation select synthetic examples for fine-tuning the same model\nG2. Self-Instruct is a self-bootstrapping instruction-tuning pipeline in which a pretrained language model, prompted with a small seed set of tasks, generates new instructions plus optional inputs and outputs\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Niche Competition",
+        "Niche Competition"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_boundary",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G6_minimal_dynamics_boundary",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_900",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Paper A (predecessor):\n  Mechanism: \"Abstract message passing: node features updated by aggregating transformed neighbor messages; readout function pools atom features to molecular properties.\"\n  Niche: \"No unified framework for applying deep learning to molecular graphs; diverse architectures prevent systematic comparison.\"\n  Limitation: \"Predicts molecular properties from 2D graphs; cannot model 3D structure; no binding affinity prediction; no protein-ligand interaction.\"\n\nPaper B (successor):\n  Mechanism: \"Atomic convolution over protein-ligand complex: atom features updated by distance-weighted 3D neighbor messages; separate encoders for protein and ligand atoms.\"\n  Niche: \"MPNN predicts isolated molecular properties; drug discovery requires protein-ligand binding affinity from 3D complex structure.\"\n  Limitation: \"Requires co-crystal structure (rarely available for new targets); cannot predict docked pose; limited to small molecule ligands.\"\n\nThis transition could be classified as either Adaptive Radiation or Speciation.\nWhich dynamics label is more accurate?\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_discrimination",
+      "level": "hard",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-16_dynamics_boundary",
+      "source": "supplement_v1",
+      "domain": "chemistry",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_901",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Paper A (predecessor):\n  Mechanism: \"ESM-2 protein language model (3B/15B parameters) pretrained on 250M protein sequences learns evolutionary representations implicitly; ESMFold folding trunk produces 3D structure from single-sequence ESM embeddings without MSA.\"\n  Niche: \"AlphaFold2 requires Multiple Sequence Alignment (MSA) computation which takes hours per protein; cannot scale to billions of protein sequences; evolutionary information embedded in MSA limits single-sequence organisms.\"\n  Limitation: \"Less accurate than AlphaFold2 on hard targets with deep MSA; single-sequence representation misses co-evolutionary constraints; no direct application to protein design; no protein-ligand prediction.\"\n\nPaper B (successor):\n  Mechanism: \"Pairformer replaces Evoformer; diffusion module generates all-atom 3D coordinates for any molecular complex type; trained on PDB structures of all complex types; MSA-free option via single-sequence trunk.\"\n  Niche: \"ESMFold (fast, single-chain) and AlphaFold2 (accurate, single-chain) cannot predict complexes; RFDiffusion designs backbones but not full atomic detail with small molecules; no single model covers protein-DNA/RNA/ligand interactions.\"\n  Limitation: \"Closed-source weights for commercial use; no generative design capability (prediction only, not design); does not model binding kinetics or conformational ensembles; large gaps in accuracy for RNA-protein complexes.\"\n\nThis transition could be classified as either Hybridization or Adaptive Radiation.\nWhich dynamics label is more accurate?\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_discrimination",
+      "level": "hard",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-16_dynamics_boundary",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_902",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Paper A (predecessor):\n  Mechanism: \"BERT masked language modeling on human reference genome; k-mer tokenization (k=3,4,5,6); bidirectional Transformer encoder captures bidirectional genomic context; fine-tune on downstream tasks.\"\n  Niche: \"Genomic sequence analysis relied on hand-crafted features or task-specific models; no general-purpose pretrained representation for DNA that captures long-range genomic context.\"\n  Limitation: \"Trained only on human genome; limited context (512 tokens = 512 bp after k-mer); BERT's bidirectional encoder cannot generate sequences; no variant effect prediction at scale.\"\n\nPaper B (successor):\n  Mechanism: \"Decoder-only (GPT-style) and encoder Transformers at 500M/2.5B scale; 6-mer tokenization; trained on multi-species genome assemblies; evaluate on 18 tasks (chromatin accessibility, variant effects, regulatory elements).\"\n  Niche: \"DNABERT is limited to human genome and short context; no systematic evaluation of how model scale and multi-species pretraining affect genomic understanding across diverse tasks.\"\n  Limitation: \"Fixed context window limits to ~12 kbp sequences; cannot model chromosome-scale structure; no generative capability for sequence design; variant effect prediction requires fine-tuning, not zero-shot.\"\n\nThis transition could be classified as either Mutation or Adaptive Radiation.\nWhich dynamics label is more accurate?\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_discrimination",
+      "level": "hard",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-16_dynamics_boundary",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_903",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Paper A (predecessor):\n  Mechanism: \"Denoising diffusion over SE(3) backbone frames; conditioned on functional motifs (binding sites, active sites); leverages RoseTTAFold architecture as denoiser; ProteinMPNN then designs sequences for generated backbones.\"\n  Niche: \"ProteinMPNN designs sequences for given backbones, but generating novel functional backbones (not just folding existing ones) still required slow Rosetta hallucination with low success rates.\"\n  Limitation: \"Backbone-only; no side chains or small molecule interaction during diffusion; limited to protein-protein or motif scaffolding; no joint protein-ligand co-design; no sequence evolution information used.\"\n\nPaper B (successor):\n  Mechanism: \"ESM-2 protein language model (3B/15B parameters) pretrained on 250M protein sequences learns evolutionary representations implicitly; ESMFold folding trunk produces 3D structure from single-sequence ESM embeddings without MSA.\"\n  Niche: \"AlphaFold2 requires Multiple Sequence Alignment (MSA) computation which takes hours per protein; cannot scale to billions of protein sequences; evolutionary information embedded in MSA limits single-sequence organisms.\"\n  Limitation: \"Less accurate than AlphaFold2 on hard targets with deep MSA; single-sequence representation misses co-evolutionary constraints; no direct application to protein design; no protein-ligand prediction.\"\n\nThis transition could be classified as either Niche Competition or Speciation.\nWhich dynamics label is more accurate?\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "correct_dynamics": [
+        "Niche Competition",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_discrimination",
+      "level": "hard",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-16_dynamics_boundary",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_904",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Paper A (predecessor):\n  Mechanism: \"Pairformer replaces Evoformer; diffusion module generates all-atom 3D coordinates for any molecular complex type; trained on PDB structures of all complex types; MSA-free option via single-sequence trunk.\"\n  Niche: \"ESMFold (fast, single-chain) and AlphaFold2 (accurate, single-chain) cannot predict complexes; RFDiffusion designs backbones but not full atomic detail with small molecules; no single model covers protein-DNA/RNA/ligand interactions.\"\n  Limitation: \"Closed-source weights for commercial use; no generative design capability (prediction only, not design); does not model binding kinetics or conformational ensembles; large gaps in accuracy for RNA-protein complexes.\"\n\nPaper B (successor):\n  Mechanism: \"Flow-based latent generative model pretrained on synthetic binder-target pairs (Teddymer dataset); inference-time scaling via iterative optimization; applicable to hydrogen bond optimization and enzyme design beyond basic binder generation.\"\n  Niche: \"AlphaFold3 predicts binding structures but cannot generate novel binders; RFDiffusion designs backbones without exploiting generative pretraining at scale; need a model that combines generative pretraining with inference-time optimization for binder design.\"\n  Limitation: \"Experimental validation rates remain low due to gap between in silico binding scores and in vivo functional activity; optimizes binding affinity without explicit joint optimization of selectivity, stability, and in vivo efficacy.\"\n\nThis transition could be classified as either Hybridization or Speciation.\nWhich dynamics label is more accurate?\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_discrimination",
+      "level": "hard",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-16_dynamics_boundary",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-16_dynamics_boundary_905",
+    "task_type": "T3-16_dynamics_boundary",
+    "prompt": "Paper A (predecessor):\n  Mechanism: \"The paper synthesizes prior literature by categorizing AI paradigms such as supervised learning, unsupervised learning, reinforcement learning, deep learning, and generative models and mapping their use cases, benefits, and regulatory implications across pharmaceutical workflows.\"\n  Niche: \"A systematic review of how artificial intelligence is applied across the pharmaceutical R&D pipeline, including drug discovery, formulation, repurposing, polypharmacology, PK/PD modeling, precision medicine, and clinical trial design.\"\n  Limitation: \"As a review paper, it does not introduce or experimentally validate a new AI method and is limited by the heterogeneity, incompleteness, and possible publication bias of the underlying literature it summarizes.\"\n\nPaper B (successor):\n  Mechanism: \"It compiles public pipeline data from more than 100 AI-native biotech firms, classifies molecules by AI mode-of-discovery and modality, counts phase entries and completions, computes phase transition rates, and benchmarks them against historical industry averages.\"\n  Niche: \"The paper addresses the problem of quantifying clinical trial success rates for AI-discovered drug candidates developed by AI-native biotech companies across clinical phases and drug modalities.\"\n  Limitation: \"The study is constrained by limited and publicly available pipeline data, incomplete outcome reporting, and the early-stage nature of many AI-discovered programs, which restricts the strength and generalizability of its conclusions.\"\n\nThis transition could be classified as either Mutation or Speciation.\nWhich dynamics label is more accurate?\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "dynamics_discrimination",
+      "level": "hard",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-16_dynamics_boundary",
+      "source": "supplement_v1",
+      "domain": "life_science",
+      "display_title": "Dynamics Boundary"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  }
+]

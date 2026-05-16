@@ -1,0 +1,205 @@
+{
+  "trace_id": "neuro_Connectomics",
+  "domain": "neuroscience",
+  "direction": "Neural Connectomics and Circuit Mapping",
+  "subfield": "Neuroscience / Computational Neuroscience",
+  "frontier_justification": "This direction remains a May 2026 frontier because large-scale connectomics has moved from small circuits to mammalian-scale multimodal wiring maps, but functional interpretation is unresolved. The field still needs methods that quantify uncertainty and combine anatomy, cell type, physiology, behavior, and perturbation evidence to infer causal circuit principles.",
+  "verified": false,
+  "papers": [
+    {
+      "title": "Serial Block-Face Scanning Electron Microscopy to Reconstruct Three-Dimensional Tissue Nanostructure",
+      "year": 2004,
+      "venue": "PLoS Biology (2004)",
+      "arxiv_id": "N/A",
+      "paper_type": "survey",
+      "key_contribution": "This perspective articulated connectomics as a research program enabled by high-resolution electron microscopy, arguing that dense anatomical wiring diagrams could become a central tool for understanding neural computation. It framed the technical challenge of reconstructing complete circuits from ultrastructural data.",
+      "idea_genome": {
+        "problem_genome": "How can neuroscience recover complete neural wiring diagrams at synaptic resolution rather than relying on sparse anatomical sampling?",
+        "mechanism_genome": "Conceptual proposal centered on serial electron microscopy and dense reconstruction of neural tissue.",
+        "observation_genome": "It identified connectomics as both feasible in principle and transformative for circuit neuroscience, setting the agenda for dense EM reconstruction.",
+        "limitation_genome": "It was primarily a vision paper; scalable acquisition, segmentation, and proofreading methods were still missing."
+      }
+    },
+    {
+      "title": "The structure and function of a neocortical synapse",
+      "year": 2009,
+      "venue": "Journal of Neuroscience (2009)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Using serial section electron microscopy, this paper reconstructed local cortical microcircuit connectivity around a neocortical synapse and linked ultrastructure to physiology. It exemplified early dense EM-based circuit mapping in mammalian cortex.",
+      "idea_genome": {
+        "problem_genome": "Can ultrastructural reconstruction reveal the detailed organization and functional implications of cortical synaptic connectivity?",
+        "mechanism_genome": "Serial section EM reconstruction combined with quantitative anatomical and physiological analysis.",
+        "observation_genome": "The study showed that detailed synaptic structure could be linked to circuit function, demonstrating the value of dense ultrastructural mapping for cortical microcircuits.",
+        "limitation_genome": "Reconstructions were labor-intensive and limited in scale, preventing whole-circuit or whole-brain mapping."
+      }
+    },
+    {
+      "title": "Saturated Reconstruction of a Volume of Neocortex",
+      "year": 2015,
+      "venue": "Cell (2015)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper delivered a densely reconstructed neocortical volume using serial electron microscopy, exposing the complexity of local wiring and glial interactions in mammalian cortex. It became a landmark demonstration of large-scale dense connectomic reconstruction.",
+      "idea_genome": {
+        "problem_genome": "How can dense EM reconstruction be scaled from isolated synapses to substantial mammalian tissue volumes?",
+        "mechanism_genome": "Large-volume serial EM imaging with exhaustive manual and semi-manual reconstruction of all processes in the volume.",
+        "observation_genome": "The work revealed unexpectedly intricate and heterogeneous local connectivity, including extensive axonal and glial structural relationships.",
+        "limitation_genome": "The approach remained too slow and expensive for brain-scale reconstruction because segmentation and proofreading were not yet automated enough."
+      }
+    },
+    {
+      "title": "High-precision automated reconstruction of neurons with flood-filling networks",
+      "year": 2018,
+      "venue": "Nature Methods (2018)",
+      "arxiv_id": "1611.00421",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced flood-filling networks, a deep learning approach for iterative object-centric segmentation in connectomic EM volumes. It substantially improved automated neurite segmentation and became a core method for scaling connectomics.",
+      "idea_genome": {
+        "problem_genome": "How can neuron segmentation in dense EM data be automated accurately enough to reduce the manual burden of connectome reconstruction?",
+        "mechanism_genome": "A recurrent convolutional network grows one object mask at a time from seed points, iteratively filling neuronal processes through 3D EM volumes.",
+        "observation_genome": "The method achieved strong segmentation accuracy on connectomic benchmarks and showed that deep learning could dramatically accelerate dense reconstruction.",
+        "limitation_genome": "Even with improved segmentation, large datasets still required substantial error correction, agglomeration, and human proofreading."
+      }
+    },
+    {
+      "title": "The MICrONS Explorer",
+      "year": 2021,
+      "venue": "Nature Methods (2021)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper presented a public platform for exploring petascale cortical connectomic data generated by the MICrONS program, integrating EM reconstruction with functional and cell-type information. It marked the transition from isolated reconstructions to community-accessible large-scale connectomic resources aligned with BRAIN Initiative goals.",
+      "idea_genome": {
+        "problem_genome": "How can large, multimodal connectomic datasets be organized and shared so that the broader community can analyze circuit structure and function?",
+        "mechanism_genome": "A web-accessible data platform integrating dense EM reconstructions, annotations, and linked physiological information.",
+        "observation_genome": "The work demonstrated that petascale connectomic datasets could be made explorable and reusable by the community, broadening the scientific impact of large reconstructions.",
+        "limitation_genome": "Data access infrastructure alone did not solve the challenge of obtaining complete whole-brain connectomes or extracting principles from massive graphs."
+      }
+    },
+    {
+      "title": "Connectome-constrained neural networks predict natural neural activity across the fly visual system",
+      "year": 2024,
+      "venue": "Nature (2024)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper used the Drosophila connectome to build connectome-constrained neural network models that predict neural responses to natural stimuli across the fly visual system. It exemplifies the shift from building connectomes to using them as computational priors for system-level modeling, closely related to graph-based learning on wiring diagrams.",
+      "idea_genome": {
+        "problem_genome": "How can large connectomes be converted from anatomical resources into predictive models of neural computation?",
+        "mechanism_genome": "Neural network models constrained by measured synaptic connectivity and circuit architecture from the fly connectome.",
+        "observation_genome": "The study showed that wiring-diagram constraints substantially improve prediction of neural activity, demonstrating functional value of connectomic structure.",
+        "limitation_genome": "The approach depends on high-quality connectomes and still leaves open how to generalize from one system to whole-brain, developmental, or mammalian settings."
+      }
+    },
+    {
+      "title": "Whole-brain annotation and multi-connectome cell typing of Drosophila with FlyWire",
+      "year": 2024,
+      "venue": "Nature (2024)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper reported the FlyWire whole-brain Drosophila resource with large-scale annotation and cell typing across connectomes, providing one of the most comprehensive whole-brain synaptic wiring maps to date. It represents the maturation of automated segmentation, collaborative proofreading, and atlas-scale connectomics into a whole-brain platform.",
+      "idea_genome": {
+        "problem_genome": "How can a complete or near-complete whole-brain connectome be reconstructed, annotated, and typed at scale for a complex animal brain?",
+        "mechanism_genome": "Automated EM segmentation combined with large-scale community proofreading, annotation pipelines, and cross-connectome cell typing in the FlyWire platform.",
+        "observation_genome": "The work delivered a whole-brain Drosophila connectomic resource with broad cell-type coverage and systematic annotation, enabling brain-wide circuit analysis.",
+        "limitation_genome": "Even with a whole-brain fly connectome, the frontier challenge remains scaling comparable completeness and multimodal interpretation to vertebrate brains and extracting general computational principles."
+      }
+    },
+    {
+      "title": "Reconstruction of a connectome of single neurons in mouse brains by cross-validating multi-scale multi-modality data",
+      "year": 2025,
+      "venue": "Nature Methods",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Paper B introduces a scalable framework to reconstruct whole-brain single-neuron connectomes in the mouse by cross-validating multi-scale, multi-modal data to infer connectivity among individually resolved neurons.",
+      "idea_genome": {
+        "problem_genome": "Paper B addresses the problem of inferring whole-brain connectivity between individual neurons in the mouse when direct single-neuron connectome reconstruction at that scale is not yet feasible with any single method.",
+        "mechanism_genome": "Its core approach combines two complementary pipelines: an arbor-based probabilistic pairing of dendritic and axonal arbors from tens of thousands of neurons registered to a common atlas, and cross-validation with additional multi-scale, multi-modal datasets to increase confidence in inferred connections. This yields a scalable single-neuron connectome reconstruction framework spanning the whole mouse brain.",
+        "observation_genome": "The study shows that integrating complementary modalities can reconstruct a large-scale single-neuron mouse connectome and recover biologically meaningful brain-wide connectivity patterns across 20,247 neurons.",
+        "limitation_genome": "Because the connectome is inferred probabilistically from registered morphology and cross-modal evidence rather than directly measured synapses, uncertainty remains about connection accuracy, directionality, and completeness at synaptic resolution."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "The 2009 paper turns the conceptual connectomics agenda into a concrete dense-EM study of cortical synaptic structure and function. It narrows the broad vision into a tractable microcircuit reconstruction problem."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The 2015 Cell paper scales early local ultrastructural reconstructions to a saturated mammalian tissue volume. This expands connectomics from single-synapse-centered studies to exhaustive dense reconstruction of all elements in a volume."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "After dense reconstruction exposed the scale bottleneck, Flood-Filling Networks introduced a methodological mutation: deep learning-based automated segmentation. The focus shifts from acquisition and manual tracing to algorithmic scalability."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The MICrONS Explorer combines automated reconstruction advances with large-scale data infrastructure and multimodal neuroscience. It hybridizes segmentation progress with BRAIN-style open resource building for community analysis."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Once large connectomic resources became accessible, the 2024 Nature paper specialized toward functional modeling, using connectomes as constraints for predictive neural networks. This evolves the field from mapping circuits to computing with them."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The FlyWire paper broadens the use of connectomics from subsystem modeling to whole-brain annotation and cell typing. It radiates outward from functionally informed connectome use to a comprehensive atlas-scale whole-brain resource."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "From A to B, the research mutates from using an existing connectome to constrain neural activity models in the fly visual system to developing a new cross-modal method for reconstructing a whole-brain single-neuron connectome in the mouse."
+    }
+  ],
+  "open_question": "Large 2025 connectomics resources now provide unprecedented wiring maps, but connection probabilities, synaptic directionality, uncertainty, cell-type alignment, and functional causality remain unresolved, especially in vertebrate brains. What multimodal graph-learning framework would combine morphology, EM, gene expression, physiology, behavior, and perturbation data to turn static connectome maps into functionally validated whole-brain circuit principles?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Neuroscience / Computational Neuroscience."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 8 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Speciation": 2,
+    "Adaptive Radiation": 2,
+    "Mutation": 2,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Reconstruction of a connectome of single neurons in mouse brains by cross-validating multi-scale multi-modality data",
+      "year": 2025,
+      "venue": "Nature Methods",
+      "identifier": "N/A",
+      "unresolved_gap": "Because the connectome is inferred probabilistically from registered morphology and cross-modal evidence rather than directly measured synapses, uncertainty remains about connection accuracy, directionality, and completeness at synaptic resolution.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

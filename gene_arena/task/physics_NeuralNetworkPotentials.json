@@ -1,0 +1,164 @@
+{
+  "trace_id": "physics_NeuralNetworkPotentials",
+  "domain": "physics",
+  "direction": "NeuralNetworkPotentials",
+  "subfield": "Computational Physics / Materials Science",
+  "frontier_justification": "Machine-learned interatomic potentials (MLIPs) are transforming molecular simulation and materials discovery in 2025-2026. Universal foundation models (MACE-MP-0, ORB, SevenNet) now cover the full periodic table and are actively used in drug/materials discovery pipelines.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Generalized Neural-Network Representation of High-Dimensional Potential-Energy Surfaces",
+      "year": 2007,
+      "venue": "Physical Review Letters 2007",
+      "arxiv_id": "N/A (PRL doi:10.1103/PhysRevLett.98.146401)",
+      "paper_type": "research",
+      "key_contribution": "Behler-Parrinello (BPNN): first neural network potential with physical symmetry (rotation/translation invariance) via atom-centered symmetry functions; enables MD at DFT accuracy.",
+      "idea_genome": {
+        "problem_genome": "Ab initio molecular dynamics (AIMD) is too slow for large systems; classical force fields lack accuracy; need fast and accurate interatomic potentials.",
+        "mechanism_genome": "Decompose total energy as sum of atomic contributions; represent local environment via hand-crafted symmetry functions; fit with shallow neural network.",
+        "observation_genome": "BPNN reproduces DFT potential energy surface for bulk silicon; enables ns-scale MD with quantum accuracy for ~100-atom systems.",
+        "limitation_genome": "Hand-crafted symmetry functions require domain expertise; limited to learned element combinations; no long-range interactions; no message-passing between atoms."
+      }
+    },
+    {
+      "title": "SchNet: A continuous-filter convolutional neural network for modeling quantum interactions",
+      "year": 2017,
+      "venue": "NeurIPS 2017",
+      "arxiv_id": "1706.08566",
+      "paper_type": "research",
+      "key_contribution": "SchNet: message-passing neural network with continuous-filter convolutions over pairwise distances; automatically learns atom interactions without hand-crafted features.",
+      "idea_genome": {
+        "problem_genome": "Behler-Parrinello requires hand-crafted symmetry functions; does not learn atom-atom interaction patterns automatically.",
+        "mechanism_genome": "Continuous-filter convolutions: learnable radial basis functions applied to pairwise distances; message passing updates atomic representations iteratively.",
+        "observation_genome": "SchNet achieves state-of-the-art on QM9 molecular property prediction; learns interaction patterns from data without feature engineering.",
+        "limitation_genome": "Invariant to rotation/translation but not equivariant to them; only scalar (energy) predictions accurate; no vector/tensor properties; no angular information."
+      }
+    },
+    {
+      "title": "Equivariant message passing for the prediction of tensorial properties and molecular spectra",
+      "year": 2021,
+      "venue": "ICML 2021",
+      "arxiv_id": "2102.03150",
+      "paper_type": "research",
+      "key_contribution": "PaiNN: equivariant message passing using vector features alongside scalar features; enables prediction of tensorial molecular properties (dipole moments, polarizabilities).",
+      "idea_genome": {
+        "problem_genome": "SchNet produces only scalar (rotationally invariant) outputs; cannot predict tensorial properties like dipole moments that transform under rotations.",
+        "mechanism_genome": "Equivariant architecture: augment scalar messages with equivariant vector features; vector features transform correctly under SO(3) rotations via cross-products.",
+        "observation_genome": "PaiNN achieves state-of-the-art on MD17 (molecular forces) and QM9 tensorial properties; 6× faster than SE(3)-Transformer with same accuracy.",
+        "limitation_genome": "Limited to first-order equivariance (vectors); higher-order tensors require more complex representations; single-element element encoding."
+      }
+    },
+    {
+      "title": "MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "arxiv_id": "2206.07697",
+      "paper_type": "research",
+      "key_contribution": "MACE: uses higher-order (l ≤ 3) equivariant message passing and many-body interactions; achieves 10-100× more data-efficient training than prior models.",
+      "idea_genome": {
+        "problem_genome": "PaiNN's first-order equivariance misses many-body angular interactions critical for bond angles, ring systems, and torsional barriers.",
+        "mechanism_genome": "Higher-order E3-equivariant message passing via Clebsch-Gordan tensor products up to l=3; many-body messages aggregate neighbor interactions.",
+        "observation_genome": "MACE achieves 10-100× lower force errors than SchNet/PaiNN with same data; state-of-the-art on MD17, ANI-1ccx; fast inference via sparse implementation.",
+        "limitation_genome": "Trained per-material system; cannot transfer to unseen elements; each new system requires separate training dataset and model."
+      }
+    },
+    {
+      "title": "A foundation model for atomistic materials chemistry",
+      "year": 2024,
+      "venue": "arXiv 2024 / Journal of Chemical Physics 2025",
+      "arxiv_id": "2401.00096",
+      "paper_type": "research",
+      "key_contribution": "MACE-MP-0: universal MLIP trained on Materials Project database covering all 89 elements; zero-shot transfer to molecular dynamics of diverse materials without retraining.",
+      "idea_genome": {
+        "problem_genome": "MACE and other MLIPs require training from scratch per material; cannot generalize to unseen chemical systems; need a universal force field.",
+        "mechanism_genome": "Train MACE on Materials Project (>150K DFT calculations, all elements, diverse crystal structures); universal atomic representation; zero-shot transfer.",
+        "observation_genome": "MACE-MP-0 achieves near-DFT accuracy on diverse materials (organic, inorganic, metals, surfaces) without any system-specific training.",
+        "limitation_genome": "Training data biased toward equilibrium structures; poor at reaction pathways and rare events; no treatment of long-range electrostatics or dispersion."
+      }
+    },
+    {
+      "title": "A Lightweight Universal Machine-Learning Interatomic Potential via Knowledge Distillation for Scalable Atomistic Simulations",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "arxiv_id": "2604.10887",
+      "paper_type": "research",
+      "key_contribution": "SevenNet-Nano: knowledge distillation from large universal NNPs (MACE-MP-0, SevenNet-Omni) to lightweight student models; achieves over an order-of-magnitude (>10×) inference speedup; enables universal force field at molecular dynamics production scale across diverse scenarios including plasma etching, ion diffusion, and liquid properties.",
+      "idea_genome": {
+        "problem_genome": "MACE-MP-0 achieves universal coverage but is computationally expensive for production-scale MD simulations with thousands of atoms; research-accuracy models are too slow for practical deployment.",
+        "mechanism_genome": "Knowledge distillation: train compact student model to reproduce MACE-MP-0/SevenNet-Omni teacher model outputs; compact architecture maintains accuracy and transferability while drastically reducing inference cost.",
+        "observation_genome": "SevenNet-Nano achieves high accuracy and strong transferability despite compact size; demonstrates >10× speedup over teacher models; handles diverse scenarios from standard material properties to extreme conditions.",
+        "limitation_genome": "Student model inherits MACE-MP-0's limited treatment of long-range electrostatics; distillation compresses the model but does not fix the teacher's physical limitations around van der Waals and electrostatic interactions."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "SchNet replaces BPNN's hand-crafted symmetry functions with learned continuous-filter message passing; shifts from feature engineering to end-to-end representation learning — a paradigm shift."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "PaiNN extends SchNet's scalar message passing with equivariant vector features; same message-passing graph structure, adds geometric equivariance for tensorial outputs."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "MACE extends PaiNN's first-order equivariance to higher-order (l≤3) via Clebsch-Gordan products; captures many-body interactions; same equivariant message-passing paradigm."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "MACE architecture radiates from system-specific potentials to a universal foundation model covering all elements; same MACE architecture applied at scale to the full periodic table."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "SevenNet-Nano radiates MACE-MP-0's universal coverage from research-accuracy scale to production MD scale via knowledge distillation; same universal potential paradigm adapted to the niche of large-scale practical simulation."
+    }
+  ],
+  "open_question": "SevenNet-Nano achieves inference speedup via distillation but the student model inherits MACE-MP-0's limited treatment of long-range electrostatics. What mechanism would enable a lightweight universal potential to capture long-range electrostatic and van der Waals effects with calibrated accuracy on charged, polar, defective, and heterogeneous systems without sacrificing the >10× speedup over teacher models?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Physics / Materials Science."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Speciation": 1,
+    "Mutation": 2,
+    "Adaptive Radiation": 2
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "A Lightweight Universal Machine-Learning Interatomic Potential via Knowledge Distillation for Scalable Atomistic Simulations",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "identifier": "2604.10887",
+      "unresolved_gap": "Student model inherits MACE-MP-0's limited treatment of long-range electrostatics; distillation compresses the model but does not fix the teacher's physical limitations around van der Waals and electrostatic interactions.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

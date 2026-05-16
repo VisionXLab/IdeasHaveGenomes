@@ -1,0 +1,795 @@
+[
+  {
+    "instance_id": "T4-05_parent_genome_000",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The method launches the LP0,7 high-order mode into a step-index multimode fiber and uses programmable macrobends near the input to locally perturb that mode’s dispersion, thereby steering nonlinear dynamics and the output spectrum without substantial mode mixing.\"\n  Niche: \"Tunable broadband femtosecond supercontinuum generation in multimode fiber is addressed with the goal of preserving a clean fixed spatial beam for imaging and spectroscopy.\"\n  Limitation: \"The demonstration is specialized to a particular high-order mode, fiber type, and pump configuration, so the generality, tuning range limits, and stability under broader operating conditions are not fully established.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It analyzes the infinite-permeability limit of the Laplace boundary-value problem to show that the exterior solution is fixed entirely by the body's outer boundary geometry, regardless of interior details.\"\n  Niche: \"This paper addresses magnetization and external field determination for high-permeability bodies in static Laplace transmission problems, especially when internal structure may vary or deform.\"\n  Limitation: \"The main limitation is that the result is exact only in the ideal infinite-permeability limit, with finite-permeability support provided mainly by numerical approximation rather than broad experimental validation or sharp error bounds.\"\n\nB.\n  Mechanism: \"The authors develop an analytical and numerical formalism that folds Doppler-broadened XFEL spectra into SAXS coherence calculations and apply it to benchmark single-step and periodic-grating geometries to estimate intensity reduction, Bragg-peak suppression, and peak broadening.\"\n  Niche: \"This paper addresses how Doppler-induced spectral broadening in laser-heated plasmas alters temporal coherence and thereby distorts small-angle X-ray scattering signals used to infer density structures such as steps and gratings.\"\n  Limitation: \"The study is limited by its focus on idealized benchmark geometries and modeled parameter scans rather than validation on complex experimental targets or direct comparison to measured SAXS data.\"\n\nC.\n  Mechanism: \"The paper develops a time-domain Method of Auxiliary Sources coupled with a first-order Standard Impedance Boundary Condition to model scattering through surface fields only, avoiding computation of internal fields.\"\n  Niche: \"Transient two-dimensional electromagnetic scattering analysis for closed-curve and planar cylindrical scatterers made of moderately conductive materials in the SIBC-valid regime.\"\n  Limitation: \"The approach is restricted to two-dimensional geometries and to conductivity-frequency-permittivity regimes where a first-order SIBC is accurate, so it may fail for low-conductivity, strongly penetrable, or fully three-dimensional problems.\"\n\nD.\n  Mechanism: \"It characterizes AXUV-HS5 photodiode nonlinear response with pulsed-laser calibration and then estimates plasma density, size, temperature, and duration by combining charge-conserving soft x-ray measurements with a spherical emission model and the Bennett relation.\"\n  Niche: \"The paper addresses diagnosing the plasma parameters and source morphology of low-dI/dt copper X-pinch soft x-ray emitters when detector nonlinearity complicates standard interpretation.\"\n  Limitation: \"The analysis relies on simplified assumptions including spherical symmetry, Bennett equilibrium, and indirect inversion from nonlinear detector data on a single low-dI/dt copper-wire X-pinch platform.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "physics.plasm-ph",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 0,
+        "similarity_min": 0.2162,
+        "similarity_avg": 0.2204,
+        "similarity_max": 0.2254
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_001",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It defines a little mu-function as a degeneration of the generalized mu-function and derives it via q-Borel summation of a divergent solution to the Ramanujan difference equation, then develops symmetry, connection, contiguous, and Wronskian formulas for this new object.\"\n  Niche: \"The paper studies a degenerate limit of the generalized Zwegers' mu-function in the setting of the Ramanujan second-order q-difference equation and related special-function identities.\"\n  Limitation: \"The work appears primarily theoretical and specialized to a particular degenerate q-difference setting, with no indication of broader computational validation, applications, or extension beyond this class of equations.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It combines variational analysis via optimizers of an interpolation Hardy-Gagliardo-Nirenberg inequality, Pohozaev identity arguments, and a compactness method to derive ground states, nonexistence results, global/blow-up criteria, and minimal-mass blow-up characterization.\"\n  Niche: \"The paper studies the Cauchy problem for nonlinear Schrödinger equations with a critical Hardy potential and a nonlocal Choquard nonlinearity in the energy-subcritical regime.\"\n  Limitation: \"The results are restricted to the energy-subcritical setting and rely on structural variational identities, leaving more general regimes or broader classes of nonlinearities untreated.\"\n\nB.\n  Mechanism: \"It derives sufficient geometric conditions by comparing corresponding sections or projections of the nested pair and by analyzing support cones or point-source shadow boundaries with apexes on the boundary of K.\"\n  Niche: \"The paper studies geometric tomography characterizations of the Euclidean ball or ellipsoid from relations between sections, projections, and support-cone data of two nested convex bodies with L contained in the interior of K.\"\n  Limitation: \"The results are specialized to nested convex-body pairs under particular geometric relations and do not provide a general characterization framework for arbitrary convex bodies or broader non-nested settings.\"\n\nC.\n  Mechanism: \"The paper develops inverse scattering for these nonzero step-like boundary conditions, formulates the solution as a Riemann-Hilbert problem, and applies nonlinear steepest descent to extract asymptotics in distinct space-time regions.\"\n  Niche: \"Large-time asymptotics of the defocusing mKdV equation with step-like initial data tending to unequal positive constants with c_l > c_r, producing a rarefaction-wave regime.\"\n  Limitation: \"The analysis is restricted to the defocusing mKdV case with ordered positive backgrounds c_l > c_r and does not address more general sign configurations, focusing cases, or broader step data classes.\"\n\nD.\n  Mechanism: \"It uses formal-language and group-theoretic arguments to prove non-EDT0Lness for the infinite cyclic group's word problem and to derive invariance under changing generators and passing to finitely generated subgroups.\"\n  Niche: \"The paper studies which finitely generated groups can have word problems that are EDT0L languages, with emphasis on the infinite cyclic group and structural closure properties.\"\n  Limitation: \"The paper does not resolve the full conjecture that every finitely generated group with EDT0L word problem is finite, leaving open whether any infinite torsion examples exist.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "math.GR",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 0,
+        "similarity_min": 0.2342,
+        "similarity_avg": 0.2372,
+        "similarity_max": 0.2427
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_002",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It combines quantum Monte Carlo calculations with many-body ab initio interaction potentials that explicitly represent the proton coordination environment across cluster sizes.\"\n  Niche: \"This paper addresses the unexplained magic numbers and structural stability patterns of protonated argon clusters.\"\n  Limitation: \"The paper is limited by its focus on protonated argon clusters and does not establish how broadly the identified mechanism transfers to other rare-gas or molecular cluster systems.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It analyzes the generalized magnetic field \\(\\vec{\\mathcal{B}} = \\vec{B} + \\nabla\\times((c/\\omega_{pe})^2\\mu_0\\vec{j})\\) and proves in 3D that this field is Lie-dragged by an evolution velocity even when ordinary magnetic field lines reconnect.\"\n  Niche: \"The paper addresses magnetic reconnection in plasmas when electron inertia is the sole non-ideal effect, especially in fully three-dimensional systems.\"\n  Limitation: \"The paper is limited by its idealized assumption that electron inertia is the only non-ideal effect, leaving realistic competition with resistivity and other dissipative processes largely outside the formal treatment.\"\n\nB.\n  Mechanism: \"It constructs a symmetry-representation-based real-space Hamiltonian that treats the electric field as a vector in near and far fields, can deform between tight-binding and long-range photonic limits, and independently tunes symmetry-resolved mode energies at high-symmetry Brillouin-zone points.\"\n  Niche: \"The paper addresses how to unify global band-topology invariants and local far-field topological charges in photonic systems within a single physically interpretable framework.\"\n  Limitation: \"The work appears primarily theoretical and abstract-level, leaving open how broadly and robustly the framework performs under experimental imperfections, material losses, and full-wave validation in concrete devices.\"\n\nC.\n  Mechanism: \"The authors analyze the classical motion of an open string coupled to a constant electric field and map it via the double-copy prescription to a closed string propagating in the corresponding double-copied spacetime background, then compare the resulting dynamics and pathologies.\"\n  Niche: \"This paper studies how the classical double copy can be extended from point-particle and field configurations to the dynamics of strings, specifically an open string in a constant abelian electric background and its putative closed-string double copy.\"\n  Limitation: \"The study is restricted to a case-study setting with an abelian constant electric field and does not yet provide a fully systematic or general framework for classical double copy of arbitrary string motions or backgrounds.\"\n\nD.\n  Mechanism: \"It analyzes the infinite-permeability limit of the Laplace boundary-value problem to show that the exterior solution is fixed entirely by the body's outer boundary geometry, regardless of interior details.\"\n  Niche: \"This paper addresses magnetization and external field determination for high-permeability bodies in static Laplace transmission problems, especially when internal structure may vary or deform.\"\n  Limitation: \"The main limitation is that the result is exact only in the ideal infinite-permeability limit, with finite-permeability support provided mainly by numerical approximation rather than broad experimental validation or sharp error bounds.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "physics.plasm-ph",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 3,
+        "similarity_min": 0.3145,
+        "similarity_avg": 0.3278,
+        "similarity_max": 0.3451
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_003",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It synthesizes and organizes recent computational approaches for single-cell GRN inference across modalities by comparing how they model regulatory interactions, dynamic state changes, and perturbation responses.\"\n  Niche: \"This paper addresses the problem of inferring gene regulatory networks from single-cell omics data with emphasis on cell type specificity, temporal dynamics, and perturbation-aware causal regulation.\"\n  Limitation: \"As a review, the paper does not introduce a new inference algorithm or benchmark dataset and is limited by the current incompleteness, heterogeneity, and validation challenges of available single-cell GRN methods.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"The paper uses a commentary-style overview to synthesize recent developments in generative AI and synthetic data and map their potential uses and risks for infectious disease research.\"\n  Niche: \"This paper addresses how synthetic data generated by modern generative AI could be applied to infectious disease research while considering privacy, bias, and misuse concerns.\"\n  Limitation: \"Because this is a high-level commentary, it does not present new datasets, algorithms, experiments, or quantitative validation of synthetic data performance in infectious disease settings.\"\n\nB.\n  Mechanism: \"FLOWR.root is an SE(3)-equivariant flow-matching foundation model jointly trained for structure-aware 3D ligand generation, confidence-aware affinity prediction, conditional sampling, and parameter-efficient LoRA domain adaptation on protein-ligand data of mixed fidelity.\"\n  Niche: \"Structure-based drug design requiring pocket-aware 3D ligand generation, scaffold editing, and multi-endpoint binding affinity prediction from hit finding through lead optimization.\"\n  Limitation: \"The paper shows that the pretrained model alone does not reliably generalize to unseen structure-activity landscapes and therefore requires target- or project-specific domain adaptation for best performance.\"\n\nC.\n  Mechanism: \"It combines a generative procedure for synthetic functional landscapes with a graph neural network that explicitly represents domain connectivity and then uses transfer learning to adapt to biological datasets.\"\n  Niche: \"This paper addresses prediction and optimization of multispecific antibody function from molecular architecture, especially when only limited experimental data are available.\"\n  Limitation: \"A main limitation is that much of the evidence relies on synthetic landscapes rather than extensive real-world experimental validation across diverse multispecific antibody systems.\"\n\nD.\n  Mechanism: \"It builds an OWL ontology in Protege, augments it with SWRL rules for rule-based inference, and evaluates reasoning using SPARQL queries over six sample patient scenarios.\"\n  Niche: \"The paper addresses the lack of a unified ontology for representing and reasoning about non-invasive respiratory support concepts in acute care.\"\n  Limitation: \"The evaluation is limited to six illustrative patient scenarios and does not demonstrate performance or clinical impact in real-world deployment at scale.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "q-bio.BM",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2056,
+        "similarity_avg": 0.2424,
+        "similarity_max": 0.2945
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_004",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The paper builds a diffusion generative model whose score function is decomposed through time-varying orthogonal projections onto a low-dimensional latent factor subspace and encoded in a tailored neural architecture.\"\n  Niche: \"High-dimensional financial return scenario generation under small-sample conditions using latent factor structure.\"\n  Limitation: \"The framework depends on the validity and recoverability of a low-dimensional factor structure, which may limit performance when returns exhibit weak, unstable, or misspecified factors.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It incorporates the ISEW into the COMPASS ecological macroeconomic model and simulates business-as-usual and policy scenarios involving a carbon tax, income redistribution, working-time reduction, and their combination.\"\n  Niche: \"The paper addresses how to dynamically model the Index of Sustainable Economic Welfare within an ecological macroeconomic framework to evaluate social and environmental policy impacts on sustainable wellbeing.\"\n  Limitation: \"The main limitation is that although the ISEW captures policy effects better than GDP, it still omits the full environmental costs of growth and therefore provides an incomplete sustainability assessment.\"\n\nB.\n  Mechanism: \"Using Japanese survey data, the authors compare pre-pandemic and post-pandemic attitudes toward redistribution and analyze how these attitudes vary with institutional trust and income level.\"\n  Niche: \"This paper studies how acceptable tax rates for reducing inequality in Japan changed during and after COVID-19, with a focus on the role of trust in government.\"\n  Limitation: \"The study is limited by its reliance on Japanese attitudinal data, which may not identify causal mechanisms cleanly or generalize to other countries and institutional settings.\"\n\nC.\n  Mechanism: \"The authors extend a prior agent-based artificial financial market model by adding additional agents, split into additional fundamental agents and additional technical agents, each following a simple one-parameter strategy, and then vary their population to measure earnings effects.\"\n  Niche: \"This paper studies how increasing the number of investors who use the same fundamental or technical trading strategy affects each investor's profit in an artificial financial market.\"\n  Limitation: \"The study relies on a simplified simulated market with very simple one-parameter strategies and no real-market validation, which limits how strongly the results generalize to actual investors.\"\n\nD.\n  Mechanism: \"It develops a correction framework that removes correlated errors-in-variables from transaction-price-based signals and return denominators and eliminates asymmetric ex-post return filtering that leaks future information into factor construction.\"\n  Niche: \"This paper addresses the replication and validity of reported corporate bond factor premia in empirical asset pricing research.\"\n  Limitation: \"The paper mainly diagnoses and corrects biases in existing factor studies rather than proposing many new economically motivated bond factors or testing all possible alternative data constructions.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "econ.GN",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 3,
+        "similarity_min": 0.3132,
+        "similarity_avg": 0.3185,
+        "similarity_max": 0.3278
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_005",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The authors analyze a large SN Ia sample by comparing sodium absorption strengths with photometric, spectroscopic, and environmental variables and then apply clustering to identify distinct supernova populations.\"\n  Niche: \"This paper addresses how narrow Na I D absorption in Type Ia supernova spectra relates to supernova intrinsic properties, host-galaxy environment, and intervening material.\"\n  Limitation: \"The study is primarily correlational and therefore cannot directly prove that asymmetric radiation and viewing-angle effects are the physical cause of the observed population differences.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It combines CT-derived lung envelope and major airways with algorithmically generated distal branches, then couples nonlinear elastic tissue mechanics under small deformation to bronchial-tree fluid dynamics with inertia and static airway compliance using finite-element simulation.\"\n  Niche: \"This paper addresses patient-specific simulation of spatio-temporal ventilation, airflow, and wall shear stress in a three-dimensional human lung model spanning tissue and airway scales.\"\n  Limitation: \"A main limitation is the reliance on small-deformation nonlinear elasticity and synthesized small-airway geometry, which may miss full respiratory motion and true subject-specific distal airway structure.\"\n\nB.\n  Mechanism: \"It proposes SeqCLIP for sequence-level contrastive semantic alignment and OneVocab for early fusion by inserting genomic k-mers directly into the language model vocabulary.\"\n  Niche: \"This paper addresses multimodal DNA-language foundation modeling, specifically how genomic sequences and natural language should be fused for classification and reasoning tasks.\"\n  Limitation: \"The paper mainly compares fusion strategies within its evaluated tasks and does not establish whether the proposed integration approach generalizes broadly across diverse genomic settings, model scales, or downstream applications.\"\n\nC.\n  Mechanism: \"It surveys and synthesizes prior studies on reinforcement learning in genomics, organizing their methods, strengths, limitations, and future research directions around reward design, hybrid ML integration, and new application areas.\"\n  Niche: \"This paper addresses the emerging niche of applying reinforcement learning to genomics tasks such as gene regulatory network inference, genome assembly, and sequence alignment.\"\n  Limitation: \"As a survey, the paper does not introduce or experimentally validate a new reinforcement learning method, dataset, or benchmark for genomics.\"\n\nD.\n  Mechanism: \"It introduces a probabilistic inference framework that models antibody-specific maturation ages and infers indel positions and length distributions from repertoire sequencing data while avoiding biases of standard annotation pipelines.\"\n  Niche: \"The paper addresses statistical inference of somatic hypermutation-induced insertions and deletions in antibody immunoglobulin heavy-chain repertoires during affinity maturation.\"\n  Limitation: \"The study is limited by its focus on human immunoglobulin heavy chains and statistical characterization, leaving mechanistic biological causes and generalization to other chains, species, or experimental settings unresolved.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "q-bio.GN",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 0,
+        "similarity_min": 0.213,
+        "similarity_avg": 0.2278,
+        "similarity_max": 0.238
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_006",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It develops a recursive characterization of admissible binary parity sequences to uniquely generate such integers and derive bounds on their stopping and cycle numbers.\"\n  Niche: \"The paper studies stopping times and possible cycle structure in the normalized 3n+1/Collatz process, especially for integers congruent to 3 modulo 4.\"\n  Limitation: \"The results are confined to the normalized iteration and a specific recursive encoding, so the argument may not fully resolve the broader Collatz conjecture outside this formulation.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It introduces parabolic weak porosity and proves the characterization using a stopping time argument together with translation and doubling properties for parabolic weakly porous sets.\"\n  Niche: \"The paper addresses the characterization of parabolic Muckenhoupt A_1 weights with time-lag via geometric properties of closed sets in the parabolic setting.\"\n  Limitation: \"The results are specialized to the parabolic A_1 time-lag framework and distance-to-set weights, leaving broader weight classes and more general geometries untreated.\"\n\nB.\n  Mechanism: \"It uses number-theoretic and structural analysis of finite abelian groups and their automorphism counts to derive necessary constraints on any rational value represented by |Aut(G)|/|G|.\"\n  Niche: \"The paper studies which positive rational numbers can occur as the ratio of the automorphism-group size to the group size for finite abelian groups.\"\n  Limitation: \"The paper provides only negative necessary conditions and does not give a full characterization or constructive description of all rational numbers realizable as |Aut(G)|/|G|.\"\n\nC.\n  Mechanism: \"It defines multi-metric spaces on multisets with distances valued in a multi-real number system so that multiplicity information is explicitly incorporated into similarity computation.\"\n  Niche: \"The paper addresses frequency-sensitive duplicate detection in data domains such as transactional databases, sensor logs, and record linkage where repeated values matter.\"\n  Limitation: \"A main limitation is that the paper appears to validate the approach mainly through an illustrative duplicate-detection example rather than broad large-scale empirical benchmarking across many datasets and baselines.\"\n\nD.\n  Mechanism: \"It analyzes the normalized logarithm of the Laplacian determinant under Benjamini-Schramm-type local convergence while controlling degeneration through a vanishing normalized sum of reciprocals of lengths of very short simple closed geodesics.\"\n  Niche: \"The paper studies asymptotic behavior of Laplacian determinants for sequences of compact hyperbolic surfaces with growing volume that locally converge to a random rooted hyperbolic surface.\"\n  Limitation: \"The result requires a restrictive thin-part assumption on short geodesics and does not cover sequences where short closed geodesics contribute non-negligibly or where convergence fails to be local weak convergence.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "math.SP",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 3,
+        "similarity_min": 0.2856,
+        "similarity_avg": 0.2978,
+        "similarity_max": 0.3051
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_007",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It proves that for sufficiently large typical times the coarse-grained particle density becomes nearly uniform with probability extremely close to one by combining exact free-fermion dynamics with a large-deviation bound that holds for every energy eigenstate.\"\n  Niche: \"The paper addresses the emergence of macroscopic irreversibility and free-expansion equilibration in a one-dimensional free fermion chain evolving unitarily from an arbitrary initial state with a fixed macroscopic particle number.\"\n  Limitation: \"The result is restricted to a specific noninteracting nearest-neighbor fermion chain and coarse-grained density observables, so it does not directly establish analogous irreversibility for generic interacting systems or finer observables.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It develops a stochastic field theory for thermal dipole-field dynamics coupled to hydrodynamic flow, derives a general Kubo response relation and a Green-Kubo viscosity formula based on body-force correlations, and uses these to compute the dipolar contribution to viscosity.\"\n  Niche: \"This paper addresses how to predict liquid viscosity from dielectric response in highly polar liquids by modeling dissipation caused by dipolar interactions.\"\n  Limitation: \"The work is primarily a theoretical derivation whose validity depends on model assumptions about dipole-field and hydrodynamic coupling and is not established here by broad quantitative comparison across many real liquids.\"\n\nB.\n  Mechanism: \"It extracts crack graphs from images, classifies crack generations using connection hierarchy, and compares three hierarchy-aware generators: random uniform partitioning, recursive Voronoi partitioning, and a crack growth simulation model.\"\n  Niche: \"This paper addresses the analysis and synthetic generation of planar hierarchical crack networks formed during drying of thin colloidal or polymer films on substrates.\"\n  Limitation: \"The study notes that existing generation-classification methods are limited by discrete time assumptions and partial-pattern usage, and its own evaluation remains based mainly on summary morphology statistics rather than full physical validation.\"\n\nC.\n  Mechanism: \"It synthesizes recommendations from a multi-stakeholder May 2024 conference involving researchers, journalists, legal professionals, publishers, societies, and other experts to formulate best practices and policy guidance.\"\n  Niche: \"The paper addresses how to improve reproducibility and replicability practices across the research lifecycle in condensed matter physics.\"\n  Limitation: \"Because it is a consensus report rather than a controlled empirical study, it does not quantitatively test the effectiveness of its recommendations.\"\n\nD.\n  Mechanism: \"The study combines magnetron-sputtered thin-film fabrication with texture, optical, and wetting measurements, then applies data mining, K-Means clustering, and Random Forest regression to relate morphology descriptors to contact angle.\"\n  Niche: \"This paper addresses how surface texture morphology and composition in sputtered Cu, Ag, and CuAg thin films on textured silicon govern wetting and optical behavior.\"\n  Limitation: \"The work is limited to a specific Cu/Ag/CuAg thin-film system on textured silicon and provides correlative rather than mechanistic causal validation of the inferred morphology-property relationships.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "cond-mat.dis-nn",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2153,
+        "similarity_avg": 0.2891,
+        "similarity_max": 0.3266
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_008",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"Using Gaia DR3 astrometry, the authors compare HV 11417's proper motion and inferred transverse motion to the SMC and to nearby massive and evolved stellar populations to assess membership and runaway status.\"\n  Niche: \"This paper addresses whether the TZO candidate HV 11417 is truly a member of the Small Magellanic Cloud and what its kinematics imply about its evolutionary history.\"\n  Limitation: \"The kinematic evidence supports a past dynamical disruption but does not by itself confirm that HV 11417 is a genuine Thorne-Zytkow Object.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It systematically recomputes and compares DB white dwarf analyses under different He I profile assumptions, including frequency sampling, Doppler broadening, line dissolution, neutral broadening, 3D hydrodynamical corrections, and semi-analytical versus simulation-based Stark-broadened profiles.\"\n  Niche: \"The paper addresses how He I line-profile modeling affects the photometric and spectroscopic determination of atmospheric parameters in DB white dwarfs, especially for the SDSS DR17 sample.\"\n  Limitation: \"The paper is a theoretical and comparative modeling study, so its conclusions are limited by the adopted atmosphere-model assumptions and by validation being tied primarily to existing SDSS DR17 observations rather than independent experimental benchmarks.\"\n\nB.\n  Mechanism: \"It derives coupled linear perturbation equations for multiple interacting fluid species and obtains exact and approximate solutions for two-component and many-component cases under cosmic expansion.\"\n  Niche: \"This paper addresses gravitational instability and density-perturbation growth in a self-gravitating multicomponent fluid within an expanding Newtonian cosmological background.\"\n  Limitation: \"The analysis is limited by its Newtonian, largely linearized fluid treatment and therefore does not capture fully relativistic effects, detailed microphysics, or nonlinear structure formation.\"\n\nC.\n  Mechanism: \"It constructs a unified Combined CMB baseline from Planck, ACT DR6, and SPT-3G and compares that reference against compiled 2019-2026 measurements from weak lensing, cluster counts, galaxy-galaxy lensing, and redshift-space distortions while examining likely survey systematics.\"\n  Niche: \"This paper reviews the 2026 status of the cosmological S8 tension between early-universe CMB constraints and late-universe large-scale-structure probes.\"\n  Limitation: \"As a review-level synthesis, the paper cannot by itself resolve whether the discrepant probe behavior is caused by survey-specific systematics or genuine physics beyond LambdaCDM.\"\n\nD.\n  Mechanism: \"It constructs period-luminosity diagrams from stars with parallax errors below 20 percent and well-determined periods, then compares the resulting sequences with the standard Mira relation and the Whitelock evolutionary track.\"\n  Niche: \"This paper studies the period-luminosity behavior of nearby Mira and semiregular variable stars using accurate Hipparcos parallaxes and K-band photometry.\"\n  Limitation: \"The study is limited by a relatively selective nearby sample and cannot decisively determine whether the sequence transition is caused by a pulsation-mode change or by altered stellar structure.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "astro-ph",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 0,
+        "similarity_min": 0.2215,
+        "similarity_avg": 0.2238,
+        "similarity_max": 0.2266
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-2_genome_parent",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_900",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"Scale to 40B parameters; extend training corpus to OpenGenome2 (9.3T base pairs across all domains of life including eukaryotes); maintain 1M-token single-nucleotide context; same StripedHyena-style architecture scaled up.\"\n  Niche: \"Evo (7B) is limited to prokaryotes and cannot generalize to eukaryotic genomes with their complex regulatory grammar, splicing, and chromatin organization.\"\n  Limitation: \"Cannot model 3D chromatin organization or the regulatory grammar of enhancer-promoter interactions spanning megabase distances; 1D sequence modeling does not capture how regulatory elements function in the context of real chromatin structure.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"The method is a CSRF request-binding defense that embeds unpredictable session-associated nonces in sensitive requests and validates them server-side, optionally supplemented by provenance checks such as the Referer header while exempting safe read-only operations.\"\n  Niche: \"This paper targets the problem of preventing cross-site request forgery against authenticated web applications, especially for state-changing user actions.\"\n  Limitation: \"The paper's secondary provenance-based checks depend on browser-supplied headers like Referer that are inconsistently present or deployable, limiting standalone reliability and complicating universal adoption.\"\n\nB.\n  Mechanism: \"A reusable QA test collection construction procedure adapts classical IR test-collection methodology by assembling natural-language questions, a large corpus, and human relevance judgments that mark answer-bearing documents or snippets while accounting for paraphrase, ambiguity, and multiple valid answer forms.\"\n  Niche: \"This paper targets the problem of creating a standardized evaluation benchmark for open-domain question answering over a fixed document corpus.\"\n  Limitation: \"Because the collection is grounded in a fixed corpus and human assessment protocol, its coverage of question types and acceptable answers is constrained by corpus answerability and assessor consistency.\"\n\nC.\n  Mechanism: \"StripedHyena architecture (hybrid Hyena + attention) at 7B scale; trained on 2.7M prokaryotic genomes (1T tokens); single-nucleotide tokenization across entire genome; generative and discriminative tasks unified.\"\n  Niche: \"Caduceus models DNA structure but cannot generate functional genetic elements de novo; no model unifies DNA/RNA/protein function prediction and generation at genome scale.\"\n  Limitation: \"Trained primarily on prokaryotes; poor generalization to eukaryotic genomes (different chromatin structure, splicing, regulatory complexity); genome-scale generation (chromosome level) still out of reach; no understanding of 3D genome organization.\"\n\nD.\n  Mechanism: \"The paper synthesizes evidence from cancer biology, normal mammalian physiology, and microbial metabolism to propose a resource-allocation and cost-benefit framework, potentially coupled with dynamical systems modeling, for analyzing metabolic strategy choice.\"\n  Niche: \"This paper addresses the problem of explaining why cancer cells and other organisms adopt aerobic glycolysis or overflow metabolism instead of oxidative phosphorylation under oxygen-replete conditions.\"\n  Limitation: \"Because this is a conceptual review, it does not provide new experimental data or a validated quantitative model that decisively tests the proposed framework against competing explanations of the Warburg effect.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computational Biology / Genomics Foundation Models",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_901",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It adapts sequence-to-sequence summarization by initializing the encoder, and in some variants both encoder and decoder, with large self-supervised pretrained contextual text representations and then fine-tuning the full attention-based model end-to-end for generation.\"\n  Niche: \"This paper targets abstractive document summarization, especially improving summary generation when labeled summarization data is limited.\"\n  Limitation: \"The approach must reconcile bidirectional pretrained encoding with autoregressive decoding through hybrid architectural choices, leaving the best way to transfer pretrained representations into the decoder less cleanly resolved than encoder transfer.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n\nB.\n\nC.\n  Mechanism: \"It uses a two-stage summarizer in which a reinforcement-learned sentence selector chooses salient source sentences and a neural rewriter locally abstracts, compresses, and paraphrases those selected sentences into the final summary.\"\n  Niche: \"This paper targets efficient and high-quality abstractive summarization of long source documents.\"\n  Limitation: \"Because the model only rewrites a small set of extracted sentences, it is constrained by the selector's recall and may miss important content or cross-sentence abstractions not present in the chosen sentences.\"\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Natural Language Processing",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_902",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The paper proposes a human-centric pipeline that generates large-scale functional human assay data, applies deep learning models such as CNNs and transformers to learn physiological embeddings, integrates multimodal omics and clinical data, and iteratively refines models through scientist-guided evaluation and clinical feedback.\"\n  Niche: \"Preclinical drug development needs better prediction of human clinical efficacy by using high-dimensional functional data from primary human cells, tissues, and multimodal assays.\"\n  Limitation: \"The paper is primarily a conceptual paradigm piece and does not provide a fully validated large-scale empirical benchmark demonstrating superior clinical translation outcomes.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n\nB.\n  Mechanism: \"The paper integrates AI-driven de novo compound design with iterative two-week synthesis and pharmacology cycles, an optogenetic OFC-VMS circuit-based OCD mouse model, and cross-species pupillometry to select, validate, and clinically advance DSP-1181.\"\n  Niche: \"CNS drug discovery for obsessive-compulsive disorder, specifically rapid identification and translation of an orally active 5-HT1A full agonist with better model validity and biomarker translatability.\"\n  Limitation: \"The study is limited by its focus on a single target and candidate, so it does not yet prove that the integrated platform generalizes broadly across CNS mechanisms, disorders, or later-stage clinical efficacy.\"\n\nC.\n  Mechanism: \"The paper proposes a human-centric pipeline that generates large-scale functional human assay data, applies deep learning models such as CNNs and transformers to learn physiological embeddings, integrates multimodal omics and clinical data, and iteratively refines models through scientist-guided evaluation and clinical feedback.\"\n  Niche: \"Preclinical drug development needs better prediction of human clinical efficacy by using high-dimensional functional data from primary human cells, tissues, and multimodal assays.\"\n  Limitation: \"The paper is primarily a conceptual paradigm piece and does not provide a fully validated large-scale empirical benchmark demonstrating superior clinical translation outcomes.\"\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "AI Drug Discovery",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "life_science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_903",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"LeRobot is a modular open-source system that standardizes data collection, dataset formatting, normalization, training, evaluation, rollout, and hardware deployment for sequence-based behavior-cloning-style policies that map images, proprioception, and action history directly to continuous robot actions.\"\n  Niche: \"This paper targets the problem of building and evaluating end-to-end robot learning systems for physical manipulation and control from multimodal observations across the full experimental workflow.\"\n  Limitation: \"Because the work is primarily a software framework centered on supervised imitation-style policy learning, it does not itself introduce a new learning algorithm or resolve performance limits beyond the supported behavior-cloning family and available hardware integrations.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n\nB.\n\nC.\n\nD.\n  Mechanism: \"Implicit Behavioral Cloning learns a temporally conditioned policy with an implicit sampling- or energy-based behavior-matching objective so the policy directly maps observation history to a multi-modal action distribution without explicitly inferring intermediate latent plans.\"\n  Niche: \"This paper targets offline imitation learning from demonstrations where expert behavior is multi-modal and depends on long-horizon temporal context.\"\n  Limitation: \"By avoiding explicit plan variables, the method sacrifices interpretable intermediate plans and leaves high-level intent unobserved and unsupervised within the policy.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Robotics",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_904",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The paper analyzes Kelly-rule growth optimality by modeling returns with a stochastic clock and comparing the resulting average growth rate and ruin thresholds to less aggressive leverage choices.\"\n  Niche: \"Long-term portfolio sizing under time-changed return dynamics in a general semimartingale setting.\"\n  Limitation: \"The work is primarily theoretical and illustrative, relying on literature-based stochastic clock variance examples rather than broad empirical validation on real investment data.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It introduces the Geopolitical-Adaptive Efficiency Ratio (GAER), a descriptive cross-sectional indicator that measures how much adaptive-efficiency-supporting economic and institutional mass is concentrated in institutionally enforced and geopolitically central assets.\"\n  Niche: \"The paper addresses how to diagnose where adaptive market efficiency is informationally feasible across global equity markets under differing institutional quality and geopolitical centrality so that robust portfolio construction methods are only applied in suitable domains.\"\n  Limitation: \"A main limitation is that GAER is presented as a conceptual diagnostic illustrated on a public global equity snapshot rather than validated through extensive out-of-sample tests linking the diagnostic to realized portfolio robustness or market behavior.\"\n\nB.\n  Mechanism: \"Goods is a shared metadata system that models datasets as first-class entities and automatically harvests identity, schema, ownership, usage, and derivation metadata from existing storage and pipeline systems into a graph for search, lineage, and governance workflows.\"\n  Niche: \"This paper targets organization, discovery, understanding, and governance of large numbers of heterogeneous internal datasets in a rapidly growing enterprise data ecosystem.\"\n  Limitation: \"Because Goods is designed for incremental integration over heterogeneous preexisting systems, its metadata completeness and consistency depend on the quality and coverage of harvested signals from those external systems rather than on a single authoritative backend.\"\n\nC.\n  Mechanism: \"It proposes SEMamba++, which augments a SEMamba-style state-space backbone with a Frequency GLP block, a multi-resolution parallel time-frequency dual-processing module, and a learnable mapping to capture global, local, and periodic spectral patterns efficiently.\"\n  Niche: \"This paper addresses general speech restoration under diverse distortions by modeling speech-specific spectral structure in denoising and related enhancement settings.\"\n  Limitation: \"A main limitation is that the abstract does not establish robustness boundaries or trade-offs across distortion types, model scales, or deployment constraints beyond reporting strong aggregate performance.\"\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "q-fin.PM",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_905",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It formulates the trader's problem as a singular stochastic control model with general limit-order-book shape functions, a stochastic volume-effect process for resilience, and a Markov chain for liquidity regimes, then characterizes the value function through a system of variational HJB inequalities.\"\n  Niche: \"The paper studies optimal execution of a large buy order over a finite horizon in a limit order book with transient price impact, stochastic resilience, and regime-switching liquidity uncertainty.\"\n  Limitation: \"A key limitation is that the work is primarily analytical and numerical, relying on stylized model assumptions about order-book shape, resilience dynamics, and regime switching rather than empirical calibration or market validation.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"The paper extends the Heath-Jarrow-Morton framework to a semimartingale setting under the real-world measure and studies the resulting SPDE for viability, local martingale deflators, existence, uniqueness, invariance, and affine realizations.\"\n  Niche: \"Modeling and analyzing multiple term structures in financial, insurance, and energy markets within a real-world probability setting.\"\n  Limitation: \"The work is primarily theoretical and does not appear to provide empirical calibration, numerical experiments, or market-specific implementation evidence.\"\n\nB.\n\nC.\n  Mechanism: \"It proposes a stochastic trust model based on a Lévy process that combines Brownian motion for continuous fluctuations, Poisson jump intensity for shock arrivals, and random jump-size distributions for shock magnitudes, evaluated through simulation and sensitivity analysis.\"\n  Niche: \"The paper addresses modeling trust dynamics in social, economic, and political systems where abrupt behavioral shifts, volatility, and cooperation breakdowns occur.\"\n  Limitation: \"The work appears to rely mainly on simulated scenarios and parameter sweeps without clear empirical calibration or validation against real trust behavior data.\"\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "q-fin.MF",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_906",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"An empirical repository-mining analysis operationalizes build maintenance effort by identifying and measuring version-history changes to build scripts, configuration files, dependency declarations, and related metadata, then comparing their evolution over time with general development activity.\"\n  Niche: \"This paper targets the problem of quantifying the maintenance burden of automated build systems in software projects practicing ongoing integration.\"\n  Limitation: \"Because the study infers build maintenance solely from observable repository artifacts, it cannot capture uncommitted work, developer intent, or the true causal cost behind each build-related change.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"Continuous integration is a development practice in which developers merge small changes into a single shared mainline frequently, and every merge triggers an automated build and broad regression test suite with immediate repair of any broken build.\"\n  Niche: \"This paper targets the problem of reducing software integration risk and maintaining quality during iterative team-based development.\"\n  Limitation: \"The paper is practice-oriented and does not specify quantitative thresholds, formal models, or controlled evidence for how often integrations must occur or how broad and fast the test suite must be to achieve the claimed benefits.\"\n\nB.\n  Mechanism: \"It creates low-, medium-, and high-width-ratio male average faces from the Chicago Face Database, systematically manipulates each base face across width-ratio levels, and evaluates pairwise beauty choices with a Bayesian model.\"\n  Niche: \"The paper studies how the ratio of interocular distance to overall facial width affects perceived attractiveness in male faces.\"\n  Limitation: \"Because comparisons were restricted to within-group manipulated averages to control confounds, the study cannot make clean direct cross-condition or broader real-world generalization claims.\"\n\nC.\n\nD.\n  Mechanism: \"It introduces parabolic weak porosity and proves the characterization using a stopping time argument together with translation and doubling properties for parabolic weakly porous sets.\"\n  Niche: \"The paper addresses the characterization of parabolic Muckenhoupt A_1 weights with time-lag via geometric properties of closed sets in the parabolic setting.\"\n  Limitation: \"The results are specialized to the parabolic A_1 time-lag framework and distance-to-set weights, leaving broader weight classes and more general geometries untreated.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Software Engineering",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_907",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It develops a recursive characterization of admissible binary parity sequences to uniquely generate such integers and derive bounds on their stopping and cycle numbers.\"\n  Niche: \"The paper studies stopping times and possible cycle structure in the normalized 3n+1/Collatz process, especially for integers congruent to 3 modulo 4.\"\n  Limitation: \"The results are confined to the normalized iteration and a specific recursive encoding, so the argument may not fully resolve the broader Collatz conjecture outside this formulation.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"Randomized smoothing converts any base classifier into a smoothed classifier that predicts the most likely class under isotropic Gaussian input noise, and certifies an ℓ2 robustness radius by Monte Carlo estimation of class probabilities with confidence bounds mapped through Gaussian concentration.\"\n  Niche: \"This paper targets certifying the robustness of image classifiers against adversarial perturbations in the ℓ2 norm.\"\n  Limitation: \"The method provides certificates only for ℓ2 perturbations and often must abstain or use many noisy samples when class probability gaps are small, making certification computationally expensive and sometimes conservative.\"\n\nB.\n  Mechanism: \"It extends earlier parameter searches for cyclic relative difference sets, analyzes possible liftings of cyclic difference sets to relative difference sets, and translates the resulting existence or nonexistence information into consequences for circulant weighing matrices.\"\n  Niche: \"The paper studies the existence and classification of cyclic relative difference sets beyond the previously known Singer-complement lifting families and uses these results to assess the existence of circulant weighing matrices.\"\n  Limitation: \"The paper appears to rely on extended search and case analysis rather than a complete general classification theorem ruling out all other nontrivial liftings.\"\n\nC.\n  Mechanism: \"A sentence CNN encodes a sentence as a matrix of word embeddings, applies multiple 1D convolutional filters over contiguous token windows spanning the full embedding dimension, performs max-over-time pooling on each feature map, concatenates the pooled features, and feeds them to a softmax classifier with dropout and an ℓ2 norm constraint, optionally using static and trainable embedding channels.\"\n  Niche: \"This paper targets supervised sentence-level text classification across tasks such as sentiment and question categorization.\"\n  Limitation: \"The model collapses each filter's activations to a single global maximum and uses only shallow local n-gram features, limiting its ability to represent multiple relevant spans or richer long-range compositional structure within a sentence.\"\n\nD.\n  Mechanism: \"It introduces parabolic weak porosity and proves the characterization using a stopping time argument together with translation and doubling properties for parabolic weakly porous sets.\"\n  Niche: \"The paper addresses the characterization of parabolic Muckenhoupt A_1 weights with time-lag via geometric properties of closed sets in the parabolic setting.\"\n  Limitation: \"The results are specialized to the parabolic A_1 time-lag framework and distance-to-set weights, leaving broader weight classes and more general geometries untreated.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "math.SP",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "mathematics",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_908",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The authors built a low-temperature particle-injection and fluorescence-imaging system that launches polymer particles with ultrasound into superfluid helium-4, tracks their gravity-driven trajectories, measures temperature-dependent velocity statistics across length scales, and identifies particles trapped on vortex lines with an analytical population model.\"\n  Niche: \"The paper addresses how micron-scale tracer particles move and interact with thermal excitations and quantized vortices in turbulent superfluid helium-4 down to the near-zero-temperature limit.\"\n  Limitation: \"Because the study infers vortex interactions indirectly from tracer trajectories and particle-size-dependent statistics, it is limited in separating particle back-reaction and trapping effects from the intrinsic superfluid flow field.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"It uses wave-function-based quantum chemistry analysis of interacting Co2+ magnetic moments to resolve how on-site multiconfigurational effects and intersite direct Coulomb exchange shape nearest-neighbor couplings.\"\n  Niche: \"This paper addresses the microscopic origin and relative importance of Kitaev, Heisenberg, and off-diagonal exchange interactions in the honeycomb cobalt oxide Kitaev-Heisenberg magnet Na3Co2SbO6.\"\n  Limitation: \"A main limitation is that the work is focused on a single representative LS-coupled t2g5eg2 oxide and does not by itself establish how general these exchange mechanisms are across broader classes of Kitaev-Heisenberg materials.\"\n\nB.\n  Mechanism: \"BERT pre-trains a deep Transformer encoder with fully bidirectional self-attention using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads.\"\n  Niche: \"This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\"\n  Limitation: \"Its masked language modeling objective introduces a mismatch between pre-training and fine-tuning because masked tokens are artificial corruptions absent at downstream inference time, and its next sentence prediction signal is a relatively crude sentence-pair objective.\"\n\nC.\n\nD.\n  Mechanism: \"Generative diffusion over 3D pose space: separate diffusion processes for translation (R³), rotation (SO(3)), and torsion angles; confidence ranking of generated poses.\"\n  Niche: \"EquiBind produces single rigid-body pose; real binding is flexible; need multi-modal pose distribution over all degrees of freedom.\"\n  Limitation: \"Slow sampling (multiple denoising steps); still requires known protein structure; cannot generate novel ligands; no co-design of protein and ligand.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "cond-mat",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "chemistry",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_909",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"ImageNet constructs a hierarchical image dataset by mapping object categories to the WordNet lexical taxonomy, automatically harvesting candidate web images via query expansion and search, and then using distributed human verification to filter and label them at scale.\"\n  Niche: \"This paper targets the creation of a large-scale benchmark resource for visual object recognition spanning many categories and semantic levels.\"\n  Limitation: \"Because images are sourced from web search and validated through large-scale human annotation, the dataset remains dependent on search-engine retrieval biases and imperfect category verification quality.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"The method replaces empirical risk minimization with a distributionally robust optimization objective that minimizes worst-case group loss over divergence-bounded reweightings of the empirical distribution, using high-loss examples as a proxy for latent underserved subgroups.\"\n  Niche: \"This paper targets fairness in continuously retrained prediction systems where demographic group labels are unavailable and training data evolve through user retention and disengagement.\"\n  Limitation: \"Because the approach infers latent groups only through elevated loss and a chosen divergence radius, it may misidentify which examples correspond to persistent disadvantaged subpopulations and depends on robustness hyperparameters that are not directly tied to true group structure.\"\n\nB.\n  Mechanism: \"It uses an end-to-end trained multilayer convolutional neural network with local receptive fields, shared weights, alternating learned filtering and subsampling stages, and backpropagation to jointly optimize feature extraction and classification from raw pixels.\"\n  Niche: \"This paper targets document recognition, especially handwritten character and word reading within practical document-processing tasks.\"\n  Limitation: \"The approach still depends on surrounding pipeline components such as normalization and sequence-level decoding, so the full reading system is not entirely learned end to end beyond the recognizer itself.\"\n\nC.\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Vision",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_910",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"hls4ml is an open-source compiler/deployment system that translates models from common ML frameworks into extensible intermediate representations and HLS firmware, then applies hardware-aware transformations including fixed-point quantization, operator fusion, streaming dataflow, loop pipelining, and layer-wise parallelization across backend abstractions.\"\n  Niche: \"This paper targets deployment of trained neural networks for low-latency inference on resource-constrained reconfigurable hardware such as FPGAs.\"\n  Limitation: \"Despite its flexibility, the framework remains constrained by the set of supported layer types, intermediate-representation mappings, and backend-specific HLS abstractions, so arbitrary neural architectures and hardware targets are not automatically covered.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"The method converts human demonstration trajectories into an explicit dense reward-shaping signal that is used during reinforcement learning to guide exploration toward intermediate states and action sequences consistent with expert behavior, instead of relying solely on supervised state-action matching.\"\n  Niche: \"This paper targets efficient imitation learning from human demonstrations in long-horizon, sparse- or delayed-reward tasks where direct action cloning is unreliable.\"\n  Limitation: \"The approach depends on designing or learning a shaping reward from demonstrations that faithfully reflects successful human trajectories, so mismatched or low-quality demonstrations can bias policy optimization toward suboptimal behavior.\"\n\nB.\n\nC.\n  Mechanism: \"RF-DETR uses hardware-aware neural architecture search over a structured heterogeneous DETR design space—including backbone scaling, feature fusion, attention placement, decoder settings, and detection head size—to automatically find architectures optimized jointly for detection quality and inference speed.\"\n  Niche: \"This paper targets real-time object detection with transformer-based detectors under practical accuracy-latency deployment constraints.\"\n  Limitation: \"The searched architectures are specialized to the chosen hardware-aware cost model and proxy search procedure, so their optimality and transferability to other devices or training regimes may be limited.\"\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Deep Learning",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_911",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"Agents with defined roles (AssistantAgent, UserProxyAgent, GroupChatManager) communicate through a shared conversation buffer; code execution in sandbox.\"\n  Niche: \"Single-agent systems (SWE-agent) bottleneck on complex tasks requiring planning, execution, and verification simultaneously.\"\n  Limitation: \"Inter-agent communication overhead; agents can get stuck in loops; no principled role assignment; scalability to many agents unclear.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n\nB.\n  Mechanism: \"ACI: specialized commands (open, scroll, search_file, edit); command history in context; linting feedback on edits; bash subprocess integration.\"\n  Niche: \"Reflexion-based agents lack proper interfaces for software engineering: need file navigation, code editing, test execution at repository scale.\"\n  Limitation: \"Single-agent struggles on large codebases; no parallel execution; no long-term memory; requires complete task specification in context.\"\n\nC.\n\nD.\n  Mechanism: \"LightGCN learns user and item embeddings on the bipartite interaction graph by repeatedly performing normalized neighborhood aggregation without feature transforms or nonlinearities, then forms final embeddings by weighted combination of representations from all propagation layers and trains them with a pairwise ranking loss.\"\n  Niche: \"This paper targets top-N recommendation from implicit user–item interaction data in collaborative filtering settings.\"\n  Limitation: \"Because LightGCN is deliberately built for ID-based collaborative filtering, it does not directly model rich node features or side information that more general GNN recommenders could exploit.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "LLM Agents / Agentic AI",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_912",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"It uses a Schwinger-Keldysh full-counting-statistics formulation of Krylov position to derive an effective emergent phase-space action for operator growth in the presence of environmental coupling.\"\n  Niche: \"The paper studies how Krylov operator growth and Krylov complexity are modified in open quantum systems governed by Lindblad dynamics, especially under dephasing.\"\n  Limitation: \"The analysis appears centered on effective theory and minimal dissipative settings like dephasing, leaving broader validation across more general open-system models and concrete many-body examples unresolved.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n\nB.\n\nC.\n  Mechanism: \"The method separates neutron transport geometry from nuclear reaction processes and uses a neutron balance threshold condition with average path length, scattering distance, and leakage/absorption arguments to derive the critical radius without solving the diffusion equation.\"\n  Niche: \"Determining the critical radius and mass of a spherical fissile material assembly using a simple pedagogical neutronics calculation.\"\n  Limitation: \"The approach is simplified and pedagogical, relying on averaged statistical assumptions and spherical geometry, so it is less general and precise than full transport or Monte Carlo treatments.\"\n\nD.\n  Mechanism: \"Planar surface code: data qubits on lattice, syndrome qubits on edges; X and Z stabilizer measurements; logical qubit encoded in code distance d array.\"\n  Niche: \"Quantum systems decohere; need practical error correction scheme compatible with nearest-neighbor 2D qubit connectivity.\"\n  Limitation: \"Enormous qubit overhead (10^4:1 ratio); requires fast syndrome extraction; theory far ahead of experimental hardware capability.\"\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "physics.pop-ph",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "physics",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_913",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The method instruction-tunes a large generative language model to perform biomedical NER as an instruction-following text generation task, using natural-language task definitions, annotation guidelines, and output format constraints to directly generate entity spans and types instead of token-level labels.\"\n  Niche: \"This paper targets biomedical named entity recognition in highly specialized scientific text with ambiguous terminology, complex morphology, and difficult boundary/type distinctions.\"\n  Limitation: \"Because the approach relies on generated structured outputs rather than constrained token-level decoding, it leaves unresolved how reliably the model preserves exact span boundaries and output validity in dense biomedical text.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"UniversalNER uses targeted distillation from an instruction-following large language model by prompting it to generate structured open-entity annotations, filtering and normalizing those outputs, and training a compact discriminative NER model on the resulting supervision for span and type prediction.\"\n  Niche: \"This paper targets open named entity recognition, where systems must detect entity spans and assign flexible, fine-grained types beyond a fixed label ontology.\"\n  Limitation: \"The method depends on the quality and consistency of teacher-generated annotations, so errors or normalization mismatches in the LLM outputs can be inherited by the student and constrain performance.\"\n\nB.\n\nC.\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Information Extraction and Relation Mining",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "information_science",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_914",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"The authors critically analyze the configuration content and triplet-reference behavior of MRSF-TDDFT and propose practical diagnostics and strategies for detecting problematic regions during potential energy surface exploration and dynamics simulations.\"\n  Niche: \"This paper addresses the reliability of MRSF-TDDFT for modeling excited-state potential energy surfaces and photochemical processes, especially in regions relevant to nonadiabatic dynamics.\"\n  Limitation: \"The paper does not remove these failures at the formal method level but mainly identifies, characterizes, and suggests ways to detect them.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"Higher-order E3-equivariant message passing via Clebsch-Gordan tensor products up to l=3; many-body messages aggregate neighbor interactions.\"\n  Niche: \"PaiNN's first-order equivariance misses many-body angular interactions critical for bond angles, ring systems, and torsional barriers.\"\n  Limitation: \"Trained per-material system; cannot transfer to unseen elements; each new system requires separate training dataset and model.\"\n\nB.\n  Mechanism: \"It characterizes all such fields via energy functions that are linear combinations of area, perimeter, and Euler characteristic, then analyzes their low-temperature limits to derive phase regions and coexistence boundaries.\"\n  Niche: \"The paper studies low-temperature phase behavior of isometrically invariant strictly local binary Markov fields, a geometric extension of the Ising model parameterized by area, perimeter, and Euler characteristic terms.\"\n  Limitation: \"The results are specialized to binary, strictly local, isometrically invariant models and focus on low-temperature behavior rather than full finite-temperature dynamics or higher-state generalizations.\"\n\nC.\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "hep-ex",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "physics",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-05_parent_genome_915",
+    "task_type": "T4-05_parent_genome",
+    "prompt": "Target genome (successor):\n  Mechanism: \"One-Shot Imitation Learning uses meta-imitation learning to train a task-conditioned policy that encodes one demonstration with temporal visual/state encoders and correspondence-style attention, then maps current observations plus the inferred task embedding to actions with optional one-step gradient-based adaptation.\"\n  Niche: \"This paper targets robotic manipulation task generalization where a robot must perform a previously unseen task after seeing only a single expert demonstration.\"\n  Limitation: \"The method depends on training over a distribution of related tasks and demonstrations, so its one-shot generalization is limited to tasks that are sufficiently similar to those seen during meta-training.\"\n\nWhich genome is its DIRECT parent (immediate predecessor)?\n\nA.\n  Mechanism: \"An empirical repository-mining analysis operationalizes build maintenance effort by identifying and measuring version-history changes to build scripts, configuration files, dependency declarations, and related metadata, then comparing their evolution over time with general development activity.\"\n  Niche: \"This paper targets the problem of quantifying the maintenance burden of automated build systems in software projects practicing ongoing integration.\"\n  Limitation: \"Because the study infers build maintenance solely from observable repository artifacts, it cannot capture uncommitted work, developer intent, or the true causal cost behind each build-related change.\"\n\nB.\n  Mechanism: \"Learning from Demonstration is formulated as recording demonstration trajectories, encoding task-relevant state and action variables, and fitting a policy that maps observed states to motor commands so the robot can autonomously reproduce the demonstrated behavior.\"\n  Niche: \"This paper targets the problem of enabling a robot to acquire task control behavior from observed demonstrations instead of requiring manually programmed controllers.\"\n  Limitation: \"Its success depends on careful alignment between demonstrations and the robot's controllable state-action representation, plus preprocessing to handle noise and trial-to-trial variability, which limits robustness and generalization.\"\n\nC.\n\nD.\n\nPart 1: Select the direct parent (A-D)\n  Dynamics type: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n  Primary driver: mechanism | niche | observation | limitation\n  Genome-field classes: INHERITED | MUTATED | NOVEL | LOST\n\nAnswer with one line per field:\nLabel = [A|B|C|D]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Robotics",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-05_parent_genome",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Parent-Genome Identification"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  }
+]

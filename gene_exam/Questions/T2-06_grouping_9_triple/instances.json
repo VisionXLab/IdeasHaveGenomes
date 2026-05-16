@@ -1,0 +1,902 @@
+[
+  {
+    "instance_id": "T2-06_grouping_9_triple_0001",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Deep Learning (3 each), shuffled.\n\n[1] Mech: Efficient Neural Architecture Search (ENAS) uses a recurrent controller trained with policy gradients to sample architectures as subgraphs of a single over-parameterized supergraph, with all sampled models inheriting and updating shared weights instead of being trained independently. | Niche: This paper targets the problem of efficiently searching for high-performing neural network architectures under limited computational budgets.\n[2] Mech: Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs. | Niche: This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n[3] Mech: GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters. | Niche: This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n[4] Mech: Constitutional AI trains an assistant with a written constitution by having the model self-critique and revise its answers under those rules for supervised finetuning, then generate constitution-based preference comparisons to train a preference model and optimize the assistant with reinforcement learning. | Niche: This paper targets the problem of making a conversational language model more harmless and aligned with explicit behavioral constraints during dialogue.\n[5] Mech: Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior. | Niche: This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n[6] Mech: Inception-v3 refines the multi-branch Inception convolutional architecture by factorizing expensive spatial convolutions into smaller and asymmetric operations, using in-branch dimensionality reduction, bottleneck-avoiding grid-size reduction, auxiliary classifier regularization, and label smoothing during training. | Niche: This paper targets large-scale image classification and general computer vision recognition under strict accuracy-versus-computation constraints.\n[7] Mech: GoogLeNet/Inception uses repeated multi-branch modules that run 1×1, 3×3, 5×5, and pooling paths in parallel, applies 1×1 convolutions for dimensionality reduction before costly spatial filters, concatenates branch outputs, and trains with auxiliary classifiers plus global average pooling. | Niche: This paper targets large-scale image classification and visual recognition with deep convolutional networks.\n[8] Mech: Network In Network replaces simple linear convolutional filters with per-location micro multilayer perceptrons implemented by stacked 1×1 convolutions and nonlinearities, and uses global average pooling instead of large fully connected classifier layers. | Niche: This paper targets image classification and visual recognition with convolutional neural networks.\n[9] Mech: DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights with bi-level gradient descent on validation and training splits respectively. | Niche: This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          3,
+          5,
+          4
+        ],
+        "G2": [
+          2,
+          1,
+          9
+        ],
+        "G3": [
+          8,
+          7,
+          6
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Deep Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0002",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Deep Learning (3 each), shuffled.\n\n[1] Mech: DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights with bi-level gradient descent on validation and training splits respectively. | Niche: This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\n[2] Mech: Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs. | Niche: This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n[3] Mech: Denoising Diffusion Probabilistic Models define a fixed Gaussian forward Markov chain that gradually corrupts data and train a timestep-conditioned neural network to parameterize the reverse chain by predicting the added noise under a simplified variational objective. | Niche: The paper targets high-quality likelihood-based generative modeling and sample synthesis for complex data distributions such as images.\n[4] Mech: Generative Adversarial Nets train a generator that maps latent noise to synthetic data and a discriminator that predicts real versus generated inputs in a simultaneous differentiable minimax game, with the generator updated through gradients propagated across the discriminator. | Niche: This paper targets unsupervised learning of a data distribution for realistic sample generation without requiring explicit density evaluation.\n[5] Mech: Efficient Neural Architecture Search (ENAS) uses a recurrent controller trained with policy gradients to sample architectures as subgraphs of a single over-parameterized supergraph, with all sampled models inheriting and updating shared weights instead of being trained independently. | Niche: This paper targets the problem of efficiently searching for high-performing neural network architectures under limited computational budgets.\n[6] Mech: Variational Autoencoder (Auto-Encoding Variational Bayes): jointly train an encoder network that amortizes variational posterior inference and a decoder generative network by maximizing the ELBO, using the reparameterization trick to express latent sampling as a differentiable transformation of fixed noise. | Niche: This paper targets scalable learning and inference for continuous latent-variable probabilistic generative models on large datasets.\n[7] Mech: Vision transformer architecture (ViT) represents an image as a sequence of non-overlapping fixed-size patch embeddings with positional encodings, prepends a classification token, and feeds the sequence through a standard transformer architecture encoder for prediction. | Niche: This paper targets large-scale image recognition and transfer learning for visual classification tasks.\n[8] Mech: EfficientNet uses a compound scaling method that starts from a NAS-discovered efficient baseline and applies a single global scaling coefficient with fixed exponents to jointly scale network depth, width, and input resolution under a compute constraint. | Niche: This paper targets improving image classification model accuracy under fixed computational and parameter budgets for convolutional neural networks across deployment scales.\n[9] Mech: Model-R uses residual blocks that learn a residual function F(x) and add it elementwise to an identity or projected shortcut x, with bottleneck blocks for very deep models and global average pooling before the classifier. | Niche: This paper targets large-scale image recognition with very deep neural networks, addressing the training degradation that appears as depth increases.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          9,
+          8,
+          7
+        ],
+        "G2": [
+          2,
+          5,
+          1
+        ],
+        "G3": [
+          4,
+          6,
+          3
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Deep Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0003",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Computer Security (3 each), shuffled.\n\n[1] Mech: A hybrid dynamic analysis method fuses manually engineered behavioral features from API, file, registry, process, and network activity with neural latent representations learned from execution traces, then combines them in a joint classification pipeline. | Niche: This paper targets dynamic malware detection and classification from runtime behavioral observations in instrumented execution environments.\n[2] Mech: It introduces a host-based anomaly-detection method that builds adaptive statistical profiles from operating-system audit records for users or system components, updates those summaries over time, and flags thresholded deviations across metrics such as logins, command use, resource consumption, and access frequency. | Niche: This paper targets the detection of host-level intrusions and insider misuse by identifying abnormal behavior in computer system operation.\n[3] Mech: The method builds a process-specific self model from fixed-length contiguous sequences of system calls observed during normal runs and flags execution as anomalous when newly seen sequences are absent from that learned reference set. | Niche: This paper targets anomaly-based intrusion detection for individual Unix processes by identifying when a running program's behavior deviates from its normal execution profile.\n[4] Mech: It performs a forensic statistical audit of the KDD Cup 99 dataset by quantifying duplicate and near-duplicate records, class imbalance, feature and class distributions, and train-test composition mismatches at record and attack-category levels. | Niche: This paper targets the problem of determining whether the KDD Cup 99 benchmark is a valid and rigorous evaluation resource for network intrusion detection methods.\n[5] Mech: A systematic intrusion-detection framework decomposes the task into selecting audit data sources, analyzing events, modeling behavior, and generating alarms, while separating detectors into misuse-based signature matching and anomaly-based deviation-from-normal profiling. | Niche: This paper targets the problem of detecting malicious activity in computer and network systems by monitoring operational behavior.\n[6] Mech: It uses a metric-learning embedding method that trains on semantically related and unrelated malware pairs or triplets to map binaries into a vector space where behaviorally similar samples are close and dissimilar ones are far apart, enabling distance-based analysis. | Niche: This paper targets efficient malware analysis tasks such as similarity search, clustering, and malware family discrimination over binary program artifacts.\n[7] Mech: MalConv processes an entire EXE as a raw byte sequence by embedding byte values, applying wide 1D convolutions with early aggressive downsampling over long contiguous regions, and using global pooling to produce a fixed-size malware prediction from variable-length binaries. | Niche: This paper targets static malware detection from executable files without relying on dynamic execution or handcrafted expert features.\n[8] Mech: E-GraphSAGE models IoT traffic as a communication graph and applies inductive GraphSAGE-style sampled neighborhood aggregation over node and edge features derived from traffic statistics and protocol attributes to learn context-aware embeddings for attack or anomaly classification. | Niche: This paper targets intrusion detection in dynamic IoT network environments by identifying malicious or anomalous communication behavior among connected devices.\n[9] Mech: Kitsune detects anomalies by extracting packet-level temporal statistics, partitioning correlated features into small groups, training an ensemble of tiny online autoencoders on those groups, and feeding their reconstruction errors into a second-stage autoencoder to produce an anomaly score. | Niche: This paper targets real-time unsupervised network intrusion detection from streaming packet traffic on resource-constrained devices.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          2,
+          5,
+          3
+        ],
+        "G2": [
+          7,
+          1,
+          6
+        ],
+        "G3": [
+          4,
+          9,
+          8
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0004",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Computer Security (3 each), shuffled.\n\n[1] Mech: Randomized smoothing converts any base classifier into a smoothed classifier that predicts the most likely class under isotropic Gaussian input noise, and certifies an ℓ2 robustness radius by Monte Carlo estimation of class probabilities with confidence bounds mapped through Gaussian concentration. | Niche: This paper targets certifying the robustness of image classifiers against adversarial perturbations in the ℓ2 norm.\n[2] Mech: MalConv processes an entire EXE as a raw byte sequence by embedding byte values, applying wide 1D convolutions with early aggressive downsampling over long contiguous regions, and using global pooling to produce a fixed-size malware prediction from variable-length binaries. | Niche: This paper targets static malware detection from executable files without relying on dynamic execution or handcrafted expert features.\n[3] Mech: Terra is a virtual machine monitor-based trusted computing architecture that partitions one host into isolated open and closed VMs, binds each guest to launch-time cryptographic measurements, and extends attestation and sealed storage so trust and secrets are managed per guest rather than per machine. | Niche: This paper targets the problem of providing trusted execution and verifiable software identity for security-sensitive services on commodity machines while still supporting legacy applications.\n[4] Mech: TrustVisor is a thin hypervisor-based architecture that uses hardware virtualization to isolate small security-sensitive modules in measured execution environments, reuses a one-time secure setup instead of repeated late launches, and provides software-based attestation bound to the module's measured state. | Niche: This paper targets practical protection and remote verification of security-sensitive application logic while minimizing the amount of software that must be trusted on commodity systems.\n[5] Mech: Fast Gradient Sign Method (FGSM): linearize the loss around the input, compute the gradient of the loss with respect to the input, take its elementwise sign, and add a small epsilon-sized perturbation in that direction to generate an approximate worst-case example under an L-infinity constraint, including for adversarial training. | Niche: This paper targets understanding and improving the robustness of neural network classifiers to intentionally crafted, small input perturbations that cause misclassification.\n[6] Mech: It uses a metric-learning embedding method that trains on semantically related and unrelated malware pairs or triplets to map binaries into a vector space where behaviorally similar samples are close and dissimilar ones are far apart, enabling distance-based analysis. | Niche: This paper targets efficient malware analysis tasks such as similarity search, clustering, and malware family discrimination over binary program artifacts.\n[7] Mech: DeepFool iteratively linearizes the classifier around the current input and, in the binary or multiclass case, computes the smallest norm-bounded step to the nearest locally affine decision boundary, repeating until the label changes. | Niche: This paper targets the evaluation of local adversarial robustness of neural network classifiers by measuring how much input perturbation is needed to change a prediction.\n[8] Mech: ALOHA is an optimization framework that attaches auxiliary losses to intermediate representations or partial predictions and jointly selects or weights them based on their gradient-level alignment with the main objective so they help rather than interfere with primary-task optimization. | Niche: This paper targets improving supervised learning generalization and sample efficiency by better training hypotheses for a primary prediction task.\n[9] Mech: Flicker is a hardware-assisted execution architecture that invokes small application-specific security modules in short-lived late-launch sessions, temporarily suspending the normal OS/VMM, measuring the module, restricting memory exposure, and using attestation plus sealed storage to verify and persist trusted state across invocations. | Niche: This paper targets running security-sensitive code on commodity systems while minimizing the amount of software that must be trusted for its correct and secure execution.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          3,
+          9,
+          4
+        ],
+        "G2": [
+          2,
+          8,
+          6
+        ],
+        "G3": [
+          5,
+          7,
+          1
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0005",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Computer Security (3 each), shuffled.\n\n[1] Mech: A hybrid dynamic analysis method fuses manually engineered behavioral features from API, file, registry, process, and network activity with neural latent representations learned from execution traces, then combines them in a joint classification pipeline. | Niche: This paper targets dynamic malware detection and classification from runtime behavioral observations in instrumented execution environments.\n[2] Mech: NEUZZ trains branch-level neural surrogate models on execution traces from seed inputs and mutations to smooth the discrete input-to-branch relationship, then uses gradients of these learned functions to perturb input bytes toward flipping unsatisfied predicates within a hybrid fuzzing loop. | Niche: This paper targets the problem of increasing branch coverage in greybox fuzzing for programs with hard-to-reach, path-sensitive conditions.\n[3] Mech: MalConv processes an entire EXE as a raw byte sequence by embedding byte values, applying wide 1D convolutions with early aggressive downsampling over long contiguous regions, and using global pooling to produce a fixed-size malware prediction from variable-length binaries. | Niche: This paper targets static malware detection from executable files without relying on dynamic execution or handcrafted expert features.\n[4] Mech: DART combines automatic interface-level harness extraction with concolic execution: it runs the unit on random concrete inputs, records symbolic branch predicates along the executed path, negates one observed predicate to form a new path constraint, solves it, and re-executes with the resulting concrete inputs to drive exploration into alternative branches. | Niche: This paper targets automatic generation of high-coverage tests for individual program units in order to expose bugs such as assertion violations and memory errors without manually writing test drivers.\n[5] Mech: A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache behavior. | Niche: This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\n[6] Mech: KLEE is a symbolic execution system that runs programs on symbolic inputs at the compiler IR level, accumulates path constraints, systematically negates branch conditions, solves the resulting formulas to generate new concrete tests, and models memory, libraries, and environment interactions to explore realistic systems code. | Niche: This paper targets automatic generation of high-coverage test inputs for complex low-level systems programs without requiring manual test specifications.\n[7] Mech: A behavior-based malware analysis framework executes programs in a controlled environment, converts traces of system calls, file, registry, process, and network activity into machine-learning features, and uses statistical clustering or classification to group samples by behavioral similarity. | Niche: This paper targets automated analysis and categorization of malware based on observed runtime behavior across large collections of samples.\n[8] Mech: A timing side-channel attack statistically correlates many observed execution times of modular exponentiation and related arithmetic with hypotheses about secret-dependent intermediate operations caused by branches, loop lengths, carries, and reduction behavior. | Niche: This paper targets the problem of recovering long-term secret keys from practical implementations of public-key cryptosystems such as Diffie-Hellman, RSA, and DSS.\n[9] Mech: It introduces a cache-timing attack that repeatedly measures access latency to chosen memory locations to detect cache hits and evictions caused by victim secret-dependent table lookups, then statistically maps those cache traces to key-dependent intermediate values. | Niche: This paper targets the extraction of secret information from software cryptographic implementations running on shared hardware by exploiting microarchitectural side channels.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          4,
+          6,
+          2
+        ],
+        "G2": [
+          8,
+          9,
+          5
+        ],
+        "G3": [
+          7,
+          3,
+          1
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0006",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Computer Security (3 each), shuffled.\n\n[1] Mech: A statistical anomaly detection method uses counting Bloom filters to compactly sketch packet or flow feature frequencies over successive time windows and applies statistical deviation tests to these compressed distributions to flag abnormal traffic patterns. | Niche: This paper targets real-time detection of anomalies in high-speed network traffic by characterizing changes in traffic behavior over time.\n[2] Mech: The method is a CSRF request-binding defense that embeds unpredictable session-associated nonces in sensitive requests and validates them server-side, optionally supplemented by provenance checks such as the Referer header while exempting safe read-only operations. | Niche: This paper targets the problem of preventing cross-site request forgery against authenticated web applications, especially for state-changing user actions.\n[3] Mech: It proposes a staged benchmark-generation framework that treats dataset creation as an engineering process with explicit requirements, environment modeling, benign behavior synthesis, attack injection, traffic capture, provenance-preserving labeling, and validation to ensure realism, coverage, reproducibility, and traceable ground truth. | Niche: This paper targets the problem of generating benchmark datasets for intrusion detection that faithfully represent operational network environments and support reliable evaluation.\n[4] Mech: NEUZZ trains branch-level neural surrogate models on execution traces from seed inputs and mutations to smooth the discrete input-to-branch relationship, then uses gradients of these learned functions to perturb input bytes toward flipping unsatisfied predicates within a hybrid fuzzing loop. | Niche: This paper targets the problem of increasing branch coverage in greybox fuzzing for programs with hard-to-reach, path-sensitive conditions.\n[5] Mech: It introduces an attack-centric taxonomy method that classifies SQL injection attacks by the way malicious input transforms the syntactic or semantic structure of server-side SQL queries and explicitly maps each class to corresponding countermeasure families across validation, query construction, analysis, and runtime enforcement layers. | Niche: This paper targets the problem of understanding and defending against SQL injection vulnerabilities in web applications that construct database queries from untrusted input.\n[6] Mech: KLEE is a symbolic execution system that runs programs on symbolic inputs at the compiler IR level, accumulates path constraints, systematically negates branch conditions, solves the resulting formulas to generate new concrete tests, and models memory, libraries, and environment interactions to explore realistic systems code. | Niche: This paper targets automatic generation of high-coverage test inputs for complex low-level systems programs without requiring manual test specifications.\n[7] Mech: A web-architecture threat analysis decomposes XSS into attacker-controlled input injection, server reflection or storage of that input in generated pages, and browser execution of the resulting script under the trusted site's origin and privileges. | Niche: This paper targets the problem of understanding and characterizing cross-site scripting vulnerabilities in web applications and browsers.\n[8] Mech: It applies supervised statistical learning to network traffic features and evaluates multiple classifiers using train/test protocols that explicitly separate known attacks from temporally or semantically novel attack classes to measure out-of-distribution detection. | Niche: This paper targets network intrusion detection under realistic open-world conditions where future attack types may differ from those seen during training.\n[9] Mech: CollAFL is a path-sensitive greybox fuzzing method that augments traditional edge coverage with compact branch-behavior-derived path identifiers so the fuzzer can distinguish and prioritize inputs that follow different decision contexts within already-covered code. | Niche: This paper targets the problem of improving greybox fuzzing guidance when many semantically different executions are collapsed into the same coarse coverage signal.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          1,
+          8,
+          3
+        ],
+        "G2": [
+          7,
+          5,
+          2
+        ],
+        "G3": [
+          6,
+          9,
+          4
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0007",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Computer Security (3 each), shuffled.\n\n[1] Mech: CodeBERT is an encoder-only transformer architecture jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings. | Niche: This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\n[2] Mech: Spectre is a transient-execution attack method that mistrains branch prediction or branch target prediction so the CPU speculatively executes a wrong-path disclosure gadget, accesses secret data, and encodes it into cache state that is later decoded via timing. | Niche: This paper targets the problem of extracting sensitive data across software and hardware isolation boundaries in processors that use speculative execution.\n[3] Mech: LVI is a transient-execution attack that induces faults or assists on victim loads and arranges microarchitectural state so attacker-controlled stale values are forwarded into the victim’s transient dataflow, which is then used to encode secrets into side channels such as the cache. | Niche: This paper targets the problem of extracting secrets from isolated or protected code during transient execution, especially in trusted-execution environments such as enclaves.\n[4] Mech: Meltdown performs a faulting load from kernel-mapped memory in user mode, lets transient out-of-order instructions use the fetched secret to touch a cache-line-indexed probe array, then recovers from the exception and decodes the secret via cache timing. | Niche: This paper targets the problem of extracting privileged kernel memory contents from an unprivileged user-space process on modern CPUs.\n[5] Mech: The transformer architecture is an encoder–decoder architecture built entirely from stacked multi-head self-attention mechanism, encoder–decoder attention mechanism, and position-wise feed-forward layers, with positional encodings added to represent token order and masking used for autoregressive decoding. | Niche: This paper targets sequence transduction tasks such as machine translation that require modeling dependencies between input and output token sequences.\n[6] Mech: DREBIN performs lightweight static analysis of Android application packages to extract sparse, interpretable manifest- and code-derived features and applies a linear classifier that scores apps by weighted feature presence for efficient, explainable malware detection. | Niche: This paper targets practical detection of Android malware directly on end-user mobile devices.\n[7] Mech: Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads. | Niche: This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\n[8] Mech: A scalable behavior-based clustering method runs malware in an instrumented environment, abstracts runtime events into normalized behavioral feature tokens or sets, and clusters samples using efficient similarity computation over these compact behavior profiles. | Niche: This paper targets the problem of grouping large numbers of malware samples by functional similarity despite syntactic variation from packing, obfuscation, or small code changes.\n[9] Mech: A behavior-based malware analysis framework executes programs in a controlled environment, converts traces of system calls, file, registry, process, and network activity into machine-learning features, and uses statistical clustering or classification to group samples by behavioral similarity. | Niche: This paper targets automated analysis and categorization of malware based on observed runtime behavior across large collections of samples.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          5,
+          7,
+          1
+        ],
+        "G2": [
+          2,
+          4,
+          3
+        ],
+        "G3": [
+          8,
+          9,
+          6
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0008",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Computer Vision (3 each), shuffled.\n\n[1] Mech: StyleGAN replaces direct latent input to the generator with a learned mapping network that produces an intermediate latent code whose per-layer style parameters modulate each convolution via adaptive normalization, while independent noise is injected at each layer and style mixing is used during training. | Niche: This paper targets high-quality image synthesis with improved disentanglement and user control over semantic image attributes in Model-GAN latent spaces.\n[2] Mech: DCGAN uses a fully convolutional Model-GAN in which the generator maps latent vectors to images with stacked fractional-stride convolutions and the discriminator classifies images with strided convolutions, combined with architectural constraints such as removing pooling and most fully connected layers, extensive batch normalization, and asymmetric activations to stabilize training. | Niche: This paper targets unsupervised representation learning from natural images while also enabling realistic image generation.\n[3] Mech: The benchmark defines a unified one-pass evaluation protocol over temporally annotated sequences with per-frame bounding boxes, using complementary accuracy and robustness metrics plus attribute-based analysis of challenge factors to rank and diagnose trackers consistently. | Niche: This paper targets standardized evaluation of online single-object visual tracking under the one-pass setting where a target is initialized once and tracked continuously through a video.\n[4] Mech: The method uses Histograms of Oriented Gradients (HOG), computing dense local gradient orientation histograms over small cells, normalizing them within overlapping blocks, and classifying fixed-size sliding windows across position and scale with a linear margin-based classifier. | Niche: This paper targets detection of upright humans in natural images across varying backgrounds, illumination, and scale.\n[5] Mech: SiamFC uses a fully convolutional Siamese network with shared weights to embed a target exemplar and a larger search region into a common feature space, then localizes the target by dense cross-correlation that produces a response map in one forward pass and is trained end-to-end on video frame pairs with a map-level discriminative loss. | Niche: This paper targets real-time single-object visual tracking across video frames.\n[6] Mech: It uses a deep hierarchical representation-learning tracker that maps target-centered image patches through multiple nonlinear layers into a compact low-dimensional embedding, which is then updated online to maintain the target model over time. | Niche: This paper targets single-object visual tracking under appearance changes and visual nuisances in video.\n[7] Mech: Selective Search generates object proposals by oversegmenting an image into small regions and hierarchically merging adjacent regions using hand-crafted similarity measures over color, texture, size, and fill, while diversifying across multiple similarity functions and initial segmentations. | Niche: This paper targets class-agnostic generation of candidate object locations for object recognition and detection in natural images.\n[8] Mech: Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatch standard-deviation feature in the discriminator. | Niche: This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\n[9] Mech: It introduces a discriminatively trained deformable part-based model that scores detections with a coarse root filter plus higher-resolution part filters over gradient features, jointly optimizing appearance and part deformation under a latent max-margin training procedure with mixture components and hard negative mining. | Niche: This paper targets object detection in images, especially for categories with articulation, pose variation, and multimodal appearance.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          3,
+          6,
+          5
+        ],
+        "G2": [
+          4,
+          9,
+          7
+        ],
+        "G3": [
+          2,
+          8,
+          1
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Vision",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0009",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Computer Vision (3 each), shuffled.\n\n[1] Mech: Swin transformer architecture builds a hierarchical multi-stage vision transformer architecture by applying self-attention mechanism only within fixed non-overlapping local windows, alternating regular and shifted window partitions across layers to enable cross-window communication, and using patch merging to form pyramidal multi-scale features. | Niche: This paper targets scalable visual representation learning for image classification and dense vision tasks such as object detection and semantic segmentation.\n[2] Mech: LAPGAN uses a Laplacian pyramid of separately trained GANs, where a base generator samples a low-resolution image from noise and each higher conditional Model-GAN predicts the residual details needed to refine the upsampled image at that scale. | Niche: This paper targets high-resolution natural image generation with improved realism, coherence, and sharpness in adversarial synthesis.\n[3] Mech: It uses a denoising diffusion probabilistic model in which a U-Net-like network with attention mechanism is trained across many timesteps to predict added Gaussian noise under a carefully designed variance schedule, then samples by iteratively reversing the fixed noising process from pure noise. | Niche: This paper targets high-quality and high-coverage natural image synthesis with strong likelihood performance.\n[4] Mech: Generative Adversarial Nets train a generator that maps latent noise to synthetic data and a discriminator that predicts real versus generated inputs in a simultaneous differentiable minimax game, with the generator updated through gradients propagated across the discriminator. | Niche: This paper targets unsupervised learning of a data distribution for realistic sample generation without requiring explicit density evaluation.\n[5] Mech: Feature Pyramid Networks build an in-network multi-scale feature pyramid by sending high-level semantic features down a top-down pathway, merging them with corresponding bottom-up backbone features through lateral connections, and attaching detection heads at multiple pyramid levels. | Niche: This paper targets object detection under large object scale variation, especially improving recognition of small and large objects within the same image.\n[6] Mech: Conditional Model-GAN augments the standard Model-GAN minimax game by feeding the same conditioning variable y into both the generator, which maps noise and y to samples, and the discriminator, which judges whether a sample-y pair is real or generated. | Niche: The paper targets controllable sample generation and prediction when auxiliary side information such as class labels or other observed context is available.\n[7] Mech: SDXL is a staged latent diffusion system that trains a larger high-resolution base model with a stronger text-conditioning pathway and revised denoising architecture in latent space, then applies a separate refiner model to add local detail and perceptual sharpness. | Niche: This paper targets high-resolution text-to-image synthesis with strong prompt adherence, coherent composition, and robust handling of varied aspect ratios.\n[8] Mech: Faster R-convolutional architecture uses a Region Proposal Network attached to shared convolutional feature maps to slide over the image features and jointly predict objectness scores and bounding-box offsets for multi-scale, multi-aspect-ratio anchor boxes, whose proposals are then fed to a Fast R-convolutional architecture detection head. | Niche: This paper targets fast and accurate object detection in images by eliminating the proposal-generation bottleneck in region-based detectors.\n[9] Mech: Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatch standard-deviation feature in the discriminator. | Niche: This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          4,
+          6,
+          2
+        ],
+        "G2": [
+          9,
+          3,
+          7
+        ],
+        "G3": [
+          8,
+          5,
+          1
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Vision",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0010",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Natural Language Processing (3 each), shuffled.\n\n[1] Mech: It proposes an end-to-end machine reading system that combines statistical entity recognition, relation extraction, coreference resolution, and confidence-aware evidence aggregation to populate a growing knowledge base from web-scale corpora. | Niche: The paper targets open-domain machine reading: automatically constructing structured, queryable knowledge from large volumes of unstructured free text.\n[2] Mech: BiDAF uses contextual word-plus-character embeddings and recurrent encoders for passage and question, then builds a full passage-question similarity matrix to derive both context-to-query and query-to-context attention mechanism without early compression, fuses these token-level signals through modeling layers, and predicts answer start and end positions. | Niche: This paper targets extractive machine reading comprehension, where a system must answer a question by selecting a text span from a supporting passage.\n[3] Mech: Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads. | Niche: This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\n[4] Mech: SQuAD constructs a benchmark by collecting crowd-authored questions on Wikipedia passages and defining each answer as a contiguous text span in the passage, enabling supervised training and evaluation as span prediction with exact match and token-overlap metrics. | Niche: This paper targets large-scale machine reading comprehension from natural text passages, where a system must answer questions about a given passage.\n[5] Mech: The Indra Representation Hypothesis introduces a factorized multimodal latent space in which encoders decompose inputs into modality-agnostic semantic factors and modality-specific surface factors, trained with reconstruction, cross-modal agreement, and topology-preserving alignment regularization over latent units and their relations. | Niche: This paper targets principled semantic alignment and compositional reasoning across heterogeneous modalities such as text, vision, and audio.\n[6] Mech: It proposes a theory-driven NLIDB framework that decomposes processing into user-intent representation, schema-level semantic interpretation, and translation into executable formal database queries, mediated by constrained intermediate semantic forms. | Niche: This paper targets natural language access to relational databases by treating user questions over structured data as a well-defined question answering task.\n[7] Mech: A family of decoder-only autoregressive transformers is pretrained at scale on expanded public text-and-code corpora and then split into base models and chat models produced by supervised instruction fine-tuning plus human-preference optimization and safety red-teaming. | Niche: This paper targets building broadly useful open large language models for general text generation and aligned multi-turn conversational assistance suitable for research and deployment.\n[8] Mech: A reusable QA test collection construction procedure adapts classical IR test-collection methodology by assembling natural-language questions, a large corpus, and human relevance judgments that mark answer-bearing documents or snippets while accounting for paraphrase, ambiguity, and multiple valid answer forms. | Niche: This paper targets the problem of creating a standardized evaluation benchmark for open-domain question answering over a fixed document corpus.\n[9] Mech: Constitutional AI trains an assistant with a written constitution by having the model self-critique and revise its answers under those rules for supervised finetuning, then generate constitution-based preference comparisons to train a preference model and optimize the assistant with reinforcement learning. | Niche: This paper targets the problem of making a conversational language model more harmless and aligned with explicit behavioral constraints during dialogue.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          8,
+          6,
+          1
+        ],
+        "G2": [
+          9,
+          7,
+          5
+        ],
+        "G3": [
+          4,
+          2,
+          3
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0011",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Natural Language Processing (3 each), shuffled.\n\n[1] Mech: A multi-knowledge feature-based relation extraction method builds separate representations from lexical context, shallow syntactic cues, dependency structure, and relational links between arguments, then evaluates classifiers using each source alone and in combination. | Niche: This paper targets supervised classification of semantic relations between entity mentions in text.\n[2] Mech: A sentence convolutional architecture encodes a sentence as a matrix of word embeddings, applies multiple 1D convolutional filters over contiguous token windows spanning the full embedding dimension, performs max-over-time pooling on each feature map, concatenates the pooled features, and feeds them to a softmax classifier with dropout and an ℓ2 norm constraint, optionally using static and trainable embedding channels. | Niche: This paper targets supervised sentence-level text classification across tasks such as sentiment and question categorization.\n[3] Mech: GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters. | Niche: This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n[4] Mech: An attention mechanism-based bidirectional LSTM architecture encodes the sentence in both directions and computes an attention mechanism-weighted aggregation of hidden states, using word embeddings and position features to emphasize tokens most informative for the entity relation. | Niche: This paper targets sentence-level relation classification between two marked entities in text.\n[5] Mech: It uses high-precision lexico-syntactic pattern matching over shallowly parsed text to detect noun phrases in diagnostic constructions like 'such as,' 'including,' appositives, and enumerations, then converts those contexts into candidate hyponym–hypernym pairs. | Niche: The paper targets automatic acquisition of hyponym–hypernym relations for building lexical taxonomies from unrestricted large text corpora.\n[6] Mech: Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads. | Niche: This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\n[7] Mech: The method adapts LLMs for KGQA by injecting retrieved graph knowledge at multiple granularities—triples, neighborhood subgraphs, and relational summaries—through controlled graph linearization, while augmenting prompts with selected explicit reasoning paths that connect question entities to candidate answers as stepwise inference scaffolds. | Niche: This paper targets knowledge graph question answering with large language models, especially multi-hop graph-centric QA that requires using structured relational evidence.\n[8] Mech: The shortest path dependency kernel computes similarity between candidate entity pairs by extracting the shortest dependency path between them in a parsed sentence and applying a structured kernel over the sequence of path nodes and dependency edges annotated with lexical, POS, and dependency-label information. | Niche: This paper targets sentence-level semantic relation extraction between pairs of entities mentioned in text.\n[9] Mech: The transformer architecture is an encoder–decoder architecture built entirely from stacked multi-head self-attention mechanism, encoder–decoder attention mechanism, and position-wise feed-forward layers, with positional encodings added to represent token order and masking used for autoregressive decoding. | Niche: This paper targets sequence transduction tasks such as machine translation that require modeling dependencies between input and output token sequences.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          2,
+          4,
+          6
+        ],
+        "G2": [
+          9,
+          3,
+          7
+        ],
+        "G3": [
+          5,
+          8,
+          1
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0012",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Natural Language Processing (3 each), shuffled.\n\n[1] Mech: It introduces an attention mechanism-based neural encoder-decoder that encodes the source sentence into distributed representations and uses a feed-forward conditional language model with soft alignment over source positions, plus optional source-word biasing, to generate the summary token by token. | Niche: The paper targets single-sentence abstractive summarization: generating a shorter summary sentence from an input sentence.\n[2] Mech: A neural end-to-end NER architecture composes each token from word embeddings plus character-level representations, contextualizes the sequence with a bidirectional recurrent encoder, and often decodes jointly with a sequence-level label model to enforce valid tag transitions. | Niche: This paper targets named entity recognition as a sequence labeling problem over sentences.\n[3] Mech: BiDAF uses contextual word-plus-character embeddings and recurrent encoders for passage and question, then builds a full passage-question similarity matrix to derive both context-to-query and query-to-context attention mechanism without early compression, fuses these token-level signals through modeling layers, and predicts answer start and end positions. | Niche: This paper targets extractive machine reading comprehension, where a system must answer a question by selecting a text span from a supporting passage.\n[4] Mech: It extends attention mechanism-based sequence-to-sequence recurrent architecture summarization with stronger source alignment and copy-style decoding mechanisms, plus training and inference modifications that help preserve salient entities and phrases while generating summaries token by token. | Niche: This paper targets abstractive summarization of long, information-dense documents into concise fluent summaries.\n[5] Mech: SQuAD constructs a benchmark by collecting crowd-authored questions on Wikipedia passages and defining each answer as a contiguous text span in the passage, enabling supervised training and evaluation as span prediction with exact match and token-overlap metrics. | Niche: This paper targets large-scale machine reading comprehension from natural text passages, where a system must answer questions about a given passage.\n[6] Mech: It uses a unified end-to-end neural network with shared learned word embeddings, multilayer nonlinear feature extraction over local windows or sentence-level contexts, and task-specific structured decoding when label dependencies matter, trained directly from raw or minimally processed text. | Niche: This paper targets a broad set of NLP sequence labeling and classification tasks, including POS tagging, chunking, named entity recognition, semantic role labeling, and language modeling.\n[7] Mech: It introduces a neural reader that uses recurrent sequence encoders for both document and query and predicts an answer token or span by conditioning the document representation on the query in an end-to-end supervised model trained from raw text. | Niche: This paper targets machine reading comprehension, where a system must answer a question about a given document.\n[8] Mech: Conditional Random Fields are globally normalized log-linear models that directly parameterize p(y|x) over entire label sequences using transition and state feature functions over labels and arbitrary overlapping input properties, with exact linear-chain inference via forward-backward and Viterbi dynamic programming. | Niche: This paper targets sequence segmentation and labeling problems where an observed input sequence must be assigned a structured output label sequence.\n[9] Mech: LexRank builds a graph whose nodes are sentences and whose edges are tf-idf cosine similarities, then assigns sentence salience by recursively computing eigenvector-style centrality with thresholded or weighted links and damping-based score propagation. | Niche: This paper targets extractive text summarization for single-document and multi-document collections by identifying which sentences are most summary-worthy.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          7,
+          5,
+          3
+        ],
+        "G2": [
+          8,
+          6,
+          2
+        ],
+        "G3": [
+          9,
+          1,
+          4
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0013",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Natural Language Processing (3 each), shuffled.\n\n[1] Mech: It uses a unified end-to-end neural network with shared learned word embeddings, multilayer nonlinear feature extraction over local windows or sentence-level contexts, and task-specific structured decoding when label dependencies matter, trained directly from raw or minimally processed text. | Niche: This paper targets a broad set of NLP sequence labeling and classification tasks, including POS tagging, chunking, named entity recognition, semantic role labeling, and language modeling.\n[2] Mech: Pointer-generator networks augment an attention mechanism-based seq2seq summarizer with a learned timestep-wise gate that mixes fixed-vocabulary generation with copying from the source via the attention mechanism distribution, plus a coverage vector and penalty to discourage repeated attention mechanism. | Niche: This paper targets abstractive summarization of long source documents, especially improving factual faithfulness and handling of rare or unseen source words.\n[3] Mech: It extends attention mechanism-based sequence-to-sequence recurrent architecture summarization with stronger source alignment and copy-style decoding mechanisms, plus training and inference modifications that help preserve salient entities and phrases while generating summaries token by token. | Niche: This paper targets abstractive summarization of long, information-dense documents into concise fluent summaries.\n[4] Mech: A neural end-to-end NER architecture composes each token from word embeddings plus character-level representations, contextualizes the sequence with a bidirectional recurrent encoder, and often decodes jointly with a sequence-level label model to enforce valid tag transitions. | Niche: This paper targets named entity recognition as a sequence labeling problem over sentences.\n[5] Mech: GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters. | Niche: This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n[6] Mech: Conditional Random Fields are globally normalized log-linear models that directly parameterize p(y|x) over entire label sequences using transition and state feature functions over labels and arbitrary overlapping input properties, with exact linear-chain inference via forward-backward and Viterbi dynamic programming. | Niche: This paper targets sequence segmentation and labeling problems where an observed input sequence must be assigned a structured output label sequence.\n[7] Mech: It uses adversarial debiasing: a predictor is trained jointly with an auxiliary discriminator that tries to infer the protected attribute from the model’s representation or outputs, while gradient reversal or negation makes the predictor learn features that are useful for the main task but uninformative about the sensitive variable. | Niche: The paper targets reducing unwanted dependence of supervised model predictions on protected attributes in order to improve fairness without sacrificing too much predictive utility.\n[8] Mech: The hard-debiasing method estimates a low-dimensional gender bias subspace from definitional male–female word pairs, then neutralizes designated gender-neutral words by projecting out that subspace and equalizes selected gendered word pairs so they are symmetrically positioned relative to the gender direction. | Niche: This paper targets the problem of mitigating socially problematic gender bias encoded in pretrained word embeddings while preserving useful semantic structure.\n[9] Mech: It introduces an attention mechanism-based neural encoder-decoder that encodes the source sentence into distributed representations and uses a feed-forward conditional language model with soft alignment over source positions, plus optional source-word biasing, to generate the summary token by token. | Niche: The paper targets single-sentence abstractive summarization: generating a shorter summary sentence from an input sentence.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          9,
+          3,
+          2
+        ],
+        "G2": [
+          6,
+          1,
+          4
+        ],
+        "G3": [
+          8,
+          7,
+          5
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0014",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Robotics (3 each), shuffled.\n\n[1] Mech: An end-to-end deep visuomotor imitation policy combines a convolutional network over raw images with fully connected layers that fuse proprioceptive state and predict motor torques or control commands, with the visual front end often pretrained on auxiliary perception objectives before joint fine-tuning on demonstrations. | Niche: This paper targets learning robotic manipulation policies that map camera observations and robot state to continuous control actions for real-world visuomotor tasks.\n[2] Mech: It learns a stable nonlinear dynamical system by fitting a Gaussian mixture model to joint state-velocity data and using Gaussian-mixture regression to blend locally affine linear dynamics whose parameters are constrained through optimization to guarantee global asymptotic convergence to the target equilibrium. | Niche: This paper targets learning from demonstrations of continuous-time motion policies that can autonomously reproduce nonlinear reaching and movement behaviors while converging to a desired goal state.\n[3] Mech: FAB-MAP represents each place as a bag of quantized visual words from local invariant features and performs Bayesian place inference with a generative model over binary word detections using a Chow-Liu tree to capture word co-occurrence dependencies and explicit false-positive/false-negative observation noise. | Niche: This paper targets large-scale visual place recognition and loop-closure-based localization/mapping in environments where only image appearance is available and geometric continuity cannot be relied on.\n[4] Mech: A large-scale self-supervised deep grasp predictor is trained on about 50K autonomous grasp attempts to map camera observations and candidate gripper motions to binary grasp-success probabilities, then selects at test time the motion with the highest predicted success. | Niche: This paper targets robotic object grasping in cluttered real-world settings using visual input to choose successful pick actions.\n[5] Mech: An offline MCTS-to-policy distillation method generates state-action labels by running Monte-Carlo Tree Search on emulator states and then trains a deep image-based policy network to imitate those search decisions for fast feedforward control at test time. | Niche: This paper targets real-time action selection for Atari-style arcade games under strict per-frame latency constraints.\n[6] Mech: A deep grasp-success prediction model is trained on large-scale real robot trial data to score candidate end-effector motions from camera observations, and the robot executes actions in closed loop by choosing motions with highest predicted success probability. | Niche: This paper targets vision-based robotic grasping in cluttered, unstructured real-world environments.\n[7] Mech: MonoSLAM uses a single extended Kalman filter to recursively estimate a joint state over camera pose, motion, and sparse feature landmarks, with explicit motion dynamics, inverse-depth landmark initialization, and active uncertainty-guided feature search and update. | Niche: This paper targets real-time simultaneous localization and sparse 3D mapping from a single conventional monocular camera.\n[8] Mech: PTAM uses a two-thread monocular SLAM architecture in which one thread tracks camera pose by projecting mapped features and minimizing reprojection error on each frame, while a parallel thread selects keyframes, triangulates new points, and runs local bundle adjustment to refine a sparse map. | Niche: This paper targets real-time monocular camera localization and 3D scene reconstruction for small augmented-reality workspaces.\n[9] Mech: DAgger iteratively runs a mixture of the current policy and the expert, queries the expert on learner-visited states, aggregates all collected state-action pairs across rounds, and reduces policy learning to a no-regret online learning problem over the growing dataset. | Niche: This paper targets sequential imitation learning and structured prediction under distribution shift caused by compounding errors when a learned policy is executed at test time.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          2,
+          9,
+          1
+        ],
+        "G2": [
+          7,
+          8,
+          3
+        ],
+        "G3": [
+          5,
+          4,
+          6
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0015",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Robotics (3 each), shuffled.\n\n[1] Mech: A geometric-algebraic grasp closure analysis models each contact by a local friction force cone, maps the combined contact forces into object wrench space, and tests closure through convex hull, spanning, and rank conditions in a coordinate-invariant rigid-body formulation. | Niche: This paper targets the problem of determining when a multi-contact robotic grasp can either resist arbitrary external disturbances or immobilize an object under frictional contact.\n[2] Mech: BC-Z trains a single multitask behavior-cloning policy that maps visual observations plus a natural-language instruction or short task video into low-level actions using a shared cross-modal task embedding space to condition the policy. | Niche: This paper targets zero-shot generalization in robotic manipulation, where a robot must execute unseen task combinations from raw observations and an explicit task specification.\n[3] Mech: Dex-Net 2.0 trains a grasp-success predictor by rendering large synthetic depth datasets from 3D object models, sampling grasp-centered parallel-jaw candidates, labeling them with an analytic robustness metric under uncertainty, and using a convolutional architecture on local grasp-centered image crops to rank grasps at test time. | Niche: This paper targets robust parallel-jaw grasp planning for previously unseen objects from depth or point-cloud observations.\n[4] Mech: A large-scale self-supervised deep grasp predictor is trained on about 50K autonomous grasp attempts to map camera observations and candidate gripper motions to binary grasp-success probabilities, then selects at test time the motion with the highest predicted success. | Niche: This paper targets robotic object grasping in cluttered real-world settings using visual input to choose successful pick actions.\n[5] Mech: An end-to-end deep visuomotor imitation policy combines a convolutional network over raw images with fully connected layers that fuse proprioceptive state and predict motor torques or control commands, with the visual front end often pretrained on auxiliary perception objectives before joint fine-tuning on demonstrations. | Niche: This paper targets learning robotic manipulation policies that map camera observations and robot state to continuous control actions for real-world visuomotor tasks.\n[6] Mech: An offline MCTS-to-policy distillation method generates state-action labels by running Monte-Carlo Tree Search on emulator states and then trains a deep image-based policy network to imitate those search decisions for fast feedforward control at test time. | Niche: This paper targets real-time action selection for Atari-style arcade games under strict per-frame latency constraints.\n[7] Mech: A constructive grasp-synthesis optimization searches over contact placements and associated wrench constraints using geometric wrench-space structure and algebraic form-closure conditions to jointly enforce feasibility and maximize grasp-quality criteria without exhaustive contact enumeration. | Niche: This paper targets the synthesis of optimal frictionless form-closure grasps that immobilize rigid polygonal or polyhedral objects.\n[8] Mech: QT-Opt learns a deep Q-function over image observations and continuous gripper actions from large-scale off-policy real-robot data, and selects actions by stochastic optimization over continuous commands with distributed asynchronous target computation for scalable closed-loop control. | Niche: The paper targets vision-based robotic grasping in real-world settings, where a robot must pick up diverse objects directly from camera observations under substantial variability and disturbance.\n[9] Mech: Implicit Behavioral Cloning learns a temporally conditioned policy with an implicit sampling- or energy-based behavior-matching objective so the policy directly maps observation history to a multi-modal action distribution without explicitly inferring intermediate latent plans. | Niche: This paper targets offline imitation learning from demonstrations where expert behavior is multi-modal and depends on long-horizon temporal context.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          1,
+          7,
+          4
+        ],
+        "G2": [
+          6,
+          3,
+          8
+        ],
+        "G3": [
+          5,
+          9,
+          2
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0016",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Robotics (3 each), shuffled.\n\n[1] Mech: A deep grasp-success prediction model is trained on large-scale real robot trial data to score candidate end-effector motions from camera observations, and the robot executes actions in closed loop by choosing motions with highest predicted success probability. | Niche: This paper targets vision-based robotic grasping in cluttered, unstructured real-world environments.\n[2] Mech: A monolithic multigait soft robot uses elastomeric body segments with embedded fluidic channel networks that are selectively pressurized in different temporal patterns to produce distributed bending, anchoring, and release sequences for locomotion. | Niche: This paper targets the problem of achieving task-capable locomotion with multiple distinct gaits in a fully soft-bodied robot.\n[3] Mech: QT-Opt learns a deep Q-function over image observations and continuous gripper actions from large-scale off-policy real-robot data, and selects actions by stochastic optimization over continuous commands with distributed asynchronous target computation for scalable closed-loop control. | Niche: The paper targets vision-based robotic grasping in real-world settings, where a robot must pick up diverse objects directly from camera observations under substantial variability and disturbance.\n[4] Mech: Soft robotics paradigm: replace rigid-link, jointed, transmission-centric robot architectures with elastomeric or continuum bodies, distributed actuation, and morphology-driven control in which passive body mechanics and environmental contact perform part of sensing, adaptation, and control. | Niche: This paper targets the problem of how to design and understand robots for locomotion, manipulation, and physical interaction in unstructured environments using biologically inspired compliance.\n[5] Mech: Learning from Demonstration is formulated as recording demonstration trajectories, encoding task-relevant state and action variables, and fitting a policy that maps observed states to motor commands so the robot can autonomously reproduce the demonstrated behavior. | Niche: This paper targets the problem of enabling a robot to acquire task control behavior from observed demonstrations instead of requiring manually programmed controllers.\n[6] Mech: Series Elastic Actuation inserts a deliberately compliant spring in series between the motor/transmission and the load, measures spring deflection to infer output force via Hooke’s law, and closes the controller around force tracking rather than pure position tracking. | Niche: This paper targets accurate and robust force generation for actuators operating in contact-rich, impact-prone, and physically interactive environments.\n[7] Mech: One-Shot Imitation Learning uses meta-imitation learning to train a task-conditioned policy that encodes one demonstration with temporal visual/state encoders and correspondence-style attention mechanism, then maps current observations plus the inferred task embedding to actions with optional one-step gradient-based adaptation. | Niche: This paper targets robotic manipulation task generalization where a robot must perform a previously unseen task after seeing only a single expert demonstration.\n[8] Mech: Relay Policy Learning trains a hierarchy of local controllers sequentially, where each new policy is learned via imitation-initialized reinforcement learning to steer states into regions judged solvable by a previously trained policy using its value or success criterion as the relay objective. | Niche: This paper targets long-horizon dexterous manipulation tasks composed of multiple sequential phases and difficult contact-rich control transitions.\n[9] Mech: An end-to-end deep visuomotor imitation policy combines a convolutional network over raw images with fully connected layers that fuse proprioceptive state and predict motor torques or control commands, with the visual front end often pretrained on auxiliary perception objectives before joint fine-tuning on demonstrations. | Niche: This paper targets learning robotic manipulation policies that map camera observations and robot state to continuous control actions for real-world visuomotor tasks.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          6,
+          4,
+          2
+        ],
+        "G2": [
+          1,
+          9,
+          3
+        ],
+        "G3": [
+          5,
+          7,
+          8
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0017",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Robotics (3 each), shuffled.\n\n[1] Mech: MonoSLAM uses a single extended Kalman filter to recursively estimate a joint state over camera pose, motion, and sparse feature landmarks, with explicit motion dynamics, inverse-depth landmark initialization, and active uncertainty-guided feature search and update. | Niche: This paper targets real-time simultaneous localization and sparse 3D mapping from a single conventional monocular camera.\n[2] Mech: Implicit Behavioral Cloning learns a temporally conditioned policy with an implicit sampling- or energy-based behavior-matching objective so the policy directly maps observation history to a multi-modal action distribution without explicitly inferring intermediate latent plans. | Niche: This paper targets offline imitation learning from demonstrations where expert behavior is multi-modal and depends on long-horizon temporal context.\n[3] Mech: A sim-to-real reinforcement learning method trains an onboard feedback locomotion policy in a heavily domain-randomized simulator with reward shaping for command tracking, stability, smoothness, and energy use, while exposing the policy to perturbations and transition-rich command conditions. | Niche: This paper targets learning agile, disturbance-resistant dynamic locomotion skills for quadruped robots that can transfer from simulation to real hardware.\n[4] Mech: ORB-SLAM is a feature-based monocular SLAM system that uses ORB features in three parallel threads for tracking, local mapping, and loop closing, with covisibility/essential graphs for map structure, robust model-selection initialization, and keyframe/point culling for scalable optimization. | Niche: This paper targets real-time monocular simultaneous localization and mapping with accurate tracking, relocalization, and loop closing across small and large environments.\n[5] Mech: It uses virtual-reality teleoperation to collect large aligned demonstrations and trains an end-to-end visuomotor behavioral cloning policy that maps raw images plus robot proprioceptive state directly to continuous control commands. | Niche: The paper targets learning high-dimensional, contact-rich robotic manipulation behaviors from demonstration for complex multi-stage tasks such as grasping, object transfer, and sequential interaction.\n[6] Mech: A balance-centered feedback control method uses simplified whole-body dynamics to regulate center-of-mass motion, body orientation, and ground reaction/contact forces across hybrid support phases instead of tracking fully precomputed gait trajectories. | Niche: This paper targets the problem of maintaining upright balance and disturbance-robust locomotion in articulated legged robots during standing and walking.\n[7] Mech: BC-Z trains a single multitask behavior-cloning policy that maps visual observations plus a natural-language instruction or short task video into low-level actions using a shared cross-modal task embedding space to condition the policy. | Niche: This paper targets zero-shot generalization in robotic manipulation, where a robot must execute unseen task combinations from raw observations and an explicit task specification.\n[8] Mech: It introduces a hybrid feedback control framework that stabilizes periodic bipedal gaits by continuously regulating reduced-order gait variables and virtual joint constraints during swing and stance, while applying event-based corrections at foot impact and analyzing step-to-step stability with return maps. | Niche: This paper targets the problem of achieving robust, repeatable dynamic walking in underactuated bipedal robots subject to impacts and phase-dependent locomotion dynamics.\n[9] Mech: PTAM uses a two-thread monocular SLAM architecture in which one thread tracks camera pose by projecting mapped features and minimizing reprojection error on each frame, while a parallel thread selects keyframes, triangulates new points, and runs local bundle adjustment to refine a sparse map. | Niche: This paper targets real-time monocular camera localization and 3D scene reconstruction for small augmented-reality workspaces.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          1,
+          9,
+          4
+        ],
+        "G2": [
+          6,
+          8,
+          3
+        ],
+        "G3": [
+          5,
+          2,
+          7
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0018",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Robotics (3 each), shuffled.\n\n[1] Mech: A balance-centered feedback control method uses simplified whole-body dynamics to regulate center-of-mass motion, body orientation, and ground reaction/contact forces across hybrid support phases instead of tracking fully precomputed gait trajectories. | Niche: This paper targets the problem of maintaining upright balance and disturbance-robust locomotion in articulated legged robots during standing and walking.\n[2] Mech: Learning from Demonstration is formulated as recording demonstration trajectories, encoding task-relevant state and action variables, and fitting a policy that maps observed states to motor commands so the robot can autonomously reproduce the demonstrated behavior. | Niche: This paper targets the problem of enabling a robot to acquire task control behavior from observed demonstrations instead of requiring manually programmed controllers.\n[3] Mech: Passive dynamic walking models a two-link biped descending a shallow slope as a hybrid dynamical system with continuous gravity-driven swing/stance motion and discrete heel-strike collision maps, then analyzes periodic step cycles and their stability from the mechanism's physical parameters alone. | Niche: This paper targets the problem of explaining and achieving stable legged walking in a minimal bipedal system.\n[4] Mech: It introduces a hybrid feedback control framework that stabilizes periodic bipedal gaits by continuously regulating reduced-order gait variables and virtual joint constraints during swing and stance, while applying event-based corrections at foot impact and analyzing step-to-step stability with return maps. | Niche: This paper targets the problem of achieving robust, repeatable dynamic walking in underactuated bipedal robots subject to impacts and phase-dependent locomotion dynamics.\n[5] Mech: 6-DOF GraspNet uses a conditional variational encoder-decoder that embeds object geometry together with successful grasp poses into a latent space and decodes latent samples conditioned on the object into multiple candidate end-effector poses. | Niche: This paper targets generating feasible full 6-DOF robotic grasps for object manipulation directly from 3D object observations.\n[6] Mech: A learning-from-demonstration method encodes a small set of demonstrations as segmented, parameterized manipulation trajectories over task-relevant state variables and contact events, then extracts spatial constraints, temporal ordering, and robot-centered policy parameters to adapt the skill online to novel situations. | Niche: This paper targets robot learning of object manipulation tasks from only a few human demonstrations, with the goal of reproducing the task under new initial conditions.\n[7] Mech: Dex-Net 2.0 trains a grasp-success predictor by rendering large synthetic depth datasets from 3D object models, sampling grasp-centered parallel-jaw candidates, labeling them with an analytic robustness metric under uncertainty, and using a convolutional architecture on local grasp-centered image crops to rank grasps at test time. | Niche: This paper targets robust parallel-jaw grasp planning for previously unseen objects from depth or point-cloud observations.\n[8] Mech: GraspNet-1Billion builds a large-scale dataset and benchmark by densely representing grasping as 6-DoF grasp pose prediction, generating candidate grasps from object-surface geometry, validating them with physics-based criteria, and using the resulting multimodal annotations to supervise visual grasp prediction from depth or RGB-D input. | Niche: This paper targets benchmarking general-purpose robotic grasping of diverse objects in cluttered and isolated scenes using full 6-DoF grasp representations.\n[9] Mech: A developmental self-exploration method lets the robot execute parameterized motor commands, observe sensory state changes, and incrementally learn predictive and competence-based sensorimotor mappings from actions and conditions to achievable effects and likely success. | Niche: This paper targets autonomous acquisition of a robot's own action capabilities and effect-producing behaviors in a mobile manipulation setting without relying on human instruction.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          1,
+          3,
+          4
+        ],
+        "G2": [
+          7,
+          5,
+          8
+        ],
+        "G3": [
+          2,
+          9,
+          6
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0019",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Machine Learning (3 each), shuffled.\n\n[1] Mech: A deep supervised convolutional neural network is trained end-to-end on GPUs using stacked convolution and overlapping pooling layers, ReLU activations, fully connected classifiers, dropout, data augmentation, and model parallelism. | Niche: This paper targets large-scale natural image classification over the Data-I benchmark's very large label space.\n[2] Mech: DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights with bi-level gradient descent on validation and training splits respectively. | Niche: This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\n[3] Mech: Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs. | Niche: This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n[4] Mech: Generative Adversarial Nets train a generator that maps latent noise to synthetic data and a discriminator that predicts real versus generated inputs in a simultaneous differentiable minimax game, with the generator updated through gradients propagated across the discriminator. | Niche: This paper targets unsupervised learning of a data distribution for realistic sample generation without requiring explicit density evaluation.\n[5] Mech: EfficientNet uses a compound scaling method that starts from a NAS-discovered efficient baseline and applies a single global scaling coefficient with fixed exponents to jointly scale network depth, width, and input resolution under a compute constraint. | Niche: This paper targets improving image classification model accuracy under fixed computational and parameter budgets for convolutional neural networks across deployment scales.\n[6] Mech: The method uses Histograms of Oriented Gradients (HOG), computing dense local gradient orientation histograms over small cells, normalizing them within overlapping blocks, and classifying fixed-size sliding windows across position and scale with a linear margin-based classifier. | Niche: This paper targets detection of upright humans in natural images across varying backgrounds, illumination, and scale.\n[7] Mech: Conditional Model-GAN augments the standard Model-GAN minimax game by feeding the same conditioning variable y into both the generator, which maps noise and y to samples, and the discriminator, which judges whether a sample-y pair is real or generated. | Niche: The paper targets controllable sample generation and prediction when auxiliary side information such as class labels or other observed context is available.\n[8] Mech: VGG uses a homogeneous deep convolutional architecture that stacks many small 3x3 convolutions, with occasional 1x1 convolutions and sparse pooling, followed by fully connected classification layers. | Niche: This paper targets large-scale image classification and visual recognition on datasets such as Data-I.\n[9] Mech: DCGAN uses a fully convolutional Model-GAN in which the generator maps latent vectors to images with stacked fractional-stride convolutions and the discriminator classifies images with strided convolutions, combined with architectural constraints such as removing pooling and most fully connected layers, extensive batch normalization, and asymmetric activations to stabilize training. | Niche: This paper targets unsupervised representation learning from natural images while also enabling realistic image generation.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          6,
+          1,
+          8
+        ],
+        "G2": [
+          3,
+          2,
+          5
+        ],
+        "G3": [
+          4,
+          7,
+          9
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Machine Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0020",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Machine Learning (3 each), shuffled.\n\n[1] Mech: GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters. | Niche: This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n[2] Mech: Efficient Neural Architecture Search (ENAS) uses a recurrent controller trained with policy gradients to sample architectures as subgraphs of a single over-parameterized supergraph, with all sampled models inheriting and updating shared weights instead of being trained independently. | Niche: This paper targets the problem of efficiently searching for high-performing neural network architectures under limited computational budgets.\n[3] Mech: The method combines supervised fine-tuning on human-written instruction demonstrations with reinforcement learning from a learned reward model trained on pairwise human preference rankings, using a KL penalty to keep the policy close to the supervised model during policy optimization. | Niche: This paper targets adapting large language models to reliably follow natural-language instructions and align their outputs with human preferences for helpfulness, relevance, and harmlessness.\n[4] Mech: Hyperband allocates a fixed budget across multiple successive-halving brackets, each starting with randomly sampled hyperparameter configurations evaluated at small resource levels and repeatedly promoting only the top fraction to larger budgets, with different brackets trading off number of configurations versus training depth. | Niche: This paper targets hyperparameter optimization when evaluating configurations is expensive and only limited computational budget is available.\n[5] Mech: It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous forward noising process and generating data by simulating the corresponding reverse-time SDE or its probability-flow ODE, with predictor-corrector refinement. | Niche: This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images.\n[6] Mech: Diffusion probabilistic modeling defines a fixed forward Markov chain that gradually adds small Gaussian noise to data until it reaches a simple tractable distribution, then learns a parameterized reverse Markov chain with shared parameters by optimizing a variational log-likelihood bound to invert each noising step. | Niche: This paper targets unsupervised generative modeling of complex high-dimensional data distributions such as natural images.\n[7] Mech: Denoising Diffusion Probabilistic Models define a fixed Gaussian forward Markov chain that gradually corrupts data and train a timestep-conditioned neural network to parameterize the reverse chain by predicting the added noise under a simplified variational objective. | Niche: The paper targets high-quality likelihood-based generative modeling and sample synthesis for complex data distributions such as images.\n[8] Mech: Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs. | Niche: This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n[9] Mech: Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior. | Niche: This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          6,
+          7,
+          5
+        ],
+        "G2": [
+          4,
+          2,
+          8
+        ],
+        "G3": [
+          1,
+          9,
+          3
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Machine Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0021",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Machine Learning (3 each), shuffled.\n\n[1] Mech: Constitutional AI trains an assistant with a written constitution by having the model self-critique and revise its answers under those rules for supervised finetuning, then generate constitution-based preference comparisons to train a preference model and optimize the assistant with reinforcement learning. | Niche: This paper targets the problem of making a conversational language model more harmless and aligned with explicit behavioral constraints during dialogue.\n[2] Mech: It applies a one-class SVM to sparse text features, learning a maximum-margin boundary around positive documents by separating them from the origin while permitting a controlled fraction of outliers via regularization. | Niche: This paper targets document classification settings where only examples of the target category are available and negative documents are scarce, noisy, or ill-defined.\n[3] Mech: It uses a one-class kernel support estimation method that maps data into a reproducing kernel feature space and solves a regularized convex optimization problem to find a decision boundary enclosing most observations while permitting a specified fraction to lie outside as outliers. | Niche: The paper targets unsupervised anomaly or novelty detection by estimating the region of feature space occupied by normal data in the presence of contamination.\n[4] Mech: The method combines supervised fine-tuning on human-written instruction demonstrations with reinforcement learning from a learned reward model trained on pairwise human preference rankings, using a KL penalty to keep the policy close to the supervised model during policy optimization. | Niche: This paper targets adapting large language models to reliably follow natural-language instructions and align their outputs with human preferences for helpfulness, relevance, and harmlessness.\n[5] Mech: It introduces a certify-and-repair preprocessing method that tests disparate impact by measuring how accurately the protected class can be inferred from non-protected features, then optimizes a transformed representation—via rank-preserving distributional repair for ordered attributes—to reduce that predictability while retaining task utility. | Niche: This paper targets detecting and mitigating disparate impact in predictive decision-making when protected attributes are omitted but may still be encoded in other features.\n[6] Mech: It introduces the one-class SVM, which maps data into an RKHS with a positive definite kernel and solves a convex maximum-margin optimization that separates the samples from the origin with slack controlled by a parameter nu to estimate a high-density support region. | Niche: The paper targets unsupervised estimation of the support of a high-dimensional probability distribution, i.e. finding a compact region containing most normal data while rejecting outliers.\n[7] Mech: Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior. | Niche: This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n[8] Mech: Fairness Through Awareness imposes a Lipschitz-style individual fairness constraint requiring that a randomized decision rule map nearby individuals under a task-specific similarity metric to similar outcome distributions while optimizing utility subject to that constraint. | Niche: This paper targets the problem of defining and enforcing fairness in classification and ranking decisions at the level of individuals rather than only protected groups.\n[9] Mech: A disparate-impact analysis framework evaluates fairness by comparing group-level selection rates and acceptance probabilities, then studies mitigation through constrained rules, threshold adjustment, and post hoc auditing rather than by changing the predictive model itself. | Niche: This paper targets the problem of identifying and mitigating unequal decision outcomes across protected groups in scoring, ranking, and threshold-based selection systems.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          7,
+          4,
+          1
+        ],
+        "G2": [
+          2,
+          6,
+          3
+        ],
+        "G3": [
+          9,
+          8,
+          5
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Machine Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0022",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Database Systems (3 each), shuffled.\n\n[1] Mech: The method constructs a congressional sample, a composite synopsis that combines a population-proportional sample with a group-coverage-oriented component and answers group-by aggregates by appropriately weighting sampled tuples. | Niche: This paper targets approximate evaluation of aggregate SQL group-by queries over very large or rapidly changing relational data where exact computation is too costly.\n[2] Mech: A declarative schema-mapping framework models data integration through source-to-target mappings, global schemas, and integrity constraints, and uses these logical specifications to define inference and query-answering semantics under alternative architectures such as mediated and warehouse-based integration. | Niche: This paper targets the problem of giving a formal semantic and logical account of integrating heterogeneous autonomous data sources into a coherent target view.\n[3] Mech: The Log-Structured Merge-Tree (LSM-Tree) buffers updates in an in-memory sorted component and periodically merges them into a hierarchy of larger on-disk sorted components, reconciling newer and older entries in batch to turn random updates into sequential writes. | Niche: This paper targets high-performance indexing and storage for databases with write-heavy workloads dominated by inserts, updates, and deletes while still supporting lookups and range queries.\n[4] Mech: A semantic-values interoperability method attaches structured machine-interpretable semantic descriptors to exchanged data elements and uses semantic comparison plus value-level transformation rules to determine equivalence, comparability, or convertibility across local schemas without requiring a single global schema. | Niche: This paper targets interoperability among independently developed heterogeneous information systems that must exchange data despite differences in schemas, terminology, context, and units.\n[5] Mech: BwTree is a lock-free B-tree variant that replaces in-place page updates with append-only delta records and uses an atomically updated mapping table to decouple each logical node from its physical storage location while preserving ordered traversal via side links. | Niche: This paper targets the problem of providing a high-throughput ordered index for concurrent range and point operations on multicore, main-memory, and flash-oriented systems.\n[6] Mech: It introduces random sampling as a first-class relational operation, defining tuple-selection procedures with characterized inclusion probabilities under database storage constraints, including sequential access, limited memory, and both with- and without-replacement sampling, while analyzing interaction with relational operators. | Niche: This paper targets the problem of obtaining representative random subsets of large database relations for approximate analysis and query answering without fully materializing or scanning data in impractical ways.\n[7] Mech: It proposes a one-pass streaming wavelet synopsis that incrementally updates and retains only the most significant hierarchical wavelet coefficients of the evolving frequency signal to support approximate reconstruction and aggregate estimation without materializing the full data. | Niche: This paper targets approximate point and range aggregate query answering over high-speed frequency data streams under strict one-pass and bounded-memory constraints.\n[8] Mech: TSIMMIS uses a mediator-wrapper architecture in which source-specific wrappers convert diverse source formats and access methods into a common self-describing object-like representation, and mediators then restructure, combine, and filter that representation to answer cross-source queries. | Niche: This paper targets practical interoperability and query answering across autonomous, heterogeneous information sources such as databases, files, and semi-structured repositories.\n[9] Mech: Adaptive Radix Tree (ART) indexes keys bytewise in a radix trie whose internal nodes dynamically switch among multiple node layouts of different capacities, combined with path compression and lazy expansion to keep the structure compact and fast. | Niche: This paper targets ordered index structures for low-latency main-memory databases that must support point lookups, updates, and range scans efficiently.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          4,
+          8,
+          2
+        ],
+        "G2": [
+          3,
+          9,
+          5
+        ],
+        "G3": [
+          6,
+          7,
+          1
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0023",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Database Systems (3 each), shuffled.\n\n[1] Mech: Paxos uses numbered proposals and a two-phase quorum protocol in which proposers first obtain promises from a majority of acceptors not to accept lower-numbered proposals, then submit a value constrained by the highest-numbered prior acceptance reported, with learners determining the chosen value from quorum intersections. | Niche: This paper targets the problem of reaching distributed consensus on a single value in asynchronous systems with crash failures, recoveries, and unreliable communication.\n[2] Mech: Velox is a unified vectorized columnar execution engine that factors reusable operators and runtime services—such as filtering, joins, aggregation, expression evaluation, memory management, spilling, type/function handling, and connector/exchange interfaces—into a modular backend shared by multiple upper-layer systems. | Niche: This paper targets high-performance execution of analytical data-processing workloads across multiple query frontends, storage systems, and heterogeneous data-intensive applications.\n[3] Mech: It introduces an R* distributed transaction management architecture in which a global transaction coordinator drives two-phase commit and distributed concurrency control across sites while local resource managers independently handle execution, locking, logging, and recovery for subordinate actions. | Niche: This paper targets correct transaction execution for relational database operations that span multiple autonomous database sites in a distributed/federated environment.\n[4] Mech: Paxos uses proposers, acceptors, and learners in a two-phase protocol with monotonically increasing proposal numbers, where prepare requests establish an ordering and accept requests are constrained to preserve any value that may already have been chosen. | Niche: This paper targets the problem of achieving distributed consensus in an asynchronous message-passing system with crash failures, as the basis for replicated state machine agreement.\n[5] Mech: It introduces learned index structures, especially a recursive model index that trains hierarchical models to approximate the key-to-position mapping given by the data CDF and then uses tracked error bounds with bounded local search to recover exact results. | Niche: This paper targets the problem of building efficient database index structures for ordered key lookup, range access, and membership testing.\n[6] Mech: It introduces a seven-dimensional analytical taxonomy that decomposes hashing methods by hash behavior, bucket organization, collision handling, storage layout, workload sensitivity, update support, and query semantics, then uses this framework to map index design choices to query-processing requirements. | Niche: This paper targets the problem of understanding and comparing hashing-based access methods for database query processing across diverse workloads and system constraints.\n[7] Mech: ALEX is a hierarchical learned index that uses lightweight regression models to route keys to leaf nodes, where sorted arrays with reserved gaps absorb inserts locally, while cost models trigger local expansion, retraining, or splitting based on access and update behavior. | Niche: This paper targets dynamic ordered key-value indexing that must support efficient point lookups, range queries, insertions, and updates under changing workloads.\n[8] Mech: Vectorwise uses a column-store architecture with vectorized execution, where operators consume and produce cache-sized batches of column values and are implemented with hardware-conscious primitives, late materialization, and compression-aware processing to minimize CPU stalls and tuple-at-a-time overhead. | Niche: This paper targets high-performance analytical query processing in database systems on modern CPU hardware.\n[9] Mech: MonetDB/X100 uses a vectorized, column-oriented execution engine in which relational operators run as tight kernels over small batches of typed column values, exchanging vectors between operators to balance pipelining with limited materialization and late tuple reconstruction. | Niche: This paper targets efficient execution of analytical relational queries on modern superscalar CPUs, where traditional database engines underutilize processor and memory hierarchies.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          3,
+          1,
+          4
+        ],
+        "G2": [
+          5,
+          6,
+          7
+        ],
+        "G3": [
+          9,
+          8,
+          2
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0024",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Software Engineering (3 each), shuffled.\n\n[1] Mech: The method performs test-suite-based program repair by localizing suspicious statements, retrieving structurally compatible code fragments from other applications, adapting them via identifier and context mapping, and validating patched variants against the regression tests. | Niche: This paper targets automatic repair of software defects in existing applications using only the program and its regression test suite.\n[2] Mech: Random differential compiler testing automatically generates many small legal executable C programs, compiles them across different compilers or optimization settings, runs the binaries, and flags crashes or output inconsistencies as evidence of compiler bugs. | Niche: This paper targets the problem of validating C compiler correctness by uncovering miscompilations, crashes, and other wrong-code behaviors.\n[3] Mech: DART combines automatic interface-level harness extraction with concolic execution: it runs the unit on random concrete inputs, records symbolic branch predicates along the executed path, negates one observed predicate to form a new path constraint, solves it, and re-executes with the resulting concrete inputs to drive exploration into alternative branches. | Niche: This paper targets automatic generation of high-coverage tests for individual program units in order to expose bugs such as assertion violations and memory errors without manually writing test drivers.\n[4] Mech: It introduces a genetic-programming-based repair method that evolves populations of source-level program variants by deleting, inserting, or replacing suspicious statements with code fragments reused from elsewhere in the same program, scoring candidates by compilation success and test-suite performance. | Niche: This paper targets automatic repair of buggy programs using only a faulty program and a test suite as the correctness criterion.\n[5] Mech: KLEE is a symbolic execution system that runs programs on symbolic inputs at the compiler IR level, accumulates path constraints, systematically negates branch conditions, solves the resulting formulas to generate new concrete tests, and models memory, libraries, and environment interactions to explore realistic systems code. | Niche: This paper targets automatic generation of high-coverage test inputs for complex low-level systems programs without requiring manual test specifications.\n[6] Mech: Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code, and systematically probes them across scales, prompts, and task formats using both open-ended generation and constrained prediction benchmarks. | Niche: This paper targets the evaluation of whether large language models can perform practically useful software engineering tasks such as code generation, completion, and problem solving.\n[7] Mech: CodeRL initializes a pretrained code language model and then fine-tunes it with deep reinforcement learning using execution-based rewards from test cases plus a learned critic that predicts program quality to provide denser feedback during generation. | Niche: This paper targets neural code generation from programming task specifications, with the goal of producing functionally correct programs rather than merely likely token sequences.\n[8] Mech: AlphaCode uses a large autoregressive code model to massively sample candidate programs per task, then filters them through compilation and execution checks, clusters them by behavioral similarity, and ranks a small diverse subset likely to generalize. | Niche: This paper targets solving difficult competitive programming problems from natural-language statements and example input-output behavior under hidden-test evaluation.\n[9] Mech: GenProg uses genetic programming to search over source-level program variants generated by mutating fault-localized statements with delete, insert, and replace edits that copy existing code fragments, scoring candidates by how many tests they pass. | Niche: This paper targets automatic repair of buggy software programs using only the program source and a test suite as the correctness criterion.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          2,
+          3,
+          5
+        ],
+        "G2": [
+          6,
+          8,
+          7
+        ],
+        "G3": [
+          4,
+          9,
+          1
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Software Engineering",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T2-06_grouping_9_triple_0025",
+    "task_type": "T2-06_grouping_9_triple",
+    "prompt": "9 genomes from 3 different lineages in Software Engineering (3 each), shuffled.\n\n[1] Mech: It uses a syntax-driven neural decoder that generates code as a sequence of grammar-constrained actions over an abstract syntax tree, predicting nonterminal expansions, production rules, and terminals while conditioning on the encoded input and the partially built tree, with copying or specialized handling for open-vocabulary tokens. | Niche: This paper targets general-purpose code generation from natural language or other source inputs into executable programs.\n[2] Mech: Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code, and systematically probes them across scales, prompts, and task formats using both open-ended generation and constrained prediction benchmarks. | Niche: This paper targets the evaluation of whether large language models can perform practically useful software engineering tasks such as code generation, completion, and problem solving.\n[3] Mech: An empirical qualitative factor analysis treats the CI configuration as a first-class artifact and derives adoption-relevant factors by comparing practitioner-facing evidence across project integration setups. | Niche: This paper targets understanding which properties of continuous integration configurations affect whether CI is successfully adopted and accepted in software projects.\n[4] Mech: An empirical repository-mining analysis operationalizes build maintenance effort by identifying and measuring version-history changes to build scripts, configuration files, dependency declarations, and related metadata, then comparing their evolution over time with general development activity. | Niche: This paper targets the problem of quantifying the maintenance burden of automated build systems in software projects practicing ongoing integration.\n[5] Mech: CodeRL initializes a pretrained code language model and then fine-tunes it with deep reinforcement learning using execution-based rewards from test cases plus a learned critic that predicts program quality to provide denser feedback during generation. | Niche: This paper targets neural code generation from programming task specifications, with the goal of producing functionally correct programs rather than merely likely token sequences.\n[6] Mech: A phrase-based statistical machine translation approach is trained on parallel code–pseudo-code pairs to learn token/phrase alignments, translation probabilities, and a target-side language model, then decodes pseudo-code by jointly optimizing faithfulness to source code and fluency. | Niche: This paper targets automatic generation of human-readable pseudo-code descriptions from program source code.\n[7] Mech: Continuous integration is a development practice in which developers merge small changes into a single shared mainline frequently, and every merge triggers an automated build and broad regression test suite with immediate repair of any broken build. | Niche: This paper targets the problem of reducing software integration risk and maintaining quality during iterative team-based development.\n[8] Mech: CodeBERT is an encoder-only transformer architecture jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings. | Niche: This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\n[9] Mech: It introduces a decision-tree-based probabilistic code model that factorizes the probability of each code element into a sequence of learned context-conditioned branching decisions over sparse lexical and syntactic features. | Niche: This paper targets probabilistic modeling and next-element prediction for source code in the presence of large vocabularies and structured program context.\n\nSplit into 3 groups of 3 AND order each group chronologically (earliest -> latest).\n\nAnswer with one line per ordered group:\nGroup1 = [first_genome_number, second_genome_number, third_genome_number]\nGroup2 = [first_genome_number, second_genome_number, third_genome_number]\nGroup3 = [first_genome_number, second_genome_number, third_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "ordered_groups": {
+        "G1": [
+          8,
+          2,
+          5
+        ],
+        "G2": [
+          9,
+          1,
+          6
+        ],
+        "G3": [
+          7,
+          4,
+          3
+        ]
+      }
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Software Engineering",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-19_3lineage_grouping",
+      "display_title": "Three-Lineage Grouping (9)"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  }
+]

@@ -1,0 +1,206 @@
+{
+  "trace_id": "physics_FusionPlasmaControl",
+  "domain": "physics",
+  "direction": "FusionPlasmaControl",
+  "subfield": "Plasma Physics / AI-Driven Fusion Control",
+  "frontier_justification": "This direction remains a May 2026 frontier because fusion control has shown repeated breakthroughs with deep learning and reinforcement learning, but existing results are device-specific and phase-limited. The unresolved step is a transferable, safety-constrained control model that combines simulators, multi-tokamak data, and experimental adaptation on the path toward ITER-scale operation.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Predicting disruptive instabilities in controlled fusion plasmas through deep learning",
+      "year": 2019,
+      "venue": "Nature 2019",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-019-1116-4)",
+      "paper_type": "research",
+      "key_contribution": "First deep learning system for cross-machine disruption prediction in tokamak fusion plasmas; trained on DIII-D and JET experimental data, the model reliably forecasts disruptions even on machines it was not trained on — a crucial capability for ITER and future reactors that cannot afford training disruptions.",
+      "idea_genome": {
+        "problem_genome": "Plasma disruptions — sudden loss of confinement — are the most dangerous events in tokamak fusion reactors, potentially damaging the vessel; predicting them in advance is critical but existing methods fail to transfer across different tokamak machines.",
+        "mechanism_genome": "Deep recurrent neural network (LSTM/CNN) trained on time-series diagnostic data from DIII-D (US) and JET (EU) tokamaks; multi-signal input from hundreds of plasma diagnostics; binary classification of disruptive vs. non-disruptive trajectories with configurable warning time.",
+        "observation_genome": "Achieves reliable disruption prediction on both DIII-D and JET; critically, the model trained on one machine transfers to another without retraining, demonstrating cross-machine generalization essential for ITER deployment.",
+        "limitation_genome": "Purely predictive (passive monitoring): predicts disruptions but cannot prevent them; no control action is taken; requires extensive diagnostic data infrastructure; the binary prediction (disruptive/non-disruptive) does not identify the physical cause or suggest mitigation strategies."
+      }
+    },
+    {
+      "title": "Machine learning for disruption warnings on Alcator C-Mod, DIII-D, and EAST",
+      "year": 2019,
+      "venue": "Nuclear Fusion 2019",
+      "arxiv_id": "N/A (Nucl. Fusion 59:096015)",
+      "paper_type": "research",
+      "key_contribution": "Random forest-based disruption warning system deployed in real-time on three tokamaks (Alcator C-Mod, DIII-D, EAST); achieves 80-90% disruption detection rates using only real-time-available plasma parameters, with successful inter-shot and real-time operation — the first ML disruption predictor validated across three distinct machines simultaneously.",
+      "idea_genome": {
+        "problem_genome": "Kates-Harbeck 2019 demonstrated cross-machine disruption prediction with deep learning but used complex recurrent networks requiring extensive diagnostic data; a simpler, more interpretable approach using only real-time plasma parameters could enable practical deployment on diverse tokamaks including EAST (China).",
+        "mechanism_genome": "Random forest classifier trained on large databases of plasma parameters sampled approximately 10^6 times across 10^4 discharges from three tokamaks; uses only parameters available in real-time (no post-shot diagnostics); binary classification of time slices as 'close to disruption' vs. 'far from disruption'.",
+        "observation_genome": "Achieves 80-90% disruption detection rates on all three machines on a shot-by-shot basis; demonstrates successful real-time deployment on EAST and DIII-D; the simpler random forest approach proves that practical disruption warning does not require deep learning complexity.",
+        "limitation_genome": "Random forest is a shallow model with limited ability to capture temporal dynamics; the binary classification framework does not provide graded warning or identify disruption causes; performance varies substantially across machines on a time-slice basis."
+      }
+    },
+    {
+      "title": "Magnetic control of tokamak plasmas through deep reinforcement learning",
+      "year": 2022,
+      "venue": "Nature 2022",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-021-04301-9)",
+      "paper_type": "research",
+      "key_contribution": "First deep reinforcement learning system deployed for real-time plasma shape control on a tokamak (TCV at EPFL); the RL agent adjusts 19 magnetic coil voltages 10,000 times per second based on 90 diagnostic measurements, producing diverse plasma configurations including advanced shapes and dual droplets.",
+      "idea_genome": {
+        "problem_genome": "Kates-Harbeck 2019 and Montes 2019 demonstrated that machine learning can predict disruptions, but passive prediction alone cannot prevent them; active control of plasma shape and position through magnetic coils requires real-time decision-making that traditional PID controllers handle poorly for complex configurations.",
+        "mechanism_genome": "Deep RL agent (MPO algorithm) trained in a high-fidelity tokamak simulator; at deployment, the neural network takes 90 real-time diagnostic measurements as input and outputs voltage commands to 19 magnetic coils at 10 kHz; trained to produce target plasma shapes via reward shaping.",
+        "observation_genome": "Successfully controls diverse plasma configurations on TCV including elongated shapes, negative triangularity, snowflake divertor, and sustained dual droplets (two simultaneous plasma volumes); first demonstration of RL for real-time tokamak control.",
+        "limitation_genome": "Trained and deployed on a single tokamak (TCV); general plasma shape control but no instability-specific avoidance; the RL agent cannot handle tearing modes or other MHD instabilities that require anticipatory control; requires accurate simulator for training."
+      }
+    },
+    {
+      "title": "Offline Model-Based Reinforcement Learning for Tokamak Control",
+      "year": 2023,
+      "venue": "L4DC 2023 (PMLR 211:1357-1372)",
+      "arxiv_id": "N/A (PMLR 211:1357-1372)",
+      "paper_type": "research",
+      "key_contribution": "Offline model-based RL for tokamak control: learns a dynamics model from historical DIII-D experimental data and trains an RL policy entirely offline without requiring a physics simulator; successfully tested for both feedforward trajectory design and feedback control on DIII-D, demonstrating that RL can work with offline data alone.",
+      "idea_genome": {
+        "problem_genome": "Degrave 2022's RL agent required a high-fidelity physics simulator for training, which is expensive to develop for each new tokamak; an offline approach that learns dynamics models directly from historical experimental data would bypass the need for simulation and enable faster deployment.",
+        "mechanism_genome": "Neural network dynamics model trained on historical DIII-D discharge data; the model serves as a surrogate environment for offline RL policy training; combines model-based planning with reinforcement learning; policy is deployed for real-time feedback control without requiring online interaction during training.",
+        "observation_genome": "Successfully designs feedforward trajectories and performs feedback control on DIII-D using a policy trained entirely offline on historical data; demonstrates that the sim-to-real gap can be bypassed by learning directly from experimental data.",
+        "limitation_genome": "The offline dynamics model's accuracy is limited by the coverage of historical data; the approach does not explicitly handle instabilities or disruptions; validated only for basic control tasks (current and shape tracking), not for instability avoidance."
+      }
+    },
+    {
+      "title": "Avoiding fusion plasma tearing instability with deep reinforcement learning",
+      "year": 2024,
+      "venue": "Nature 2024",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-024-07024-9)",
+      "paper_type": "research",
+      "key_contribution": "Deep RL agent that actively avoids tearing instabilities — the leading cause of plasma disruptions — on DIII-D tokamak; the agent navigates high-pressure plasma through safe operational paths in real time, maintaining H-mode performance while keeping tearing likelihood below a controllable threshold.",
+      "idea_genome": {
+        "problem_genome": "Degrave 2022 demonstrated RL for general plasma shape control but did not address MHD instabilities; Char 2023 showed offline RL is feasible but without instability awareness; tearing instability is the leading cause of disruptions in ITER-relevant scenarios, and avoiding it requires anticipatory control that navigates through a time-varying stability boundary.",
+        "mechanism_genome": "RL agent trained on a data-driven dynamics model of DIII-D plasma; real-time tearing instability likelihood is estimated and used as a constraint; the agent adjusts plasma parameters (current, pressure profile) to keep tearing likelihood below threshold while maintaining high confinement (H-mode).",
+        "observation_genome": "Successfully maintains tearing likelihood below threshold on DIII-D even under unfavorable conditions (low safety factor, low torque); the RL-controlled plasma actively tracks stable paths within the time-varying operational space while sustaining H-mode performance.",
+        "limitation_genome": "Trained and validated on a single tokamak (DIII-D); the data-driven dynamics model requires extensive experimental data for each new machine; limited to tearing instability (does not handle other MHD modes); real-time inference must meet strict latency requirements."
+      }
+    },
+    {
+      "title": "TORAX: A Fast and Differentiable Tokamak Transport Simulator in JAX",
+      "year": 2024,
+      "venue": "arXiv preprint 2024",
+      "arxiv_id": "2406.06718",
+      "paper_type": "research",
+      "key_contribution": "TORAX: open-source differentiable tokamak transport simulator built in JAX; solves coupled equations for ion/electron heat transport, particle transport, and current diffusion with automatic differentiation, enabling gradient-based optimization of plasma scenarios and seamless integration with ML surrogate models.",
+      "idea_genome": {
+        "problem_genome": "RL-based plasma control (Degrave 2022, Seo 2024) relies on either physics simulators or data-driven models as training environments, but neither supports gradient-based optimization; a differentiable physics simulator would enable direct gradient computation through the plasma dynamics, unlocking new optimization and ML integration strategies.",
+        "mechanism_genome": "Implements tokamak core transport equations in JAX, leveraging just-in-time compilation for speed and automatic differentiation for gradient computation; modular architecture allows swapping physics-based transport models with ML surrogates; validated against the established RAPTOR code.",
+        "observation_genome": "Achieves fast simulation times with JIT compilation; automatic differentiation enables gradient-based scenario optimization impossible with traditional simulators; validated against RAPTOR with close agreement on plasma profiles; the open-source JAX implementation facilitates ML community adoption.",
+        "limitation_genome": "Currently focused on 1D core transport (no edge/SOL physics); the differentiable framework has not yet been integrated with RL-based control agents; validated for standard tokamak scenarios but not yet for extreme or disruption-prone regimes."
+      }
+    },
+    {
+      "title": "High-fidelity data-driven dynamics model for reinforcement learning-based control in HL-3 tokamak",
+      "year": 2025,
+      "venue": "Communications Physics 2025",
+      "arxiv_id": "2409.09238",
+      "paper_type": "research",
+      "key_contribution": "High-fidelity data-driven dynamics model enables RL-based plasma control on China's HL-3 tokamak; the learned dynamics model serves as a training environment for RL, achieving stable 400-ms, 1-kHz trajectory control with accurate waveform tracking of plasma current and last closed flux surface.",
+      "idea_genome": {
+        "problem_genome": "Seo 2024 used a data-driven model for DIII-D but building such models for new tokamaks (like China's HL-3) is challenging; Char 2023's offline approach showed feasibility but needs adaptation; the dynamics model must be high-fidelity enough to serve as an RL training environment while being learnable from limited experimental data.",
+        "mechanism_genome": "Data-driven neural network dynamics model trained on HL-3 experimental discharge data; the model predicts plasma state evolution (current, shape, flux surface) given actuator commands; RL agent trained entirely in this learned simulator before deployment on the real tokamak.",
+        "observation_genome": "RL agent trained in the learned dynamics model successfully maintains stable 400-ms plasma operation on HL-3 at 1 kHz control frequency; achieves accurate waveform tracking of plasma current and last closed flux surface; demonstrates transferability of the data-driven RL paradigm to a new tokamak.",
+        "limitation_genome": "Validated for relatively short plasma durations (400 ms); the data-driven model requires sufficient experimental data from HL-3; limited to basic shape/current control without instability-specific avoidance; the learned dynamics model's accuracy degrades for plasma regimes far from training distribution."
+      }
+    },
+    {
+      "title": "Learning plasma dynamics and robust rampdown trajectories with predict-first experiments at TCV",
+      "year": 2025,
+      "venue": "Nature Communications 2025",
+      "arxiv_id": "2502.12327",
+      "paper_type": "research",
+      "key_contribution": "Neural state-space model (NSSM) combined with RL for robust plasma rampdown trajectory design at TCV; the NSSM learns plasma dynamics from only 311 pulses (5 in high-performance regime), and RL optimizes trajectories that avoid instability limits; predict-first experiments demonstrate 20% plasma current increase from baseline.",
+      "idea_genome": {
+        "problem_genome": "Wu 2025 demonstrated data-driven dynamics + RL on HL-3 but required substantial experimental data; plasma rampdown (safe termination) is a critical operational phase where instabilities frequently occur; a data-efficient approach that works with limited high-performance shots is needed.",
+        "mechanism_genome": "Neural state-space model (NSSM) from Scientific Machine Learning combines physics priors with neural network flexibility; learns plasma dynamics from only 311 TCV discharges; RL parallelized across model uncertainties designs trajectories avoiding instability limits; predict-first experimental validation on TCV.",
+        "observation_genome": "The NSSM-RL system achieves statistically significant improvements in rampdown metrics; predict-first experiment increases plasma current by 20% from baseline; demonstrates that data-efficient SciML can enable plasma control with minimal experimental data in reactor-relevant regimes.",
+        "limitation_genome": "Limited to plasma rampdown phase (not full discharge control); NSSM extrapolation ability constrained to small deviations from training regime; validated on TCV which is smaller than reactor-scale devices; integration with instability-specific avoidance (like Seo 2024) remains unexplored."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "Montes 2019 competes directly with Kates-Harbeck 2019 in the disruption prediction niche, offering a simpler alternative (random forest vs. deep LSTM/CNN) that achieves comparable disruption detection rates across three tokamaks using only real-time plasma parameters — demonstrating that practical deployment does not require deep learning complexity."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Deep learning radiates from passive disruption prediction (Kates-Harbeck's classification model) to active real-time plasma control (Degrave's RL agent) — the same deep learning toolkit applied to a fundamentally new problem: from forecasting instabilities to directly commanding magnetic coils to shape plasma."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Char 2023 refines Degrave's RL-for-tokamak paradigm by replacing the physics simulator with an offline data-driven dynamics model, eliminating the need for an expensive physics simulation environment — an incremental but important mechanism improvement that makes the RL approach more practical for diverse tokamaks."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Seo's RL controller specializes from Degrave's general-purpose plasma shape control to instability-specific avoidance, splitting the RL-for-tokamak lineage into two distinct niches: general shape control (Degrave) and targeted disruption avoidance (Seo) requiring fundamentally different reward structures and dynamics models."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "TORAX hybridizes the differentiable programming paradigm from modern ML frameworks (JAX) with traditional physics-based tokamak transport simulation, creating a simulator that supports both automatic differentiation for gradient-based optimization and modular ML surrogate integration — combining Degrave's DeepMind ML expertise with fusion physics."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Wu adapts the data-driven RL paradigm from Seo's DIII-D work to an entirely new device (China's HL-3 tokamak), radiating the approach to a different machine with different plasma parameters, diagnostics, and operating regimes — demonstrating the technique's portability across international fusion programs."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The TCV rampdown work refines the data-driven dynamics + RL paradigm (from Wu/HL-3) by introducing a neural state-space model for greater data efficiency (311 pulses vs. extensive datasets), adding predict-first experimental validation, and targeting the critical rampdown operational phase."
+    }
+  ],
+  "open_question": "Predict-first TCV and reinforcement-learning plasma-control studies show that data-driven control can learn device-specific dynamics, but ITER-scale deployment needs cross-device transfer, uncertainty-aware safety, and simulator-to-shot adaptation. What fusion-control foundation model would combine differentiable plasma simulators, multi-tokamak logs, and constrained RL to produce robust ramp-up, sustainment, and ramp-down policies across machines?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Plasma Physics / AI-Driven Fusion Control."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 8 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Niche Competition": 1,
+    "Adaptive Radiation": 2,
+    "Mutation": 2,
+    "Speciation": 1,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Learning plasma dynamics and robust rampdown trajectories with predict-first experiments at TCV",
+      "year": 2025,
+      "venue": "Nature Communications 2025",
+      "identifier": "2502.12327",
+      "unresolved_gap": "Data-driven plasma control works on specific tokamaks and phases, but reactor-relevant deployment still needs cross-device transfer, uncertainty-aware safety, and robust control across full discharge phases.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

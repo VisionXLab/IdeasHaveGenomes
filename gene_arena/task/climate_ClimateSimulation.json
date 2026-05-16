@@ -1,0 +1,185 @@
+{
+  "trace_id": "climate_ClimateSimulation",
+  "domain": "climate",
+  "direction": "Climate Simulation and Emulation",
+  "subfield": "Climate Modeling / Climate Emulators",
+  "frontier_justification": "This direction remains a May 2026 frontier because climate emulation is shifting from short-range or historical-regime skill toward assessment-scale scenario reasoning. Hybrid physics-ML parameterizations and emulator competitions show progress, but long-horizon stability, physical conservation, uncertainty calibration, and generalization under unseen greenhouse-gas, aerosol, and land-use forcing remain open.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "The Community Earth System Model: A Framework for Collaborative Research",
+      "year": 2013,
+      "venue": "Bulletin of the American Meteorological Society (2013)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced CESM1, a major coupled general circulation / Earth system model used for climate simulation across components including atmosphere, ocean, land, and sea ice. It established the high-fidelity but computationally expensive simulation paradigm that later emulator work seeks to approximate or accelerate.",
+      "idea_genome": {
+        "problem_genome": "How to build a physically grounded, coupled climate model capable of simulating the Earth system for climate research and scenario studies.",
+        "mechanism_genome": "A modular, component-coupled numerical Earth system model solving discretized physical equations for atmosphere, ocean, land, and sea ice.",
+        "observation_genome": "CESM1 demonstrated credible large-scale climate behavior and became a widely used platform for climate experiments and assessments.",
+        "limitation_genome": "The model is computationally expensive, limiting ensemble size, scenario sweeps, and rapid uncertainty exploration."
+      }
+    },
+    {
+      "title": "Deep learning to represent subgrid processes in climate models",
+      "year": 2018,
+      "venue": "Proceedings of the National Academy of Sciences (2018)",
+      "arxiv_id": "1806.04731",
+      "paper_type": "research",
+      "key_contribution": "This paper showed that neural networks can emulate unresolved subgrid physical processes, especially moist convection, inside climate models. It was an early demonstration that machine learning could replace expensive parameterizations while retaining useful climate statistics.",
+      "idea_genome": {
+        "problem_genome": "How to improve or accelerate climate models by replacing hand-designed subgrid parameterizations with learned surrogates.",
+        "mechanism_genome": "Train deep neural networks on high-resolution cloud-resolving model data to map resolved-scale state variables to subgrid tendencies and fluxes.",
+        "observation_genome": "The learned parameterization reproduced important aspects of convection and climate statistics, suggesting ML could be embedded within climate simulation pipelines.",
+        "limitation_genome": "The approach targeted a component of the model rather than full-system emulation, and long-horizon stability and physical guarantees remained weak."
+      }
+    },
+    {
+      "title": "WeatherBench: A Benchmark Data Set for Data-Driven Weather Forecasting",
+      "year": 2020,
+      "venue": "Journal of Advances in Modeling Earth Systems (2020)",
+      "arxiv_id": "2002.00469",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced a standardized benchmark dataset and evaluation framework for data-driven weather forecasting, enabling systematic comparison of deep learning and physics-based methods. It accelerated the community's transition from component-level ML toward end-to-end atmospheric prediction.",
+      "idea_genome": {
+        "problem_genome": "Can deep learning directly forecast atmospheric states, and how should such data-driven forecasting systems be benchmarked fairly against numerical weather prediction?",
+        "mechanism_genome": "A benchmark dataset derived from ERA5 reanalysis with standardized evaluation metrics, baseline scores from linear regression, deep learning, and physical models.",
+        "observation_genome": "The study showed meaningful forecast skill from data-driven methods and provided a common evaluation platform that catalyzed rapid progress in ML weather prediction.",
+        "limitation_genome": "Forecast-oriented models did not yet address climate-timescale stability, forcing-response fidelity, or physically consistent long rollouts under scenarios."
+      }
+    },
+    {
+      "title": "ClimaX: A foundation model for weather and climate",
+      "year": 2023,
+      "venue": "International Conference on Machine Learning (ICML 2023)",
+      "arxiv_id": "2301.10343",
+      "paper_type": "research",
+      "key_contribution": "ClimaX introduced a transformer-based foundation model pretrained across heterogeneous weather and climate datasets, tasks, and variables. It reframed climate and weather modeling as transferable representation learning rather than single-task supervised prediction.",
+      "idea_genome": {
+        "problem_genome": "How to build a general-purpose model that can transfer across weather and climate tasks, datasets, and spatial variables.",
+        "mechanism_genome": "A vision-transformer-style architecture with variable aggregation and pretraining across multiple geophysical datasets, followed by task-specific adaptation.",
+        "observation_genome": "The model achieved strong transfer performance across forecasting and climate-related benchmarks, showing the value of foundation-model pretraining for Earth system data.",
+        "limitation_genome": "ClimaX emphasized representation learning and task transfer, but it was not itself a stable, physically constrained long-horizon climate simulator for scenario rollout."
+      }
+    },
+    {
+      "title": "ACE: A fast, skillful learned global atmospheric model for climate prediction",
+      "year": 2024,
+      "venue": "arXiv preprint (2024)",
+      "arxiv_id": "2310.02074",
+      "paper_type": "research",
+      "key_contribution": "ACE presented a learned global atmospheric model aimed at climate prediction with emphasis on speed, forecast skill, and stable rollout. It moved beyond generic foundation modeling toward a simulator-oriented learned atmospheric model optimized for fast and skillful climate-timescale emulation.",
+      "idea_genome": {
+        "problem_genome": "How to build a learned atmospheric model that is fast enough for climate applications while remaining skillful and stable over longer rollouts.",
+        "mechanism_genome": "A 200M-parameter autoregressive machine learning emulator trained on comprehensive 100-km resolution global atmospheric model output to evolve atmospheric states efficiently.",
+        "observation_genome": "ACE demonstrated that learned atmospheric simulation can achieve useful climate-prediction skill at a fraction of the cost of traditional numerical models, remaining stable for 100+ year rollouts.",
+        "limitation_genome": "As an atmospheric emulator, it still leaves open full Earth-system coupling, stronger physical constraints, and robust scenario generalization under changing forcings."
+      }
+    },
+    {
+      "title": "Neural general circulation models for weather and climate",
+      "year": 2024,
+      "venue": "Nature (2024)",
+      "arxiv_id": "2311.07222",
+      "paper_type": "research",
+      "key_contribution": "NeuralGCM combined neural components with differentiable dynamical cores to create a learned general circulation model capable of weather and climate simulation. It directly targeted the central frontier issues of long-term stability, physical structure, and climate-statistical fidelity.",
+      "idea_genome": {
+        "problem_genome": "How to construct a learned climate model that preserves the strengths of GCM structure while gaining the efficiency and adaptability of machine learning.",
+        "mechanism_genome": "Hybridize neural networks with a physical dynamical core and learned parameterization / correction components, enabling stable autoregressive simulation on the sphere.",
+        "observation_genome": "The model produced realistic weather forecasts and climate statistics with long stable rollouts, marking a major step toward practical ML-based climate emulation.",
+        "limitation_genome": "Open challenges remain in scenario-conditioned forcing response, coupled Earth-system completeness, and trustworthiness for policy-relevant multi-decadal projections."
+      }
+    },
+    {
+      "title": "Crowdsourcing the Frontier: Advancing Hybrid Physics-ML Climate Simulation via a $50,000 Kaggle Competition",
+      "year": 2025,
+      "venue": "arXiv preprint (2025)",
+      "arxiv_id": "2511.20963",
+      "paper_type": "research",
+      "key_contribution": "This paper advances hybrid physics-ML climate simulation by using a large-scale $50,000 Kaggle competition to crowdsource and benchmark subgrid ML parameterizations designed for stable and skillful online climate modeling.",
+      "idea_genome": {
+        "problem_genome": "How to make ML-based subgrid parameterizations both accurate and online-stable enough for long-term climate simulations.",
+        "mechanism_genome": "Frame hybrid physics-ML climate parameterization as an open competition problem, providing standardized datasets, evaluation protocols, and benchmark tasks that test models in both offline and online simulation settings.",
+        "observation_genome": "The competition showed that crowdsourced hybrid approaches can improve the frontier of subgrid ML parameterization performance, while also revealing that strong offline scores do not reliably guarantee stable or superior online climate behavior.",
+        "limitation_genome": "Despite progress, ensuring consistent long-horizon stability, physical realism, and generalization of hybrid ML parameterizations across climates and forcings remains an open challenge."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The lineage shifts from full numerical Earth-system simulation to learning one of its most expensive unresolved components. This preserves the GCM framework while mutating the parameterization mechanism with neural surrogates."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "After proving ML can emulate subgrid physics, the next step broadens to benchmarking direct data-driven prediction of atmospheric evolution. The focus expands from component emulation to end-to-end forecasting evaluation."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Forecasting models evolve into a foundation-model branch that emphasizes transferable representations across tasks, variables, and datasets. This creates a more general-purpose geophysical modeling paradigm rather than a single forecasting system."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "ACE narrows the broad foundation-model idea into a simulator-oriented learned atmospheric model optimized for fast and skillful climate prediction. The evolution focus is from transfer learning toward stable rollout and climate-useful emulation."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "NeuralGCM integrates the learned-emulator agenda with explicit GCM-like physical structure through a neural-dynamical hybrid. This evolution directly addresses the stability and physical consistency limitations of purely data-driven atmospheric emulators."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "From NeuralGCM's standalone hybrid emulator, this paper shifts to a community benchmarking strategy that explicitly evaluates and optimizes the coupling of ML subgrid models with physics-based climate simulators via crowdsourced competition."
+    }
+  ],
+  "open_question": "Hybrid physics-ML climate parameterizations and learned emulators can improve speed and online skill, but they remain brittle under long rollouts and out-of-distribution forcing scenarios. What mechanism would make ML climate emulators scenario-aware and physically constrained enough to produce uncertainty-calibrated multi-decadal responses to novel greenhouse-gas, aerosol, land-use, and coupled Earth-system feedback changes for assessment-scale use?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Climate Modeling / Climate Emulators."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 7 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 2,
+    "Adaptive Radiation": 1,
+    "Speciation": 1,
+    "Hybridization": 2
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Crowdsourcing the Frontier: Advancing Hybrid Physics-ML Climate Simulation via a $50,000 Kaggle Competition",
+      "year": 2025,
+      "venue": "arXiv preprint (2025)",
+      "identifier": "2511.20963",
+      "unresolved_gap": "Despite progress, ensuring consistent long-horizon stability, physical realism, and generalization of hybrid ML parameterizations across climates and forcings remains an open challenge.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

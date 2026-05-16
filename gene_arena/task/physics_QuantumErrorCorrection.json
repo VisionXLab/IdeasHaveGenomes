@@ -1,0 +1,164 @@
+{
+  "trace_id": "physics_QuantumErrorCorrection",
+  "domain": "physics",
+  "direction": "QuantumErrorCorrection",
+  "subfield": "Quantum Computing / Superconducting Qubits",
+  "frontier_justification": "Fault-tolerant quantum computing via surface code error correction is at a pivotal moment in 2025-2026. Google Willow (2024) demonstrated below-threshold error suppression, making this one of the most closely watched technology developments in fundamental physics.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Surface codes: Towards practical large-scale quantum computation",
+      "year": 2012,
+      "venue": "Physical Review A 2012",
+      "arxiv_id": "1208.0928",
+      "paper_type": "research",
+      "key_contribution": "Comprehensive surface code blueprint: threshold analysis, resource overhead estimation, and full fault-tolerant gate set for planar qubit array topology.",
+      "idea_genome": {
+        "problem_genome": "Quantum systems decohere; need practical error correction scheme compatible with nearest-neighbor 2D qubit connectivity.",
+        "mechanism_genome": "Planar surface code: data qubits on lattice, syndrome qubits on edges; X and Z stabilizer measurements; logical qubit encoded in code distance d array.",
+        "observation_genome": "Surface code threshold ~1%; 10^9 logical operations require ~10^4 physical qubits per logical qubit at 0.1% physical error rate.",
+        "limitation_genome": "Enormous qubit overhead (10^4:1 ratio); requires fast syndrome extraction; theory far ahead of experimental hardware capability."
+      }
+    },
+    {
+      "title": "Superconducting quantum circuits at the surface code threshold for fault tolerance",
+      "year": 2014,
+      "venue": "Nature 2014",
+      "arxiv_id": "N/A (Nature doi:10.1038/nature13171)",
+      "paper_type": "research",
+      "key_contribution": "Demonstrates two-qubit gate fidelity of 99.4% in superconducting qubits, meeting the surface code threshold for the first time experimentally.",
+      "idea_genome": {
+        "problem_genome": "Surface code theory requires <1% physical error rates; superconducting qubits historically far above this threshold.",
+        "mechanism_genome": "Improved transmon qubit design; optimized pulse sequences; cross-resonance two-qubit gates; fidelity benchmarking via randomized benchmarking.",
+        "observation_genome": "Two-qubit gate error of 0.6% (99.4% fidelity) demonstrated; single-qubit gates at 99.9%; first experimental surface code threshold crossing.",
+        "limitation_genome": "Demonstrated on 5 qubits only; syndrome extraction not yet demonstrated; 2D array with full error correction cycle not yet implemented."
+      }
+    },
+    {
+      "title": "Exponential suppression of bit or phase errors with cyclic error correction",
+      "year": 2021,
+      "venue": "Nature 2021",
+      "arxiv_id": "2102.06132",
+      "paper_type": "research",
+      "key_contribution": "1D repetition code on 21 qubits shows exponential error suppression with code distance; first demonstration of logical error rate decreasing with qubit number.",
+      "idea_genome": {
+        "problem_genome": "Threshold crossing in 2-qubit gates does not guarantee that error suppression improves with code size in practice.",
+        "mechanism_genome": "21-qubit linear chain; cyclic repetition code (distance 5,7,11); repeated syndrome extraction cycles; correlated error decoding.",
+        "observation_genome": "Logical error rate decreases exponentially with code distance; repetition code logical error rate 100x better than physical qubits; but only 1D.",
+        "limitation_genome": "1D repetition code cannot correct both X and Z errors; not a full surface code; 2D full QEC not yet demonstrated."
+      }
+    },
+    {
+      "title": "Suppressing quantum errors by scaling a surface code logical qubit",
+      "year": 2023,
+      "venue": "Nature 2023",
+      "arxiv_id": "2207.06431",
+      "paper_type": "research",
+      "key_contribution": "2D surface code on 72-qubit Sycamore chip: distance-5 outperforms distance-3 logical qubit; below-threshold operation for one QEC cycle type.",
+      "idea_genome": {
+        "problem_genome": "1D repetition code (2021) is insufficient; need 2D surface code demonstration showing quality improves with scale.",
+        "mechanism_genome": "72-qubit Sycamore; distance-3 (17 qubits) vs distance-5 (49 qubits) surface codes; repeated QEC cycles; minimum-weight perfect matching decoder.",
+        "observation_genome": "Distance-5 logical qubit outperforms distance-3; first 2D surface code scaling demonstration; but not yet clearly below threshold for full code.",
+        "limitation_genome": "Partial below-threshold: only for one error type clearly; full fault-tolerant computation not yet demonstrated; decoder latency remains limiting factor."
+      }
+    },
+    {
+      "title": "Quantum error correction below the surface code threshold",
+      "year": 2024,
+      "venue": "Nature 2025 (published Dec 2024)",
+      "arxiv_id": "2408.13687",
+      "paper_type": "research",
+      "key_contribution": "Willow chip: 105-qubit superconducting processor demonstrates below-threshold surface code error correction with exponential suppression across d=3,5,7; logical error rates 2× per distance level.",
+      "idea_genome": {
+        "problem_genome": "2023 paper showed scaling works partially; need clear demonstration that both X and Z error rates decrease exponentially with code distance.",
+        "mechanism_genome": "105-qubit 'Willow' processor; improved qubit coherence (average T1~68μs); optimized readout; rapid classical decoding (1μs per round).",
+        "observation_genome": "Every step in code distance (d=3→5→7) halves logical error rate; d=7 logical qubit 10× better than best physical qubit; classical simulation exponentially hard.",
+        "limitation_genome": "Only QEC demonstrated, not full fault-tolerant computation; magic state distillation and logical gate operations not yet demonstrated."
+      }
+    },
+    {
+      "title": "Fault-Tolerant Execution of Error-Corrected Quantum Algorithms",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "arxiv_id": "2603.04584",
+      "paper_type": "research",
+      "key_contribution": "First demonstration of end-to-end fault-tolerant execution of actual quantum algorithms (QAOA and HHL) on logical qubits; 12 logical qubits on 97 physical qubits using [[7,1,3]] Steane code on Quantinuum H2 and Helios trapped-ion processors; near-break-even performance on complex error-corrected algorithmic circuits.",
+      "idea_genome": {
+        "problem_genome": "Willow demonstrates below-threshold QEC memory, but running actual quantum algorithms on logical qubits — with logical gate operations including T gates and multi-qubit operations — has not been demonstrated.",
+        "mechanism_genome": "[[7,1,3]] Steane error correction code on trapped-ion hardware (Quantinuum H2 and Helios); fault-tolerant QAOA and HHL implementation with error-corrected logical gates; repeated QEC cycles with enhanced error correction improving algorithm performance.",
+        "observation_genome": "Fault-tolerant QAOA shows improved performance with increased layers and T gates on 5-6 logical qubits; circuits up to 12 logical qubits show better-than-random performance; enhanced error correction cycles demonstrably boost algorithm results.",
+        "limitation_genome": "Demonstrated on small problem instances where classical computers still solve faster; fault-tolerant overhead means quantum advantage requires much larger logical qubit counts and below-threshold error rates at scale not yet achieved."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Surface code theory radiates from abstract blueprint to physical implementation on superconducting transmon hardware; theory prescriptions instantiated in experimental platform."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Scales from 2-qubit threshold demonstration to 21-qubit cyclic repetition code; adds repeated syndrome extraction cycles and correlated decoder; same superconducting platform."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Extends 1D repetition code to 2D surface code on 72-qubit chip; adds second error type (X and Z); same Sycamore architecture, larger code distances."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Willow demonstrates clear below-threshold exponential suppression — the phase transition from above-threshold to below-threshold marks a paradigm shift in fault-tolerant quantum computing."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Fault-tolerant QAOA/HHL execution crosses the threshold from demonstrating QEC memory to actually running fault-tolerant algorithms on logical qubits — the qualitative shift from storing quantum states to computing with them."
+    }
+  ],
+  "open_question": "Fault-tolerant QAOA and HHL are demonstrated but on small problem instances where classical computers still win. What mechanism would enable fault-tolerant quantum algorithms at the scale where quantum advantage is achieved for practically relevant problem sizes — requiring both below-threshold logical gates and efficient magic state factories at scale?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Quantum Computing / Superconducting Qubits."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Adaptive Radiation": 1,
+    "Mutation": 2,
+    "Speciation": 2
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Fault-Tolerant Execution of Error-Corrected Quantum Algorithms",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "identifier": "2603.04584",
+      "unresolved_gap": "Demonstrated on small problem instances where classical computers still solve faster; fault-tolerant overhead means quantum advantage requires much larger logical qubit counts and below-threshold error rates at scale not yet achieved.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

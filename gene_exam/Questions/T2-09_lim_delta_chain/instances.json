@@ -1,0 +1,614 @@
+[
+  {
+    "instance_id": "T2-09_lim_delta_chain_0059",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Its main limitation is reliance on inferred residual diagnostics from observational and reanalysis products, which constrains causal certainty and inherits uncertainties from the underlying datasets and energy-budget closure assumptions.\"\n  L2: \"Its conclusions remain constrained by residual sparsity and uncertainty in polar, deep-ocean, and other poorly observed regions despite improved corrections and product integration.\"\n  L3: \"Its main limitation is dependence on prior observational products and model ensembles that still contain substantial historical instrument biases, sparse deep-ocean and polar sampling, and structural model uncertainty.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work, it provides a more unified and cross-validated annual update by jointly bias-correcting temperature and salinity observations and comparing independent institutional mapping methodologies within one framework.\"\n  D2: \"Compared with prior work focused on either observations or models alone, this paper more explicitly integrates corrected direct records, indirect estimates, and constrained multi-model projections into a single process-oriented synthesis of OHC evolution and drivers.\"\n  D3: \"Compared with prior assessments, it newly integrates near-real-time observations across multiple product classes with more consistent bias handling and cross-validation to produce a benchmark 2024 synthesis.\"\n  D4: \"Compared with prior work, it extends OHC analysis to 2021 with updated bias-corrected multi-institutional datasets, adds more comprehensive regional and hotspot evaluation, and provides quantitative forcing attribution using CESM1 single-forcing ensembles.\"\n  D5: \"Compared with prior work using single products or less complete corrections, this study reconciles several leading datasets with updated QC and bias treatment to deliver a more integrated and less conservative estimate of recent ocean change.\"\n  D6: \"Compared with prior ocean temperature/OHC products, IAPv4 replaces older static QC and climatology choices with time-evolving non-Gaussian QC, stronger instrument-specific bias treatment, higher-resolution vertical grids, and dynamic flow-dependent ensemble mapping.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D2",
+        "L3": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "海洋热含量",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0028",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The approach depends on accurate and sufficiently rich semantic annotations and transformation knowledge being provided for each system, leaving the acquisition and standardization of those semantics unresolved.\"\n  L2: \"The system still depends on manually built wrappers and application-specific mediators, so scaling to many new sources or domains requires substantial hand-engineered source and integration knowledge.\"\n  L3: \"Because the treatment deliberately abstracts away from implementation and operational ETL issues, it does not resolve how the proposed semantics should be efficiently realized or maintained in practical large-scale systems.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior health AI evaluations centered on benchmark accuracy or isolated automation benefits, this work adds an explicit workflow-level economic decomposition with human oversight and equity-sensitive distributional analysis across heterogeneous care settings.\"\n  D2: \"Compared with earlier ETL-centered work, this paper shifts the focus to a declarative, logic-based analysis of schema mappings, query semantics, and architectural assumptions as the primary foundation of data integration.\"\n  D3: \"Compared with prior file-based data lakes that treated object stores as passive file repositories, this work adds a first-class transactional log with conflict-checked commits, versioned snapshots, and built-in schema enforcement over the same open data files.\"\n  D4: \"Compared with earlier conceptual interoperability work and tightly coupled federated databases, this paper shifts to a concrete end-to-end implementation based on loosely coupled wrappers plus mediators over a self-describing semi-structured intermediate model.\"\n  D5: \"Compared with prior direct edit-distance or single-stage approximate matching approaches, this work inserts an explicit transform-based coarse retrieval stage before detailed similarity verification.\"\n  D6: \"Compared with prior data lakes that exposed raw files and weak governance, this work introduces database-style table semantics and optimization directly on open object storage, and compared with classic warehouses it removes the need to copy data into proprietary closed storage systems.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D4",
+        "L2": "D2",
+        "L3": "D5"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0048",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Its stability guarantee depends on a fixed attractor-centered mixture of locally linear components, which limits the class of behaviors to motions converging to one equilibrium and does not naturally handle richer tasks with multiple goals, cycles, or contact-driven mode switches.\"\n  L2: \"The method requires repeated expert action queries on states encountered during iterative rollouts, making it dependent on an available and affordable expert during training.\"\n  L3: \"The approach depends on expert demonstration data and typically requires externally supervised or auxiliary pretraining of the visual representation to achieve sufficient data efficiency.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior behavior cloning and expert-demonstration approaches, this work replaces task-labeled supervision with self-supervised learning from broad play data and introduces a discrete latent plan linking start and goal states within a hierarchical goal-conditioned imitation framework.\"\n  D2: \"Compared with prior supervised imitation methods that train once on expert trajectories or treat rounds separately, DAgger changes the training process to repeatedly collect labels on learner-induced states and retain all past data in a single aggregated dataset with no-regret guarantees.\"\n  D3: \"Compared with the prior open-source UMI-based framework, this work expands the training corpus and embodiment range and replaces embodiment-specific transfer assumptions with a single unified policy explicitly trained for zero-shot cross-embodiment deployment.\"\n  D4: \"Compared with earlier imitation learning work centered on abstract sequential prediction and distribution-shift analysis, this paper instantiates those ideas in a real robotic system by directly coupling deep visual perception with continuous low-level control.\"\n  D5: \"Compared with earlier imitation approaches that needed multiple demonstrations or separate task-specific policies, this work replaces them with a single meta-trained demonstration-conditioned policy that can adapt to a new task from one example.\"\n  D6: \"Compared with earlier imitation-learning manipulation systems that relied more on kinesthetic teaching, engineered perception, or modular planning, this work replaces them with scalable VR-mediated demonstration collection and a single end-to-end visuomotor policy for more realistic contact-rich tasks.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D4",
+        "L3": "D5"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0055",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"A main limitation is that the study appears focused on formulation-level performance without establishing long-term industrial reliability, broad process-window validation, or full-scale manufacturing and application benchmarking.\"\n  L2: \"The work appears focused on formulation-level performance in a specific PCB photoresist setting and does not establish broad generality, long-term reliability, or process scalability across diverse manufacturing conditions.\"\n  L3: \"The study is limited by focusing on a specific Bisphenol-A epoxy resin family and does not fully establish generality or direct end-to-end lithographic performance across broader chemistries and application settings.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior epoxy photoresist work that typically uses fixed or weakly varied formulations, this paper introduces a controlled and systematic deep-plus-macro parameterization linking resin synthesis variables directly to lithographic outcomes.\"\n  D2: \"Compared with prior largely empirical or proprietary resin development approaches, this work provides a quantitative, experimentally designed, and analytically resolved framework linking synthesis conditions to molecular microstructure and downstream material properties.\"\n  D3: \"Compared with prior DFRs that mainly rely on free-radical curing, this study introduces pendant oxetane functionality into acrylic resins to enable concurrent radical and cationic photopolymerization in one film.\"\n  D4: \"Compared with conventional free-radical synthesis of photoresist polymers, this work introduces RAFT-mediated control over chain growth to reduce heterogeneity in molecular weight and composition while preserving chemically amplified resist functionality.\"\n  D5: \"Compared with prior work that typically characterized photoresist polymers without rigorous side-by-side mechanistic comparison, this paper integrates complete binary reactivity-ratio measurement, ternary composition prediction, and experimental validation to directly contrast RAFT and FRP on compositional homogeneity.\"\n  D6: \"Compared with prior work that typically varies only one factor at a time, this paper jointly analyzes process, oil source, and polyol composition using combined advanced NMR and GPC to resolve their coupled effects.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D2",
+        "L3": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "KrF树脂聚合反应",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0045",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The design depends on blocking two-phase commit and explicit coordination among sites, leaving transactions vulnerable to delays and uncertainty during site or communication failures until recovery completes.\"\n  L2: \"The paper does not by itself guarantee liveness under contention, instead requiring eventual stability and some external or implicit mechanism to suppress competing proposers.\"\n  L3: \"The paper mainly simplifies and explains the single-decree core, leaving liveness dependent on extra assumptions like eventual leadership and not fully developing the practical multi-instance engineering details.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work that treated Paxos mainly as a proof-oriented consensus algorithm for replicated state machines, this paper adds and analyzes the concrete implementation infrastructure needed to run it reliably in a long-lived production environment.\"\n  D2: \"Compared with prior Raft-style or uniformly replicated consensus designs, this work changes the log from full replicas to configurable erasure-coded fragments and decouples the coding requirements of normal commit from those of recovery.\"\n  D3: \"Compared with earlier Paxos presentations, this work does not add new consensus power but reformulates the protocol to isolate the minimal roles, phases, and safety constraints with much less formal complexity.\"\n  D4: \"Compared with earlier distributed OLTP systems focused mainly on concurrency control or cache coherence, this work integrates consensus-backed replication, SQL transactions, and declarative geo-partitioning/locality controls into one operationally elastic database architecture.\"\n  D5: \"Compared with prior quorum-based leader-centric protocols such as Paxos and Multi-Paxos, this work replaces the stable coordinator and fixed log-slot ordering with decentralized command proposals and consensus on dependency information for each command.\"\n  D6: \"Compared with earlier ad hoc replication and failover schemes, it replaces leader- or timing-dependent coordination with a general quorum-intersection consensus protocol accompanied by a precise safety proof for asynchronous partial-failure settings.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D3",
+        "L3": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0021",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The method depends on having a usable differentiable objective or approximation and operates in feature space, so the realism of the produced attacks is limited by how faithfully feature constraints capture valid manipulations in the original application domain.\"\n  L2: \"The paper mainly provides characterization and controlled evidence rather than a concrete training algorithm or quantitative predictive theory that guarantees when optimization will succeed.\"\n  L3: \"The proposed attack and training procedure are based on a single first-order linearization and primarily target L-infinity-bounded perturbations, so they do not fully address stronger iterative attacks or broader threat models.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior defenses focused on architecture-specific vulnerabilities, preprocessing, or adversarial training, this work shifts to a model-agnostic test-time feature-space defense for frozen vision-language models that explicitly rectifies multimodal embedding geometry via spectral filtering plus contrastive regularization.\"\n  D2: \"Compared with prior work that mainly considered random noise or less practical adversarial constructions, this paper introduced a cheap gradient-sign attack tied directly to the model's loss landscape and used it online for adversarial training.\"\n  D3: \"Compared with earlier work that mainly demonstrated the existence of adversarial examples, this paper reframes them as a general structural consequence of high-dimensional local linearity in modern neural networks and emphasizes cross-model transferability and the robustness-accuracy objective mismatch.\"\n  D4: \"Compared with earlier defense papers that evaluated robustness using standard attacks, this work replaces defense proposals with a systematic taxonomy of gradient obfuscation and a rigorous adaptive-attack protocol showing white-box attacks should dominate black-box ones.\"\n  D5: \"Compared with earlier views that blamed training failure on bad local minima or limited expressivity, this work shifts the explanation toward high-dimensional geometry, redundancy from overparameterization, and initialization-dependent conditioning.\"\n  D6: \"Compared with prior federated intrusion detectors that mainly assume unimodal traffic features and homogeneous client inputs, this work adds shared-latent multimodal alignment plus robustness mechanisms for partial modality availability and poisoned or unstable updates.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D2",
+        "L3": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0047",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The paper's exact training and inference results rely on linear-chain structure, so extending the approach to more complex graphical structures is not addressed with the same tractability guarantees.\"\n  L2: \"Its core architectures rely mainly on fixed local context windows and relatively simple sentence-level models, which limits their ability to capture richer long-range structure without additional task-specific components.\"\n  L3: \"Although it reduces manual feature design, the approach still depends on supervised labeled NER data and does not fully resolve domain shift when entity distributions and surface forms differ strongly across corpora.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior supervised neural taggers and separate pretraining-style semi-supervised approaches, this work adds simultaneous joint training with unlabeled data plus hard shared parameters across multiple sequence labeling tasks within a single BiLSTM-CRF framework.\"\n  D2: \"Compared with prior CRF-style and other statistical NER systems built on handcrafted lexical, orthographic, and syntactic feature templates, this work replaces most manual features with jointly learned character-aware token embeddings and neural contextual sequence modeling.\"\n  D3: \"Compared with prior instruction-tuned NER work in general domains, this paper transfers the paradigm to biomedical text by incorporating domain-specific annotation guidance and a unified prompt interface for multiple biomedical entity categories instead of task-specific tagging heads.\"\n  D4: \"Compared with prior work that instruction-tunes or directly deploys large generative models for NER extraction, this paper shifts the LLM's role to offline annotation generation and uses those labels to build a reusable discriminative encoder.\"\n  D5: \"Compared with prior finance-specialized LLM efforts centered on curated corpora and model-generated annotations for pre-training and instruction tuning, this work explicitly adds reinforcement-based optimization to sharpen financial reasoning behavior.\"\n  D6: \"Compared with prior NLP systems built around handcrafted lexical, orthographic, and syntactic features for each task, this work replaces manual feature engineering with a single shared neural architecture that learns token representations and task features jointly, optionally initialized by unsupervised pretraining.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D2",
+        "L3": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0017",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The approach still depends on surrounding pipeline components such as normalization and sequence-level decoding, so the full reading system is not entirely learned end to end beyond the recognizer itself.\"\n  L2: \"Because images are sourced from web search and validated through large-scale human annotation, the dataset remains dependent on search-engine retrieval biases and imperfect category verification quality.\"\n  L3: \"The model depends on heavy computation and multi-GPU model parallelism to train a very large architecture, making the approach resource-intensive and cumbersome to reproduce.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior plain stacked CNNs such as VGG-style networks, this work replaces direct layerwise mapping with shortcut-based residual learning and introduces bottleneck residual blocks to scale depth efficiently.\"\n  D2: \"Compared with prior work that manually or independently scaled depth, width, or resolution after designing a convolutional architecture, this paper replaces ad hoc single-axis scaling with a principled compound rule derived from resource-constrained optimization on a searched seed model.\"\n  D3: \"Compared with earlier small, flat, manually curated image collections, this work introduces a WordNet-aligned hierarchical label space and a scalable web-plus-human pipeline that massively expands both the number of categories and labeled images.\"\n  D4: \"Compared with prior image recognition systems using hand-crafted descriptors or smaller tanh-based neural networks, this work increases network depth and capacity and combines ReLUs, dropout, aggressive augmentation, and GPU-based parallel training at Data-I scale.\"\n  D5: \"Compared with earlier shallower CNNs that used larger receptive fields, this work replaced them with repeated 3x3 convolutions in a much deeper and more architecturally uniform network.\"\n  D6: \"Compared with prior medical-image classifiers that mainly transfer standard heavier convolutional architecture backbones from other domains, this work replaces them with a compact backbone plus explicit cross-scale refinement tailored to variable-size and low-contrast gastrointestinal lesions.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D4",
+        "L3": "D5"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Vision",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0018",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Because candidate correctness is judged only by the available tests, the method can return patches that merely satisfy the test suite without guaranteeing true semantic correctness.\"\n  L2: \"Because repair correctness is defined only by the available test suite, the system can return patches that satisfy observed tests without guaranteeing true semantic correctness beyond those cases.\"\n  L3: \"Because patch acceptance is driven by the existing regression test suite and donor-code compatibility heuristics, the approach can still produce test-passing but semantically incorrect repairs and depends on suitable external donor code being present.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior repair approaches based on explicit fix templates or exhaustive reasoning, this work replaces rule-driven repair with a scalable search-based framework that evolves source patches from existing program code under test-suite fitness.\"\n  D2: \"Compared with prior program repair systems built around language-specific templates, mutation operators, or predefined bug patterns, this work replaces explicit repair rules with end-to-end neural sequence transduction from buggy to fixed code.\"\n  D3: \"Compared with prior work focused on proposing specific template-learning or code-transplant repair techniques, this paper shifts the contribution to a general analytical framework that separates search-space content from search strategy and validation across systems.\"\n  D4: \"Compared with prior repair systems that primarily relied on symbolic semantic analysis, synthesis, and constraint solving to construct patches, this work shifts candidate prioritization to a data-driven probabilistic ranking learned from existing correct code and historical fixes.\"\n  D5: \"Compared with earlier generate-and-validate repair systems that search plausible edits from existing code fragments, this work shifts the repair search to semantics-first synthesis from path constraints inferred around failing executions.\"\n  D6: \"Compared with prior genetic-programming-style repair that searches edits within a single codebase, this work shifts the repair search space to horizontal transfer of code harvested from multiple external applications.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D6",
+        "L3": "D5"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Software Engineering",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0040",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Because the method depends on precomputed item co-occurrence neighborhoods, it is less able to immediately model newly introduced items or rapidly shifting cross-item relationships until offline recomputation occurs.\"\n  L2: \"The core formulation is still a low-rank inner-product model whose expressiveness depends on manually chosen extensions for effects like time drift and implicit feedback rather than capturing such structure in a unified richer interaction model.\"\n  L3: \"The framework is primarily limited to second-order interactions with a fixed latent rank, so it does not directly capture richer higher-order or more adaptive interaction structures.\"\n\nDeltas (shuffled):\n  D1: \"Compared with earlier memory-based and neighborhood collaborative filtering, this work replaces hand-crafted similarity aggregation with directly optimized latent user/item embeddings plus bias terms fit on observed ratings only.\"\n  D2: \"Compared with earlier matrix-factorization and matrix-completion recommenders, it replaces direct low-rank reconstruction or shallow connectivity heuristics with stacked graph convolution over the bipartite user–item graph plus industrial training tricks for sampled, feature-aware, implicit-feedback learning.\"\n  D3: \"Compared with prior graph-based recommenders like NGCF, the method removes message feature transformations, self-connection neural operations, and nonlinear activations, retaining only normalized embedding propagation plus cross-layer aggregation.\"\n  D4: \"Compared with earlier matrix factorization methods tied to user-item matrices, this work generalizes latent interaction modeling to arbitrary engineered sparse features while replacing explicit pairwise parameters with shared feature embeddings and a linear-time interaction computation.\"\n  D5: \"Compared with prior latent factor collaborative filtering, the key change is replacing linear low-rank factorization with direct nonlinear autoencoder-based reconstruction of user or item rating vectors under an observed-entry-only objective.\"\n  D6: \"Compared with prior robust graph contrastive recommenders that mainly enforce pairwise invariance, this work adds explicit deep clustering and multi-view graph propagation/fusion to capture broader relational context and structured preference groups.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D4",
+        "L3": "D5"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Data Mining",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0052",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"A main limitation is that the study is centered on a specific PVA-based physically cross-linked hydrogel and controlled laboratory characterization, leaving generality across chemistries and long-term real-world wearable deployment insufficiently established.\"\n  L2: \"The paper is limited by dependence on a specific precipitation chemistry and device architecture, leaving open questions about long-term cycling stability, broader redox/electrolyte generality, and practical deployment robustness.\"\n  L3: \"The paper remains constrained by the chemistry-specific dependence on reversible crystallization in a ferri/ferrocyanide aqueous electrolyte and does not fully establish long-term cycling durability or broad generality across redox systems and operating conditions.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior LTCs that rely mainly on transient thermodiffusion or salting effects, this work introduces reversible temperature-triggered phase change of redox ions to sustain a much larger concentration gradient and simultaneously suppress heat leakage.\"\n  D2: \"Compared with prior thermocell materials that typically optimize either mechanics or thermoelectricity alone through strategies like double networks or mechanical training, this work integrates structural annealing and chaotropic ion engineering in one quasi-solid platform to raise both simultaneously to state-of-the-art levels.\"\n  D3: \"Unlike prior ionic thermoelectric systems that mainly operate in capacitive mode with fixed thermopower polarity and discontinuous output, this work introduces an external electrode-switching strategy that reversibly flips thermopower sign without resetting the thermal field.\"\n  D4: \"Compared with prior ionic thermoelectrics that mainly exploit hydration effects or ion mobility asymmetry and often emphasize p-type response, this work introduces dry-annealing-stabilized cation–polymer coordination as a route to much stronger n-type thermopower.\"\n  D5: \"Compared with prior thermogalvanic electrolyte strategies that usually improve either entropy change or concentration difference at the expense of conductivity or scalability, this work combines a thermoresponsive polymer and simple salt additive to enhance both effects together and enable polarity switching.\"\n  D6: \"Compared with prior LTC strategies that mainly tune redox entropy or species selection, this work introduces a temperature-triggered phase-transition mechanism that sustains a concentration gradient under operation rather than relying only on intrinsic thermogalvanic properties.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D1",
+        "L3": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "高分子热电",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0020",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The method depends on a fixed pre-upsampling interpolation step before the network, which adds computational cost and constrains the model to refine an already enlarged image rather than learn upsampling directly.\"\n  L2: \"Because the model relies on many recursions of a single shared transformation, optimization remains difficult and representational diversity is constrained compared with architectures that use distinct layers at different depths.\"\n  L3: \"The method still depends on a pre-upsampled input and learns only the residual in image space, which increases computation at high-resolution and does not address end-to-end upsampling within the network.\"\n\nDeltas (shuffled):\n  D1: \"Compared with earlier shallow SRCNN-style super-resolution models that directly predicted the HR image, this work replaces them with a much deeper small-filter convolutional architecture trained to predict only the residual and optimized using aggressive learning rates plus gradient clipping.\"\n  D2: \"Compared with prior perceptual metrics based on hand-crafted image statistics or raw pixel agreement, this work replaces them with a human-calibrated distance in intermediate deep feature spaces and introduces a benchmark to evaluate that alignment directly.\"\n  D3: \"Compared with earlier feed-forward super-resolution CNNs that deepened models by stacking separate parameterized layers, this work replaces most added depth with recursive weight sharing and adds supervision at intermediate recursion steps plus a global residual skip path.\"\n  D4: \"Compared with prior convolutional architecture super-resolution methods that first upsampled the input with bicubic interpolation or used heavier enlarged-domain processing, this work replaces pre-upsampling with learned low-resolution convolutions plus a final pixel-shuffle upscaling layer.\"\n  D5: \"Compared with earlier RAIM and blind super-resolution benchmarks, it shifts the task from mainly resolution recovery under generic corruption to realistic compound flash-portrait degradation removal with face-specific evaluation priorities and flash-tailored data.\"\n  D6: \"Compared with earlier face restoration work and prior challenge trends dominated by deterministic pixel reconstruction, this benchmark documents a shift toward generator-backed, perceptually supervised, degradation-aware restoration systems for real-world unknown degradations.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D1",
+        "L3": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Vision",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0033",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The design increases read-path complexity because queries may need to search multiple components and rely on background merge maintenance, so read latency and lookup cost can worsen relative to a single balanced tree.\"\n  L2: \"Because ART is specialized for in-memory bytewise key processing, its benefits depend on key decomposition and local fanout patterns, and the paper leaves open how well the design transfers to other memory hierarchies or less prefix-structured workloads.\"\n  L3: \"Because updates accumulate as delta chains that must later be consolidated, the design introduces extra indirection and chain-traversal overhead whose performance depends on keeping those chains short.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior fixed-node radix tries and comparison-based balanced trees, ART replaces uniform radix-node layouts with occupancy-dependent node types plus path compression and lazy expansion tuned for main-memory execution.\"\n  D2: \"Compared with traditional B-trees, hash tables, and handcrafted partitioning schemes, this work replaces fixed structural heuristics with trained predictive models that estimate record locations and route queries through a hierarchy of specialized submodels.\"\n  D3: \"Compared with prior spatial indexes based on hierarchical partitioning or SQL-engine-oriented support for unstructured data, this work replaces bespoke multidimensional access paths with a library-integrated geometric access layer built on ray-tracing acceleration and traversal primitives.\"\n  D4: \"Compared with earlier main-memory B-tree variants that mainly changed node layout or branching structure, this work shifts to a lock-free indirection-mapped tree where splits, merges, inserts, and deletes are encoded as append-only deltas instead of modifying nodes in place.\"\n  D5: \"Compared with prior approaches that use opaque UDF inference, standalone vector-search services, or ETL pipelines, this work makes semantic extraction and retrieval optimizer-visible database operators with tightly integrated storage, indexing, and execution inside a mature SQL engine.\"\n  D6: \"Compared with earlier learned indexes optimized for static datasets, this work adds update-aware gap-reserving leaf layouts plus adaptive local expansion and splitting so the model index can remain efficient under inserts and updates.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D4",
+        "L3": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0032",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The paper mainly provides a conceptual taxonomy and threat model rather than a concrete prevention mechanism or formal enforcement technique for eliminating XSS in deployed systems.\"\n  L2: \"Because the work is primarily a conceptual classification and comparative analysis, it does not provide a unified formal model or experimentally validated end-to-end defense that proves the taxonomy-to-countermeasure mapping in practice.\"\n  L3: \"The paper's secondary provenance-based checks depend on browser-supplied headers like Referer that are inconsistently present or deployable, limiting standalone reliability and complicating universal adoption.\"\n\nDeltas (shuffled):\n  D1: \"Compared with earlier work that treated SQL injection as a general web-application vulnerability or presented isolated attack examples and defenses, this paper systematizes the space into a reusable attack taxonomy organized by query alteration mechanism and links each class to specific defensive strategies.\"\n  D2: \"Compared with prior client-side vulnerability analyses and narrower misuse detectors, this work specifically models the full receive-to-sink behavior of postMessage handlers using hybrid extraction and systematic message exploration tailored to event-driven web code.\"\n  D3: \"Compared with prior web defenses centered on input validation and script-injection mitigation, this work reframes the threat as an authorization-context confused-deputy problem and introduces per-request secret token validation focused specifically on side-effecting actions.\"\n  D4: \"Compared with prior nonce-based defenses such as CSRF tokens and earlier XSS mitigations focused on filtering or sanitization, this work extends unpredictable secrets to intra-page, fine-grained context separation enforced during browser interpretation.\"\n  D5: \"Compared with prior work that emphasized policy weaknesses, static injection-point discovery, or non-persistent client-side XSS, this paper shifts to empirically detecting and validating persistence-aware client-side exploit chains on real websites under realistic browser execution.\"\n  D6: \"Compared with prior work centered on general client-side cross-context payload synthesis, this paper shifts to server-side Node.js and adds platform-specific path feasibility modeling plus integrated exploit generation for package, environment, and request-driven vulnerabilities.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D3",
+        "L3": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0061",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"A main limitation is that the study appears focused on formulation-level performance without establishing long-term industrial reliability, broad process-window validation, or full-scale manufacturing and application benchmarking.\"\n  L2: \"The work appears focused on formulation-level performance in a specific PCB photoresist setting and does not establish broad generality, long-term reliability, or process scalability across diverse manufacturing conditions.\"\n  L3: \"The study is limited by focusing on a specific Bisphenol-A epoxy resin family and does not fully establish generality or direct end-to-end lithographic performance across broader chemistries and application settings.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work that typically varies only one factor at a time, this paper jointly analyzes process, oil source, and polyol composition using combined advanced NMR and GPC to resolve their coupled effects.\"\n  D2: \"Compared with conventional free-radical synthesis of photoresist polymers, this work introduces RAFT-mediated control over chain growth to reduce heterogeneity in molecular weight and composition while preserving chemically amplified resist functionality.\"\n  D3: \"Compared with prior DFRs that mainly rely on free-radical curing, this study introduces pendant oxetane functionality into acrylic resins to enable concurrent radical and cationic photopolymerization in one film.\"\n  D4: \"Compared with prior epoxy photoresist work that typically uses fixed or weakly varied formulations, this paper introduces a controlled and systematic deep-plus-macro parameterization linking resin synthesis variables directly to lithographic outcomes.\"\n  D5: \"Compared with prior work that typically characterized photoresist polymers without rigorous side-by-side mechanistic comparison, this paper integrates complete binary reactivity-ratio measurement, ternary composition prediction, and experimental validation to directly contrast RAFT and FRP on compositional homogeneity.\"\n  D6: \"Compared with prior largely empirical or proprietary resin development approaches, this work provides a quantitative, experimentally designed, and analytically resolved framework linking synthesis conditions to molecular microstructure and downstream material properties.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D6",
+        "L3": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "KrF树脂聚合反应",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0031",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Because prediction quality depends on a hand-constructed decision-tree factorization over mostly local contextual cues, the model may miss longer-range program dependencies and is constrained by the chosen tree structure.\"\n  L2: \"Although syntax is enforced, the model still relies on grammar-specified action spaces and ad hoc mechanisms for identifiers and literals, leaving semantic correctness and flexible handling of open-vocabulary program content only partially solved.\"\n  L3: \"Because the system depends on phrase-based alignments over a structure-preserving but SMT-compatible code representation rather than deeper semantic analysis, it is limited in capturing long-range program semantics and more complex code patterns.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior Model-B-style pre-training, this work adapts pre-training to the software domain by combining code-text pairs with unimodal code data and replacing pure masked-token prediction with a hybrid MLM plus replaced-token detection objective.\"\n  D2: \"Compared with earlier rule systems and statistical methods focused on local code prediction like completion, this work extends statistical modeling to full sequence generation of pseudo-code from source using phrase-based SMT on parallel examples.\"\n  D3: \"Compared with prior RL methods based only on reward-driven bootstrapping or external-expert imitation, this work introduces an internal teacher-student distillation channel where the agent learns from its own historical or concurrent policies.\"\n  D4: \"Compared with prior probabilistic or decision-tree semantic parsers and unconstrained neural sequence decoders, this work replaces hand-engineered local decisions or flat token generation with end-to-end learned AST action prediction under explicit grammar constraints.\"\n  D5: \"Compared with prior code generation approaches that mainly used large candidate sampling plus likelihood or heuristic ranking, this work adds a separate test-generation-and-execution stage for consensus-based functional selection.\"\n  D6: \"Compared with prior code generation work that emphasized single or few decoded outputs on simpler benchmarks, this paper shifts to contest problems and introduces massive diverse sampling plus execution-driven clustering and ranking to select final solutions.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D4",
+        "L2": "D2",
+        "L3": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Software Engineering",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0027",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Its detection accuracy depends sensitively on filter size, hash count, and update granularity because hash collisions in the counting Bloom filters can blur true traffic changes and distort anomaly statistics.\"\n  L2: \"The paper mainly contributes an evaluation critique rather than a new detection algorithm, so it demonstrates the failure of existing protocols without providing a concrete method that robustly handles unseen attacks.\"\n  L3: \"The framework is primarily a methodological blueprint and does not itself resolve how to instantiate, scale, and maintain such richly modeled benchmark-generation pipelines across diverse real-world organizations and evolving threats.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior static graph-based intrusion detectors, this work replaces a single static representation with a dynamic relational model that explicitly factorizes stable topology and transient behavioral signals.\"\n  D2: \"Compared with earlier dynamic or signature/shallow-feature intrusion detection approaches, this work shifts to IoT-specialized deep representation learning tailored to bursty machine-to-machine traffic, narrow device roles, and distributed heterogeneous edge environments.\"\n  D3: \"Compared with prior signature-based or conventionally evaluated ML intrusion detectors, it shifts the focus from in-distribution recognition accuracy to open-world experimental design that tests detection on attack classes absent from training.\"\n  D4: \"Compared with prior work that used KDD Cup 99 as a trusted benchmark for comparing detectors, this paper shifts the contribution from proposing or testing detection methods to systematically auditing the dataset itself for structural biases and evaluation distortions.\"\n  D5: \"Compared with prior heavier deep-learning IDS models and non-distilled transformer architecture use, this work specifically introduces teacher-student knowledge distillation to compress bidirectional contextual traffic modeling into a lightweight deployable detector.\"\n  D6: \"Compared with prior benchmark efforts based on static, synthetic, or poorly documented traffic collections, this work replaces ad hoc dataset assembly with a requirement-driven, end-to-end process that explicitly models environment realism, attack coverage, and traceable labeling.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D6",
+        "L3": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0030",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Because the framework abstracts grasping to low-dimensional rigid-body statics with idealized contact models, it does not address embodiment-specific hand kinematics, compliance, or dynamic manipulation effects.\"\n  L2: \"The method is specialized to frictionless contacts and cleanly parameterized polygonal or polyhedral object models, limiting its direct applicability to more general frictional or complex-shape grasping settings.\"\n  L3: \"The learned policy depends on hundreds of hours of robot interaction and simple binary success labels, making it data-hungry and leaving richer structure about why grasps fail or how to generalize more efficiently unmodeled.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior articulated manipulation methods based mainly on static or vision-only perception, this work adds online tactile-proprioceptive fusion into an explicit 3D articulated scene model to adapt actions from contact evidence during execution.\"\n  D2: \"Compared with prior work that mainly provided analytical existence tests or closure certification, this paper turns form-closure theory into an efficient optimization-based pipeline for actually computing optimal grasp configurations.\"\n  D3: \"Compared with prior grasping work that relied on physics-based synthesis, antipodal geometric rules, or limited supervised examples, this paper replaces hand-engineered grasp scoring with large-scale autonomous self-supervised learning from real robot outcomes.\"\n  D4: \"Compared with prior grasping pipelines that separated perception, object modeling, and analytic grasp planning or relied on smaller datasets and simulation, this work replaces those components with a single deep network trained from large-scale real interaction data to directly evaluate action success.\"\n  D5: \"Compared with prior grasp-learning systems based on real robot trial data or heuristic scoring, this work replaces expensive empirical supervision with massive synthetic depth renderings labeled by a physics-based robust grasp metric and evaluated through grasp-centered convolutional architecture inference.\"\n  D6: \"Compared with prior grasping methods that first segment or reconstruct objects or sample grasps via templates and geometric search, this work shifts to end-to-end scene-level dense contact-based grasp prediction directly from raw point clouds.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D3",
+        "L3": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0023",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Because the framework depends on observed runtime traces and heavily abstracted event representations, it can miss behaviors not triggered during execution and may lose discriminative temporal detail between samples with similar event sets.\"\n  L2: \"Because the framework depends on behavior observed during sandboxed execution and summarized feature representations, it can miss malicious functionality that is not triggered in the controlled run or is lost in coarse aggregation.\"\n  L3: \"By deliberately avoiding dynamic execution and deep semantic analysis, DREBIN is constrained to coarse static signals and may miss or be evaded by malware whose behavior is hidden beyond the selected package- and code-level features.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior malware detectors built on expert-crafted static features, metadata, or dynamic analysis, this work replaces the feature pipeline with an end-to-end whole-executable raw-byte convolutional model.\"\n  D2: \"Compared with earlier malware detectors that relied on heavier analysis or less transparent models, this work shifts to Android-specific sparse static features plus a linear weighted classifier that simultaneously enables scalable on-device deployment and explicit per-decision explanations.\"\n  D3: \"Compared with prior static malware detectors based on handcrafted signatures, opcode statistics, or expert-selected metadata plus traditional classifiers, this work replaces manual feature engineering with end-to-end representation learning from 2D visualized binaries using a deep neural model.\"\n  D4: \"Compared with prior malware-analysis methods centered on deterministic static or general analysis, this work shifts detection to memory-resident evidence in an adversarial obfuscation setting and replaces signature logic with supervised classification over memory-derived features.\"\n  D5: \"Compared with prior malware analysis based on static signatures, simple behavior matching, or manually engineered heuristics, this work replaces analyst-driven grouping with machine-learning inference over structured dynamic execution traces.\"\n  D6: \"Compared with prior work using a single end objective or manually fixed auxiliary tasks as regularizers, this paper turns auxiliary supervision into a structured optimization problem where auxiliary terms are adaptively coordinated according to their effect on the main task.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D2",
+        "L3": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0056",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Because anthropogenic influence is inferred as a residual after linear meteorological fitting, the analysis may miss nonlinear chemistry, transport effects, and attribution errors from omitted or collinear variables.\"\n  L2: \"Its main limitation is dependence on fragmented prior studies that are spatially and temporally uneven, urban-biased, and often missing vertically resolved and precursor-speciated measurements.\"\n  L3: \"The paper remains limited by dependence on GEOS-Chem configuration and regression-based attribution assumptions, which may omit nonlinear interactions and uncertainty in emissions, chemistry, and meteorological representation.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work constrained by sparse coverage, shorter records, and inconsistent metric definitions, this study provides the first harmonized nationwide China-versus-global comparison using dense hourly observations and standardized exposure metrics.\"\n  D2: \"Compared with prior work focused on short periods, limited cities, or statistical correlations, this paper provides a multi-year, China-wide, process-resolving numerical attribution that isolates individual meteorological drivers and biogenic emission effects within one consistent framework.\"\n  D3: \"Compared with prior work, it explicitly simulates interannual emission changes using year-specific inventories and adds more detailed heterogeneous reaction treatments to separate the effects of multiple precursor and aerosol-process changes on ozone trends.\"\n  D4: \"Compared with prior studies that treated meteorological adjustment and source apportionment separately or incompletely, this work unifies them in a single multi-year, multi-site framework that jointly estimates meteorological, local, and external influences on ozone trends.\"\n  D5: \"Compared with prior more narrowly focused studies, this work unifies concentration records, mechanistic diagnostics, source-sensitivity analyses, and impact evidence into a single China-wide evidence-based synthesis.\"\n  D6: \"Compared with prior studies that examined isolated drivers or shorter periods, this work provides a multi-year, explicitly separated attribution framework that jointly quantifies anthropogenic, meteorological, natural-emission, and individual meteorological-parameter effects on both average and extreme ozone metrics in China.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D6",
+        "L3": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "臭氧污染及成因",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0049",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The original formulation leaves training stability and convergence largely unresolved in practice, since the minimax game can be difficult to optimize and the paper does not provide a robust general procedure for avoiding failures such as unstable dynamics.\"\n  L2: \"The method depends on a hand-designed training curriculum and architecture-specific stabilization heuristics, leaving open how broadly the approach transfers beyond this staged resolution-growth setup.\"\n  L3: \"Although it improves disentanglement and control, the method does not fully eliminate latent entanglement and relies on heuristic design choices such as style mixing and per-layer noise injection rather than an explicit disentanglement objective.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior restoration-oriented or direct-regression future synthesis methods, this work replaces single-step target prediction with a factorized multi-step latent transition-and-decoding process for progressive future envisioning.\"\n  D2: \"Compared with prior score-based methods that learn scores and sample with Langevin dynamics, this work recasts the process as a discrete latent-variable diffusion model with analytically tractable Gaussian transitions and a simplified weighted denoising loss based on noise prediction.\"\n  D3: \"Compared with prior GANs that attempted full-resolution synthesis from the start, this work changes training to a staged low-to-high-resolution expansion with fade-in layer insertion and adds explicit activation-scaling and minibatch-diversity mechanisms.\"\n  D4: \"Compared with prior latent diffusion systems that mainly used text or weaker conditioning interfaces, this work adds a reusable multi-resolution conditional branch with zero-conv initialization to inject spatial guidance into a frozen pretrained backbone instead of retraining the whole model.\"\n  D5: \"Compared with prior progressively grown feed-forward Model-GAN generators, this work introduces a style-based generator that maps z into an intermediate latent space and injects it through per-layer modulation plus stochastic noise instead of feeding the latent code directly through the synthesis stack.\"\n  D6: \"Compared with prior latent diffusion models such as earlier Stable Diffusion variants, SDXL replaces the smaller denoiser and simpler conditioning setup with a scaled architecture, stronger text-conditioning, native high-resolution training, better aspect-ratio support, and a dedicated refinement stage instead of relying mainly on post hoc upscaling.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D5",
+        "L3": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Vision",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0016",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Its masked language modeling objective introduces a mismatch between pre-training and fine-tuning because masked tokens are artificial corruptions absent at downstream inference time, and its next sentence prediction signal is a relatively crude sentence-pair objective.\"\n  L2: \"Because all languages must share one fixed-capacity model and one shared subword vocabulary, representation quality can be uneven and high-resource or script-overlapping languages are favored despite balancing heuristics.\"\n  L3: \"The approach depends on the availability and quality of parallel text for its strongest alignment objectives, which limits gains for language pairs with little or no bitext.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work that emphasized multilingual pretraining and parallel/aligned corpora as the main source of transfer, this paper shifts the main alignment signal to supervised multitask finetuning over shared downstream tasks.\"\n  D2: \"Compared with monolingual Model-B, the change is to train the same bidirectional masked-pretraining framework as one shared model over many languages with a joint subword vocabulary and multilingual data sampling instead of a separate model for one language.\"\n  D3: \"Compared with earlier multilingual pre-training that relied mainly on shared subwords and encoder-decoder text-to-text transfer, this work adds direct representation-level semantic alignment during encoder pre-training while leveraging monolingual corpora more heavily.\"\n  D4: \"Compared with earlier multilingual pretraining that mainly mixed languages under independent language-modeling losses, this work adds translation-based masked prediction and sentence-level alignment signals to directly enforce cross-lingual representation sharing.\"\n  D5: \"Compared with prior supervised or semi-supervised multilingual alignment methods, it removes dependence on parallel corpora and bilingual lexicons while extending unsupervised representation learning to substantially larger multilingual settings.\"\n  D6: \"Compared with prior multilingual denoising models and monolingual T5, this work mainly expands the text-to-text span-corruption encoder-decoder setup to far more languages and data with explicit multilingual balancing rather than introducing a new pretraining objective.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D4",
+        "L3": "D5"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0035",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The model is constrained by then-current graphics hardware, supporting mainly gather-style access and only limited reduction-like patterns, so many computations still fit awkwardly or require workarounds.\"\n  L2: \"The model requires programmers to manually manage thread decomposition, synchronization scope, and locality-sensitive use of shared versus global memory, making performance strongly dependent on hardware-aware coding.\"\n  L3: \"Despite broadening applicability, the architecture still fundamentally inherits SIMT execution behavior, so performance remains sensitive to thread divergence and irregular access patterns rather than eliminating those costs.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior architecture descriptions and earlier GPU microbenchmark studies, this work extends reverse-engineering to Volta's newly introduced features and validates advertised capabilities with a more decomposed, subsystem-by-subsystem measurement model that includes tensor-core behavior and finer-grained resource constraints.\"\n  D2: \"Compared with the prior CUDA generation, Fermi introduces coherent L1/L2 caching, larger and more flexible SM resources, better warp scheduling, ECC, concurrent kernel execution, faster atomics, and significantly improved double-precision throughput.\"\n  D3: \"Compared with prior work that mainly introduced the programmable GPU architecture and emphasized peak or architectural capabilities, this paper adds a systematic application-level performance study of CUDA implementations across representative general-purpose workloads.\"\n  D4: \"Compared with prior generation GPU characterization studies, this work extends the same reverse-engineering style to Ampere and identifies new subsystem behaviors and parameter changes specific to Ampere's cache, memory, scheduling, translation, and tensor-compute design.\"\n  D5: \"Compared with prior general-purpose sparse kernels and coarse block-sparse tensor-core methods, this work introduces a finer-grained sparse-to-dense mapping strategy that enables tensor core execution for general sparse matrices without requiring rigid block sparsity.\"\n  D6: \"Compared with earlier stream computing systems, CUDA replaces rigid stream operators and graphics-centric abstractions with a general kernel language plus thread-block synchronization, explicit memory hierarchy, and a full compiler/runtime/library software stack.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D2",
+        "L3": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Architecture",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0051",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"Although simpler and faster, the method still depends on autoregressive decoding and post-inference precursor-mass filtering, which can leave mass-consistency and long-sequence errors insufficiently constrained during generation.\"\n  L2: \"The paper still depends on engineered mass constraints and decoder design, which may limit generalization and leave some spectrum-peptide relationships only partially modeled.\"\n  L3: \"The method depends on having diverse candidate lists from multiple upstream de novo models, which adds system complexity and may limit gains when base candidates are poor or insufficiently varied.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior de novo sequencing models that use fixed loss weighting, AdaNovo introduces per-residue and per-PSM CMI-based adaptive supervision within a dual-decoder transformer architecture framework.\"\n  D2: \"Compared with prior de novo sequencing models that mainly map spectra to sequences, this work adds direct cross-modal contrastive alignment and explicit prefix/suffix/amino-acid mass integration throughout decoding.\"\n  D3: \"Compared with prior de novo sequencing models that use only experimental spectra or shallow peak encodings, this work explicitly reconstructs missing complementary ion information and processes experimental and complementary spectra through a dual-encoder transformer architecture architecture.\"\n  D4: \"Compared with prior de novo sequencing and reranking approaches that score single outputs or use weak labels such as correctness or edit distance, this work introduces list-wise multi-candidate modeling with axial attention mechanism and explicit mass-deviation supervision.\"\n  D5: \"Compared with prior NAT peptide sequencing models that use CTC alone, this work adds structured curriculum learning during training and prediction recycling for iterative self-correction at inference.\"\n  D6: \"Compared with prior autoregressive de novo sequencing models, PrimeNovo replaces sequential next-token generation with parallel bidirectional prediction and adds an explicit dynamic-programming mass-control decoding stage.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D4",
+        "L3": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "蛋白质从头测序",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-09_lim_delta_chain_0026",
+    "task_type": "T2-09_lim_delta_chain",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\nAll options are from the SAME research lineage.\n\nLimitations:\n  L1: \"The attack depends on obtaining many timing samples and on implementation-specific data-dependent latency in arithmetic routines, so its effectiveness is reduced by low-resolution timing, high noise, or constant-time code.\"\n  L2: \"The attack depends on the adversary being able to run code on the same machine and repeatedly probe shared-cache behavior, so it is less applicable when such co-residency or repeated measurements are unavailable.\"\n  L3: \"The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-table implementations.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior cache side-channel and Meltdown-style work that focused on direct leakage from executed accesses, this paper shows that speculative control-flow misprediction itself can create the secret-dependent access needed for exfiltration.\"\n  D2: \"Compared with prior work that analyzed individual transient-execution exploits or general-purpose CPUs in isolation, this paper unifies SGX-specific attacks into a single enclave-centered framework that explicitly links processor-level phenomena to enclave lifecycle events, privilege assumptions, and defense layers.\"\n  D3: \"Compared with Prime+Probe-style predecessors that infer activity from cache-set occupancy via eviction patterns, this work switches to explicit flush-and-timed-reload on shared L3 lines, improving spatial precision, interpretability, and signal quality.\"\n  D4: \"Compared with earlier side-channel work that inferred only coarse implementation properties or relied on more direct leakage sources, this paper shows full practical attackability of a specific mainstream AES software implementation using only aggregate remote-style timing tied to cache effects.\"\n  D5: \"Compared with prior work that typically analyzed one leakage primitive or one execution environment in isolation, this paper broadens the scope to a unified cross-component decomposition and side-by-side evaluation of diverse countermeasure classes.\"\n  D6: \"Compared with earlier timing attacks that treated total runtime as a single noisy signal, this work shifts the observable to fine-grained cache state and eviction effects tied to specific memory accesses.\"\n\nAnswer with one line per mapping:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\nL3 = [D1|D2|D3|D4|D5|D6]",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D4",
+        "L3": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-20_lim_delta_same_chain",
+      "display_title": "Chained Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  }
+]

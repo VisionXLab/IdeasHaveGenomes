@@ -1,0 +1,165 @@
+{
+  "trace_id": "math_MathReasoning",
+  "domain": "math",
+  "direction": "MathReasoning",
+  "subfield": "Mathematical Reasoning / Math LLMs",
+  "frontier_justification": "This direction remains a May 2026 frontier because formal theorem proving and RL-based math reasoning have advanced quickly, yet most progress still depends on formalizable targets or automatically verifiable answers. Research mathematics requires conjecture formation, strategy discovery, and progress estimation before a clean reward signal exists.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+      "year": 2021,
+      "venue": "NeurIPS 2021",
+      "arxiv_id": "2103.03874",
+      "paper_type": "benchmark",
+      "key_contribution": "Introduces the MATH dataset of 12,500 competition math problems with step-by-step solutions, establishing the canonical benchmark for measuring mathematical reasoning in AI.",
+      "idea_genome": {
+        "problem_genome": "No rigorous benchmark exists for measuring AI mathematical reasoning at competition level; existing benchmarks (GSM8K) test only basic arithmetic and word problems.",
+        "mechanism_genome": "Curate 12,500 problems from AMC, AIME, and other competitions across 7 subjects with full step-by-step solutions; provide an auxiliary pretraining dataset (AMPS) of 100K+ problems to teach fundamentals.",
+        "observation_genome": "Large language models achieve only 6.9% accuracy on MATH at the time of release; even with AMPS pretraining, GPT-2 reaches only 8.8%; the benchmark exposes a vast gap in mathematical reasoning.",
+        "limitation_genome": "Only covers competition-style problems with unique numerical answers; no proof-based problems; static benchmark that will eventually saturate as models improve."
+      }
+    },
+    {
+      "title": "Solving Quantitative Reasoning Problems with Language Models",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "arxiv_id": "2206.14858",
+      "paper_type": "research",
+      "key_contribution": "Minerva achieves 50.3% on MATH by continued pretraining of PaLM on technical content, demonstrating that domain-specific pretraining on scientific and mathematical text dramatically improves quantitative reasoning.",
+      "idea_genome": {
+        "problem_genome": "General-purpose LLMs fail on quantitative reasoning despite strong language abilities; MATH benchmark accuracy is below 10% for most models.",
+        "mechanism_genome": "Continue pretraining PaLM (540B) on a curated dataset of scientific papers, math web pages, and LaTeX documents; use majority voting over sampled solutions at inference time; no tool use or external verification.",
+        "observation_genome": "Minerva 540B reaches 50.3% on MATH (7x improvement over prior SOTA); 78.5% on GSM8K; correctly answers nearly a third of undergraduate STEM exam problems; performance scales with model size and data.",
+        "limitation_genome": "Closed-source model and dataset; majority voting is compute-expensive; no step-level verification; struggles with multi-step proofs and problems requiring novel mathematical insight."
+      }
+    },
+    {
+      "title": "Let's Verify Step by Step",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "arxiv_id": "2305.20050",
+      "paper_type": "research",
+      "key_contribution": "Process Reward Models (PRMs) trained with step-level human feedback substantially outperform outcome-level reward models for mathematical reasoning verification, solving 78% of MATH problems.",
+      "idea_genome": {
+        "problem_genome": "Outcome-based reward models cannot identify which step in a reasoning chain is wrong; Minerva-style majority voting treats all reasoning paths equally regardless of intermediate correctness.",
+        "mechanism_genome": "Collect 800K step-level human annotations of reasoning correctness (PRM800K); train a Process Reward Model that scores each intermediate step; use PRM to rerank candidate solutions from a generator.",
+        "observation_genome": "PRM-guided best-of-N selection achieves 78.2% on MATH, substantially outperforming outcome reward models; process supervision provides more reliable signal for identifying correct reasoning.",
+        "limitation_genome": "Step-level annotation is expensive and hard to scale; PRM is a separate verifier model, not integrated into generation; requires a strong base generator to produce candidates worth verifying."
+      }
+    },
+    {
+      "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "2402.03300",
+      "paper_type": "research",
+      "key_contribution": "Introduces GRPO (Group Relative Policy Optimization) for math reasoning and achieves 51.7% on MATH with a 7B open model, approaching GPT-4 level through careful data curation and RL.",
+      "idea_genome": {
+        "problem_genome": "Open-source math LLMs lag far behind closed models; PPO-based RL for reasoning is memory-intensive and unstable; high-quality math pretraining data at scale is hard to obtain.",
+        "mechanism_genome": "Meticulous data selection pipeline extracts 120B math tokens from Common Crawl; continued pretraining of DeepSeek-Coder-Base; GRPO replaces PPO by normalizing rewards within a group of sampled outputs, eliminating the critic model.",
+        "observation_genome": "DeepSeekMath 7B achieves 51.7% on MATH without tools, approaching Minerva 540B; GRPO is more memory-efficient than PPO; data quality matters more than quantity for math pretraining.",
+        "limitation_genome": "GRPO uses only outcome-level correctness signals (no process rewards); 7B model still far below frontier closed models; reasoning chains lack self-verification or backtracking capabilities."
+      }
+    },
+    {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "year": 2025,
+      "venue": "Nature 2025",
+      "arxiv_id": "2501.12948",
+      "paper_type": "research",
+      "key_contribution": "Pure RL (GRPO) without supervised CoT distillation produces emergent long chain-of-thought reasoning with self-verification, achieving 79.8% on AIME 2024 and 97.3% on MATH-500.",
+      "idea_genome": {
+        "problem_genome": "SFT-distilled reasoning models plateau; process reward models require costly annotation; need a scalable approach that lets reasoning capabilities emerge from RL alone without human-crafted reasoning templates.",
+        "mechanism_genome": "Apply GRPO with rule-based verifiable rewards (correctness checking) directly to a base model without any supervised chain-of-thought data; the model discovers long reasoning chains, self-reflection, and verification behaviors purely through RL.",
+        "observation_genome": "DeepSeek-R1 achieves 79.8% on AIME 2024 matching OpenAI o1; 97.3% on MATH-500; emergent behaviors include self-verification, strategy switching, and extended deliberation; open-weights release enables community research.",
+        "limitation_genome": "Requires verifiable reward signals limiting applicability to math/code; language mixing artifacts in reasoning chains; RL training is compute-intensive and unstable; no formal verification of reasoning steps."
+      }
+    },
+    {
+      "title": "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "arxiv_id": "2504.21801",
+      "paper_type": "research",
+      "key_contribution": "Combines RL-trained subgoal decomposition with formal verification to achieve 88.9% on miniF2F-test and 49/658 on PutnamBench, bridging informal mathematical reasoning with formal proof generation.",
+      "idea_genome": {
+        "problem_genome": "DeepSeek-R1 produces impressive informal reasoning but cannot formally verify its steps; formal provers lack the high-level problem decomposition ability of reasoning LLMs; the informal-formal gap limits both approaches.",
+        "mechanism_genome": "Train an RL-based subgoal decomposition module that breaks complex problems into verifiable substeps; each subgoal is independently proved in Lean 4; combine informal chain-of-thought planning (from R1 lineage) with formal tactic generation.",
+        "observation_genome": "88.9% pass ratio on miniF2F-test (SOTA); 49/658 problems solved on PutnamBench; subgoal decomposition enables solving problems too complex for single-pass proving; RL training produces effective decomposition strategies.",
+        "limitation_genome": "Subgoal decomposition can fail on problems requiring non-hierarchical proof strategies; Lean 4 expressiveness limits problem scope; still requires significant compute for search over decompositions."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The MATH benchmark reveals the vast gap in AI mathematical reasoning, creating an ecological niche that Minerva fills through domain-specific pretraining. Minerva radiates into this newly defined problem space by applying the scaling paradigm (larger models + more domain data) to the quantitative reasoning challenge that MATH benchmarked, achieving a 7x improvement."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Process reward models represent a fundamental speciation from the generation-centric approach of Minerva. Instead of improving the generator, PRMs create an entirely new verification paradigm: training a separate model to judge each reasoning step. This shifts the bottleneck from generation quality to verification quality, establishing a distinct branch of research focused on reward modeling for reasoning."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "DeepSeekMath hybridizes Minerva's domain-specific pretraining approach with ideas from the PRM verification paradigm. GRPO internalizes the reward signal that PRMs provide externally, using group-relative outcome rewards to directly optimize the generator without a separate verifier. This merges the data-scaling and reward-modeling lineages into a unified RL training recipe."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "DeepSeek-R1 applies GRPO (inherited from DeepSeekMath) at much larger scale with a critical simplification: removing all supervised chain-of-thought data and letting reasoning emerge purely from RL. This is a mutation within the same GRPO framework that discovers emergent reasoning behaviors (self-verification, backtracking) not present in the parent model's design."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "DeepSeek-Prover-V2 hybridizes the informal reasoning capabilities of the R1 lineage (emergent CoT, self-verification) with formal theorem proving in Lean 4. The RL-trained subgoal decomposition bridges the gap between informal mathematical intuition and formal proof, combining two previously separate paradigms into a system that reasons informally and proves formally."
+    }
+  ],
+  "open_question": "DeepSeek-Prover-V2 narrows the gap between informal reasoning and Lean-verified theorem proving, but its training and search still rely on formalizable statements and verifiable subgoals. What training and evaluation mechanism would extend RL-based mathematical reasoning to open-ended research mathematics, where the system must propose conjectures, choose proof strategies, and estimate progress before a formal verification target or automatic reward exists?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Mathematical Reasoning / Math LLMs."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Adaptive Radiation": 1,
+    "Speciation": 1,
+    "Hybridization": 2,
+    "Mutation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "identifier": "2504.21801",
+      "unresolved_gap": "Subgoal decomposition can fail on problems requiring non-hierarchical proof strategies; Lean 4 expressiveness limits problem scope; still requires significant compute for search over decompositions.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

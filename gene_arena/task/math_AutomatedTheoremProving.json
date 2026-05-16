@@ -1,0 +1,165 @@
+{
+  "trace_id": "math_AutomatedTheoremProving",
+  "domain": "math",
+  "direction": "AutomatedTheoremProving",
+  "subfield": "Formal Mathematics / Automated Theorem Proving",
+  "frontier_justification": "This direction remains a May 2026 frontier because formal theorem proving has advanced rapidly on competition-style problems, yet research mathematics is not only proof search over a fixed statement. The unresolved frontier is bridging informal exploration, conjecture generation, definition selection, Lean-grounded proof, and human-understandable mathematical narratives.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Generative Language Modeling for Automated Theorem Proving",
+      "year": 2020,
+      "venue": "arXiv 2020",
+      "arxiv_id": "2009.03393",
+      "paper_type": "research",
+      "key_contribution": "First application of large-scale transformer language models (GPT-f) to automated theorem proving in Metamath, producing proofs accepted into the main Metamath library.",
+      "idea_genome": {
+        "problem_genome": "Traditional automated theorem provers rely on hand-crafted heuristics and struggle with the combinatorial explosion of proof search in formal mathematics.",
+        "mechanism_genome": "Train a GPT-style transformer on Metamath proof steps; use the model to generate tactic predictions one step at a time, guided by best-first search over the proof tree.",
+        "observation_genome": "GPT-f discovers novel short proofs accepted into the Metamath library; first time a deep learning system contributes proofs adopted by a formal mathematics community.",
+        "limitation_genome": "Limited to Metamath's substitution-based proof system; no curriculum learning or expert iteration; proof search relies on a fixed model without online learning."
+      }
+    },
+    {
+      "title": "Formal Mathematics Statement Curriculum Learning",
+      "year": 2022,
+      "venue": "ICML 2022",
+      "arxiv_id": "2202.01344",
+      "paper_type": "research",
+      "key_contribution": "Expert iteration (proof search interleaved with learning) on a curriculum of formal statements dramatically outperforms static proof search, achieving state-of-the-art on miniF2F.",
+      "idea_genome": {
+        "problem_genome": "Static language models plateau on formal theorem proving because they cannot learn from their own proof search experience; harder problems require iterative self-improvement.",
+        "mechanism_genome": "Expert iteration: alternate between proof search (generating successful proofs) and retraining the model on discovered proofs; apply to a manually curated curriculum of increasingly difficult statements in Lean.",
+        "observation_genome": "Expert iteration at the same compute budget dramatically outperforms proof-search-only baselines; achieves SOTA on miniF2F benchmark; solves olympiad-level problems without ground-truth proofs.",
+        "limitation_genome": "Requires manually curated problem statements; expert iteration is computationally expensive; limited to Lean 3; no integration with informal mathematical reasoning."
+      }
+    },
+    {
+      "title": "HyperTree Proof Search for Neural Theorem Proving",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "arxiv_id": "2205.11491",
+      "paper_type": "research",
+      "key_contribution": "AlphaZero-inspired online training procedure with HyperTree Proof Search (HTPS) achieves 82.6% on Metamath, dramatically outperforming GPT-f's 56.5%.",
+      "idea_genome": {
+        "problem_genome": "Expert iteration uses offline retraining cycles; proof search lacks the principled exploration-exploitation trade-off of game-playing systems like AlphaZero.",
+        "mechanism_genome": "HyperTree Proof Search: MCTS-style search over proof trees with a learned value function and policy network; online training interleaves search and model updates continuously; proof state represented as a hypergraph.",
+        "observation_genome": "Online HTPS training reaches 82.6% on Metamath held-out theorems (vs 56.5% for GPT-f); learned value function provides reliable node scoring for search.",
+        "limitation_genome": "Trained and evaluated primarily on Metamath; online training is extremely compute-intensive; does not leverage informal mathematical reasoning or autoformalization."
+      }
+    },
+    {
+      "title": "DeepSeek-Prover: Advancing Theorem Proving in LLMs through Large-Scale Synthetic Data",
+      "year": 2024,
+      "venue": "NeurIPS 2024 MATH-AI Workshop",
+      "arxiv_id": "2405.14333",
+      "paper_type": "research",
+      "key_contribution": "Generates large-scale synthetic Lean 4 theorem-proof pairs via autoformalization and compiler filtering, enabling LLM-based provers to achieve strong results without human-annotated proofs.",
+      "idea_genome": {
+        "problem_genome": "Human-annotated formal proofs are scarce; existing provers require expensive expert iteration; the gap between informal math corpora and formal proof libraries limits training data.",
+        "mechanism_genome": "Use LLMs to autoformalize natural language math into Lean 4 statements; generate candidate proofs; filter with the Lean compiler for correctness; train DeepSeek-Prover on the resulting large-scale synthetic dataset.",
+        "observation_genome": "Large-scale synthetic data generation produces millions of verified theorem-proof pairs; DeepSeek-Prover achieves competitive results on miniF2F without expert iteration.",
+        "limitation_genome": "Autoformalization introduces errors that compiler filtering cannot fully catch; single-pass proof generation without search; no reinforcement learning or value-guided exploration."
+      }
+    },
+    {
+      "title": "Olympiad-level formal mathematical reasoning with reinforcement learning",
+      "year": 2025,
+      "venue": "Nature 2025",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "AlphaProof achieves silver-medal performance at the 2024 IMO by combining AlphaZero-style RL with autoformalized training on 100 million formal problems and test-time RL for deep problem-specific adaptation.",
+      "idea_genome": {
+        "problem_genome": "Prior neural theorem provers solve competition problems individually but cannot match human olympiad performance across a full problem set; test-time adaptation to novel hard problems is lacking.",
+        "mechanism_genome": "AlphaZero-inspired RL agent trained on 100M autoformalized problems in Lean; test-time RL generates and learns from millions of problem variants at inference time for deep adaptation to specific competition problems.",
+        "observation_genome": "AlphaProof earns 28/42 points at IMO 2024 (silver medal level); solves the hardest problem (P6) which only 5 human contestants solved; 100% formally verified proofs.",
+        "limitation_genome": "Requires enormous compute for test-time RL (days per problem); cannot produce human-readable informal proofs; limited to problems that can be autoformalized; geometry solved by separate AlphaGeometry system."
+      }
+    },
+    {
+      "title": "Aristotle: IMO-level Automated Theorem Proving",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "arxiv_id": "2510.01346",
+      "paper_type": "research",
+      "key_contribution": "Achieves gold-medal performance at IMO 2025 by solving 5 of 6 problems with formally verified Lean 4 proofs, integrating informal natural-language planning with formal proof search via MCTS.",
+      "idea_genome": {
+        "problem_genome": "AlphaProof's test-time RL is extremely expensive and cannot bridge informal mathematical intuition with formal proofs; a unified system that plans informally and proves formally is needed.",
+        "mechanism_genome": "MCTS-based proof search in Lean 4 with a learned value function in the spirit of Expert Iteration and AlphaZero; integrates informal natural-language reasoning for high-level proof planning with formal tactic generation for rigorous verification.",
+        "observation_genome": "Formally verified solutions for 5 of 6 IMO 2025 problems (gold-medal equivalent); surpasses AlphaProof's silver-medal performance; demonstrates that integrating informal planning with formal verification yields stronger results than pure RL-based proving.",
+        "limitation_genome": "Still requires massive compute for search; informal-to-formal bridge is fragile on problems outside competition math; cannot handle open-ended conjecture generation; limited to problems expressible in Lean 4."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Expert iteration adds an online self-improvement loop to GPT-f's static language model approach. The core mechanism (transformer generating tactic steps) is preserved, but the model now iteratively retrains on its own discovered proofs, creating a curriculum learning dynamic that dramatically improves performance without changing the underlying architecture."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "HTPS hybridizes the expert iteration paradigm from formal theorem proving with AlphaZero's MCTS framework from game playing. The proof search tree is reconceived as a game tree with learned value functions, merging two distinct research lineages (LLM-based proving and RL-based game playing) into a unified online training procedure."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "DeepSeek-Prover radiates the neural theorem proving paradigm into the LLM-scale regime by replacing expensive online training with large-scale synthetic data generation. Rather than the compute-intensive MCTS search of HTPS, it leverages the autoformalization capabilities of frontier LLMs to generate millions of training pairs, adapting the approach to a data-scaling paradigm suited to modern LLM infrastructure."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "AlphaProof fuses DeepSeek-Prover's autoformalization-at-scale approach (100M problems) with HTPS's AlphaZero-style RL training, and adds a novel test-time RL mechanism. This hybridization of massive synthetic data, RL-guided proof search, and inference-time adaptation produces the first system to reach olympiad medal level in formal mathematics."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Aristotle represents a speciation event: while AlphaProof relies on purely formal RL search, Aristotle introduces a fundamentally new informal-formal integration where natural language planning guides formal proof search. This creates a distinct species of theorem prover that bridges human mathematical intuition with machine verification, achieving gold-medal performance through a qualitatively different architecture."
+    }
+  ],
+  "open_question": "Aristotle-style IMO provers show strong formal proof search on well-posed Lean problems, but research mathematics requires formulating conjectures, choosing definitions, and deciding which lemmas matter before a formal target exists. What system would connect informal exploration, Lean-grounded proof search, and conjecture generation for open-ended mathematical research?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Formal Mathematics / Automated Theorem Proving."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 1,
+    "Hybridization": 2,
+    "Adaptive Radiation": 1,
+    "Speciation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Aristotle: IMO-level Automated Theorem Proving",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "identifier": "2510.01346",
+      "unresolved_gap": "Formal theorem provers can solve precisely stated problems, but open-ended research mathematics still requires conjecture formulation, definition choice, informal exploration, and proof planning before formal targets exist.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

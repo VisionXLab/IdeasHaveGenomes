@@ -1,0 +1,812 @@
+[
+  {
+    "instance_id": "T2-12_gene_alignment_000",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. The core approach is supervised task-specific fine-tuning of pretrained protein language models (ESM2, ProtT5, and Ankh), including both full-model updating and parameter-efficient fine-tuning, evaluated across eight downstream tasks\nG2. This paper targets improving predictive performance across diverse protein prediction tasks, including per-protein, per-residue, and small-data fitness landscape problems.\nG3. The study is limited to three protein language models and eight tasks, so its recommendation to always try fine-tuning is not validated for all model families, task types, or scaling regimes.\nG4. Across the benchmarked tasks, backpropagating into the protein language model almost always improved downstream accuracy, and parameter-efficient fine-tuning achieved similar gains to full fine-tuning while using fewer resources and training up to 4.5 times faster.\n\nTarget genome genes:\nG1. The method iteratively fine-tunes a generative protein language model with reinforcement learning, using objective-driven reward signals over generated sequences to steer the model along long evolutionary trajectories toward desired protein properties\nG2. This paper targets on-demand design of high-fitness protein variants with user-specified properties such as structural topology and target binding affinity.\nG3. The paper demonstrates the framework on a limited set of objectives and highlights success through iterative optimization trajectories, leaving its robustness and generality across broader protein families and reward definitions unresolved.\nG4. Reinforcement learning can rapidly redirect protein language model generation toward multiple user-defined objectives in only a few iterations, including producing EGFR binders with a 26-fold affinity improvement after two rounds.\n\nG1 options:\n  A. G4 / LOST\n  B. G2 / LOST\n  C. LOST\n  D. G1 / MUTATED\nG2 options:\n  A. LOST\n  B. G3 / INHERITED\n  C. G2 / MUTATED\n  D. G4 / LOST\nG3 options:\n  A. G2 / LOST\n  B. G3 / MUTATED\n  C. G1 / INHERITED\n  D. LOST\nG4 options:\n  A. G2 / MUTATED\n  B. G4 / MUTATED\n  C. G1 / LOST\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "D",
+        "G2": "C",
+        "G3": "B",
+        "G4": "B"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Fine-tuning protein language models boosts predictions across diverse tasks",
+      "target_paper": "Guiding Generative Protein Language Models with Reinforcement Learning",
+      "dynamics": "Adaptive Radiation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Adaptive Radiation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_001",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. MemAgent is an end-to-end trained memory-agent framework that reads text in segments, maintains a bounded memory via an overwrite update strategy, and is optimized for long-text tasks using an extended DAPO reinforcement-learning scheme with independent-context multi-conversation generation\nG2. This paper targets long-context language modeling and question answering over effectively unbounded documents while maintaining accuracy under extreme context-length extrapolation.\nG3. The method appears to rely on a specific overwrite-based memory policy and a specialized multi-conversation RL training setup, leaving unclear how robust it is across tasks requiring different memory retention strategies or without such training infrastructure.\nG4. The paper finds that directly RL-optimizing a segment-reading memory agent enables strong length extrapolation, achieving under 5% performance loss from training on 32K text to a 3.5M-token QA task and over 95% on 512K RULER.\n\nTarget genome genes:\nG1. Context-Folding with FoldGRPO trains an LLM agent via end-to-end reinforcement learning to explicitly branch into sub-trajectories for subtasks,\nG2. fold completed branches into compact outcome summaries that replace intermediate steps in the active context, using process rewards to incentivize decomposition and context-efficient management\nG3. This paper targets long-horizon LLM agent tasks where limited context windows hinder sustained reasoning and action over extended trajectories, such as deep research and software engineering workflows.\nG4. The paper appears to validate Context-Folding mainly on two long-horizon domains and does not establish how reliably the learned folding policy generalizes to other task types or how much information is lost when sub-trajectories are collapsed into summaries.\nG5. The learned folding agent matches or exceeds ReAct-style baselines on long-horizon Deep Research and SWE tasks while operating with about 10 times smaller active context, and it substantially outperforms summarization-only context management approaches.\n\nG1 options:\n  A. LOST\n  B. G2 / MUTATED\n  C. G5 / LOST\n  D. G5 / MUTATED\nG2 options:\n  A. LOST\n  B. G2 / LOST\n  C. G3 / MUTATED\n  D. G5 / MUTATED\nG3 options:\n  A. G4 / MUTATED\n  B. LOST\n  C. G3 / MUTATED\n  D. G1 / MUTATED\nG4 options:\n  A. G1 / MUTATED\n  B. G4 / LOST\n  C. G1 / MUTATED\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "C",
+        "G3": "A",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent",
+      "target_paper": "Scaling Long-Horizon LLM Agent via Context-Folding",
+      "dynamics": "Speciation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_002",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. Higher-order E3-equivariant message passing via Clebsch-Gordan tensor products up to l=3\nG2. many-body messages aggregate neighbor interactions\nG3. PaiNN's first-order equivariance misses many-body angular interactions critical for bond angles, ring systems, and torsional barriers.\nG4. Trained per-material system; cannot transfer to unseen elements; each new system requires separate training dataset and model.\nG5. MACE achieves 10-100× lower force errors than SchNet/PaiNN with same data; state-of-the-art on MD17, ANI-1ccx; fast inference via sparse implementation.\n\nTarget genome genes:\nG1. Geometric Weisfeiler-Leman (GWL) extends the WL graph isomorphism test to geometric graphs by defining symmetry-respecting discrimination under permutation, rotation, reflection, and translation, and uses this framework to analyze invariant and equivariant geometric GNN architectures, including the role of higher-order tensors and scalarisation\nG2. This paper targets the problem of characterizing and comparing the expressive power of graph neural networks on Euclidean geometric graphs such as molecules and materials under physical symmetry constraints.\nG3. The work is primarily a theoretical expressivity analysis with synthetic support, leaving open how tightly GWL-based distinctions predict performance and practicality on real-world geometric learning tasks and architectures.\nG4. The paper finds that purely invariant geometric GNN layers are strictly limited because they cannot distinguish one-hop identical geometric graphs, while equivariant propagation, especially with higher-order tensors plus scalarisation, yields strictly greater and ultimately maximal expressive power.\n\nG1 options:\n  A. G3 / MUTATED\n  B. G2 / INHERITED\n  C. LOST\n  D. G2 / MUTATED\nG2 options:\n  A. G1 / MUTATED\n  B. LOST\n  C. G4 / MUTATED\n  D. G4 / LOST\nG3 options:\n  A. G1 / LOST\n  B. G4 / MUTATED\n  C. LOST\n  D. G4 / MUTATED\nG4 options:\n  A. G2 / MUTATED\n  B. G2 / MUTATED\n  C. G1 / LOST\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "B",
+        "G3": "C",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields",
+      "target_paper": "On the Expressive Power of Geometric Graph Neural Networks",
+      "dynamics": "Niche Competition",
+      "domain": "physics",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Niche Competition"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_003",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors\nG2. perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details\nG3. This paper targets benchmark-based evaluation of real-world face restoration under severe, mixed, and unconstrained degradations encountered in practical image capture.\nG4. Because the study is challenge-driven and comparative rather than a single controlled method paper, it leaves unresolved which individual design choices most causally drive gains and how to best balance fidelity, realism, efficiency, and cross-degradation generalization.\nG5. Compared with earlier face restoration work and prior challenge trends dominated by deterministic pixel reconstruction, this benchmark documents a shift toward generator-backed, perceptually supervised, degradation-aware restoration systems for real-world unknown degradations.\n\nTarget genome genes:\nG1. A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory\nG2. uncertainty-aware context before a conditional decoder synthesizes the next visual state\nG3. This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\nG4. Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\nG5. Compared with prior restoration-oriented or direct-regression future synthesis methods, this work replaces single-step target prediction with a factorized multi-step latent transition-and-decoding process for progressive future envisioning.\n\nG1 options:\n  A. G1 / LOST\n  B. LOST\n  C. G3 / INHERITED\n  D. G4 / INHERITED\nG2 options:\n  A. G3 / MUTATED\n  B. G1 / LOST\n  C. LOST\n  D. G4 / INHERITED\nG3 options:\n  A. LOST\n  B. G1 / INHERITED\n  C. G4 / LOST\n  D. G3 / MUTATED\nG4 options:\n  A. LOST\n  B. G2 / LOST\n  C. G4 / LOST\n  D. G5 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "B",
+        "G3": "D",
+        "G4": "C"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "The Second Challenge on Real-World Face Restoration at NTIRE 2026: Methods and Results",
+      "target_paper": "Envisioning the Future, One Step at a Time",
+      "dynamics": "Niche Competition",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Niche Competition"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_004",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. Theoretical analysis + empirical comparison of: (1) sequential revision, (2) best-of-N sampling, (3) beam search with PRM\nG2. compute-optimal allocation per difficulty level\nG3. How to optimally allocate additional inference compute: sequential refinement vs beam search vs sampling? Which strategy is compute-optimal?\nG4. Requires PRM for beam search; PRM training is expensive; theory is for math domains; unclear generalization to open-ended tasks.\nG5. Compute-optimal test-time scaling matches or exceeds 14× more training compute; harder problems benefit more from test-time compute.\n\nTarget genome genes:\nG1. Curate 1K diverse, high-quality reasoning problems\nG2. budget forcing: append 'Wait' to force extended thinking\nG3. test-time compute scales with think length\nG4. Test-time scaling requires expensive RL training (o1, DeepSeek-R1) or large PRM supervision; can simpler methods achieve similar scaling?\nG5. Budget forcing is brittle; model may repeat itself; limited to math/reasoning domains; 1K problems may not generalize broadly.\n\nG1 options:\n  A. G1 / LOST\n  B. G4 / INHERITED\n  C. LOST\n  D. G2 / LOST\nG2 options:\n  A. G1 / LOST\n  B. G4 / INHERITED\n  C. G5 / INHERITED\n  D. LOST\nG3 options:\n  A. G5 / LOST\n  B. G2 / MUTATED\n  C. LOST\n  D. G3 / LOST\nG4 options:\n  A. G4 / MUTATED\n  B. LOST\n  C. G2 / LOST\n  D. G5 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "A",
+        "G3": "D",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Scaling LLM Test-Time Compute Optimally Improves Performance More Than Seen in Training",
+      "target_paper": "s1: Simple Test-Time Scaling",
+      "dynamics": "Mutation",
+      "domain": "cs",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Mutation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_005",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. A language-model-driven closed-loop search system uses a general-purpose LLM to iteratively propose statistical programs from task descriptions, data summaries\nG2. revises them through modular execution and comparison stages\nG3. This paper targets automating statistical model discovery from natural-language problem descriptions and data, a workflow that normally depends on expert-driven hypothesis formation and model refinement.\nG4. The framework still depends on externally designed constrained modeling languages, heuristics, and validation/scoring loops, so its success is tied to hand-specified search restrictions and toolchain quality rather than fully autonomous discovery.\nG5. Compared with prior hand-crafted search spaces, symbolic-regression-style heuristics, and expert-authored model specification pipelines, this work replaces fixed search procedures with an LLM acting as a flexible proposal-and-revision engine inside an executable feedback loop.\n\nTarget genome genes:\nG1. Turing.jl is a probabilistic programming system that lets users write stochastic models directly in Julia and compiles them into a common representation that can be executed by interchangeable inference backends such as HMC, particle methods\nG2. variational inference with automatic differentiation support\nG3. This paper targets general-purpose specification and inference for Bayesian probabilistic models within scientific computing workflows.\nG4. Because the framework must support many model forms and multiple inference backends through a unified abstraction, performance and inference behavior can vary across models and are not uniformly optimized by a single specialized execution strategy.\nG5. Compared with earlier probabilistic programming systems that were more specialized or tied to particular inference engines, this work moves to a Julia-embedded, composable design where the same model can be paired modularly with multiple inference algorithms and scientific computing tools.\n\nG1 options:\n  A. G2 / INHERITED\n  B. G1 / MUTATED\n  C. G3 / LOST\n  D. LOST\nG2 options:\n  A. LOST\n  B. G1 / MUTATED\n  C. G3 / LOST\n  D. G2 / INHERITED\nG3 options:\n  A. G2 / LOST\n  B. G3 / LOST\n  C. LOST\n  D. G1 / MUTATED\nG4 options:\n  A. LOST\n  B. G5 / MUTATED\n  C. G4 / LOST\n  D. G2 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "B",
+        "G3": "B",
+        "G4": "C"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Automated Statistical Model Discovery with Language Models",
+      "target_paper": "Turing.jl: A General-Purpose Probabilistic Programming Language",
+      "dynamics": "Hybridization",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_006",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. Mesh-Informed Neural Networks (MINNs) learn nonlinear operators by placing hidden layers in discrete finite-element-like functional spaces defined on a hierarchy of meshes of increasing complexity, which induces a natural sparsity/pruning pattern in the network\nG2. This paper targets operator learning for mesh-based functional data arising in parametrized PDEs and reduced-order modeling on general spatial domains.\nG3. The paper validates MINNs mainly through numerical experiments and does not establish theoretical guarantees or fully characterize when the mesh-hierarchy design is superior or how sensitive performance is to the chosen mesh sequence.\nG4. Across experiments on nonlocal operators and nonlinear diffusion PDEs, MINNs outperform or match fully connected networks, DeepONets, and Fourier Neural Operators while using lower computational cost, faster training, and showing better generalization on irregular domains.\n\nTarget genome genes:\nG1. The method builds a nonintrusive reduced-order model by combining POD for coarse latent compression with sparse mesh-informed neural networks that jointly ingest mesh/spatial information and problem parameters to reconstruct unresolved small-scale solution structure\nG2. This paper targets fast surrogate approximation of parametrized computational physics problems with microstructure and multiscale spatial features, including elliptic PDEs and tissue microenvironment transport with microcirculation effects.\nG3. The paper appears to validate the approach on selected benchmark and application cases without establishing broad guarantees or clear evidence of robustness across wider PDE classes, geometries, and microstructure regimes.\nG4. Experiments on benchmark multiscale problems and a tissue transport application indicate that the POD+MINN strategy can approximate microstructured solutions more effectively than traditional projection-based ROMs that struggle with fine-scale features.\n\nG1 options:\n  A. G1 / MUTATED\n  B. G4 / LOST\n  C. G2 / LOST\n  D. LOST\nG2 options:\n  A. G3 / MUTATED\n  B. LOST\n  C. G2 / MUTATED\n  D. G4 / INHERITED\nG3 options:\n  A. G1 / MUTATED\n  B. G4 / LOST\n  C. G1 / MUTATED\n  D. LOST\nG4 options:\n  A. G3 / MUTATED\n  B. G4 / MUTATED\n  C. G4 / INHERITED\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "C",
+        "G3": "D",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Mesh-Informed Neural Networks for Operator Learning in Finite Element Spaces",
+      "target_paper": "Nonlinear model order reduction for problems with microstructure using mesh informed neural networks",
+      "dynamics": "Adaptive Radiation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Adaptive Radiation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_007",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. It proposes a very deep Residual Channel Attention Network (RCAN) that stacks residual blocks into residual groups with short and long skip connections, inserts channel-attention modules using global pooling and gating to rescale feature channels\nG2. performs upsampling only at the end in low-resolution feature space\nG3. This paper targets single-image super-resolution, i.e., reconstructing a high-resolution image from a single low-resolution input.\nG4. The method increases architectural depth and complexity and uses only channel-wise attention, leaving spatially varying importance and lighter-weight alternatives insufficiently addressed.\nG5. Compared with earlier very deep residual super-resolution networks such as EDSR/MDSR, this work adds channel-attention-based feature reweighting within residual blocks and organizes them in residual groups with residual-in-residual connectivity.\n\nTarget genome genes:\nG1. ESRGAN trains a deep residual-in-residual super-resolution generator without batch normalization using a joint objective of adversarial loss, content consistency\nG2. perceptual loss computed from high-level features of a pretrained recognition network against a discriminator on natural high-resolution images\nG3. This paper targets single-image super-resolution with the goal of producing visually realistic high-resolution images rather than merely minimizing reconstruction distortion.\nG4. Its emphasis on perceptual realism over distortion means the method can sacrifice pixel-wise accuracy and may hallucinate details that are visually plausible but not faithful to the ground-truth image.\nG5. Compared with earlier SRGAN and reconstruction-centric SR methods, it replaces weaker residual design choices with a stronger BN-free residual-in-residual generator and uses perceptual loss from higher-level pretrained features instead of relying mainly on pixel losses or lower-level feature comparisons.\n\nG1 options:\n  A. LOST\n  B. G2 / LOST\n  C. G1 / INHERITED\n  D. G3 / INHERITED\nG2 options:\n  A. LOST\n  B. G2 / LOST\n  C. G1 / LOST\n  D. G4 / LOST\nG3 options:\n  A. LOST\n  B. G5 / INHERITED\n  C. G1 / LOST\n  D. G3 / MUTATED\nG4 options:\n  A. LOST\n  B. G1 / LOST\n  C. G2 / MUTATED\n  D. G4 / LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "B",
+        "G2": "C",
+        "G3": "D",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Image Super-Resolution Using Very Deep Residual Channel Attention Networks",
+      "target_paper": "ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks",
+      "dynamics": "Hybridization",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_008",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors\nG2. perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details\nG3. This paper targets benchmark-based evaluation of real-world face restoration under severe, mixed, and unconstrained degradations encountered in practical image capture.\nG4. Because the study is challenge-driven and comparative rather than a single controlled method paper, it leaves unresolved which individual design choices most causally drive gains and how to best balance fidelity, realism, efficiency, and cross-degradation generalization.\nG5. Compared with earlier face restoration work and prior challenge trends dominated by deterministic pixel reconstruction, this benchmark documents a shift toward generator-backed, perceptually supervised, degradation-aware restoration systems for real-world unknown degradations.\n\nTarget genome genes:\nG1. A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory\nG2. uncertainty-aware context before a conditional decoder synthesizes the next visual state\nG3. This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\nG4. Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\nG5. Compared with prior restoration-oriented or direct-regression future synthesis methods, this work replaces single-step target prediction with a factorized multi-step latent transition-and-decoding process for progressive future envisioning.\n\nG1 options:\n  A. LOST\n  B. G5 / LOST\n  C. G1 / LOST\n  D. G3 / INHERITED\nG2 options:\n  A. G3 / INHERITED\n  B. G5 / LOST\n  C. LOST\n  D. G1 / LOST\nG3 options:\n  A. LOST\n  B. G5 / MUTATED\n  C. G3 / MUTATED\n  D. G4 / MUTATED\nG4 options:\n  A. LOST\n  B. G4 / LOST\n  C. G3 / INHERITED\n  D. G2 / MUTATED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "D",
+        "G3": "C",
+        "G4": "B"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "The Second Challenge on Real-World Face Restoration at NTIRE 2026: Methods and Results",
+      "target_paper": "Envisioning the Future, One Step at a Time",
+      "dynamics": "Niche Competition",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Niche Competition"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_009",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. NuNER pre-trains a discriminative sequence-labeling encoder on large-scale token/span annotations generated by an instruction-following LLM\nG2. post-processing and filtering to normalize labels and suppress hallucinated or inconsistent spans before standard NER fine-tuning\nG3. This paper targets named entity recognition, especially improving generalization of NER models beyond narrow manually labeled corpora.\nG4. The method still depends on imperfect generated labels whose span boundaries and type assignments require heuristic normalization and filtering, leaving residual noise that can limit the quality of the learned encoder.\nG5. Compared with prior work that instruction-tunes or directly deploys large generative models for NER extraction, this paper shifts the LLM's role to offline annotation generation and uses those labels to build a reusable discriminative encoder.\n\nTarget genome genes:\nG1. Fin-R1 adapts a strong general LLM to finance via staged continued pre-training on finance corpora, supervised instruction tuning on finance task formats\nG2. reinforcement learning that optimizes answer correctness and reasoning consistency on financial prompts\nG3. This paper targets multi-step financial reasoning and decision-oriented question answering in the finance domain.\nG4. The paper description leaves unclear how the reinforcement learning reward is defined and validated for financial correctness, making it uncertain which aspects of the reported gains come from true domain reasoning improvement versus reward shaping.\nG5. Compared with prior finance-specialized LLM efforts centered on curated corpora and model-generated annotations for pre-training and instruction tuning, this work explicitly adds reinforcement-based optimization to sharpen financial reasoning behavior.\n\nG1 options:\n  A. G5 / INHERITED\n  B. LOST\n  C. G3 / INHERITED\n  D. G1 / LOST\nG2 options:\n  A. G4 / INHERITED\n  B. G2 / MUTATED\n  C. G1 / LOST\n  D. LOST\nG3 options:\n  A. G3 / MUTATED\n  B. G4 / LOST\n  C. LOST\n  D. G1 / LOST\nG4 options:\n  A. G2 / INHERITED\n  B. G3 / INHERITED\n  C. G4 / LOST\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "D",
+        "G2": "C",
+        "G3": "A",
+        "G4": "C"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "NuNER: Entity Recognition Encoder Pre-training via LLM-Annotated Data",
+      "target_paper": "Fin-R1: A Large Language Model for Financial Reasoning through Reinforcement Learning",
+      "dynamics": "Hybridization",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_010",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. It applies supervised statistical learning to network traffic features and evaluates multiple classifiers using train/test protocols that explicitly separate known attacks from temporally or semantically novel attack classes to measure out-of-distribution detection\nG2. This paper targets network intrusion detection under realistic open-world conditions where future attack types may differ from those seen during training.\nG3. The paper mainly contributes an evaluation critique rather than a new detection algorithm, so it demonstrates the failure of existing protocols without providing a concrete method that robustly handles unseen attacks.\nG4. Compared with prior signature-based or conventionally evaluated ML intrusion detectors, it shifts the focus from in-distribution recognition accuracy to open-world experimental design that tests detection on attack classes absent from training.\nG5. The study finds that standard closed-world evaluation with randomly mixed samples substantially overestimates intrusion-detection performance, while generalization to previously unseen attack categories is much weaker and highly variable across attack types.\n\nTarget genome genes:\nG1. A provenance-based intrusion detection framework constructs a whole-system causal provenance graph from fine-grained kernel audit traces and performs detection over evolving dependency subgraphs so alerts are based on event lineage and attack paths rather than standalone features\nG2. This paper targets intrusion detection and attack investigation in operating-system environments, especially for multi-stage and stealthy compromises that are hard to recognize from isolated audit events.\nG3. The framework's main unresolved weakness is the substantial runtime, storage, and graph-management overhead introduced by fine-grained provenance capture, creating a difficult deployment tradeoff between tracing fidelity and operational cost.\nG4. Compared with prior intrusion detectors built on conventional machine learning over isolated events or handcrafted features, this work shifts the primary detection signal to explicit causal dependencies encoded as provenance graphs derived from whole-system audit data.\nG5. The paper's key insight is that causal context preserved in provenance graphs makes suspicious behavior more interpretable and more detectable than event-wise statistical methods, particularly for privilege escalation and multi-step attacks whose individual actions may look benign.\n\nG1 options:\n  A. G1 / MUTATED\n  B. G3 / MUTATED\n  C. G2 / INHERITED\n  D. LOST\nG2 options:\n  A. G4 / MUTATED\n  B. G3 / MUTATED\n  C. LOST\n  D. G2 / MUTATED\nG3 options:\n  A. G3 / LOST\n  B. G6 / LOST\n  C. G2 / MUTATED\n  D. LOST\nG4 options:\n  A. G2 / LOST\n  B. LOST\n  C. G5 / MUTATED\n  D. G4 / MUTATED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "D",
+        "G3": "B",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Outside the Closed World: On Using Machine Learning for Network Intrusion Detection",
+      "target_paper": "Provenance-based Intrusion Detection: Opportunities and Challenges",
+      "dynamics": "Speciation",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_011",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. apply DDIM diffusion in latent space (64×64 latents)\nG2. text conditioning via cross-attention with CLIP text encoder\nG3. Pixel-space diffusion is computationally prohibitive at high resolution; 512×512 generation too slow for practical use.\nG4. U-Net inductive bias limits scalability; text alignment can fail on complex compositions; video generation not supported natively.\nG5. Stable Diffusion achieves FID comparable to pixel-space models at 8x lower compute; enables 512×512 generation on consumer GPUs.\n\nTarget genome genes:\nG1. ControlNet augments a pretrained latent diffusion model with parallel copies of selected denoising blocks that ingest condition maps and are connected through zero-initialized convolutions so multi-scale control features can be learned while the original backbone stays largely frozen\nG2. This paper targets fine-grained spatially controllable text-to-image generation from structured external conditions such as edges, depth, segmentation, and pose.\nG3. The method depends on predefined external control annotations or preprocessors for each control type and does not by itself solve how to obtain or unify such conditions automatically.\nG4. Compared with prior latent diffusion systems that mainly used text or weaker conditioning interfaces, this work adds a reusable multi-resolution conditional branch with zero-conv initialization to inject spatial guidance into a frozen pretrained backbone instead of retraining the whole model.\nG5. The paper finds that zero-initialized conditional branches can be trained stably on modest datasets to add strong spatial control across diverse condition types without significantly degrading the pretrained model's image synthesis quality.\n\nG1 options:\n  A. G1 / MUTATED\n  B. LOST\n  C. G3 / INHERITED\n  D. G2 / MUTATED\nG2 options:\n  A. G1 / MUTATED\n  B. G5 / INHERITED\n  C. LOST\n  D. G4 / MUTATED\nG3 options:\n  A. G2 / MUTATED\n  B. G4 / MUTATED\n  C. G3 / INHERITED\n  D. LOST\nG4 options:\n  A. G4 / MUTATED\n  B. LOST\n  C. G6 / LOST\n  D. G2 / MUTATED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "D",
+        "G3": "A",
+        "G4": "C"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "High-Resolution Image Synthesis with Latent Diffusion Models",
+      "target_paper": "Adding Conditional Control to Text-to-Image Diffusion Models",
+      "dynamics": "Mutation",
+      "domain": "cs",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Mutation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_012",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. It proposes a joint panoramic perception framework that simultaneously performs multi-camera video stitching and object detection with shared cross-view geometric alignment, temporal feature association\nG2. detection-aware fusion to build temporally consistent panoramas while preserving object-level detail\nG3. This paper targets wide-field maritime visual perception for autonomous surface vehicles, specifically improving navigation-relevant scene understanding and target recognition under unstable horizons, reflections, and scale-varying objects.\nG4. The framework appears to depend on accurate multi-camera alignment and temporally coherent motion cues, so performance may degrade when calibration is poor or when severe scene dynamics break the assumed consistency used for joint stitching and detection.\nG5. Compared with prior maritime or generic spatio-temporal pipelines that first stitch views and then run detection as separate stages, this work changes the design to a unified detection-aware panoramic video model with shared temporal features.\n\nTarget genome genes:\nG1. SHOE is an evaluation metric that scores HOI predictions by jointly combining human-role/object localization constraints with language-embedding-based semantic similarity over action and object labels, assigning partial credit to semantically close mismatches instead of binary exact-match rewards\nG2. This paper targets evaluation of open-vocabulary semantic human-object interaction predictions, especially when plausible predictions use labels outside or different from the annotated vocabulary.\nG3. Because SHOE depends on a shared language-embedding space and its normalization design, its scores can be sensitive to how semantic similarity is represented and may not fully disambiguate fine-grained interaction distinctions that embeddings collapse.\nG4. Compared with prior HOI evaluation protocols that largely use exact label matching after localization, this work replaces binary category agreement with a joint semantically weighted matching over human role, object category, and action while rebalancing frequent versus rare interactions.\nG5. The paper finds that semantic partial-credit evaluation aligns better with human judgments than prior exact-category HOI metrics, particularly for zero-shot and long-tail open-vocabulary predictions.\n\nG1 options:\n  A. G5 / LOST\n  B. G2 / LOST\n  C. LOST\n  D. G1 / LOST\nG2 options:\n  A. LOST\n  B. G5 / MUTATED\n  C. G4 / MUTATED\n  D. G1 / LOST\nG3 options:\n  A. G5 / MUTATED\n  B. LOST\n  C. G2 / LOST\n  D. G3 / MUTATED\nG4 options:\n  A. LOST\n  B. G4 / INHERITED\n  C. G3 / LOST\n  D. G2 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "D",
+        "G2": "D",
+        "G3": "C",
+        "G4": "C"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "A maritime panoramic visual perception framework with joint video stitching and target detection to enhance autonomous surface vehicles navigation",
+      "target_paper": "SHOE: Semantic HOI Open-Vocabulary Evaluation Metric",
+      "dynamics": "Hybridization",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_013",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. TFix uses an encoder-decoder Transformer to perform conditional text-to-text generation, taking buggy code plus surrounding context as input and autoregressively producing the corrected code with subword tokenization\nG2. This paper targets automatic repair of coding errors in source code across diverse syntax and semantic bug types.\nG3. Because TFix generates repairs directly from source text rather than enforcing explicit edit constraints or program semantics, it may produce unconstrained outputs whose correctness depends on learned patterns rather than guaranteed validity.\nG4. Compared with prior neural repair systems that used hand-crafted edit templates, token tagging, or candidate-patch classification, this work replaces restricted fix prediction with a unified Transformer-based text-to-text generation framework for variable-size edits.\nG5. Modeling program repair as free-form sequence generation with a Transformer yields stronger repair accuracy and broader coverage of error types than prior neural repair approaches based on weaker architectures or restricted edit spaces.\n\nTarget genome genes:\nG1. A two-stage error-identification-and-correction evaluation protocol prompts a model first to localize and explain invalid mathematical steps in a proposed derivation\nG2. to generate a minimally revised continuation or corrected solution path\nG3. This paper targets evaluation of large language models' mathematical reasoning by assessing their ability to detect and repair errors in multi-step solution traces.\nG4. The approach appears constrained to evaluating model behavior on provided reasoning traces and does not establish whether strong error correction reliably transfers to fully independent end-to-end mathematical problem solving.\nG5. Compared with prior work centered on direct math solution generation or answer-only scoring, this paper shifts evaluation to a separated diagnose-then-fix treatment of intermediate reasoning traces adapted from program-repair-style paradigms.\n\nG1 options:\n  A. G4 / LOST\n  B. LOST\n  C. G2 / MUTATED\n  D. G1 / LOST\nG2 options:\n  A. G4 / INHERITED\n  B. LOST\n  C. G3 / MUTATED\n  D. G2 / INHERITED\nG3 options:\n  A. G2 / MUTATED\n  B. G3 / LOST\n  C. G7 / LOST\n  D. LOST\nG4 options:\n  A. G5 / MUTATED\n  B. LOST\n  C. G3 / INHERITED\n  D. G2 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "C",
+        "G3": "C",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "TFix: Learning to Fix Coding Errors with a Text-to-Text Transformer",
+      "target_paper": "Evaluating Mathematical Reasoning of Large Language Models: A Focus on Error Identification and Correction",
+      "dynamics": "Adaptive Radiation",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Adaptive Radiation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_014",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. Graph Network-based Simulators (GNS) model physical states as particle graphs and learn dynamics by multi-step message passing that predicts particle accelerations from local interactions, with training augmented by noise corruption to improve rollout stability\nG2. This paper targets learned forward simulation of complex interacting physical systems, including fluids, rigid bodies, and deformable materials, over long horizons and varying system sizes.\nG3. The paper's long-horizon performance still depends critically on manually chosen message-passing steps and injected training noise to control error accumulation, indicating limited intrinsic stability of the learned simulator.\nG4. The key finding is that a particle-based graph network trained on one-step predictions can generalize to long rollouts, new initial conditions, and much larger particle counts, with long-term accuracy driven mainly by message-passing depth and noise-corrupted training.\n\nTarget genome genes:\nG1. A fully neural message-passing PDE solver replaces hand-designed numerical update components with graph-based learned operators and trains autoregressive rollouts with a zero-stability-inspired domain-adaptation scheme to improve long-horizon stability\nG2. This paper targets learning PDE solvers that generalize across varying resolutions, topologies, geometries, boundary conditions, discretization regularity, dimensionality, and equation parameters for fluid-like dynamics.\nG3. The paper validates mainly on fluid-like problems in 1D and 2D, leaving open how well the fully neural message-passing approach and its stability training scale to broader PDE families and higher-dimensional regimes.\nG4. The learned message-passing solver is fast, stable, and accurate on 1D and 2D fluid-like flow problems while generalizing across diverse meshes, domains, and PDE settings, and it can represent classical schemes such as finite differences, finite volumes, and WENO.\n\nG1 options:\n  A. G1 / MUTATED\n  B. LOST\n  C. G4 / LOST\n  D. G3 / LOST\nG2 options:\n  A. G4 / MUTATED\n  B. G1 / LOST\n  C. LOST\n  D. G2 / MUTATED\nG3 options:\n  A. LOST\n  B. G3 / MUTATED\n  C. G1 / INHERITED\n  D. G4 / MUTATED\nG4 options:\n  A. LOST\n  B. G2 / LOST\n  C. G1 / MUTATED\n  D. G1 / MUTATED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "D",
+        "G3": "B",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Learning to Simulate Complex Physics with Graph Networks",
+      "target_paper": "Message Passing Neural PDE Solvers",
+      "dynamics": "Adaptive Radiation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Adaptive Radiation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_015",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. The method evaluates each model with an ensemble of diverse adaptive attacks—combining first-order, score-based, targeted, untargeted\nG2. transfer/black-box checks with strong hyperparameter tuning and many restarts—and reports the worst-case robust accuracy over the suite\nG3. This paper targets the reliable measurement of adversarial robustness of machine learning models under adversarial perturbations.\nG4. Because the framework is still limited to the chosen attack pool and hand-tuned configurations, it cannot guarantee finding the true worst-case adversary and can be computationally expensive to run thoroughly.\nG5. Compared with prior evaluations that typically reported robustness under one preferred attack or lightly tuned settings, this work replaces single-attack testing with a carefully parameterized worst-case ensemble protocol plus sanity checks for gradient masking.\n\nTarget genome genes:\nG1. It introduces a reliability-oriented adversarial evaluation framework for video Mixture-of-Experts that jointly attacks feature representations and the routing/gating module using stronger multi-start, transfer-based\nG2. pairs this with routing-stabilization defenses\nG3. This paper targets adversarial robustness evaluation and defense for sparse expert-routed video recognition models.\nG4. The proposed defenses mainly focus on stabilizing routing decisions under perturbation, leaving open whether robustness remains strong against even more adaptive attacks or under larger trade-offs with model accuracy and sparse-computation efficiency.\nG5. Compared with prior adversarial evaluations that used weaker single-configuration attacks and mostly treated the model as a standard backbone, this work strengthens the threat model by explicitly attacking the gating pathway and evaluating defenses under more reliable worst-case approximations.\n\nG1 options:\n  A. G2 / MUTATED\n  B. LOST\n  C. G1 / LOST\n  D. G4 / INHERITED\nG2 options:\n  A. LOST\n  B. G3 / INHERITED\n  C. G4 / LOST\n  D. G5 / LOST\nG3 options:\n  A. G1 / LOST\n  B. G3 / MUTATED\n  C. G4 / INHERITED\n  D. LOST\nG4 options:\n  A. G1 / LOST\n  B. G6 / LOST\n  C. LOST\n  D. G4 / LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "C",
+        "G3": "B",
+        "G4": "B"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Reliable Evaluation of Adversarial Robustness with an Ensemble of Attacks",
+      "target_paper": "Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts",
+      "dynamics": "Adaptive Radiation",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Adaptive Radiation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_016",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. Using a comparative analysis of GraphCast, AIFS, and FuXi on the 2024 Dubai storm, the paper applies forecast evaluation plus fine-tuning and receptive-field analyses to distinguish whether successful prediction arises from extrapolation from weaker local events or translocation from dynamically similar stronger events in other regions\nG2. This paper targets assessing whether AI weather forecasting models can reliably predict regionally unprecedented gray-swan extreme rainfall events beyond the range seen in local training data.\nG3. The study does not find evidence that current AI weather models can truly extrapolate to unseen regional extremes, and it shows that even globally tail events remain poorly forecasted due to both data imbalance and spectral-bias-related optimization error.\nG4. GraphCast and AIFS accurately forecast Dubai's unprecedented 2024 rainfall up to 8 days ahead, and the evidence indicates this success comes from translocation of learned patterns from similar extreme events elsewhere rather than extrapolation from weaker local examples.\n\nTarget genome genes:\nG1. The authors perform a controlled withholding analysis by training an AI weather model with all Category 3–5 tropical cyclones removed from the training set,\nG2. evaluating its forecasts on unseen Category 5 storms and on cross-basin strong-storm generalization\nG3. This paper targets whether AI weather forecasting models can predict out-of-distribution gray swan tropical cyclones, especially extreme Category 5 storms absent from training data.\nG4. Because the paper tests a model trained after explicitly removing major hurricanes from the training data, it demonstrates failure on withheld extreme storms but does not provide a concrete modeling innovation that remedies this out-of-distribution weakness.\nG5. The study finds that the AI model fails to accurately forecast truly unseen Category 5 gray swan cyclones, but shows some ability to transfer knowledge from strong storms in one region to forecast strong storms in another region.\n\nG1 options:\n  A. G1 / MUTATED\n  B. G3 / LOST\n  C. G2 / INHERITED\n  D. LOST\nG2 options:\n  A. LOST\n  B. G3 / INHERITED\n  C. G1 / INHERITED\n  D. G4 / INHERITED\nG3 options:\n  A. G2 / MUTATED\n  B. LOST\n  C. G4 / MUTATED\n  D. G5 / INHERITED\nG4 options:\n  A. G1 / INHERITED\n  B. LOST\n  C. G5 / MUTATED\n  D. G3 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "B",
+        "G3": "C",
+        "G4": "C"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Predicting Beyond Training Data via Extrapolation versus Translocation: AI Weather Models and Dubai's Unprecedented 2024 Rainfall",
+      "target_paper": "Can AI weather models predict out-of-distribution gray swan tropical cyclones?",
+      "dynamics": "Mutation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Mutation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_017",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. DCGAN uses a fully convolutional GAN in which the generator maps latent vectors to images with stacked fractional-stride convolutions and the discriminator classifies images with strided convolutions, combined with architectural constraints such as removing pooling and most fully connected layers, extensive batch normalization\nG2. asymmetric activations to stabilize training\nG3. This paper targets unsupervised representation learning from natural images while also enabling realistic image generation.\nG4. The stabilization recipe is heuristic and architecture-specific, leaving unresolved why it works and how reliably it extends beyond the tested image settings and model configurations.\nG5. Compared with earlier GAN and conditional GAN formulations that used more conventional dense or hand-designed upsampling components and emphasized conditioning, this work replaces them with a constrained all-convolutional architecture explicitly aimed at stable unsupervised representation learning.\n\nTarget genome genes:\nG1. Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatch standard-deviation feature in the discriminator\nG2. This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\nG3. The method depends on a hand-designed training curriculum and architecture-specific stabilization heuristics, leaving open how broadly the approach transfers beyond this staged resolution-growth setup.\nG4. Compared with prior GANs that attempted full-resolution synthesis from the start, this work changes training to a staged low-to-high-resolution expansion with fade-in layer insertion and adds explicit activation-scaling and minibatch-diversity mechanisms.\nG5. Growing GANs progressively lets the model learn global structure before fine detail, yielding substantially sharper, more coherent, and more diverse high-resolution images with more stable optimization than single-stage training.\n\nG1 options:\n  A. G1 / MUTATED\n  B. LOST\n  C. G5 / LOST\n  D. G4 / INHERITED\nG2 options:\n  A. LOST\n  B. G4 / LOST\n  C. G3 / LOST\n  D. G5 / MUTATED\nG3 options:\n  A. G5 / MUTATED\n  B. LOST\n  C. G2 / MUTATED\n  D. G1 / MUTATED\nG4 options:\n  A. G3 / MUTATED\n  B. LOST\n  C. G2 / INHERITED\n  D. G5 / LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "C",
+        "G3": "C",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks",
+      "target_paper": "Progressive Growing of GANs for Improved Quality, Stability, and Variation",
+      "dynamics": "Mutation",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Mutation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_018",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. Auxiliary-loss-free balancing via dynamic bias adjustment\nG2. MTP head predicts next 2 tokens simultaneously\nG3. device-limited routing for communication efficiency\nG4. Auxiliary load balancing loss interferes with main training objective; multi-token prediction training efficiency not fully exploited.\nG5. MTP gains limited to 0.1% speedup; open-source weights but not full training recipe; communication overhead at trillion-parameter scale.\n\nTarget genome genes:\nG1. Joint text-vision pre-training and zero-vision SFT followed by joint text-vision RL\nG2. Agent Swarm dynamically decomposes complex tasks into heterogeneous sub-problems and executes concurrently\nG3. MoonViT-3D visual encoder for native vision MoE\nG4. DeepSeek-V3's MoE is text-only; no unified framework combining MoE scaling with native multimodal and agentic execution at trillion-parameter scale.\nG5. Agent Swarm coordination relies on ad-hoc orchestration without principled expert specialization; individual experts do not self-organize into task-specialized sub-networks for long-horizon agentic workflows.\n\nG1 options:\n  A. G5 / MUTATED\n  B. G1 / LOST\n  C. LOST\n  D. G2 / INHERITED\nG2 options:\n  A. LOST\n  B. G2 / INHERITED\n  C. G4 / LOST\n  D. G1 / LOST\nG3 options:\n  A. LOST\n  B. G3 / INHERITED\n  C. G4 / INHERITED\n  D. G1 / LOST\nG4 options:\n  A. G4 / LOST\n  B. G2 / INHERITED\n  C. G5 / MUTATED\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "B",
+        "G2": "D",
+        "G3": "D",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "DeepSeek-V3 Technical Report",
+      "target_paper": "Kimi K2.5: Visual Agentic Intelligence",
+      "dynamics": "Hybridization",
+      "domain": "cs",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_019",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors\nG2. perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details\nG3. This paper targets benchmark-based evaluation of real-world face restoration under severe, mixed, and unconstrained degradations encountered in practical image capture.\nG4. Because the study is challenge-driven and comparative rather than a single controlled method paper, it leaves unresolved which individual design choices most causally drive gains and how to best balance fidelity, realism, efficiency, and cross-degradation generalization.\nG5. Compared with earlier face restoration work and prior challenge trends dominated by deterministic pixel reconstruction, this benchmark documents a shift toward generator-backed, perceptually supervised, degradation-aware restoration systems for real-world unknown degradations.\n\nTarget genome genes:\nG1. A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory\nG2. uncertainty-aware context before a conditional decoder synthesizes the next visual state\nG3. This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\nG4. Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\nG5. Compared with prior restoration-oriented or direct-regression future synthesis methods, this work replaces single-step target prediction with a factorized multi-step latent transition-and-decoding process for progressive future envisioning.\n\nG1 options:\n  A. G4 / MUTATED\n  B. G2 / MUTATED\n  C. G1 / LOST\n  D. LOST\nG2 options:\n  A. LOST\n  B. G4 / INHERITED\n  C. G1 / LOST\n  D. G5 / INHERITED\nG3 options:\n  A. G2 / MUTATED\n  B. G5 / INHERITED\n  C. G3 / MUTATED\n  D. LOST\nG4 options:\n  A. G5 / LOST\n  B. G4 / LOST\n  C. G3 / INHERITED\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "C",
+        "G3": "C",
+        "G4": "B"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "The Second Challenge on Real-World Face Restoration at NTIRE 2026: Methods and Results",
+      "target_paper": "Envisioning the Future, One Step at a Time",
+      "dynamics": "Niche Competition",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Niche Competition"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_020",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. FLEX is a forward-learning continual evolution framework that stores a persistent history of agent-environment interactions, converts accumulated experience and self-generated trajectories into reusable training targets\nG2. incrementally updates the policy with stabilization mechanisms to prevent drift under nonstationary long-horizon learning\nG3. This paper targets open-ended continual improvement of agents from ongoing interaction experience rather than solving a single fixed predefined task.\nG4. Because FLEX depends on deriving effective learning targets from an ever-growing nonstationary experience buffer, its performance is likely sensitive to memory quality and target-construction design, which remain unresolved in the description.\nG5. Compared with prior approaches that repeatedly optimize a fixed policy for discrete narrowly scoped reinforcement-learning problems, FLEX separates experience collection from policy evolution and performs continuous memory-driven incremental updates across attempts.\n\nTarget genome genes:\nG1. The core approach is a large-scale analysis of canonical deep RL agents over changing Atari game sequences, paired with a simple architectural modification that replaces standard ReLUs with Concatenated ReLUs (CReLUs) to preserve activation coverage and sustain gradient flow during continual learning\nG2. This paper targets continual value-based deep reinforcement learning under non-stationary task sequences, specifically agents cycling through multiple Atari 2600 games.\nG3. The paper's mitigation is validated mainly on value-based deep RL in Atari game-switching settings, leaving unclear how broadly the diagnosed mechanism and CReLU fix transfer to other RL paradigms, environments, or non-Atari continual learning regimes.\nG4. The key finding is that as deep RL agents train across successive games, their activation footprint becomes increasingly sparse, gradients diminish, and policy learning ability degrades, while CReLUs substantially mitigate this loss of plasticity.\n\nG1 options:\n  A. G3 / INHERITED\n  B. LOST\n  C. G2 / INHERITED\n  D. G1 / MUTATED\nG2 options:\n  A. G2 / MUTATED\n  B. G4 / LOST\n  C. LOST\n  D. G3 / LOST\nG3 options:\n  A. G2 / INHERITED\n  B. G4 / MUTATED\n  C. LOST\n  D. G2 / MUTATED\nG4 options:\n  A. G3 / MUTATED\n  B. G4 / MUTATED\n  C. LOST\n  D. G1 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "D",
+        "G2": "A",
+        "G3": "C",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "FLEX: Continuous Agent Evolution via Forward Learning from Experience",
+      "target_paper": "Loss of Plasticity in Continual Deep Reinforcement Learning",
+      "dynamics": "Adaptive Radiation",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Adaptive Radiation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_021",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. It uses a Bayesian latent class joint model for primary and key secondary endpoints with risk-factor adjustment to generate individualized dynamic k-step-ahead predictions and flag conflicting or anomalous future observations\nG2. The paper addresses proactive anomaly detection and data quality monitoring for multiple longitudinal clinical trial endpoints within electronic data capture workflows.\nG3. The approach appears specialized to modeled endpoints and depends on correct latent class and longitudinal model specification, which may limit robustness and generalizability across diverse trial settings.\nG4. Compared with standard edit checks and manual review, this work shifts monitoring from simple rule-based or retrospective detection to multivariate Bayesian predictive screening that anticipates anomalies before they occur.\nG5. Simulation studies and a real-data example indicate that the proposed model can identify anomalous patterns earlier and more objectively than conventional reactive manual query processes.\n\nTarget genome genes:\nG1. It uses a probabilistic analysis of evidentiary value to formally contrast profiling evidence with case-specific evidence and assess what each can rationally support\nG2. The paper addresses whether profiling evidence in criminal trials can probabilistically support the guilt of a specific defendant as opposed to only a generic class-based hypothesis.\nG3. Because the paper is primarily conceptual and probabilistic rather than empirical, it does not test its claims on real legal cases or model the full complexity of courtroom fact patterns.\nG4. Unlike prior critiques that object to profiling mainly on normative or doctrinal grounds while often conceding some probative force, this paper argues on probabilistic grounds that profiling is not probative of specific guilt at all.\nG5. The central insight is that profiling evidence may raise confidence in a generic offender profile but does not constitute evidence that the accused committed the particular crime charged.\n\nG1 options:\n  A. LOST\n  B. G5 / INHERITED\n  C. G1 / LOST\n  D. G4 / INHERITED\nG2 options:\n  A. LOST\n  B. G5 / MUTATED\n  C. G2 / LOST\n  D. G4 / MUTATED\nG3 options:\n  A. G4 / INHERITED\n  B. G1 / MUTATED\n  C. G3 / LOST\n  D. LOST\nG4 options:\n  A. G1 / INHERITED\n  B. G3 / MUTATED\n  C. LOST\n  D. G4 / LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "C",
+        "G3": "C",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Proactive Anomaly Screen for Multiple Endpoints Using Bayesian Latent Class Modeling: A k-Step Ahead Approach",
+      "target_paper": "Profiling vs. Case-specific Evidence: A Probabilistic Analysis",
+      "dynamics": "Speciation",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_022",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. Generative diffusion over 3D pose space: separate diffusion processes for translation (R³), rotation (SO(3)), and torsion angles\nG2. confidence ranking of generated poses\nG3. EquiBind produces single rigid-body pose; real binding is flexible; need multi-modal pose distribution over all degrees of freedom.\nG4. Slow sampling (multiple denoising steps); still requires known protein structure; cannot generate novel ligands; no co-design of protein and ligand.\nG5. DiffDock achieves 38% top-1 success rate on PDBbind vs 23% for Glide (commercial); generates diverse pose hypotheses; state-of-the-art blind docking.\n\nTarget genome genes:\nG1. DiffCSP is a joint diffusion model that simultaneously generates crystal lattices and atomic positions using a periodic E(3)-equivariant denoiser, with atoms represented in fractional rather than Cartesian coordinates to respect translation, rotation, and periodicity\nG2. This paper targets crystal structure prediction and generation, i.e. modeling plausible stable crystal structures under the geometric symmetries of periodic materials.\nG3. The method is trained on distributions of stable crystals and the abstract does not indicate explicit physical-energy constraints or guarantees of stability during generation, leaving physical validity to be only indirectly learned.\nG4. Empirically, jointly diffusing lattices and fractional atomic coordinates with periodic equivariance yields substantially better crystal structure prediction than prior CSP baselines while being far cheaper than DFT-based search.\n\nG1 options:\n  A. LOST\n  B. G1 / MUTATED\n  C. G3 / MUTATED\n  D. G4 / LOST\nG2 options:\n  A. G1 / LOST\n  B. LOST\n  C. G2 / LOST\n  D. G1 / MUTATED\nG3 options:\n  A. G3 / MUTATED\n  B. G3 / MUTATED\n  C. G1 / LOST\n  D. LOST\nG4 options:\n  A. G3 / MUTATED\n  B. G4 / INHERITED\n  C. LOST\n  D. G3 / INHERITED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "B",
+        "G2": "B",
+        "G3": "D",
+        "G4": "C"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking",
+      "target_paper": "Crystal Structure Prediction by Joint Equivariant Diffusion",
+      "dynamics": "Speciation",
+      "domain": "chemistry",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_023",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. ClipTTT adapts an LVLM on a single corrupted test sample by using a frozen pre-trained CLIP model's image-text alignment as a stable signal to select reliable self-supervision targets for on-the-fly test-time training without modifying the base LVLM architecture\nG2. This paper targets reducing hallucinations in large vision-language models when they must interpret visually corrupted test-time inputs.\nG3. The method is evaluated specifically under visual corruption settings and depends on CLIP providing trustworthy alignment guidance, leaving its robustness to other failure modes or misleading CLIP signals unresolved.\nG4. The paper finds that common visual corruptions create an additional distribution shift that substantially increases LVLM hallucination, and that CLIP-guided single-sample test-time adaptation improves descriptive faithfulness across 15 corruption types on standard benchmarks.\n\nTarget genome genes:\nG1. Within the LLaVA framework, it systematically studies design choices and builds an improved baseline by pairing a CLIP ViT-L/336px vision encoder with a simple MLP vision-language projector,\nG2. instruction-tuning on 1.2M public data augmented with academic-task-oriented VQA examples and response-formatting prompts\nG3. This paper targets building and understanding strong, accessible large multimodal models for visual instruction following and visual question answering across diverse benchmarks.\nG4. Despite stronger baselines, the paper only offers early exploration rather than full solutions for higher-resolution scaling, compositional reasoning, and hallucination in LMMs.\nG5. A simple fully connected/MLP vision-language connector is unexpectedly powerful and data-efficient, and with better vision backbone and targeted VQA formatting data it yields state-of-the-art results on 11 benchmarks using modest public data and compute.\n\nG1 options:\n  A. G1 / MUTATED\n  B. LOST\n  C. G3 / LOST\n  D. G4 / INHERITED\nG2 options:\n  A. G3 / MUTATED\n  B. G2 / INHERITED\n  C. G1 / MUTATED\n  D. LOST\nG3 options:\n  A. G5 / MUTATED\n  B. G2 / MUTATED\n  C. LOST\n  D. G5 / INHERITED\nG4 options:\n  A. G5 / MUTATED\n  B. LOST\n  C. G2 / MUTATED\n  D. G4 / LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "A",
+        "G3": "C",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "ClipTTT: CLIP-Guided Test-Time Training Helps LVLMs See Better",
+      "target_paper": "Improved Baselines with Visual Instruction Tuning",
+      "dynamics": "Mutation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Mutation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_024",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory\nG2. uncertainty-aware context before a conditional decoder synthesizes the next visual state\nG3. This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\nG4. Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\nG5. Compared with prior restoration-oriented or direct-regression future synthesis methods, this work replaces single-step target prediction with a factorized multi-step latent transition-and-decoding process for progressive future envisioning.\n\nTarget genome genes:\nG1. Dynamic Chain Optimization decomposes LLM adaptation into modular inference/specialization stages and uses a controller to estimate each stage's marginal utility and resource cost so it can selectively route, reorder, skip\nG2. schedule lightweight frozen-backbone updates across heterogeneous on-device resources under latency, memory, energy\nG3. This paper targets private, resource-constrained adaptation of large language models for edge-device inference under variable hardware, connectivity, and workload conditions.\nG4. The framework depends on accurate online estimates of per-stage benefit and cost, so its gains may degrade when the controller mispredicts utility-resource tradeoffs across changing devices or inputs.\nG5. Compared with prior end-to-end edge adaptation approaches, this work replaces monolithic optimization with a dynamically optimized chain of modular adaptation steps that can be selectively activated and scheduled per request.\n\nG1 options:\n  A. G1 / LOST\n  B. G3 / LOST\n  C. G2 / LOST\n  D. LOST\nG2 options:\n  A. G2 / LOST\n  B. G5 / LOST\n  C. G1 / LOST\n  D. LOST\nG3 options:\n  A. G3 / LOST\n  B. G1 / LOST\n  C. G2 / INHERITED\n  D. LOST\nG4 options:\n  A. G4 / MUTATED\n  B. G5 / LOST\n  C. G3 / MUTATED\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "C",
+        "G2": "C",
+        "G3": "A",
+        "G4": "B"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Envisioning the Future, One Step at a Time",
+      "target_paper": "Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge",
+      "dynamics": "Hybridization",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_025",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. A physics-informed neural-wave-function method first reconstructs an arbitrary complex many-body wave function by training a neural network to match the system's N-particle probability density and probability current density,\nG2. uses the learned state as pre-training initialization for variational optimization of the target Hamiltonian\nG3. This paper targets scalable computation of ground states and edge properties of highly entangled quantum matter, especially fractional quantum Hall systems with realistic interactions and Landau-level mixing.\nG4. The paper validates the method mainly on fractional quantum Hall and chiral BCS examples and depends on access to probability-density and current-density information for pre-training, leaving its effectiveness on broader many-body settings without such inputs unresolved.\nG5. The approach learns benchmark non-Abelian fractional quantum Hall and chiral BCS states to up to 99.9% overlap and enables efficient solution of Coulomb-interacting fractional quantum Hall systems with Landau-level mixing for as many as 25 particles, revealing distinctive edge features.\n\nTarget genome genes:\nG1. The paper introduces the Wavefunction Transformer (Psiformer), a self-attention-based neural-network wavefunction ansatz that models electron-electron interactions via attention and can be used as a drop-in replacement for prior variational Monte Carlo architectures such as FermiNet and PauliNet\nG2. This paper targets ab-initio solution of the many-electron Schrödinger equation for quantum chemistry, especially accurate ground-state energy estimation in molecules without external training data.\nG3. The abstract does not establish why or under what system conditions the attention mechanism succeeds, leaving the method's scaling behavior and robustness across broader chemical regimes unresolved.\nG4. Empirically, the self-attention Psiformer often yields substantially lower ground-state energies than prior neural ansätze, with especially large gains on larger molecules reaching improvements of dozens of kcal/mol.\n\nG1 options:\n  A. LOST\n  B. G3 / MUTATED\n  C. G3 / LOST\n  D. G4 / MUTATED\nG2 options:\n  A. G1 / MUTATED\n  B. G2 / MUTATED\n  C. LOST\n  D. G3 / INHERITED\nG3 options:\n  A. G3 / LOST\n  B. LOST\n  C. G2 / MUTATED\n  D. G1 / INHERITED\nG4 options:\n  A. G1 / INHERITED\n  B. G2 / LOST\n  C. LOST\n  D. G3 / MUTATED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "A",
+        "G3": "C",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "Artificial Intelligence for Quantum Matter: Finding a Needle in a Haystack",
+      "target_paper": "A Self-Attention Ansatz for Ab-initio Quantum Chemistry",
+      "dynamics": "Mutation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Mutation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_026",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. It introduces a theoretical iterative-retraining framework for mixed real/synthetic data and derives stability conditions based on initial model approximation quality and the fraction of clean data,\nG2. tests these conditions by repeatedly retraining normalizing flows and diffusion models on synthetic and real image mixtures\nG3. This paper studies when generative models remain reliable under repeated retraining on datasets increasingly contaminated or dominated by their own synthetic outputs.\nG4. The guarantees are conditional on strong assumptions about initial model quality and clean-data proportion, and the experiments cover only a limited set of image domains and model families, leaving behavior in broader web-scale settings unresolved.\nG5. The paper finds that iterative self-training can remain stable rather than collapse if the starting generator is sufficiently close to the true data distribution and enough real data is retained, which is supported empirically on synthetic data, CIFAR10, and FFHQ.\n\nTarget genome genes:\nG1. Performative prediction is presented as a conceptual framework that models deployment-induced distribution shift via a prediction-dependent data-generating process, centers analysis on an equilibrium notion induced by repeated prediction and response, and separates adaptation into learning versus steering and performative power\nG2. This paper targets the problem of understanding and formalizing prediction settings in social and digital systems where deployed predictions change the behavior and data distribution of the people being predicted.\nG3. As a review and conceptual synthesis, the paper does not itself provide a new concrete algorithm or empirical benchmark for measuring or mitigating performative effects in real deployed systems.\nG4. The paper's key insight is that many machine learning distribution shifts in social settings are inherently performative, and that analyzing them through equilibrium, steering, and performative power reveals effects invisible under static pattern-recognition views.\n\nG1 options:\n  A. G3 / MUTATED\n  B. G4 / MUTATED\n  C. G4 / INHERITED\n  D. LOST\nG2 options:\n  A. G1 / LOST\n  B. G1 / MUTATED\n  C. G4 / MUTATED\n  D. LOST\nG3 options:\n  A. LOST\n  B. G3 / MUTATED\n  C. G1 / MUTATED\n  D. G1 / LOST\nG4 options:\n  A. G2 / LOST\n  B. G4 / MUTATED\n  C. G4 / LOST\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "D",
+        "G2": "D",
+        "G3": "A",
+        "G4": "D"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "On the Stability of Iterative Retraining of Generative Models on their own Data",
+      "target_paper": "Performative Prediction: Past and Future",
+      "dynamics": "Niche Competition",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Niche Competition"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_027",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. A large-scale connectomics pipeline combines improved tissue preparation, volume EM imaging, alignment, segmentation, synapse detection, proofreading, cell-type definition, compartment refinement, and public atlas construction to reconstruct most central-brain neurons and their chemical synapses and link them to genetic tools\nG2. This paper targets the comprehensive mapping and interpretation of neural circuitry in the adult Drosophila central brain to enable circuit-level study of behavior.\nG3. Although extensive, the reconstruction covers only a large fraction rather than all of the adult Drosophila brain and emphasizes chemical synapses in the central brain, leaving some regions, modalities, and circuit elements incompletely captured.\nG4. The reconstructed adult fly central brain reveals detailed cell-type-resolved circuit structure, characteristic connection-strength and motif distributions across scales, electrical effects of compartmentalization, and evidence that dense packing has strongly shaped brain organization.\n\nTarget genome genes:\nG1. DVID is a web-based distributed versioned image dataservice that applies git-like branching, versioning, and moderated reintegration to connectomics data while using data-type-specific storage backends across local and cloud systems for efficient persistence and query\nG2. This paper targets collaborative management, modification, and publication of large EM-based connectomics image datasets and their derived annotations across distributed users and workflows.\nG3. The paper presents only the first steps toward distributed versioning for EM datasets and does not demonstrate a fully mature or broadly validated framework for large-scale remote collaboration and reintegration.\nG4. In deployment as the central data resource for Janelia's FlyEM team, versioned branching of connectomics data supported practical reconstruction workflows including proofreader training and segmentation experiments.\n\nG1 options:\n  A. G2 / MUTATED\n  B. LOST\n  C. G3 / INHERITED\n  D. G2 / LOST\nG2 options:\n  A. G3 / INHERITED\n  B. G1 / MUTATED\n  C. G1 / LOST\n  D. LOST\nG3 options:\n  A. LOST\n  B. G4 / INHERITED\n  C. G4 / MUTATED\n  D. G1 / MUTATED\nG4 options:\n  A. LOST\n  B. G3 / MUTATED\n  C. G1 / MUTATED\n  D. G1 / MUTATED\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "B",
+        "G2": "D",
+        "G3": "A",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "A connectome and analysis of the adult Drosophila central brain",
+      "target_paper": "DVID: Distributed Versioned Image-Oriented Dataservice",
+      "dynamics": "Niche Competition",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Niche Competition"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_028",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. It introduces a systematic taxonomy-driven analysis that classifies SGX-breaking attacks by root cause, transient trigger, leakage channel, attacker capability\nG2. maps generic transient-execution primitives onto enclave-specific interfaces such as entry, exit, exceptions, memory accesses\nG3. This paper targets understanding how speculative and transient execution attacks compromise the confidentiality guarantees of Intel SGX enclaves.\nG4. Because the work is primarily a structured retrospective analysis rather than a new defense or formal model, it does not itself validate comprehensive mitigations or guarantee coverage of future SGX attack variants beyond the surveyed taxonomy.\nG5. Compared with prior work that analyzed individual transient-execution exploits or general-purpose CPUs in isolation, this paper unifies SGX-specific attacks into a single enclave-centered framework that explicitly links processor-level phenomena to enclave lifecycle events, privilege assumptions, and defense layers.\n\nTarget genome genes:\nG1. Obelix is a runtime dynamic obfuscation system that selectively diversifies sensitive enclave code by injecting interchangeable execution variants and perturbing control flow, memory-access patterns\nG2. timing-visible behavior while preserving program correctness\nG3. This paper targets mitigation of side-channel information leakage in trusted-execution environments, especially enclaves whose observable execution behavior can reveal secret-dependent state.\nG4. Because Obelix avoids full-program randomization and focuses on selective runtime obfuscation for compatibility and overhead reasons, residual leakage may remain in unprotected regions or channels not sufficiently perturbed.\nG5. Compared with prior enclave defenses that mainly diagnose leakage or apply static, application-specific hardening, this work shifts to a general runtime mitigation that dynamically re-randomizes sensitive behavior across executions.\n\nG1 options:\n  A. G1 / LOST\n  B. G3 / INHERITED\n  C. LOST\n  D. G2 / LOST\nG2 options:\n  A. G1 / LOST\n  B. LOST\n  C. G3 / MUTATED\n  D. G2 / INHERITED\nG3 options:\n  A. G5 / INHERITED\n  B. LOST\n  C. G3 / MUTATED\n  D. G1 / INHERITED\nG4 options:\n  A. G4 / MUTATED\n  B. G1 / INHERITED\n  C. G2 / LOST\n  D. LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "A",
+        "G2": "A",
+        "G3": "C",
+        "G4": "A"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "SoK: SGX.Fail: How Stuff Gets eXposed",
+      "target_paper": "Obelix: Mitigating Side-Channels Through Dynamic Obfuscation",
+      "dynamics": "Speciation",
+      "domain": "golden",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T2-12_gene_alignment_029",
+    "task_type": "T2-12_gene_alignment",
+    "prompt": "Infer the gene-level diff from the source genome to the target genome. For each shown source gene, choose the best alignment option in the target genome. Surface word overlap is only a clue; use heritable mechanism role and mutation pattern.\n\nSource genome genes:\nG1. InstructMol is a multi-modal large language model that aligns molecular representations with text through instruction tuning under a two-stage training pipeline that first leverages molecular-text data\nG2. adapts with limited domain-specific supervision\nG3. This paper targets building a general-purpose molecular assistant for drug discovery that can understand and respond to tasks involving both molecular structures and natural language.\nG4. The paper still reports a remaining gap between InstructMol and specialized models, indicating that its versatile instruction-tuned setup does not yet fully match task-specific molecular systems.\nG5. Empirically, InstructMol substantially outperforms leading general LLMs on drug-discovery molecular tasks and narrows the performance gap to specialized molecular models.\n\nTarget genome genes:\nG1. BioT5+ extends the BioT5 text-to-text framework by jointly pretraining and multi-task instruction-tuning on expanded bio-text and molecular corpora while adding IUPAC-name integration and numerical tokenization to better align molecular structure, textual descriptions, and biological sequences\nG2. This paper targets generalized biological understanding across diverse bio-text, molecule, and protein tasks for bioinformatics and drug discovery.\nG3. Although BioT5+ improves generality, the paper does not resolve which added component— IUPAC integration, extra data, instruction tuning, or numerical tokenization—drives gains on which task types, leaving the source of improvement only partially disentangled.\nG4. Across 21 benchmark datasets spanning classification, regression, and generation, BioT5+ achieves broadly improved and often state-of-the-art performance, indicating that IUPAC-aware multimodal pretraining and multi-task tuning improve grounded biological reasoning.\n\nG1 options:\n  A. G3 / INHERITED\n  B. LOST\n  C. G1 / MUTATED\n  D. G1 / LOST\nG2 options:\n  A. G1 / MUTATED\n  B. LOST\n  C. G2 / MUTATED\n  D. G1 / LOST\nG3 options:\n  A. G4 / MUTATED\n  B. G2 / MUTATED\n  C. LOST\n  D. G1 / INHERITED\nG4 options:\n  A. G2 / INHERITED\n  B. G3 / MUTATED\n  C. LOST\n  D. G1 / LOST\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: A | B | C | D\nG2: A | B | C | D\nG3: A | B | C | D\nG4: A | B | C | D\n\nAnswer format:\nG1 = [A|B|C|D|LOST]\nG2 = [A|B|C|D|LOST]\nG3 = [A|B|C|D|LOST]\nG4 = [A|B|C|D|LOST]\n\nWrite exactly one line per field. Use the format \"Field = Option\". Do not add explanation. Do not omit any line. Do not answer with N, N/A, None, Unknown, or free text. Surface word overlap is only a clue; align by genome role and inheritance pattern.\n",
+    "gold_answer": {
+      "assignments": {
+        "G1": "B",
+        "G2": "B",
+        "G3": "B",
+        "G4": "B"
+      }
+    },
+    "response_format": "multi_slot",
+    "metadata": {
+      "source_paper": "InstructMol: Multi-Modal Integration for Building a Versatile and Reliable Molecular Assistant in Drug Discovery",
+      "target_paper": "BioT5+: Towards Generalized Biological Understanding with IUPAC Integration and Multi-task Tuning",
+      "dynamics": "Speciation",
+      "domain": "",
+      "capability": "Inheritance Tracing",
+      "display_title": "Gene Alignment"
+    },
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  }
+]

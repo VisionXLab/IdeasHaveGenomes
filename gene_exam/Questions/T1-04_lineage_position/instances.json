@@ -1,0 +1,657 @@
+[
+  {
+    "instance_id": "T1-04_lineage_position_0028",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The method splits modeled multiples into low-, middle-, and high-frequency bands, builds a composite convolutional filter per data window, and estimates sparse regularized matching coefficients by minimizing a combined L1-L2 objective with FISTA before subtraction.\"\n  Niche: \"Adaptive seismic multiple subtraction for separating modeled multiples from observed data while preserving primary reflections in seismic records.\"\n  Limitation: \"The paper still depends on the quality of the modeled multiples and fixed three-band decomposition, which may limit robustness when the model is inaccurate or frequency behavior is more complex.\"\n  Delta: \"Unlike prior adaptive subtraction methods that treat modeled multiples as one broadband signal, this approach jointly matches three separate frequency bands through a composite filter and sparse regularized optimization.\"\n  Observation: \"Using frequency-partitioned matching captures band-specific discrepancies between modeled and observed multiples and yields cleaner multiple attenuation with better primary preservation than single-band adaptive subtraction.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "地震多次波衰减",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0024",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"APEX is a persistent-memory learned index that uses a hierarchical model to predict key positions and then couples that predictor with PM-aware node layout, selective in-place updates, bounded local search, and crash-consistent structural modification protocols to minimize flushes, fences, and write amplification.\"\n  Niche: \"This paper targets the problem of building a high-performance ordered index for byte-addressable persistent memory that supports efficient lookups, updates, and crash recovery.\"\n  Limitation: \"APEX still depends on bounded-search maintenance around prediction errors and distribution shifts, so workloads with substantial local drift can require extra maintenance or reorganization rather than being handled purely by the learned model.\"\n  Delta: \"Compared with prior learned indexes built for volatile DRAM, APEX changes the design by introducing persistent-memory-aware layout separation, write-minimizing in-place update policies, and crash-consistent recovery mechanisms instead of directly porting the original structures.\"\n  Observation: \"The key insight is that learned indexes designed for DRAM perform poorly on persistent memory unless the model structure, metadata placement, update path, and recovery protocol are co-designed around persistence costs and consistency constraints.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "theory"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Database Systems",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0013",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It analyzes the normalized logarithm of the Laplacian determinant under Benjamini-Schramm-type local convergence while controlling degeneration through a vanishing normalized sum of reciprocals of lengths of very short simple closed geodesics.\"\n  Niche: \"The paper studies asymptotic behavior of Laplacian determinants for sequences of compact hyperbolic surfaces with growing volume that locally converge to a random rooted hyperbolic surface.\"\n  Limitation: \"The result requires a restrictive thin-part assumption on short geodesics and does not cover sequences where short closed geodesics contribute non-negligibly or where convergence fails to be local weak convergence.\"\n  Delta: \"Compared with prior work on spectral asymptotics for fixed or nondegenerating hyperbolic surfaces, this paper extends determinant convergence to varying high-volume surfaces converging locally to random limits under explicit control of geometric degeneration.\"\n  Observation: \"The main insight is that local weak convergence plus negligible contribution from very short geodesics is sufficient to force convergence of the normalized log-determinant to a universal constant determined only by the limiting random surface law.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "math.SP",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0052",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The method uses a recurrent 3D convolutional flood-filling network that iteratively updates a predicted object map for one object at a time from image data and the current mask, embedded in a pipeline with elastic alignment, tissue classification, multi-resolution consensus over-segmentation, FFN-based agglomeration, and biological plausibility filtering.\"\n  Niche: \"Automated 3D neuron reconstruction from volume electron microscopy for connectomics, with emphasis on minimizing merge and split errors in dense neurite segmentation.\"\n  Limitation: \"The approach is computationally intensive and pipeline-complex, and despite reducing errors it still depends on multiple auxiliary stages and does not fully eliminate segmentation mistakes or the need for validation in difficult regions.\"\n  Delta: \"Compared with prior methods that predict local voxel affinities or labels and then assemble objects in post-processing, this work directly grows individual objects through iterative feedback-driven segmentation and couples that with consensus and agglomeration to suppress mergers and repair splits.\"\n  Observation: \"Object-centric recurrent mask feedback enables substantially more accurate boundary refinement and lower merge rates than conventional voxelwise segmentation pipelines, and the full system achieves high-quality automated neuronal reconstructions under ERL and skeleton-based evaluation.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "system"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "电镜神经元分割",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0022",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"Diffusion probabilistic modeling defines a fixed forward Markov chain that gradually adds small Gaussian noise to data until it reaches a simple tractable distribution, then learns a parameterized reverse Markov chain with shared parameters by optimizing a variational log-likelihood bound to invert each noising step.\"\n  Niche: \"This paper targets unsupervised generative modeling of complex high-dimensional data distributions such as natural images.\"\n  Limitation: \"The method requires many sequential diffusion steps for both training and sampling, making generation computationally slow and the variational bound relatively loose compared with exact-likelihood alternatives.\"\n  Delta: \"Compared with prior latent-variable and autoregressive generative models, this work replaces direct one-shot density modeling with a fixed nonequilibrium noising process plus a learned reverse-time denoising chain whose training uses analytically available forward-process posteriors.\"\n  Observation: \"The paper finds that when the forward corruption steps are sufficiently small, the reverse conditionals become simple enough to model accurately with Gaussians, turning global density estimation into a sequence of tractable denoising subproblems.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "theory"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Machine Learning",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0015",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The paper builds Code Llama by initializing from Llama 2 and applying staged specialization with code pretraining, optional Python-focused fine-tuning, instruction tuning with RLHF/self-instruct data, infilling training via prefix-middle-suffix masking, and long-context adaptation using modified RoPE.\"\n  Niche: \"Open code-focused large language modeling for program synthesis, infilling, multilingual code generation, instruction following, and long-context code understanding.\"\n  Limitation: \"Despite strong open-model results, the work is still constrained by the general limitations of large code LLMs, including imperfect safety/reliability and remaining gaps relative to the best closed models.\"\n  Delta: \"Compared with prior open code LLMs, this work combines larger Llama 2 backbones, staged code/Python/instruction specialization, explicit infilling capability, and long-context fine-tuning into a publicly released family with commercial usability.\"\n  Observation: \"Across HumanEval, MBPP, APPS, and MultiPL-E, Code Llama variants achieve state-of-the-art performance among open models while adding strong infilling, instruction-following, and up to 100k-token context support.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "代码生成",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0056",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"PANDA uses a three-stage pipeline with nnU-Net pancreas localization, a multi-task convolutional architecture for joint lesion segmentation and patient-level detection, and a dual-path memory transformer architecture that classifies lesion subtype using texture and positional prototypes learned through cross-attention mechanism and self-attention mechanism.\"\n  Niche: \"This paper addresses large-scale detection, segmentation, and subtype classification of pancreatic lesions, including PDAC and multiple non-PDAC entities, directly from non-contrast CT for screening use.\"\n  Limitation: \"A main limitation is that performance depends on transferred annotations and retrospective curated datasets, which may constrain robustness and generalization across broader prospective screening settings and scanner distributions.\"\n  Delta: \"Compared with prior pancreatic imaging methods that typically target narrower tasks or rely on contrast-enhanced imaging, this work unifies localization, lesion detection-segmentation, and multi-class subtyping in a non-contrast CT screening-oriented framework.\"\n  Observation: \"The study finds that combining pathology-verified non-contrast CT training data with transferred annotations from contrast CT enables sensitive, specific, and interpretable pancreatic lesion recognition on real-world non-contrast scans.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "system"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "胰腺癌的早筛和风险分层",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0061",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The paper systematically organizes prior work by introducing JCAS and STAR-RIS fundamentals and then classifying existing studies across system architectures, waveform and beamforming design, resource allocation, optimization methods, and learning-based control.\"\n  Niche: \"This paper addresses the emerging domain of STAR-RIS-enabled joint communications and sensing in 6G wireless networks by surveying how full-space programmable surfaces can support integrated communication and environmental sensing.\"\n  Limitation: \"As a survey, the paper does not itself propose or experimentally validate a new STAR-RIS-JCAS algorithm or system, so its conclusions depend on the scope and maturity of the literature reviewed.\"\n  Delta: \"Compared with prior surveys on either JCAS or RIS separately, this work specifically consolidates and structures the nascent literature at their intersection around STAR-RIS-enabled JCAS and highlights open problems unique to full-space reconfigurable surfaces.\"\n  Observation: \"The central insight is that STAR-RIS can mitigate key JCAS trade-offs by enabling simultaneous transmission and reflection with full-space electromagnetic control, but practical deployment remains constrained by hardware limitations, coupled design objectives, and unresolved optimization complexity.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "system"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "eess.SY",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0060",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The paper builds Codex by fine-tuning Model-G on filtered public GitHub Python code and then further supervised fine-tuning on curated standalone correct functions, using stochastic sampling and log-probability-based reranking to generate candidate programs.\"\n  Niche: \"Natural-language-to-Python function synthesis from docstring specifications, evaluated on standalone function completion tasks such as HumanEval.\"\n  Limitation: \"The system still often produces incorrect, insecure, or biased code and its evaluation is limited to benchmarked standalone functions rather than full real-world software development settings.\"\n  Delta: \"Compared with prior Model-G-style language models trained mainly on natural language, this work adapts the model to code with a two-stage fine-tuning pipeline and evaluates it using execution-based functional correctness rather than only surface-form metrics.\"\n  Observation: \"Code-specialized fine-tuning substantially improves functional correctness over general language models, and generating multiple samples with selection heuristics further boosts pass@k on HumanEval.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "代码生成",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0055",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It surveys and synthesizes prior studies on reinforcement learning in genomics, organizing their methods, strengths, limitations, and future research directions around reward design, hybrid ML integration, and new application areas.\"\n  Niche: \"This paper addresses the emerging niche of applying reinforcement learning to genomics tasks such as gene regulatory network inference, genome assembly, and sequence alignment.\"\n  Limitation: \"As a survey, the paper does not introduce or experimentally validate a new reinforcement learning method, dataset, or benchmark for genomics.\"\n  Delta: \"Compared with broader machine learning reviews in genomics, this work narrows the focus specifically to reinforcement learning applications and provides a dedicated technical overview of that subfield.\"\n  Observation: \"The paper observes that reinforcement learning is promising for genomics because it can learn from experience with limited labeled data, but its success is strongly constrained by the quality of the reward function.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "analysis"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "q-bio.GN",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0064",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The method factorizes each long OverIVA separation filter into a bilinear product of two shorter filters and updates the coupled factors using an alternating iterative projection procedure.\"\n  Niche: \"Online blind source separation for overdetermined multichannel mixtures with large microphone arrays is addressed in the context of independent vector analysis.\"\n  Limitation: \"The paper appears limited to simulation-based validation and introduces a coupled alternating optimization whose convergence behavior and real-world performance are not fully established in the abstract.\"\n  Delta: \"Compared with standard OverIVA, the proposed approach replaces direct estimation of long separation filters with bilinearly decomposed short filters optimized alternately to better handle large-array parameter growth.\"\n  Observation: \"Simulations indicate that the bilinear decomposition greatly reduces parameter count while improving separation performance and robustness in online estimation.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "eess.AS",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0058",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It characterizes how changes in the correlation structure of consumer values affect the second-order-stochastic-dominance ordering of induced information rents and derives the fairness-efficiency frontier for tax mechanisms under regularity conditions.\"\n  Niche: \"This paper studies fair commodity taxation in markets where many independent monopolists sell to consumers whose valuations across goods are correlated.\"\n  Limitation: \"Its results rely on a stylized independent-monopolist environment and regularity assumptions on type distributions, which may limit applicability to richer competitive or multi-dimensional market settings.\"\n  Delta: \"Relative to classic monopoly taxation and mechanism-design work focused mainly on efficiency or revenue, this paper introduces fairness of information rents as a second-order-stochastic-dominance criterion and links it to correlation in valuations.\"\n  Observation: \"The paper shows that the tax authority never gains from randomizing allocations, that frontier mechanisms ration goods more than an unregulated monopolist, and that correlation shifts can make the distribution of consumer surplus more or less fair.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "econ.GN",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0035",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It extends a lightweight bipartite graph collaborative filtering model with self-supervised contrastive learning by creating perturbed graph views via node/edge dropout and jointly optimizing recommendation loss plus agreement between corresponding user/item embeddings across views.\"\n  Niche: \"This paper targets top-N recommendation from sparse implicit user–item interaction data.\"\n  Limitation: \"The method depends on hand-designed stochastic graph perturbations and a manually balanced contrastive regularizer, leaving sensitivity to augmentation choice and loss weighting unresolved.\"\n  Delta: \"Compared with prior graph recommenders such as LightGCN that use only supervised interaction objectives on the user–item graph, this work adds a contrastive self-supervised objective over multiple perturbed graph views while keeping propagation lightweight.\"\n  Observation: \"Adding cross-view contrastive self-supervision to simplified graph propagation yields more robust and semantically informative user and item representations than training only on observed interactions.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Data Mining",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0018",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatch standard-deviation feature in the discriminator.\"\n  Niche: \"This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\"\n  Limitation: \"The method depends on a hand-designed training curriculum and architecture-specific stabilization heuristics, leaving open how broadly the approach transfers beyond this staged resolution-growth setup.\"\n  Delta: \"Compared with prior GANs that attempted full-resolution synthesis from the start, this work changes training to a staged low-to-high-resolution expansion with fade-in layer insertion and adds explicit activation-scaling and minibatch-diversity mechanisms.\"\n  Observation: \"Growing GANs progressively lets the model learn global structure before fine detail, yielding substantially sharper, more coherent, and more diverse high-resolution images with more stable optimization than single-stage training.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Computer Vision",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0067",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It integrates quality-controlled hourly ozone observations from China's CNEMC network and the global TOAR database, computes harmonized exposure indicators such as MDA8, 4MDA8, SOMO35, NDGT70, AOT40, and W126, and applies statistical spatial and temporal comparisons across regions.\"\n  Niche: \"This paper addresses nationwide and globally comparable assessment of surface ozone pollution exposure in China for human health and vegetation impacts using standardized metrics.\"\n  Limitation: \"The paper is limited by its observational and descriptive design over a relatively short 2013–2017 window, which supports comparison and trend characterization but not strong causal attribution or long-term projection.\"\n  Delta: \"Compared with prior work constrained by sparse coverage, shorter records, and inconsistent metric definitions, this study provides the first harmonized nationwide China-versus-global comparison using dense hourly observations and standardized exposure metrics.\"\n  Observation: \"The study finds that China is a global hotspot of severe and frequent high-ozone events, with higher human and vegetation exposure than other major industrialized regions during 2013–2017.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "臭氧污染及成因",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0068",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The paper introduces a supervised two-stage machine learning pipeline in which an ensemble classifier using static structural and dynamical features first detects double-well candidates and an ensemble gradient-boosting regressor then predicts quantum splitting for those candidates, with iterative retraining to improve coverage.\"\n  Niche: \"Efficiently identifying double-well pairs and two-level systems from pairs of inherent structures in model glasses for large-scale exploration of the potential energy landscape.\"\n  Limitation: \"The framework depends on labeled training data from model-glass simulations and feature representations tied to inherent-structure pairs, which may limit direct transfer to other materials or unseen regimes without retraining.\"\n  Delta: \"Compared with prior dynamic filtering and ad hoc rule-based TLS searches, the paper replaces incomplete and expensive screening with an exhaustive, data-driven prediction pipeline that classifies all inherent-structure pairs and estimates their quantum splitting.\"\n  Observation: \"The authors find that this staged ensemble approach rapidly recovers a high fraction of TLS candidates while reducing wasted computation and providing interpretable signals about which features characterize quantum defects.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "system"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "软凝聚态物理与玻璃态转变动力学研究",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0019",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The paper proposes a lifecycle-structured DevSecOps AI synthesis framework that organizes AI capabilities by lifecycle stage, security objective, and automation level, and frames them as a closed-loop pipeline fusing signals from repositories, build systems, deployment logs, and runtime telemetry alongside rule-based tools.\"\n  Niche: \"This paper targets the problem of embedding AI across the full DevSecOps lifecycle to support secure software delivery from development through deployment and operations.\"\n  Limitation: \"Because this is a landscape synthesis rather than a new implemented pipeline, it does not empirically validate the proposed closed-loop integration or quantify tradeoffs among accuracy, explainability, and workflow compatibility.\"\n  Delta: \"Compared with prior work focused narrowly on AI for vulnerability detection or automated repair in isolated software security tasks, this paper expands the unit of analysis to an end-to-end DevSecOps pipeline with explicit operational integration and feedback loops.\"\n  Observation: \"The key insight is that AI for software security is most valuable when automated vulnerability analysis and repair are integrated with operational workflows and runtime feedback rather than treated as isolated point solutions.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "system"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Software Engineering",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0053",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It extends ASAFind into ASAFind 2.0 by adding optional PPC prediction, compatibility with SignalP 5.0 and TargetP 2.0 outputs, and a Python-based workflow for generating and applying custom scoring matrices with simplified score cut-offs.\"\n  Niche: \"The paper addresses automated prediction of intracellular targeting, especially plastid and periplastidic compartment (PPC) proteins, in diatoms and other algae with complex red-algal-derived plastids.\"\n  Limitation: \"A main limitation is that the method remains dependent on organism-group-specific scoring matrices and computational predictions, which may constrain generalization and still require experimental validation.\"\n  Delta: \"Compared with prior ASAFind, this version newly supports PPC protein prediction, accepts newer upstream predictor outputs, and enables user-customized scoring matrix adaptation for additional algal groups.\"\n  Observation: \"The key insight is that sequence features around targeting peptides can be scored in a way that supports not only plastid localization prediction but also practical discrimination of PPC-targeted proteins across complex-plastid algae.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "q-bio.SC",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0069",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It applies the RD-AIC framework together with two detailed binary population synthesis calculations to predict orbital parameters, birth rates, ages, and population fractions for eccentric MSP + sdB systems.\"\n  Niche: \"The paper addresses the predicted existence and properties of eccentric millisecond pulsar plus subdwarf B star binaries in the Galaxy under the rotationally delayed accretion-induced collapse formation channel.\"\n  Limitation: \"A main limitation is that the work is purely theoretical and population-synthesis based, with no observed eccentric MSP + sdB systems yet available to validate the assumptions or predictions.\"\n  Delta: \"Compared with prior RD-AIC work focused mainly on eccentric MSP + helium white dwarf binaries, this paper extends the scenario to subdwarf B companions and quantifies their expected Galactic demographics and orbital properties.\"\n  Observation: \"The study predicts that eccentric MSP + sdB binaries should be young, relatively common within the MSP + sdB class, typically host MSPs below 1.5 solar masses, and have a Galactic birth rate of about 0.67 to 1.5 times 10^-4 per year.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "system"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "astro-ph.GA",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0054",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"An attention mechanism-based bidirectional LSTM architecture encodes the sentence in both directions and computes an attention mechanism-weighted aggregation of hidden states, using word embeddings and position features to emphasize tokens most informative for the entity relation.\"\n  Niche: \"This paper targets sentence-level relation classification between two marked entities in text.\"\n  Limitation: \"The model still depends on sentence-level sequential encoding with manually supplied position information and does not explicitly model dependency structure or more structured interactions between the target entities.\"\n  Delta: \"Compared with prior convolutional architecture-centered relation classifiers and recurrent models using final-state or pooling summaries, this work replaces local feature extraction with BiLSTM sequence encoding and adds attention mechanism over all hidden states for relation-specific sentence representation.\"\n  Observation: \"The study finds that combining bidirectional recurrent context modeling with attention mechanism improves relation classification by better capturing long-range and distributed evidence than earlier convolution-based or fixed-summary recurrent approaches.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Information Extraction and Relation Mining",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0065",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The paper synthesizes recent technological developments in statistics education and proposes strategies for integrating tools such as R, Python, coding practices, database management, machine learning, and generative AI into teaching.\"\n  Niche: \"This paper addresses how university-level statistics education should adapt curricula and pedagogy to rapid technological change, including programming, databases, machine learning, and generative AI.\"\n  Limitation: \"The paper appears to be primarily a perspective or review article and therefore does not provide a new evaluated instructional method or causal evidence about which integrations most improve learning outcomes.\"\n  Delta: \"Compared with earlier discussions of technology in statistics education focused mainly on software adoption, this paper broadens the scope to include coding workflows, data infrastructure, machine learning, and especially generative AI.\"\n  Observation: \"It argues that statistical programming has become central to modern statistics courses and that generative AI is likely to become an increasingly important pedagogical consideration.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "stat.OT",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0031",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"A scalable behavior-based clustering method runs malware in an instrumented environment, abstracts runtime events into normalized behavioral feature tokens or sets, and clusters samples using efficient similarity computation over these compact behavior profiles.\"\n  Niche: \"This paper targets the problem of grouping large numbers of malware samples by functional similarity despite syntactic variation from packing, obfuscation, or small code changes.\"\n  Limitation: \"Because the framework depends on observed runtime traces and heavily abstracted event representations, it can miss behaviors not triggered during execution and may lose discriminative temporal detail between samples with similar event sets.\"\n  Delta: \"Compared with prior malware categorization based on byte signatures, imports, or expensive trace alignment, this work shifts to scalable clustering over normalized dynamic behavior abstractions that emphasize semantic actions over implementation artifacts.\"\n  Observation: \"The key insight is that abstracted dynamic behavior profiles preserve operational similarity well enough to cluster related malware families even when static binary features diverge substantially.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Computer Security",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0062",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"PALM combines STA/LTA and kurtosis-based P/S phase picking, robust temporal-spatial phase association, absolute and relative relocation with HYPOINVERSE and HypoDD, and GPU-accelerated matched-filter detection and stacking in the PAL and MESS modules.\"\n  Niche: \"Automated construction of high-completeness, high-precision earthquake catalogs from continuous seismic data without requiring a reference catalog.\"\n  Limitation: \"The paper still depends on conventional picking, association, and relocation components whose performance may degrade in very noisy settings or under network and velocity-model limitations.\"\n  Delta: \"Compared with prior work that typically emphasizes either efficient phase picking/location or matched-filter completeness in separate tools, PALM unifies both into a seamless, fully automated, open-source pipeline.\"\n  Observation: \"The integrated workflow first builds a precise initial catalog and then expands it with matched-filter detections to yield more complete, unbiased, and higher-resolution seismicity catalogs from raw data.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "地震波检测",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0057",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"The authors use N-body simulations of multi-Neptune resonant chains interacting with low-mass planetesimal disks to track chain disruption, delayed instability, scattering, collisions, tidal effects, and ejections over Myr-Gyr timescales.\"\n  Niche: \"This paper addresses how resonant chains of cold Neptunes and sub-Neptunes evolve after gas-disk dispersal when coupled to remnant planetesimal disks, and what outcomes this produces for planetary system architectures.\"\n  Limitation: \"The study is limited by its idealized simulation setup and strong sensitivity of instability timescales to assumed disk masses, initial resonant configurations, and simplified treatment of post-scattering tidal outcomes.\"\n  Delta: \"Compared with prior work focused mainly on giant-planet or intrinsically unstable compact systems, this paper identifies low-mass remnant planetesimal disks as an efficient trigger of delayed instabilities specifically in resonant chains of cold Neptunes and sub-Neptunes.\"\n  Observation: \"They find that planetesimal disks containing about 1-4% of the total planetary mass can efficiently break resonant chains and trigger delayed global instabilities, often sending at least one planet inward to about 0.1 au where tidal capture or disruption is common.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "astro-ph.EP",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-04_lineage_position_0023",
+    "task_type": "T1-04_lineage_position",
+    "prompt": "Based on this genome's content, where does it sit in its lineage?\n\n  Mechanism: \"It formulates evasion as a constrained optimization problem that uses gradients of the classifier decision function, plus differentiable and kernelized approximations when needed, to iteratively minimize the target score under attacker-specific feature manipulation constraints, including surrogate-model transfer in limited-knowledge settings.\"\n  Niche: \"This paper targets test-time evasion of machine-learning classifiers, where malicious inputs are modified to be misclassified as benign without losing their intended malicious functionality.\"\n  Limitation: \"The method depends on having a usable differentiable objective or approximation and operates in feature space, so the realism of the produced attacks is limited by how faithfully feature constraints capture valid manipulations in the original application domain.\"\n  Delta: \"Compared with earlier heuristic or domain-specific security evaluations, this work replaces ad hoc attack scripts with an explicit threat-model-driven, optimization-based framework for worst-case test-time evasion across multiple classifier families.\"\n  Observation: \"The study shows that both linear and nonlinear discriminative classifiers can be systematically evaded by small, functionality-preserving input perturbations, and that attacks crafted on surrogate models can often transfer to the true target.\"\n\nPart 1: Lineage position\nA. Root — foundational work that started the lineage\nB. Middle — builds on predecessors and has successors\nC. Leaf — end of the lineage, latest work\nAnswer with two lines:\nLabel = [A|B|C]\nType = [method|dataset|analysis|system|theory]",
+    "choices": {
+      "A": "Root",
+      "B": "Middle",
+      "C": "Leaf"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "method"
+    },
+    "metadata": {
+      "baseline": "33.3%",
+      "subfield": "Computer Security",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-1_genome_lineage_position",
+      "display_title": "Lineage Position"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  }
+]

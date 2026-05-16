@@ -1,0 +1,246 @@
+{
+  "trace_id": "energy_SmartGridOptimization",
+  "domain": "energy",
+  "direction": "Smart Grid and Power System Optimization with AI",
+  "subfield": "Energy / Power Systems and Smart Grids",
+  "frontier_justification": "This direction remains a May 2026 frontier because grid AI is moving from forecasting and optimization toward agentic analysis and operational decision support, while power-system control remains safety-critical. The unresolved question is how to combine LLM agents, physics-constrained optimization, privacy-preserving data access, and formal guarantees before real-time autonomous dispatch can be trusted.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Optimal Power Flow Using Graph Neural Networks",
+      "year": 2020,
+      "venue": "ICASSP 2020 - IEEE International Conference on Acoustics, Speech and Signal Processing",
+      "arxiv_id": "1910.09658",
+      "paper_type": "research",
+      "key_contribution": "Pioneered the use of graph neural networks for approximating optimal power flow solutions by exploiting the natural graph topology of power networks, demonstrating that GNNs provide localized, scalable parameterizations that generalize across different network conditions.",
+      "idea_genome": {
+        "problem_genome": "Can graph neural networks that respect the topology of power networks provide fast, scalable approximations to the non-convex optimal power flow problem, which is computationally prohibitive for real-time operation?",
+        "mechanism_genome": "Graph neural networks trained under an imitation learning framework using solutions from conventional OPF solvers as supervision, exploiting the graph structure of power networks to learn localized dispatch policies that scale with network size.",
+        "observation_genome": "GNN-based models produced near-optimal power flow solutions with significantly reduced computation time on IEEE-30 and IEEE-118 test cases, demonstrating that network topology-aware architectures outperform fully connected alternatives for power system problems.",
+        "limitation_genome": "The approach relied on supervised imitation of conventional solvers, could not guarantee constraint satisfaction or optimality, and was evaluated only on standard test cases without addressing the stochastic variability introduced by renewable energy sources."
+      }
+    },
+    {
+      "title": "DeepOPF: A Deep Neural Network Approach for Security-Constrained DC Optimal Power Flow",
+      "year": 2021,
+      "venue": "IEEE Transactions on Power Systems (2021)",
+      "arxiv_id": "1910.14448",
+      "paper_type": "research",
+      "key_contribution": "Developed DeepOPF, a DNN framework that learns to predict generator dispatch from load inputs and reconstructs phase angles using power flow equations, achieving up to two orders of magnitude computational speedup over conventional SC-DCOPF solvers while maintaining less than 0.2% optimality gap.",
+      "idea_genome": {
+        "problem_genome": "How can deep neural networks solve security-constrained DC optimal power flow problems fast enough for real-time power system operations while ensuring solution feasibility?",
+        "mechanism_genome": "A DNN that predicts active power generation from load inputs, then reconstructs power flows and phase angles using the known DC power flow equations rather than learning them, reducing the dimensionality of the learning problem and incorporating physics into the solution pipeline.",
+        "observation_genome": "DeepOPF achieved speedups of up to 100x compared to conventional solvers on large-scale systems with less than 0.2% cost difference, and the physics-based reconstruction step ensured power balance constraints were exactly satisfied.",
+        "limitation_genome": "The approach was limited to DC-OPF approximations and did not handle AC power flow nonlinearities, voltage constraints, or reactive power; it also assumed a fixed network topology and did not address uncertainty from renewables."
+      }
+    },
+    {
+      "title": "Multi-Agent Reinforcement Learning for Active Voltage Control on Power Distribution Networks",
+      "year": 2021,
+      "venue": "NeurIPS 2021 (Advances in Neural Information Processing Systems)",
+      "arxiv_id": "2110.14300",
+      "paper_type": "research",
+      "key_contribution": "Formulated active voltage control as a decentralized partially observable Markov decision process and applied multi-agent reinforcement learning, establishing the MAPDN open-source benchmark environment for distributed voltage regulation using PV inverters and static var compensators.",
+      "idea_genome": {
+        "problem_genome": "How can distributed controllable devices (PV inverters, SVCs) be coordinated via decentralized multi-agent reinforcement learning to maintain voltage stability across power distribution networks without centralized communication?",
+        "mechanism_genome": "Formulation of active voltage control as Dec-POMDP with each controllable device as an agent, trained using multi-agent actor-critic algorithms with shared critic networks, enabling decentralized execution with centralized training on a custom open-source simulation environment.",
+        "observation_genome": "MARL agents successfully coordinated hundreds of distributed devices to maintain voltage stability, outperforming rule-based and single-agent baselines, and the MAPDN environment enabled systematic benchmarking of different MARL algorithms for power network control.",
+        "limitation_genome": "The MARL framework was tested in simulation and did not address real-world deployment challenges such as communication latency, partial observability noise, and safety constraints; agents lacked explicit safety guarantees during training and execution."
+      }
+    },
+    {
+      "title": "Stabilizing Voltage in Power Distribution Networks via Multi-Agent Reinforcement Learning with Transformer",
+      "year": 2022,
+      "venue": "KDD 2022 (ACM SIGKDD Conference on Knowledge Discovery and Data Mining)",
+      "arxiv_id": "2206.03721",
+      "paper_type": "research",
+      "key_contribution": "Introduced a Transformer-based multi-agent actor-critic framework (T-MAAC) for voltage control that uses self-attention to model inter-agent dependencies, significantly improving coordination among distributed controllers compared to standard MARL architectures.",
+      "idea_genome": {
+        "problem_genome": "Can Transformer architectures improve multi-agent coordination for voltage control by capturing long-range dependencies and complex interaction patterns among distributed devices that standard MARL frameworks miss?",
+        "mechanism_genome": "A Transformer-based multi-agent actor-critic framework where the attention mechanism enables each agent to dynamically weight information from other agents based on relevance, replacing fixed communication structures with learned, context-dependent inter-agent attention.",
+        "observation_genome": "T-MAAC achieved superior voltage stabilization performance compared to standard MARL baselines, demonstrating that Transformer attention captures critical inter-agent dependencies in power networks that fixed-topology communication graphs cannot represent.",
+        "limitation_genome": "The framework still operated within a task-specific MARL paradigm trained from scratch for voltage control, without leveraging pre-trained representations or transferring knowledge across different grid topologies and operational scenarios."
+      }
+    },
+    {
+      "title": "Deep Reinforcement Learning for Voltage Control and Renewable Accommodation Using Spatial-Temporal Graph Information",
+      "year": 2024,
+      "venue": "IEEE Transactions on Sustainable Energy 2024",
+      "arxiv_id": "2401.15848",
+      "paper_type": "research",
+      "key_contribution": "Proposes a DRL-based voltage control strategy using spatial-temporal graph information to dynamically balance voltage fluctuation control and renewable energy accommodation; integrates graph neural networks with reinforcement learning to capture both network topology and temporal dynamics for distribution networks with high renewable penetration.",
+      "idea_genome": {
+        "problem_genome": "Existing MARL voltage control methods (T-MAAC) model inter-agent dependencies but ignore the spatial-temporal structure of power network dynamics; high renewable energy penetration creates correlated voltage fluctuations across space and time that require explicit spatial-temporal graph reasoning for effective control.",
+        "mechanism_genome": "Graph neural network encodes spatial topology of the distribution network while temporal features capture time-series dynamics of renewable generation and load; the combined spatial-temporal graph representation is fed to a DRL agent that learns to optimally balance voltage regulation and renewable accommodation through dynamic reactive power dispatch.",
+        "observation_genome": "The spatial-temporal graph DRL agent achieves superior voltage regulation while accommodating more renewable generation than standard DRL baselines and MARL methods; demonstrates that explicit spatial-temporal graph reasoning improves both control performance and renewable integration on distribution networks with high PV penetration.",
+        "limitation_genome": "Evaluated in simulation without real-world deployment; single-agent centralized approach may not scale to very large networks; does not address safety constraints formally; no transfer across different grid topologies or operating conditions."
+      }
+    },
+    {
+      "title": "Physics-Informed GNN for non-linear constrained optimization: PINCO a solver for the AC-optimal power flow",
+      "year": 2024,
+      "venue": "ICLR 2025",
+      "arxiv_id": "2410.04818",
+      "paper_type": "research",
+      "key_contribution": "PINCO: first physics-informed GNN that solves the full nonlinear AC-OPF problem without constraint violations; combines graph neural networks with a hard-constraint PINN formulation (H-PINN) to guarantee feasibility while achieving orders-of-magnitude speedup over nonlinear programming solvers; generalizes across diverse loading conditions.",
+      "idea_genome": {
+        "problem_genome": "DeepOPF and GNN-based OPF approximations were limited to DC-OPF linearizations and could not guarantee constraint satisfaction; the full AC-OPF with nonlinear power flow equations, voltage constraints, and inequality constraints remained unsolvable by neural networks without post-hoc correction or constraint violations.",
+        "mechanism_genome": "Graph neural network architecture that respects power grid topology combined with H-PINN (Hard-constraint Physics-Informed Neural Network) that embeds AC power flow equations and inequality constraints directly into the loss function and architecture; unsupervised training without requiring solutions from conventional solvers; GNN enables topology-aware learning that generalizes across grid configurations.",
+        "observation_genome": "PINCO solves AC-OPF without inequality constraint violations — a first for neural network approaches; achieves orders-of-magnitude computational speedup over nonlinear programming solvers (IPOPT); generalizes effectively across diverse loading conditions; demonstrates that physics-informed GNNs can replace conventional solvers for the most challenging power flow optimization problem.",
+        "limitation_genome": "Evaluated on standard IEEE test cases, not yet validated on real large-scale grids with thousands of buses; does not handle stochastic optimization under renewable uncertainty; single-snapshot optimization without temporal coupling; no integration with real-time grid control systems or safety certification frameworks."
+      }
+    },
+    {
+      "title": "Foundation Models for the Electric Power Grid",
+      "year": 2024,
+      "venue": "Joule (2024)",
+      "arxiv_id": "2407.09434",
+      "paper_type": "research",
+      "key_contribution": "Proposed the GridFM concept of graph neural network-based foundation models for electric power grids pre-trained on diverse grid operational data through self-supervision, demonstrating that a single pre-trained model can be fine-tuned for multiple downstream tasks including load forecasting, fault detection, and stability assessment with 3-4 orders of magnitude computational speedup.",
+      "idea_genome": {
+        "problem_genome": "Can foundation models pre-trained on large-scale, diverse power grid operational data provide general-purpose representations that transfer across multiple downstream grid management tasks, replacing the need to train separate models for each task?",
+        "mechanism_genome": "Graph neural network-based foundation models pre-trained on heterogeneous grid data (load profiles, generation patterns, topology changes) using self-supervised objectives, then fine-tuned for specific downstream tasks through transfer learning with minimal task-specific data.",
+        "observation_genome": "The GridFM concept demonstrated that pre-trained grid representations enable 3-4 orders of magnitude computational speedup while maintaining accuracy across diverse downstream tasks, and that foundation model generalizability allows rapid adaptation to new grid configurations and scenarios.",
+        "limitation_genome": "The foundation model framework was presented as a perspective with limited experimental validation on real large-scale grids; questions of data standardization, privacy across utilities, and safety certification for real-time deployment remain unresolved."
+      }
+    },
+    {
+      "title": "PowerPM: Foundation Model for Power Systems",
+      "year": 2024,
+      "venue": "NeurIPS 2024 (Advances in Neural Information Processing Systems)",
+      "arxiv_id": "2408.04057",
+      "paper_type": "research",
+      "key_contribution": "Built the first implemented foundation model for power systems pre-trained on large-scale electricity time series data, introducing masked ETS modeling and dual-view contrastive learning objectives that capture both temporal and hierarchical dependencies, and demonstrating generalization across 44 downstream tasks.",
+      "idea_genome": {
+        "problem_genome": "How can a foundation model be concretely implemented and pre-trained on large-scale electricity time series data to simultaneously capture temporal dynamics and hierarchical spatial dependencies in power systems, generalizing across dozens of downstream tasks?",
+        "mechanism_genome": "A Transformer-based architecture pre-trained with two self-supervised objectives: masked electricity time series modeling for temporal dependency capture and dual-view contrastive learning for hierarchical spatial dependency awareness, creating rich representations of power system dynamics that transfer to diverse downstream tasks.",
+        "observation_genome": "PowerPM generalized to 44 downstream power system tasks including load forecasting, renewable generation prediction, and anomaly detection, consistently outperforming task-specific baselines and demonstrating the practical viability of foundation models for power systems with real grid data from State Grid.",
+        "limitation_genome": "PowerPM focused on time series forecasting tasks and did not address real-time control, dispatch optimization, or safety-critical decision-making; integration with physical grid simulators and formal safety verification for deployment in production grid operations remains an open challenge."
+      }
+    },
+    {
+      "title": "Implementing Deep Reinforcement Learning-Based Grid Voltage Control in Real-World Power Systems: Challenges and Insights",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "2410.19880",
+      "paper_type": "research",
+      "key_contribution": "First systematic study of deploying deep reinforcement learning for voltage control in real-world power systems (ISO New England node-breaker model); identifies critical gaps between simulation success and real-world deployment including model fidelity, safety constraints, and scalability challenges across IEEE 14-bus, Illinois 200-bus, and ISO-NE systems.",
+      "idea_genome": {
+        "problem_genome": "MARL and DRL methods for voltage control have shown strong performance in simulation benchmarks (MAPDN, IEEE test cases), but no systematic study had evaluated the challenges of deploying these methods in real-world grid operations with actual utility-grade power system models and operational constraints.",
+        "mechanism_genome": "Systematic experimental evaluation of DRL agents across three progressively realistic environments: IEEE 14-bus (standard benchmark), Illinois 200-bus (medium-scale), and ISO New England node-breaker model (real utility-grade system); identifies deployment gaps including simulation-to-real transfer, safety constraint handling, scalability to large grids, and integration with existing grid control infrastructure.",
+        "observation_genome": "DRL agents perform well on small standard benchmarks but face significant challenges on real-world utility models: performance degrades with increasing system complexity; safety constraint violations increase with network size; simulation-to-real transfer gap is substantial; computational requirements for real-time deployment on large grids remain prohibitive without approximations.",
+        "limitation_genome": "The study identifies problems but does not fully solve them; focuses on voltage control without addressing other grid operation tasks; does not propose a unified framework for safe DRL deployment; ISO-NE model, while realistic, is still a model rather than live grid deployment."
+      }
+    },
+    {
+      "title": "GridMind: LLMs-Powered Agents for Power System Analysis and Operations",
+      "year": 2025,
+      "venue": "SC 2025 Workshops",
+      "arxiv_id": "2509.02494",
+      "paper_type": "research",
+      "key_contribution": "GridMind: first multi-agent LLM system that integrates large language models with deterministic engineering solvers for conversational power system analysis; specialized agents coordinate AC-OPF and N-1 contingency analysis through natural language interfaces while maintaining numerical precision, enabling conversational scientific computing for grid operations.",
+      "idea_genome": {
+        "problem_genome": "Foundation models (GridFM, PowerPM) provide pre-trained grid representations for downstream tasks, but grid operators still need specialized programming expertise to configure solvers, interpret results, and coordinate multi-step analyses; there is no natural-language interface that bridges AI foundation models with the rigorous engineering solvers required for safety-critical grid operations.",
+        "mechanism_genome": "Multi-agent architecture where specialized LLM agents handle different aspects of power system analysis (AC-OPF, contingency analysis, result interpretation); agents coordinate through a central orchestrator using natural language; each agent interfaces with deterministic engineering solvers via function calls to maintain numerical precision; preserves context across multi-step analysis workflows.",
+        "observation_genome": "GridMind consistently delivers correct solutions on IEEE test cases across all tested LLMs; smaller LLMs achieve comparable analytical accuracy with reduced computational latency; the natural language interface enables grid operators to perform complex analyses (AC-OPF, N-1 contingency screening) through conversational queries without programming expertise.",
+        "limitation_genome": "Evaluated on standard IEEE test cases rather than real utility-scale grids; depends on underlying LLM quality for natural language understanding; does not directly control grid assets or make real-time decisions; no formal safety verification for LLM-generated analysis workflows; scalability to thousands-of-bus systems untested."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The GNN-based OPF approximation mutated from a topology-aware but purely learned approach into a hybrid framework that embeds physics-based power flow equations directly into the neural network pipeline. While the GNN work learned the entire mapping end-to-end, DeepOPF mutated the paradigm by using the DNN only to predict generator dispatch and then reconstructing phase angles analytically via DC power flow equations, ensuring exact power balance. This mutation from pure learning to physics-augmented learning yielded both better constraint satisfaction and larger speedups."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "The ML-for-OPF lineage speciated from centralized generation dispatch optimization into a fundamentally different problem niche: distributed voltage control via multi-agent reinforcement learning. While DeepOPF solved a centralized optimization problem, the MARL voltage control work addressed decentralized coordination of hundreds of distributed devices. This speciation reflected the real-world shift in power systems from centralized generation to distributed energy resources, creating an entirely new class of AI control problems."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The MARL framework for voltage control hybridized with Transformer architectures from natural language processing. The original MARL approach used standard actor-critic with fixed communication patterns, while T-MAAC integrated self-attention mechanisms that dynamically learn inter-agent dependencies. This hybridization of reinforcement learning with attention-based sequence modeling created a more expressive coordination mechanism that captures complex, context-dependent relationships among distributed grid controllers."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The spatial-temporal graph DRL approach mutates T-MAAC's Transformer-based MARL by replacing the learned inter-agent attention with explicit graph neural network encoding of the power network topology and temporal dynamics. While T-MAAC learns communication patterns from scratch, this work directly encodes known spatial-temporal structure of the grid, combining GNN-based topology awareness with temporal feature extraction. The mutation adds explicit renewable accommodation as a dual objective alongside voltage control, adapting the paradigm to high-renewable-penetration grids."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "PINCO is a direct mutation of the original GNN-for-OPF paradigm that addresses its two critical limitations: it extends from DC-OPF to the full nonlinear AC-OPF, and it guarantees constraint satisfaction through the H-PINN formulation. The core idea of using GNNs to exploit grid topology remains unchanged, but the physics-informed training and hard-constraint architecture represent a fundamental quality improvement — analogous to a mutation that strengthens an organism's immune system, making it viable in environments (AC-OPF with safety constraints) that would have killed its ancestor."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Task-specific GNN/DRL models for individual grid problems radiated into a foundation model paradigm that addresses multiple grid tasks simultaneously. While PINCO perfected physics-informed GNN for a single task (AC-OPF), the GridFM concept proposed pre-training a single GNN-based model on diverse grid data that can be fine-tuned for any downstream task — load forecasting, fault detection, stability assessment. This adaptive radiation from specialist to generalist mirrors the LLM revolution in NLP, representing the most significant architectural shift in the lineage."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "GridFM and PowerPM compete in the same niche of foundation models for power systems but with different strategies. GridFM proposed GNN-based architectures suited to grid topology, while PowerPM implemented Transformer-based architectures focused on temporal and hierarchical patterns in electricity time series. PowerPM demonstrated concrete results across 44 tasks with real State Grid data, moving from the conceptual GridFM perspective to a validated, deployable system. This niche competition between graph-based and sequence-based foundation model architectures drives rapid progress in the field."
+    },
+    {
+      "from_idx": 7,
+      "to_idx": 8,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The real-world DRL deployment study is a mutation of the simulation-based DRL voltage control lineage: the same core DRL approach is stress-tested on progressively realistic grid models, from IEEE benchmarks to the real ISO New England node-breaker model. The mechanism remains DRL for voltage control, but the evaluation mutates from simulation benchmarks to real-world utility-grade systems, revealing the critical adaptation gap — analogous to a laboratory organism encountering wild conditions for the first time, exposing fitness weaknesses that simulated environments masked."
+    },
+    {
+      "from_idx": 8,
+      "to_idx": 9,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "GridMind hybridizes the power system foundation model lineage with large language models from NLP. From PowerPM/GridFM it inherits the concept of AI-powered grid analysis, and from the LLM lineage it inherits natural language understanding and multi-agent orchestration. The hybrid creates a new organism: a conversational grid operations assistant where LLM agents interface with deterministic engineering solvers through function calls, combining the reasoning and communication abilities of language models with the numerical precision of power system tools — a fundamentally new mode of human-AI interaction for grid operations."
+    }
+  ],
+  "open_question": "GridMind shows that LLM agents can assist power-system analysis, but autonomous grid operation is still blocked by safety certification, latency, cascading-failure risk, privacy, and formal constraint satisfaction. What physics-constrained agent framework would let LLM and grid foundation models propose dispatch and contingency actions with verifiable guarantees under real-time utility constraints?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Energy / Power Systems and Smart Grids."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 10 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 4,
+    "Speciation": 1,
+    "Hybridization": 2,
+    "Adaptive Radiation": 1,
+    "Niche Competition": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "GridMind: LLMs-Powered Agents for Power System Analysis and Operations",
+      "year": 2025,
+      "venue": "SC 2025 Workshops",
+      "identifier": "2509.02494",
+      "unresolved_gap": "LLM agents can support power-system analysis, but autonomous grid operation remains unresolved because safety-critical control requires formal guarantees, latency bounds, privacy, and robustness to cascading failures.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

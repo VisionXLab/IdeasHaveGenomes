@@ -1,0 +1,225 @@
+{
+  "trace_id": "energy_BatteryOptimization",
+  "domain": "energy",
+  "direction": "AI for Battery and Energy Storage Optimization",
+  "subfield": "Energy / Electrochemical Energy Storage",
+  "frontier_justification": "This direction remains a May 2026 frontier because battery AI is converging from two directions: atomistic electrolyte discovery through transferable ML potentials and system-level health management through data-driven charging and degradation models. The open frontier is a closed-loop stack that connects molecular electrolyte design to interphase chemistry, cell aging, manufacturing constraints, and fleet operation.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Data-driven prediction of battery cycle life before capacity degradation",
+      "year": 2019,
+      "venue": "Nature Energy (2019)",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "Demonstrated that machine learning models trained on early-cycle discharge voltage curves can predict lithium-ion battery cycle life with 9.1% test error using the first 100 cycles, establishing the first large-scale data-driven framework for battery lifetime prediction before capacity degradation onset.",
+      "idea_genome": {
+        "problem_genome": "Can battery cycle life be accurately predicted from early-cycle data before any observable capacity degradation, enabling rapid evaluation of battery designs and charging protocols?",
+        "mechanism_genome": "Feature engineering from early-cycle discharge voltage curves combined with regularized linear models and other ML methods, trained on a purpose-built dataset of 124 commercial LFP/graphite cells cycled under diverse fast-charging conditions with widely varying cycle lives (150-2300 cycles).",
+        "observation_genome": "The best models predicted cycle life with 9.1% test error from the first 100 cycles and achieved 4.9% error for binary classification using only the first 5 cycles, proving that early-cycle signatures encode rich information about long-term degradation trajectories.",
+        "limitation_genome": "The models were specific to one cell chemistry (LFP/graphite) and fast-charging variations; they could not prescribe optimal protocols, generalize across chemistries without retraining, or incorporate physics-based degradation mechanisms."
+      }
+    },
+    {
+      "title": "Closed-loop optimization of fast-charging protocols for batteries with machine learning",
+      "year": 2020,
+      "venue": "Nature (2020)",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "Combined the early-prediction model from Severson et al. with Bayesian optimization to create the first closed-loop ML system for optimizing battery fast-charging protocols, identifying high-cycle-life protocols from 224 candidates in 16 days compared to 500+ days for exhaustive search.",
+      "idea_genome": {
+        "problem_genome": "How can one efficiently search the vast space of multi-step fast-charging protocols to maximize battery cycle life, when each experimental evaluation takes months of continuous cycling?",
+        "mechanism_genome": "A closed-loop framework combining an early-prediction model (reducing per-experiment time by predicting cycle life from early cycles) with Bayesian optimization (reducing the number of experiments by balancing exploration and exploitation across the protocol space).",
+        "observation_genome": "The closed-loop system identified optimal fast-charging protocols from 224 candidates in only 16 days with 13 experimental rounds, achieving a 30x speedup over exhaustive search, demonstrating that automated feedback from past experiments can dramatically accelerate battery protocol optimization.",
+        "limitation_genome": "The optimization was specific to charging protocol selection for one cell chemistry and did not extend to electrolyte design, electrode materials, or cell architecture; the physics of degradation remained a black box within the optimization loop."
+      }
+    },
+    {
+      "title": "Machine learning pipeline for battery state-of-health estimation",
+      "year": 2021,
+      "venue": "Nature Machine Intelligence (2021)",
+      "arxiv_id": "2102.00837",
+      "paper_type": "research",
+      "key_contribution": "Designed a systematic ML pipeline for battery state-of-health estimation on 179 cells under varied conditions, engineering 30 features from charge voltage/current curves with automatic feature selection and algorithm calibration, achieving 0.45% RMSE for fast-charging cells.",
+      "idea_genome": {
+        "problem_genome": "How can a systematic, reproducible ML pipeline be designed for battery SOH estimation that works across varied cycling conditions and provides calibrated confidence intervals?",
+        "mechanism_genome": "Engineer 30 features from segments of charge voltage and current curves; perform automatic feature selection; compare two parametric and two non-parametric algorithms with confidence interval calibration on 179 cells cycled under diverse conditions.",
+        "observation_genome": "The best model achieves RMSE of 0.45% on fast-charging protocol cells; the systematic pipeline with automatic feature selection and algorithm comparison demonstrates reproducibility across different cycling conditions and battery chemistries.",
+        "limitation_genome": "Feature engineering is hand-designed from domain knowledge; the pipeline does not learn features end-to-end; limited to SOH estimation from charge curves rather than predicting remaining useful life or diagnosing degradation modes."
+      }
+    },
+    {
+      "title": "Machine learning-assisted multi-objective optimization of battery manufacturing from synthetic data generated by physics-based simulations",
+      "year": 2023,
+      "venue": "Energy Storage Materials (2023)",
+      "arxiv_id": "2205.01621",
+      "paper_type": "research",
+      "key_contribution": "Proposed an ML pipeline that trains on synthetic data from physics-based electrode simulations to perform multi-objective optimization of battery electrode manufacturing parameters, enabling inverse design of electrode microstructure.",
+      "idea_genome": {
+        "problem_genome": "How can ML optimize multiple competing electrode properties (tortuosity, conductivity, active surface area, density) simultaneously and inversely design manufacturing parameters, when experimental data is scarce?",
+        "mechanism_genome": "Generate synthetic datasets via physics-based simulations of electrode manufacturing using low-discrepancy sequences to cover the parameter space; train deterministic ML models on synthetic data; use multi-objective optimization to identify Pareto-optimal electrode designs and their manufacturing parameters.",
+        "observation_genome": "The pipeline simultaneously minimizes electrode tortuosity factor while maximizing electronic conductivity, active surface area, and density; inverse design recovers manufacturing parameters for target electrode properties without experimental trial-and-error.",
+        "limitation_genome": "Relies on the fidelity of physics-based simulations for synthetic data generation; does not incorporate real experimental validation of optimized designs; limited to electrode manufacturing without considering full cell assembly or electrolyte interactions."
+      }
+    },
+    {
+      "title": "Deep learning to estimate lithium-ion battery state of health without additional degradation experiments",
+      "year": 2023,
+      "venue": "Nature Communications (2023)",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "Designed a deep learning framework with domain adaptation that estimates battery state of health across different manufacturers and chemistries without requiring target-domain degradation experiments, achieving less than 3% absolute error for 89.4% of 71,588 samples from 65 commercial batteries.",
+      "idea_genome": {
+        "problem_genome": "How can deep learning estimate battery state of health for new battery types or operating conditions without requiring expensive and time-consuming degradation experiments on the target batteries?",
+        "mechanism_genome": "An ensemble of deep neural networks equipped with domain adaptation that transfers degradation knowledge from source batteries (with full cycling data) to target batteries (with only operational data), enabling cross-manufacturer and cross-chemistry SOH estimation.",
+        "observation_genome": "The framework achieved less than 3% absolute SOH estimation error for 89.4% of samples and less than 5% for 98.9% across 65 commercial batteries from 5 manufacturers, demonstrating that domain adaptation can eliminate the need for target-specific degradation experiments.",
+        "limitation_genome": "The model was purely data-driven and did not encode electrochemical degradation physics, potentially limiting extrapolation to extreme operating conditions or entirely novel chemistries; it focused on SOH estimation rather than degradation mechanism diagnosis or remaining useful life prediction."
+      }
+    },
+    {
+      "title": "Physics-informed neural network for lithium-ion battery degradation stable modeling and prognosis",
+      "year": 2024,
+      "venue": "Nature Communications (2024)",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "Introduced a physics-informed neural network that integrates empirical degradation models and state-space equations into the network architecture, achieving 0.87% MAPE for SOH estimation across 387 batteries with 310,705 samples and demonstrating stable long-horizon prognosis that purely data-driven models fail to provide.",
+      "idea_genome": {
+        "problem_genome": "Can physics-informed constraints improve the stability and generalizability of neural network models for long-term battery degradation prediction, addressing the instability of purely data-driven approaches for extrapolation beyond training distributions?",
+        "mechanism_genome": "A neural network architecture that embeds empirical degradation laws and state-space equations as structural constraints, using physics-informed loss functions to ensure predictions respect known electrochemical degradation dynamics while retaining the flexibility of deep learning for capturing complex patterns.",
+        "observation_genome": "The PINN achieved 0.87% MAPE across 387 batteries from multiple manufacturers and maintained stable predictions over long horizons, significantly outperforming purely data-driven baselines that exhibited unstable extrapolation behavior, demonstrating the value of physics-informed inductive biases.",
+        "limitation_genome": "The physics constraints were based on empirical degradation models rather than first-principles electrochemistry, and the approach focused on cell-level SOH estimation rather than the upstream challenge of designing better battery materials or electrolytes."
+      }
+    },
+    {
+      "title": "Predicting the heat release variability of Li-ion cells under thermal runaway with few or no calorimetry data",
+      "year": 2024,
+      "venue": "Nature Communications (2024)",
+      "arxiv_id": null,
+      "paper_type": "research",
+      "key_contribution": "Applied transfer learning on the Battery Failure Databank (139 calorimetry measurements) to predict thermal runaway heat release variability for new cell types using 0-5 calorimetry measurements, enabling rapid safety characterization without extensive destructive testing.",
+      "idea_genome": {
+        "problem_genome": "Characterizing thermal runaway variability for battery safety design requires expensive and time-consuming calorimetry experiments on each new cell type; can ML reduce or eliminate the need for these measurements?",
+        "mechanism_genome": "Train ML models on the open-access Battery Failure Databank of 139 calorimetry measurements across commercial Li-ion cells; apply transfer learning using ejected mass measurements and cell metadata to predict heat output distributions for new cell types with 0-5 calorimetry measurements.",
+        "observation_genome": "The distribution of heat output during thermal runaway, including outliers, can be predicted accurately and with high confidence for new cell types; fractional heat ejection from positive vent, cell body, and negative vent are also accurately predicted.",
+        "limitation_genome": "Relies on the Battery Failure Databank which covers limited cell formats; transfer learning accuracy depends on similarity between source and target cells; does not predict the onset conditions or temporal dynamics of thermal runaway."
+      }
+    },
+    {
+      "title": "Battery lifetime prediction across diverse ageing conditions with inter-cell deep learning",
+      "year": 2025,
+      "venue": "Nature Machine Intelligence (2025)",
+      "arxiv_id": "2310.05052",
+      "paper_type": "research",
+      "key_contribution": "Introduced BatLiNet, a deep learning framework with inter-cell learning that predicts battery lifetime differences between cell pairs, achieving stable predictions across diverse ageing conditions including varied chemistries and protocols.",
+      "idea_genome": {
+        "problem_genome": "Existing models predict battery lifetime for individual cells but fail to generalize across diverse ageing conditions (different chemistries, charging protocols, temperatures); how can a unified model handle this heterogeneity?",
+        "mechanism_genome": "BatLiNet combines conventional single-cell feature learning with a novel inter-cell learning mechanism that predicts lifetime differences between two battery cells, using this relative comparison to enhance the stability and transferability of absolute lifetime predictions across varied conditions.",
+        "observation_genome": "Inter-cell learning stabilizes lifetime predictions across diverse ageing conditions; combined with single-cell learning, BatLiNet achieves reliable predictions across different chemistries and protocols where conventional models exhibit high variance.",
+        "limitation_genome": "Requires pairs of cells for inter-cell comparison during training; computational overhead of pairwise comparisons; focused on lifetime prediction rather than diagnosis or optimization of degradation pathways."
+      }
+    },
+    {
+      "title": "Domain oriented universal machine learning potential enables fast exploration of chemical space of battery electrolytes",
+      "year": 2026,
+      "venue": "Nature Communications 17, 1226 (2026)",
+      "arxiv_id": "doi:10.1038/s41467-025-67982-0",
+      "paper_type": "research",
+      "key_contribution": "Developed a universal machine learning interatomic potential for battery electrolytes trained via iterative random-composition sampling, enabling accurate molecular dynamics computation of transport and solvation properties across a broad chemical space of electrolyte formulations without system-specific retraining.",
+      "idea_genome": {
+        "problem_genome": "How can one build a single ML interatomic potential that accurately simulates transport and solvation properties across the enormous chemical space of battery electrolyte formulations, avoiding the need to train separate potentials for each composition?",
+        "mechanism_genome": "An iterative training pipeline that constructs a universal ML potential by randomly composing diverse electrolyte mixtures, running ab initio molecular dynamics, and progressively expanding the training set to cover a broad chemical space, yielding a single transferable model for arbitrary electrolyte compositions.",
+        "observation_genome": "The universal potential accurately reproduced key electrolyte properties (ionic conductivity, viscosity, solvation structure) across diverse compositions via molecular dynamics, enabling rapid screening of the electrolyte chemical space at near-DFT accuracy with orders-of-magnitude speedup.",
+        "limitation_genome": "The potential focused on bulk liquid electrolyte properties and did not address solid-electrolyte interfaces, electrode-electrolyte interactions, or the full battery cell context; integration with cell-level degradation models and closed-loop experimental optimization remains an open challenge."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The early-prediction model for battery cycle life mutated from a passive diagnostic tool into an active component of a closed-loop optimization system. Rather than merely predicting outcomes, the early-prediction model was embedded within a Bayesian optimization loop that automatically designs the next experiment based on previous results. This mutation transformed the role of ML from observation to prescription, enabling 30x faster protocol discovery."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The closed-loop framework inspired a systematic ML pipeline for SOH estimation; Roman et al. formalized the feature engineering, selection, and algorithm comparison into a reproducible pipeline tested on 179 cells, scaling the approach from protocol optimization to general health estimation with calibrated confidence intervals."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The ML pipeline paradigm for battery health estimation radiated from cell-level monitoring to electrode-level manufacturing optimization; Duquesnoy et al. applied ML pipelines to synthetic simulation data for multi-objective electrode design, expanding from operational health tracking to manufacturing process optimization."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The ML pipeline for SOH estimation on single-chemistry data radiated to cross-manufacturer, cross-chemistry deployment; Lu et al. applied domain adaptation to span 65 batteries from 5 manufacturers, addressing the industry-scale challenge of deploying ML across heterogeneous battery fleets without target-domain degradation experiments."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The purely data-driven deep learning approach for SOH estimation hybridized with physics-based degradation models. While the previous work relied entirely on learned patterns from cycling data, the PINN framework embedded empirical degradation laws and state-space equations as structural constraints within the neural network, yielding models that extrapolate reliably over long horizons."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The physics-informed battery modeling paradigm radiated from degradation prognosis to safety prediction; Masalkovaitė et al. applied transfer learning on the Battery Failure Databank to predict thermal runaway heat release, expanding the ML scope from health estimation to safety characterization."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "BatLiNet mutates the cell-level degradation prediction paradigm by introducing inter-cell learning that compares lifetime differences between cell pairs, enhancing stability across diverse ageing conditions without changing the fundamental deep learning approach for battery lifetime prediction."
+    },
+    {
+      "from_idx": 7,
+      "to_idx": 8,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "The battery ML lineage speciated from cell-level health monitoring and optimization into an entirely different ecological niche: atomistic materials discovery for electrolytes. While the previous works focused on predicting and managing degradation of existing batteries, the universal ML potential for electrolytes addresses the upstream challenge of designing better electrolyte formulations from first principles."
+    }
+  ],
+  "open_question": "The 2025/2026 universal electrolyte machine-learning potential accelerates liquid-electrolyte property simulation, but battery deployment still requires cell-level degradation, interphase chemistry, manufacturability, and fleet operation. What closed-loop system would connect molecular electrolyte design, SEI/interphase evolution, cell aging, and adaptive charging to optimize heterogeneous battery populations over lifetime?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Energy / Electrochemical Energy Storage."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 9 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Mutation": 3,
+    "Adaptive Radiation": 3,
+    "Hybridization": 1,
+    "Speciation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Domain oriented universal machine learning potential enables fast exploration of chemical space of battery electrolytes",
+      "year": 2026,
+      "venue": "Nature Communications 17, 1226 (2026)",
+      "identifier": "doi:10.1038/s41467-025-67982-0",
+      "unresolved_gap": "Universal electrolyte potentials accelerate bulk electrolyte screening, but battery deployment still requires interfaces, degradation, manufacturability, cell-level aging, and closed-loop operational feedback.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

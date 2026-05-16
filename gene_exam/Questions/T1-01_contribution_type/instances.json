@@ -1,0 +1,1082 @@
+[
+  {
+    "instance_id": "T1-01_contribution_type_0001",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Adding explicit region-level interaction to graph-based knee contact-stress surrogates improves risk-relevant stress field and hotspot prediction over deep local message passing alone at comparable computational cost.\"\n  Delta: \"Compared with prior MeshGraphNet-style surrogates that rely mainly on stacked local propagation, this work introduces and evaluates explicit region-to-region interaction as a more structure-aware design for knee mechanic\"\n  Observation: \"Explicit region-interaction models lower whole-field nodal stress error and more accurately and consistently recover high-stress tails and hotspot locations over time than the purely stacked baseline in strict cross-subj\"\n\n[Genome G2]\n  Claim: \"If collagen fibers remain continuous across regions of changing wall thickness, then local wall thickness becomes a much weaker determinant of stretch and stress concentrations than predicted by conventional homogeneous or fiber-terminating models.\"\n  Delta: \"Compared with prior thickness-heterogeneity models that treated fibers mainly as anisotropy contributors or neglected continuity across transitions, this work explicitly models fiber continuity as the main load-transfer \"\n  Observation: \"Continuous collagen fibers transfer load across thick-to-thin regions and nearly eliminate thickness-induced mechanical gradients, reducing stretch differentials from about 20% to 0.68% and stress differentials from abou\"\n\n[Genome G3]\n  Claim: \"If supernovae emit the expected large gravitational burst, then graviton-photon conversion in magnetic fields should produce detectable or at least in-principle measurable kilohertz radio signatures temporally associated with the event and its long afterglow.\"\n  Delta: \"Compared with prior graviton-photon conversion discussions, the paper extends the idea to supernova burst phenomenology by predicting both immediate local-field signals and a relic interstellar radio tail using exact ref\"\n  Observation: \"The central theoretical insight is that a supernova gravitational burst should yield a very weak prompt radio signal near the neutrino arrival time plus a long-lived delayed radio tail that can persist for hundreds to th\"\n\n[Genome G4]\n  Claim: \"WOH G64 is a massive symbiotic binary whose apparent nature changed from extreme red supergiant to yellow hypergiant in real time.\"\n  Delta: \"Unlike prior work that treated WOH G64 as the most extreme single red supergiant in the LMC, this study reclassifies it as a rare massive symbiotic binary caught during a warmward evolutionary transition.\"\n  Observation: \"They find that WOH G64 underwent an unprecedented smooth but dramatic change in optical spectral features consistent with a transition from an extreme red supergiant to a yellow hypergiant.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "analysis",
+        "G3": "theory",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "astronomy",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 0,
+        "similarity_min": 0.2063,
+        "similarity_avg": 0.2144,
+        "similarity_max": 0.229
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0002",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"An LSTM architecture trained to predict next-day trend differences can outperform OLS, Ridge, Lasso, and LightGBM on both predictive accuracy and trading PNL for top S&P 500 equities over 2005–2025.\"\n  Delta: \"Compared with prior equity trend-forecasting work, this paper combines a formal differencing-based bias-variance argument with long-horizon cross-cycle LSTM architecture benchmarking and economic backtesting on S&P 500 constituents\"\n  Observation: \"Differencing is argued to reduce bias-variance, and empirically the LSTM architecture delivers better forecasting and higher portfolio PNL than the listed linear and tree-based baselines across 2005–2025 market cycles.\"\n\n[Genome G2]\n  Claim: \"The paper claims that a non-predictive structural diagnostic like GAER can meaningfully delimit the subset of assets and markets in which ranking-based and robustness-oriented portfolio construction methods are plausibly applicable.\"\n  Delta: \"Compared with prior adaptive market and portfolio construction work, the paper shifts from treating efficiency as a general market property or using predictive factors toward treating it as a boundary condition diagnosed\"\n  Observation: \"The central insight is that market efficiency is not uniform or time-invariant but instead localized and state-dependent, emerging from the interaction of economic scale, disclosure continuity, liquidity provision, enfor\"\n\n[Genome G3]\n  Claim: \"For compound estimation of multiple binomial means, the proposed approximate-SURE-tuned linear shrinkage estimators achieve lower average mean-squared error than naive per-group averages and satisfy asymptotic optimality and regret bounds.\"\n  Delta: \"Compared with empirical Bayes approaches that require a prior over binomial parameters or Gaussian approximations, this work treats sample sizes and means as fixed and provides a direct binomial SURE-based shrinkage fram\"\n  Observation: \"Direct binomial compound shrinkage can improve average estimation accuracy over plain sample averages while retaining asymptotic optimality, regret guarantees, and valid inference under heterogeneous sample sizes.\"\n\n[Genome G4]\n  Claim: \"A fourth-order compact IMEX finite-difference solver for the Bates PIDE can deliver near-fourth-order spatial accuracy and achieve similar pricing accuracy up to two orders of magnitude faster than quadratic FEM.\"\n  Delta: \"Compared with prior second-order finite-difference and quadratic finite-element solvers for Bates-type PIDEs, the paper introduces and validates a high-order compact finite-difference baseline with the same second-order \"\n  Observation: \"Experiments show near-fourth-order spatial convergence for the HOC-FD method, near-second-order convergence for quadratic FEM and standard FD baselines, and substantially lower runtime for HOC-FD at comparable accuracy.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "theory",
+        "G3": "method",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "economics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 1,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2168,
+        "similarity_avg": 0.2235,
+        "similarity_max": 0.2342
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0003",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A jointly trained end-to-end network that integrates evolutionary and geometric constraints can predict protein atomic structures from sequence with accuracy approaching experimental methods for many single-chain targets.\"\n  Delta: \"Compared with prior pipelines that separated contact or distance prediction from downstream structure assembly, AlphaFold unifies representation learning and coordinate generation in a single end-to-end differentiable ar\"\n  Observation: \"The model achieves near-experimental accuracy on many protein structure prediction benchmarks and provides reliable per-residue confidence estimates even when template information is weak.\"\n\n[Genome G2]\n  Claim: \"A three-track attention mechanism architecture that simultaneously processes 1D, 2D, and 3D representations predicts protein tertiary and quaternary structures more accurately and efficiently than closely related prior approaches.\"\n  Delta: \"Compared with prior two-track or staged pipelines, this work adds a third coordinate track with bidirectional coupling so structure prediction and complex assembly are handled in one integrated end-to-end model.\"\n  Observation: \"Joint reasoning across sequence, pairwise geometry, and coordinates yields state-of-the-art structure prediction accuracy while also enabling practical protein complex modeling and assistance in solving experimental stru\"\n\n[Genome G3]\n  Claim: \"An end-to-end neural architecture integrating evolutionary sequence information and pairwise geometric reasoning can predict protein structures at atomic accuracy sufficient to substantially solve the single-chain structure prediction problem.\"\n  Delta: \"Compared with prior template-based or fragment-assembly pipelines including AlphaFold1, this work replaces heavily staged optimization with a unified attention mechanism-based architecture that reasons over MSA and residue-pair infor\"\n  Observation: \"The method achieves near-experimental accuracy on many targets, including a reported 92.4 median GDT_TS on CASP14, showing that learned end-to-end inference can solve many hard structure prediction cases.\"\n\n[Genome G4]\n  Claim: \"A deep learning system that predicts inter-residue distance distributions and optimizes a derived differentiable potential can outperform previous protein structure prediction methods on challenging targets.\"\n  Delta: \"Compared with prior contact-based or fragment-assembly approaches, it replaces sparse contact predictions with learned distograms and direct gradient-based minimization of a differentiable potential.\"\n  Observation: \"Predicting full distance distributions rather than binary contacts provides richer geometric constraints that enable substantially more accurate structure prediction, especially in free-modeling regimes.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "system"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "life_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 2,
+        "same_contribution_type": 2,
+        "similarity_min": 0.3181,
+        "similarity_avg": 0.3469,
+        "similarity_max": 0.3892
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0004",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A curvature-aided incremental aggregated gradient method can solve finite-sum convex problems with global linear convergence while requiring only O(d^2) work per iteration and no matrix inversion.\"\n  Delta: \"Compared with IAG it adds incremental Hessian-based curvature correction to improve convergence, and compared with IN/IQN it avoids matrix inversion by using only aggregated Hessian-vector style updates.\"\n  Observation: \"By exploiting historical curvature information without Hessian inversion, the method can attain global linear convergence rates comparable to full gradient descent while remaining substantially cheaper per iteration than\"\n\n[Genome G2]\n  Claim: \"A simple dual coordinate descent algorithm for linear SVMs can achieve provable linear convergence and state-of-the-art practical speed while handling both L1- and L2-loss with sparse per-update cost.\"\n  Delta: \"Compared with prior primal or generic dual SVM solvers, this work exploits the explicit linear-kernel primal representation to perform simple instance-driven dual updates with efficient incremental weight maintenance for\"\n  Observation: \"The authors show linear convergence and find empirically that per-iteration work depends only on the number of nonzero features in the selected instance, yielding faster training than competing solvers on sparse problems\"\n\n[Genome G3]\n  Claim: \"A feature-wise coordinate descent algorithm for primal L2-loss linear SVMs can achieve guaranteed global linear convergence while outperforming state-of-the-art solvers in runtime efficiency and stability on large sparse problems.\"\n  Delta: \"Compared with prior instance-based or conservative coordinate-update solvers, this work introduces aggressive feature-wise exact subproblem optimization with sufficient-decrease line search and randomized update permutat\"\n  Observation: \"The paper shows the algorithm is globally convergent with a linear rate and is empirically more efficient and stable than existing linear SVM solvers, especially on sparse high-dimensional data.\"\n\n[Genome G4]\n  Claim: \"A general PIAG algorithm with delayed, stochastic, and inexact aggregated gradients plus proximal updates converges under broad conditions, achieving sublinear or linear rates with less restrictive assumptions and larger admissible stepsizes than existing PIAG\"\n  Delta: \"Compared with prior PIAG work centered on strongly convex and more restrictive exact deterministic settings, this paper unifies deterministic and stochastic variants with delays, inexactness, and line search under weaker\"\n  Observation: \"The central insight is that a unified Lyapunov analysis can guarantee sublinear or linear convergence for this broad PIAG family while tolerating larger stepsizes, delays, and noise than prior analyses.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "theory"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "mathematics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2716,
+        "similarity_avg": 0.2968,
+        "similarity_max": 0.3187
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0005",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"If guanidinium-induced reversible crystallization is engineered into the LTC electrolyte, then a persistent temperature-driven concentration gradient can simultaneously raise Seebeck coefficient and lower thermal conductivity without reducing electrical conduc\"\n  Delta: \"Compared with prior LTC strategies that mainly tune redox entropy or species selection, this work introduces a temperature-triggered phase-transition mechanism that sustains a concentration gradient under operation rathe\"\n  Observation: \"The thermosensitive crystallization–boosted LTCs achieve a strongly enhanced Seebeck coefficient, suppressed thermal conductivity without sacrificing electrical conductivity, and record near-room-temperature Carnot-relat\"\n\n[Genome G2]\n  Claim: \"Selective crystallization and dissolution of redox ions induced by guanidinium under a thermal gradient can stably decouple and improve thermopower and thermal transport in a liquid thermocell, yielding substantially higher efficiency than conventional LTC des\"\n  Delta: \"Compared with prior LTCs that rely mainly on transient thermodiffusion or salting effects, this work introduces reversible temperature-triggered phase change of redox ions to sustain a much larger concentration gradient \"\n  Observation: \"This thermosensitive crystallization-boosted LTC achieves an approximately 3.73 mV/K Seebeck coefficient and a record 11.1% Carnot-relative efficiency while preserving electrical conductivity and demonstrating module-sca\"\n\n[Genome G3]\n  Claim: \"The primary claim is that a low-cost ternary I-/I3-/methylcellulose/KCl electrolyte can reproducibly switch from n-type to p-type behavior with temperature and achieve record-level thermopower for liquid thermogalvanic energy harvesting.\"\n  Delta: \"Compared with prior thermogalvanic electrolyte strategies that usually improve either entropy change or concentration difference at the expense of conductivity or scalability, this work combines a thermoresponsive polyme\"\n  Observation: \"As temperature rises, the coupled methylcellulose phase transition and KCl-assisted complexation drive an n-to-p polarization switch and produce unusually large simultaneous increases in ΔS and ΔC, yielding ultrahigh the\"\n\n[Genome G4]\n  Claim: \"If NaOH concentration and annealing time are properly tuned, then dry-annealed PVA/NaOH hydrogels will maintain stable Na+ coordination during swelling and thereby produce exceptionally large negative Seebeck coefficients.\"\n  Delta: \"Compared with prior ionic thermoelectrics that mainly exploit hydration effects or ion mobility asymmetry and often emphasize p-type response, this work introduces dry-annealing-stabilized cation–polymer coordination as \"\n  Observation: \"The synergistic coexistence of stable Na+–polymer coordination and hydrated OH− transport yields a record negative thermopower of −37.61 mV/K together with usable mechanical integrity, transparency, and device-level ther\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "system",
+        "G2": "system",
+        "G3": "system",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "materials",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2674,
+        "similarity_avg": 0.4039,
+        "similarity_max": 0.5587
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0006",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A Bloch electron injected into a crystal under a homogeneous electric field does not instantaneously obey effective-mass dynamics but instead undergoes a measurable temporal dressing process in which its momentum and acceleration evolve from real-mass to effec\"\n  Delta: \"Compared with prior treatments emphasizing steady-state or long-time semiclassical Bloch acceleration, this paper introduces a transient temporal picture that explicitly resolves the crossover from initial free-electron-\"\n  Observation: \"The analysis shows that the electron’s inertial response evolves from real-mass behavior just after injection to effective-mass behavior at later times as the electron becomes dressed by the crystal, with a field-depende\"\n\n[Genome G2]\n  Claim: \"In a two-dimensional electron gas with quadrupolar interactions, symmetry of the pairing channel determines whether nematic order excludes superconductivity through a first-order transition or permits stable coexistence, with finite temperature enabling three-\"\n  Delta: \"Compared with prior studies of isolated nematic or superconducting instabilities, this paper explicitly unifies s-wave and d-wave pairing with quadrupolar nematic interactions in one two-dimensional framework and tracks \"\n  Observation: \"The central result is that nematicity strongly suppresses d-wave superconductivity and causes a direct first-order transition at zero temperature, while s-wave pairing can coexist with nematic order and finite temperatur\"\n\n[Genome G3]\n  Claim: \"A controlled variational mapping of moire Bloch bands to generalized Landau levels predicts that twisted bilayer MoTe2 can realize Abelian FCIs in its first valence band and a Moore-Read-like non-Abelian state in the Hartree-Fock-renormalized second band at 2.\"\n  Delta: \"Compared with prior work that used qualitative or special-case mappings between Chern bands and Landau levels, this paper provides a universal variational and quantitative decomposition and uses it to connect realistic t\"\n  Observation: \"The first moire valence band is broadly dominated by a generalized zeroth Landau level supporting Jain-sequence Abelian FCIs, while the Hartree-Fock-renormalized second band can become generalized-first-Landau-level-like\"\n\n[Genome G4]\n  Claim: \"A bosonic t-J-V model accessible with Rydberg atoms supports a robust double supersolid phase and a rich phase diagram including double superfluid and antiferromagnetic insulating phases, with thermally enhanced crystalline order in the DSS regime.\"\n  Delta: \"Compared with prior Rydberg-array and t-J-type studies, it identifies a double supersolid and related double superfluid behavior enabled by the specific bosonic t-J-V setting with long-range tunneling and hole-hole repul\"\n  Observation: \"The central finding is an emergent double supersolid phase in which two superfluids coexist with crystalline order, along with an unusual thermal enhancement of the crystalline order inside that regime.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "theory",
+        "G2": "theory",
+        "G3": "theory",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "chemistry",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2588,
+        "similarity_avg": 0.3108,
+        "similarity_max": 0.3542
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0007",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Large generic pretrained transformer architecture language models can perform nontrivial Python program synthesis from natural language in both few-shot and fine-tuned settings, but their capabilities remain fundamentally incomplete.\"\n  Delta: \"Compared with prior work focused on DSLs or code-specialized training, this paper studies general-purpose Python synthesis using generic large language models and introduces broader evaluation benchmarks and scaling anal\"\n  Observation: \"Program synthesis performance improves strongly with scale and fine-tuning, but models still show major weaknesses in semantic grounding, compositional generalization, and reliable interactive correction.\"\n\n[Genome G2]\n  Claim: \"A large Model-G-based model fine-tuned on code and curated function data can synthesize Python functions from docstrings with significantly higher unit-test pass rates than non-code-specialized predecessors.\"\n  Delta: \"Compared with prior Model-G-style language models trained mainly on natural language, this work adapts the model to code with a two-stage fine-tuning pipeline and evaluates it using execution-based functional correctness\"\n  Observation: \"Code-specialized fine-tuning substantially improves functional correctness over general language models, and generating multiple samples with selection heuristics further boosts pass@k on HumanEval.\"\n\n[Genome G3]\n  Claim: \"A Model-Ll 2-derived, openly released family of code-specialized models can outperform prior open code models on major synthesis benchmarks while supporting infilling, robust instruction following, and 100k-token contexts.\"\n  Delta: \"Compared with prior open code LLMs, this work combines larger Model-Ll 2 backbones, staged code/Python/instruction specialization, explicit infilling capability, and long-context fine-tuning into a publicly released fami\"\n  Observation: \"Across HumanEval, MBPP, APPS, and MultiPL-E, Code Model-Ll variants achieve state-of-the-art performance among open models while adding strong infilling, instruction-following, and up to 100k-token context support.\"\n\n[Genome G4]\n  Claim: \"Automatically augmented and reduced test suites can more accurately and efficiently estimate the true functional correctness of LLM-generated programs than original benchmark tests alone.\"\n  Delta: \"Compared with prior benchmark evaluation that relies on small hand-written test suites, EvalPlus automatically constructs diverse, validity-checked, reduced test suites for more robust post hoc assessment.\"\n  Observation: \"The augmented tests expose many false positives under standard benchmark evaluation, substantially lowering apparent pass rates and changing model rankings.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "analysis",
+        "G2": "system",
+        "G3": "system",
+        "G4": "system"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "information_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 0,
+        "similarity_min": 0.233,
+        "similarity_avg": 0.2675,
+        "similarity_max": 0.3002
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0008",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A probabilistic model that accounts for repertoire-specific maturation age can reliably recover the true landscape and length statistics of antibody somatic indels from sequencing data and reveals universal heavy-chain indel features.\"\n  Delta: \"Compared with prior work that mainly characterized point substitutions or relied on biased annotation-based indel calls, this paper provides a dedicated probabilistic method for unbiased learning of antibody indel statis\"\n  Observation: \"Applied to large human heavy-chain datasets, the model finds distinct insertion and deletion hotspots and shows that indel lengths are approximately geometrically distributed.\"\n\n[Genome G2]\n  Claim: \"A coupled multiscale personalized lung model can realistically predict spatio-temporal ventilation-related airflow and shear-stress patterns from subject imaging and physiologically based airway generation.\"\n  Delta: \"Compared with prior lung models that treated either airway flow or parenchymal mechanics in isolation or with less anatomical specificity, this work integrates personalized 3D geometry and multiscale bidirectional coupli\"\n  Observation: \"The model produces spatially and temporally heterogeneous distributions of airflow and shear stress across the personalized airway tree and lung tissue during breathing.\"\n\n[Genome G3]\n  Claim: \"Early vocabulary-level integration of DNA k-mers into an LLM is more effective than conventional embedding-level alignment for DNA-language modeling.\"\n  Delta: \"Compared with prior work that fuses separately encoded DNA and text through late-stage embedding alignment, this paper shifts toward earlier token-level interaction through shared vocabulary integration while also streng\"\n  Observation: \"Experiments show that although stronger alignment improves embedding-level fusion, vocabulary-level integration produces more expressive representations and better DNA-language performance.\"\n\n[Genome G4]\n  Claim: \"The paper claims that reinforcement learning is a viable and increasingly important framework for genomic data analysis, with substantial future potential if reward functions and method integration are improved.\"\n  Delta: \"Compared with broader machine learning reviews in genomics, this work narrows the focus specifically to reinforcement learning applications and provides a dedicated technical overview of that subfield.\"\n  Observation: \"The paper observes that reinforcement learning is promising for genomics because it can learn from experience with limited labeled data, but its success is strongly constrained by the quality of the reward function.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "biology",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.238,
+        "similarity_avg": 0.2784,
+        "similarity_max": 0.3009
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0009",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"The primary claim is that grokking is a phase transition between competing near-zero-loss basins whose differing LLC values predict posterior preference and generalization behavior.\"\n  Delta: \"Compared with prior grokking work that was largely empirical or mechanistic, this paper provides a Singular Learning Theory account with closed-form LLC derivations and empirical LLC trajectory validation.\"\n  Observation: \"The key finding is that lower-LLC basins have higher posterior mass and better expected generalization, and that grokking corresponds to training moving from a higher-LLC memorizing basin to a lower-LLC generalizing basi\"\n\n[Genome G2]\n  Claim: \"The paper claims that P-tensors define the most general form of permutation-equivariant message passing for the considered classes of subgraph and higher-order networks while also enabling state-of-the-art molecular prediction performance.\"\n  Delta: \"Compared with prior work that treated subgraph GNNs and higher-order equivariant networks as separate lines, this paper provides a single general formalism that subsumes both through P-tensors.\"\n  Observation: \"The central insight is that subgraph-based GNNs and higher-order permutation-equivariant networks can be unified under one message-passing framework, and models instantiated from this framework achieve state-of-the-art r\"\n\n[Genome G3]\n  Claim: \"These algorithms are the first model-free methods to simultaneously achieve best known near-optimal regret, linear-in-SA burn-in cost, and logarithmic switching cost for single-agent RL or communication cost for federated RL, with improved or matched gap-depen\"\n  Delta: \"Compared with prior model-free RL and FRL methods that either incur superlinear burn-in in S and A or do not achieve logarithmic switching or communication costs, this work claims to achieve all three guarantees at once.\"\n  Observation: \"The main theoretical insight is that it is possible to simultaneously obtain near-optimal regret, burn-in cost linear in the number of states and actions, and only logarithmic policy switching or communication cost in bo\"\n\n[Genome G4]\n  Claim: \"Prediction market prices are not face-value probabilities in a uniform sense, because miscalibration systematically depends on domain, forecast horizon, and trader scale, with politics showing chronic compression toward 50%.\"\n  Delta: \"Compared with prior work that treats prediction market calibration as mostly aggregate or exchange-level, this paper shows it decomposes into universal, domain-specific, interaction, and scale components that explain mos\"\n  Observation: \"Calibration is highly structured rather than uniform, with persistent political-market underconfidence and a platform-specific trade-size amplification effect on Kalshi that does not replicate on Polymarket.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "theory",
+        "G2": "theory",
+        "G3": "theory",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "statistics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2408,
+        "similarity_avg": 0.2925,
+        "similarity_max": 0.3468
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0010",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Under 0.2-0.3 kA/ns drive, the dominant 1-10 keV soft x-ray source in the SNU copper X-pinch is a bright spot rather than a hot spot, and its parameters can be quantitatively recovered from nonlinear AXUV data using total-charge conservation plus Bennett-based\"\n  Delta: \"Compared with prior X-pinch studies that often interpreted compact x-ray sources as extremely compressed hot spots or assumed more linear diagnostics, this work introduces a detector-calibrated charge-based framework tha\"\n  Observation: \"Although intense soft x-ray pulses distort the temporal waveform of the AXUV signals, the total collected charge remains proportional to incident pulse energy and supports inference of a bright-spot plasma with ne about \"\n\n[Genome G2]\n  Claim: \"The central claim is that the existence of dark matter is not yet conclusively established and that modified gravity theories may still account for some observations usually attributed to it.\"\n  Delta: \"Compared with prior technical literature focused mainly on either dark matter phenomenology or specific alternative theories, this work reframes the issue through a combined historical and epistemological synthesis.\"\n  Observation: \"The paper argues that while dark matter underpins the standard cosmological model and explains several observations, important open questions and model limitations keep modified gravity as a live alternative.\"\n\n[Genome G3]\n  Claim: \"The main claim is that the magic numbers in protonated argon clusters originate from proton-centered coordination effects at small sizes and evolve toward pairwise-interaction control as the clusters grow.\"\n  Delta: \"Compared with prior sphere-packing or pairwise-interaction explanations, this work attributes the magic numbers to many-body proton coordination effects captured by higher-level quantum simulations.\"\n  Observation: \"The study finds that argon atoms remain largely localized near the classical minimum, producing unusually rigid clusters and a size-dependent transition from coordination-driven stability to two-body-interaction-dominate\"\n\n[Genome G4]\n  Claim: \"The paper claims that the classical double copy of an open string moving in a background abelian gauge field is a closed string moving in the spacetime background obtained by double-copying that gauge field background.\"\n  Delta: \"Compared with prior double-copy work focused mainly on scattering amplitudes, point particles, and classical field solutions, this paper extends the idea to classical string motion and explicitly contrasts open-string ga\"\n  Observation: \"They find that the open string develops pathological behavior above a critical electric field while the closed-string double-copy system shows no analogous critical pathology, although the closed string still retains inf\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "analysis",
+        "G2": "analysis",
+        "G3": "analysis",
+        "G4": "theory"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "physics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2265,
+        "similarity_avg": 0.2832,
+        "similarity_max": 0.3116
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0011",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Adding learnable branch-specific temporal dynamics to dendritic compartments in SNN neurons improves multi-timescale temporal representation and therefore outperforms comparable conventional SNNs on temporal computing tasks at similar parameter budgets.\"\n  Delta: \"Unlike prior SNN work that mainly models heterogeneity in neurons or synapses, this paper introduces explicit branch-level dendritic heterogeneity through independently learnable timing factors within each spiking neuron\"\n  Observation: \"Learnable temporal dendritic heterogeneity lets DH-SNNs automatically match diverse temporal scales and yields better accuracy, robustness, compactness, and efficiency without increasing parameter count.\"\n\n[Genome G2]\n  Claim: \"A transformer architecture trained on raw EEG patches with vector-quantized spectrum-based semantic codes and masked modeling can learn generic EEG representations that adapt more effectively than specialized supervised models across multiple BCI tasks.\"\n  Delta: \"Compared with prior EEG models built for single tasks or datasets, LaBraM introduces a scalable transformer architecture foundation-model pipeline with discrete semantic tokenization and masked pre-training over large heterogeneous EEG co\"\n  Observation: \"Large-scale unsupervised pre-training on diverse unlabeled EEG yields robust semantic representations that transfer across datasets and tasks and outperform task-specific state-of-the-art baselines.\"\n\n[Genome G3]\n  Claim: \"A unified-topology masked autoencoder can learn geometry-aware EEG representations that remain effective across datasets with different montages and improve transfer performance on downstream tasks.\"\n  Delta: \"Compared with prior EEG pre-training methods that either ignore electrode geometry or assume a fixed channel set, MMM explicitly unifies diverse montages into shared scalp regions and encodes spatial structure during mas\"\n  Observation: \"Using a common spatial framework with geometry-aware masking and hierarchy yields topology-agnostic EEG representations that transfer more robustly across datasets and channel configurations than fixed-montage or spatial\"\n\n[Genome G4]\n  Claim: \"Connectome wiring plus neurotransmitter sign is sufficient to predict substantial aspects of Drosophila sensorimotor circuit activity and behavioral outcomes for feeding and grooming.\"\n  Delta: \"Compared with prior connectome analyses that were either static graph methods or heavily tuned task-specific models, this work provides a whole-brain biologically grounded spiking simulation with limited parameterization\"\n  Observation: \"A minimally parameterized connectome-based LIF model can reproduce and predict sensory integration and motor initiation patterns underlying taste-driven feeding and mechanosensory grooming.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "system"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "neuroscience",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 2,
+        "same_contribution_type": 2,
+        "similarity_min": 0.1534,
+        "similarity_avg": 0.2696,
+        "similarity_max": 0.3364
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0012",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A land-surface-model implementation with elevation-resolved glaciated and unglaciated tiles plus calibrated energy-balance mass-balance physics can more realistically project global glacier change and sea-level contribution than simpler glacier representations\"\n  Delta: \"Compared with prior simplified or statistically corrected glacier models, this work explicitly embeds elevation-dependent energy-balance glacier physics within JULES using multiple elevation tiles per grid cell and regio\"\n  Observation: \"The calibrated elevation-resolving scheme produces regionally differentiated and uncertainty-quantified projections of substantial glacier volume loss and sea-level rise under RCP8.5.\"\n\n[Genome G2]\n  Claim: \"A regionally differentiated statistical upscaling of glacier inventories combined with direct volume-area scaling can produce improved and regionally consistent estimates of global glacier and ice-cap volume and corresponding sea-level contribution.\"\n  Delta: \"Compared with prior global estimates that used cruder or more indirect extrapolation from incomplete inventories, this work upscales glacier area distributions region by region and size bin by size bin before converting \"\n  Observation: \"Using regionally differentiated size-bin upscaling plus Monte Carlo bias correction yields more consistent regional and global glacier volume and sea-level-equivalent estimates than simpler inventory-based extrapolations\"\n\n[Genome G3]\n  Claim: \"A multivariate, absdev-optimized scaling law applied to the full Randolph Glacier Inventory can produce a more accurate and less biased estimate of total global glacier and ice-cap volume and sea-level equivalent than previous scaling-based methods.\"\n  Delta: \"Compared with prior glacier volume studies that mainly used univariate or weakly corrected area-volume relations calibrated on limited datasets, this work introduces multivariate corrections, type/size-specific fits, and\"\n  Observation: \"Including elevation range and continentality and optimizing for absolute rather than logarithmic error yields less biased regional and global glacier volume estimates than conventional area-volume scaling.\"\n\n[Genome G4]\n  Claim: \"A five-step intercomparison and synthesis workflow can robustly reconcile heterogeneous glacier observations into a more consistent and uncertainty-aware global glacier mass-change baseline for 2000 to 2023 than prior ad hoc compilations.\"\n  Delta: \"Compared with prior fragmented glacier mass-balance assessments, this work introduces a coordinated, homogenized, community-driven framework that integrates 233 estimates from four methods into consistent annual regional\"\n  Observation: \"The study finds that a standardized multi-method synthesis can generate annual, regional, and global glacier mass-change time series while explicitly characterizing inter-method agreement and uncertainty.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "analysis",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "earth_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2459,
+        "similarity_avg": 0.2788,
+        "similarity_max": 0.3103
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0013",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A neural spline normalizing flow conditioned directly on multi-detector strain can accurately approximate the complete 15-dimensional posterior for binary black hole parameters at much lower computational cost than standard Bayesian samplers.\"\n  Delta: \"Compared with prior gravitational-wave inference surrogates that used restrictive posterior families, lower-dimensional targets, or single-detector simulated settings, this work performs full 15-parameter conditional pos\"\n  Observation: \"The learned flow reproduces conventional posterior estimates for real gravitational-wave events while delivering orders-of-magnitude faster sampling and maintaining high fidelity in the full 15-dimensional posterior.\"\n\n[Genome G2]\n  Claim: \"A calibration procedure centered on photon calibrators and continuous parameter tracking can produce a rigorously uncertainty-quantified Advanced LIGO strain estimate accurate enough for reliable astrophysical interpretation of GW150914.\"\n  Delta: \"Compared with prior LIGO calibration approaches, this work unifies broadband loop modeling, explicit uncertainty propagation, continuous time-dependent drift correction, and independent absolute-scale validation in one o\"\n  Observation: \"Using this framework, the authors achieve reconstructed strain calibration with less than 10% magnitude uncertainty and less than 10 degrees phase uncertainty across 20 Hz to 1 kHz over 38 days.\"\n\n[Genome G3]\n  Claim: \"GW150914 is an astrophysical gravitational-wave signal from a binary black hole coalescence rather than detector noise, and its observed waveform is consistent with general relativity in the strong-field dynamical regime.\"\n  Delta: \"Unlike prior gravitational-wave searches that produced only upper limits or inconclusive candidates, this work used Advanced LIGO’s improved sensitivity and cross-validated analyses to achieve an unambiguous direct detec\"\n  Observation: \"A highly significant coincident signal was observed in both Advanced LIGO detectors and inferred to originate from the merger of two stellar-mass black holes, providing the first direct detection of gravitational waves.\"\n\n[Genome G4]\n  Claim: \"An iterative loop of LLM hypothesis generation, numerical parameter fitting, and multi-island experience management can outperform existing symbolic regression baselines in recovering correct equations and generalizing across scientific tasks.\"\n  Delta: \"Compared with prior evolutionary or neural symbolic regression methods that search rigid equation spaces with weak prior integration, this work reframes equation discovery as iterative program synthesis driven by LLM-gen\"\n  Observation: \"The framework achieves more accurate, interpretable, and generalizable equation discovery than prior symbolic regression approaches across diverse domains by combining scientific priors, programmatic representations, and\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "analysis",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "astronomy",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 2,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2271,
+        "similarity_avg": 0.2556,
+        "similarity_max": 0.3023
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0014",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"The paper claims that an algorithmic combination of NLP, clustering, and interpretability can improve the efficiency, reproducibility, and selection quality assessment of systematic literature reviews.\"\n  Delta: \"Compared with prior largely manual or less structured review approaches, this work introduces a more automated, reproducible, and explicitly assessable pipeline for systematic literature reviews.\"\n  Observation: \"Applied to Scopus literature on financial narratives, the framework finds that existing research is conceptually fragmented and often operationalizes narratives mainly through sentiment analysis, topic modeling, or both.\"\n\n[Genome G2]\n  Claim: \"A jointly estimated SDF with cross-asset spillovers delivers superior out-of-sample asset-pricing and portfolio performance and reveals economically meaningful directional information flows among firms.\"\n  Delta: \"Compared with prior characteristic-based or self-predictive asset-pricing models, this work integrates directed cross-asset spillovers directly into SDF estimation under a single Sharpe-ratio objective.\"\n  Observation: \"Out of sample, the resulting SDF beats self-predictive and expected-return benchmark models across multiple investment universes and market regimes, while the inferred network identifies large, low-turnover firms as net \"\n\n[Genome G3]\n  Claim: \"The paper claims that modern pre-trained and large language model approaches can deliver more reliable and reproducible 10-K item segmentation than traditional rule-based methods, with BERT4ItemSeg providing the highest accuracy.\"\n  Delta: \"Compared with prior rule-based and sequence-labeling approaches, the paper introduces LLM-based prompting for segmentation and a hierarchical Model-B-plus-Bi-LSTM architecture architecture tailored to long 10-K documents.\"\n  Observation: \"On 3,737 annotated 10-K reports, BERT4ItemSeg achieves the best macro-F1 of 0.9825 on core items, outperforming GPT4ItemSeg, CRF, and rule-based baselines, while GPT4ItemSeg remains more adaptable to regulatory changes.\"\n\n[Genome G4]\n  Claim: \"If equity returns are segmented by Hilbert–Huang-derived regimes, then regime-specific variable-length Markov dynamics will reveal that developed markets revert toward normal transition structure more strongly after stress, while developing markets retain pers\"\n  Delta: \"Compared with prior regime-switching or fixed-order Markov studies, it combines Hilbert–Huang-based data-driven regime identification with Holo–Hilbert regime profiling and regime-conditional variable-length Markov model\"\n  Observation: \"Volatility intensity measured by amplitude-modulation energy falls from Extreme to High to Normal regimes, this decline is sharper in developed markets, and developing markets exhibit higher baseline volatility, stronger\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "economics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 2,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2354,
+        "similarity_avg": 0.2751,
+        "similarity_max": 0.3166
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0015",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A deep learning-based AlphaFold deployment can generate accurate, full-length structural models with reliable confidence metrics for nearly the entire human proteome at a scale and quality not previously achievable.\"\n  Delta: \"Compared with prior large-scale homology- or template-dependent structure resources, this work delivers near-complete human-proteome coverage with substantially higher full-length accuracy and explicit per-residue and gl\"\n  Observation: \"AlphaFold produced models for 98.5% of human proteins and roughly doubled high-confidence residue-level structural coverage relative to available experimental structures while remaining useful for many previously intract\"\n\n[Genome G2]\n  Claim: \"Given only a 5' UTR sequence, Optimus 5-Prime can accurately predict ribosome loading and enable the design of new UTRs and assessment of sequence variants or chemical modifications with experimentally validated translational consequences.\"\n  Delta: \"Compared with prior lower-throughput or confounded approaches, this work isolates translational effects using synthetic mRNA polysome profiling at scale and couples the resulting quantitative data to deep learning for pr\"\n  Observation: \"A convolutional architecture trained on large randomized and human-derived 5' UTR libraries can accurately learn sequence determinants of translation, generalize to designed and endogenous-like UTRs, and support rational engineering of sequ\"\n\n[Genome G3]\n  Claim: \"An end-to-end deep learning CAD pipeline combining 3D pancreas/tumor segmentation with ensemble 3D classification can automatically detect pancreatic cancer on contrast-enhanced CT with clinically useful accuracy and generalizability without manual annotation \"\n  Delta: \"Compared with prior pancreatic cancer CAD methods that required manual preprocessing or lacked broad external validation, this work unifies automated segmentation and ensemble classification into a fully end-to-end pipel\"\n  Observation: \"The pipeline achieves high sensitivity, specificity, and external generalizability on a large nationwide real-world dataset while enabling volumetric 3D analysis and confidence estimation for clinical support.\"\n\n[Genome G4]\n  Claim: \"A comprehensive cross-stage synthesis of deep learning methods reveals that end-to-end attention mechanism-based architectures and open, interpretable frameworks have become the dominant and most effective paradigm in protein structure prediction.\"\n  Delta: \"Compared with earlier narrower surveys focused on single subproblems like contact prediction, this work unifies recent deep learning advances across the entire protein structure prediction workflow and related cryo-EM ap\"\n  Observation: \"The review finds that the field has progressed from modular feature-driven predictors toward integrated end-to-end attention mechanism-based systems such as AlphaFold2, with MSA information remaining a central driver of performance.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "system",
+        "G2": "system",
+        "G3": "system",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "life_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 1,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2196,
+        "similarity_avg": 0.23,
+        "similarity_max": 0.2361
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0016",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"The paper claims that the little mu-function can be rigorously obtained as both a degeneration of the generalized mu-function and as the q-Borel-summed image of a divergent Ramanujan-equation solution, and that it satisfies explicit symmetry, connection, conti\"\n  Delta: \"Compared with prior work on the generalized mu-function, this paper introduces and characterizes a degenerate 'little' mu-function specifically tied to the Ramanujan equation and its q-Borel-summed divergent solutions.\"\n  Observation: \"The main insight is that the little mu-function inherits structural properties analogous to the generalized mu-function while also linking naturally to q,t-Fibonacci sequences and the Rogers-Ramanujan continued fraction \"\n\n[Genome G2]\n  Claim: \"For any finite universe U and any induced community M_U, there exists an element a in U such that D_{M_U}(a) >= 1/2.\"\n  Delta: \"Compared with prior work that studied union-closed families in standard set-system terms, this paper reframes the problem through the new notions of universes, communities, cells, and spots and claims a full proof.\"\n  Observation: \"The central theoretical insight is that every finite universe with an induced community contains a spot whose density is at least 1/2.\"\n\n[Genome G3]\n  Claim: \"A generalized Hilbert matrix operator induced by a positive finite Borel measure on (0,1) is bounded on the relevant weighted sequence space if and only if the paper's stated characterization condition holds.\"\n  Delta: \"Compared with the closely related 2023 Bull. London Math. Soc. results, this paper extends the framework from earlier special cases to a new generalized family of Hilbert matrix operators on weighted sequence spaces.\"\n  Observation: \"The main theoretical insight is a necessary and sufficient condition that exactly characterizes when these generalized Hilbert matrix operators are bounded on the weighted sequence spaces considered.\"\n\n[Genome G4]\n  Claim: \"For admissible step-like initial data with c_l > c_r > 0, there exists a unique global solution of the defocusing mKdV equation whose long-time behavior is rigorously described by explicit leading and subleading asymptotics in three space-time regions.\"\n  Delta: \"Compared with prior asymptotic studies for decaying or equal-background data, this work extends rigorous IST and steepest-descent analysis to genuinely step-like nonzero backgrounds and derives detailed rarefaction-wave \"\n  Observation: \"The solution decomposes at large times into three regimes: a left region approaching c_l with small oscillations, a central rarefaction region with a slowly varying transition profile, and a right region approaching c_r \"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "theory",
+        "G2": "theory",
+        "G3": "theory",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "mathematics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2746,
+        "similarity_avg": 0.3315,
+        "similarity_max": 0.3675
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0017",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Under sufficiently oxidizing high-temperature conditions, Pt(111) forms a distinct, thermally stable two-dimensional crystalline platinum oxide with the proposed dual-oxygen-layer honeycomb structure rather than only disordered or transient oxide species.\"\n  Delta: \"Compared with prior UHV or ex situ studies that reported incomplete and lower-temperature pictures of Pt oxidation, this work reveals an operando-stable, atomically resolved, high-temperature two-dimensional crystalline \"\n  Observation: \"They observe a previously unknown two-dimensional crystalline Pt oxide on Pt(111) consisting of a honeycomb lattice of Pt atoms sandwiched between two oxygen layers in a six-pointed-star motif that remains stable up to a\"\n\n[Genome G2]\n  Claim: \"The paper claims that potential-driven changes in chemisorbed water coverage at Pt(111) are sufficient to quantitatively explain the negative component of Helmholtz capacitance.\"\n  Delta: \"Compared with prior work that neglected explicit electrode atomic structure or used simplified electronic models, this paper directly links atomistic interfacial water structure and chemisorption dynamics to measured cap\"\n  Observation: \"The study finds that the negative capacitance arises from potential-dependent chemisorption and desorption of interfacial water on Pt(111), with dynamic water coverage changes dominating the anomalous capacitive response\"\n\n[Genome G3]\n  Claim: \"NiCo2O4 spinel can outperform Pd-based catalysts in low-temperature methane oxidation cost-effectiveness because its Ni-Co-lattice-oxygen/vacancy synergy drives complete oxidation via the identified CH3O and OCHO intermediates.\"\n  Delta: \"Compared with prior transition-metal-oxide and spinel methane oxidation studies that mainly reported activity trends, this work explicitly resolves the active-site roles of Ni/Co and lattice oxygen and proposes a detaile\"\n  Observation: \"The study finds that synergistic Ni and Co cations together with surface lattice oxygen and oxygen vacancies enable complete methane oxidation through a distinctive CH3O-to-OCHO pathway, with Ni sites being especially cr\"\n\n[Genome G4]\n  Claim: \"If copper is modified with fluorine in the described way, then CO2 electroreduction in an alkaline flow cell will produce more C2+ products at high current density than closely related unmodified or halide-modified Cu catalysts because fluorine promotes water \"\n  Delta: \"Compared with prior copper CO2RR strategies that typically tune activity or selectivity separately, this work introduces fluorine as a distinct surface modifier that simultaneously boosts both by exploiting a mechanistic\"\n  Observation: \"Fluorine-modified Cu delivers markedly higher C2+ selectivity and yield at ultrahigh current densities than unmodified or other halide-modified Cu because fluorine both speeds H transfer and stabilizes key coupling inter\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "analysis",
+        "G2": "analysis",
+        "G3": "analysis",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "materials",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2556,
+        "similarity_avg": 0.3365,
+        "similarity_max": 0.3786
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0018",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"The proposed LLaVA-OneVision training recipe and architecture produce a single open LMM that reaches state-of-the-art or near-state-of-the-art results across single-image, multi-image, and video tasks while enabling robust cross-modal transfer.\"\n  Delta: \"Compared with prior open LMMs that are usually specialized to one scenario or modality, LLaVA-OneVision unifies architecture, data curriculum, and resolution-adaptive visual encoding into one model family for all three s\"\n  Observation: \"A single jointly trained LMM can achieve strong performance across image, multi-image, and video benchmarks while showing emergent transfer between modalities when trained with the proposed curriculum and visual represen\"\n\n[Genome G2]\n  Claim: \"A frozen LLM connected to multimodal encoders and diffusion mechanism decoders through lightweight projection modules can serve as an end-to-end any-to-any MM-LLM that performs both multimodal understanding and generation effectively across text, image, video, and audio.\"\n  Delta: \"Compared with prior multimodal systems that mainly handle perception or use rigid multi-stage pipelines, NExT-Model-G unifies perception and generation in a single end-to-end any-to-any framework spanning four modalities\"\n  Observation: \"The paper finds that LLM-centric alignment with only projection-layer training, about 1% of parameters, is sufficient to enable seamless multimodal perception and generation with strong instruction-following and extensib\"\n\n[Genome G3]\n  Claim: \"A single-stage native multimodal pre-training regime can produce a more unified and higher-performing open-source MLLM than conventional staged adaptation approaches across a broad range of multimodal tasks.\"\n  Delta: \"Compared with prior multi-stage MLLMs that adapt separately or freeze components, InternVL3 updates all modalities and model parameters jointly from the start in one optimization process and adds flexible long-context po\"\n  Observation: \"The authors find that synchronous native multimodal pre-training plus post-training and test-time scaling yields strong scalable performance and state-of-the-art results on many multimodal benchmarks while narrowing the \"\n\n[Genome G4]\n  Claim: \"Instruction-tuning a Model-CL-to-Vicuna multimodal model on GPT-4-style instruction-following language model-generated vision-language data yields a generalist image-grounded assistant that outperforms previous open-source multimodal baselines on reasoning and conversation benchmarks.\"\n  Delta: \"Compared with earlier multimodal models that mainly train on captioning or narrow vision-language supervision, this work reframes image-text data as instruction-following dialogues and jointly tunes the language model fo\"\n  Observation: \"The resulting model shows stronger open-source performance on multimodal instruction following, complex visual reasoning, and conversational generalization than prior task-specific or caption-focused vision-language syst\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "system",
+        "G2": "system",
+        "G3": "method",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "information_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2705,
+        "similarity_avg": 0.3032,
+        "similarity_max": 0.3479
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0019",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Grounding LLM-style reasoning with adaptive biological retrieval and multi-agent dialectic verification yields more accurate and generalizable single-cell annotation than existing state-of-the-art methods.\"\n  Delta: \"Compared with prior supervised annotators and plain LLM-based approaches, this work shifts from black-box label prediction to constructive and verifiable proof generation grounded by symbolic constraints and agent-based \"\n  Observation: \"Across large-scale and cross-species benchmarks, the framework substantially outperforms state-of-the-art baselines and remains robust in difficult scenarios where other methods degrade sharply.\"\n\n[Genome G2]\n  Claim: \"The paper claims that ASAFind 2.0 can provide useful automated multiclass intracellular targeting predictions, including PPC localization, for diatoms and related algae with complex plastids.\"\n  Delta: \"Compared with prior ASAFind, this version newly supports PPC protein prediction, accepts newer upstream predictor outputs, and enables user-customized scoring matrix adaptation for additional algal groups.\"\n  Observation: \"The key insight is that sequence features around targeting peptides can be scored in a way that supports not only plastid localization prediction but also practical discrimination of PPC-targeted proteins across complex-\"\n\n[Genome G3]\n  Claim: \"If cellular metabolism is modeled as a resource-allocation problem balancing energetic costs and benefits under environmental constraints, then aerobic glycolysis in cancer should emerge as an adaptive strategy in at least some conditions rather than a simple \"\n  Delta: \"Compared with prior work that often treats the Warburg effect mainly as a growth-maximizing or cancer-specific phenomenon, this paper reframes it as part of a broader cross-species optimization problem governed by resour\"\n  Observation: \"Its central insight is that glycolysis-favoring metabolic shifts can support fast growth in some contexts but are more generally shaped by multi-objective trade-offs in cellular resource allocation across environments.\"\n\n[Genome G4]\n  Claim: \"The primary claim is that a graph neural network trained on realistic synthetic landscapes and fine-tuned on small biological datasets can accurately predict and optimize multispecific antibody efficacy, toxicity, and common light-chain selection.\"\n  Delta: \"Compared with prior sequence-centric or less topology-explicit modeling approaches, this work introduces graph-based encoding of antibody format architecture plus synthetic pretraining to handle data scarcity.\"\n  Observation: \"The study finds that topology-aware graph models can recover complex non-linear functional effects of multispecific formats and outperform sequence-only representations on tasks where connectivity determines activity.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "theory",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "biology",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 2,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2383,
+        "similarity_avg": 0.2617,
+        "similarity_max": 0.3025
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0020",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A sequence-of-classifiers estimator, augmented with smoothing for discrete responses, can consistently estimate quantile-optimal treatment regimes and achieve better practical performance than existing alternatives.\"\n  Delta: \"Compared with prior quantile OTR methods that directly optimize quantile criteria and often struggle with complex boundaries or discrete outcomes, this work converts the problem into chained classification and adds a sur\"\n  Observation: \"The authors show theoretically and empirically that the successive-classification formulation with smoothing yields consistent, computationally efficient, and effective quantile OTR estimation, outperforming direct exten\"\n\n[Genome G2]\n  Claim: \"The primary claim is that one can consistently learn environmental policies under bipartite network interference that are simultaneously fair, budget-feasible, and effective at reducing health burdens such as mortality.\"\n  Delta: \"Compared with prior policy learning and causal inference work, the paper adds fairness-constrained, cost-aware policy optimization specifically for bipartite network interference where interventions and outcomes occur on\"\n  Observation: \"The study finds that fair policy learning under bipartite network interference can produce scrubber allocation policies that reduce mortality cost-effectively while maintaining equity across groups, with supportive finit\"\n\n[Genome G3]\n  Claim: \"If premiums are made multicalibrated, then expected claims are balanced not only overall and among similarly priced policyholders but also across relevant subgroups in a way consistent with the paper's fairness definition.\"\n  Delta: \"Compared with prior work focused mainly on autocalibration or separate fairness constraints, this paper explicitly unifies them through multicalibration and adapts the concept to actuarial insurance pricing practice.\"\n  Observation: \"The paper finds that multicalibration provides a workable way to align actuarial balance and fairness in motor insurance pricing and can reveal or reduce subgroup miscalibration that standard pricing may leave unresolved\"\n\n[Genome G4]\n  Claim: \"If tensor predictors are modeled with the proposed CP factor framework and high-dimensional non-tensor covariates are handled with the proposed sparse estimator, then the resulting estimators are consistent and deliver more accurate forecasts and valid predict\"\n  Delta: \"Compared with standard diffusion mechanism index forecasting and factor-augmented regressions that flatten tensors or ignore multi-source structure, this work integrates tensor-preserving CP factor modeling, uncertainty-aware predict\"\n  Observation: \"Theoretical results and simulations indicate that explicitly modeling tensor predictors through CP-based latent factors and accounting for factor-estimation uncertainty improves estimation and forecasting relative to pop\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "theory"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "statistics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2162,
+        "similarity_avg": 0.278,
+        "similarity_max": 0.3212
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0021",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"For a range of semiconductors, ultrashort laser energy deposition is universally constrained by filamentation, but tailored temporal-spectral shaping can improve deposition enough to move toward controllable internal modification.\"\n  Delta: \"Compared with prior work focused mainly on silicon and standard low-intensity nonlinear measurements, this study generalizes the filamentation-dominated picture to multiple semiconductors and derives pulse-duration-depen\"\n  Observation: \"The central finding is that filamentation universally governs ultrashort-pulse propagation in diverse semiconductors and that the effective nonlinear parameters under these conditions differ strongly from values measured\"\n\n[Genome G2]\n  Claim: \"Quantum reservoir computing achieves superior computational performance when operated at the edge of many-body quantum chaos, defined by temporal and parametric boundaries associated with Thouless-time physics and the onset of chaos.\"\n  Delta: \"Compared with prior quantum reservoir computing work that used quantum dynamics as a resource without a clear many-body chaos design rule, this paper links optimal performance to concrete many-body chaos indicators in th\"\n  Observation: \"Reservoir performance is strongly enhanced near two boundaries: around the Thouless-time crossover to random-matrix behavior and near the parameter transition between integrable and chaotic many-body regimes.\"\n\n[Genome G3]\n  Claim: \"Finite-size effects and inter-asperity interactions do not significantly degrade metainterface design quality within previously explored parameter ranges, but they can cause substantial deviations from target behavior outside those ranges.\"\n  Delta: \"Compared with prior work that proposed and experimentally used inverse-designed metainterfaces under independence and half-space assumptions, this paper explicitly quantifies when those assumptions hold or fail using det\"\n  Observation: \"The study finds that the existing metainterface design strategy remains valid in the experimental regimes previously used, but breaks down when asperities are too strongly coupled or the supporting elastic base is not la\"\n\n[Genome G4]\n  Claim: \"A coherently prepared tripod medium with a tunable control field can deterministically govern the absorption, amplification, spatial reshaping, and polarization-transition rate of slow-light vector vortices through OAM-structured atomic coherence.\"\n  Delta: \"Compared with prior slow-light and vortex-light studies, this work specifically introduces vector vortices with opposite-spin opposite-OAM components in a coherently prepared tripod configuration to reveal dynamically in\"\n  Observation: \"The analysis predicts that the mapped OAM creates symmetric azimuthal absorption, reduced overall loss, complementary gain and absorption between circular components at small detuning, periodic polarization conversion du\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "analysis",
+        "G2": "analysis",
+        "G3": "analysis",
+        "G4": "theory"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "physics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2226,
+        "similarity_avg": 0.2777,
+        "similarity_max": 0.3081
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0022",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Augmenting affinity prediction with voxel-wise local shape descriptors yields more accurate neuron segmentations than affinity prediction alone at much lower computational cost than state-of-the-art alternatives.\"\n  Delta: \"Compared with prior affinity-based segmentation that used only local voxel cues or larger affinity neighborhoods, this work adds explicit local object statistics through LSD prediction in multitask and auto-context archi\"\n  Observation: \"Learning LSDs as an auxiliary shape-context task improves segmentation accuracy in difficult regions while remaining about two orders of magnitude more computationally efficient than stronger prior approaches.\"\n\n[Genome G2]\n  Claim: \"A unified affinity-learning and agglomeration pipeline can reduce topological segmentation errors and achieve state-of-the-art, near-linear-time neuron segmentation on varied large-scale EM datasets.\"\n  Delta: \"Compared with prior pipelines that train boundary or affinity predictors independently of downstream merging and often use slower or more tuned agglomeration, this work introduces constrained MALIS-based affinity learnin\"\n  Observation: \"Jointly optimizing affinity prediction for topological correctness and using simple percentile-based agglomeration yields state-of-the-art segmentation accuracy with minimal dataset-specific tuning and scalable performan\"\n\n[Genome G3]\n  Claim: \"A flood-filling, object-centric recurrent 3D convolutional architecture pipeline can produce fully automated neuron segmentations from EM volumes with markedly fewer merge errors and quantitatively better reconstruction reliability than standard segmentation-and-grouping approach\"\n  Delta: \"Compared with prior methods that predict local voxel affinities or labels and then assemble objects in post-processing, this work directly grows individual objects through iterative feedback-driven segmentation and coupl\"\n  Observation: \"Object-centric recurrent mask feedback enables substantially more accurate boundary refinement and lower merge rates than conventional voxelwise segmentation pipelines, and the full system achieves high-quality automated\"\n\n[Genome G4]\n  Claim: \"An end-to-end convolutional architecture-based steering policy can autonomously trace neurites and resolve split and merge reconstruction errors in 3D EM data with accuracy sufficient to replace much of manual proofreading.\"\n  Delta: \"Compared with prior segmentation-and-agglomeration pipelines that require post-hoc human correction, this work shifts error resolution into an end-to-end learned tracing policy that directly predicts steering actions fro\"\n  Observation: \"The system can self-steer along axons and dendrites, recover from off-centerline deviations, and substantially reduce manual annotation effort while enabling complex connectomic analyses at lower cost.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "system"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "neuroscience",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2753,
+        "similarity_avg": 0.3681,
+        "similarity_max": 0.452
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0023",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A statistically optimized fusion of TRMM TMI 85-GHz and rain-rate inner-core metrics can estimate current and 6-hour future tropical cyclone Vmax more accurately than models using either variable source alone.\"\n  Delta: \"Compared with prior objective TC intensity methods constrained by coarser resolution or single-feature microwave indicators, this work introduces a basin-specific fusion of 85-GHz ice-scattering and retrieved rain-rate i\"\n  Observation: \"Combining high-resolution 85-GHz and rain-rate predictors yields better independent-sample intensity estimates than 85-GHz-only or rain-only models, with especially strong gains for short-term future intensity prediction\"\n\n[Genome G2]\n  Claim: \"A deep convolutional architecture trained on 37- and 89-GHz passive microwave images can produce probabilistic tropical cyclone intensity estimates that are at least competitive with and often superior to previous methods while remaining robust to realistic observation imperfecti\"\n  Delta: \"Compared with earlier empirical or lower-resolution automated methods, this paper introduces a deep convolutional architecture that directly learns from passive microwave imagery, outputs probabilistic intensity estimates, and is explicitly\"\n  Observation: \"The model outperforms prior automated intensity-estimation methods and shows that 89-GHz imagery provides especially strong structural signals for tropical cyclone intensity inference.\"\n\n[Genome G3]\n  Claim: \"A dual-branch self-attention mechanism fusion network trained to output a Gaussian distribution from IR and MW images can outperform existing methods in both deterministic TC intensity estimation and interval coverage.\"\n  Delta: \"Compared with prior single-source deterministic TC intensity models, this work adds multi-source IR+MW feature fusion and explicit probabilistic prediction with uncertainty quantification.\"\n  Observation: \"Experiments on the newly constructed balanced MTCID dataset show that the model delivers more robust deterministic intensity estimates and better-calibrated prediction intervals than prior approaches.\"\n\n[Genome G4]\n  Claim: \"Tropical cyclone intensification rate is systematically linked to wind structure through TC fullness and its decomposition, such that storms with intermediate TCF0, moderate Rf, and high TCF are statistically more likely to rapidly intensify.\"\n  Delta: \"Compared with prior work that examined intensity or size separately or used simple correlations, this paper introduces a physically constrained decomposition of fullness into lower-bound and individualized components and\"\n  Observation: \"The study finds that rapid intensification is most favored when critical fullness is intermediate at about 0.55, ratio of fullness is moderate at about 1.4, and resulting total fullness is high at about 0.8, revealing a \"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "method",
+        "G4": "theory"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "earth_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.226,
+        "similarity_avg": 0.3194,
+        "similarity_max": 0.3781
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0024",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A 3D Newton-Raphson conservative-to-primitive recovery scheme can serve as the default practical method for SPHINCS_BSSN with tabulated equations of state, with a 1D Ridders solver providing a safe backup when rare failures occur.\"\n  Delta: \"Compared with prior numerical relativity work focused on conventional grid-based formulations and their recovery schemes, this paper introduces recovery algorithms tailored to the distinct evolution equations of the hybr\"\n  Observation: \"In full neutron star merger simulations with the DD2 equation of state, the 3D Newton-Raphson method is both fast and robust with an average failure fraction well below 1%, while the 1D Ridders method is much slower but \"\n\n[Genome G2]\n  Claim: \"A joint power-spectrum-plus-bispectrum SMICA analysis can coherently and optimally combine multi-frequency data to recover foreground bispectra and primordial non-Gaussianity constraints while better accounting for foreground uncertainty than the standard clea\"\n  Delta: \"Compared with standard pipelines that estimate non-Gaussianity after producing a cleaned map, this work moves bispectrum estimation into the component-separation stage within a unified multi-component SMICA framework.\"\n  Observation: \"On 400 LiteBIRD-like E/B simulations, the method recovers foreground three-point correlations and standard primordial non-Gaussianity constraints, but does not improve power-spectrum or spectral-parameter precision.\"\n\n[Genome G3]\n  Claim: \"If the deconfinement transition is higher-order rather than first-order, then binary neutron-star mergers can exhibit measurably different evolution and gravitational-wave signatures even when pre-merger stellar masses, radii, and tidal deformabilities are the\"\n  Delta: \"Compared with prior merger studies centered on sharp first-order deconfinement transitions, this work explicitly replaces the single discontinuous transition with smoothed higher-order transitions and isolates their effe\"\n  Observation: \"The study finds that equations of state with nearly identical isolated-star observables can still produce distinguishable post-merger evolution when the order and structure of the hadron-quark transition are changed.\"\n\n[Genome G4]\n  Claim: \"A coupled implicit SPH treatment of coagulation, gas drag, and turbulent diffusion mechanism can realistically simulate dust growth, mixing, and migration during early star and disc formation and predicts faster growth when diffusion mechanism is included.\"\n  Delta: \"Compared with prior work that treated coagulation or multigrain drag dynamics separately, this paper unifies coagulation, migration, and turbulent diffusion mechanism in a single 3D SPH framework for star and disc formation.\"\n  Observation: \"The simulations show that turbulent dust diffusion mechanism substantially increases grain growth rates by replenishing regions of large-grain growth with small and intermediate grains.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "analysis",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "astronomy",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 2,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2491,
+        "similarity_avg": 0.2656,
+        "similarity_max": 0.296
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0025",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"Embedding the ISEW in a dynamic ecological macroeconomic model enables more informative evaluation of policy impacts than GDP, but remains less comprehensive than the Doughnut for assessing sustainable wellbeing.\"\n  Delta: \"Compared with prior work that mainly computed the ISEW retrospectively from historical data, this paper newly embeds the indicator in a dynamic macroeconomic simulation model to study forward-looking policy responses and\"\n  Observation: \"The simulations show that the ISEW generally rises under the tested policies, with the largest gains from combining all policies, while working-time reduction alone lowers the ISEW and the Doughnut outperforms both ISEW \"\n\n[Genome G2]\n  Claim: \"The paper claims that in the post-COVID period, willingness to accept higher taxes for inequality reduction is no longer broadly unconditional but increasingly depends on trust in government.\"\n  Delta: \"Compared with prior work that treats redistributive preferences as relatively stable or norm-driven, this paper shows that a major crisis can shift them toward trust-contingent conditional altruism.\"\n  Observation: \"They find that support for redistribution fell during the pandemic and became more strongly conditioned on trust in government, especially among high-income respondents.\"\n\n[Genome G3]\n  Claim: \"If more investors using the same fundamental strategy enter the market then each such investor's profit tends to fall, but if more investors using the same technical strategy enter then each such investor's profit tends to rise.\"\n  Delta: \"Compared with the prior model, the main change is the explicit introduction and scaling of same-strategy additional fundamental and technical agents to test whether mimic investors erode or enhance profits.\"\n  Observation: \"Increasing additional fundamental agents stabilizes market prices and reduces per-agent profits, whereas increasing additional technical agents destabilizes prices and increases their profits.\"\n\n[Genome G4]\n  Claim: \"If each good's valuation distributions are commonly FOSD ordered and regular and cross-good dependence is invariant across buyer types, then the monopolist's optimal multidimensional sequential mechanism is exactly the product of the optimal single-good sequen\"\n  Delta: \"Compared with prior static or one-dimensional screening work, the paper shows that sequential private learning can make a multidimensional problem separable across goods despite valuation dependence, because rent extract\"\n  Observation: \"The central insight is that in dynamic multidimensional screening, information rents needed for truthful ex post valuation reports can be extracted ex ante in expectation, which changes rent distortions relative to stati\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "analysis",
+        "G2": "analysis",
+        "G3": "analysis",
+        "G4": "theory"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "economics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2334,
+        "similarity_avg": 0.3007,
+        "similarity_max": 0.3384
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0026",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"An offline benchmark built from curated Kaggle competitions can robustly and reproducibly measure autonomous ML engineering ability and provide a more faithful estimate of progress toward human-level performance than earlier simplified benchmarks.\"\n  Delta: \"Compared with prior ML agent benchmarks that are narrower, more synthetic, or focused on limited modalities like tabular tasks, MLE-bench introduces a larger manually curated competition suite with full workflow executio\"\n  Observation: \"Experiments show that agent performance on authentic ML workflows is sensitive to runtime, compute, scaffolding, and repeated attempts, and remains meaningfully below strong human Kaggle performance on many tasks.\"\n\n[Genome G2]\n  Claim: \"An LLM agent trained with exploration-enriched fine-tuning, step-wise RL, and unified ML-specific rewards can learn stronger ML engineering behavior and generalize better than larger non-trained agent baselines under limited data.\"\n  Delta: \"Unlike prior autonomous ML agents based mainly on static prompting and non-learning experimentation, this work explicitly optimizes the agent policy through reinforcement learning with diversity bootstrapping and decoupl\"\n  Observation: \"The learned agent generalizes to new ML tasks and outperforms much larger models despite limited training data by using online reinforcement learning tailored to ML engineering interactions.\"\n\n[Genome G3]\n  Claim: \"Structuring ML engineering as tree search over atomic code revisions enables an LLM agent to outperform less structured baselines and solve ML engineering tasks more effectively.\"\n  Delta: \"Unlike prior AutoML or prompt-accumulating LLM agents that search static configuration spaces or rely on growing conversational context, AIDE explicitly searches executable code revisions in a persistent solution tree wi\"\n  Observation: \"The tree-search formulation with specialized prompts and summarization yields scalable iterative refinement and achieves robust, competitive, sometimes human-level performance on ML engineering benchmarks.\"\n\n[Genome G4]\n  Claim: \"An integrated ML-plus-genetic-algorithm design framework combined with recombinase-based single-copy screening can systematically discover synthetic mammalian 5' UTRs that outperform commonly used expression standards in driving protein output.\"\n  Delta: \"Compared with prior work centered on Kozak optimization or short random 5' UTR segments in variable-copy reporter assays, this paper explores broader full-UTR design space using ML-guided evolutionary search and controll\"\n  Observation: \"Synthetic 5' UTRs generated by the computational pipeline and tested through single-copy genomic integration produce stronger and more robust protein expression than standard clinical plasmid UTR controls across multiple\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "system",
+        "G2": "method",
+        "G3": "method",
+        "G4": "system"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "life_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 2,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2004,
+        "similarity_avg": 0.2455,
+        "similarity_max": 0.2735
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0027",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A deterministic fully dynamic APSP data structure can support arbitrary updates in O(n^2 log^3 n) amortized time and answer distance queries in constant time on general directed graphs with non-negative real weights.\"\n  Delta: \"Compared with prior dynamic APSP methods limited to special graph classes or slower polynomial update bounds, this work gives a deterministic algorithm for general directed non-negative weighted graphs with near-recomput\"\n  Observation: \"By restricting attention mechanism to paths whose proper subpaths were shortest at some time and smoothing updates, the number of relevant maintained paths can be tightly bounded enough to yield fast amortized updates.\"\n\n[Genome G2]\n  Claim: \"The paper claims that partially dynamic SSSP is conditionally as hard to improve as static APSP or Boolean matrix multiplication, that fully dynamic APSP in unweighted directed graphs can be maintained with Õ(m√n) amortized update and O(n^{3/4}) query time, a\"\n  Delta: \"Compared with prior dynamic shortest-path work, the paper both formalizes stronger conditional barriers for partially dynamic SSSP and improves the update-query tradeoff for fully dynamic APSP while also giving a determi\"\n  Observation: \"The key insight is that substantially faster partially dynamic SSSP would imply breakthroughs for static APSP or Boolean matrix multiplication, while random sampling plus layered maintenance yields amortized Õ(m√n) upda\"\n\n[Genome G3]\n  Claim: \"After efficient preprocessing, the algorithm answers SSSP queries on real-weighted undirected graphs in O(m log α(m, n)) time and consequently improves the best known APSP bounds in this setting.\"\n  Delta: \"Compared with prior Thorup-style methods that depended on integer-weight assumptions or suffered larger overhead on real weights, this work generalizes the framework to real weights with near-matching performance.\"\n  Observation: \"A carefully balanced MST-derived hierarchy can extend Thorup's hierarchy framework from integer to real weights while keeping preprocessing efficient and query time to O(m log α(m, n)).\"\n\n[Genome G4]\n  Claim: \"Δ-stepping computes exact SSSP distances on nonnegative weighted directed graphs with linear or near-linear work and sublinear parallel time on broad graph classes, and extends to distributed memory and arbitrary edge weights.\"\n  Delta: \"Compared with prior parallel SSSP methods that either mimic Dijkstra too closely or incur superlinear work, Δ-stepping introduces bucketed light/heavy edge processing to obtain both provable work efficiency and scalable \"\n  Observation: \"By tuning Δ, the algorithm exposes substantial parallelism while retaining linear average-case work for a broad class of graphs.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "theory",
+        "G2": "theory",
+        "G3": "theory",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "mathematics",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2608,
+        "similarity_avg": 0.332,
+        "similarity_max": 0.4018
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0028",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A latent diffusion mechanism model over SDF representations can generate MOFs conditioned on numeric, categorical, and text inputs, individually or jointly, with higher structural validity, diversity, and realism than representation-limited prior approaches.\"\n  Delta: \"Compared with prior MOF generators based on discrete atomistic or coarse-grained graph representations, this work introduces the first implicit 3D SDF representation within a latent diffusion mechanism framework for multimodal condit\"\n  Observation: \"Using implicit SDF-based 3D representations in a latent diffusion mechanism pipeline enables flexible multimodal conditioning and produces structurally diverse, chemically realistic MOFs on a highly diverse dataset.\"\n\n[Genome G2]\n  Claim: \"Single-sided ex-situ NMR relaxometry of imbibed solvents can reliably pre-screen porous framework materials by predicting their BET surface area from T2-derived pore-confined solvent fractions.\"\n  Delta: \"Compared with prior low-throughput porosity characterization such as nitrogen BET adsorption and XRD, this work introduces an automated ex-situ single-sided NMR relaxometry workflow suitable for rapid screening of many s\"\n  Observation: \"The fraction of fast-relaxing imbibed solvent shows a linear correlation with conventionally measured BET surface area across MOF and zeolite samples.\"\n\n[Genome G3]\n  Claim: \"A multimodal synthesis strategy that couples parameter-space mapping, mechanistic analytics, and alternative energy-assisted processing enables more deliberate and scalable control of MOF structure and morphology than isolated exploratory approaches.\"\n  Delta: \"Compared with prior narrower reviews focused on single synthesis modes, this work unifies conventional, high-throughput, microwave, electrochemical, mechanochemical, and sonochemical methodologies into one synthesis-stru\"\n  Observation: \"The review finds that MOF outcomes are strongly governed by the interplay of composition, process conditions, and external energy delivery, and that combining automation, analytics, and nontraditional energy inputs impro\"\n\n[Genome G4]\n  Claim: \"A closed-loop MOF discovery platform that tightly couples laboratory automation with advanced AI, especially Transformers and LLMs, can accelerate synthesis, characterization, optimization, and inverse design more effectively than fragmented nonintegrated appr\"\n  Delta: \"Compared with prior work that treated automation or AI as isolated tools for individual MOF tasks, this paper reframes the field around their seamless convergence into an autonomous closed-loop discovery system centered \"\n  Observation: \"The review finds that combining automated experimentation with modern AI enables a synergistic feedback loop in which knowledge extraction, inverse design, and adaptive experimentation can substantially improve the effic\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "method",
+        "G2": "method",
+        "G3": "analysis",
+        "G4": "analysis"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "materials",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2307,
+        "similarity_avg": 0.2573,
+        "similarity_max": 0.3066
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0029",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"If fragile conservation laws in an integrable spin chain are weakly broken by dipolar couplings, then non-local observables such as magnetization fluctuations will display experimentally measurable anomalous dynamics absent in the strictly integrable case.\"\n  Delta: \"Compared with prior work emphasizing local probes or idealized integrable dynamics, this paper shows that non-local observables in realistic Rydberg arrays can directly reveal the effects of fragile conservation-law brea\"\n  Observation: \"The study finds that weak integrability breaking from dipolar interatomic couplings causes anomalous growth in non-local observables that is visible within accessible times even in chains of about 14 atoms.\"\n\n[Genome G2]\n  Claim: \"Carefully designed kirigami cut patterns provide a controllable means to determine whether a clamped-clamped arch exhibits symmetry-point bifurcation, limit-point bifurcation, or no stability loss under increasing central load.\"\n  Delta: \"Compared with prior work that mainly documented snap-through in arches or kirigami structures, this paper shows that tailored kirigami cuts can actively switch the instability mode or suppress snap-through rather than me\"\n  Observation: \"They find that at a support distance equal to one-quarter of the sheet length the arches usually lose stability through a symmetry-point bifurcation with a small region of limit-point behavior, while at one-half and thre\"\n\n[Genome G3]\n  Claim: \"A quadratic Lindblad-Keldysh response formalism can predict distinctive steady-state spectroscopic signatures of open systems, including critical scaling, weak/ultra-strong dissipation correspondence, and dissipation-induced optical nonlinearities absent in an\"\n  Delta: \"Compared with prior work that mainly analyzed spectra, steady states, or equilibrium-style response, this paper extends response theory to a unified finite-frequency linear and non-linear Keldysh-Lindblad treatment for o\"\n  Observation: \"Using this framework, the authors find a critical spin-density wavelength exponent of 1/2 in the boundary-driven XY model, gapless dispersive spin-response modes tied to spin-density-wave order, non-monotonic diamagnetic\"\n\n[Genome G4]\n  Claim: \"A leading-term metric-tensor preconditioner can consistently accelerate gradient-based iPEPS optimization enough to yield lower total computational cost than standard optimization techniques on representative 2D quantum models.\"\n  Delta: \"Compared with prior unpreconditioned gradient-based iPEPS optimization, the paper adds a cheap metric-informed preconditioning step that is designed to work across contraction schemes, unit cells, and Hamiltonians.\"\n  Observation: \"Experiments on the Heisenberg and Kitaev models show that the preconditioner substantially reduces the number of optimization steps and improves overall computational efficiency relative to standard optimizers.\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "analysis",
+        "G2": "analysis",
+        "G3": "theory",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "chemistry",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2378,
+        "similarity_avg": 0.269,
+        "similarity_max": 0.3155
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-01_contribution_type_0030",
+    "task_type": "T1-01_contribution_type",
+    "prompt": "Classify the contribution type of ALL 4 genomes. All four genomes are from the same broad domain and have intentionally similar evidence. Options: method, dataset, analysis, system, theory\n\n[Genome G1]\n  Claim: \"A sufficiently scaled transformer architecture-based generate-and-filter pipeline can autonomously solve competitive programming problems at about the level of a median human participant in real contests.\"\n  Delta: \"Compared with prior code models focused on completion or short synthesis, AlphaCode targets end-to-end long-form contest problem solving using contest-specific fine-tuning, metadata conditioning, and diversity-preserving\"\n  Observation: \"Large-scale sampling plus test-based filtering and behavioral clustering enables the system to reach roughly median human contestant performance in real programming contests.\"\n\n[Genome G2]\n  Claim: \"A GPT-2-style autoregressive language model dialogue model pre-trained on 147M Reddit exchanges and reranked with mutual information can outperform prior open-domain dialogue baselines and approach human-level performance on standard evaluation settings.\"\n  Delta: \"Compared with prior neural dialogue systems trained on smaller task-specific corpora or without large-scale pre-training, this work introduces GPT-2-style autoregressive language model-based pre-training on massive real-world dialogue data plus backwar\"\n  Observation: \"Large-scale conversational pre-training combined with mutual information reranking substantially improves response quality over strong baselines and yields outputs judged closer to human responses in both automatic and h\"\n\n[Genome G3]\n  Claim: \"A distributional similarity objective over contextualized, entity-abstracted mentions can learn relation representations that outperform or more broadly generalize than task-specific supervised extraction approaches when annotation is limited.\"\n  Delta: \"Compared with earlier supervised slot-filling and extraction pipelines, this work shifts the unit of learning from labeled relation classes over raw entity mentions to similarity-trained embeddings of masked entity-pair \"\n  Observation: \"The paper finds that suppressing entity identity and matching distributionally similar relation contexts yields reusable relation embeddings that generalize across paraphrastic patterns and support clustering, retrieval,\"\n\n[Genome G4]\n  Claim: \"The paper claims that a plug-and-play planner trained with supervised initialization and goal-oriented AI-feedback RL can generalize policy planning across tasks and improve long-term task-oriented dialogue performance.\"\n  Delta: \"Compared with prior work that uses static prompts or iterative control around frozen LLMs, this paper introduces a separately learnable, modular policy planner that can be trained and transferred across tasks through sup\"\n  Observation: \"The main empirical insight is that combining supervised initialization with self-play RL and LLM-based reward feedback yields more effective, proactive, and cross-task dialogue strategy planning than prior prompting-base\"\n\nAnswer with one line per genome:\nG1 = [method|dataset|analysis|system|theory]\nG2 = [method|dataset|analysis|system|theory]\nG3 = [method|dataset|analysis|system|theory]\nG4 = [method|dataset|analysis|system|theory]",
+    "choices": {},
+    "gold_answer": {
+      "multi_contrib_types": {
+        "G1": "system",
+        "G2": "method",
+        "G3": "method",
+        "G4": "method"
+      }
+    },
+    "metadata": {
+      "baseline": "0.16%",
+      "domain": "information_science",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 0,
+        "same_contribution_type": 0,
+        "similarity_min": 0.1306,
+        "similarity_avg": 0.1393,
+        "similarity_max": 0.1558
+      },
+      "capability": "Genome Abstraction",
+      "original_task_type": "L0-6_contribution_type_infer",
+      "display_title": "Contribution Role"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  }
+]

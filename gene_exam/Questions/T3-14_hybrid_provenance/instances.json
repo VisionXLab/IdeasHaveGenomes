@@ -1,0 +1,707 @@
+[
+  {
+    "instance_id": "T3-14_hybrid_provenance_000",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. The Indra Representation Hypothesis introduces a factorized multimodal latent space in which encoders decompose inputs into modality-agnostic semantic factors and modality-specific surface factors, trained with reconstruction, cross-moda [text omitted]\nG2. Because the work is framed primarily as a theoretical representation hypothesis, it leaves open how the latent factorization and topology constraints can be robustly identified and optimized in large-scale practical systems.\nG3. This paper targets principled semantic alignment and compositional reasoning across heterogeneous modalities such as text, vision, and audio.\nG4. topology-preserving alignment regularization over latent units and their relations\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G3": "Predecessor",
+        "G1": "External",
+        "G4": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_001",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. This paper studies a run-and-tumble particle on the half-line with stochastic resetting and a sticky boundary that allows temporary binding, desorption, and eventual absorption at the target.\nG2. Compared with prior RTP resetting studies that typically use purely absorbing or reflecting boundaries, this work adds a partially reactive sticky boundary with stochastic residence times and explicitly compares two distinct desorption m [text omitted]\nG3. The model is restricted to a one-dimensional RTP with constant tumbling and resetting rates, a single sticky boundary, and analytically idealized desorption/absorption kinetics, which may limit direct applicability to more complex geomet [text omitted]\nG4. It uses a renewal-theoretic decomposition over successive boundary-binding events to derive nonequilibrium stationary states and mean first-passage statistics under two desorption protocols: reset-to-initial-state and continuous release [text omitted]\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G2": "Predecessor",
+        "G4": "Novel",
+        "G1": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_002",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. This paper targets accurate and efficient intrusion detection for IoT network traffic in resource-constrained deployment environments.\nG2. Compared with prior heavier deep-learning IDS models and non-distilled transformer use, this work specifically introduces teacher-student knowledge distillation to compress bidirectional contextual traffic modeling into a lightweight dep [text omitted]\nG3. KD-BERT distills a large BERT-style bidirectional transformer teacher into a smaller student model for network traffic classification using tokenized flow or packet-feature sequences, combining hard label loss with soft teacher-output su [text omitted]\nG4. The approach depends on a strong pretrained or separately trained teacher and appears to use BERT-style sequence encoding and distillation losses whose exact alignment design and robustness across diverse IoT traffic distributions remain [text omitted]\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Predecessor",
+        "G4": "Predecessor",
+        "G3": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_003",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. Dynamic Chain Optimization decomposes LLM adaptation into modular inference/specialization stages and uses a controller to estimate each stage's marginal utility and resource cost so it can selectively route, reorder, skip\nG2. schedule lightweight frozen-backbone updates across heterogeneous on-device resources under latency, memory, energy\nG3. This paper targets private, resource-constrained adaptation of large language models for edge-device inference under variable hardware, connectivity, and workload conditions.\nG4. The framework depends on accurate online estimates of per-stage benefit and cost, so its gains may degrade when the controller mispredicts utility-resource tradeoffs across changing devices or inputs.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "External",
+        "G2": "External",
+        "G3": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_004",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. uses this framework to map index design choices to query-processing requirements\nG2. This paper targets the problem of understanding and comparing hashing-based access methods for database query processing across diverse workloads and system constraints.\nG3. It introduces a seven-dimensional analytical taxonomy that decomposes hashing methods by hash behavior, bucket organization, collision handling, storage layout, workload sensitivity, update support\nG4. Because the work is primarily a diagnostic framework rather than a new executable index design, it does not itself provide a concrete optimized hashing method or a unified implementation that validates all seven dimensions jointly.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Predecessor",
+        "G2": "Predecessor",
+        "G3": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_005",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. The paper studies low-energy electron-induced dissociation pathways of 1-propanol in the context of dissociative electron attachment in alcohol molecules.\nG2. Compared with prior dissociative electron attachment studies on other alcohols, this work adds the first detailed fragment-yield and threshold-energy characterization for 1-propanol and uses those comparisons to argue site-specific fragm [text omitted]\nG3. It measures fragment anion yields for 1-propanol over 3.5 to 16 eV and uses DFT calculations to estimate threshold energies for the observed dissociation channels\nG4. The study is limited to one alcohol and a modest energy window, so mechanistic generalization and resonance assignment remain partly inferential rather than directly resolved.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G2": "Predecessor",
+        "G3": "Novel",
+        "G1": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_006",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. Because it is a consensus report rather than a controlled empirical study, it does not quantitatively test the effectiveness of its recommendations.\nG2. The paper addresses how to improve reproducibility and replicability practices across the research lifecycle in condensed matter physics.\nG3. It synthesizes recommendations from a multi-stakeholder May 2024 conference involving researchers, journalists, legal professionals, publishers, societies, and other experts to formulate best practices and policy guidance\nG4. Compared with prior general discussions of research integrity, this work provides a condensed-matter-specific, cross-sector set of recommendations intended to seed subfield-tailored standards.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G2": "Predecessor",
+        "G1": "Predecessor",
+        "G4": "Predecessor"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_007",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. The paper builds a nonparametric test by deflating returns with the diurnal component and applying a pre-averaged, jump-truncated bipower-variation statistic for general It\\u00f4 semimartingales\nG2. The method is distorted by small infinite-activity price jumps under standard asymptotics, requiring bootstrap repair and leaving robustness to such jump behavior as a key weakness.\nG3. asymptotic inference supported by a positive semi-definite covariance estimator and a bootstrap correction\nG4. Testing whether intraday volatility variation in noisy high-frequency asset prices is fully explained by a deterministic recurrent diurnal pattern in the presence of jumps and market microstructure noise.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Novel",
+        "G3": "Novel",
+        "G4": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_008",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. This paper targets dense RGB-D SLAM for online large-scale scene reconstruction and rendering with improved geometric consistency.\nG2. Constrained Gaussian Splatting couples anisotropic Gaussian radiance primitives with an implicit TSDF stored in a spatial hash grid, using depth-supervised signed-distance regularization to jointly constrain Gaussian positions, scales\nG3. The method depends on accurate RGB-D depth supervision and maintaining a coupled dual representation, which adds optimization and representation complexity relative to unconstrained Gaussian-only SLAM.\nG4. Compared with prior Gaussian-splatting SLAM methods that optimize splats mainly from photometric rendering losses, this work adds an incrementally updateable implicit TSDF hash grid that explicitly regularizes the Gaussian map toward a c [text omitted]\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Predecessor",
+        "G4": "Predecessor",
+        "G2": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_009",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. This paper addresses how to correctly characterize the normal restitution coefficient in oblique collisions of nanoclusters, where standard macroscopic definitions can fail.\nG2. The authors combine molecular dynamics simulations of Lennard-Jones and covalently bonded nanoclusters with a continuum-theory treatment of oblique impact that incorporates elasticity, bulk viscosity, and surface tension\nG3. The study is limited to idealized nanocluster models and collision conditions, so its conclusions may not directly generalize to more complex materials, shapes, environments, or strongly plastic regimes.\nG4. Compared with prior work that applied standard restitution concepts from macroscopic collisions, this paper identifies their breakdown at the nanoscale for oblique impacts and introduces a corrected definition supported by theory and sim [text omitted]\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G4": "Predecessor",
+        "G2": "Novel",
+        "G1": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_010",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. it alternates updates of shared weights and architecture parameters while optimizing an accuracy-plus-hardware-cost objective using a device-specific latency predictor\nG2. The method depends on a separately built latency prediction model from measured operator runtimes on the target device, so its hardware-awareness is only as accurate as that predictor and must be rebuilt for new platforms.\nG3. The paper targets neural architecture search for image models that must be optimized directly for a specific target task and deployment hardware rather than through proxy settings.\nG4. ProxylessNAS performs differentiable architecture search with a stochastic over-parameterized supernetwork in which each layer contains discrete operator candidates but only one binarized path is active at a time\n\nFor each listed gene, answer with its provenance.\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G3": "Predecessor",
+        "G2": "Predecessor",
+        "G4": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_011",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. A main limitation is that the work appears to provide a model-based proof of concept rather than direct observational validation, leaving detectability and robustness across supernova models uncertain.\nG2. The paper addresses how nonstandard neutrino properties and BSM-induced flavor conversion in collapsing stellar cores could be probed through gravitational-wave signals from proto-neutron stars during core-collapse supernovae.\nG3. Compared with prior work that treated supernova gravitational waves mainly as probes of hydrodynamics and standard neutrino physics, this paper proposes them as a multimessenger signature of nonstandard neutrino properties and BSM effects.\nG4. It analyzes the effect of neutrino flavor conversion inside the proto-neutron star on convection and predicts the resulting changes in gravitational-wave emission amplitude and frequency content during the post-bounce phase\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G2": "Predecessor",
+        "G1": "Predecessor",
+        "G3": "Predecessor"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_012",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. It introduces a unified comparative evaluation framework that categorizes geometric, neural implicit, radiance-based\nG2. This paper targets the problem of determining which 3D scene representation is most suitable for robotics tasks such as manipulation, navigation, and long-horizon planning.\nG3. foundation-model scene representations and assesses them against robotics-specific criteria including geometric fidelity, semantic richness, updateability, decision support, computational cost\nG4. Because the paper is primarily an evaluative taxonomy rather than a new representation or integrated benchmarked system, its conclusions depend on the chosen criteria and comparative framing rather than demonstrating a universally superi [text omitted]\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "External",
+        "G3": "External",
+        "G2": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_013",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. making it practical through temporal reuse of weights across a group of pictures and offline training of fixed architecture- and task-specific weights\nG2. The method replaces standard SSE-based bit allocation with a wrapper-aware weighted SSE metric in the inner codec\nG3. The approach depends on wrapper-, architecture-, and task-specific offline-trained weights and is demonstrated within a wrapper-based FCM pipeline on HEVC, which may limit generality across changing models or deployment settings.\nG4. This paper addresses feature coding for machines in split-inference systems, specifically improving rate-distortion optimization inside traditional codecs used between neural pre- and post-processing wrappers.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G2": "Novel",
+        "G1": "Novel",
+        "G4": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_014",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. Unlike classical Kelly theory that assumes standard return dynamics and growth optimality, this paper shows that introducing stochastic time change breaks Kelly optimality and links safer sizing to Thorp-style ruin thresholds and accepta [text omitted]\nG2. Long-term portfolio sizing under time-changed return dynamics in a general semimartingale setting.\nG3. The paper analyzes Kelly-rule growth optimality by modeling returns with a stochastic clock and comparing the resulting average growth rate and ruin thresholds to less aggressive leverage choices\nG4. The work is primarily theoretical and illustrative, relying on literature-based stochastic clock variance examples rather than broad empirical validation on real investment data.\n\nFor each listed gene, answer with its provenance.\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G2": "Predecessor",
+        "G4": "Predecessor",
+        "G3": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_015",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. Noncespaces assigns fresh unpredictable tokens to fine-grained syntactic regions of a page and enforces in the browser that markup, attributes\nG2. script-bearing contexts only accept content carrying the correct token relationships, so injected strings cannot cross parsing-context boundaries into active code\nG3. The approach requires coordinated token insertion by trusted server-side output generation and corresponding browser enforcement, limiting deployability and leaving compatibility dependent on correctly instrumenting all relevant content- [text omitted]\nG4. This paper targets browser-side prevention of cross-site scripting by stopping untrusted page data from being interpreted in executable or otherwise privileged web document contexts.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG4 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G4": "Predecessor",
+        "G1": "External",
+        "G2": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_016",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. It proves a symmetry formula by analyzing simultaneous eigenvectors of the Hamiltonian and one-site translation operator and extending arguments known for the three-state case to arbitrary N\nG2. Compared with prior work that treated the three-state chain or more restricted sectors, this paper generalizes the symmetry relation to arbitrary N and every translation eigensector, resolving the Fabricius-McCoy conjecture.\nG3. The paper addresses exact finite-volume two-point correlation symmetries in the periodic N-state superintegrable chiral Potts spin chain across translation eigensectors.\nG4. The result is specialized to the superintegrable periodic chiral Potts chain and establishes symmetry properties rather than providing a general method for computing arbitrary correlations in broader non-superintegrable settings.\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G2": "Predecessor",
+        "G1": "Novel",
+        "G3": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Speciation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_017",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "A successor genome combines some genes from its predecessor lineage and may add novel or external-lineage genes. Classify each shown target gene's provenance.\n\nSuccessor genome genes:\nG1. This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\nG2. A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache [text omitted]\nG3. Compared with earlier side-channel work that inferred only coarse implementation properties or relied on more direct leakage sources, this paper shows full practical attackability of a specific mainstream AES software implementation usin [text omitted]\nG4. The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-tabl [text omitted]\n\nFor each listed gene, answer with its provenance.\n--- Provenance Label Definitions ---\nPredecessor: inherited from the predecessor lineage.\nExternal: imported from another lineage.\nNovel: newly introduced in the successor.\n\nAnswer with one line per listed gene:\nG1 = [Predecessor|External|Novel]\nG2 = [Predecessor|External|Novel]\nG3 = [Predecessor|External|Novel]\n",
+    "choices": {},
+    "gold_answer": {
+      "gene_sources": {
+        "G3": "Predecessor",
+        "G2": "External",
+        "G1": "Novel"
+      }
+    },
+    "metadata": {
+      "target_skill": "hybridization_provenance",
+      "level": "L2",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G4_hybridization_provenance",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_900",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "Predecessor genome:\n  Mechanism: \"EPaxos Revisited re-specifies leaderless consensus by refining dependency tracking, quorum-intersection conditions, and command-ordering rules so replicas can infer conflicts, build a partial order, and use a fast commit path without a fixed leader.\"\n  Niche: \"This paper targets low-latency strongly consistent consensus for geo-distributed replication, especially when commands often do not conflict but failures and contention still occur.\"\n  Limitation: \"Although it clarifies ambiguities and corner cases, the revisited design still leaves substantial implementation complexity and metadata/dependency-set overhead in recovery and fast-path eligibility checks.\"\n\nSuccessor genome (hybridized):\n  Mechanism: \"FlexRaft is a leader-based consensus protocol that replaces uniform full-replica log storage with phase-aware flexible erasure-coded fragment placement, using coding layouts tailored separately for commit quorums and node recovery so entries can usually be agreed on and repaired without full-object reconstruction.\"\n  Niche: \"This paper targets reducing the storage, communication, and recovery costs of fault-tolerant leader-based log consensus while preserving correctness and fast failure repair.\"\n  Limitation: \"The design depends on carefully chosen coding parameters and phase-specific layouts, leaving open how to optimally configure and adapt them under changing workloads, failures, and latency conditions in real deployments.\"\n\nGene labels in successor:\n  G1: mechanism\n  G2: niche\n  G3: limitation\n  G4: observation\n\nFor each gene, classify its provenance:\n  Predecessor — inherited from the predecessor lineage\n  External — brought in from an external lineage\n  Novel — newly introduced, not from any known lineage\n\nAlso identify the dynamics type.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: Predecessor | External | Novel\nG2: Predecessor | External | Novel\nG3: Predecessor | External | Novel\nG4: Predecessor | External | Novel\n",
+    "choices": null,
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "External",
+        "G2": "Predecessor",
+        "G3": "Predecessor",
+        "G4": "Predecessor"
+      }
+    },
+    "metadata": {
+      "target_skill": "provenance_classification",
+      "level": "medium",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-14_hybrid_provenance",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_901",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "Predecessor genome:\n  Mechanism: \"BiMamba: bidirectional Mamba (state space model) processes sequence in both directions; RC-equivariant architecture ensures predictions are invariant to reverse-complement transformation; trained on human genome.\"\n  Niche: \"HyenaDNA is unidirectional (causal); DNA is inherently bidirectional (sense and antisense strands are equivalent); unidirectional models cannot natively capture reverse-complement symmetry of genomic sequences.\"\n  Limitation: \"Still limited to DNA; no protein sequence integration; no generative design of functional sequences; cannot model genome-scale (chromosome-level) interactions; variant effect prediction not at the scale of clinical utility.\"\n\nSuccessor genome (hybridized):\n  Mechanism: \"StripedHyena architecture (hybrid Hyena + attention) at 7B scale; trained on 2.7M prokaryotic genomes (1T tokens); single-nucleotide tokenization across entire genome; generative and discriminative tasks unified.\"\n  Niche: \"Caduceus models DNA structure but cannot generate functional genetic elements de novo; no model unifies DNA/RNA/protein function prediction and generation at genome scale.\"\n  Limitation: \"Trained primarily on prokaryotes; poor generalization to eukaryotic genomes (different chromatin structure, splicing, regulatory complexity); genome-scale generation (chromosome level) still out of reach; no understanding of 3D genome organization.\"\n\nGene labels in successor:\n  G1: mechanism\n  G2: niche\n  G3: limitation\n  G4: observation\n\nFor each gene, classify its provenance:\n  Predecessor — inherited from the predecessor lineage\n  External — brought in from an external lineage\n  Novel — newly introduced, not from any known lineage\n\nAlso identify the dynamics type.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: Predecessor | External | Novel\nG2: Predecessor | External | Novel\nG3: Predecessor | External | Novel\nG4: Predecessor | External | Novel\n",
+    "choices": null,
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Predecessor",
+        "G2": "External",
+        "G3": "External",
+        "G4": "Predecessor"
+      }
+    },
+    "metadata": {
+      "target_skill": "provenance_classification",
+      "level": "medium",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-14_hybrid_provenance",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_902",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "Predecessor genome:\n  Mechanism: \"ESM-2 protein language model (3B/15B parameters) pretrained on 250M protein sequences learns evolutionary representations implicitly; ESMFold folding trunk produces 3D structure from single-sequence ESM embeddings without MSA.\"\n  Niche: \"AlphaFold2 requires Multiple Sequence Alignment (MSA) computation which takes hours per protein; cannot scale to billions of protein sequences; evolutionary information embedded in MSA limits single-sequence organisms.\"\n  Limitation: \"Less accurate than AlphaFold2 on hard targets with deep MSA; single-sequence representation misses co-evolutionary constraints; no direct application to protein design; no protein-ligand prediction.\"\n\nSuccessor genome (hybridized):\n  Mechanism: \"Pairformer replaces Evoformer; diffusion module generates all-atom 3D coordinates for any molecular complex type; trained on PDB structures of all complex types; MSA-free option via single-sequence trunk.\"\n  Niche: \"ESMFold (fast, single-chain) and AlphaFold2 (accurate, single-chain) cannot predict complexes; RFDiffusion designs backbones but not full atomic detail with small molecules; no single model covers protein-DNA/RNA/ligand interactions.\"\n  Limitation: \"Closed-source weights for commercial use; no generative design capability (prediction only, not design); does not model binding kinetics or conformational ensembles; large gaps in accuracy for RNA-protein complexes.\"\n\nGene labels in successor:\n  G1: mechanism\n  G2: niche\n  G3: limitation\n  G4: observation\n\nFor each gene, classify its provenance:\n  Predecessor — inherited from the predecessor lineage\n  External — brought in from an external lineage\n  Novel — newly introduced, not from any known lineage\n\nAlso identify the dynamics type.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: Predecessor | External | Novel\nG2: Predecessor | External | Novel\nG3: Predecessor | External | Novel\nG4: Predecessor | External | Novel\n",
+    "choices": null,
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Predecessor",
+        "G2": "Predecessor",
+        "G3": "External",
+        "G4": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "provenance_classification",
+      "level": "medium",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-14_hybrid_provenance",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_903",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "Predecessor genome:\n  Mechanism: \"Constitutional AI trains an assistant with a written constitution by having the model self-critique and revise its answers under those rules for supervised finetuning, then generate constitution-based preference comparisons to train a preference model and optimize the assistant with reinforcement learning.\"\n  Niche: \"This paper targets the problem of making a conversational language model more harmless and aligned with explicit behavioral constraints during dialogue.\"\n  Limitation: \"The method's behavior is only as good as the hand-specified constitution, and the paper leaves open how complete, unbiased, and robust those rules are across diverse harmful or ambiguous cases.\"\n\nSuccessor genome (hybridized):\n  Mechanism: \"Starting from pretrained autoregressive language models, the method performs supervised instruction tuning on a large mixture of heterogeneous datasets rewritten as natural-language instruction–output pairs within a unified text-to-text format, while systematically varying model scale and task diversity.\"\n  Niche: \"This paper targets improving language models' ability to follow natural-language instructions and generalize to unseen tasks across diverse NLP problem types.\"\n  Limitation: \"The study relies on supervised instruction datasets reformulated from existing tasks, leaving open how well the approach covers real user intents and whether performance extends beyond the curated instruction mixtures used for finetuning and evaluation.\"\n\nGene labels in successor:\n  G1: mechanism\n  G2: niche\n  G3: limitation\n  G4: observation\n\nFor each gene, classify its provenance:\n  Predecessor — inherited from the predecessor lineage\n  External — brought in from an external lineage\n  Novel — newly introduced, not from any known lineage\n\nAlso identify the dynamics type.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: Predecessor | External | Novel\nG2: Predecessor | External | Novel\nG3: Predecessor | External | Novel\nG4: Predecessor | External | Novel\n",
+    "choices": null,
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "External",
+        "G2": "Predecessor",
+        "G3": "Predecessor",
+        "G4": "Predecessor"
+      }
+    },
+    "metadata": {
+      "target_skill": "provenance_classification",
+      "level": "medium",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-14_hybrid_provenance",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_904",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "Predecessor genome:\n  Mechanism: \"NuNER pre-trains a discriminative sequence-labeling encoder on large-scale token/span annotations generated by an instruction-following LLM, with post-processing and filtering to normalize labels and suppress hallucinated or inconsistent spans before standard NER fine-tuning.\"\n  Niche: \"This paper targets named entity recognition, especially improving generalization of NER models beyond narrow manually labeled corpora.\"\n  Limitation: \"The method still depends on imperfect generated labels whose span boundaries and type assignments require heuristic normalization and filtering, leaving residual noise that can limit the quality of the learned encoder.\"\n\nSuccessor genome (hybridized):\n  Mechanism: \"Fin-R1 adapts a strong general LLM to finance via staged continued pre-training on finance corpora, supervised instruction tuning on finance task formats, and reinforcement learning that optimizes answer correctness and reasoning consistency on financial prompts.\"\n  Niche: \"This paper targets multi-step financial reasoning and decision-oriented question answering in the finance domain.\"\n  Limitation: \"The paper description leaves unclear how the reinforcement learning reward is defined and validated for financial correctness, making it uncertain which aspects of the reported gains come from true domain reasoning improvement versus reward shaping.\"\n\nGene labels in successor:\n  G1: mechanism\n  G2: niche\n  G3: limitation\n  G4: observation\n\nFor each gene, classify its provenance:\n  Predecessor — inherited from the predecessor lineage\n  External — brought in from an external lineage\n  Novel — newly introduced, not from any known lineage\n\nAlso identify the dynamics type.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: Predecessor | External | Novel\nG2: Predecessor | External | Novel\nG3: Predecessor | External | Novel\nG4: Predecessor | External | Novel\n",
+    "choices": null,
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "External",
+        "G2": "Predecessor",
+        "G3": "Predecessor",
+        "G4": "Predecessor"
+      }
+    },
+    "metadata": {
+      "target_skill": "provenance_classification",
+      "level": "medium",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-14_hybrid_provenance",
+      "source": "supplement_v1",
+      "domain": "information_science",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_905",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "Predecessor genome:\n  Mechanism: \"Deep SVDD learns a neural network that maps normal samples into a latent space tightly concentrated around a fixed or robustly estimated center by minimizing hypersphere volume, and scores anomalies by distance from that center under constraints that prevent trivial collapse.\"\n  Niche: \"This paper targets one-class anomaly detection, where only normal-class data are available for training and the goal is to detect outliers at test time.\"\n  Limitation: \"The method depends on carefully imposed architectural restrictions such as removing biases and controlling activations, which narrows model design flexibility and is needed to avoid degenerate constant solutions.\"\n\nSuccessor genome (hybridized):\n  Mechanism: \"Deep SVDD trains a neural network to map normal samples into latent space and minimize their average squared distance to a fixed center, with a soft-boundary variant that also learns a radius and penalizes points outside the hypersphere while using architecture constraints to prevent collapse.\"\n  Niche: \"This paper targets one-class classification and anomaly detection when only target-class examples are available for training.\"\n  Limitation: \"The method depends on restrictive architectural constraints and a fixed-center formulation to avoid trivial constant solutions, which limits network design flexibility and may hinder broader applicability.\"\n\nGene labels in successor:\n  G1: mechanism\n  G2: niche\n  G3: limitation\n  G4: observation\n\nFor each gene, classify its provenance:\n  Predecessor — inherited from the predecessor lineage\n  External — brought in from an external lineage\n  Novel — newly introduced, not from any known lineage\n\nAlso identify the dynamics type.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: Predecessor | External | Novel\nG2: Predecessor | External | Novel\nG3: Predecessor | External | Novel\nG4: Predecessor | External | Novel\n",
+    "choices": null,
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Predecessor",
+        "G2": "Predecessor",
+        "G3": "Predecessor",
+        "G4": "Predecessor"
+      }
+    },
+    "metadata": {
+      "target_skill": "provenance_classification",
+      "level": "medium",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-14_hybrid_provenance",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Mutation"
+    }
+  },
+  {
+    "instance_id": "T3-14_hybrid_provenance_906",
+    "task_type": "T3-14_hybrid_provenance",
+    "prompt": "Predecessor genome:\n  Mechanism: \"Generative diffusion over 3D pose space: separate diffusion processes for translation (R³), rotation (SO(3)), and torsion angles; confidence ranking of generated poses.\"\n  Niche: \"EquiBind produces single rigid-body pose; real binding is flexible; need multi-modal pose distribution over all degrees of freedom.\"\n  Limitation: \"Slow sampling (multiple denoising steps); still requires known protein structure; cannot generate novel ligands; no co-design of protein and ligand.\"\n\nSuccessor genome (hybridized):\n  Mechanism: \"Pairformer replaces Evoformer; diffusion module generates all-atom 3D coordinates for any molecular complex type; trained on PDB structures of all complex types; MSA-free option via single-sequence trunk.\"\n  Niche: \"ESMFold (fast, single-chain) and AlphaFold2 (accurate, single-chain) cannot predict complexes; RFDiffusion designs backbones but not full atomic detail with small molecules; no single model covers protein-DNA/RNA/ligand interactions.\"\n  Limitation: \"Closed-source weights for commercial use; no generative design capability (prediction only, not design); does not model binding kinetics or conformational ensembles; large gaps in accuracy for RNA-protein complexes.\"\n\nGene labels in successor:\n  G1: mechanism\n  G2: niche\n  G3: limitation\n  G4: observation\n\nFor each gene, classify its provenance:\n  Predecessor — inherited from the predecessor lineage\n  External — brought in from an external lineage\n  Novel — newly introduced, not from any known lineage\n\nAlso identify the dynamics type.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, it is Hybridization, not Speciation.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with one line per field:\nG1: Predecessor | External | Novel\nG2: Predecessor | External | Novel\nG3: Predecessor | External | Novel\nG4: Predecessor | External | Novel\n",
+    "choices": null,
+    "gold_answer": {
+      "gene_sources": {
+        "G1": "Predecessor",
+        "G2": "Predecessor",
+        "G3": "Predecessor",
+        "G4": "External"
+      }
+    },
+    "metadata": {
+      "target_skill": "provenance_classification",
+      "level": "medium",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-14_hybrid_provenance",
+      "source": "supplement_v1",
+      "domain": "chemistry",
+      "display_title": "Hybrid Provenance"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis",
+    "diagnostic_gold": {
+      "dynamics": "Hybridization"
+    }
+  }
+]

@@ -1,0 +1,524 @@
+[
+  {
+    "instance_id": "T3-15_gene_tracking_000",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. An empirical qualitative factor analysis treats the CI configuration as a first-class artifact and derives adoption-relevant factors by comparing practitioner-facing evidence across project integration setups\nG2. Because the paper relies on qualitative practitioner evidence rather than controlled or large-scale quantitative validation, it does not establish the relative strength or generalizability of the identified factors across all project con [text omitted]\nG3. This paper targets understanding which properties of continuous integration configurations affect whether CI is successfully adopted and accepted in software projects.\n\nGenome 2:\nG1. This paper targets understanding what determines whether GitHub pull requests are accepted and how long they take to be integrated in large-scale distributed collaborative software development.\nG2. discussion traces combined with statistical modeling that treats pull request acceptance and integration latency as separate dependent variables and relates them to technical, social, contributor-level\nG3. It uses large-scale mining of GitHub repository metadata, pull request histories\n\nGenome 3:\nG1. This paper targets understanding how the adoption of continuous integration affects surrounding software development practices in collaborative software projects.\nG2. It uses a large-scale repository-mining before/after observational design that identifies the point of continuous integration adoption in many projects and compares longitudinal changes in commit behavior, pull requests, issue handling\nG3. Because the analysis is observational and based only on repository event signals around adoption time, it cannot cleanly establish causality or fully separate continuous integration effects from concurrent project evolution and confoundi [text omitted]\n\nGenome 4:\nG1. risk-mitigation mechanisms such as staged rollout and rollback\nG2. This paper targets the problem of operationalizing frequent and reliable software releases across the full delivery lifecycle, beyond code integration alone.\nG3. A structured continuous delivery capability model decomposes end-to-end release engineering into coordinated practices spanning automated build, test, packaging, deployment, release orchestration, version-controlled infrastructure, envir [text omitted]\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Niche Competition",
+        "Adaptive Radiation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_14_Continuous Integration and DevOps Evolution",
+      "window_start": 1,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_001",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. Accurate end-to-end prediction of monomeric and multimeric protein 3D structures directly from amino acid sequence for structure modeling and experimental structure determination.\nG2. The method still relies on cropped or merged predictions for large proteins and does not fully eliminate accuracy and scaling challenges for very large or difficult targets.\nG3. RoseTTAFold uses a unified three-track neural network that jointly updates 1D sequence features, 2D distance-orientation representations, and 3D coordinates through attention-based information exchange and outputs atomic structures end-t [text omitted]\n\nGenome 2:\nG1. The method still depends heavily on high-quality multiple sequence alignments and a hand-designed optimization pipeline rather than learning coordinates fully end-to-end.\nG2. Predicting accurate three-dimensional protein structures directly from amino acid sequences in template-free or weak-template settings.\nG3. The system builds MSAs, extracts sequence/profile/covariation features, uses a deep residual dilated convolutional network to predict inter-residue distance distributions and torsion angles, converts these into a differentiable protein-s [text omitted]\n\nGenome 3:\nG1. Proteome-scale prediction of accurate full-length 3D structures and confidence annotations for human proteins, including proteins lacking experimental structures.\nG2. final constrained relaxation with computed pLDDT and pTM confidence scores\nG3. The work runs the AlphaFold pipeline over the human proteome using MSA construction, PDB template search, an ensemble of deep neural network structure predictors, ranking by mean pLDDT\n\nGenome 4:\nG1. Because this is a review rather than a new experimental method, it does not itself provide a novel integrated model, benchmark, or direct empirical validation beyond synthesis of prior studies.\nG2. It systematically reviews and organizes prior methods into sequential modules including evolutionary feature extraction, contact/distogram/distance prediction with deep networks, 3D model assembly, quality assessment, and cryo-EM interpr [text omitted]\nG3. This paper addresses the domain of deep learning-based protein structure prediction across the full pipeline from MSA generation to cryo-EM-guided structure inference.\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Adaptive Radiation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1893_life_science_蛋白质结构预测",
+      "window_start": 1,
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_002",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. This paper targets unsupervised generative modeling of complex data distributions, especially learning to synthesize realistic samples from high-dimensional data such as images.\nG2. Generative Adversarial Networks train a generator that maps simple random noise to data samples and a discriminator that classifies real versus generated inputs\nG3. both optimized jointly through a minimax adversarial objective so the generator implicitly matches the data distribution without explicit likelihoods\n\nGenome 2:\nG1. The method depends on a hand-designed training curriculum and architecture-specific stabilization heuristics, leaving open how broadly the approach transfers beyond this staged resolution-growth setup.\nG2. Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatc [text omitted]\nG3. This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\n\nGenome 3:\nG1. independent noise is injected at each layer and style mixing is used during training\nG2. This paper targets high-quality image synthesis with improved disentanglement and user control over semantic image attributes in GAN latent spaces.\nG3. StyleGAN replaces direct latent input to the generator with a learned mapping network that produces an intermediate latent code whose per-layer style parameters modulate each convolution via adaptive normalization\n\nGenome 4:\nG1. This paper targets the problem of diagnosing and improving characteristic image artifacts and perceptual quality in style-based GAN image synthesis.\nG2. StyleGAN2 replaces progressive growing and heuristic resolution changes with a fixed-resolution style-based generator that uses explicitly low-pass-filtered upsampling/downsampling and revised normalization/noise injection to preserve si [text omitted]\nG3. Although it substantially reduces visible artifacts and improves fidelity, the work remains an architecture-level refinement of the existing style-based GAN framework and does not resolve broader issues like data dependence or remaining [text omitted]\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1715_Generative Adversarial Networks to 3D-Aware Image Synthesis",
+      "window_start": 0,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_003",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. An end-to-end deep learning architecture jointly embeds MSA and pairwise residue features with Evoformer blocks\nG2. iteratively generates and refines 3D coordinates using a structure module based on Invariant Point Attention, trained with FAPE and auxiliary losses plus self-distillation on unlabelled sequences\nG3. Predicting full three-dimensional atomic protein structures directly from amino acid sequences, especially for proteins without close structural homologues or deep multiple-sequence alignments.\n\nGenome 2:\nG1. Accurate end-to-end prediction of monomeric and multimeric protein 3D structures directly from amino acid sequence for structure modeling and experimental structure determination.\nG2. The method still relies on cropped or merged predictions for large proteins and does not fully eliminate accuracy and scaling challenges for very large or difficult targets.\nG3. RoseTTAFold uses a unified three-track neural network that jointly updates 1D sequence features, 2D distance-orientation representations, and 3D coordinates through attention-based information exchange and outputs atomic structures end-t [text omitted]\n\nGenome 3:\nG1. Predicting accurate three-dimensional protein structures directly from amino acid sequences in template-free or weak-template settings.\nG2. The method still depends heavily on high-quality multiple sequence alignments and a hand-designed optimization pipeline rather than learning coordinates fully end-to-end.\nG3. The system builds MSAs, extracts sequence/profile/covariation features, uses a deep residual dilated convolutional network to predict inter-residue distance distributions and torsion angles, converts these into a differentiable protein-s [text omitted]\n\nGenome 4:\nG1. final constrained relaxation with computed pLDDT and pTM confidence scores\nG2. The work runs the AlphaFold pipeline over the human proteome using MSA construction, PDB template search, an ensemble of deep neural network structure predictors, ranking by mean pLDDT\nG3. Proteome-scale prediction of accurate full-length 3D structures and confidence annotations for human proteins, including proteins lacking experimental structures.\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Mutation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1893_life_science_蛋白质结构预测",
+      "window_start": 0,
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_004",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. RNNs cannot be parallelized over sequence length; long-range dependencies are hard to capture.\nG2. O(n²) memory in attention due to KV-cache; all heads use same dimensionality (multi-head wastes KV memory at inference).\nG3. Multi-head self-attention: Q, K, V projections\n\nGenome 2:\nG1. A large autoregressive Transformer decoder with causal masked self-attention is trained on massive web text using next-token prediction\nG2. downstream tasks are performed by formatting inputs and desired outputs as a single text prompt for conditional generation without parameter updates\nG3. This paper targets general-purpose zero-shot transfer across many NLP tasks using only raw text pretraining and no task-specific supervision.\n\nGenome 3:\nG1. GPT-3 is a massively scaled decoder-only autoregressive transformer trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples di [text omitted]\nG2. Despite strong few-shot gains, the model remains inconsistent across benchmarks and still underperforms specialized supervised systems on some tasks while inheriting biases and inefficiencies from brute-force scaling.\nG3. This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n\nGenome 4:\nG1. The approach depends on access to a broad, manually curated collection of supervised instruction-formatted tasks, leaving open how well it scales to truly novel capabilities or domains not represented in the tuning mixture.\nG2. Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language i [text omitted]\nG3. This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1488_InstructGPT to GPT-4: Instruction Following via RLHF",
+      "window_start": 0,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_005",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. Extreme market regimes using an EMD-based Hilbert–Huang Transform with instantaneous energy, profiles them via Holo–Hilbert Spectral Analysis\nG2. The paper studies regime discovery and regime-specific return dynamics in developed and developing global equity index markets.\nG3. models discretized return transitions within each regime using variable-length Markov chains estimated by context trees\n\nGenome 2:\nG1. Forecasting anomalous or extreme XRP price movements from XRP transaction-network structure is the specific task addressed.\nG2. The paper constructs XRP transaction graphs, extracts topological features from them, and uses those features to predict atypical future price dynamics\nG3. The study appears narrowly focused on XRP and extreme surges, which may limit generalization across assets, market regimes, or non-anomalous price behavior.\n\nGenome 3:\nG1. light-touch design uses proper scoring windows or small convex misreporting costs to induce informative reporting\nG2. It builds equilibrium models in binary and Gaussian settings where experts strategically report under unknown precision, information aggregates additively in log-likelihood ratios or linearly under filtering\nG3. The paper studies social learning and expert ranking when multiple reputation-motivated experts provide signals about a persistent state but their precisions are unknown to the observer.\n\nGenome 4:\nG1. Estimating a firm-level stochastic discount factor that jointly captures predictive characteristics and cross-asset return spillovers in the cross section of equities.\nG2. The framework’s conclusions depend on the stability and correct specification of the estimated spillover network and are demonstrated primarily through empirical backtests rather than causal identification.\nG3. The paper jointly estimates signal weights and directed spillover effects by maximizing the Sharpe ratio, producing an interpretable SDF that ranks characteristics and maps predictive influence across assets\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1874_economics_28",
+      "window_start": 0,
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_006",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. This paper targets unsupervised learning of a data distribution for realistic sample generation without requiring explicit density evaluation.\nG2. Generative Adversarial Nets train a generator that maps latent noise to synthetic data and a discriminator that predicts real versus generated inputs in a simultaneous differentiable minimax game\nG3. the generator updated through gradients propagated across the discriminator\n\nGenome 2:\nG1. This paper targets scalable learning and inference for continuous latent-variable probabilistic generative models on large datasets.\nG2. The method as presented is mainly suited to continuous latent variables with simple approximate posteriors such as diagonal Gaussians, limiting expressiveness and making discrete latents less directly tractable.\nG3. Variational Autoencoder (Auto-Encoding Variational Bayes): jointly train an encoder network that amortizes variational posterior inference and a decoder generative network by maximizing the ELBO, using the reparameterization trick to exp [text omitted]\n\nGenome 3:\nG1. GANs are unstable to train and mode-collapse; VAEs have blurry outputs; need a principled probabilistic generative model for high-quality images.\nG2. T-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI)\nG3. reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor\n\nGenome 4:\nG1. It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous forward noising process and generating data by simulating the corresponding reverse-tim [text omitted]\nG2. This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images.\nG3. The method depends on numerically integrating reverse-time dynamics and often using predictor-corrector steps, making sampling computationally expensive and sensitive to discretization and solver choices.\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Niche Competition",
+        "Niche Competition",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1353_Score Matching to Latent Diffusion Generative Models",
+      "window_start": 0,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_007",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. learns a parameterized reverse Markov chain with shared parameters by optimizing a variational log-likelihood bound to invert each noising step\nG2. This paper targets unsupervised generative modeling of complex high-dimensional data distributions such as natural images.\nG3. Diffusion probabilistic modeling defines a fixed forward Markov chain that gradually adds small Gaussian noise to data until it reaches a simple tractable distribution\n\nGenome 2:\nG1. reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor\nG2. T-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI)\nG3. GANs are unstable to train and mode-collapse; VAEs have blurry outputs; need a principled probabilistic generative model for high-quality images.\n\nGenome 3:\nG1. The method depends on numerically integrating reverse-time dynamics and often using predictor-corrector steps, making sampling computationally expensive and sensitive to discretization and solver choices.\nG2. It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous forward noising process and generating data by simulating the corresponding reverse-tim [text omitted]\nG3. This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images.\n\nGenome 4:\nG1. It uses a denoising diffusion probabilistic model in which a U-Net-like network with attention is trained across many timesteps to predict added Gaussian noise under a carefully designed variance schedule\nG2. This paper targets high-quality and high-coverage natural image synthesis with strong likelihood performance.\nG3. samples by iteratively reversing the fixed noising process from pure noise\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Hybridization",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1294_Diffusion Models for Generative Modeling",
+      "window_start": 0,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_008",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. Multi-head self-attention: Q, K, V projections\nG2. RNNs cannot be parallelized over sequence length; long-range dependencies are hard to capture.\nG3. O(n²) memory in attention due to KV-cache; all heads use same dimensionality (multi-head wastes KV memory at inference).\n\nGenome 2:\nG1. downstream tasks are performed by formatting inputs and desired outputs as a single text prompt for conditional generation without parameter updates\nG2. This paper targets general-purpose zero-shot transfer across many NLP tasks using only raw text pretraining and no task-specific supervision.\nG3. A large autoregressive Transformer decoder with causal masked self-attention is trained on massive web text using next-token prediction\n\nGenome 3:\nG1. CodeBERT is an encoder-only Transformer jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shar [text omitted]\nG2. This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\nG3. Because the model is encoder-only and trained mainly on token sequences with limited explicit structural supervision, it is less suited to generative tasks and may underuse deeper program structure beyond surface token patterns.\n\nGenome 4:\nG1. task formats using both open-ended generation and constrained prediction benchmarks\nG2. systematically probes them across scales, prompts\nG3. Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Adaptive Radiation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1134_GPT to Codex to GitHub Copilot: Neural Code Completion at Scale",
+      "window_start": 0,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_009",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. LSD-SLAM performs direct image alignment on high-gradient pixels for tracking, builds semi-dense inverse-depth keyframes via small-baseline stereo in a parallel mapping thread\nG2. Real-time monocular SLAM in large-scale environments using a single camera, including drift reduction and loop closure over long trajectories.\nG3. globally optimizes a similarity-transform pose graph between keyframes to correct monocular drift\n\nGenome 2:\nG1. ORB-SLAM is a feature-based monocular SLAM system that uses ORB features in three parallel threads for tracking, local mapping\nG2. covisibility/essential graphs for map structure, robust model-selection initialization\nG3. keyframe/point culling for scalable optimization\n\nGenome 3:\nG1. ORB-SLAM2 is a unified multi-threaded feature-based SLAM system that uses ORB keypoints for tracking, keyframe-based local mapping and bundle adjustment, bag-of-words place recognition for relocalization and loop detection\nG2. This paper targets real-time visual SLAM for camera localization and sparse map building across monocular, stereo, and RGB-D sensing in long, loop-rich trajectories.\nG3. pose-graph plus full bundle adjustment for global consistency across monocular, stereo\n\nGenome 4:\nG1. multi-map creation/merging in one architecture\nG2. running tracking, local mapping, loop closing\nG3. ORB-SLAM3 is a unified feature-based keyframe SLAM system that uses sparse ORB landmarks with tightly coupled visual-inertial MAP estimation and bundle adjustment for poses, structure, velocities, biases\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Speciation",
+        "Adaptive Radiation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_5_Visual SLAM Evolution",
+      "window_start": 1,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_010",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 3-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache [text omitted]\nG2. This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\nG3. The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-tabl [text omitted]\n\nGenome 2:\nG1. This paper targets high-resolution cross-core monitoring of a victim process's memory access and execution behavior for cache side-channel analysis.\nG2. FLUSH+RELOAD repeatedly flushes a chosen shared last-level-cache line with a cross-core invalidating instruction and then reloads the same shared address while timing the access, so fast reloads reveal that the victim accessed that exact [text omitted]\nG3. The attack depends on attacker and victim sharing physical pages such as shared libraries or deduplicated memory, so it does not directly apply when no shared cache lines are available.\n\nGenome 3:\nG1. architecture-aware strided memory accesses to build eviction and probing sets that monitor last-level cache occupancy without privileged cache instructions\nG2. It adapts Prime+Probe to JavaScript by using high-resolution timers, large typed arrays\nG3. This paper targets remote microarchitectural side-channel surveillance of user and process activity from within the browser’s sandbox using ordinary web-delivered code.\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\n\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Speciation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_25_Side-Channel Attacks on Processors",
+      "window_start": 1,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_011",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 3-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. discussion traces combined with statistical modeling that treats pull request acceptance and integration latency as separate dependent variables and relates them to technical, social, contributor-level\nG2. It uses large-scale mining of GitHub repository metadata, pull request histories\nG3. This paper targets understanding what determines whether GitHub pull requests are accepted and how long they take to be integrated in large-scale distributed collaborative software development.\n\nGenome 2:\nG1. It uses a large-scale repository-mining before/after observational design that identifies the point of continuous integration adoption in many projects and compares longitudinal changes in commit behavior, pull requests, issue handling\nG2. Because the analysis is observational and based only on repository event signals around adoption time, it cannot cleanly establish causality or fully separate continuous integration effects from concurrent project evolution and confoundi [text omitted]\nG3. This paper targets understanding how the adoption of continuous integration affects surrounding software development practices in collaborative software projects.\n\nGenome 3:\nG1. This paper targets the problem of operationalizing frequent and reliable software releases across the full delivery lifecycle, beyond code integration alone.\nG2. risk-mitigation mechanisms such as staged rollout and rollback\nG3. A structured continuous delivery capability model decomposes end-to-end release engineering into coordinated practices spanning automated build, test, packaging, deployment, release orchestration, version-controlled infrastructure, envir [text omitted]\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\n\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_14_Continuous Integration and DevOps Evolution",
+      "window_start": 2,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_012",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 3-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. Neural Architecture Search with Reinforcement Learning uses an RNN controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward\nG2. updates the controller with policy-gradient optimization to favor better designs\nG3. This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n\nGenome 2:\nG1. This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\nG2. DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights w [text omitted]\nG3. Because search is conducted in an over-parameterized continuous supernet and then projected to a discrete architecture by selecting strongest operations, the optimized relaxed solution can mismatch the final discrete model and bias searc [text omitted]\n\nGenome 3:\nG1. input resolution under a compute constraint\nG2. EfficientNet uses a compound scaling method that starts from a NAS-discovered efficient baseline and applies a single global scaling coefficient with fixed exponents to jointly scale network depth, width\nG3. This paper targets improving image classification model accuracy under fixed computational and parameter budgets for convolutional neural networks across deployment scales.\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\n\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Niche Competition"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1364_Neural Architecture Search: DARTS to Once-for-All to EfficientNetV2",
+      "window_start": 0,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_013",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. BERT masked language modeling on human reference genome\nG2. bidirectional Transformer encoder captures bidirectional genomic context\nG3. Genomic sequence analysis relied on hand-crafted features or task-specific models; no general-purpose pretrained representation for DNA that captures long-range genomic context.\n\nGenome 2:\nG1. evaluate on 18 tasks (chromatin accessibility, variant effects, regulatory elements)\nG2. trained on multi-species genome assemblies\nG3. Decoder-only (GPT-style) and encoder Transformers at 500M/2.5B scale\n\nGenome 3:\nG1. Hyena operator: implicit long convolutions replace attention\nG2. trained on human reference genome up to 1M token context\nG3. Nucleotide Transformer's Transformer self-attention scales quadratically with sequence length; cannot model genomic features requiring >12 kbp context (gene regulatory networks, chromatin domains, enhancer-promoter loops).\n\nGenome 4:\nG1. HyenaDNA is unidirectional (causal); DNA is inherently bidirectional (sense and antisense strands are equivalent); unidirectional models cannot natively capture reverse-complement symmetry of genomic sequences.\nG2. BiMamba: bidirectional Mamba (state space model) processes sequence in both directions\nG3. RC-equivariant architecture ensures predictions are invariant to reverse-complement transformation\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "biology_GenomicsFoundation",
+      "window_start": 0,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_014",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. bidirectional Transformer encoder captures bidirectional genomic context\nG2. Genomic sequence analysis relied on hand-crafted features or task-specific models; no general-purpose pretrained representation for DNA that captures long-range genomic context.\nG3. BERT masked language modeling on human reference genome\n\nGenome 2:\nG1. trained on multi-species genome assemblies\nG2. evaluate on 18 tasks (chromatin accessibility, variant effects, regulatory elements)\nG3. Decoder-only (GPT-style) and encoder Transformers at 500M/2.5B scale\n\nGenome 3:\nG1. Hyena operator: implicit long convolutions replace attention\nG2. Nucleotide Transformer's Transformer self-attention scales quadratically with sequence length; cannot model genomic features requiring >12 kbp context (gene regulatory networks, chromatin domains, enhancer-promoter loops).\nG3. trained on human reference genome up to 1M token context\n\nGenome 4:\nG1. HyenaDNA is unidirectional (causal); DNA is inherently bidirectional (sense and antisense strands are equivalent); unidirectional models cannot natively capture reverse-complement symmetry of genomic sequences.\nG2. RC-equivariant architecture ensures predictions are invariant to reverse-complement transformation\nG3. BiMamba: bidirectional Mamba (state space model) processes sequence in both directions\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "biology_GenomicsFoundation",
+      "window_start": 0,
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_015",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 3-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. The paper addresses the union-closed sets conjecture for finite universes and induced communities, asking whether some element appears in at least half of the sets.\nG2. The abstract does not indicate whether the proof yields broader structural characterizations, algorithmic consequences, or simplifications relative to existing formulations.\nG3. It introduces a new formal language of universes, induced communities, cells, and spots and uses this framework to derive a proof of the conjecture\n\nGenome 2:\nG1. a compactness method to derive ground states, nonexistence results, global/blow-up criteria\nG2. It combines variational analysis via optimizers of an interpolation Hardy-Gagliardo-Nirenberg inequality, Pohozaev identity arguments\nG3. The paper studies the Cauchy problem for nonlinear Schrödinger equations with a critical Hardy potential and a nonlocal Choquard nonlinearity in the energy-subcritical regime.\n\nGenome 3:\nG1. The work appears limited to boundedness questions for operators induced by positive finite Borel measures on (0,1) and does not indicate broader treatment of other operator properties or more general measures and spaces.\nG2. The paper studies generalized Hilbert matrix operators generated by positive finite Borel measures on (0,1) acting on weighted sequence spaces.\nG3. It defines this new operator class through measure-induced matrix entries and derives boundedness criteria by analyzing the interaction between the measure and the underlying weighted sequence norms\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\n\nDynamics = [Step1Label, Step2Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "golden_1854_mathematics_8",
+      "window_start": 1,
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_016",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. generate multiple continuations per node\nG2. Decompose reasoning into a tree of thoughts\nG3. Flat sequential CoT cannot backtrack or explore alternative reasoning paths; struggles on planning tasks.\n\nGenome 2:\nG1. use PRM to rerank or guide beam search\nG2. Outcome-based reward models cannot detect which step in a reasoning chain is wrong; search requires reliable intermediate scoring.\nG3. Collect human labels for correctness at each reasoning step\n\nGenome 3:\nG1. GRPO (group relative policy optimization): sample multiple outputs per prompt, use correctness as reward signal, normalize by group baseline\nG2. SFT-distilled CoT models plateau; process reward models require costly annotation; need scalable RL for reasoning.\nG3. Requires high-quality verifiable reward signal (math/code); language mixing artifacts in reasoning chains; RL training instability.\n\nGenome 4:\nG1. Mole-Syn synthesizes training data with controlled structural composition\nG2. LLMs struggle to learn extended reasoning chains from imitation; unclear why RLVR produces emergent Long CoT; no principled framework for understanding Long CoT structure.\nG3. Graph-based topology analysis of Long CoT trajectories identifies three interaction bond types (Deep-Reasoning, Self-Reflection, Self-Exploration)\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Hybridization",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "cs_LLMReasoning",
+      "window_start": 2,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_017",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. SE(3)-equivariant GNN processes protein and ligand separately\nG2. rigid-body alignment to protein pocket\nG3. Classical docking (AutoDock) requires exhaustive conformational search; AtomConv cannot predict binding pose, only score given poses.\n\nGenome 2:\nG1. confidence ranking of generated poses\nG2. Generative diffusion over 3D pose space: separate diffusion processes for translation (R³), rotation (SO(3)), and torsion angles\nG3. EquiBind produces single rigid-body pose; real binding is flexible; need multi-modal pose distribution over all degrees of freedom.\n\nGenome 3:\nG1. trained on PDB structures of all complex types\nG2. MSA-free option via single-sequence trunk\nG3. diffusion module generates all-atom 3D coordinates for any molecular complex type\n\nGenome 4:\nG1. Conditional diffusion with interaction-specific neural networks that enforce pharmacophore constraints from protein-ligand structures\nG2. generates drug candidates satisfying geometric and chemical interaction requirements derived from the binding pocket\nG3. AlphaFold3 predicts binding structures but cannot generate novel ligands; DiffDock generates binding poses but not molecular structures; no model combines pharmacophore-constrained generation with 3D structural awareness.\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Speciation",
+        "Hybridization",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "chemistry_DrugDiscovery",
+      "window_start": 2,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_018",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. 1D repetition code cannot correct both X and Z errors; not a full surface code; 2D full QEC not yet demonstrated.\nG2. Threshold crossing in 2-qubit gates does not guarantee that error suppression improves with code size in practice.\nG3. cyclic repetition code (distance 5,7,11)\n\nGenome 2:\nG1. 1D repetition code (2021) is insufficient; need 2D surface code demonstration showing quality improves with scale.\nG2. distance-3 (17 qubits) vs distance-5 (49 qubits) surface codes\nG3. Partial below-threshold: only for one error type clearly; full fault-tolerant computation not yet demonstrated; decoder latency remains limiting factor.\n\nGenome 3:\nG1. 2023 paper showed scaling works partially; need clear demonstration that both X and Z error rates decrease exponentially with code distance.\nG2. rapid classical decoding (1μs per round)\nG3. Only QEC demonstrated, not full fault-tolerant computation; magic state distillation and logical gate operations not yet demonstrated.\n\nGenome 4:\nG1. [[7,1,3]] Steane error correction code on trapped-ion hardware (Quantinuum H2 and Helios)\nG2. repeated QEC cycles with enhanced error correction improving algorithm performance\nG3. fault-tolerant QAOA and HHL implementation with error-corrected logical gates\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "physics_QuantumErrorCorrection",
+      "window_start": 2,
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T3-15_gene_tracking_019",
+    "task_type": "T3-15_gene_tracking",
+    "prompt": "Track the initial driver idea gene through a 4-genome lineage. Infer whether it is inherited, mutated, or lost at each transition, and classify the dynamics at each step.\n\nGenome 1:\nG1. 1D repetition code cannot correct both X and Z errors; not a full surface code; 2D full QEC not yet demonstrated.\nG2. cyclic repetition code (distance 5,7,11)\nG3. Threshold crossing in 2-qubit gates does not guarantee that error suppression improves with code size in practice.\n\nGenome 2:\nG1. distance-3 (17 qubits) vs distance-5 (49 qubits) surface codes\nG2. Partial below-threshold: only for one error type clearly; full fault-tolerant computation not yet demonstrated; decoder latency remains limiting factor.\nG3. 1D repetition code (2021) is insufficient; need 2D surface code demonstration showing quality improves with scale.\n\nGenome 3:\nG1. rapid classical decoding (1μs per round)\nG2. Only QEC demonstrated, not full fault-tolerant computation; magic state distillation and logical gate operations not yet demonstrated.\nG3. 2023 paper showed scaling works partially; need clear demonstration that both X and Z error rates decrease exponentially with code distance.\n\nGenome 4:\nG1. repeated QEC cycles with enhanced error correction improving algorithm performance\nG2. fault-tolerant QAOA and HHL implementation with error-corrected logical gates\nG3. [[7,1,3]] Steane error correction code on trapped-ion hardware (Quantinuum H2 and Helios)\n\nDynamics definitions:\n- Mutation: same lineage, mechanism mostly inherited with local modification\n- Adaptive Radiation: inherited mechanism, shifted niche/problem\n- Hybridization: combines genes from multiple lineages\n- Speciation: same broad problem, mechanism replaced by a new lineage-forming approach\n- Niche Competition: same/near niche without direct inheritance\n\nAnswer with exactly one line:\nDynamics = [Step1Label, Step2Label, Step3Label]\nEach StepLabel must be one of: [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "target_skill": "multi_hop_gene_tracking",
+      "trace_id": "physics_QuantumErrorCorrection",
+      "window_start": 2,
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G5_multihop_gene_tracking",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Multi-Hop Gene Tracking"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "directional_lineage"
+  }
+]

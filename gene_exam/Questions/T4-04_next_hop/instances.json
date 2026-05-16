@@ -1,0 +1,798 @@
+[
+  {
+    "instance_id": "T4-04_next_hop_000",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"The paper formulates a Laplacian-constrained GGM that jointly incorporates node signal data and text-derived metadata and solves the resulting optimization with a majorization-minimization algorithm using closed-form updates.\"\n  Niche: \"Graph structure learning in Gaussian Graphical Models when each node has both observed signals and auxiliary textual metadata.\"\n  Limitation: \"The evidence is limited to a real-world financial setting and focuses mainly on clustering gains, leaving generalization to other domains and tasks insufficiently validated.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"It proposes a top-down tree-ordered testing procedure that starts at the overall null, recursively tests grouped and then individual block hypotheses, stops exploring branches after non-rejection, and uses path-based diagnostics with adaptive alpha adjustment when needed for strong FWER control.\"\n  Niche: \"The paper addresses how to identify which sites or blocks in multi-site randomized policy experiments show treatment effects while controlling family-wise error under many simultaneous hypotheses.\"\n  Limitation: \"The approach relies on a prespecified hierarchical grouping structure and on valid node-level tests, so its guarantees and power may weaken when the tree is poorly chosen or when pathwise rejection behavior is hard to estimate.\"\n\nB.\n  Mechanism: \"It introduces P-tensors as a general mathematical formalism for defining higher-order permutation-equivariant message passing over subgraphs and related structures within graph neural networks.\"\n  Niche: \"The paper addresses how to build expressive permutation-equivariant graph neural networks that operate on subgraphs and higher-order topological structures, especially for molecular graph learning.\"\n  Limitation: \"The paper appears primarily focused on formal unification and benchmark performance, leaving open questions about computational cost, scalability, and practical tradeoffs of higher-order P-tensor constructions on larger graphs.\"\n\nC.\n  Mechanism: \"The paper introduces two model-free Q-learning algorithms, Q-EarlySettled-LowCost and FedQ-EarlySettled-LowCost, designed to settle policies early while maintaining low switching or communication frequency and near-optimal regret.\"\n  Niche: \"On-policy single-agent and federated reinforcement learning in parallel finite-horizon episodic MDPs where sample collection, policy switching, and inter-agent communication are costly.\"\n  Limitation: \"The results are restricted to parallel finite-horizon episodic MDPs and are presented as theoretical guarantees without evidence here of broader applicability or practical empirical validation beyond that setting.\"\n\nD.\n  Mechanism: \"It applies Singular Learning Theory and the local learning coefficient to characterize competing near-zero-loss basins and track training dynamics as a phase transition between them.\"\n  Niche: \"The paper addresses grokking in quadratic neural networks trained on modular arithmetic tasks by analyzing the transition from memorization to generalization.\"\n  Limitation: \"The study is limited by its focus on quadratic networks and modular arithmetic settings, leaving unclear how broadly the LLC-based explanation extends to more realistic architectures and tasks.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "stat.ML",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2395,
+        "similarity_avg": 0.2921,
+        "similarity_max": 0.3468
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "audit_edge": "Including Node Textual Metadata in Laplacian-constrained Gaussian Graphical Models -> Grokking as a Phase Transition between Competing Basins: a Singular Learning Theory Approach",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_002",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It reviews and replicates Javanmard and Montanari's debiased LASSO by constructing an optimized bias-correction that yields asymptotically normal coefficient estimates, then compares it with the desparsified LASSO and LASSO projection estimator in simulations and real data.\"\n  Niche: \"The paper studies valid statistical inference for coefficients in high-dimensional linear regression where p greatly exceeds n and standard LASSO estimates are biased.\"\n  Limitation: \"Because it is primarily a review and partial replication with limited extensions, the paper does not introduce a new inference method and its conclusions are constrained by the selected simulation scenarios and datasets.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"The paper synthesizes recent technological developments in statistics education and proposes strategies for integrating tools such as R, Python, coding practices, database management, machine learning, and generative AI into teaching.\"\n  Niche: \"This paper addresses how university-level statistics education should adapt curricula and pedagogy to rapid technological change, including programming, databases, machine learning, and generative AI.\"\n  Limitation: \"The paper appears to be primarily a perspective or review article and therefore does not provide a new evaluated instructional method or causal evidence about which integrations most improve learning outcomes.\"\n\nB.\n  Mechanism: \"The paper constructs full conformal e-values from full conformal inference and applies multiple testing procedures, with optional data-driven model selection, to flag novel points while guaranteeing finite-sample FDR control.\"\n  Niche: \"Out-of-sample nonparametric novelty detection relative to a reference dataset, including under distribution shift, with false discovery rate control.\"\n  Limitation: \"Because it relies on full conformal recalculation and multiple testing over candidate novelties, the approach may be computationally expensive and its guarantees target FDR rather than stronger error notions or broader deployment constraints.\"\n\nC.\n  Mechanism: \"It introduces a Bayesian generative framework that models confounding bias as a random variable with priors over plausible confounding mechanisms and computes the posterior probability that bias exceeds the E-value-style threshold needed to explain away an observed association.\"\n  Niche: \"The paper addresses sensitivity analysis for unmeasured confounding in observational causal studies, especially the problem of moving beyond Cornfield conditions and E-values as mere strength thresholds.\"\n  Limitation: \"The framework depends on prior specification for unmeasured confounding and, as presented, appears to provide a conceptual and summary-data-level method rather than resolving identification of confounding from data alone.\"\n\nD.\n  Mechanism: \"It conducts a comparative empirical analysis between physics-informed neural networks as a deep learning approach and manifold-constrained Gaussian process inference as a statistically principled approach using SEIR and Lorenz case studies.\"\n  Niche: \"The paper studies inverse problems for mechanistic nonlinear ordinary differential equations, focusing on parameter inference, trajectory reconstruction, and future prediction under sparse and noisy observations.\"\n  Limitation: \"The paper evaluates only a narrow pair of representative methods on a small set of benchmark dynamical systems, limiting how broadly its conclusions can be generalized to all deep learning and statistical approaches.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "stat.OT",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2094,
+        "similarity_avg": 0.2509,
+        "similarity_max": 0.3069
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "audit_edge": "Debiased Estimators in High-Dimensional Regression: A Review and Replication of Javanmard and Montanari (2014) -> Reflections on the Future of Statistics Education in a Technological Era",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_003",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It combines high-energy high-resolution electron momentum spectroscopy measurements along symmetry directions with first-principles Green's-function calculations evaluated in the GW and cumulant expansion approximations.\"\n  Niche: \"This paper addresses measuring and explaining the valence spectral function of crystalline silicon across energy and momentum using electron momentum spectroscopy and many-body theory.\"\n  Limitation: \"The study is limited to silicon and to comparing two approximate many-body treatments, so it does not establish a universally accurate description of satellite structures across materials or beyond these approximations.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"The authors built a low-temperature particle-injection and fluorescence-imaging system that launches polymer particles with ultrasound into superfluid helium-4, tracks their gravity-driven trajectories, measures temperature-dependent velocity statistics across length scales, and identifies particles trapped on vortex lines with an analytical population model.\"\n  Niche: \"The paper addresses how micron-scale tracer particles move and interact with thermal excitations and quantized vortices in turbulent superfluid helium-4 down to the near-zero-temperature limit.\"\n  Limitation: \"Because the study infers vortex interactions indirectly from tracer trajectories and particle-size-dependent statistics, it is limited in separating particle back-reaction and trapping effects from the intrinsic superfluid flow field.\"\n\nB.\n  Mechanism: \"It uses wave-function-based quantum chemistry analysis of interacting Co2+ magnetic moments to resolve how on-site multiconfigurational effects and intersite direct Coulomb exchange shape nearest-neighbor couplings.\"\n  Niche: \"This paper addresses the microscopic origin and relative importance of Kitaev, Heisenberg, and off-diagonal exchange interactions in the honeycomb cobalt oxide Kitaev-Heisenberg magnet Na3Co2SbO6.\"\n  Limitation: \"A main limitation is that the work is focused on a single representative LS-coupled t2g5eg2 oxide and does not by itself establish how general these exchange mechanisms are across broader classes of Kitaev-Heisenberg materials.\"\n\nC.\n  Mechanism: \"The authors combine angle-resolved photoemission spectroscopy with density-functional theory to resolve the reconstructed interface structure and trace how Sb-Au hybridization folds Au-derived bands and modifies spin splitting.\"\n  Niche: \"This paper addresses how epitaxial alpha-antimonene on Au(111) alters interfacial electronic structure, band topology, and spin-orbit effects relative to the freestanding 2D material.\"\n  Limitation: \"The study is limited to the specific alpha-antimonene/Au(111) epitaxial interface, so its conclusions about substrate-induced modification and spin-orbit enhancement may not directly generalize to other substrates, thicknesses, or antimonene phases.\"\n\nD.\n  Mechanism: \"It uses numerically unbiased auxiliary-field quantum Monte Carlo and jointly analyzes thermodynamic and dynamical observables across the temperature-interaction plane.\"\n  Niche: \"This paper studies the finite-temperature metal-insulator crossover at half filling in the square-lattice Hubbard model.\"\n  Limitation: \"The work is limited to the half-filled square-lattice Hubbard model at finite temperature and therefore does not directly resolve doped, frustrated, or real-material cases.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "cond-mat",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2266,
+        "similarity_avg": 0.2901,
+        "similarity_max": 0.3365
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "source": "science_supplement",
+      "domain": "science",
+      "audit_edge": "EMS Measurement of the Valence Spectral Function of Silicon - a test of Many-body Theory -> Quantum Monte Carlo study of the metal-insulator crossover in the square-lattice Hubbard model",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_004",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It uses a systematic empirical workload characterization methodology that implements representative kernels and applications in CUDA and analyzes their behavior under the GPU execution model, including thread grouping, shared memory use, memory access regularity, branch divergence, latency hiding, and host-device transfer costs.\"\n  Niche: \"This paper targets understanding which classes of general-purpose applications achieve high performance on CUDA-programmed GPUs and which do not.\"\n  Limitation: \"Because the evaluation is based on a selected set of representative workloads on a vendor-specific CUDA platform, its conclusions are constrained by benchmark coverage and may not generalize to other architectures, programming models, or broader application mixes.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"The Kepler GK110 architecture redesigns the streaming multiprocessor and memory subsystem by increasing warp residency, instruction issue width, register capacity, double-precision and atomic throughput, concurrent kernel execution, and cache/shared-memory flexibility to raise delivered performance per watt and programmability.\"\n  Niche: \"This paper targets high-performance, throughput-oriented computing for both graphics workloads and general-purpose scientific and parallel applications on an accelerator.\"\n  Limitation: \"The paper emphasizes architectural capability and relative gains over the prior generation but leaves unresolved how performance and efficiency vary across specific application classes and under what workloads the added hardware resources are underutilized.\"\n\nB.\n  Mechanism: \"The Volta V100 architecture introduces Tensor Cores inside each SM to execute mixed-precision matrix fused multiply-add operations at very high throughput, alongside a redesigned SM, cache/memory hierarchy, and high-bandwidth HBM2 memory system to keep those units fed efficiently.\"\n  Niche: \"This paper targets data-center acceleration for both high-performance scientific computing and deep learning training/inference workloads.\"\n  Limitation: \"The largest gains depend on workloads that can exploit reduced-precision matrix operations and sufficient software support, so applications dominated by non-matrix code or strict full-precision execution benefit less from the new hardware.\"\n\nC.\n  Mechanism: \"Fermi is a many-core CUDA architecture that scales streaming multiprocessors while adding coherent hardware-managed caches, configurable on-chip local memory, improved warp scheduling, stronger atomics and concurrency, ECC memory, and much higher double-precision capability.\"\n  Niche: \"This paper targets making GPUs broadly effective for general-purpose parallel computing workloads, especially irregular, memory-intensive, and high-performance scientific applications.\"\n  Limitation: \"Despite broadening applicability, the architecture still fundamentally inherits SIMT execution behavior, so performance remains sensitive to thread divergence and irregular access patterns rather than eliminating those costs.\"\n\nD.\n  Mechanism: \"An Ampere A100 GPU architecture combines third-generation Tensor Cores, expanded reduced-precision formats, structured sparsity support, higher-bandwidth HBM and revised cache/interconnect design, and hardware Multi-Instance GPU partitioning to raise throughput and shared-device efficiency.\"\n  Niche: \"This paper targets efficient execution of deep learning training, inference, and scientific computing workloads on a next-generation GPU accelerator.\"\n  Limitation: \"Because the work is primarily a hardware characterization, it does not fully quantify how broadly real applications can exploit the new low-precision modes, structured sparsity constraints, and MIG partitioning without software or model changes.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Architecture",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 3,
+        "similarity_min": 0.3919,
+        "similarity_avg": 0.4171,
+        "similarity_max": 0.4298
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "audit_edge": "A Performance Study of General-Purpose Applications on Graphics Processors Using CUDA -> Kepler GK110: The World's Fastest and Most Efficient HPC Architecture",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_005",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"The system combines a Python Plotly-Dash front end, VO-compliant TAP middleware, R-tree spatial indexing, real-time data ingestion, and mViewer-based image visualization to deliver archive search and exploration services.\"\n  Niche: \"This paper addresses scalable, user-friendly querying and visualization of rapidly growing astronomical data in the Keck Observatory Archive.\"\n  Limitation: \"The paper presents a beta deployment description with limited quantitative evaluation and little evidence yet about robustness, user impact, or performance across diverse workloads.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"The work tests multiple AstroPix v3 hardware configurations, from single-chip to nine-chip modules and multilayer stacks, using 500 um pitch pixels with in-pixel amplification and digitization, low-power operation, and a 25-700 keV designed dynamic range to assess scalability and detector performance.\"\n  Niche: \"This paper addresses evaluation of AstroPix HV-CMOS monolithic active pixel sensor modules for use as granular imaging layers in the ePIC Barrel Imaging Calorimeter and as detector planes in medium-energy space gamma-ray payloads.\"\n  Limitation: \"The abstract does not provide quantitative performance metrics, comparative benchmarks, or detailed failure modes, so the strength of the demonstrated performance remains unclear.\"\n\nB.\n  Mechanism: \"The authors compare acceleration profiles for 17 early-type galaxies, previously derived via Jeans modeling of globular cluster systems, against both the standard galaxy RAR and the cluster-specific acceleration relation.\"\n  Niche: \"This paper tests whether early-type galaxies in different environments, especially central galaxies in clusters, subclusters, and groups, deviate from the standard radial acceleration relation followed by most non-cluster galaxies.\"\n  Limitation: \"The study is limited by its small sample of 17 early-type galaxies and by reliance on previously modeled globular-cluster-based acceleration profiles rather than new direct measurements across broader galaxy types.\"\n\nC.\n  Mechanism: \"It proposes a broadband SETI strategy that interprets existing wide-area radio and optical astronomical surveys, plus the lack of detected solar-system probes, as indirect tests of nearby intentionally communicative alien civilizations.\"\n  Niche: \"This paper addresses how to redesign SETI for nearby extraterrestrial technological civilizations by searching for purposeful electromagnetic signals and probes using assumptions about transmitter behavior.\"\n  Limitation: \"The paper is limited by relying on speculative assumptions about alien intentions and communication strategies rather than presenting a new dedicated observational campaign or direct detection method.\"\n\nD.\n  Mechanism: \"The authors examine ACS/WFC bias frames from different anneal periods and compare read-noise behavior in science arrays, physical pre-scan regions, early columns, and columns containing unstable hot pixels for each amplifier.\"\n  Niche: \"This paper analyzes whether ACS/WFC bias-frame read noise depends on detector column, while also characterizing related row, anneal-period, and column-specific effects across the four readout amplifiers.\"\n  Limitation: \"The study is observational and instrument-specific, offering no new predictive model for the row-dependent noise mechanism and limited generality beyond ACS/WFC bias-frame behavior.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "astro-ph.IM",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 2,
+        "similarity_min": 0.2088,
+        "similarity_avg": 0.2854,
+        "similarity_max": 0.3308
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "audit_edge": "A New Plotly-Dash-based Query Infrastructure for the Keck Observatory Archive -> Deviations from the radial acceleration relation in the central galaxies of clusters, subclusters, and groups",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_006",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It characterizes the optimal dynamic mechanism by frontloading expected surplus extraction before realizations occur and, under FOSD ordering, regularity, and invariant dependence across goods, decoupling the problem into independent per-good sequential screening mechanisms.\"\n  Niche: \"The paper studies multidimensional sequential screening by a monopolist selling multiple goods to a buyer who first privately knows the distribution of future valuations and later privately learns realized valuations.\"\n  Limitation: \"The decoupling result relies on strong structure—common FOSD ordering, regularity for each good, and invariant dependence—so it may not extend to environments with changing cross-good dependence or non-ordered type distributions.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"It incorporates the ISEW into the COMPASS ecological macroeconomic model and simulates business-as-usual and policy scenarios involving a carbon tax, income redistribution, working-time reduction, and their combination.\"\n  Niche: \"The paper addresses how to dynamically model the Index of Sustainable Economic Welfare within an ecological macroeconomic framework to evaluate social and environmental policy impacts on sustainable wellbeing.\"\n  Limitation: \"The main limitation is that although the ISEW captures policy effects better than GDP, it still omits the full environmental costs of growth and therefore provides an incomplete sustainability assessment.\"\n\nB.\n  Mechanism: \"It develops a correction framework that removes correlated errors-in-variables from transaction-price-based signals and return denominators and eliminates asymmetric ex-post return filtering that leaks future information into factor construction.\"\n  Niche: \"This paper addresses the replication and validity of reported corporate bond factor premia in empirical asset pricing research.\"\n  Limitation: \"The paper mainly diagnoses and corrects biases in existing factor studies rather than proposing many new economically motivated bond factors or testing all possible alternative data constructions.\"\n\nC.\n  Mechanism: \"The authors extend a prior agent-based artificial financial market model by adding additional agents, split into additional fundamental agents and additional technical agents, each following a simple one-parameter strategy, and then vary their population to measure earnings effects.\"\n  Niche: \"This paper studies how increasing the number of investors who use the same fundamental or technical trading strategy affects each investor's profit in an artificial financial market.\"\n  Limitation: \"The study relies on a simplified simulated market with very simple one-parameter strategies and no real-market validation, which limits how strongly the results generalize to actual investors.\"\n\nD.\n  Mechanism: \"Using Japanese survey data, the authors compare pre-pandemic and post-pandemic attitudes toward redistribution and analyze how these attitudes vary with institutional trust and income level.\"\n  Niche: \"This paper studies how acceptable tax rates for reducing inequality in Japan changed during and after COVID-19, with a focus on the role of trust in government.\"\n  Limitation: \"The study is limited by its reliance on Japanese attitudinal data, which may not identify causal mechanisms cleanly or generalize to other countries and institutional settings.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "econ.GN",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 3,
+        "similarity_min": 0.3132,
+        "similarity_avg": 0.3185,
+        "similarity_max": 0.3278
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "audit_edge": "Dynamic Decoupling in Multidimensional Screening -> The Corporate Bond Factor Replication Crisis",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_007",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It extends the existing survey table by collecting, verifying, and organizing graph constructions and best-known lower-bound examples reported since the 2013 Miller and Siran survey.\"\n  Niche: \"The paper addresses the degree-diameter problem by compiling updated records of large undirected graphs for specified maximum degree and diameter values.\"\n  Limitation: \"The paper mainly serves as a curated update table and does not introduce a new general construction method or prove broad new theoretical bounds.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"It develops proof-theoretically tame logical systems and general proof-mining metatheorems, plus an intensional treatment of infinite unions and a transfer principle for convergence modes, to formalize probabilistic reasoning and extract uniform computational bounds.\"\n  Niche: \"The paper addresses how to extract effective quantitative bounds from seemingly non-constructive proofs in probability theory, including results involving algebras of sets, probability contents, Lebesgue integration, sigma-algebras, and convergence of random variables.\"\n  Limitation: \"The framework is mainly foundational and metatheoretic, so its practical scope is limited to probabilistic arguments that can be encoded within the proposed tame logical systems and transfer principles.\"\n\nB.\n  Mechanism: \"It extends earlier parameter searches for cyclic relative difference sets, analyzes possible liftings of cyclic difference sets to relative difference sets, and translates the resulting existence or nonexistence information into consequences for circulant weighing matrices.\"\n  Niche: \"The paper studies the existence and classification of cyclic relative difference sets beyond the previously known Singer-complement lifting families and uses these results to assess the existence of circulant weighing matrices.\"\n  Limitation: \"The paper appears to rely on extended search and case analysis rather than a complete general classification theorem ruling out all other nontrivial liftings.\"\n\nC.\n  Mechanism: \"It derives separate combinatorial classification criteria for when the Kohnert poset of a northeast diagram is bounded, ranked, or multiplicity-free, and shows these criteria are decidable in polynomial time in the number of cells.\"\n  Niche: \"The paper studies how to characterize structural properties of Kohnert polynomials and Kohnert posets when the indexing objects are northeast diagrams, with special attention mechanism to lock diagrams.\"\n  Limitation: \"The results are specialized to northeast diagrams and do not provide equally general classifications for arbitrary diagram classes indexing Kohnert polynomials and posets.\"\n\nD.\n  Mechanism: \"It uses a renewal-theoretic decomposition over successive boundary-binding events to derive nonequilibrium stationary states and mean first-passage statistics under two desorption protocols: reset-to-initial-state and continuous release from the boundary.\"\n  Niche: \"This paper studies a run-and-tumble particle on the half-line with stochastic resetting and a sticky boundary that allows temporary binding, desorption, and eventual absorption at the target.\"\n  Limitation: \"The model is restricted to a one-dimensional RTP with constant tumbling and resetting rates, a single sticky boundary, and analytically idealized desorption/absorption kinetics, which may limit direct applicability to more complex geometries or heterogeneous environments.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "math.LO",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2306,
+        "similarity_avg": 0.2738,
+        "similarity_max": 0.3405
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "audit_edge": "Table of large graphs with given degree and diameter -> Cyclic relative difference sets and circulant weighing matrices",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_008",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It proposes an analogical synthesis that maps emergence, geometric frustration, competing interactions, spin-glasses, and Mott insulators onto social dynamics and collective-individual relations within a universal consciousness framework.\"\n  Niche: \"This paper addresses the problem of reinterpreting scientific socialism and dialectical social theory using concepts from modern condensed matter physics and Advaita Vedanta.\"\n  Limitation: \"The paper appears to offer no operational definitions, formal model, or empirical validation that would test whether its physics-to-society and consciousness-based analogies are scientifically predictive.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"Using 9 fb−1 of LHCb pp collision data, the study reconstructs χc1(3872) candidates in the J/ψμ+μ− final state and measures the decay rate relative to the reference mode χc1(3872)→J/ψπ+π−.\"\n  Niche: \"This paper addresses the experimental observation and relative branching-fraction measurement of the rare decay χc1(3872)→J/ψμ+μ− in proton-proton collisions at LHCb.\"\n  Limitation: \"The paper reports only a relative branching fraction for a single newly observed channel, so it does not by itself determine the absolute decay rate or fully resolve the internal structure of χc1(3872).\"\n\nB.\n  Mechanism: \"It uses a Schwinger-Keldysh full-counting-statistics formulation of Krylov position to derive an effective emergent phase-space action for operator growth in the presence of environmental coupling.\"\n  Niche: \"The paper studies how Krylov operator growth and Krylov complexity are modified in open quantum systems governed by Lindblad dynamics, especially under dephasing.\"\n  Limitation: \"The analysis appears centered on effective theory and minimal dissipative settings like dephasing, leaving broader validation across more general open-system models and concrete many-body examples unresolved.\"\n\nC.\n  Mechanism: \"The authors combine molecular dynamics simulations of Lennard-Jones and covalently bonded nanoclusters with a continuum-theory treatment of oblique impact that incorporates elasticity, bulk viscosity, and surface tension.\"\n  Niche: \"This paper addresses how to correctly characterize the normal restitution coefficient in oblique collisions of nanoclusters, where standard macroscopic definitions can fail.\"\n  Limitation: \"The study is limited to idealized nanocluster models and collision conditions, so its conclusions may not directly generalize to more complex materials, shapes, environments, or strongly plastic regimes.\"\n\nD.\n  Mechanism: \"It reconstructs Fermi's path by analyzing his early interests in the absolute entropy constant, his engagement with shortcomings of Sommerfeld's quantization for identical particles, and his extension of Pauli's Exclusion Principle to non-interacting particle systems.\"\n  Niche: \"This paper addresses the historical and conceptual origins of Enrico Fermi's formulation of the statistics of an ideal monatomic gas.\"\n  Limitation: \"As a historical reconstruction, the paper does not introduce new physical formalism or experimentally testable results and depends on interpretation of historical sources.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "physics.pop-ph",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": null,
+        "n_distractors": 3,
+        "same_domain": 3,
+        "same_subfield": 3,
+        "same_contribution_type": 1,
+        "similarity_min": 0.2479,
+        "similarity_avg": 0.2838,
+        "similarity_max": 0.3544
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-1_genome_next_hop",
+      "source": "science_supplement",
+      "domain": "science",
+      "audit_edge": "The Structure of Scientific Socialism: Quantum Emergence, Frustration, and the Non-Dual Dialectic -> From Florence to Fermions: a historical reconstruction of the origins of Fermi's statistics one hundred years later",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_900",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"The paper analyzes Kelly-rule growth optimality by modeling returns with a stochastic clock and comparing the resulting average growth rate and ruin thresholds to less aggressive leverage choices.\"\n  Niche: \"Long-term portfolio sizing under time-changed return dynamics in a general semimartingale setting.\"\n  Limitation: \"The work is primarily theoretical and illustrative, relying on literature-based stochastic clock variance examples rather than broad empirical validation on real investment data.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"The paper uses an LSTM model trained on differenced trend targets Δ_t and compares it exhaustively against OLS, Ridge, Lasso, and LightGBM in forecasting and portfolio simulation settings.\"\n  Niche: \"Next-day equity trend-difference forecasting for the top 30 S&P 500 stocks under nonlinear and nonstationary market regimes.\"\n  Limitation: \"The study is limited to 30 large-cap U.S. equities and a next-day horizon, leaving unclear how well the approach generalizes across assets, frequencies, transaction costs, and broader market universes.\"\n\nB.\n  Mechanism: \"Using Japanese survey data, the authors compare pre-pandemic and post-pandemic attitudes toward redistribution and analyze how these attitudes vary with institutional trust and income level.\"\n  Niche: \"This paper studies how acceptable tax rates for reducing inequality in Japan changed during and after COVID-19, with a focus on the role of trust in government.\"\n  Limitation: \"The study is limited by its reliance on Japanese attitudinal data, which may not identify causal mechanisms cleanly or generalize to other countries and institutional settings.\"\n\nC.\n\nD.\n  Mechanism: \"A first-order linearity analysis explains adversarial examples by modeling modern differentiable classifiers as locally linear in high-dimensional input spaces, where perturbations chosen along the input gradient under a norm bound can accumulate across dimensions to strongly change class scores.\"\n  Niche: \"This paper targets understanding why deep neural network classifiers are vulnerable to adversarial perturbations despite strong generalization on natural inputs.\"\n  Limitation: \"The study is primarily a conceptual and first-order analysis, so it does not provide a concrete training procedure that substantially improves robustness beyond diagnosing why standard models fail.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "q-fin.PM",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "audit_edge": "Betting Around the Clock: Time Change and Long Term Model Risk -> E-TRENDS: Enhanced LSTM Trend Forecasting for Equities",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_901",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"PEGASUS pre-trains a standard encoder-decoder by removing heuristic-selected salient sentences from a document and training the model to generate those missing gap sentences from the remaining context.\"\n  Niche: \"This paper targets improving abstractive document summarization, particularly transfer and low-resource fine-tuning performance.\"\n  Limitation: \"The method depends on heuristic sentence-importance extraction during pre-training, so its effectiveness is tied to how well those heuristics approximate truly summary-worthy content.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n\nB.\n  Mechanism: \"It proposes a confidence-aware asymmetric learning framework that trains a visual encoder and attribution head with strong supervised classification for known generators and confidence/uncertainty-based regularization that suppresses overconfident assignment of unknown-source samples to known classes.\"\n  Niche: \"This paper targets open-world deepfake attribution, identifying which known generator family produced a manipulated image while rejecting images from unseen generators.\"\n  Limitation: \"The method appears to depend on well-calibrated confidence estimates and on representative unknown-like training signals, which may limit robustness when truly novel generators produce artifacts that closely resemble known families.\"\n\nC.\n  Mechanism: \"BRIO trains a summarization model with a hybrid objective that combines standard maximum-likelihood loss with a margin-based ranking loss over multiple model-generated candidate summaries, using externally scored quality preferences and length-normalized sequence probabilities so better summaries are assigned higher sequence-level scores than worse ones.\"\n  Niche: \"This paper targets abstractive summarization, specifically the mismatch between training objectives and the quality of summaries produced at decoding time.\"\n  Limitation: \"The method depends on generating multiple candidate summaries and scoring them with an external metric against references, making training more computationally expensive and tied to the fidelity of that metric.\"\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "dynamics": "Hybridization",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Natural Language Processing",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "audit_edge": "PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization -> BRIO: Bringing Order to Abstractive Summarization",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_902",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors, with multi-scale fusion, facial-component emphasis, and perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details.\"\n  Niche: \"This paper targets benchmark-based evaluation of real-world face restoration under severe, mixed, and unconstrained degradations encountered in practical image capture.\"\n  Limitation: \"Because the study is challenge-driven and comparative rather than a single controlled method paper, it leaves unresolved which individual design choices most causally drive gains and how to best balance fidelity, realism, efficiency, and cross-degradation generalization.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory, and uncertainty-aware context before a conditional decoder synthesizes the next visual state.\"\n  Niche: \"This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\"\n  Limitation: \"Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\"\n\nB.\n\nC.\n  Mechanism: \"The paper learns the unknown Hamiltonian structure from data using a Gaussian Process distributed port-Hamiltonian model and integrates its posterior uncertainty into boundary control by interconnection with an energy-based robustness analysis.\"\n  Niche: \"Boundary control of distributed port-Hamiltonian systems with nonlinear or partially unknown PDE dynamics is addressed.\"\n  Limitation: \"The approach is demonstrated only on a simulated shallow water system and provides boundedness guarantees rather than stronger performance or stability guarantees for broad real-world settings.\"\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Niche Competition",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Machine Learning",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "audit_edge": "The Second Challenge on Real-World Face Restoration at NTIRE 2026: Methods and Results -> Envisioning the Future, One Step at a Time",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_903",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It models a HoloCuRA as a curvature-controllable holographic surface and introduces a visibility-aware framework using PoVi-CMD, a two-stage subarray-screening procedure, Rényi-2 effective rank, isotropic-scattering correlation formulas, and a realizable antenna port mode to jointly analyze SnS and DoF.\"\n  Niche: \"This paper studies spatial correlation, spatial non-stationarity, and spatial degrees of freedom for holographic curvature-reconfigurable apertures deployed on low-altitude nonplanar wireless platforms.\"\n  Limitation: \"The work is primarily a modeling and numerical study focused on idealized line-of-sight, 3GPP NLoS, and isotropic-scattering settings, so its conclusions may not fully capture hardware nonidealities or real flight-environment measurements.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"It compares dedicated source measurement units as instruments for measuring very small device currents and applies them in a measurement procedure on the MoleNet IoT platform.\"\n  Niche: \"The paper addresses precise low-current supply measurement for battery-powered IoT devices, especially during sleep-mode operation, using the MoleNet sensor board as a case study.\"\n  Limitation: \"The paper is limited by its case-study scope on a single IoT board and instrument comparison setup, which constrains generalization across devices, workloads, and measurement environments.\"\n\nB.\n\nC.\n\nD.\n  Mechanism: \"The paper introduces a quadratic angle approximation to linearize relative orientation errors and then derives Gaussian belief propagation message-passing rules to jointly estimate the rigid body's translation vector and rotation matrix from range measurements.\"\n  Niche: \"Range-based rigid body localization in 3D using Gaussian belief propagation when the target orientation prior may be inaccurate or largely deviated from the true pose.\"\n  Limitation: \"The method still depends on approximation-based linearization and evaluation is presented numerically rather than with guarantees or broad real-world validation, so robustness outside the tested conditions is unclear.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "eess.SY",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "energy",
+      "audit_edge": "Spatial Correlation, Non-Stationarity, and Degrees of Freedom of Holographic Curvature-Reconfigurable Apertures -> Precise Low-Current Measurement Techniques for IoT Devices: A Case Study on MoleNet",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_904",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It uses an end-to-end trained multilayer convolutional neural network with local receptive fields, shared weights, alternating learned filtering and subsampling stages, and backpropagation to jointly optimize feature extraction and classification from raw pixels.\"\n  Niche: \"This paper targets document recognition, especially handwritten character and word reading within practical document-processing tasks.\"\n  Limitation: \"The approach still depends on surrounding pipeline components such as normalization and sequence-level decoding, so the full reading system is not entirely learned end to end beyond the recognizer itself.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n\nB.\n  Mechanism: \"ImageNet constructs a hierarchical image dataset by mapping object categories to the WordNet lexical taxonomy, automatically harvesting candidate web images via query expansion and search, and then using distributed human verification to filter and label them at scale.\"\n  Niche: \"This paper targets the creation of a large-scale benchmark resource for visual object recognition spanning many categories and semantic levels.\"\n  Limitation: \"Because images are sourced from web search and validated through large-scale human annotation, the dataset remains dependent on search-engine retrieval biases and imperfect category verification quality.\"\n\nC.\n  Mechanism: \"It uses a three-dimensional representative volume element finite-element model with explicit collagen fiber architecture and a gradual thickness gradient to compare abrupt fiber termination versus continuous fiber networks under uniaxial tension.\"\n  Niche: \"This paper addresses how spatial wall-thickness variations affect stress and stretch in collagenous soft tissues when collagen fibers span thickness-transition regions.\"\n  Limitation: \"The study is limited by its idealized RVE simulations under uniaxial loading and only two prescribed fiber configurations, which may not capture full in vivo tissue complexity or multiaxial behavior.\"\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Hybridization",
+      "driver": "limitation"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Vision",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "audit_edge": "Gradient-Based Learning Applied to Document Recognition -> ImageNet: A Large-Scale Hierarchical Image Database",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_905",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"The paper builds a diffusion generative model whose score function is decomposed through time-varying orthogonal projections onto a low-dimensional latent factor subspace and encoded in a tailored neural architecture.\"\n  Niche: \"High-dimensional financial return scenario generation under small-sample conditions using latent factor structure.\"\n  Limitation: \"The framework depends on the validity and recoverability of a low-dimensional factor structure, which may limit performance when returns exhibit weak, unstable, or misspecified factors.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"The authors extend a prior agent-based artificial financial market model by adding additional agents, split into additional fundamental agents and additional technical agents, each following a simple one-parameter strategy, and then vary their population to measure earnings effects.\"\n  Niche: \"This paper studies how increasing the number of investors who use the same fundamental or technical trading strategy affects each investor's profit in an artificial financial market.\"\n  Limitation: \"The study relies on a simplified simulated market with very simple one-parameter strategies and no real-market validation, which limits how strongly the results generalize to actual investors.\"\n\nB.\n  Mechanism: \"Bro is a real-time network monitoring architecture that reconstructs application- and transport-level protocol semantics from packet streams, maintains per-connection state, emits high-level events, and applies a separate scriptable policy layer to detect suspicious behavior as sessions unfold.\"\n  Niche: \"This paper targets real-time detection of network intrusions by observing and interpreting traffic crossing a site's network boundary.\"\n  Limitation: \"Because Bro depends on protocol analyzers and site-authored policy scripts, its coverage is limited by the implemented protocol semantics and the quality of manually specified detection logic.\"\n\nC.\n  Mechanism: \"It formulates timescale separation as generalized eigenvalue problems using variance stationarity and tail stationarity criteria to extract components associated with different temporal dynamics.\"\n  Niche: \"The paper addresses the problem of decomposing financial time series into latent fast and slow components across assets such as currencies, equity ETFs, and treasury yields.\"\n  Limitation: \"The method is primarily demonstrated empirically on selected market datasets and does not fully establish robustness, causal interpretation, or superiority across broader financial regimes and model classes.\"\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "econ.GN",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "audit_edge": "Diffusion Factor Models: Generating High-Dimensional Returns with Factor Structure -> Is an investor stolen their profits by mimic investors? Investigated by an agent-based model",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_906",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"Pairformer replaces Evoformer; diffusion module generates all-atom 3D coordinates for any molecular complex type; trained on PDB structures of all complex types; MSA-free option via single-sequence trunk.\"\n  Niche: \"ESMFold (fast, single-chain) and AlphaFold2 (accurate, single-chain) cannot predict complexes; RFDiffusion designs backbones but not full atomic detail with small molecules; no single model covers protein-DNA/RNA/ligand interactions.\"\n  Limitation: \"Closed-source weights for commercial use; no generative design capability (prediction only, not design); does not model binding kinetics or conformational ensembles; large gaps in accuracy for RNA-protein complexes.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"It uses a component-wise microarchitectural leakage analysis framework that isolates timing sources at distinct pipeline and shared-resource stages, constructs attacks under realistic contention, and systematically compares hardware, software, and hybrid defenses by leakage, overhead, deployability, and attacker coverage.\"\n  Niche: \"This paper targets the problem of identifying and mitigating timing side-channel leakage across modern CPU microarchitectural components and protection boundaries.\"\n  Limitation: \"Because the study is structured around a selected set of known microarchitectural timing sources and practical countermeasures, its conclusions may not fully cover undocumented vendor-specific behaviors or newly emerging leakage interactions.\"\n\nB.\n  Mechanism: \"Flow-based latent generative model pretrained on synthetic binder-target pairs (Teddymer dataset); inference-time scaling via iterative optimization; applicable to hydrogen bond optimization and enzyme design beyond basic binder generation.\"\n  Niche: \"AlphaFold3 predicts binding structures but cannot generate novel binders; RFDiffusion designs backbones without exploiting generative pretraining at scale; need a model that combines generative pretraining with inference-time optimization for binder design.\"\n  Limitation: \"Experimental validation rates remain low due to gap between in silico binding scores and in vivo functional activity; optimizes binding affinity without explicit joint optimization of selectivity, stability, and in vivo efficacy.\"\n\nC.\n  Mechanism: \"Evoformer: iterative attention over Multiple Sequence Alignment (MSA) and pairwise residue distance representation; Structure Module refines 3D frames via invariant point attention; end-to-end training on PDB structures.\"\n  Niche: \"Protein structure prediction from sequence (the 50-year 'protein folding problem') remained unsolved; existing methods (Rosetta, homology modeling) were slow and inaccurate for novel folds.\"\n  Limitation: \"Predicts static equilibrium structure only; cannot model conformational dynamics; no protein-ligand co-structure; no direct design (sequence→structure, not structure→sequence).\"\n\nD.\n  Mechanism: \"Progressive Growing of GANs trains the generator and discriminator by starting at very low image resolution and incrementally adding higher-resolution layers with smooth fade-in transitions, alongside signal-control tricks and a minibatch standard-deviation feature in the discriminator.\"\n  Niche: \"This paper targets stable, high-quality, high-resolution image synthesis with generative adversarial networks while preserving sample diversity.\"\n  Limitation: \"The method depends on a hand-designed training curriculum and architecture-specific stabilization heuristics, leaving open how broadly the approach transfers beyond this staged resolution-growth setup.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "dynamics": "Hybridization",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computational Biology / Protein Structure & Design",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "biology",
+      "audit_edge": "Accurate structure prediction of biomolecular interactions with AlphaFold 3 -> Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_907",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It defines multi-metric spaces on multisets with distances valued in a multi-real number system so that multiplicity information is explicitly incorporated into similarity computation.\"\n  Niche: \"The paper addresses frequency-sensitive duplicate detection in data domains such as transactional databases, sensor logs, and record linkage where repeated values matter.\"\n  Limitation: \"A main limitation is that the paper appears to validate the approach mainly through an illustrative duplicate-detection example rather than broad large-scale empirical benchmarking across many datasets and baselines.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"It introduces parabolic weak porosity and proves the characterization using a stopping time argument together with translation and doubling properties for parabolic weakly porous sets.\"\n  Niche: \"The paper addresses the characterization of parabolic Muckenhoupt A_1 weights with time-lag via geometric properties of closed sets in the parabolic setting.\"\n  Limitation: \"The results are specialized to the parabolic A_1 time-lag framework and distance-to-set weights, leaving broader weight classes and more general geometries untreated.\"\n\nB.\n  Mechanism: \"It derives separate combinatorial classification criteria for when the Kohnert poset of a northeast diagram is bounded, ranked, or multiplicity-free, and shows these criteria are decidable in polynomial time in the number of cells.\"\n  Niche: \"The paper studies how to characterize structural properties of Kohnert polynomials and Kohnert posets when the indexing objects are northeast diagrams, with special attention to lock diagrams.\"\n  Limitation: \"The results are specialized to northeast diagrams and do not provide equally general classifications for arbitrary diagram classes indexing Kohnert polynomials and posets.\"\n\nC.\n  Mechanism: \"Brook for GPUs introduces a stream programming system in which programmers write kernels over stream elements while a compiler and runtime map streams to textures and kernels to fragment programs, managing execution through the graphics pipeline.\"\n  Niche: \"This paper targets making general-purpose data-parallel computation on graphics processors practical and accessible for non-graphics applications.\"\n  Limitation: \"The model is constrained by then-current graphics hardware, supporting mainly gather-style access and only limited reduction-like patterns, so many computations still fit awkwardly or require workarounds.\"\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "math.SP",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "mathematics",
+      "audit_edge": "Frequency Sensitive Duplicate Detection Using Multi-Metric Spaces -> Parabolic weak porosity and parabolic Muckenhoupt distance functions",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_908",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It develops constructive and structural arguments in metric geometry and topological group settings to show non-plasticity for countable dense subsets of normed spaces and to build plastic dense subspaces or subgroups inside broader separable spaces and groups.\"\n  Niche: \"The paper studies when metric spaces and metric groups are plastic, meaning every non-expansive bijection on them must be an isometry, with emphasis on dense subspaces and dense subgroups of separable structures.\"\n  Limitation: \"The results are restricted to specific classes such as countable dense subspaces of normed spaces, k-crowded separable metric spaces, and strictly convex separable metric groups, leaving broader characterizations of plasticity unresolved.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n\nB.\n\nC.\n  Mechanism: \"It introduces a new formal language of universes, induced communities, cells, and spots and uses this framework to derive a proof of the conjecture.\"\n  Niche: \"The paper addresses the union-closed sets conjecture for finite universes and induced communities, asking whether some element appears in at least half of the sets.\"\n  Limitation: \"The abstract does not indicate whether the proof yields broader structural characterizations, algorithmic consequences, or simplifications relative to existing formulations.\"\n\nD.\n  Mechanism: \"It factors a target map through the full evaluation table, enriches countable oracle sets as represented spaces to define a Weihrauch-SCI rank via reductions to iterated limit operators, and introduces intermediate SCI hierarchies by restricting base-level post-processing regularity and query policies.\"\n  Niche: \"This paper studies the foundational meaning of the Solvability Complexity Index for computing target maps from finite oracle evaluations and its relationship to Type-2 computability and Weihrauch reducibility.\"\n  Limitation: \"The main limitation is that the strongest negative and positive bridges depend on countable oracle sets and on imposed regularity restrictions, so the unrestricted extensional SCI framework alone does not robustly characterize Type-2 or Weihrauch complexity.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "math.GN",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "mathematics",
+      "audit_edge": "Plastic metric spaces and groups -> Foundational Analysis Of The Solvability Complexity Index: The Weihrauch-SCI Intermediate Hierarchy And A Koopman Operator Example",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_909",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"A phrase-based statistical machine translation approach is trained on parallel code–pseudo-code pairs to learn token/phrase alignments, translation probabilities, and a target-side language model, then decodes pseudo-code by jointly optimizing faithfulness to source code and fluency.\"\n  Niche: \"This paper targets automatic generation of human-readable pseudo-code descriptions from program source code.\"\n  Limitation: \"Because the system depends on phrase-based alignments over a structure-preserving but SMT-compatible code representation rather than deeper semantic analysis, it is limited in capturing long-range program semantics and more complex code patterns.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"A geometric-algebraic grasp closure analysis models each contact by a local friction force cone, maps the combined contact forces into object wrench space, and tests closure through convex hull, spanning, and rank conditions in a coordinate-invariant rigid-body formulation.\"\n  Niche: \"This paper targets the problem of determining when a multi-contact robotic grasp can either resist arbitrary external disturbances or immobilize an object under frictional contact.\"\n  Limitation: \"Because the framework abstracts grasping to low-dimensional rigid-body statics with idealized contact models, it does not address embodiment-specific hand kinematics, compliance, or dynamic manipulation effects.\"\n\nB.\n  Mechanism: \"The paper preserves tensor structure via a CP tensor factor model, analyzes least-squares estimation in tensor factor-augmented regression with heterogeneous factor strengths, derives prediction intervals accounting for latent-factor estimation error, proposes a cross-sectionally robust thresholded covariance estimator, and extends to a penalized multi-source factor-augmented sparse regression when non-tensor predictors are high-dimensional.\"\n  Niche: \"Forecasting a target variable with diffusion index models when predictors include both tensor-structured data and ordinary covariates, including high-dimensional settings such as trade-flow panels.\"\n  Limitation: \"The approach depends on specific low-rank CP factor and sparsity assumptions and is validated mainly through simulations and one application, leaving robustness to model misspecification and broader real-world generalization less clear.\"\n\nC.\n\nD.\n  Mechanism: \"CodeBERT is an encoder-only Transformer jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings.\"\n  Niche: \"This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\"\n  Limitation: \"Because the model is encoder-only and trained mainly on token sequences with limited explicit structural supervision, it is less suited to generative tasks and may underuse deeper program structure beyond surface token patterns.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Software Engineering",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "audit_edge": "Learning to Generate Pseudo-Code from Source Code Using Statistical Machine Translation -> CodeBERT: A Pre-Trained Model for Programming and Natural Languages",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_910",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"RDT2 trains a single end-to-end visuomotor sequence policy on a substantially scaled corpus of human and robot trajectories by mapping heterogeneous observations and controls into a unified embodiment-agnostic action interface with normalization, action chunking, and cross-platform calibration.\"\n  Niche: \"This paper targets zero-shot transfer of manipulation policies across previously unseen robot embodiments using large-scale unified multimodal interaction data.\"\n  Limitation: \"The approach depends on carefully engineered cross-platform alignment and a shared action abstraction, so transfer quality is likely constrained when a new robot's sensing, kinematics, or control semantics cannot be faithfully embedded into that common interface.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"Dispersive MeanFlow Policy Optimization performs a one-step or near-one-step policy update using a mean-field aggregation of trajectory-level action tendencies and a dispersive regularizer that preserves action-mode diversity while improving the policy.\"\n  Niche: \"This paper targets data-efficient and stable policy learning from large-scale imitation and reinforcement learning trajectories, especially when supervision is unlabeled, weakly labeled, or heterogeneous.\"\n  Limitation: \"Because the method compresses improvement into a one-step surrogate based on aggregated trajectory statistics, it may lose fine-grained sequential credit assignment and can be sensitive when the mean-flow estimate poorly represents highly nonstationary or sharply multimodal behaviors.\"\n\nB.\n\nC.\n\nD.\n  Mechanism: \"An efficient multi-modal distribution alignment distillation framework trains the student to match the teacher across multiple representational views—such as output probability distributions, intermediate hidden states, and modality-informed semantic signals—using selective layer-wise alignment, lightweight projections, and divergence-based regularization to reduce full matching cost.\"\n  Niche: \"This paper targets improving the compression of large language models into smaller students while preserving the teacher's richer predictive and semantic behavior.\"\n  Limitation: \"The method depends on access to auxiliary multi-modal semantic cues and carefully chosen alignment points, leaving unclear how well it works when such signals are unavailable or mismatched to the teacher's internal representations.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Robotics",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "audit_edge": "RDT2: Exploring the Scaling Limit of UMI Data Towards Zero-Shot Cross-Embodiment Generalization -> One Step Is Enough: Dispersive MeanFlow Policy Optimization",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_911",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"CodeBERT is an encoder-only Transformer jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings.\"\n  Niche: \"This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\"\n  Limitation: \"Because the model is encoder-only and trained mainly on token sequences with limited explicit structural supervision, it is less suited to generative tasks and may underuse deeper program structure beyond surface token patterns.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code, and systematically probes them across scales, prompts, and task formats using both open-ended generation and constrained prediction benchmarks.\"\n  Niche: \"This paper targets the evaluation of whether large language models can perform practically useful software engineering tasks such as code generation, completion, and problem solving.\"\n  Limitation: \"Because the work mainly provides controlled empirical evaluation rather than a new architecture or training objective, it leaves open which specific modeling or data interventions would most improve semantic correctness and robustness.\"\n\nB.\n  Mechanism: \"It uses a large-scale repository-mining before/after observational design that identifies the point of continuous integration adoption in many projects and compares longitudinal changes in commit behavior, pull requests, issue handling, and testing activity around that event.\"\n  Niche: \"This paper targets understanding how the adoption of continuous integration affects surrounding software development practices in collaborative software projects.\"\n  Limitation: \"Because the analysis is observational and based only on repository event signals around adoption time, it cannot cleanly establish causality or fully separate continuous integration effects from concurrent project evolution and confounding changes.\"\n\nC.\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Adaptive Radiation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Code Generation and Program Synthesis",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "information_science",
+      "audit_edge": "CodeBERT: A Pre-Trained Model for Programming and Natural Languages -> Evaluating Large Language Models Trained on Code",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_912",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It extends a BiLSTM-CRF sequence tagger with hard parameter sharing across related tagging tasks and a jointly optimized semi-supervised auxiliary objective on unlabeled sequences so that shared lower layers learn general token representations while task-specific output layers handle each label space.\"\n  Niche: \"The paper targets low-resource sequence labeling tasks such as token-level tagging where annotated data is scarce but related tasks and unlabeled text are available.\"\n  Limitation: \"The approach depends on the availability of suitably related auxiliary tasks and uses fixed hard sharing of lower layers, which may cause negative transfer or limit flexibility when task relatedness varies.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"BERT pre-trains a deep Transformer encoder with fully bidirectional self-attention using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads.\"\n  Niche: \"This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\"\n  Limitation: \"Its masked language modeling objective introduces a mismatch between pre-training and fine-tuning because masked tokens are artificial corruptions absent at downstream inference time, and its next sentence prediction signal is a relatively crude sentence-pair objective.\"\n\nB.\n\nC.\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "mechanism"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Natural Language Processing",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "audit_edge": "Semi-supervised Multitask Learning for Sequence Labeling -> BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_913",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It formulates HDR modulo recovery as an optimization problem with a deep prior and unrolls the solver into a lightweight optimization-inspired neural network with a convolutional denoiser and a scaling-equivariance-based self-supervised fine-tuning term.\"\n  Niche: \"The paper addresses high-dynamic-range image reconstruction from modulo imaging measurements, especially under noisy and out-of-distribution conditions.\"\n  Limitation: \"The approach still depends on learned priors and adaptation procedures, so its performance may remain sensitive to distribution shift and the assumptions of the modulo imaging model.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"The method replaces JPEG's DCT stage with a pipeline that clusters similar pixels using k-means, mines closed frequent sequences with a pruned refinement of the GSP algorithm, and encodes images using compact cluster-identifier pattern tables.\"\n  Niche: \"Lossy image compression is addressed by exploiting repeated pixel patterns in images instead of relying on the standard JPEG transform pipeline.\"\n  Limitation: \"The paper appears limited by evaluation mainly on benchmark experiments and does not establish broad generality, computational cost tradeoffs, or robustness against stronger modern compression baselines.\"\n\nB.\n\nC.\n  Mechanism: \"It introduces an uncertainty-aware offloading framework that computes a margin-based token-level uncertainty score and uses a greedy offloading algorithm to prioritize edge offloading for high-uncertainty queries while considering delay and resource constraints.\"\n  Niche: \"The paper addresses accuracy-latency trade-offs for serving LLM inference in mobile edge computing environments where resource-constrained devices must choose between local execution and edge offloading under multi-user contention.\"\n  Limitation: \"A main limitation is that the approach depends on the quality and calibration of the chosen uncertainty metric and is evaluated primarily through experiments rather than broader real-world deployment or stronger theoretical guarantees.\"\n\nD.\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "eess.AS",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "energy",
+      "audit_edge": "Deep Lightweight Unrolled Network for High Dynamic Range Modulo Imaging -> Frequent Pattern Mining approach to Image Compression",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_914",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"The authors generate mock observations of a simulated barred galaxy to measure orientation-dependent changes in mass-weighted λ_R and then compare weakly and strongly barred galaxies in the SAMI survey using stellar age, λ_R, and specific star formation rate within one effective radius.\"\n  Niche: \"This paper studies how stellar bar formation and bar strength affect the observed galaxy spin proxy λ_R and its connection to stellar populations and star formation in disk galaxies.\"\n  Limitation: \"The study relies on a λ_R proxy and observational bar classifications that are sensitive to viewing geometry and uses indirect evidence to infer evolutionary stages rather than directly tracking individual galaxies over time.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n  Mechanism: \"It analyzes the effect of neutrino flavor conversion inside the proto-neutron star on convection and predicts the resulting changes in gravitational-wave emission amplitude and frequency content during the post-bounce phase.\"\n  Niche: \"The paper addresses how nonstandard neutrino properties and BSM-induced flavor conversion in collapsing stellar cores could be probed through gravitational-wave signals from proto-neutron stars during core-collapse supernovae.\"\n  Limitation: \"A main limitation is that the work appears to provide a model-based proof of concept rather than direct observational validation, leaving detectability and robustness across supernova models uncertain.\"\n\nB.\n\nC.\n  Mechanism: \"It combines quantum Monte Carlo calculations with many-body ab initio interaction potentials that explicitly represent the proton coordination environment across cluster sizes.\"\n  Niche: \"This paper addresses the unexplained magic numbers and structural stability patterns of protonated argon clusters.\"\n  Limitation: \"The paper is limited by its focus on protonated argon clusters and does not establish how broadly the identified mechanism transfers to other rare-gas or molecular cluster systems.\"\n\nD.\n  Mechanism: \"The work tests multiple AstroPix v3 hardware configurations, from single-chip to nine-chip modules and multilayer stacks, using 500 um pitch pixels with in-pixel amplification and digitization, low-power operation, and a 25-700 keV designed dynamic range to assess scalability and detector performance.\"\n  Niche: \"This paper addresses evaluation of AstroPix HV-CMOS monolithic active pixel sensor modules for use as granular imaging layers in the ePIC Barrel Imaging Calorimeter and as detector planes in medium-energy space gamma-ray payloads.\"\n  Limitation: \"The abstract does not provide quantitative performance metrics, comparative benchmarks, or detailed failure modes, so the strength of the demonstrated performance remains unclear.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "dynamics": "Speciation",
+      "driver": "niche"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "astro-ph.GA",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "astronomy",
+      "audit_edge": "Measuring the evolution of stellar bars with the host galaxy's spin -> Gravitational-Wave Signatures of Nonstandard Neutrino Properties in Collapsing Stellar Cores",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T4-04_next_hop_915",
+    "task_type": "T4-04_next_hop",
+    "prompt": "Seed genome:\n  Mechanism: \"It uses a denoising diffusion probabilistic model in which a U-Net-like network with attention is trained across many timesteps to predict added Gaussian noise under a carefully designed variance schedule, then samples by iteratively reversing the fixed noising process from pure noise.\"\n  Niche: \"This paper targets high-quality and high-coverage natural image synthesis with strong likelihood performance.\"\n  Limitation: \"The model still requires many sequential denoising steps for generation, making sampling substantially slower and more computationally expensive than adversarial generators.\"\n\nWhich genome is the DIRECT successor (next step in the lineage)?\n\nA.\n\nB.\n\nC.\n\nD.\n  Mechanism: \"Train VAE to compress images 8x; apply DDIM diffusion in latent space (64×64 latents); text conditioning via cross-attention with CLIP text encoder.\"\n  Niche: \"Pixel-space diffusion is computationally prohibitive at high resolution; 512×512 generation too slow for practical use.\"\n  Limitation: \"U-Net inductive bias limits scalability; text alignment can fail on complex compositions; video generation not supported natively.\"\n\nSelect the direct successor (A-D). Choose the option that most directly continues the mechanism lineage, not merely the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\nDriver = [mechanism|niche|observation|limitation]\n",
+    "choices": {
+      "A": "option_0",
+      "B": "option_1",
+      "C": "option_2",
+      "D": "option_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "dynamics": "Hybridization",
+      "driver": "limitation"
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Deep Learning",
+      "capability": "Lineage Verification",
+      "original_task_type": "T4-04_next_hop",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "audit_edge": "Diffusion Models Beat GANs on Image Synthesis -> High-Resolution Image Synthesis with Latent Diffusion Models",
+      "display_title": "Next-Hop Prediction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  }
+]

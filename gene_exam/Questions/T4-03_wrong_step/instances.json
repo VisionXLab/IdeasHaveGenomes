@@ -1,0 +1,862 @@
+[
+  {
+    "instance_id": "T4-03_wrong_step_0026",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Spectre is a transient-execution attack method that mistrains branch prediction or branch target prediction so the CPU speculatively executes a wrong-path disclosure gadget, accesses secret data, and encodes it into cache state that is later decoded via timing.\"\n  Niche: \"This paper targets the problem of extracting sensitive data across software and hardware isolation boundaries in processors that use speculative execution.\"\n  Limitation: \"The paper mainly demonstrates two representative Spectre variants using suitable victim gadgets and cache timing, leaving broad, complete, and practical mitigations against all speculation-based gadgets unresolved.\"\n\nB.\n  Mechanism: \"FLUSH+RELOAD repeatedly flushes a chosen shared last-level-cache line with a cross-core invalidating instruction and then reloads the same shared address while timing the access, so fast reloads reveal that the victim accessed that exact cache line in the interim.\"\n  Niche: \"This paper targets high-resolution cross-core monitoring of a victim process's memory access and execution behavior for cache side-channel analysis.\"\n  Limitation: \"The attack depends on attacker and victim sharing physical pages such as shared libraries or deduplicated memory, so it does not directly apply when no shared cache lines are available.\"\n\nC.\n  Mechanism: \"It adapts Prime+Probe to JavaScript by using high-resolution timers, large typed arrays, and architecture-aware strided memory accesses to build eviction and probing sets that monitor last-level cache occupancy without privileged cache instructions.\"\n  Niche: \"This paper targets remote microarchitectural side-channel surveillance of user and process activity from within the browser’s sandbox using ordinary web-delivered code.\"\n  Limitation: \"The attack depends on sufficiently fine-grained timing sources and on cache-mapping/eviction behavior that is architecture- and browser-dependent, which constrains robustness and portability across all platforms.\"\n\nD.\n  Mechanism: \"A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache behavior.\"\n  Niche: \"This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\"\n  Limitation: \"The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-table implementations.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "correct_order": [
+        4,
+        2,
+        3
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Security",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0057",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"It combines quality-controlled IAP/CAS and NCEI/NOAA in situ temperature-profile-based OHC products with CESM1 large-ensemble full-forcing and single-forcing simulations, using ensemble-mean differencing to isolate forcing-specific contributions across global, basin, and hotspot scales.\"\n  Niche: \"The paper addresses near-real-time global and regional assessment and attribution of upper-2000-m ocean heat content change through 2021 using harmonized observational products and climate model ensembles.\"\n  Limitation: \"Its attribution and regional inference depend on a single climate model framework and observational mapping products, which may underrepresent structural uncertainty and unresolved regional processes.\"\n\nB.\n  Mechanism: \"It builds IAPv4 through a pipeline combining non-Gaussian time-evolving instrument-aware QC (CODC-QC), instrument-specific bias corrections, fine vertical interpolation, short-period model-based climatology subtraction, variable time-averaging, iterative ensemble optimal interpolation with flow-dependent covariance, and ETOPO1-based volume correction.\"\n  Niche: \"This paper addresses the construction of a global monthly gridded ocean temperature and ocean heat content dataset from 1940 to present that remains physically consistent across sparse, biased, and heterogeneous historical observations.\"\n  Limitation: \"Despite these advances, the dataset remains less reliable before about 1957 because historical observations are sparse and uneven, especially in poorly sampled regions and depths.\"\n\nC.\n  Mechanism: \"It harmonizes multiple state-of-the-art gridded ocean products with enhanced quality control, improved bias correction, explicit uncertainty comparison, and multi-indicator computation against a 1981-2010 baseline.\"\n  Niche: \"The paper addresses the problem of producing a rigorous global and regional assessment of 2023 ocean thermal and salinity conditions from heterogeneous observational ocean datasets.\"\n  Limitation: \"The paper remains constrained by the observational coverage, product-dependent assumptions, and residual uncertainty of existing ocean reanalyses and gridded datasets, especially for gap filling and historical reconstruction.\"\n\nD.\n  Mechanism: \"It integrates global in situ ocean measurements with cross-institutional bias corrections and independent mapping products from IAP/CAS and NCEI/NOAA to reconstruct annually resolved 3D ocean fields and derive OHC, the salinity contrast index, and buoyancy-frequency-based stratification metrics.\"\n  Niche: \"This paper addresses the annual global assessment of upper-ocean climate change by quantifying 0–2000 m ocean heat content, salinity contrast, and stratification from bias-corrected in situ observations.\"\n  Limitation: \"Its conclusions remain constrained by observational coverage gaps, residual instrument and mapping uncertainties, and dependence on reconstruction methods for sparsely sampled ocean regions.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        1,
+        4,
+        3
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "海洋热含量",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0060",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"The study uses GEOS-Chem nested-grid sensitivity simulations with sequentially fixed or varying emissions and meteorology, then applies stepwise multiple linear regression and LMG decomposition to quantify contributions from anthropogenic emissions, natural precursor sources, and individual meteorological parameters to MDA8 and 4MDA8 ozone.\"\n  Niche: \"Attributing summertime surface ozone and extreme ozone trends in China during 2012-2017 across major regions by separating anthropogenic, meteorological, and natural-source drivers.\"\n  Limitation: \"The paper remains limited by dependence on GEOS-Chem configuration and regression-based attribution assumptions, which may omit nonlinear interactions and uncertainty in emissions, chemistry, and meteorological representation.\"\n\nB.\n  Mechanism: \"It integrates quality-controlled hourly ozone observations from China's CNEMC network and the global TOAR database, computes harmonized exposure indicators such as MDA8, 4MDA8, SOMO35, NDGT70, AOT40, and W126, and applies statistical spatial and temporal comparisons across regions.\"\n  Niche: \"This paper addresses nationwide and globally comparable assessment of surface ozone pollution exposure in China for human health and vegetation impacts using standardized metrics.\"\n  Limitation: \"The paper is limited by its observational and descriptive design over a relatively short 2013–2017 window, which supports comparison and trend characterization but not strong causal attribution or long-term projection.\"\n\nC.\n  Mechanism: \"It uses an updated offline-coupled WRF-CMAQ modeling framework with controlled multi-year sensitivity experiments that vary meteorology, anthropogenic emissions, biogenic VOC emissions, and individual meteorological parameters to decompose MDA8 ozone changes.\"\n  Niche: \"The paper addresses attribution of summer surface urban ozone trends across major regions of China during 2013–2017 by separating the effects of interannual meteorology, biogenic emissions, anthropogenic emissions, and transport.\"\n  Limitation: \"Its conclusions depend on the fidelity of the regional chemical transport model, emission inventories, and offline process representation, which may leave uncertainty in causal attribution despite the controlled experiments.\"\n\nD.\n  Mechanism: \"The framework first applies KZ filtering and multivariate regression to remove meteorological variability from observed ozone time series, then uses EOF decomposition and APCS on the adjusted data to separate local and nonlocal emission contributions and analyze their spatial-temporal trends.\"\n  Niche: \"Quantitatively attributing long-term ambient ozone trends across multiple sites in the Pearl River Delta to meteorology, local precursor emissions, and nonlocal emissions under both general and high-ozone conditions.\"\n  Limitation: \"Because the framework is statistical and conceptually interprets regimes rather than explicitly simulating atmospheric chemistry and transport, its source attribution and control implications depend on assumptions that may not capture full nonlinear chemical processes.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_order": [
+        1,
+        4,
+        2
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "臭氧污染及成因",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0036",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"The method constructs a congressional sample, a composite synopsis that combines a population-proportional sample with a group-coverage-oriented component and answers group-by aggregates by appropriately weighting sampled tuples.\"\n  Niche: \"This paper targets approximate evaluation of aggregate SQL group-by queries over very large or rapidly changing relational data where exact computation is too costly.\"\n  Limitation: \"The approach is specialized to distributive grouped aggregates and depends on known or maintained group structure and budget allocation, limiting its direct applicability to more complex aggregates or poorly characterized group domains.\"\n\nB.\n  Mechanism: \"It introduces a unified systems-and-algorithms taxonomy for approximate query processing that classifies techniques by where approximation is injected in the pipeline, how estimators and confidence bounds are constructed, and how they integrate with relational optimization and progressive execution.\"\n  Niche: \"This paper targets the problem of producing fast, resource-efficient approximate answers with quantified uncertainty for large-scale relational queries and interactive analytics.\"\n  Limitation: \"Because it is a synthesis rather than a new execution engine or benchmarked implementation, the framework does not empirically validate a single end-to-end architecture or resolve which design choices dominate under specific workloads.\"\n\nC.\n  Mechanism: \"Quickr is a lazy approximate query processing system that performs progressive sampling during query execution and incrementally refines result estimates with error bounds until a budget, deadline, or confidence-based stopping condition is met.\"\n  Niche: \"This paper targets approximate execution of complex, previously unseen ad-hoc analytical queries in big-data clusters under user-specified latency or accuracy goals.\"\n  Limitation: \"Because Quickr avoids heavy ahead-of-time optimization and builds approximations on demand, it may not match the lowest latency of prior sample-based systems when a query happens to align well with existing precomputed samples.\"\n\nD.\n  Mechanism: \"BlinkDB is a distributed approximate query processing system that precomputes a family of workload-aware multi-dimensional stratified samples and, at query time, uses an optimizer to choose the smallest sample predicted to meet a user-specified latency or accuracy bound while returning aggregates with confidence estimates.\"\n  Niche: \"This paper targets interactive ad hoc aggregation analytics over very large distributed datasets for users who require either bounded error or bounded response time.\"\n  Limitation: \"Its effectiveness depends on offline construction of sample families from workload statistics and attribute popularity, so storage overhead and performance can degrade when workloads or relevant predicate attributes shift beyond what the precomputed samples cover.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        1,
+        4,
+        3
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Database Systems",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0042",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"One-Shot Imitation Learning uses meta-imitation learning to train a task-conditioned policy that encodes one demonstration with temporal visual/state encoders and correspondence-style attention mechanism, then maps current observations plus the inferred task embedding to actions with optional one-step gradient-based adaptation.\"\n  Niche: \"This paper targets robotic manipulation task generalization where a robot must perform a previously unseen task after seeing only a single expert demonstration.\"\n  Limitation: \"The method depends on training over a distribution of related tasks and demonstrations, so its one-shot generalization is limited to tasks that are sufficiently similar to those seen during meta-training.\"\n\nB.\n  Mechanism: \"It uses deep reinforcement learning augmented with expert demonstrations by seeding an off-policy replay buffer with demonstration trajectories, applying reward shaping and reset/curriculum design during policy optimization, and using domain randomization to train sim-to-real robust dexterous control policies.\"\n  Niche: \"The paper targets long-horizon, high-dimensional dexterous in-hand manipulation with a multi-fingered robotic hand, such as reorienting objects under sparse rewards and contact-rich dynamics.\"\n  Limitation: \"The approach depends on task-specific engineering such as curated demonstrations, shaped rewards, and carefully designed resets/curricula, which limits how automatic and broadly reusable the method is.\"\n\nC.\n  Mechanism: \"BC-Z trains a single multitask behavior-cloning policy that maps visual observations plus a natural-language instruction or short task video into low-level actions using a shared cross-modal task embedding space to condition the policy.\"\n  Niche: \"This paper targets zero-shot generalization in robotic manipulation, where a robot must execute unseen task combinations from raw observations and an explicit task specification.\"\n  Limitation: \"The method depends on externally supplied task specifications at test time and only supports the modalities aligned during training, limiting applicability when such language or video descriptors are unavailable or mismatched.\"\n\nD.\n  Mechanism: \"A learning-from-demonstration method encodes a small set of demonstrations as segmented, parameterized manipulation trajectories over task-relevant state variables and contact events, then extracts spatial constraints, temporal ordering, and robot-centered policy parameters to adapt the skill online to novel situations.\"\n  Niche: \"This paper targets robot learning of object manipulation tasks from only a few human demonstrations, with the goal of reproducing the task under new initial conditions.\"\n  Limitation: \"Because the learned representation is built from a very small number of demonstrations and hand-identified task-relevant variables/primitives, performance is likely sensitive to segmentation quality and may not cover task variations outside the demonstrated structure.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_order": [
+        4,
+        1,
+        2
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Robotics",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0032",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"The method synthesizes blind-XSS polyglot payloads by formalizing possible parser/context transitions across HTML, attribute, script, and URL embeddings and using search or constraint-guided generation to produce strings that remain executable after sanitization and transformation while carrying out-of-band signaling code.\"\n  Niche: \"This paper targets blind cross-site scripting, specifically generating payloads that can execute when injected into unknown downstream web rendering contexts without direct feedback.\"\n  Limitation: \"Because the synthesis optimizes for robustness under uncertain contexts rather than for a known sink, the resulting payloads may be longer, more constrained, and still fail in environments whose sanitization or templating mutations fall outside the modeled transformations.\"\n\nB.\n  Mechanism: \"PMForce is a hybrid static-dynamic analysis system that extracts postMessage event listeners, reconstructs their message-processing logic, systematically explores message formats and control-flow paths, and checks end-to-end flows from message receipt through origin validation and sanitization to security-sensitive sinks.\"\n  Niche: \"This paper targets the large-scale security analysis of client-side postMessage handlers in web applications, focusing on whether cross-origin messages are safely validated before triggering dangerous actions.\"\n  Limitation: \"To remain scalable across many sites, PMForce uses approximations for highly dynamic JavaScript behavior and message semantics, which can miss some handlers or imprecisely model complex validation logic.\"\n\nC.\n  Mechanism: \"It introduces a hybrid client-side request-flow analysis framework that statically traces untrusted inputs through event-driven JavaScript to security-sensitive request-construction sinks and then dynamically validates candidate flows in realistic browser executions to confirm exploitability.\"\n  Niche: \"This paper targets the detection and characterization of client-side request hijacking vulnerabilities in web applications, where attacker-controlled browser inputs can alter outbound requests.\"\n  Limitation: \"Because exploitability confirmation relies on targeted dynamic validation in realistic browser contexts, the framework may miss vulnerabilities whose triggering conditions or execution paths are not exercised during validation.\"\n\nD.\n  Mechanism: \"The method is a CSRF request-binding defense that embeds unpredictable session-associated nonces in sensitive requests and validates them server-side, optionally supplemented by provenance checks such as the Referer header while exempting safe read-only operations.\"\n  Niche: \"This paper targets the problem of preventing cross-site request forgery against authenticated web applications, especially for state-changing user actions.\"\n  Limitation: \"The paper's secondary provenance-based checks depend on browser-supplied headers like Referer that are inconsistently present or deployable, limiting standalone reliability and complicating universal adoption.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_order": [
+        2,
+        3,
+        1
+      ],
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Security",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0047",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"DAgger iteratively runs a mixture of the current policy and the expert, queries the expert on learner-visited states, aggregates all collected state-action pairs across rounds, and reduces policy learning to a no-regret online learning problem over the growing dataset.\"\n  Niche: \"This paper targets sequential imitation learning and structured prediction under distribution shift caused by compounding errors when a learned policy is executed at test time.\"\n  Limitation: \"The method requires repeated expert action queries on states encountered during iterative rollouts, making it dependent on an available and affordable expert during training.\"\n\nB.\n  Mechanism: \"LeRobot is a modular open-source system that standardizes data collection, dataset formatting, normalization, training, evaluation, rollout, and hardware deployment for sequence-based behavior-cloning-style policies that map images, proprioception, and action history directly to continuous robot actions.\"\n  Niche: \"This paper targets the problem of building and evaluating end-to-end robot learning systems for physical manipulation and control from multimodal observations across the full experimental workflow.\"\n  Limitation: \"Because the work is primarily a software framework centered on supervised imitation-style policy learning, it does not itself introduce a new learning algorithm or resolve performance limits beyond the supported behavior-cloning family and available hardware integrations.\"\n\nC.\n  Mechanism: \"Third-Person Imitation Learning trains a policy with reinforcement learning to fool a behavior discriminator operating on transition features, while a representation network is adversarially optimized with a domain-confusion objective so those features predict expert-vs-novice behavior but not demonstrator-vs-learner domain identity.\"\n  Niche: \"The paper targets imitation learning from observation when expert demonstrations and learner experience come from different viewpoints, visual domains, or embodiments without shared action labels or aligned state spaces.\"\n  Limitation: \"The method still depends on learning a sufficiently shared feature space between domains, so large embodiment or scene differences can leave residual domain cues that degrade imitation quality.\"\n\nD.\n  Mechanism: \"An end-to-end deep visuomotor imitation policy combines a convolutional network over raw images with fully connected layers that fuse proprioceptive state and predict motor torques or control commands, with the visual front end often pretrained on auxiliary perception objectives before joint fine-tuning on demonstrations.\"\n  Niche: \"This paper targets learning robotic manipulation policies that map camera observations and robot state to continuous control actions for real-world visuomotor tasks.\"\n  Limitation: \"The approach depends on expert demonstration data and typically requires externally supervised or auxiliary pretraining of the visual representation to achieve sufficient data efficiency.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        1,
+        4,
+        3
+      ],
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Robotics",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0034",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"MTFuzz uses a multi-task neural network with shared hidden layers and task-specific output heads trained from execution-derived supervision to jointly predict complementary mutation-guidance signals, then applies those predictions online to prioritize mutation locations and generate candidate inputs within a standard coverage-guided fuzzing loop.\"\n  Niche: \"This paper targets improving coverage-guided software fuzzing by better identifying promising input mutations for test-case generation and bug discovery.\"\n  Limitation: \"The approach depends on the quality and availability of execution-derived labels for several auxiliary tasks, and the description leaves unclear which task combinations contribute most or how much online model overhead affects end-to-end fuzzing throughput.\"\n\nB.\n  Mechanism: \"KLEE is a symbolic execution system that runs programs on symbolic inputs at the compiler IR level, accumulates path constraints, systematically negates branch conditions, solves the resulting formulas to generate new concrete tests, and models memory, libraries, and environment interactions to explore realistic systems code.\"\n  Niche: \"This paper targets automatic generation of high-coverage test inputs for complex low-level systems programs without requiring manual test specifications.\"\n  Limitation: \"The system still depends on heuristic path search and selective modeling of external code and environment behavior, leaving path explosion and incomplete handling of some real-world interactions unresolved.\"\n\nC.\n  Mechanism: \"NEUZZ trains branch-level neural surrogate models on execution traces from seed inputs and mutations to smooth the discrete input-to-branch relationship, then uses gradients of these learned functions to perturb input bytes toward flipping unsatisfied predicates within a hybrid fuzzing loop.\"\n  Niche: \"This paper targets the problem of increasing branch coverage in greybox fuzzing for programs with hard-to-reach, path-sensitive conditions.\"\n  Limitation: \"Because its guidance depends on surrogate models learned from observed traces and decomposed per branch, NEUZZ can misguide exploration when the learned approximations are inaccurate or fail to capture complex global interactions among input bytes and control flow.\"\n\nD.\n  Mechanism: \"CollAFL is a path-sensitive greybox fuzzing method that augments traditional edge coverage with compact branch-behavior-derived path identifiers so the fuzzer can distinguish and prioritize inputs that follow different decision contexts within already-covered code.\"\n  Niche: \"This paper targets the problem of improving greybox fuzzing guidance when many semantically different executions are collapsed into the same coarse coverage signal.\"\n  Limitation: \"Its path sensitivity is only a lightweight approximation based on compact branch information, so executions that differ in deeper semantic state but map to the same encoded path variant can still be conflated.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "correct_order": [
+        2,
+        4,
+        3
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Software Engineering",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0051",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"The method computes a mathematically derived complementary spectrum from the experimental spectrum, encodes both with specialized sinusoidal peak embeddings in dual encoders, fuses them with precursor mass/charge features in a transformer architecture, and autoregressively decodes peptide sequences using greedy or beam search.\"\n  Niche: \"De novo peptide sequencing from tandem mass spectra across proteomics settings such as gut metaproteome, antibody, and cross-domain applications with incomplete fragment ion evidence.\"\n  Limitation: \"The paper still depends on the quality and assumptions of mathematically reconstructed complementary spectra and transformer architecture decoding, which may limit performance on highly noisy, atypical, or weak-fragmentation spectra.\"\n\nB.\n  Mechanism: \"Casanovo uses a single transformer architecture encoder-decoder that embeds continuous m/z values with sinusoidal functions and intensities with linear projection, conditions decoding on precursor information and amino acid prefixes, and autoregressively predicts peptide sequences without m/z discretization or dynamic-programming post-processing.\"\n  Niche: \"The paper addresses de novo peptide sequencing from high-resolution tandem mass spectra, especially for peptides not present in reference databases.\"\n  Limitation: \"Although simpler and faster, the method still depends on autoregressive decoding and post-inference precursor-mass filtering, which can leave mass-consistency and long-sequence errors insufficiently constrained during generation.\"\n\nC.\n  Mechanism: \"RefineNovo uses a CTC-trained non-autoregressive encoder-decoder transformer architecture with a spectrum encoder, a peptide decoder conditioned by adaptive curriculum masking of ground-truth tokens during training, and an iterative self-refinement inference loop that feeds prior predictions back as input.\"\n  Niche: \"De novo peptide sequencing from tandem mass spectrometry data using non-autoregressive sequence generation.\"\n  Limitation: \"The paper still relies on iterative multi-pass refinement and curriculum design choices, which add inference/training complexity and may remain sensitive to masking schedules or difficult sequence spaces.\"\n\nD.\n  Mechanism: \"AdaNovo uses a transformer architecture with a spectrum encoder and two peptide decoders to estimate amino acid- and PSM-level conditional mutual information and adaptively re-weight training losses toward informative, well-matched spectrum-peptide pairs, with precursor filtering and confidence-based inference.\"\n  Niche: \"De novo peptide sequencing from tandem mass spectra with accurate recovery of amino acids, especially rare PTM-containing residues, under noisy and cross-species conditions.\"\n  Limitation: \"The method still depends on reliable CMI estimation and labeled spectrum-peptide training data, which may be difficult for extremely rare modifications or highly shifted data distributions.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        4,
+        1,
+        3
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "蛋白质从头测序",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0049",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"SDXL is a staged latent diffusion system that trains a larger high-resolution base model with a stronger text-conditioning pathway and revised denoising architecture in latent space, then applies a separate refiner model to add local detail and perceptual sharpness.\"\n  Niche: \"This paper targets high-resolution text-to-image synthesis with strong prompt adherence, coherent composition, and robust handling of varied aspect ratios.\"\n  Limitation: \"Despite these gains, the method still requires a two-stage generation pipeline with substantial model scale and training complexity, leaving efficiency and simplicity unresolved relative to smaller single-stage predecessors.\"\n\nB.\n  Mechanism: \"Minos is a profiling-and-classification framework that collects fine-grained runtime telemetry, hardware counters, and workload features across controlled variations in input size, parallelism, and node allocation to place applications into interpretable multidimensional behavior classes spanning compute, memory, communication, and energy characteristics.\"\n  Niche: \"This paper targets the problem of systematically classifying the performance and power behavior of GPU-accelerated workloads on HPC clusters for operational decision-making.\"\n  Limitation: \"Because Minos relies on broadly available monitoring interfaces and interpretable coarse behavior classes, it may miss lower-level accelerator effects and application-specific nuances that specialized instrumentation or predictive models could capture.\"\n\nC.\n  Mechanism: \"A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory, and uncertainty-aware context before a conditional decoder synthesizes the next visual state.\"\n  Niche: \"This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\"\n  Limitation: \"Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\"\n\nD.\n  Mechanism: \"StyleGAN replaces direct latent input to the generator with a learned mapping network that produces an intermediate latent code whose per-layer style parameters modulate each convolution via adaptive normalization, while independent noise is injected at each layer and style mixing is used during training.\"\n  Niche: \"This paper targets high-quality image synthesis with improved disentanglement and user control over semantic image attributes in Model-GAN latent spaces.\"\n  Limitation: \"Although it improves disentanglement and control, the method does not fully eliminate latent entanglement and relies on heuristic design choices such as style mixing and per-layer noise injection rather than an explicit disentanglement objective.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_order": [
+        1,
+        3,
+        2
+      ],
+      "correct_dynamics": [
+        "Niche Competition",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Vision",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0043",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Hybrid zero-dynamics embedding: the method imposes feedback-enforced virtual constraints on an asymmetric hopper and constructs an impact-invariant reduced manifold so the closed-loop hybrid system evolves exactly as a Spring Loaded Inverted Pendulum template.\"\n  Niche: \"This paper targets explaining and realizing low-dimensional hopping locomotion behavior within a more detailed asymmetric legged mechanism across stance and flight phases.\"\n  Limitation: \"The result depends on carefully designed asymmetry and virtual-constraint feedback to preserve invariance across mode transitions, leaving open how broadly the construction extends to more general morphologies or uncontrolled hoppers.\"\n\nB.\n  Mechanism: \"It introduces a hybrid feedback control framework that stabilizes periodic bipedal gaits by continuously regulating reduced-order gait variables and virtual joint constraints during swing and stance, while applying event-based corrections at foot impact and analyzing step-to-step stability with return maps.\"\n  Niche: \"This paper targets the problem of achieving robust, repeatable dynamic walking in underactuated bipedal robots subject to impacts and phase-dependent locomotion dynamics.\"\n  Limitation: \"The approach depends on carefully designed reduced-order gait representations and periodic-motion structure, which limits its direct applicability to highly nonperiodic maneuvers or locomotion regimes far from the nominal gait.\"\n\nC.\n  Mechanism: \"A sim-to-real reinforcement learning locomotion controller is trained as a neural feedback policy that maps proprioceptive state and motion commands directly to low-level actuation targets under broad command sampling, reward shaping, and heavy domain randomization over dynamics, contacts, terrain, disturbances, and sensing noise.\"\n  Niche: \"This paper targets control of physical bipedal robots for versatile, highly dynamic, and robust locomotion across varied commands, disturbances, and terrain conditions.\"\n  Limitation: \"The approach depends on carefully engineered reward terms and extensive simulation randomization, leaving unclear how sensitive performance is to these design choices and how well the learned policy extrapolates beyond the randomized training envelope.\"\n\nD.\n  Mechanism: \"A quadruped system is built around an actuator with switchable transmission that actively changes gear ratio between high-torque stance mode and low-impedance, high-speed swing mode, combined with proximal actuation, lightweight compliant legs, and morphology tuned to spring-mass running templates.\"\n  Niche: \"This paper targets the design of a quadrupedal robot capable of highly dynamic running, bounding, and galloping with both strong stance support and rapid leg swing.\"\n  Limitation: \"The paper's approach depends on a specialized integrated electromechanical transmission and morphology co-design, leaving unclear how broadly the design generalizes or what switching costs, complexity, and reliability penalties arise relative to simpler fixed-transmission legs.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_order": [
+        2,
+        1,
+        4
+      ],
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Robotics",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0048",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous forward noising process and generating data by simulating the corresponding reverse-time SDE or its probability-flow ODE, with predictor-corrector refinement.\"\n  Niche: \"This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images.\"\n  Limitation: \"The method depends on numerically integrating reverse-time dynamics and often using predictor-corrector steps, making sampling computationally expensive and sensitive to discretization and solver choices.\"\n\nB.\n  Mechanism: \"SDXL is a staged latent diffusion system that trains a larger high-resolution base model with a stronger text-conditioning pathway and revised denoising architecture in latent space, then applies a separate refiner model to add local detail and perceptual sharpness.\"\n  Niche: \"This paper targets high-resolution text-to-image synthesis with strong prompt adherence, coherent composition, and robust handling of varied aspect ratios.\"\n  Limitation: \"Despite these gains, the method still requires a two-stage generation pipeline with substantial model scale and training complexity, leaving efficiency and simplicity unresolved relative to smaller single-stage predecessors.\"\n\nC.\n  Mechanism: \"A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory, and uncertainty-aware context before a conditional decoder synthesizes the next visual state.\"\n  Niche: \"This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\"\n  Limitation: \"Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\"\n\nD.\n  Mechanism: \"Minos is a profiling-and-classification framework that collects fine-grained runtime telemetry, hardware counters, and workload features across controlled variations in input size, parallelism, and node allocation to place applications into interpretable multidimensional behavior classes spanning compute, memory, communication, and energy characteristics.\"\n  Niche: \"This paper targets the problem of systematically classifying the performance and power behavior of GPU-accelerated workloads on HPC clusters for operational decision-making.\"\n  Limitation: \"Because Minos relies on broadly available monitoring interfaces and interpretable coarse behavior classes, it may miss lower-level accelerator effects and application-specific nuances that specialized instrumentation or predictive models could capture.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "correct_order": [
+        2,
+        3,
+        4
+      ],
+      "correct_dynamics": [
+        "Niche Competition",
+        "Hybridization"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Deep Learning",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0017",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Vision transformer architecture (ViT) represents an image as a sequence of non-overlapping fixed-size patch embeddings with positional encodings, prepends a classification token, and feeds the sequence through a standard transformer architecture encoder for prediction.\"\n  Niche: \"This paper targets large-scale image recognition and transfer learning for visual classification tasks.\"\n  Limitation: \"Because the model removes convolutional inductive biases, it is notably more data- and compute-hungry than CNNs and depends on large-scale supervised pretraining to perform well.\"\n\nB.\n  Mechanism: \"Data-I constructs a hierarchical image dataset by mapping object categories to the WordNet lexical taxonomy, automatically harvesting candidate web images via query expansion and search, and then using distributed human verification to filter and label them at scale.\"\n  Niche: \"This paper targets the creation of a large-scale benchmark resource for visual object recognition spanning many categories and semantic levels.\"\n  Limitation: \"Because images are sourced from web search and validated through large-scale human annotation, the dataset remains dependent on search-engine retrieval biases and imperfect category verification quality.\"\n\nC.\n  Mechanism: \"DenseNet connects each layer within a dense block to all preceding layers by concatenating their feature maps, with each layer adding only a small number of new channels controlled by a growth rate and using bottleneck and transition layers for efficiency.\"\n  Niche: \"This paper targets accurate and efficient training of very deep convolutional networks for image recognition by addressing optimization and parameter-efficiency issues.\"\n  Limitation: \"Because each layer concatenates all previous features, intermediate activations and connectivity can increase memory/computation overhead despite bottleneck and compression mechanisms.\"\n\nD.\n  Mechanism: \"EfficientNet uses a compound scaling method that starts from a NAS-discovered efficient baseline and applies a single global scaling coefficient with fixed exponents to jointly scale network depth, width, and input resolution under a compute constraint.\"\n  Niche: \"This paper targets improving image classification model accuracy under fixed computational and parameter budgets for convolutional neural networks across deployment scales.\"\n  Limitation: \"The method depends on a particular searched baseline architecture and fixed scaling exponents, which may not remain optimal for other tasks, hardware targets, or architectural families.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        3,
+        4,
+        1
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Vision",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0031",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code, and systematically probes them across scales, prompts, and task formats using both open-ended generation and constrained prediction benchmarks.\"\n  Niche: \"This paper targets the evaluation of whether large language models can perform practically useful software engineering tasks such as code generation, completion, and problem solving.\"\n  Limitation: \"Because the work mainly provides controlled empirical evaluation rather than a new architecture or training objective, it leaves open which specific modeling or data interventions would most improve semantic correctness and robustness.\"\n\nB.\n  Mechanism: \"TritonRL is a reinforcement-learning training framework that improves a code model by having it first produce reasoning traces and then Triton code, with each attempt compiled, executed, and scored by correctness, compilation success, and performance signals while avoiding hidden reference-solution rewards or contaminated supervision.\"\n  Niche: \"This paper targets training language models to generate correct and efficient Triton GPU kernels for tensor computation tasks.\"\n  Limitation: \"Because training depends on repeated compile-and-run evaluation of self-generated Triton programs, the approach is tightly coupled to tasks with automatically executable verification and may incur substantial runtime cost during policy improvement.\"\n\nC.\n  Mechanism: \"CodeBERT is an encoder-only transformer architecture jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings.\"\n  Niche: \"This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\"\n  Limitation: \"Because the model is encoder-only and trained mainly on token sequences with limited explicit structural supervision, it is less suited to generative tasks and may underuse deeper program structure beyond surface token patterns.\"\n\nD.\n  Mechanism: \"A phrase-based statistical machine translation approach is trained on parallel code–pseudo-code pairs to learn token/phrase alignments, translation probabilities, and a target-side language model, then decodes pseudo-code by jointly optimizing faithfulness to source code and fluency.\"\n  Niche: \"This paper targets automatic generation of human-readable pseudo-code descriptions from program source code.\"\n  Limitation: \"Because the system depends on phrase-based alignments over a structure-preserving but SMT-compatible code representation rather than deeper semantic analysis, it is limited in capturing long-range program semantics and more complex code patterns.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        4,
+        3,
+        1
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Software Engineering",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0040",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Neural Collaborative Filtering learns user and item embeddings and replaces the fixed matrix-factorization inner product with a neural interaction function, combining a generalized matrix factorization branch and an MLP branch in the joint NeuMF architecture trained with pointwise loss and negative sampling.\"\n  Niche: \"This paper targets top-N recommendation from implicit user–item interaction data in collaborative filtering settings.\"\n  Limitation: \"The method still relies only on user and item IDs with pointwise training on sampled negatives, leaving side information and potentially stronger pairwise/listwise optimization unaddressed.\"\n\nB.\n  Mechanism: \"A graph convolutional recommender learns user and item embeddings on a bipartite interaction graph by iteratively aggregating transformed neighbor messages over multiple hops, using sampled mini-batch subgraphs and optional node features, then scores pairs with a lightweight similarity-based decoder under ranking-oriented training objectives.\"\n  Niche: \"This paper targets large-scale personalized recommendation from implicit user–item interaction data in industrial web-scale systems.\"\n  Limitation: \"Its scalability depends on approximate neighborhood sampling and shared layer transformations, which reduce full-graph fidelity and may limit the expressiveness of node-specific or edge-specific interaction modeling.\"\n\nC.\n  Mechanism: \"AutoRec uses a single-hidden-layer feedforward autoencoder that takes a partially observed user or item rating vector as input and reconstructs that vector while computing loss only on observed entries to predict missing ratings.\"\n  Niche: \"This paper targets rating prediction in collaborative filtering from sparse user–item interaction matrices.\"\n  Limitation: \"The method relies on a shallow autoencoder over raw sparse rating vectors and only models observed explicit ratings, leaving side information, deeper architectures, and richer handling of missingness unexplored.\"\n\nD.\n  Mechanism: \"Item-to-item collaborative filtering precomputes offline, for each item, a neighborhood of similar co-occurring items from historical purchases/ratings/clicks, then serves recommendations by aggregating the neighborhoods of a user's current or past items with similarity- and context-based ranking.\"\n  Niche: \"This paper targets real-time personalized product recommendation in very large e-commerce catalogs with sparse, rapidly changing user activity.\"\n  Limitation: \"Because the method depends on precomputed item co-occurrence neighborhoods, it is less able to immediately model newly introduced items or rapidly shifting cross-item relationships until offline recomputation occurs.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_order": [
+        3,
+        1,
+        2
+      ],
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Data Mining",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0056",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"RefineNovo uses a CTC-trained non-autoregressive encoder-decoder transformer architecture with a spectrum encoder, a peptide decoder conditioned by adaptive curriculum masking of ground-truth tokens during training, and an iterative self-refinement inference loop that feeds prior predictions back as input.\"\n  Niche: \"De novo peptide sequencing from tandem mass spectrometry data using non-autoregressive sequence generation.\"\n  Limitation: \"The paper still relies on iterative multi-pass refinement and curriculum design choices, which add inference/training complexity and may remain sensitive to masking schedules or difficult sequence spaces.\"\n\nB.\n  Mechanism: \"PrimeNovo uses a non-autoregressive transformer architecture with bidirectional context and CTC training to predict amino acids in parallel, then applies a CUDA-accelerated dynamic-programming precise mass control decoder to enforce globally mass-constrained peptide sequences.\"\n  Niche: \"De novo peptide sequencing from tandem mass spectrometry data, especially under heterogeneous datasets and modified-peptide settings requiring accurate mass-consistent sequence recovery.\"\n  Limitation: \"Because the approach depends on a predefined mass-constrained decoding formulation and token space, its flexibility for highly complex modification patterns or cases where spectral evidence is weak or ambiguous may still be limited.\"\n\nC.\n  Mechanism: \"Casanovo uses a single transformer architecture encoder-decoder that embeds continuous m/z values with sinusoidal functions and intensities with linear projection, conditions decoding on precursor information and amino acid prefixes, and autoregressively predicts peptide sequences without m/z discretization or dynamic-programming post-processing.\"\n  Niche: \"The paper addresses de novo peptide sequencing from high-resolution tandem mass spectra, especially for peptides not present in reference databases.\"\n  Limitation: \"Although simpler and faster, the method still depends on autoregressive decoding and post-inference precursor-mass filtering, which can leave mass-consistency and long-sequence errors insufficiently constrained during generation.\"\n\nD.\n  Mechanism: \"AdaNovo uses a transformer architecture with a spectrum encoder and two peptide decoders to estimate amino acid- and PSM-level conditional mutual information and adaptively re-weight training losses toward informative, well-matched spectrum-peptide pairs, with precursor filtering and confidence-based inference.\"\n  Niche: \"De novo peptide sequencing from tandem mass spectra with accurate recovery of amino acids, especially rare PTM-containing residues, under noisy and cross-species conditions.\"\n  Limitation: \"The method still depends on reliable CMI estimation and labeled spectrum-peptide training data, which may be difficult for extremely rare modifications or highly shifted data distributions.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_order": [
+        4,
+        2,
+        1
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "蛋白质从头测序",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0059",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"It uses a factorial synthesis design across monoglyceride and fatty-acid processes, sacha inchi and linseed oils, and varying GC:PE ratios, then characterizes products with integrated 1D/2D NMR and GPC.\"\n  Niche: \"The paper addresses how synthesis route, vegetable oil source, and glycerol:pentaerythritol ratio jointly determine the molecular architecture and distribution of alkyd resins.\"\n  Limitation: \"Its main limitation is that it is an observational comparative study on a restricted set of oils, polyol ratios, and process conditions rather than a broadly generalizable predictive framework.\"\n\nB.\n  Mechanism: \"It determines binary reactivity ratios from NMR compositional data using nonlinear least-squares fitting with REACT and CONTOUR, applies the terminal model and Alfrey-Goldfinger equation to predict terpolymer compositions and drift, and validates those predictions experimentally by quantitative 13C NMR for RAFT and FRP products.\"\n  Niche: \"The paper addresses quantifying and predicting compositional heterogeneity, reactivity ratios, and sequence distribution in photoresist-relevant styrene/4-acetoxystyrene/tert-butyl acrylate binary and ternary copolymer systems made by RAFT versus conventional FRP.\"\n  Limitation: \"The study is limited to a small set of monomers and classical terminal-model-based composition analysis, so its conclusions may not fully generalize to broader monomer families, nonterminal effects, or direct lithographic performance outcomes.\"\n\nC.\n  Mechanism: \"The paper uses RAFT copolymerization of four functional (meth)acrylate monomers (AST, St, TBA, and MAMA) with MDFC/AIBN in PMA, followed by RAFT end-group removal, alcoholysis-based deprotection, and standard photoresist formulation and lithographic evaluation.\"\n  Niche: \"Synthesis of chemically amplified KrF photoresist polymers with controlled molecular uniformity, thermal stability, and high-resolution patterning performance.\"\n  Limitation: \"The study is limited by its focus on a specific four-monomer RAFT system and KrF resist evaluation, leaving broader generality, process-window robustness, and comparison to industrial benchmark resists insufficiently established.\"\n\nD.\n  Mechanism: \"It uses a dual-level strategy that jointly tunes molecular resin properties such as epoxidation degree and polydispersity with formulation variables such as photoinitiator and solvent content, followed by standardized lithographic processing and microscopy-based evaluation.\"\n  Niche: \"The paper addresses the formulation and optimization of aryl-epoxy thermoset negative-tone photoresists for UV and DUV microlithography across both large-area and fine-feature patterning regimes.\"\n  Limitation: \"The paper is limited by focusing on a specific aryl-epoxy resin family and process conditions, which may restrict how broadly its optimization rules transfer to other epoxy chemistries, exposure tools, or manufacturing environments.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        4,
+        1,
+        3
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "KrF树脂聚合反应",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0022",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory, and uncertainty-aware context before a conditional decoder synthesizes the next visual state.\"\n  Niche: \"This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\"\n  Limitation: \"Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\"\n\nB.\n  Mechanism: \"The Indra Representation Hypothesis introduces a factorized multimodal latent space in which encoders decompose inputs into modality-agnostic semantic factors and modality-specific surface factors, trained with reconstruction, cross-modal agreement, and topology-preserving alignment regularization over latent units and their relations.\"\n  Niche: \"This paper targets principled semantic alignment and compositional reasoning across heterogeneous modalities such as text, vision, and audio.\"\n  Limitation: \"Because the work is framed primarily as a theoretical representation hypothesis, it leaves open how the latent factorization and topology constraints can be robustly identified and optimized in large-scale practical systems.\"\n\nC.\n  Mechanism: \"A family of decoder-only autoregressive transformers is pretrained at scale on expanded public text-and-code corpora and then split into base models and chat models produced by supervised instruction fine-tuning plus human-preference optimization and safety red-teaming.\"\n  Niche: \"This paper targets building broadly useful open large language models for general text generation and aligned multi-turn conversational assistance suitable for research and deployment.\"\n  Limitation: \"Despite post-training safety interventions, the chat models still require extensive adversarial evaluation and do not fully eliminate harmful or policy-violating outputs.\"\n\nD.\n  Mechanism: \"GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters.\"\n  Niche: \"This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\"\n  Limitation: \"Despite strong few-shot gains, the model remains inconsistent across benchmarks and still underperforms specialized supervised systems on some tasks while inheriting biases and inefficiencies from brute-force scaling.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_order": [
+        3,
+        2,
+        1
+      ],
+      "correct_dynamics": [
+        "Hybridization",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Deep Learning",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0039",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"A monolithic multigait soft robot uses elastomeric body segments with embedded fluidic channel networks that are selectively pressurized in different temporal patterns to produce distributed bending, anchoring, and release sequences for locomotion.\"\n  Niche: \"This paper targets the problem of achieving task-capable locomotion with multiple distinct gaits in a fully soft-bodied robot.\"\n  Limitation: \"The demonstrated gait repertoire depends on predesigned channel layouts and activation schedules, so changing behaviors requires redesign or retuning rather than autonomous adaptation within the same hardware.\"\n\nB.\n  Mechanism: \"A soft-robotic laboratory instrumentation system is built by combining deformable materials, fluidic or pneumatic actuation, and modular compliant structures so grippers, pumps, and manipulators physically conform to objects and execute chemical workflows with minimal alignment and control complexity.\"\n  Niche: \"This paper targets the automation of routine, delicate, and hazardous chemical laboratory handling tasks involving fragile samples and heterogeneous labware.\"\n  Limitation: \"The work emphasizes accessible task-specific soft modules rather than demonstrating a general high-precision platform with broad quantitative benchmarking across many chemistry workflows.\"\n\nC.\n  Mechanism: \"Soft robotics paradigm: replace rigid-link, jointed, transmission-centric robot architectures with elastomeric or continuum bodies, distributed actuation, and morphology-driven control in which passive body mechanics and environmental contact perform part of sensing, adaptation, and control.\"\n  Niche: \"This paper targets the problem of how to design and understand robots for locomotion, manipulation, and physical interaction in unstructured environments using biologically inspired compliance.\"\n  Limitation: \"As a survey and position paper, it does not provide a unified predictive modeling, control, or benchmarking framework for infinite-dimensional deformation, nonlinear materials, and underactuated soft-body dynamics.\"\n\nD.\n  Mechanism: \"An untethered soft pneumatic robot architecture integrates onboard power and pressure generation with embedded fluidic control and co-designed limb/body geometry so cyclic internal pressurization produces a coordinated crawling gait.\"\n  Niche: \"This paper targets autonomous, fieldable locomotion in soft robots that can operate untethered and survive substantial mechanical disturbance.\"\n  Limitation: \"The demonstrated autonomy is tied to a carefully tuned single crawling gait whose performance depends sensitively on actuation timing, chamber layout, and ground friction rather than supporting broad reprogrammable behaviors.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        3,
+        1,
+        4
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Robotics",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0016",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads.\"\n  Niche: \"This paper targets general-purpose language understanding by learning transferable representations that improve a wide range of NLP tasks, including sentence classification, token labeling, and question answering.\"\n  Limitation: \"Its masked language modeling objective introduces a mismatch between pre-training and fine-tuning because masked tokens are artificial corruptions absent at downstream inference time, and its next sentence prediction signal is a relatively crude sentence-pair objective.\"\n\nB.\n  Mechanism: \"It trains a single shared multilingual encoder over monolingual corpora with a joint subword vocabulary, combining masked/denoising language modeling and cross-lingual reconstruction objectives to induce a common latent space across languages.\"\n  Niche: \"This paper targets learning multilingual sentence and token representations that transfer across many languages without using parallel data or bilingual supervision.\"\n  Limitation: \"Its alignment quality depends on shared subword structure and careful balancing of vocabulary, model capacity, and language sampling, which can limit robustness for typologically distant or low-overlap languages.\"\n\nC.\n  Mechanism: \"A shared multilingual encoder is jointly finetuned on multiple supervised tasks with mostly shared parameters and task-specific output heads, using multitask adaptation to induce language-agnostic task abstractions during downstream training.\"\n  Niche: \"This paper targets improving zero-shot and few-shot crosslingual generalization for supervised NLP tasks, especially for low-resource or unseen target languages.\"\n  Limitation: \"The approach depends on carefully balancing heterogeneous supervised tasks during finetuning, and the description leaves unclear how robust performance is to task selection and weighting choices.\"\n\nD.\n  Mechanism: \"ERNIE-M uses a shared multilingual encoder with a unified vocabulary, trained by masked language modeling on monolingual text plus explicit cross-lingual alignment losses on bilingual sentence pairs that bring translated words, phrases, or sentences closer in a common embedding space.\"\n  Niche: \"This paper targets multilingual language representation learning for cross-lingual understanding and transfer when parallel data is limited but monolingual corpora are abundant.\"\n  Limitation: \"The method still depends on access to some bilingual parallel sentences for its alignment objectives, so its gains may be constrained for language pairs with extremely scarce or no parallel data.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "A",
+      "correct_order": [
+        2,
+        4,
+        3
+      ],
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Natural Language Processing",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0045",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"It implements a production Paxos-based replication system that separates the core safety protocol from engineering subsystems such as persistent logging, leader failover, replica recovery and catch-up, membership handling, checksums, retransmission/timeout control, monitoring, and service interfaces around an ordered durable log.\"\n  Niche: \"This paper targets the problem of making replicated state machine consensus usable for a real production storage service that must remain consistent despite crashes, network faults, and operational failures.\"\n  Limitation: \"The paper does not provide a new formal model or proof for the full production implementation, leaving a gap between the concise verified algorithm and the much larger real codebase whose behavior can drift from the specification.\"\n\nB.\n  Mechanism: \"FlexRaft is a leader-based consensus protocol that replaces uniform full-replica log storage with phase-aware flexible erasure-coded fragment placement, using coding layouts tailored separately for commit quorums and node recovery so entries can usually be agreed on and repaired without full-object reconstruction.\"\n  Niche: \"This paper targets reducing the storage, communication, and recovery costs of fault-tolerant leader-based log consensus while preserving correctness and fast failure repair.\"\n  Limitation: \"The design depends on carefully chosen coding parameters and phase-specific layouts, leaving open how to optimally configure and adapt them under changing workloads, failures, and latency conditions in real deployments.\"\n\nC.\n  Mechanism: \"Raft achieves consensus by decomposing the problem into leader election, log replication, and safety rules, using a strong single leader per term, randomized election timeouts, majority-based commitment, term-indexed voting, and overlapping-majority reconfiguration.\"\n  Niche: \"This paper targets distributed consensus for replicated state machines in crash-prone asynchronous systems, with an emphasis on making the protocol understandable and implementable.\"\n  Limitation: \"Compared with predecessor protocols, the paper's main advance is understandability rather than asymptotic performance, leaving efficiency gains and broader optimization largely unaddressed.\"\n\nD.\n  Mechanism: \"EPaxos is a leaderless consensus protocol in which replicas independently propose commands with dependency sets capturing conflicting predecessors, commit non-conflicting commands via a fast path, and use a slower recovery path to resolve disagreements or failures by deriving execution order from a partial-order graph rather than a single global log.\"\n  Niche: \"This paper targets strongly consistent state-machine replication for distributed systems that need low-latency, high-throughput agreement on client commands.\"\n  Limitation: \"EPaxos loses much of its advantage when workloads contain many conflicting commands or unstable dependency agreement, because operations then fall back to a more expensive slow path and incur extra dependency-management complexity.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "B",
+      "correct_order": [
+        1,
+        4,
+        3
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Database Systems",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0038",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"MonetDB/X100 uses a vectorized, column-oriented execution engine in which relational operators run as tight kernels over small batches of typed column values, exchanging vectors between operators to balance pipelining with limited materialization and late tuple reconstruction.\"\n  Niche: \"This paper targets efficient execution of analytical relational queries on modern superscalar CPUs, where traditional database engines underutilize processor and memory hierarchies.\"\n  Limitation: \"The design still relies on fixed-size vector boundaries and explicit operator kernels, so it does not fully eliminate intermediate materialization or achieve full cross-operator code fusion available in later compiled query engines.\"\n\nB.\n  Mechanism: \"It introduces a materialization-aware columnar execution strategy that keeps data in separate aligned columns with lightweight tuple identifiers through selections, joins, projections, and aggregations, and chooses among early, late, and hybrid tuple reconstruction points based on operator needs and cost tradeoffs.\"\n  Niche: \"This paper targets the problem of deciding when a column-oriented DBMS should reconstruct full tuples from separately stored attributes during query execution.\"\n  Limitation: \"The paper analyzes and compares early, late, and hybrid materialization strategies but does not provide a fully general automatic optimizer that robustly chooses the best reconstruction points for all query patterns and hardware conditions.\"\n\nC.\n  Mechanism: \"It uses a controlled architectural decomposition study that incrementally adds column-store techniques—vertical partitioning, late materialization, block/vectorized processing, aggressive compression, and lightweight positional metadata for tuple reassembly—into a row-store to isolate each mechanism’s effect.\"\n  Niche: \"This paper targets understanding the true source of performance differences between column-oriented and row-oriented database architectures for read-mostly analytical query workloads.\"\n  Limitation: \"Because the evaluation is centered on read-mostly scans, aggregations, and joins under targeted row-store modifications, it does not fully resolve how the two designs compare under update-heavy workloads or broader end-to-end system tradeoffs.\"\n\nD.\n  Mechanism: \"Velox is a unified vectorized columnar execution engine that factors reusable operators and runtime services—such as filtering, joins, aggregation, expression evaluation, memory management, spilling, type/function handling, and connector/exchange interfaces—into a modular backend shared by multiple upper-layer systems.\"\n  Niche: \"This paper targets high-performance execution of analytical data-processing workloads across multiple query frontends, storage systems, and heterogeneous data-intensive applications.\"\n  Limitation: \"Because the paper centers on a shared low-level execution substrate rather than an end-to-end optimizer or storage system, its benefits depend on successful integration by external planners and connectors and may not fully address cross-layer optimizations.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_order": [
+        1,
+        2,
+        3
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Database Systems",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0044",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Fairness Through Awareness imposes a Lipschitz-style individual fairness constraint requiring that a randomized decision rule map nearby individuals under a task-specific similarity metric to similar outcome distributions while optimizing utility subject to that constraint.\"\n  Niche: \"This paper targets the problem of defining and enforcing fairness in classification and ranking decisions at the level of individuals rather than only protected groups.\"\n  Limitation: \"The framework depends critically on an externally provided, normatively valid task-specific similarity metric, but the paper does not solve how to construct, validate, or contest that metric in practice.\"\n\nB.\n  Mechanism: \"It introduces a certify-and-repair preprocessing method that tests disparate impact by measuring how accurately the protected class can be inferred from non-protected features, then optimizes a transformed representation—via rank-preserving distributional repair for ordered attributes—to reduce that predictability while retaining task utility.\"\n  Niche: \"This paper targets detecting and mitigating disparate impact in predictive decision-making when protected attributes are omitted but may still be encoded in other features.\"\n  Limitation: \"The repair procedure is most concrete for ordered or numerical features through rank-based mappings, making the method less directly specified for complex categorical or unstructured representations.\"\n\nC.\n  Mechanism: \"The method introduces equality of opportunity, a fairness constraint requiring equal true positive rates across protected groups conditional on the true label being positive, and analyzes satisfying it via group-specific thresholds on calibrated risk scores.\"\n  Niche: \"This paper targets the problem of defining and enforcing fairness in supervised binary classification for protected groups when decisions allocate beneficial outcomes.\"\n  Limitation: \"The framework is tailored to settings where fairness is primarily about access for truly qualified positives, so it does not by itself address harms arising from unequal false positive rates unless the stronger equalized-odds variant is imposed.\"\n\nD.\n  Mechanism: \"It uses adversarial debiasing: a predictor is trained jointly with an auxiliary discriminator that tries to infer the protected attribute from the model’s representation or outputs, while gradient reversal or negation makes the predictor learn features that are useful for the main task but uninformative about the sensitive variable.\"\n  Niche: \"The paper targets reducing unwanted dependence of supervised model predictions on protected attributes in order to improve fairness without sacrificing too much predictive utility.\"\n  Limitation: \"The method depends on access to protected-attribute labels during training and on a manually chosen trade-off weight and adversary attachment point, making results sensitive to these design choices.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_order": [
+        1,
+        2,
+        3
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Machine Learning",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0046",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"Model-G-NER reformulates NER as constrained text generation by prompting a large autoregressive language model with instructions, few-shot demonstrations, and a fixed output template to generate entity spans and optionally their types in structured text.\"\n  Niche: \"This paper targets named entity recognition, including adaptation to new entity label sets and low-resource or zero-shot settings.\"\n  Limitation: \"Because predictions are produced as free-form generated text steered only by prompts and templates, the method depends heavily on prompt design and can yield inconsistent formatting or span outputs without the guarantees of token-level labeling.\"\n\nB.\n  Mechanism: \"UniversalNER uses targeted distillation from an instruction-following large language model by prompting it to generate structured open-entity annotations, filtering and normalizing those outputs, and training a compact discriminative NER model on the resulting supervision for span and type prediction.\"\n  Niche: \"This paper targets open named entity recognition, where systems must detect entity spans and assign flexible, fine-grained types beyond a fixed label ontology.\"\n  Limitation: \"The method depends on the quality and consistency of teacher-generated annotations, so errors or normalization mismatches in the LLM outputs can be inherited by the student and constrain performance.\"\n\nC.\n  Mechanism: \"It extends a BiLSTM-CRF sequence tagger with hard parameter sharing across related tagging tasks and a jointly optimized semi-supervised auxiliary objective on unlabeled sequences so that shared lower layers learn general token representations while task-specific output layers handle each label space.\"\n  Niche: \"The paper targets low-resource sequence labeling tasks such as token-level tagging where annotated data is scarce but related tasks and unlabeled text are available.\"\n  Limitation: \"The approach depends on the availability of suitably related auxiliary tasks and uses fixed hard sharing of lower layers, which may cause negative transfer or limit flexibility when task relatedness varies.\"\n\nD.\n  Mechanism: \"The method instruction-tunes a large generative language model to perform biomedical NER as an instruction-following text generation task, using natural-language task definitions, annotation guidelines, and output format constraints to directly generate entity spans and types instead of token-level labels.\"\n  Niche: \"This paper targets biomedical named entity recognition in highly specialized scientific text with ambiguous terminology, complex morphology, and difficult boundary/type distinctions.\"\n  Limitation: \"Because the approach relies on generated structured outputs rather than constrained token-level decoding, it leaves unresolved how reliably the model preserves exact span boundaries and output validity in dense biomedical text.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "C",
+      "correct_order": [
+        1,
+        2,
+        4
+      ],
+      "correct_dynamics": [
+        "Speciation",
+        "Adaptive Radiation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Natural Language Processing",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-03_wrong_step_0021",
+    "task_type": "T4-03_wrong_step",
+    "prompt": "4 genomes are supposed to form a continuous LOCAL chain in a research lineage.\nOne genome is from the SAME broader lineage but does NOT belong in this segment.\n\nA.\n  Mechanism: \"A first-order linearity analysis explains adversarial examples by modeling modern differentiable classifiers as locally linear in high-dimensional input spaces, where perturbations chosen along the input gradient under a norm bound can accumulate across dimensions to strongly change class scores.\"\n  Niche: \"This paper targets understanding why deep neural network classifiers are vulnerable to adversarial perturbations despite strong generalization on natural inputs.\"\n  Limitation: \"The study is primarily a conceptual and first-order analysis, so it does not provide a concrete training procedure that substantially improves robustness beyond diagnosing why standard models fail.\"\n\nB.\n  Mechanism: \"DeepFool iteratively linearizes the classifier around the current input and, in the binary or multiclass case, computes the smallest norm-bounded step to the nearest locally affine decision boundary, repeating until the label changes.\"\n  Niche: \"This paper targets the evaluation of local adversarial robustness of neural network classifiers by measuring how much input perturbation is needed to change a prediction.\"\n  Limitation: \"Because the method relies on local first-order linearization and available gradients, its perturbation estimates can degrade for highly nonlinear regions and it is not directly applicable to non-differentiable models.\"\n\nC.\n  Mechanism: \"Fast Gradient Sign Method (FGSM): linearize the loss around the input, compute the gradient of the loss with respect to the input, take its elementwise sign, and add a small epsilon-sized perturbation in that direction to generate an approximate worst-case example under an L-infinity constraint, including for adversarial training.\"\n  Niche: \"This paper targets understanding and improving the robustness of neural network classifiers to intentionally crafted, small input perturbations that cause misclassification.\"\n  Limitation: \"The proposed attack and training procedure are based on a single first-order linearization and primarily target L-infinity-bounded perturbations, so they do not fully address stronger iterative attacks or broader threat models.\"\n\nD.\n  Mechanism: \"It introduces an obfuscated-gradients diagnostic-and-attack methodology that classifies defenses into shattered, stochastic, and vanishing/exploding gradient failure modes, applies sanity checks comparing white-box and black-box attack strength, and circumvents masking with BPDA, expectation over transformation, transfer attacks, and stronger iterative first-order optimization.\"\n  Niche: \"This paper targets the reliable evaluation of adversarial-example defenses for image classifiers by determining whether claimed robustness is genuine.\"\n  Limitation: \"The paper mainly provides a negative evaluation framework and attack toolkit rather than a constructive defense, leaving open how to design models that remain robust under these stronger white-box evaluations.\"\n\nPart 1: Which genome does NOT belong? (A-D)\n  Use the letter labels (e.g., [2, 3, 1] if B→C→A).\n  Options: M (Mutation), AR (Adaptive Radiation), H (Hybridization), S (Speciation), NC (Niche Competition)\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line per field:\nLabel = [A|B|C|D]\nOrder = [#, #, #]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition, Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]\n",
+    "choices": {
+      "A": "genome_0",
+      "B": "genome_1",
+      "C": "genome_2",
+      "D": "genome_3"
+    },
+    "gold_answer": {
+      "label": "D",
+      "correct_order": [
+        3,
+        1,
+        2
+      ],
+      "correct_dynamics": [
+        "Mutation",
+        "Mutation"
+      ]
+    },
+    "metadata": {
+      "baseline": "25%",
+      "subfield": "Computer Security",
+      "capability": "Lineage Verification",
+      "original_task_type": "L3-4_genome_wrong_step",
+      "display_title": "Local Lineage Repair"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  }
+]

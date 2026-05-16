@@ -1,0 +1,164 @@
+{
+  "trace_id": "materials_Discovery",
+  "domain": "materials",
+  "direction": "AI for Materials Discovery",
+  "subfield": "Materials Science / AI-Driven Discovery",
+  "frontier_justification": "This direction remains a May 2026 frontier because generative models such as MatterGen can propose stable property-conditioned crystals, but experimental materials discovery still bottlenecks on synthesis feasibility, defects, processing, operational stability, and feedback from real experiments. The open challenge is closing the loop between generative design and experimentally realizable materials.",
+  "verified": false,
+  "papers": [
+    {
+      "title": "Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties",
+      "year": 2018,
+      "venue": "Physical Review Letters (2018)",
+      "arxiv_id": "1710.10324",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced CGCNN, a graph neural network that represents crystals as graphs of atoms and bonds to predict material properties directly from structure. It showed that learned crystal representations can achieve strong accuracy while offering some interpretability about local chemical environments.",
+      "idea_genome": {
+        "problem_genome": "How can one predict materials properties from crystal structures more efficiently than repeated DFT calculations and handcrafted descriptors?",
+        "mechanism_genome": "Represent the crystal as a multigraph and apply convolution/message-passing operations over atomic neighborhoods to learn structure-property mappings end-to-end.",
+        "observation_genome": "CGCNN achieved competitive or state-of-the-art prediction accuracy on multiple Materials Project targets such as formation energy and band gap.",
+        "limitation_genome": "The model predicts properties of given structures but does not generate new crystals or provide a universal atomistic potential for relaxation and dynamics."
+      }
+    },
+    {
+      "title": "Graph Networks as a Universal Machine Learning Framework for Molecules and Crystals",
+      "year": 2019,
+      "venue": "Chemistry of Materials (2019)",
+      "arxiv_id": "1812.05055",
+      "paper_type": "research",
+      "key_contribution": "This paper presented the MEGNet framework, a graph-network architecture for molecules and crystals that incorporates bond, atom, and global state attributes. It unified property prediction across chemistry and materials and improved transferability by learning from large DFT datasets.",
+      "idea_genome": {
+        "problem_genome": "How can graph-based property prediction be generalized across both molecules and crystals while incorporating richer physical context?",
+        "mechanism_genome": "Use graph networks with iterative updates of edge, node, and global state features, enabling flexible inclusion of thermodynamic conditions and transfer learning.",
+        "observation_genome": "MEGNet achieved strong performance on a broad set of Materials Project properties and demonstrated transfer learning benefits.",
+        "limitation_genome": "It remained primarily a property-prediction framework and did not yet deliver a broadly applicable interatomic potential for structure optimization and large-scale discovery."
+      }
+    },
+    {
+      "title": "A general-purpose machine learning framework for predicting properties of inorganic materials",
+      "year": 2020,
+      "venue": "npj Computational Materials (2020)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced a general-purpose framework, associated with the Matminer/automatminer ecosystem, for automated machine learning on inorganic materials datasets. It emphasized scalable screening workflows and benchmarked data-driven property prediction across diverse materials tasks.",
+      "idea_genome": {
+        "problem_genome": "How can materials property prediction be made more automated and broadly usable for high-throughput screening across many inorganic datasets?",
+        "mechanism_genome": "Combine automated feature generation, model selection, and benchmarking pipelines to build robust predictive models for inorganic materials properties.",
+        "observation_genome": "The work showed that automated ML pipelines can provide strong baseline performance and practical screening capability across varied materials datasets.",
+        "limitation_genome": "Feature-based AutoML improves screening but still depends on existing structures/compositions and lacks atomistic force prediction needed for crystal relaxation and discovery."
+      }
+    },
+    {
+      "title": "M3GNet: A Universal Interatomic Potential for Materials across the Periodic Table",
+      "year": 2022,
+      "venue": "Nature Computational Science (2022)",
+      "arxiv_id": "2202.02450",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced M3GNet, a graph neural network interatomic potential trained on Materials Project data to predict energies, forces, and stresses across a wide range of elements. It enabled efficient structure relaxation and molecular dynamics with near-DFT fidelity for many inorganic materials.",
+      "idea_genome": {
+        "problem_genome": "How can one move beyond static property prediction to a universal ML potential that supports relaxation, stability estimation, and atomistic simulation for inorganic materials?",
+        "mechanism_genome": "Extend graph networks to include explicit three-body interactions and train jointly on energies, forces, and stresses from large DFT datasets.",
+        "observation_genome": "M3GNet demonstrated broad transfer across the periodic table and made fast crystal relaxation and property estimation practical at scale.",
+        "limitation_genome": "Although powerful for evaluating and relaxing structures, it does not itself generate novel crystal candidates and still inherits biases from available DFT data."
+      }
+    },
+    {
+      "title": "Scaling deep learning for materials discovery",
+      "year": 2023,
+      "venue": "Nature (2023)",
+      "arxiv_id": "2306.11688",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced GNoME, a large-scale graph-network system for crystal stability prediction and discovery, reporting 2.2 million new crystals and over 380,000 predicted stable materials. It demonstrated how AI-guided search plus high-throughput validation can dramatically expand the known space of inorganic crystals.",
+      "idea_genome": {
+        "problem_genome": "How can AI scale materials discovery from evaluating known structures to proposing and screening millions of new crystal candidates for stability?",
+        "mechanism_genome": "Train graph neural networks for formation energy/stability prediction and combine them with search over candidate crystal structures and large-scale DFT validation.",
+        "observation_genome": "The system identified millions of novel candidate crystals and hundreds of thousands of predicted stable materials, greatly enlarging the searchable materials space.",
+        "limitation_genome": "The pipeline is still heavily centered on stability-focused search and validation; controllable inverse design for target properties remains limited."
+      }
+    },
+    {
+      "title": "MatterGen: a generative model for inorganic materials design",
+      "year": 2025,
+      "venue": "Nature (2025)",
+      "arxiv_id": "2312.03687",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced MatterGen, a generative model that directly designs inorganic crystal structures and compositions, including conditional generation toward desired properties. It pushed the field from AI-assisted screening toward true inverse design of materials candidates.",
+      "idea_genome": {
+        "problem_genome": "How can one generate novel inorganic crystals directly, rather than only screening enumerated candidates, while steering generation toward desired properties?",
+        "mechanism_genome": "Use a diffusion-based generative model over periodic crystal structures and compositions, with conditional guidance for targeted materials design.",
+        "observation_genome": "MatterGen generated diverse, novel, and often stable crystal candidates and showed improved hit rates for property-conditioned design relative to prior approaches.",
+        "limitation_genome": "Generated candidates still require reliable downstream validation and synthesis feasibility remains a major bottleneck beyond predicted stability and properties."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "MEGNet evolves CGCNN by moving from crystal-only graph convolutions to a more general graph-network formalism with node, edge, and global state updates. This broadens applicability and improves incorporation of physical context."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The line expands from graph-based deep learning models to broader automated ML pipelines for inorganic screening. This reflects diversification from architecture innovation toward practical, scalable materials informatics workflows."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "M3GNet branches from general property-screening ML into universal interatomic potentials, shifting the focus from predicting labels to modeling energies, forces, and stresses for atomistic relaxation."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "GNoME builds on fast learned energy/stability modeling to scale discovery to millions of candidate crystals. The key evolution is from evaluating structures efficiently to AI-guided exploration of vast crystal spaces."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "MatterGen advances beyond large-scale search and screening by introducing direct generative inverse design of inorganic crystals. The emphasis shifts from discovering stable candidates in enumerated spaces to synthesizing new structures conditioned on desired properties."
+    }
+  ],
+  "open_question": "MatterGen demonstrates property-conditioned generation of stable inorganic crystals, but experimental realization still depends on synthesis routes, defect tolerance, processing conditions, and downstream validation beyond DFT stability. What closed-loop generative materials system would co-design crystal structure, synthesis pathway, defect landscape, and target functional properties with experimental feedback, so that proposed materials are experimentally realizable rather than merely DFT-plausible?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Materials Science / AI-Driven Discovery."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 3,
+    "Adaptive Radiation": 1,
+    "Speciation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "MatterGen: a generative model for inorganic materials design",
+      "year": 2025,
+      "venue": "Nature (2025)",
+      "identifier": "2312.03687",
+      "unresolved_gap": "Generated candidates still require reliable downstream validation and synthesis feasibility remains a major bottleneck beyond predicted stability and properties.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

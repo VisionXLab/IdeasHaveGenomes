@@ -1,0 +1,204 @@
+{
+  "trace_id": "materials_Catalysis",
+  "domain": "materials",
+  "direction": "Electrocatalysis and Catalyst Design",
+  "subfield": "Materials Science / Catalysis Design",
+  "frontier_justification": "This direction remains a May 2026 frontier because atomistic foundation models and universal ML interatomic potentials are moving from benchmark prediction toward realistic catalyst and nanoporous-material simulation. MOFSimBench exposes that reliability across flexible frameworks, host-guest interactions, dynamics, and operating conditions is still not solved, making uncertainty-aware active discovery under realistic environments an open problem.",
+  "verified": false,
+  "papers": [
+    {
+      "title": "Open Catalyst 2020 (OC20) Dataset and Community Challenges",
+      "year": 2021,
+      "venue": "ACS Catalysis (2021)",
+      "arxiv_id": "2010.09990",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced the Open Catalyst 2020 dataset and benchmark, providing large-scale DFT relaxations and adsorption data for catalyst surfaces with adsorbates. It established a community benchmark for ML models that predict energies and forces for heterogeneous catalysis.",
+      "idea_genome": {
+        "problem_genome": "Catalyst discovery by DFT is too expensive to scale across the vast combinatorial space of surfaces, compositions, and adsorbates.",
+        "mechanism_genome": "Construct a massive open benchmark of adsorbate-surface structures, relaxations, and energies to support machine learning for catalytic materials screening.",
+        "observation_genome": "Large, standardized datasets make it possible to train and compare ML models for adsorption-energy prediction and structure relaxation at unprecedented scale.",
+        "limitation_genome": "The benchmark itself does not solve the modeling problem; early models still struggled with accuracy, transfer, and out-of-domain generalization."
+      }
+    },
+    {
+      "title": "GemNet: Universal Directional Graph Neural Networks for Molecules",
+      "year": 2021,
+      "venue": "NeurIPS 2021",
+      "arxiv_id": "2106.08903",
+      "paper_type": "research",
+      "key_contribution": "GemNet introduced a directional message-passing architecture that incorporates distances, angles, and higher-order geometric interactions in a symmetry-aware way. Although developed broadly for atomistic systems, it became a key backbone for OC20 adsorption and force prediction tasks.",
+      "idea_genome": {
+        "problem_genome": "Standard atomistic GNNs underuse geometric information needed for accurate energies and forces in chemically complex systems.",
+        "mechanism_genome": "Use directional embeddings and higher-order geometric message passing to capture angular and relational structure while respecting physical symmetries.",
+        "observation_genome": "Directional geometric modeling substantially improves prediction accuracy on atomistic benchmarks and provides a strong architecture for catalytic adsorption tasks.",
+        "limitation_genome": "The model improves geometric expressivity but still faces scaling and generalization challenges on very large catalytic datasets and difficult out-of-domain structures."
+      }
+    },
+    {
+      "title": "Scaling Graph Neural Networks for Continuous-Filter Convolutions on Large 3D Atomic Systems",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "arxiv_id": "2206.07697",
+      "paper_type": "research",
+      "key_contribution": "This paper developed scalable training strategies and architectural refinements for large 3D atomistic graph networks, enabling stronger performance on massive datasets such as OC20. It helped establish the empirical regime in which model size, data scale, and compute jointly improve catalytic property prediction.",
+      "idea_genome": {
+        "problem_genome": "State-of-the-art geometric GNNs are difficult to scale efficiently to the size of modern catalyst datasets.",
+        "mechanism_genome": "Introduce systems and architectural improvements for training continuous-filter 3D GNNs on large atomistic datasets with better efficiency and accuracy.",
+        "observation_genome": "Larger-scale training yields consistent gains, suggesting scaling-law-like behavior for atomistic learning relevant to catalysis benchmarks.",
+        "limitation_genome": "Scaling improves benchmark metrics but does not by itself guarantee robust extrapolation to new chemistries or realistic catalyst discovery settings."
+      }
+    },
+    {
+      "title": "Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts",
+      "year": 2023,
+      "venue": "ACS Catalysis (2023)",
+      "arxiv_id": "2206.08917",
+      "paper_type": "research",
+      "key_contribution": "OC22 extended the Open Catalyst effort from mainly metal surfaces to oxide electrocatalysts, targeting more realistic and chemically diverse systems relevant to electrochemistry. It broadened the benchmark toward reactions central to sustainable energy, including oxygen evolution and related electrocatalytic processes.",
+      "idea_genome": {
+        "problem_genome": "Models trained on simpler catalytic surfaces do not adequately cover oxide electrocatalysts that dominate many electrochemical applications.",
+        "mechanism_genome": "Create a new large-scale benchmark of adsorbate-oxide structures and DFT calculations reflecting the complexity of electrochemical catalyst materials.",
+        "observation_genome": "The expanded benchmark reveals a substantial increase in distributional complexity and exposes weaknesses of existing adsorption-prediction models.",
+        "limitation_genome": "Even with more data, benchmark performance remains limited by model architecture, uncertainty calibration, and the gap between idealized structures and operando electrochemistry."
+      }
+    },
+    {
+      "title": "EquiformerV2: Improved Equivariant Transformer for Scaling to Higher-Degree Representations",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "arxiv_id": "2306.12059",
+      "paper_type": "research",
+      "key_contribution": "EquiformerV2 introduced a more scalable and accurate equivariant transformer for 3D atomistic modeling, improving the handling of higher-degree representations and long-range interactions. It became a strong model class for OC20/OC22-style adsorption and force prediction tasks.",
+      "idea_genome": {
+        "problem_genome": "Existing equivariant atomistic models face a tradeoff between expressivity, stability, and scalability on large catalytic datasets.",
+        "mechanism_genome": "Use an improved equivariant transformer design with more efficient tensor operations and representation handling to scale expressive 3D learning.",
+        "observation_genome": "Transformer-style equivariant architectures can surpass prior GNN baselines on atomistic benchmarks while remaining trainable at larger scale.",
+        "limitation_genome": "Despite stronger benchmark performance, uncertainty estimation and deployment in autonomous catalyst discovery loops remain underdeveloped."
+      }
+    },
+    {
+      "title": "A foundation model for atomistic materials chemistry",
+      "year": 2024,
+      "venue": "Journal of Chemical Physics (2024)",
+      "arxiv_id": "2401.00096",
+      "paper_type": "research",
+      "key_contribution": "This paper presented a large-scale atomistic foundation model trained across broad materials chemistry data, including catalytic systems, showing strong transfer across tasks and chemistries. It marked a transition from benchmark-specific architectures toward general-purpose pretrained models for materials and catalysis.",
+      "idea_genome": {
+        "problem_genome": "Task-specific models for adsorption and relaxation do not generalize broadly enough across materials classes and downstream catalyst-design tasks.",
+        "mechanism_genome": "Pretrain a large atomistic model on diverse materials chemistry data and adapt it to multiple downstream prediction tasks.",
+        "observation_genome": "Broad pretraining improves transfer, sample efficiency, and robustness across atomistic tasks, suggesting a foundation-model regime for catalyst design.",
+        "limitation_genome": "Foundation models still need reliable uncertainty quantification and integration with active-learning loops under electrochemical constraints."
+      }
+    },
+    {
+      "title": "Accelerating electrocatalyst discovery using active learning and machine learning",
+      "year": 2024,
+      "venue": "Nature Reviews Materials 2024",
+      "arxiv_id": "N/A",
+      "paper_type": "survey",
+      "key_contribution": "This review synthesized how active learning, surrogate models, and automated computation/experimentation are being used to accelerate electrocatalyst discovery for HER, OER, and CO2 reduction. It connected benchmark ML advances to practical closed-loop catalyst screening workflows.",
+      "idea_genome": {
+        "problem_genome": "High-accuracy prediction alone is insufficient; catalyst discovery requires adaptive decision-making over vast design spaces with limited DFT or experimental budgets.",
+        "mechanism_genome": "Survey and organize active-learning strategies, uncertainty-aware ML, and autonomous screening pipelines for electrocatalysis.",
+        "observation_genome": "Closed-loop active learning is emerging as the practical bridge from atomistic ML benchmarks to deployable catalyst discovery in green-energy applications.",
+        "limitation_genome": "The field still lacks universally reliable acquisition strategies and benchmark standards that reflect realistic electrochemical environments and multi-objective optimization."
+      }
+    },
+    {
+      "title": "MOFSimBench: evaluating universal machine learning interatomic potentials in metal-organic framework molecular modeling",
+      "year": 2025,
+      "venue": "npj Computational Materials",
+      "arxiv_id": "2507.11806",
+      "paper_type": "research",
+      "key_contribution": "Paper B introduces MOFSimBench, a benchmark framework for systematically evaluating universal machine-learning interatomic potentials on realistic molecular modeling tasks in metal-organic frameworks.",
+      "idea_genome": {
+        "problem_genome": "Paper B addresses the lack of rigorous, application-relevant evaluation standards for determining whether universal ML interatomic potentials are reliable for practical MOF molecular simulations.",
+        "mechanism_genome": "Its core approach is to build a standardized benchmark suite centered on MOFs and related nanoporous materials, testing uMLIPs across diverse atomistic simulation tasks and conditions. This enables direct comparison of model accuracy, robustness, and practical usability against quantum-level references and realistic simulation demands.",
+        "observation_genome": "The benchmark shows that while uMLIPs can achieve strong efficiency and often near-quantum accuracy, their performance is uneven across MOF chemistries and simulation scenarios, revealing important reliability gaps in real-world use.",
+        "limitation_genome": "A key open challenge is that no current universal potential is consistently dependable across the full structural, chemical, and dynamical diversity of MOFs under realistic operating conditions."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "After OC20 established the large-scale adsorption benchmark, GemNet evolved the modeling side by introducing richer directional geometric message passing tailored to atomistic interactions needed for accurate catalytic predictions."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "OC22 extends the original adsorption-learning paradigm into a harder ecological niche: oxide electrocatalysts. It tests whether architectures such as GemNet can generalize beyond simpler metallic surface chemistry."
+    },
+    {
+      "from_idx": 0,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "As OC22 and related datasets increased scale and complexity, the next evolutionary step was to make 3D atomistic GNNs train efficiently at much larger scale, revealing scaling behavior important for catalyst modeling."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "EquiformerV2 competes with graph-based geometric models by replacing or augmenting message passing with a stronger equivariant transformer, aiming for better expressivity and scaling on the same catalytic prediction tasks."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The foundation-model paper hybridizes large-scale equivariant atomistic modeling with broad pretraining across materials chemistry, moving from benchmark-optimized architectures to transferable general-purpose models."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Once pretrained atomistic models became broadly capable, the field mutated toward decision-making systems: active learning and autonomous screening that use these predictors to search electrocatalyst spaces for HER, OER, and CO2 reduction."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "This is a Mutation because the research focus shifts from using active learning and surrogate modeling to discover electrocatalysts toward benchmarking universal atomistic foundation models for reliable simulation in MOF materials."
+    }
+  ],
+  "open_question": "MOFSimBench shows that universal machine-learning interatomic potentials are becoming useful for nanoporous materials, but reliability remains uneven for flexible frameworks, host-guest interactions, solvent effects, reactive sites, and operando conditions. What uncertainty-calibrated atomistic foundation model would enable active discovery and validation of catalytic MOFs and related nanoporous catalysts under realistic reaction environments, rather than relying on idealized static adsorption energies alone?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Materials Science / Catalysis Design."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 8 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 5,
+    "Speciation": 1,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "MOFSimBench: evaluating universal machine learning interatomic potentials in metal-organic framework molecular modeling",
+      "year": 2025,
+      "venue": "npj Computational Materials",
+      "identifier": "2507.11806",
+      "unresolved_gap": "A key open challenge is that no current universal potential is consistently dependable across the full structural, chemical, and dynamical diversity of MOFs under realistic operating conditions.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

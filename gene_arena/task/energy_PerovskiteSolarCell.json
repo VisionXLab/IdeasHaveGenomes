@@ -1,0 +1,166 @@
+{
+  "trace_id": "energy_PerovskiteSolarCell",
+  "domain": "energy",
+  "direction": "AI for Perovskite Solar Cell Materials Design",
+  "subfield": "Energy / Photovoltaic Materials Science",
+  "frontier_justification": "This direction remains a May 2026 frontier because perovskite solar cells can reach high efficiencies, but reproducible manufacturing and long-term operational stability remain bottlenecks. Autonomous platforms have begun optimizing multidimensional process spaces, yet the next step is a self-driving lab that jointly optimizes chemistry, device architecture, stability, and scalable fabrication.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties",
+      "year": 2018,
+      "venue": "Physical Review Letters (2018)",
+      "arxiv_id": "1710.10324",
+      "paper_type": "research",
+      "key_contribution": "Introduced CGCNN, a universal framework that learns material properties directly from crystal graph representations, enabling accurate and interpretable prediction of diverse properties including formation energies, bandgaps, and elasticity across arbitrary crystal structures.",
+      "idea_genome": {
+        "problem_genome": "How can one build a general-purpose, data-driven model that predicts material properties directly from crystal structures without requiring hand-crafted descriptors for each property?",
+        "mechanism_genome": "A graph convolutional neural network operates on crystal graphs where nodes represent atoms and edges represent bonds, learning local chemical environment features that are pooled into global property predictions.",
+        "observation_genome": "CGCNN achieved state-of-the-art accuracy on eight DFT-calculated properties across diverse crystal types, and the learned representations were interpretable, revealing chemical environment contributions to global properties including perovskite stability trends.",
+        "limitation_genome": "The model was trained purely on DFT data and could not incorporate experimental measurements, process conditions, or device-level performance; it also lacked the ability to generate novel crystal structures."
+      }
+    },
+    {
+      "title": "Machine Learning for Predicting the Band Gaps of ABX3 Perovskites from Elemental Properties",
+      "year": 2020,
+      "venue": "The Journal of Physical Chemistry C (2020)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Systematically mapped the nonlinear relationship between elemental properties and bandgaps across the ABX3 perovskite family using multiple ML methods, establishing bandgap prediction as a canonical benchmark task for ML-driven perovskite screening.",
+      "idea_genome": {
+        "problem_genome": "Can machine learning reliably predict the bandgap of ABX3 perovskites from elemental descriptors alone, and which ML methods and features are most informative for this task?",
+        "mechanism_genome": "Comparative evaluation of multiple supervised learning methods (kernel ridge regression, extremely randomized trees, gradient boosting, alternating conditional expectations) using composition-derived elemental features on DFT-computed bandgap datasets.",
+        "observation_genome": "ML models using elemental descriptors achieved useful predictive accuracy for perovskite bandgaps, with alternating conditional expectations uncovering nonlinear structure-property mappings that traditional linear models missed.",
+        "limitation_genome": "The approach was limited to bandgap prediction from composition alone, ignoring crystal structure details, defects, processing conditions, and the multi-objective nature of solar cell design beyond bandgap."
+      }
+    },
+    {
+      "title": "Data-driven design of high-performance MASnxPb1-xI3 perovskite materials by machine learning and experimental realization",
+      "year": 2022,
+      "venue": "Light: Science & Applications (2022)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Proposed a forward-reverse ML framework that not only predicts perovskite photovoltaic performance from composition and processing parameters but also inversely designs optimal MASnxPb1-xI3 compositions, with experimental validation of the ML-designed materials achieving improved efficiency.",
+      "idea_genome": {
+        "problem_genome": "How can one move beyond forward prediction of perovskite properties to inverse design that recommends optimal compositions for target photovoltaic performance, and can ML-designed compositions be experimentally validated?",
+        "mechanism_genome": "A bidirectional ML framework combining forward performance prediction from composition-processing features with reverse optimization that searches the parameter space for compositions maximizing predicted efficiency, followed by experimental synthesis and characterization.",
+        "observation_genome": "The inverse-designed MASnxPb1-xI3 compositions were experimentally realized and achieved improved power conversion efficiency, demonstrating that ML can guide real perovskite composition optimization beyond purely computational screening.",
+        "limitation_genome": "The framework optimized composition within a specific perovskite family and relied on a relatively small experimental dataset; it did not jointly optimize processing conditions, device architecture, or long-term stability."
+      }
+    },
+    {
+      "title": "Machine learning with knowledge constraints for process optimization of open-air perovskite solar cell manufacturing",
+      "year": 2022,
+      "venue": "Joule (2022)",
+      "arxiv_id": "2110.01387",
+      "paper_type": "research",
+      "key_contribution": "Demonstrated Bayesian optimization with physics-informed knowledge constraints for rapid process optimization of open-air perovskite manufacturing, achieving 18.5% efficiency from only 100 screened process conditions using the rapid spray plasma processing technique.",
+      "idea_genome": {
+        "problem_genome": "How can ML accelerate the high-dimensional process optimization of scalable perovskite solar cell manufacturing techniques like rapid spray plasma processing, where experimental budgets are limited?",
+        "mechanism_genome": "A sequential learning framework combining Bayesian optimization with domain-knowledge constraints that encode physical priors about process-performance relationships, guiding efficient exploration of the multi-dimensional processing parameter space.",
+        "observation_genome": "The constrained Bayesian optimization identified near-optimal processing conditions for open-air perovskite fabrication within a budget of only 100 experiments, dramatically reducing the search cost compared to exhaustive or random exploration.",
+        "limitation_genome": "The optimization was specific to one manufacturing technique and did not simultaneously optimize perovskite composition; the approach required human-encoded knowledge constraints and lacked a fully autonomous closed-loop experimental pipeline."
+      }
+    },
+    {
+      "title": "Scaling deep learning for materials discovery",
+      "year": 2023,
+      "venue": "Nature (2023)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Introduced GNoME, a graph neural network scaled to unprecedented data volumes that discovered 2.2 million stable crystal structures including novel perovskite variants, demonstrating that scaling deep learning enables order-of-magnitude improvements in materials discovery efficiency.",
+      "idea_genome": {
+        "problem_genome": "Can deep learning trained at massive scale on crystal stability data generalize well enough to discover millions of new stable inorganic materials, far beyond human chemical intuition?",
+        "mechanism_genome": "Graph neural networks trained on progressively expanded datasets through an active learning loop that alternates between model prediction, DFT validation of top candidates, and retraining, achieving unprecedented generalization across chemical space.",
+        "observation_genome": "GNoME predicted 2.2 million stable structures below the convex hull, with 380,000 on the hull, and 736 were independently synthesized by external labs, validating the model's ability to discover real, synthesizable materials at scale.",
+        "limitation_genome": "GNoME focused on thermodynamic stability prediction and did not directly optimize functional properties like bandgap or photovoltaic performance; for perovskite solar cells specifically, device-level performance and processability were not addressed."
+      }
+    },
+    {
+      "title": "Autonomous Optimization of Air-Processed Perovskite Solar Cell in a Multidimensional Parameter Space",
+      "year": 2025,
+      "venue": "Advanced Energy Materials (2025)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Demonstrated a fully autonomous ML-guided platform that optimizes air-processed perovskite solar cells across a 6-dimensional parameter space, achieving 23.7% peak efficiency and identifying five parameter sets above 23% from a limited experimental budget without human-designed additives or passivation layers.",
+      "idea_genome": {
+        "problem_genome": "Can a fully autonomous ML-guided experimental platform optimize the fabrication of additive-free, passivation-free perovskite solar cells under ambient air conditions across a high-dimensional processing parameter space?",
+        "mechanism_genome": "An autonomous closed-loop platform integrating robotic fabrication, automated characterization, and ML-guided Bayesian optimization that iteratively explores a 6D parameter space including spin-coating speeds, annealing temperatures, and film thicknesses without human intervention.",
+        "observation_genome": "The autonomous platform discovered five parameter configurations achieving efficiencies above 23% with a peak of 23.7%, and feature importance analysis revealed that spin-coating rotation speeds during perovskite deposition are the most influential factors.",
+        "limitation_genome": "The optimization was limited to processing parameters for a fixed perovskite composition and device stack; joint optimization over composition, architecture, and long-term operational stability remains an open challenge for autonomous platforms."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "CGCNN established a universal crystal graph representation for predicting arbitrary material properties. The perovskite bandgap prediction work specialized this general capability into a focused niche: systematically mapping structure-property relationships within the ABX3 perovskite family specifically for photovoltaic applications. This represents a speciation event where a general-purpose materials ML tool branched into a domain-specific perovskite screening methodology."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Forward bandgap prediction from composition features mutated into a bidirectional forward-reverse framework that not only predicts performance but inversely designs optimal perovskite compositions. The paradigm shifted from passive prediction to active design recommendation, and critically, the ML-designed compositions were experimentally validated, closing the loop between computation and experiment for the first time in this lineage."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The data-driven inverse design approach for perovskite composition hybridized with physics-informed Bayesian optimization for manufacturing process parameters. While the previous work optimized what to make (composition), this work optimized how to make it (processing), integrating domain knowledge constraints with ML-guided search. This hybridization of materials informatics with manufacturing science created a new research direction focused on scalable production."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The concept of ML-guided materials screening radiated from application-specific optimization of one perovskite system to a universal, massive-scale discovery approach. GNoME's training on millions of crystals across the periodic table represents an adaptive radiation from focused perovskite process optimization to broad materials discovery that encompasses perovskites as one family among millions of candidates, dramatically expanding the accessible chemical space."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "While GNoME demonstrated massive-scale computational discovery, the autonomous perovskite optimization platform competed for the same niche of accelerating materials-to-device pipelines by taking a complementary approach: instead of computationally screening millions of candidates, it autonomously optimized real-world device fabrication in a closed experimental loop. This represents niche competition between computation-first virtual screening and experiment-first autonomous optimization, with the latter proving that fully autonomous platforms can achieve state-of-the-art device efficiencies from limited experimental budgets."
+    }
+  ],
+  "open_question": "The 6D autonomous optimization platform finds efficient air-processed perovskite recipes, but the search remains process-specific and does not jointly optimize composition, stack architecture, long-term stability, and manufacturability. What self-driving lab would combine active learning, in situ diagnostics, degradation tests, and scalable fabrication constraints to discover perovskite devices that survive real operating conditions?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Energy / Photovoltaic Materials Science."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Speciation": 1,
+    "Mutation": 1,
+    "Hybridization": 1,
+    "Adaptive Radiation": 1,
+    "Niche Competition": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Autonomous Optimization of Air-Processed Perovskite Solar Cell in a Multidimensional Parameter Space",
+      "year": 2025,
+      "venue": "Advanced Energy Materials (2025)",
+      "identifier": "N/A",
+      "unresolved_gap": "Autonomous optimization can find high-efficiency recipes in a local process space, but real deployment still requires joint optimization of composition, architecture, stability, degradation, and manufacturability.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

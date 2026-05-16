@@ -1,0 +1,186 @@
+{
+  "trace_id": "climate_WeatherForecasting",
+  "domain": "climate",
+  "direction": "AI Weather Forecasting",
+  "subfield": "Climate Modeling / AI Weather Prediction",
+  "frontier_justification": "This direction remains a May 2026 frontier because AI weather prediction has moved from deterministic reanalysis-trained surrogates toward Earth-system foundation models, yet operational deployment still depends on calibrated uncertainty, physical consistency, real-time assimilation, and robustness for rare extremes. The next open step is not another leaderboard score, but trusted ensemble forecasting across atmosphere, ocean, land, and coupled hazards.",
+  "verified": false,
+  "papers": [
+    {
+      "title": "Deep learning for post-processing ensemble weather forecasts",
+      "year": 2018,
+      "venue": "Monthly Weather Review (2018)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper showed that neural networks can improve ensemble weather forecast post-processing, learning calibrated predictive distributions from raw ensemble output. It helped establish that data-driven methods could add value to operational weather prediction workflows before full AI forecast models emerged.",
+      "idea_genome": {
+        "problem_genome": "How to improve the calibration and skill of ensemble weather forecasts produced by numerical weather prediction systems.",
+        "mechanism_genome": "Uses deep neural networks for statistical post-processing of ensemble forecasts into improved probabilistic predictions.",
+        "observation_genome": "Demonstrated that learned post-processing can outperform standard statistical baselines on forecast skill and calibration.",
+        "limitation_genome": "The method still depends on upstream numerical weather prediction and does not replace dynamical forecasting itself."
+      }
+    },
+    {
+      "title": "Skillful nowcasting of precipitation with deep generative models of radar",
+      "year": 2021,
+      "venue": "Nature (2021)",
+      "arxiv_id": "2104.00954",
+      "paper_type": "research",
+      "key_contribution": "DeepMind introduced a deep generative radar nowcasting system that produced probabilistic precipitation forecasts with strong skill at short lead times. The paper was influential in showing that learned spatiotemporal generative models could outperform strong operational baselines in a weather forecasting setting.",
+      "idea_genome": {
+        "problem_genome": "How to generate accurate and probabilistic short-range precipitation forecasts from radar observations.",
+        "mechanism_genome": "Combines deep generative modeling with spatiotemporal radar sequence prediction to produce ensemble-like nowcasts.",
+        "observation_genome": "Achieved superior nowcasting skill relative to operational baselines for many short lead times and captured forecast uncertainty.",
+        "limitation_genome": "The scope is limited to regional precipitation nowcasting rather than global medium-range atmospheric forecasting."
+      }
+    },
+    {
+      "title": "FourCastNet: A Global Data-driven High-resolution Weather Model using Adaptive Fourier Neural Operators",
+      "year": 2022,
+      "venue": "arXiv (2022)",
+      "arxiv_id": "2202.11214",
+      "paper_type": "research",
+      "key_contribution": "FourCastNet was one of the first prominent global AI weather models to perform fast, high-resolution medium-range forecasting directly from reanalysis data. It used adaptive Fourier neural operators to model global atmospheric evolution and highlighted the possibility of replacing expensive numerical integration with learned dynamics.",
+      "idea_genome": {
+        "problem_genome": "How to perform global high-resolution medium-range weather forecasting with much lower computational cost than numerical weather prediction.",
+        "mechanism_genome": "Uses adaptive Fourier neural operators trained autoregressively on ERA5 to predict future atmospheric states on a latitude-longitude grid.",
+        "observation_genome": "Showed competitive skill with strong baselines at high spatial resolution and dramatic speedups for long rollout forecasting.",
+        "limitation_genome": "Autoregressive rollout can accumulate error, and the model was primarily deterministic rather than a calibrated probabilistic ensemble system."
+      }
+    },
+    {
+      "title": "Pangu-Weather: A 3D High-Resolution Model for Fast and Accurate Global Weather Forecast",
+      "year": 2023,
+      "venue": "Nature (2023)",
+      "arxiv_id": "2211.02556",
+      "paper_type": "research",
+      "key_contribution": "Pangu-Weather introduced a 3D Earth-specific transformer for global weather forecasting across multiple lead times, delivering strong skill and fast inference at operationally relevant scales. It demonstrated that transformer architectures with pressure-level-aware structure could surpass traditional NWP on several benchmarks.",
+      "idea_genome": {
+        "problem_genome": "How to improve global medium-range weather forecasting accuracy while preserving fast inference and handling full 3D atmospheric structure.",
+        "mechanism_genome": "Uses a hierarchical 3D transformer with Earth-specific positional biases and separate models for different forecast lead times.",
+        "observation_genome": "Reported state-of-the-art performance on multiple variables and lead times with much faster execution than numerical models.",
+        "limitation_genome": "The system relies on multiple lead-time-specific models and remains largely deterministic, leaving probabilistic ensemble forecasting less developed."
+      }
+    },
+    {
+      "title": "GraphCast: Learning skillful medium-range global weather forecasting",
+      "year": 2023,
+      "venue": "Science (2023)",
+      "arxiv_id": "2212.12794",
+      "paper_type": "research",
+      "key_contribution": "GraphCast recast global weather prediction as message passing on a multiscale mesh graph, achieving very strong medium-range deterministic forecast skill and outperforming a leading operational baseline on many targets. It became a landmark result for AI weather forecasting because it combined global coverage, medium-range lead times, and strong benchmark performance.",
+      "idea_genome": {
+        "problem_genome": "How to improve medium-range global weather forecasting skill with a learned model that scales well over the sphere and across variables.",
+        "mechanism_genome": "Uses a graph neural network over a multimesh representation of the globe to learn atmospheric state transitions from ERA5 reanalysis.",
+        "observation_genome": "Outperformed HRES on a large majority of evaluated targets and delivered forecasts in under a minute on specialized hardware.",
+        "limitation_genome": "The model is primarily deterministic and trained on reanalysis, so uncertainty quantification, ensemble spread realism, and operational data assimilation remain open."
+      }
+    },
+    {
+      "title": "GenCast: Diffusion-based ensemble forecasting for medium-range weather",
+      "year": 2024,
+      "venue": "Nature (2024)",
+      "arxiv_id": "2312.15796",
+      "paper_type": "research",
+      "key_contribution": "GenCast extended AI weather prediction from deterministic trajectories to diffusion-based ensemble generation, targeting calibrated probabilistic medium-range forecasting. It showed that generative modeling can produce skillful ensembles and improve the representation of forecast uncertainty and extremes.",
+      "idea_genome": {
+        "problem_genome": "How to move beyond single deterministic AI forecasts to calibrated ensemble prediction for medium-range global weather.",
+        "mechanism_genome": "Uses a diffusion-based generative model conditioned on atmospheric state to sample multiple plausible future trajectories as an ensemble.",
+        "observation_genome": "Demonstrated strong probabilistic forecast skill and competitive ensemble performance against established operational ensemble systems.",
+        "limitation_genome": "Key challenges remain in reliability under distribution shift, rare extremes, coupling with physical constraints, and integration with operational forecasting pipelines."
+      }
+    },
+    {
+      "title": "A foundation model for the Earth system",
+      "year": 2025,
+      "venue": "Nature",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "Paper B introduces Aurora, a large-scale Earth system foundation model that unifies weather and broader environmental forecasting across multiple domains and scales with strong accuracy and efficiency.",
+      "idea_genome": {
+        "problem_genome": "Paper B addresses the need for a single scalable model that can forecast diverse Earth system phenomena beyond deterministic medium-range weather while reducing the computational cost of traditional numerical models.",
+        "mechanism_genome": "Its core approach is to train a large foundation model on more than one million hours of heterogeneous geophysical data so that one pretrained system can be adapted across forecasting tasks in the atmosphere, ocean, waves, and related Earth system domains. This combines the data-driven forecasting paradigm exemplified by AI weather models with the broad transfer-learning and multi-domain generalization strategy of foundation models.",
+        "observation_genome": "Empirically, Aurora delivers strong skill across multiple Earth system forecasting tasks and scales, showing that one pretrained model can match or outperform specialized baselines while being far more computationally efficient than traditional simulation pipelines.",
+        "limitation_genome": "A key open challenge is ensuring robust uncertainty quantification, physical consistency, and reliable performance under rare or out-of-distribution extremes across all Earth system domains."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "The field moves from AI as a post-processing layer on top of numerical ensembles to AI generating probabilistic weather predictions directly from observational sequences. This broadens the role of learning from calibration support to end-to-end forecasting in a short-range niche."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Deep generative nowcasting demonstrated that learned spatiotemporal models can beat operational baselines locally and at short lead times; FourCastNet expands this idea to global, high-resolution, medium-range forecasting. The evolutionary jump is from regional radar nowcasting to planetary-scale atmospheric dynamics."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Pangu-Weather mutates the architectural core from Fourier neural operators on 2D grids to an Earth-specific 3D transformer that better handles vertical atmospheric structure and lead-time forecasting. The focus shifts toward stronger accuracy across pressure levels and operationally relevant horizons."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "GraphCast competes directly with Pangu-Weather as a global medium-range AI forecaster, but uses graph message passing on a spherical multimesh instead of a transformer. The competition centers on better spherical representation, forecast skill, and efficiency."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "GenCast evolves GraphCast-style deterministic global forecasting into a probabilistic ensemble paradigm using diffusion generative modeling. The main shift is from predicting one best trajectory to sampling many plausible futures with calibrated uncertainty."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The shift from A to B is a hybridization because GraphCast’s AI-based global weather forecasting framework is combined with foundation-model pretraining over heterogeneous Earth system data, expanding from a specialized deterministic weather predictor into a general multi-domain Earth system model."
+    }
+  ],
+  "open_question": "Aurora-style Earth-system foundation models show broad forecasting skill, but operational centers still need calibrated ensembles, physically consistent rollouts, and dependable rare-extreme behavior under distribution shift. What architecture would combine learned forecasting, online data assimilation, physics constraints, and uncertainty calibration to produce trusted multi-hazard ensemble forecasts for atmosphere-ocean-land extremes?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Climate Modeling / AI Weather Prediction."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 7 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Speciation": 1,
+    "Adaptive Radiation": 1,
+    "Mutation": 2,
+    "Niche Competition": 1,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "A foundation model for the Earth system",
+      "year": 2025,
+      "venue": "Nature",
+      "identifier": "N/A",
+      "unresolved_gap": "Earth-system foundation models improve broad forecasting skill, but operational use still needs calibrated ensembles, physical consistency, online assimilation, and robust rare-extreme behavior under distribution shift.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

@@ -1,0 +1,596 @@
+[
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_000",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"Efficient Neural Architecture Search (ENAS) uses a recurrent controller trained with policy gradients to sample architectures as subgraphs of a single over-parameterized supergraph, with all sampled models inheriting and updating shared weights instead of being trained independently.\"\n  A2: \"Because candidate architectures are judged using partially optimized shared weights rather than independently trained parameters, the search signal can be a biased proxy for their true standalone performance.\"\n  A3: \"Because search is conducted in an over-parameterized continuous supernet and then projected to a discrete architecture by selecting strongest operations, the optimized relaxed solution can mismatch the final discrete model and bias search toward unstable or skip-connection-heavy choices.\"\n  A4: \"DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights with bi-level gradient descent on validation and training splits respectively.\"\n  A5: \"Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs.\"\n  A6: \"This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\"\n  A7: \"The method depends on training and evaluating many sampled architectures, making search extremely computationally expensive even when mitigated by proxy training, early stopping, or weight sharing.\"\n  A8: \"This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\"\n  A9: \"This paper targets the problem of efficiently searching for high-performing neural network architectures under limited computational budgets.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Deep Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_001",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"Fermi is a many-core CUDA architecture that scales streaming multiprocessors while adding coherent hardware-managed caches, configurable on-chip local memory, improved warp scheduling, stronger atomics and concurrency, ECC memory, and much higher double-precision capability.\"\n  A2: \"The model requires programmers to manually manage thread decomposition, synchronization scope, and locality-sensitive use of shared versus global memory, making performance strongly dependent on hardware-aware coding.\"\n  A3: \"Despite broadening applicability, the architecture still fundamentally inherits SIMT execution behavior, so performance remains sensitive to thread divergence and irregular access patterns rather than eliminating those costs.\"\n  A4: \"This paper targets general-purpose high-throughput computation on graphics processors across a broad range of non-graphics workloads.\"\n  A5: \"This paper targets making general-purpose data-parallel computation on graphics processors practical and accessible for non-graphics applications.\"\n  A6: \"This paper targets making GPUs broadly effective for general-purpose parallel computing workloads, especially irregular, memory-intensive, and high-performance scientific applications.\"\n  A7: \"The model is constrained by then-current graphics hardware, supporting mainly gather-style access and only limited reduction-like patterns, so many computations still fit awkwardly or require workarounds.\"\n  A8: \"CUDA is a GPU programming system that exposes a hierarchy of kernels, threads, thread blocks, grids, and distinct memory spaces so programmers can write data-parallel code whose blocks are dynamically scheduled across multiprocessors and whose cooperating threads use fast shared memory with local synchronization.\"\n  A9: \"Brook for GPUs introduces a stream programming system in which programmers write kernels over stream elements while a compiler and runtime map streams to textures and kernels to fragment programs, managing execution through the graphics pipeline.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Architecture",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_002",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper addresses how epitaxial alpha-antimonene on Au(111) alters interfacial electronic structure, band topology, and spin-orbit effects relative to the freestanding 2D material.\"\n  A2: \"This paper studies the finite-temperature metal-insulator crossover at half filling in the square-lattice Hubbard model.\"\n  A3: \"This paper addresses measuring and explaining the valence spectral function of crystalline silicon across energy and momentum using electron momentum spectroscopy and many-body theory.\"\n  A4: \"The study is limited to the specific alpha-antimonene/Au(111) epitaxial interface, so its conclusions about substrate-induced modification and spin-orbit enhancement may not directly generalize to other substrates, thicknesses, or antimonene phases.\"\n  A5: \"The study is limited to silicon and to comparing two approximate many-body treatments, so it does not establish a universally accurate description of satellite structures across materials or beyond these approximations.\"\n  A6: \"The work is limited to the half-filled square-lattice Hubbard model at finite temperature and therefore does not directly resolve doped, frustrated, or real-material cases.\"\n  A7: \"The authors combine angle-resolved photoemission spectroscopy with density-functional theory to resolve the reconstructed interface structure and trace how Sb-Au hybridization folds Au-derived bands and modifies spin splitting.\"\n  A8: \"It uses numerically unbiased auxiliary-field quantum Monte Carlo and jointly analyzes thermodynamic and dynamical observables across the temperature-interaction plane.\"\n  A9: \"It combines high-energy high-resolution electron momentum spectroscopy measurements along symmetry directions with first-principles Green's-function calculations evaluated in the GW and cumulant expansion approximations.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "cond-mat",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_003",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"The paper studies the Cauchy problem for nonlinear Schrödinger equations with a critical Hardy potential and a nonlocal Choquard nonlinearity in the energy-subcritical regime.\"\n  A2: \"The abstract does not indicate whether the proof yields broader structural characterizations, algorithmic consequences, or simplifications relative to existing formulations.\"\n  A3: \"The paper studies conjugacy ratio behavior in finitely generated abelian-by-cyclic groups of the form K ⋊ ⟨t⟩ with respect to natural generating sets built from a finite symmetric subset of the abelian kernel.\"\n  A4: \"It combines variational analysis via optimizers of an interpolation Hardy-Gagliardo-Nirenberg inequality, Pohozaev identity arguments, and a compactness method to derive ground states, nonexistence results, global/blow-up criteria, and minimal-mass blow-up characterization.\"\n  A5: \"The paper addresses the union-closed sets conjecture for finite universes and induced communities, asking whether some element appears in at least half of the sets.\"\n  A6: \"It introduces a new formal language of universes, induced communities, cells, and spots and uses this framework to derive a proof of the conjecture.\"\n  A7: \"The results are restricted to the energy-subcritical setting and rely on structural variational identities, leaving more general regimes or broader classes of nonlinearities untreated.\"\n  A8: \"The results are restricted to the abelian-by-cyclic setting and a specific BS(1,2) example, so they do not resolve the behavior of conjugacy ratios for broader classes of non-virtually-abelian groups or arbitrary generating/Følner sequences.\"\n  A9: \"It proves structural results by analyzing spherical conjugacy classes and growth in abelian-by-cyclic semidirect products, then contrasts these with an explicit one-sided Følner sequence construction in BS(1,2).\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "math.GR",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_004",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets the problem of how to design and understand robots for locomotion, manipulation, and physical interaction in unstructured environments using biologically inspired compliance.\"\n  A2: \"Soft robotics paradigm: replace rigid-link, jointed, transmission-centric robot architectures with elastomeric or continuum bodies, distributed actuation, and morphology-driven control in which passive body mechanics and environmental contact perform part of sensing, adaptation, and control.\"\n  A3: \"This paper targets the problem of achieving task-capable locomotion with multiple distinct gaits in a fully soft-bodied robot.\"\n  A4: \"As a survey and position paper, it does not provide a unified predictive modeling, control, or benchmarking framework for infinite-dimensional deformation, nonlinear materials, and underactuated soft-body dynamics.\"\n  A5: \"The architecture introduces an explicit stiffness-selection tradeoff in which softer springs improve force resolution and impact tolerance but reduce achievable output bandwidth, while stiffer springs recover bandwidth at the cost of those benefits.\"\n  A6: \"The demonstrated gait repertoire depends on predesigned channel layouts and activation schedules, so changing behaviors requires redesign or retuning rather than autonomous adaptation within the same hardware.\"\n  A7: \"This paper targets accurate and robust force generation for actuators operating in contact-rich, impact-prone, and physically interactive environments.\"\n  A8: \"Series Elastic Actuation inserts a deliberately compliant spring in series between the motor/transmission and the load, measures spring deflection to infer output force via Hooke’s law, and closes the controller around force tracking rather than pure position tracking.\"\n  A9: \"A monolithic multigait soft robot uses elastomeric body segments with embedded fluidic channel networks that are selectively pressurized in different temporal patterns to produce distributed bending, anchoring, and release sequences for locomotion.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_005",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets automated analysis and categorization of malware based on observed runtime behavior across large collections of samples.\"\n  A2: \"A scalable behavior-based clustering method runs malware in an instrumented environment, abstracts runtime events into normalized behavioral feature tokens or sets, and clusters samples using efficient similarity computation over these compact behavior profiles.\"\n  A3: \"This paper targets practical detection of Android malware directly on end-user mobile devices.\"\n  A4: \"By deliberately avoiding dynamic execution and deep semantic analysis, DREBIN is constrained to coarse static signals and may miss or be evaded by malware whose behavior is hidden beyond the selected package- and code-level features.\"\n  A5: \"Because the framework depends on behavior observed during sandboxed execution and summarized feature representations, it can miss malicious functionality that is not triggered in the controlled run or is lost in coarse aggregation.\"\n  A6: \"Because the framework depends on observed runtime traces and heavily abstracted event representations, it can miss behaviors not triggered during execution and may lose discriminative temporal detail between samples with similar event sets.\"\n  A7: \"A behavior-based malware analysis framework executes programs in a controlled environment, converts traces of system calls, file, registry, process, and network activity into machine-learning features, and uses statistical clustering or classification to group samples by behavioral similarity.\"\n  A8: \"This paper targets the problem of grouping large numbers of malware samples by functional similarity despite syntactic variation from packing, obfuscation, or small code changes.\"\n  A9: \"DREBIN performs lightweight static analysis of Android application packages to extract sparse, interpretable manifest- and code-derived features and applies a linear classifier that scores apps by weighted feature presence for efficient, explainable malware detection.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_006",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"A theoretical-and-empirical analysis of multilayer nonlinear networks trained with standard gradient descent examines loss-surface geometry, overparameterization, random initialization, and signal propagation by varying depth, width, and parameter scaling.\"\n  A2: \"It formulates evasion as a constrained optimization problem that uses gradients of the classifier decision function, plus differentiable and kernelized approximations when needed, to iteratively minimize the target score under attacker-specific feature manipulation constraints, including surrogate-model transfer in limited-knowledge settings.\"\n  A3: \"This paper targets test-time evasion of machine-learning classifiers, where malicious inputs are modified to be misclassified as benign without losing their intended malicious functionality.\"\n  A4: \"The proposed attack and training procedure are based on a single first-order linearization and primarily target L-infinity-bounded perturbations, so they do not fully address stronger iterative attacks or broader threat models.\"\n  A5: \"The method depends on having a usable differentiable objective or approximation and operates in feature space, so the realism of the produced attacks is limited by how faithfully feature constraints capture valid manipulations in the original application domain.\"\n  A6: \"The paper mainly provides characterization and controlled evidence rather than a concrete training algorithm or quantitative predictive theory that guarantees when optimization will succeed.\"\n  A7: \"This paper targets understanding why deep feedforward neural networks can often be optimized and generalize well despite their highly nonconvex training objectives.\"\n  A8: \"Fast Gradient Sign Method (FGSM): linearize the loss around the input, compute the gradient of the loss with respect to the input, take its elementwise sign, and add a small epsilon-sized perturbation in that direction to generate an approximate worst-case example under an L-infinity constraint, including for adversarial training.\"\n  A9: \"This paper targets understanding and improving the robustness of neural network classifiers to intentionally crafted, small input perturbations that cause misclassification.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_007",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper addresses the unexplained magic numbers and structural stability patterns of protonated argon clusters.\"\n  A2: \"It characterizes AXUV-HS5 photodiode nonlinear response with pulsed-laser calibration and then estimates plasma density, size, temperature, and duration by combining charge-conserving soft x-ray measurements with a spherical emission model and the Bennett relation.\"\n  A3: \"It analyzes the generalized magnetic field \\(\\vec{\\mathcal{B}} = \\vec{B} + \\nabla\\times((c/\\omega_{pe})^2\\mu_0\\vec{j})\\) and proves in 3D that this field is Lie-dragged by an evolution velocity even when ordinary magnetic field lines reconnect.\"\n  A4: \"The paper addresses magnetic reconnection in plasmas when electron inertia is the sole non-ideal effect, especially in fully three-dimensional systems.\"\n  A5: \"The paper is limited by its focus on protonated argon clusters and does not establish how broadly the identified mechanism transfers to other rare-gas or molecular cluster systems.\"\n  A6: \"The paper is limited by its idealized assumption that electron inertia is the only non-ideal effect, leaving realistic competition with resistivity and other dissipative processes largely outside the formal treatment.\"\n  A7: \"The paper addresses diagnosing the plasma parameters and source morphology of low-dI/dt copper X-pinch soft x-ray emitters when detector nonlinearity complicates standard interpretation.\"\n  A8: \"The analysis relies on simplified assumptions including spherical symmetry, Bennett equilibrium, and indirect inversion from nonlinear detector data on a single low-dI/dt copper-wire X-pinch platform.\"\n  A9: \"It combines quantum Monte Carlo calculations with many-body ab initio interaction potentials that explicitly represent the proton coordination environment across cluster sizes.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "physics.plasm-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_008",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"The system still depends on heuristic path search and selective modeling of external code and environment behavior, leaving path explosion and incomplete handling of some real-world interactions unresolved.\"\n  A2: \"This paper targets automatic generation of high-coverage test inputs for complex low-level systems programs without requiring manual test specifications.\"\n  A3: \"KLEE is a symbolic execution system that runs programs on symbolic inputs at the compiler IR level, accumulates path constraints, systematically negates branch conditions, solves the resulting formulas to generate new concrete tests, and models memory, libraries, and environment interactions to explore realistic systems code.\"\n  A4: \"DART is limited to path exploration expressible through the extracted interface and lightweight symbolic constraints, so it does not fully handle complex environments, external interactions, or path conditions that the solver cannot model or solve.\"\n  A5: \"This paper targets the problem of validating C compiler correctness by uncovering miscompilations, crashes, and other wrong-code behaviors.\"\n  A6: \"DART combines automatic interface-level harness extraction with concolic execution: it runs the unit on random concrete inputs, records symbolic branch predicates along the executed path, negates one observed predicate to form a new path constraint, solves it, and re-executes with the resulting concrete inputs to drive exploration into alternative branches.\"\n  A7: \"This paper targets automatic generation of high-coverage tests for individual program units in order to expose bugs such as assertion violations and memory errors without manually writing test drivers.\"\n  A8: \"The approach depends on practical consistency oracles rather than a full correctness specification, so it is constrained to programs whose behavior is well-defined enough for cross-run output mismatches to be meaningfully interpreted.\"\n  A9: \"Random differential compiler testing automatically generates many small legal executable C programs, compiles them across different compilers or optimization settings, runs the binaries, and flags crashes or output inconsistencies as evidence of compiler bugs.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Software Engineering",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_009",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets high-performance indexing and storage for databases with write-heavy workloads dominated by inserts, updates, and deletes while still supporting lookups and range queries.\"\n  A2: \"The Log-Structured Merge-Tree (LSM-Tree) buffers updates in an in-memory sorted component and periodically merges them into a hierarchy of larger on-disk sorted components, reconciling newer and older entries in batch to turn random updates into sequential writes.\"\n  A3: \"Because ART is specialized for in-memory bytewise key processing, its benefits depend on key decomposition and local fanout patterns, and the paper leaves open how well the design transfers to other memory hierarchies or less prefix-structured workloads.\"\n  A4: \"This paper targets the problem of providing a high-throughput ordered index for concurrent range and point operations on multicore, main-memory, and flash-oriented systems.\"\n  A5: \"This paper targets ordered index structures for low-latency main-memory databases that must support point lookups, updates, and range scans efficiently.\"\n  A6: \"The design increases read-path complexity because queries may need to search multiple components and rely on background merge maintenance, so read latency and lookup cost can worsen relative to a single balanced tree.\"\n  A7: \"Because updates accumulate as delta chains that must later be consolidated, the design introduces extra indirection and chain-traversal overhead whose performance depends on keeping those chains short.\"\n  A8: \"BwTree is a lock-free B-tree variant that replaces in-place page updates with append-only delta records and uses an atomically updated mapping table to decouple each logical node from its physical storage location while preserving ordered traversal via side links.\"\n  A9: \"Adaptive Radix Tree (ART) indexes keys bytewise in a radix trie whose internal nodes dynamically switch among multiple node layouts of different capacities, combined with path compression and lazy expansion to keep the structure compact and fast.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_010",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets natural language access to relational databases by treating user questions over structured data as a well-defined question answering task.\"\n  A2: \"Because the collection is grounded in a fixed corpus and human assessment protocol, its coverage of question types and acceptable answers is constrained by corpus answerability and assessor consistency.\"\n  A3: \"The system still depends on a pipeline of imperfect upstream NLP modules whose errors propagate, leaving extracted knowledge uncertain and limiting precision and completeness in the resulting knowledge base.\"\n  A4: \"The paper targets open-domain machine reading: automatically constructing structured, queryable knowledge from large volumes of unstructured free text.\"\n  A5: \"A reusable QA test collection construction procedure adapts classical IR test-collection methodology by assembling natural-language questions, a large corpus, and human relevance judgments that mark answer-bearing documents or snippets while accounting for paraphrase, ambiguity, and multiple valid answer forms.\"\n  A6: \"It proposes a theory-driven NLIDB framework that decomposes processing into user-intent representation, schema-level semantic interpretation, and translation into executable formal database queries, mediated by constrained intermediate semantic forms.\"\n  A7: \"This paper targets the problem of creating a standardized evaluation benchmark for open-domain question answering over a fixed document corpus.\"\n  A8: \"It proposes an end-to-end machine reading system that combines statistical entity recognition, relation extraction, coreference resolution, and confidence-aware evidence aggregation to populate a growing knowledge base from web-scale corpora.\"\n  A9: \"The paper mainly provides a conceptual and evaluative framework rather than a fully specified or broadly validated implementation, leaving the concrete construction and empirical testing of the intermediate representations underdeveloped.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_011",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"A web-architecture threat analysis decomposes XSS into attacker-controlled input injection, server reflection or storage of that input in generated pages, and browser execution of the resulting script under the trusted site's origin and privileges.\"\n  A2: \"It introduces an attack-centric taxonomy method that classifies SQL injection attacks by the way malicious input transforms the syntactic or semantic structure of server-side SQL queries and explicitly maps each class to corresponding countermeasure families across validation, query construction, analysis, and runtime enforcement layers.\"\n  A3: \"This paper targets the problem of preventing cross-site request forgery against authenticated web applications, especially for state-changing user actions.\"\n  A4: \"The method is a CSRF request-binding defense that embeds unpredictable session-associated nonces in sensitive requests and validates them server-side, optionally supplemented by provenance checks such as the Referer header while exempting safe read-only operations.\"\n  A5: \"This paper targets the problem of understanding and defending against SQL injection vulnerabilities in web applications that construct database queries from untrusted input.\"\n  A6: \"The paper mainly provides a conceptual taxonomy and threat model rather than a concrete prevention mechanism or formal enforcement technique for eliminating XSS in deployed systems.\"\n  A7: \"The paper's secondary provenance-based checks depend on browser-supplied headers like Referer that are inconsistently present or deployable, limiting standalone reliability and complicating universal adoption.\"\n  A8: \"This paper targets the problem of understanding and characterizing cross-site scripting vulnerabilities in web applications and browsers.\"\n  A9: \"Because the work is primarily a conceptual classification and comparative analysis, it does not provide a unified formal model or experimentally validated end-to-end defense that proves the taxonomy-to-countermeasure mapping in practice.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Adaptive Radiation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_012",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"A semantic-values interoperability method attaches structured machine-interpretable semantic descriptors to exchanged data elements and uses semantic comparison plus value-level transformation rules to determine equivalence, comparability, or convertibility across local schemas without requiring a single global schema.\"\n  A2: \"TSIMMIS uses a mediator-wrapper architecture in which source-specific wrappers convert diverse source formats and access methods into a common self-describing object-like representation, and mediators then restructure, combine, and filter that representation to answer cross-source queries.\"\n  A3: \"A declarative schema-mapping framework models data integration through source-to-target mappings, global schemas, and integrity constraints, and uses these logical specifications to define inference and query-answering semantics under alternative architectures such as mediated and warehouse-based integration.\"\n  A4: \"This paper targets interoperability among independently developed heterogeneous information systems that must exchange data despite differences in schemas, terminology, context, and units.\"\n  A5: \"The approach depends on accurate and sufficiently rich semantic annotations and transformation knowledge being provided for each system, leaving the acquisition and standardization of those semantics unresolved.\"\n  A6: \"Because the treatment deliberately abstracts away from implementation and operational ETL issues, it does not resolve how the proposed semantics should be efficiently realized or maintained in practical large-scale systems.\"\n  A7: \"This paper targets practical interoperability and query answering across autonomous, heterogeneous information sources such as databases, files, and semi-structured repositories.\"\n  A8: \"This paper targets the problem of giving a formal semantic and logical account of integrating heterogeneous autonomous data sources into a coherent target view.\"\n  A9: \"The system still depends on manually built wrappers and application-specific mediators, so scaling to many new sources or domains requires substantial hand-engineered source and integration knowledge.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_013",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets real-time personalized product recommendation in very large e-commerce catalogs with sparse, rapidly changing user activity.\"\n  A2: \"This paper targets prediction on extremely sparse, high-dimensional feature data such as recommender systems and click-through rate estimation with arbitrary side information.\"\n  A3: \"The framework is primarily limited to second-order interactions with a fixed latent rank, so it does not directly capture richer higher-order or more adaptive interaction structures.\"\n  A4: \"Factorization Machines predict with a global bias, linear feature weights, and pairwise feature interactions parameterized by inner products of per-feature latent vectors, using an algebraic reformulation to compute second-order terms in time linear in nonzero features times latent dimension.\"\n  A5: \"Regularized matrix factorization models each user and item with low-dimensional latent vectors and optional global/user/item bias terms, learning them by optimizing prediction error only on observed ratings via methods such as regularized least squares or stochastic gradient descent.\"\n  A6: \"Item-to-item collaborative filtering precomputes offline, for each item, a neighborhood of similar co-occurring items from historical purchases/ratings/clicks, then serves recommendations by aggregating the neighborhoods of a user's current or past items with similarity- and context-based ranking.\"\n  A7: \"The core formulation is still a low-rank inner-product model whose expressiveness depends on manually chosen extensions for effects like time drift and implicit feedback rather than capturing such structure in a unified richer interaction model.\"\n  A8: \"Because the method depends on precomputed item co-occurrence neighborhoods, it is less able to immediately model newly introduced items or rapidly shifting cross-item relationships until offline recomputation occurs.\"\n  A9: \"This paper targets personalized recommendation from sparse user-item preference data in collaborative filtering systems.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Data Mining",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_014",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"Because prediction quality depends on a hand-constructed decision-tree factorization over mostly local contextual cues, the model may miss longer-range program dependencies and is constrained by the chosen tree structure.\"\n  A2: \"A phrase-based statistical machine translation approach is trained on parallel code–pseudo-code pairs to learn token/phrase alignments, translation probabilities, and a target-side language model, then decodes pseudo-code by jointly optimizing faithfulness to source code and fluency.\"\n  A3: \"This paper targets probabilistic modeling and next-element prediction for source code in the presence of large vocabularies and structured program context.\"\n  A4: \"It uses a syntax-driven neural decoder that generates code as a sequence of grammar-constrained actions over an abstract syntax tree, predicting nonterminal expansions, production rules, and terminals while conditioning on the encoded input and the partially built tree, with copying or specialized handling for open-vocabulary tokens.\"\n  A5: \"Because the system depends on phrase-based alignments over a structure-preserving but SMT-compatible code representation rather than deeper semantic analysis, it is limited in capturing long-range program semantics and more complex code patterns.\"\n  A6: \"This paper targets automatic generation of human-readable pseudo-code descriptions from program source code.\"\n  A7: \"It introduces a decision-tree-based probabilistic code model that factorizes the probability of each code element into a sequence of learned context-conditioned branching decisions over sparse lexical and syntactic features.\"\n  A8: \"This paper targets general-purpose code generation from natural language or other source inputs into executable programs.\"\n  A9: \"Although syntax is enforced, the model still relies on grammar-specified action spaces and ad hoc mechanisms for identifiers and literals, leaving semantic correctness and flexible handling of open-vocabulary program content only partially solved.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Software Engineering",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_015",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets document-level binary sentiment classification of user-written reviews.\"\n  A2: \"Because the scores are automatically inferred from seed expansion and classifier combination rather than comprehensively hand-validated, individual synset annotations can be noisy or inaccurate despite broad coverage.\"\n  A3: \"This paper targets the creation of a broad-coverage lexical resource for fine-grained opinion mining by assigning prior sentiment to individual word senses.\"\n  A4: \"The study is limited to shallow bag-of-words-style document representations and binary labels, leaving negation, discourse, compositional sentiment, and finer-grained opinion structure largely unmodeled.\"\n  A5: \"It uses a two-stage subjectivity-summarization pipeline in which sentence-level subjectivity scores are combined with inter-sentence coherence links in a source/sink graph and a minimum cut selects the optimal subjective extract, which is then fed to a standard polarity classifier.\"\n  A6: \"It models each review as a high-dimensional sparse lexical feature vector and trains supervised classifiers such as Naive Bayes, maximum entropy, and support vector machines to predict positive versus negative polarity while comparing unigram, bigram, and POS-informed encodings.\"\n  A7: \"SentiWordNet labels each WordNet synset with normalized positivity, negativity, and objectivity scores by semi-supervisedly expanding a small set of paradigm sentiment terms through lexical and gloss cues, running multiple sentiment classifiers, and combining their outputs so the three scores sum to one.\"\n  A8: \"This paper targets document-level sentiment classification for texts such as reviews that contain a mixture of opinionated and objective content.\"\n  A9: \"The approach depends on a separately trained sentence-level subjectivity detector and hand-designed sentence association weights, while the final polarity classifier is otherwise conventional and not jointly optimized with the extraction stage.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_016",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"The study is restricted to a highly idealized rigid-link walker on a shallow downhill slope with simplified foot-contact assumptions, so its results do not directly establish passive stable walking on level ground or in more realistic multijoint robots.\"\n  A2: \"Passive dynamic walking models a two-link biped descending a shallow slope as a hybrid dynamical system with continuous gravity-driven swing/stance motion and discrete heel-strike collision maps, then analyzes periodic step cycles and their stability from the mechanism's physical parameters alone.\"\n  A3: \"It introduces a hybrid feedback control framework that stabilizes periodic bipedal gaits by continuously regulating reduced-order gait variables and virtual joint constraints during swing and stance, while applying event-based corrections at foot impact and analyzing step-to-step stability with return maps.\"\n  A4: \"The approach depends on reduced-order dynamic models and lower-dimensional balance objectives, which likely limit fidelity for highly complex whole-body motions and contact-rich maneuvers requiring detailed joint-level planning.\"\n  A5: \"A balance-centered feedback control method uses simplified whole-body dynamics to regulate center-of-mass motion, body orientation, and ground reaction/contact forces across hybrid support phases instead of tracking fully precomputed gait trajectories.\"\n  A6: \"This paper targets the problem of explaining and achieving stable legged walking in a minimal bipedal system.\"\n  A7: \"The approach depends on carefully designed reduced-order gait representations and periodic-motion structure, which limits its direct applicability to highly nonperiodic maneuvers or locomotion regimes far from the nominal gait.\"\n  A8: \"This paper targets the problem of maintaining upright balance and disturbance-robust locomotion in articulated legged robots during standing and walking.\"\n  A9: \"This paper targets the problem of achieving robust, repeatable dynamic walking in underactuated bipedal robots subject to impacts and phase-dependent locomotion dynamics.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_017",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"The approach depends on expert demonstration data and typically requires externally supervised or auxiliary pretraining of the visual representation to achieve sufficient data efficiency.\"\n  A2: \"This paper targets learning from demonstrations of continuous-time motion policies that can autonomously reproduce nonlinear reaching and movement behaviors while converging to a desired goal state.\"\n  A3: \"The method requires repeated expert action queries on states encountered during iterative rollouts, making it dependent on an available and affordable expert during training.\"\n  A4: \"An end-to-end deep visuomotor imitation policy combines a convolutional network over raw images with fully connected layers that fuse proprioceptive state and predict motor torques or control commands, with the visual front end often pretrained on auxiliary perception objectives before joint fine-tuning on demonstrations.\"\n  A5: \"This paper targets learning robotic manipulation policies that map camera observations and robot state to continuous control actions for real-world visuomotor tasks.\"\n  A6: \"This paper targets sequential imitation learning and structured prediction under distribution shift caused by compounding errors when a learned policy is executed at test time.\"\n  A7: \"Its stability guarantee depends on a fixed attractor-centered mixture of locally linear components, which limits the class of behaviors to motions converging to one equilibrium and does not naturally handle richer tasks with multiple goals, cycles, or contact-driven mode switches.\"\n  A8: \"DAgger iteratively runs a mixture of the current policy and the expert, queries the expert on learner-visited states, aggregates all collected state-action pairs across rounds, and reduces policy learning to a no-regret online learning problem over the growing dataset.\"\n  A9: \"It learns a stable nonlinear dynamical system by fitting a Gaussian mixture model to joint state-velocity data and using Gaussian-mixture regression to blend locally affine linear dynamics whose parameters are constrained through optimization to guarantee global asymptotic convergence to the target equilibrium.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_018",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets sequence segmentation and labeling problems where an observed input sequence must be assigned a structured output label sequence.\"\n  A2: \"It uses a unified end-to-end neural network with shared learned word embeddings, multilayer nonlinear feature extraction over local windows or sentence-level contexts, and task-specific structured decoding when label dependencies matter, trained directly from raw or minimally processed text.\"\n  A3: \"This paper targets a broad set of NLP sequence labeling and classification tasks, including POS tagging, chunking, named entity recognition, semantic role labeling, and language modeling.\"\n  A4: \"Conditional Random Fields are globally normalized log-linear models that directly parameterize p(y|x) over entire label sequences using transition and state feature functions over labels and arbitrary overlapping input properties, with exact linear-chain inference via forward-backward and Viterbi dynamic programming.\"\n  A5: \"A neural end-to-end NER architecture composes each token from word embeddings plus character-level representations, contextualizes the sequence with a bidirectional recurrent encoder, and often decodes jointly with a sequence-level label model to enforce valid tag transitions.\"\n  A6: \"The paper's exact training and inference results rely on linear-chain structure, so extending the approach to more complex graphical structures is not addressed with the same tractability guarantees.\"\n  A7: \"Although it reduces manual feature design, the approach still depends on supervised labeled NER data and does not fully resolve domain shift when entity distributions and surface forms differ strongly across corpora.\"\n  A8: \"This paper targets named entity recognition as a sequence labeling problem over sentences.\"\n  A9: \"Its core architectures rely mainly on fixed local context windows and relatively simple sentence-level models, which limits their ability to capture richer long-range structure without additional task-specific components.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_019",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"Because the work is primarily conceptual and legal-analytic, it does not provide a single fully specified optimization procedure or broad empirical benchmark demonstrating how the proposed interventions trade off fairness and utility in practice.\"\n  A2: \"The repair procedure is most concrete for ordered or numerical features through rank-based mappings, making the method less directly specified for complex categorical or unstructured representations.\"\n  A3: \"This paper targets the problem of defining and enforcing fairness in classification and ranking decisions at the level of individuals rather than only protected groups.\"\n  A4: \"The framework depends critically on an externally provided, normatively valid task-specific similarity metric, but the paper does not solve how to construct, validate, or contest that metric in practice.\"\n  A5: \"A disparate-impact analysis framework evaluates fairness by comparing group-level selection rates and acceptance probabilities, then studies mitigation through constrained rules, threshold adjustment, and post hoc auditing rather than by changing the predictive model itself.\"\n  A6: \"This paper targets detecting and mitigating disparate impact in predictive decision-making when protected attributes are omitted but may still be encoded in other features.\"\n  A7: \"This paper targets the problem of identifying and mitigating unequal decision outcomes across protected groups in scoring, ranking, and threshold-based selection systems.\"\n  A8: \"It introduces a certify-and-repair preprocessing method that tests disparate impact by measuring how accurately the protected class can be inferred from non-protected features, then optimizes a transformed representation—via rank-preserving distributional repair for ordered attributes—to reduce that predictability while retaining task utility.\"\n  A9: \"Fairness Through Awareness imposes a Lipschitz-style individual fairness constraint requiring that a randomized decision rule map nearby individuals under a task-specific similarity metric to similar outcome distributions while optimizing utility subject to that constraint.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Machine Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_020",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"A large-scale self-supervised deep grasp predictor is trained on about 50K autonomous grasp attempts to map camera observations and candidate gripper motions to binary grasp-success probabilities, then selects at test time the motion with the highest predicted success.\"\n  A2: \"The method is specialized to frictionless contacts and cleanly parameterized polygonal or polyhedral object models, limiting its direct applicability to more general frictional or complex-shape grasping settings.\"\n  A3: \"Because the framework abstracts grasping to low-dimensional rigid-body statics with idealized contact models, it does not address embodiment-specific hand kinematics, compliance, or dynamic manipulation effects.\"\n  A4: \"The learned policy depends on hundreds of hours of robot interaction and simple binary success labels, making it data-hungry and leaving richer structure about why grasps fail or how to generalize more efficiently unmodeled.\"\n  A5: \"This paper targets the problem of determining when a multi-contact robotic grasp can either resist arbitrary external disturbances or immobilize an object under frictional contact.\"\n  A6: \"A constructive grasp-synthesis optimization searches over contact placements and associated wrench constraints using geometric wrench-space structure and algebraic form-closure conditions to jointly enforce feasibility and maximize grasp-quality criteria without exhaustive contact enumeration.\"\n  A7: \"This paper targets robotic object grasping in cluttered real-world settings using visual input to choose successful pick actions.\"\n  A8: \"This paper targets the synthesis of optimal frictionless form-closure grasps that immobilize rigid polygonal or polyhedral objects.\"\n  A9: \"A geometric-algebraic grasp closure analysis models each contact by a local friction force cone, maps the combined contact forces into object wrench space, and tests closure through convex hull, spanning, and rank conditions in a coordinate-invariant rigid-body formulation.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_021",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"The authors combine molecular dynamics simulations of Lennard-Jones and covalently bonded nanoclusters with a continuum-theory treatment of oblique impact that incorporates elasticity, bulk viscosity, and surface tension.\"\n  A2: \"The study is limited to idealized nanocluster models and collision conditions, so its conclusions may not directly generalize to more complex materials, shapes, environments, or strongly plastic regimes.\"\n  A3: \"This paper addresses how to correctly characterize the normal restitution coefficient in oblique collisions of nanoclusters, where standard macroscopic definitions can fail.\"\n  A4: \"As a historical reconstruction, the paper does not introduce new physical formalism or experimentally testable results and depends on interpretation of historical sources.\"\n  A5: \"It reconstructs Fermi's path by analyzing his early interests in the absolute entropy constant, his engagement with shortcomings of Sommerfeld's quantization for identical particles, and his extension of Pauli's Exclusion Principle to non-interacting particle systems.\"\n  A6: \"It proposes an analogical synthesis that maps emergence, geometric frustration, competing interactions, spin-glasses, and Mott insulators onto social dynamics and collective-individual relations within a universal consciousness framework.\"\n  A7: \"This paper addresses the historical and conceptual origins of Enrico Fermi's formulation of the statistics of an ideal monatomic gas.\"\n  A8: \"The paper appears to offer no operational definitions, formal model, or empirical validation that would test whether its physics-to-society and consciousness-based analogies are scientifically predictive.\"\n  A9: \"This paper addresses the problem of reinterpreting scientific socialism and dialectical social theory using concepts from modern condensed matter physics and Advaita Vedanta.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "physics.pop-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_022",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"The method increases depth and local nonlinear complexity but does not expand receptive fields by itself, so it still depends on separate spatial convolutions and does not fully address broader spatial modeling.\"\n  A2: \"Network In Network replaces simple linear convolutional filters with per-location micro multilayer perceptrons implemented by stacked 1×1 convolutions and nonlinearities, and uses global average pooling instead of large fully connected classifier layers.\"\n  A3: \"Hyperband allocates a fixed budget across multiple successive-halving brackets, each starting with randomly sampled hyperparameter configurations evaluated at small resource levels and repeatedly promoting only the top fraction to larger budgets, with different brackets trading off number of configurations versus training depth.\"\n  A4: \"The method relies on partial-budget performance being predictive enough for early stopping, so it is less well matched to problems where low-budget rankings are noisy or misleading.\"\n  A5: \"This paper targets hyperparameter optimization when evaluating configurations is expensive and only limited computational budget is available.\"\n  A6: \"GoogLeNet/Inception uses repeated multi-branch modules that run 1×1, 3×3, 5×5, and pooling paths in parallel, applies 1×1 convolutions for dimensionality reduction before costly spatial filters, concatenates branch outputs, and trains with auxiliary classifiers plus global average pooling.\"\n  A7: \"This paper targets large-scale image classification and visual recognition with deep convolutional networks.\"\n  A8: \"Its hand-designed Inception modules and auxiliary heads introduce considerable architectural complexity and rely on manually chosen branch widths and filter sizes rather than a principled or automatically optimized design.\"\n  A9: \"This paper targets image classification and visual recognition with convolutional neural networks.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Deep Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_023",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"It derives similarity variables and an analytical local self-similar solution by reducing general strictly hyperbolic dynamics near shock onset to Burgers-like behavior.\"\n  A2: \"The results are specialized to nested convex-body pairs under particular geometric relations and do not provide a general characterization framework for arbitrary convex bodies or broader non-nested settings.\"\n  A3: \"The results are restricted to first-order strictly hyperbolic systems in one spatial dimension and focus on local behavior near shock formation rather than broader classes of PDEs or post-shock evolution.\"\n  A4: \"The paper studies local shock formation near singularities in one-dimensional first-order strictly hyperbolic systems of PDEs.\"\n  A5: \"The paper studies which finitely generated groups can have word problems that are EDT0L languages, with emphasis on the infinite cyclic group and structural closure properties.\"\n  A6: \"It uses formal-language and group-theoretic arguments to prove non-EDT0Lness for the infinite cyclic group's word problem and to derive invariance under changing generators and passing to finitely generated subgroups.\"\n  A7: \"It derives sufficient geometric conditions by comparing corresponding sections or projections of the nested pair and by analyzing support cones or point-source shadow boundaries with apexes on the boundary of K.\"\n  A8: \"The paper does not resolve the full conjecture that every finitely generated group with EDT0L word problem is finite, leaving open whether any infinite torsion examples exist.\"\n  A9: \"The paper studies geometric tomography characterizations of the Euclidean ball or ellipsoid from relations between sections, projections, and support-cone data of two nested convex bodies with L contained in the interior of K.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "math.GR",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_024",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"It derives asymptotic spectral-gap results using a different analytical framework from prior work to prove bounds, extend existing arguments, and settle a standing conjecture.\"\n  A2: \"The study is demonstrated only on small benchmark molecules and simulations, so the scalability, robustness, and practical advantage on larger realistic quantum hardware remain unproven.\"\n  A3: \"The paper studies spectral asymptotics, characteristic functions, and zeta-function representations for Sturm-Liouville operators whose resolvents lie in Schatten p-classes, including singular problems.\"\n  A4: \"The paper studies the infinite-volume asymptotic behavior of the spectral gap for discrete Schrödinger operators on a path graph under a broad class of potentials.\"\n  A5: \"This paper addresses improving molecular ground-state estimation by Quantum Imaginary Time Evolution in open-shell and strongly correlated systems where Hartree-Fock initial states are poor due to multiconfigurational character.\"\n  A6: \"Because the work is a theoretical note focused on path-graph discrete Schrödinger operators, its conclusions may not directly transfer to more general graphs, operators, or noncovered potential classes.\"\n  A7: \"The results are specialized to Sturm-Liouville settings with Schatten-class resolvents and mainly provide structural asymptotic theory rather than broadly applicable computational algorithms or treatment of operators outside this analytic framework.\"\n  A8: \"The method initializes QITE with a spin- and spatial-symmetry broken wave function and augments the molecular Hamiltonian with an S^2 penalty term, then performs imaginary-time evolution via direct exponentiation and measurement-assisted unitary approximation.\"\n  A9: \"It applies complex analytic theory of entire functions of finite order to the Sturm-Liouville eigenvalue equation to derive solution growth/decay asymptotics, build a minimal-order characteristic function, and obtain contour-integral formulas for spectral zeta-functions.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "physics.chem-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_025",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"A large autoregressive transformer architecture decoder with causal masked self-attention mechanism is trained on massive web text using next-token prediction, and downstream tasks are performed by formatting inputs and desired outputs as a single text prompt for conditional generation without parameter updates.\"\n  A2: \"GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters.\"\n  A3: \"This paper targets general-purpose zero-shot transfer across many NLP tasks using only raw text pretraining and no task-specific supervision.\"\n  A4: \"This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\"\n  A5: \"The approach relies entirely on zero-shot prompting without task-specific fine-tuning or calibrated output heads, so performance remains inconsistent and often below supervised systems on many benchmarks.\"\n  A6: \"Because the architecture removes recurrence and convolution, it must inject sequence order externally through positional encodings rather than learning order structure intrinsically through the core computation.\"\n  A7: \"This paper targets sequence transduction tasks such as machine translation that require modeling dependencies between input and output token sequences.\"\n  A8: \"Despite strong few-shot gains, the model remains inconsistent across benchmarks and still underperforms specialized supervised systems on some tasks while inheriting biases and inefficiencies from brute-force scaling.\"\n  A9: \"The transformer architecture is an encoder–decoder architecture built entirely from stacked multi-head self-attention mechanism, encoder–decoder attention mechanism, and position-wise feed-forward layers, with positional encodings added to represent token order and masking used for autoregressive decoding.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Adaptive Radiation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Deep Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_026",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"A multi-knowledge feature-based relation extraction method builds separate representations from lexical context, shallow syntactic cues, dependency structure, and relational links between arguments, then evaluates classifiers using each source alone and in combination.\"\n  A2: \"This paper targets supervised classification of semantic relations between entity mentions in text.\"\n  A3: \"This paper targets sentence-level semantic relation extraction between pairs of entities mentioned in text.\"\n  A4: \"It uses high-precision lexico-syntactic pattern matching over shallowly parsed text to detect noun phrases in diagnostic constructions like 'such as,' 'including,' appositives, and enumerations, then converts those contexts into candidate hyponym–hypernym pairs.\"\n  A5: \"Because the method only harvests relations expressed in a narrow set of explicit high-precision patterns, it misses many valid hyponym links that are not stated in those forms and therefore has limited recall.\"\n  A6: \"Because the method only models the shortest dependency path in a single dependency parse, it can miss relation cues expressed outside that path or be degraded by parsing errors and path-selection mistakes.\"\n  A7: \"The paper targets automatic acquisition of hyponym–hypernym relations for building lexical taxonomies from unrestricted large text corpora.\"\n  A8: \"The paper broadens feature engineering across several manually designed knowledge channels but does not provide a unified learning mechanism for selecting or composing them beyond empirical feature combination comparisons.\"\n  A9: \"The shortest path dependency kernel computes similarity between candidate entity pairs by extracting the shortest dependency path between them in a parsed sentence and applying a structured kernel over the sequence of path nodes and dependency edges annotated with lexical, POS, and dependency-label information.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_027",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"This paper targets the extraction of secret information from software cryptographic implementations running on shared hardware by exploiting microarchitectural side channels.\"\n  A2: \"This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\"\n  A3: \"This paper targets the problem of recovering long-term secret keys from practical implementations of public-key cryptosystems such as Diffie-Hellman, RSA, and DSS.\"\n  A4: \"The attack depends on the adversary being able to run code on the same machine and repeatedly probe shared-cache behavior, so it is less applicable when such co-residency or repeated measurements are unavailable.\"\n  A5: \"It introduces a cache-timing attack that repeatedly measures access latency to chosen memory locations to detect cache hits and evictions caused by victim secret-dependent table lookups, then statistically maps those cache traces to key-dependent intermediate values.\"\n  A6: \"A timing side-channel attack statistically correlates many observed execution times of modular exponentiation and related arithmetic with hypotheses about secret-dependent intermediate operations caused by branches, loop lengths, carries, and reduction behavior.\"\n  A7: \"The attack depends on obtaining many timing samples and on implementation-specific data-dependent latency in arithmetic routines, so its effectiveness is reduced by low-resolution timing, high noise, or constant-time code.\"\n  A8: \"The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-table implementations.\"\n  A9: \"A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache behavior.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-11_genome_field_assign_3p_9a_028",
+    "task_type": "T2-11_genome_field_assign_3p_9a",
+    "prompt": "Three consecutive papers form a research lineage. Each paper has 3 genome slots: mechanism (core approach), niche (problem targeted), and limitation (known weakness). Below are all 9 genome slots shuffled. Infer the dominant evolutionary dynamics of the final transition from the genome evidence.\n\nShuffled genome slots:\n\n  A1: \"It reconstructs Fermi's path by analyzing his early interests in the absolute entropy constant, his engagement with shortcomings of Sommerfeld's quantization for identical particles, and his extension of Pauli's Exclusion Principle to non-interacting particle systems.\"\n  A2: \"This paper addresses the problem of reinterpreting scientific socialism and dialectical social theory using concepts from modern condensed matter physics and Advaita Vedanta.\"\n  A3: \"The authors combine molecular dynamics simulations of Lennard-Jones and covalently bonded nanoclusters with a continuum-theory treatment of oblique impact that incorporates elasticity, bulk viscosity, and surface tension.\"\n  A4: \"As a historical reconstruction, the paper does not introduce new physical formalism or experimentally testable results and depends on interpretation of historical sources.\"\n  A5: \"It proposes an analogical synthesis that maps emergence, geometric frustration, competing interactions, spin-glasses, and Mott insulators onto social dynamics and collective-individual relations within a universal consciousness framework.\"\n  A6: \"This paper addresses how to correctly characterize the normal restitution coefficient in oblique collisions of nanoclusters, where standard macroscopic definitions can fail.\"\n  A7: \"The study is limited to idealized nanocluster models and collision conditions, so its conclusions may not directly generalize to more complex materials, shapes, environments, or strongly plastic regimes.\"\n  A8: \"This paper addresses the historical and conceptual origins of Enrico Fermi's formulation of the statistics of an ideal monatomic gas.\"\n  A9: \"The paper appears to offer no operational definitions, formal model, or empirical validation that would test whether its physics-to-society and consciousness-based analogies are scientifically predictive.\"\n\n--- Genome Slot Definitions ---\nmechanism: The core technical approach — the heritable driver gene.\nniche: The precise problem, task, or domain targeted.\nlimitation: Known weakness or boundary condition.\n\nGiven the shuffled genome slots, determine the overall evolutionary dynamics of the final lineage transition.\n\nUse these labels:\nMutation: direct inheritance with local modification of the mechanism gene.\nAdaptive Radiation: inherited mechanism applied to a shifted niche.\nHybridization: mechanism combines elements from two or more distinct lineages.\nSpeciation: mechanism replaced while targeting the same or related niche.\nNiche Competition: same niche targeted without mechanism inheritance.\n\nAnswer with exactly one line:\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "~0%",
+      "subfield": "physics.pop-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-23_assign_3papers_9atoms",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Three-Paper Genome-Field Assignment"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  }
+]

@@ -1,0 +1,462 @@
+[
+  {
+    "instance_id": "T1-03_driver_vs_passenger_000",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Compared with prior residual CNN restoration models that expanded receptive field only through stacked convolutions, this work adds explicit non-local attention operators within the residual hierarchy to capture global correlations and s [text omitted]\nG2. Because the model relies on image-wide pairwise interaction computation inside non-local attention modules, it introduces substantial memory and computational overhead that can hinder scalability to larger images or more efficient deploy [text omitted]\nG3. This paper targets low-level image restoration tasks such as super-resolution, denoising, and compression artifact reduction, with emphasis on recovering fine structures from degraded images.\nG4. Residual Non-local Attention Networks use a deep hierarchy of residual groups and residual blocks with extensive skip connections, into which non-local attention modules are inserted to compute pairwise feature correlations across all sp [text omitted]\n\nSuccessor pressure / frontier identity:\nA blind real-image super-resolution method defined by ESRGAN-style adversarial restoration trained only on synthetic data from a multi-order stochastic degradation pipeline designed to emulate real photographic artifacts.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Hybridization",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_001",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. FAB-MAP represents each place as a bag of quantized visual words from local invariant features and performs Bayesian place inference with a generative model over binary word detections using a Chow-Liu tree to capture word co-occurrence [text omitted]\nG2. The method depends on a quantized bag-of-visual-words appearance representation and a tree-structured approximation of feature dependencies, so it does not exploit full geometric consistency and may miss higher-order correlations beyond [text omitted]\nG3. Compared with earlier visual SLAM systems that relied on metric geometry, frame-to-frame tracking, and small-workspace temporal continuity, this work shifts to scalable probabilistic place recognition using appearance-only bag-of-words w [text omitted]\nG4. This paper targets large-scale visual place recognition and loop-closure-based localization/mapping in environments where only image appearance is available and geometric continuity cannot be relied on.\n\nSuccessor pressure / frontier identity:\nA real-time monocular dense direct SLAM system that split-tracks pose by photometric alignment and maps keyframes by variationally regularized multi-view depth estimation on the full image domain.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G4"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Hybridization",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_002",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. The method depends on executable test-based feedback and a separately learned evaluator whose reward estimates can be imperfect, making performance contingent on the quality and availability of these supervision signals.\nG2. Compared with prior pretrained code generators trained mainly by supervised next-token likelihood, this work reframes decoding as sequential decision-making and adds RL fine-tuning with test execution rewards and a critic for dense rewar [text omitted]\nG3. This paper targets neural code generation from programming task specifications, with the goal of producing functionally correct programs rather than merely likely token sequences.\nG4. CodeRL initializes a pretrained code language model and then fine-tunes it with deep reinforcement learning using execution-based rewards from test cases plus a learned critic that predicts program quality to provide denser feedback duri [text omitted]\n\nSuccessor pressure / frontier identity:\nA continual agent-evolution method defined by forward learning from a persistent interaction memory, with explicit decoupling of experience collection and policy evolution plus stabilization against catastrophic drift.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Adaptive Radiation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_003",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Compared with prior pretrained code generators trained mainly by supervised next-token likelihood, this work reframes decoding as sequential decision-making and adds RL fine-tuning with test execution rewards and a critic for dense rewar [text omitted]\nG2. This paper targets neural code generation from programming task specifications, with the goal of producing functionally correct programs rather than merely likely token sequences.\nG3. CodeRL initializes a pretrained code language model and then fine-tunes it with deep reinforcement learning using execution-based rewards from test cases plus a learned critic that predicts program quality to provide denser feedback duri [text omitted]\nG4. The method depends on executable test-based feedback and a separately learned evaluator whose reward estimates can be imperfect, making performance contingent on the quality and availability of these supervision signals.\n\nSuccessor pressure / frontier identity:\nA continual agent-evolution method defined by forward learning from a persistent interaction memory, with explicit decoupling of experience collection and policy evolution plus stabilization against catastrophic drift.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G3",
+      "passenger_gene": "G2"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Adaptive Radiation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_004",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. It applies a fourth-order compact finite-difference discretization for the local spatial operators within an IMEX Crank-Nicolson time-stepping scheme and uses Simpson quadrature to evaluate the jump integral\nG2. Compared with prior second-order finite-difference and quadratic finite-element solvers for Bates-type PIDEs, the paper introduces and validates a high-order compact finite-difference baseline with the same second-order temporal integrat [text omitted]\nG3. The study is limited to benchmark-style comparisons on the transformed two-dimensional Bates PIDE and does not demonstrate broader robustness, adaptivity, or applicability to more complex contracts or higher-dimensional settings.\nG4. This paper addresses numerical pricing of options in the two-dimensional Bates stochastic volatility jump-diffusion model via its transformed partial integro-differential equation.\n\nSuccessor pressure / frontier identity:\nTheory of commodity-tax mechanism design with correlated consumer valuations, fairness defined over information-rent distributions via second-order stochastic dominance, and non-random rationing-based frontier characterization.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_005",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. It introduces an attention-based neural encoder-decoder that encodes the source sentence into distributed representations and uses a feed-forward conditional language model with soft alignment over source positions, plus optional source- [text omitted]\nG2. The paper targets single-sentence abstractive summarization: generating a shorter summary sentence from an input sentence.\nG3. Compared with prior lexical-salience and graph-centrality summarizers, this work replaces heuristic extraction with a fully trainable neural conditional generation model that attends to source positions during decoding.\nG4. The model's decoder is relatively shallow and relies on beam search and hand-designed source-biasing to improve faithfulness, indicating that factual consistency and precise copying are not fully solved within the base architecture.\n\nSuccessor pressure / frontier identity:\nAn abstractive summarization method that turns the basic attention-based encoder-decoder RNN into a long-document summarizer by coupling dynamic source attention with copy-aware generation and decoding controls to better retain salient factual content.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G2"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Adaptive Radiation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_006",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. This paper targets intrusion detection in nonstationary system activity where attacks emerge through evolving interactions over time rather than static snapshots.\nG2. Compared with prior static graph-based intrusion detectors, this work replaces a single static representation with a dynamic relational model that explicitly factorizes stable topology and transient behavioral signals.\nG3. A disentangled dynamic intrusion detection method models system event streams as temporal relational data and learns separate latent channels for stable structural context and time-varying behavioral deviations using temporal encoding pl [text omitted]\nG4. The paper leaves unclear how disentanglement quality is guaranteed or evaluated in practice, especially when stable structure and attack behavior are strongly entangled in real system traces.\n\nSuccessor pressure / frontier identity:\nAn IoT-specific deep IDS that replaces manual signature engineering with hierarchical representation learning over aggregated network and system telemetry to detect subtle attack and anomaly patterns in resource-constrained edge-connected devices.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G3",
+      "passenger_gene": "G1"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Adaptive Radiation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_007",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Compared with prior work focused mainly on quasiparticle energies or simpler theory-experiment comparisons, this paper provides momentum-resolved EMS data over broad energies and directly tests GW against cumulant expansion for lifetimes [text omitted]\nG2. This paper addresses measuring and explaining the valence spectral function of crystalline silicon across energy and momentum using electron momentum spectroscopy and many-body theory.\nG3. It combines high-energy high-resolution electron momentum spectroscopy measurements along symmetry directions with first-principles Green's-function calculations evaluated in the GW and cumulant expansion approximations\nG4. The study is limited to silicon and to comparing two approximate many-body treatments, so it does not establish a universally accurate description of satellite structures across materials or beyond these approximations.\n\nSuccessor pressure / frontier identity:\nUnbiased AFQMC mapping of the finite-temperature T-U crossover in the half-filled square-lattice Hubbard model, identifying a Bad Metal regime between Fermi liquid and Mott insulator.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G3",
+      "passenger_gene": "G4"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_008",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Subject-specific surrogate modeling of knee contact stress fields and injury-relevant hotspot prediction during a 90-degree change-of-direction task.\nG2. Compared with prior MeshGraphNet-style surrogates that rely mainly on stacked local propagation, this work introduces and evaluates explicit region-to-region interaction as a more structure-aware design for knee mechanics prediction.\nG3. The study appears limited to one movement condition and benchmark setting, so generalization across broader activities, anatomies, loading regimes, and clinical deployment scenarios remains unproven.\nG4. The paper benchmarks a deep-stacked MeshGraphNet-style local message-passing baseline against three architectures that add explicit region-level interaction to better capture long-range biomechanical dependencies under matched compute bu [text omitted]\n\nSuccessor pressure / frontier identity:\nA theoretical astrophysics proposal that models magnetic-field-induced graviton-photon conversion from supernova bursts as prompt and delayed kilohertz radio transients, with SN 1987A as the motivating test case.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G2"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_009",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Noise-conditional score-based generative modeling learns a neural network to estimate the score (gradient of log density) of Gaussian-perturbed data at multiple noise scales and generates samples by annealed Langevin dynamics that progre [text omitted]\nG2. The method depends on computationally expensive iterative annealed Langevin sampling and careful choice of noise scales and step sizes, making generation slower and more tuning-sensitive than direct one-shot generators.\nG3. This paper targets high-quality generative modeling and sampling of complex multimodal data distributions without requiring explicit likelihood evaluation or adversarial training.\nG4. Compared with earlier score matching and energy-based methods that estimate scores on raw data or use single-noise formulations, this work introduces multi-scale Gaussian perturbations with denoising score matching and annealed Langevin [text omitted]\n\nSuccessor pressure / frontier identity:\nT-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI); reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor; ELBO training.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_010",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Compared with prior work focused mainly on autocalibration or separate fairness constraints, this paper explicitly unifies them through multicalibration and adapts the concept to actuarial insurance pricing practice.\nG2. Its evidence is mainly a case study in motor insurance and practical procedures rather than a broadly validated algorithmic framework with extensive comparative experiments or formal guarantees across settings.\nG3. The paper addresses nonlife insurance pricing by seeking premiums that are simultaneously balanced within premium-homogeneous groups and fair with respect to protected attributes.\nG4. It formulates fairness as conditional mean independence and combines it with autocalibration into multicalibration, then proposes practical implementation via local regression and within-group bias correction with credibility adjustments\n\nSuccessor pressure / frontier identity:\nFairness-constrained causal policy learning for environmental source interventions under bipartite network interference with cost-aware optimization and health-equity objectives.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G1"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_011",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Variational Autoencoder (Auto-Encoding Variational Bayes): jointly train an encoder network that amortizes variational posterior inference and a decoder generative network by maximizing the ELBO, using the reparameterization trick to exp [text omitted]\nG2. This paper targets scalable learning and inference for continuous latent-variable probabilistic generative models on large datasets.\nG3. The method as presented is mainly suited to continuous latent variables with simple approximate posteriors such as diagonal Gaussians, limiting expressiveness and making discrete latents less directly tractable.\nG4. Compared with earlier variational Bayes methods that used per-datapoint variational parameters or expensive iterative inference, this work replaces them with a shared inference network and backpropagation-friendly reparameterized sampling.\n\nSuccessor pressure / frontier identity:\nA likelihood-trained diffusion model built from a fixed small-step Gaussian noising chain and a learned reverse denoising Markov chain grounded in nonequilibrium thermodynamics.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G2"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Niche Competition",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_012",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. It formulates HDR modulo recovery as an optimization problem with a deep prior and unrolls the solver into a lightweight optimization-inspired neural network with a convolutional denoiser and a scaling-equivariance-based self-supervised [text omitted]\nG2. The paper addresses high-dynamic-range image reconstruction from modulo imaging measurements, especially under noisy and out-of-distribution conditions.\nG3. The approach still depends on learned priors and adaptation procedures, so its performance may remain sensitive to distribution shift and the assumptions of the modulo imaging model.\nG4. Compared with earlier recovery networks, it replaces generic end-to-end designs with a lightweight unrolled optimization architecture and adds scaling-equivariant self-supervised test-time adaptation for unseen modulo images.\n\nSuccessor pressure / frontier identity:\nA hybrid image-compression method that substitutes JPEG's transform coding with k-means-based pixel clustering and pruned closed frequent sequence mining to encode recurring visual patterns compactly.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G2"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_013",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. This paper targets top-N recommendation from sparse implicit user–item interaction data.\nG2. Compared with prior graph recommenders such as LightGCN that use only supervised interaction objectives on the user–item graph, this work adds a contrastive self-supervised objective over multiple perturbed graph views while keeping prop [text omitted]\nG3. The method depends on hand-designed stochastic graph perturbations and a manually balanced contrastive regularizer, leaving sensitivity to augmentation choice and loss weighting unresolved.\nG4. It extends a lightweight bipartite graph collaborative filtering model with self-supervised contrastive learning by creating perturbed graph views via node/edge dropout and jointly optimizing recommendation loss plus agreement between co [text omitted]\n\nSuccessor pressure / frontier identity:\nA robust graph contrastive recommender for sparse noisy user–item graphs whose heritable core is reliability-aware view generation plus noise-suppressing, false-negative-aware contrastive alignment coupled with recommendation supervision.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G1"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Mutation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_014",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. It analyzes the infinite-permeability limit of the Laplace boundary-value problem to show that the exterior solution is fixed entirely by the body's outer boundary geometry, regardless of interior details\nG2. The main limitation is that the result is exact only in the ideal infinite-permeability limit, with finite-permeability support provided mainly by numerical approximation rather than broad experimental validation or sharp error bounds.\nG3. This paper addresses magnetization and external field determination for high-permeability bodies in static Laplace transmission problems, especially when internal structure may vary or deform.\nG4. Compared with prior textbook treatments that emphasized only quasi-equipotential interiors and normal external fields at boundaries, this work explicitly characterizes the entire exterior response as outer-surface-determined.\n\nSuccessor pressure / frontier identity:\nTime-domain surface-only MAS with first-order impedance boundary modeling for transient scattering by moderately conductive 2D cylinders.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G4"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_015",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. The authors critically analyze the configuration content and triplet-reference behavior of MRSF-TDDFT and propose practical diagnostics and strategies for detecting problematic regions during potential energy surface exploration and dyna [text omitted]\nG2. Compared with prior work that presented MRSF-TDDFT as an efficient and versatile photochemistry tool, this study shifts the focus to two concrete failure modes and their practical diagnosis.\nG3. The paper does not remove these failures at the formal method level but mainly identifies, characterizes, and suggests ways to detect them.\nG4. This paper addresses the reliability of MRSF-TDDFT for modeling excited-state potential energy surfaces and photochemical processes, especially in regions relevant to nonadiabatic dynamics.\n\nSuccessor pressure / frontier identity:\nA philosophical-theoretical reanalysis of classical spacetime formalism arguing that analyticity, via unique continuation, induces hyperdeterministic field behavior and dissolves standard smooth-manifold-based indeterminism arguments.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G4"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_016",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. exact continuous-time formulas and sharp discrete-time finite-sample bounds plus correction terms for terminal-step crossings and overshoots\nG2. The paper’s guarantees are benchmark-theoretic and focused on binary-outcome martingale calibration, so applicability may weaken for richer outcome spaces, model-based causal explanations, or settings where forecast paths violate the bou [text omitted]\nG3. The paper addresses how to benchmark and diagnose extreme pathwise behavior in sequential probability forecasts for binary outcomes, especially cases where forecasts become very high before the event ultimately fails.\nG4. It models correctly sequentially calibrated forecast paths as bounded martingales ending at the realized outcome and derives conditional benchmark distributions and tail probabilities for extreme-path statistics\n\nSuccessor pressure / frontier identity:\nLévy-process trust dynamics theory for jump-driven social behavior, combining diffusion, Poisson shocks, and random jump magnitudes to model fragile cooperation trajectories.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_017",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Variational Autoencoder (Auto-Encoding Variational Bayes): jointly train an encoder network that amortizes variational posterior inference and a decoder generative network by maximizing the ELBO, using the reparameterization trick to exp [text omitted]\nG2. The method as presented is mainly suited to continuous latent variables with simple approximate posteriors such as diagonal Gaussians, limiting expressiveness and making discrete latents less directly tractable.\nG3. This paper targets scalable learning and inference for continuous latent-variable probabilistic generative models on large datasets.\nG4. Compared with earlier variational Bayes methods that used per-datapoint variational parameters or expensive iterative inference, this work replaces them with a shared inference network and backpropagation-friendly reparameterized sampling.\n\nSuccessor pressure / frontier identity:\nT-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI); reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor; ELBO training.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G1",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Niche Competition",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_018",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. heavy domain randomization over dynamics, contacts, terrain, disturbances\nG2. This paper targets control of physical bipedal robots for versatile, highly dynamic, and robust locomotion across varied commands, disturbances, and terrain conditions.\nG3. The approach depends on carefully engineered reward terms and extensive simulation randomization, leaving unclear how sensitive performance is to these design choices and how well the learned policy extrapolates beyond the randomized tra [text omitted]\nG4. A sim-to-real reinforcement learning locomotion controller is trained as a neural feedback policy that maps proprioceptive state and motion commands directly to low-level actuation targets under broad command sampling, reward shaping\n\nSuccessor pressure / frontier identity:\nUnified sim-to-real humanoid parkour RL: one obstacle-conditioned low-level policy trained with curriculum and robustness techniques to execute vaults, leaps, climbs, and recovery behaviors as a single compositional control repertoire.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Adaptive Radiation",
+      "source": "golden_trace",
+      "level": "L0",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  },
+  {
+    "instance_id": "T1-03_driver_vs_passenger_019",
+    "task_type": "T1-03_driver_vs_passenger",
+    "prompt": "A predecessor genome carries several candidate genes. A successor genome later appears with the successor pressure shown below. Select both the predecessor gene that most causally drives the lineage transition and the strongest passenger confounder: a gene that may transfer or look relevant, but should not define the inheritance path.\n\nPredecessor genes:\nG1. Compared with prior work relying mainly on USPTO-based citation data, this study introduces globally integrated citation information to correct international measurement bias in disruptiveness comparisons.\nG2. The paper's conclusions depend on the completeness and comparability of the global citation network and remain tied to the assumptions and validity limits of the CD index itself.\nG3. This paper addresses cross-country measurement of disruptive innovation when the CD index is computed from patent citation data that omit international citations.\nG4. The authors build or use a global patent citation network to quantify the bias from missing cross-border citations and adjust country-level CD index estimates accordingly\n\nSuccessor pressure / frontier identity:\nLongitudinal wearable-EHR perioperative arthroplasty recovery analysis using piecewise mixed models and survival methods to quantify pre-op decline, post-op step-count recovery phases, and baseline-dependent recovery timing.\n\nAnswer with exactly two lines:\nDriverGene: G#\nPassengerGene: G#",
+    "choices": {},
+    "gold_answer": {
+      "driver_gene": "G4",
+      "passenger_gene": "G3"
+    },
+    "metadata": {
+      "target_skill": "contextual_driver_passenger",
+      "dynamics": "Speciation",
+      "source": "science_supplement",
+      "capability": "Genome Abstraction",
+      "original_task_type": "Q0-G2_driver_vs_passenger",
+      "domain": "science",
+      "display_title": "Driver-Passenger Roles"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction"
+  }
+]

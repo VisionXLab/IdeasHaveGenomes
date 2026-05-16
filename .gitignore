@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Secrets and private overrides
+config_private.py
+local_config.py
+*.key
+*.pem
+
+# Runtime outputs
+gene_exam/results/
+gene_arena/results/
+outputs/
+logs/
+tmp/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,266 @@
+{
+  "trace_id": "medicine_MedicalImageAnalysis",
+  "domain": "medicine",
+  "direction": "MedicalImageAnalysis",
+  "subfield": "Medical Imaging / Biomedical Image Foundation Models",
+  "frontier_justification": "This direction remains a May 2026 frontier because medical VLMs have moved from single-task report generation toward conversational image interpretation, but clinical radiology is multimodal and longitudinal. The next step is a grounded, auditable agent that connects many imaging modalities, patient context, prior studies, workflow constraints, and calibrated uncertainty.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+      "year": 2015,
+      "venue": "MICCAI 2015",
+      "arxiv_id": "1505.04597",
+      "paper_type": "research",
+      "key_contribution": "U-Net: encoder-decoder architecture with skip connections for biomedical image segmentation; trains end-to-end from very few annotated images using heavy data augmentation; wins ISBI 2015 cell segmentation and tracking challenges.",
+      "idea_genome": {
+        "problem_genome": "Deep CNNs require large labeled datasets, but biomedical image annotation is extremely expensive and requires expert pathologists or radiologists; prior methods used sliding-window classification which was slow and lost spatial context.",
+        "mechanism_genome": "Symmetric encoder-decoder architecture: contracting path (convolutional + pooling) captures context, expanding path (upsampling + convolution) enables precise localization; skip connections concatenate encoder features to decoder for preserving fine-grained spatial information; aggressive data augmentation (elastic deformations) enables training from few images.",
+        "observation_genome": "U-Net wins ISBI 2012 cell segmentation challenge and ISBI 2015 cell tracking challenge; trains from ~30 annotated images using augmentation; establishes the dominant architecture paradigm for biomedical image segmentation for the next decade; adopted across radiology, pathology, microscopy, and ophthalmology.",
+        "limitation_genome": "Fixed architecture requires manual hyperparameter selection for each new dataset (resolution, depth, augmentation); 2D-only design requires slice-by-slice processing for volumetric data; single-task model must be retrained for each segmentation target; no cross-modality transfer capability."
+      }
+    },
+    {
+      "title": "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation",
+      "year": 2021,
+      "venue": "Nature Methods 2021",
+      "arxiv_id": "N/A (Nature Methods doi:10.1038/s41592-020-01008-z)",
+      "paper_type": "research",
+      "key_contribution": "nnU-Net: self-configuring framework that automatically adapts U-Net architecture, preprocessing, training, and post-processing for any new biomedical segmentation task; outperforms most specialized solutions on 23 international competition datasets without manual intervention.",
+      "idea_genome": {
+        "problem_genome": "U-Net's success spawned hundreds of architectural variants (Attention U-Net, ResU-Net, V-Net, etc.) but each requires extensive manual tuning for new datasets; the field focused on novel architectures while neglecting systematic analysis of which design choices actually matter for performance.",
+        "mechanism_genome": "Systematic decomposition of segmentation pipeline into fixed parameters (justified by domain knowledge), rule-based parameters (interdependent on dataset properties like spacing and resolution), and empirically optimized parameters (searched via cross-validation); automatically configures 2D, 3D full-resolution, and 3D cascade architectures with dataset-specific preprocessing, augmentation, and post-processing.",
+        "observation_genome": "nnU-Net outperforms most specialized solutions on 23 public datasets from international biomedical segmentation competitions without any manual intervention; demonstrates that systematic pipeline configuration matters more than novel architectures; widely adopted as the baseline to beat in medical image segmentation.",
+        "limitation_genome": "Still trains a separate model per dataset with no transfer learning across tasks or modalities; requires task-specific labeled data; does not leverage pretrained visual representations; cannot handle new segmentation targets at inference time without retraining; no language or clinical context integration."
+      }
+    },
+    {
+      "title": "STU-Net: Scalable and Transferable Medical Image Segmentation Models Empowered by Large-Scale Supervised Pre-training",
+      "year": 2023,
+      "venue": "arXiv 2023",
+      "arxiv_id": "2304.06716",
+      "paper_type": "research",
+      "key_contribution": "STU-Net: largest pre-trained medical image segmentation model (up to 1.4B parameters) based on scalable U-Net variants; pre-trained on the largest public medical segmentation dataset (>100K annotations from TotalSegmentator); demonstrates strong transferability across 14 downstream datasets covering diverse modalities.",
+      "idea_genome": {
+        "problem_genome": "nnU-Net trains task-specific models from scratch for each dataset without leveraging pre-trained representations; the medical imaging field lacked a scaling study exploring whether larger, pre-trained segmentation models would yield better transfer learning — a gap that foundation models in NLP and natural image understanding had already addressed.",
+        "mechanism_genome": "Redesigned convolutional blocks in nnU-Net to enable scalable depth and width combinations, creating STU-Net variants from 14M to 1.4B parameters; large-scale supervised pre-training on TotalSegmentator dataset with over 100K volumetric annotations; systematic evaluation of scaling laws for medical image segmentation.",
+        "observation_genome": "STU-Net 1.4B is the largest medical segmentation model to date; demonstrates strong direct-inference transferability on 14 downstream datasets and improved fine-tuning performance on 3 datasets; shows that optimal scaling requires jointly increasing depth and width; pre-training on large medical datasets significantly improves downstream task performance.",
+        "limitation_genome": "Supervised pre-training requires large labeled datasets (TotalSegmentator) which are expensive to create; still requires task-specific fine-tuning for each new target; no promptable or interactive segmentation capability; limited to 3D CT volumes from the pre-training domain."
+      }
+    },
+    {
+      "title": "Segment Anything",
+      "year": 2023,
+      "venue": "ICCV 2023",
+      "arxiv_id": "2304.02643",
+      "paper_type": "research",
+      "key_contribution": "SAM (Segment Anything Model): promptable foundation model for image segmentation trained on 1 billion masks from 11 million images; enables zero-shot segmentation via points, boxes, or text prompts without task-specific training.",
+      "idea_genome": {
+        "problem_genome": "nnU-Net and specialized segmentation models require task-specific labeled training data and retraining for each new target; there was no general-purpose segmentation model that could handle arbitrary objects via user prompts at inference time, limiting the scalability and interactivity of segmentation systems.",
+        "mechanism_genome": "Vision Transformer (ViT) image encoder produces image embeddings; lightweight prompt encoder handles points, boxes, or text as segmentation prompts; mask decoder generates valid masks from combined image and prompt embeddings; trained on SA-1B dataset containing 1 billion masks from 11 million images via a data engine that iteratively improves both model and annotations.",
+        "observation_genome": "SAM achieves zero-shot segmentation performance competitive with or superior to fully supervised task-specific models; transfers effectively across diverse natural image domains; SA-1B is the largest segmentation dataset ever created; enables interactive annotation tools that dramatically accelerate labeling workflows.",
+        "limitation_genome": "Trained on natural images with limited biomedical data; performance degrades significantly on medical images with low contrast, unusual modalities (CT, MRI, microscopy), and fine structures; requires manual prompting per object; 2D-only architecture cannot process volumetric medical scans natively."
+      }
+    },
+    {
+      "title": "Segment anything in medical images",
+      "year": 2024,
+      "venue": "Nature Communications 2024",
+      "arxiv_id": "2304.12306",
+      "paper_type": "research",
+      "key_contribution": "MedSAM: adapts the Segment Anything Model to universal medical image segmentation by fine-tuning on 1.57 million image-mask pairs covering 10 imaging modalities and 30+ cancer types; demonstrates better accuracy and robustness than modality-specific specialist models.",
+      "idea_genome": {
+        "problem_genome": "SAM's zero-shot performance degrades on medical images due to domain gap between natural and biomedical images; medical imaging spans diverse modalities (CT, MRI, X-ray, ultrasound, endoscopy, microscopy, OCT) with vastly different appearance characteristics that SAM was not exposed to during training.",
+        "mechanism_genome": "Fine-tunes SAM's image encoder and mask decoder on a large-scale medical image dataset of 1,570,263 image-mask pairs collected from public medical segmentation datasets spanning 10 imaging modalities and 30+ cancer types; maintains SAM's promptable interface (bounding box prompts) while adapting visual representations to the biomedical domain.",
+        "observation_genome": "MedSAM outperforms modality-specific specialist models on 86 internal validation tasks and 60 external validation tasks; demonstrates robust generalization across unseen medical imaging domains and anatomical structures; establishes the first universal medical image segmentation foundation model.",
+        "limitation_genome": "Processes 2D images or individual slices rather than native 3D volumes; requires bounding box prompts which limit automation; single-task model focused on segmentation without detection or recognition capabilities; does not integrate clinical text or reports for context-aware segmentation."
+      }
+    },
+    {
+      "title": "SAM 2: Segment Anything in Images and Videos",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "2408.00714",
+      "paper_type": "research",
+      "key_contribution": "SAM 2: extends Segment Anything to video with a streaming memory architecture for temporal propagation; 6x faster than SAM on images with better accuracy; trained on SA-V dataset (largest video segmentation dataset); enables treating 3D medical volumes as video sequences for volumetric segmentation.",
+      "idea_genome": {
+        "problem_genome": "SAM operates on individual 2D images and cannot propagate segmentation across video frames or volumetric slices; medical imaging increasingly requires 3D volumetric analysis (CT, MRI) where slice-by-slice processing loses spatial continuity; no foundation model existed for promptable segmentation in both images and videos.",
+        "mechanism_genome": "Transformer architecture with streaming memory that maintains a memory bank of past frame features for temporal propagation; promptable on any frame with points, boxes, or masks; memory attention mechanism enables real-time tracking across video frames; trained on SA-V dataset with 642K masklets in 51K videos built via a model-in-the-loop data engine.",
+        "observation_genome": "SAM 2 achieves better accuracy with 3x fewer interactions than prior video segmentation approaches; 6x faster than SAM on images while being more accurate; the streaming memory architecture naturally extends to 3D medical volumes by treating slices as video frames; spawns Medical SAM 2 adaptations for volumetric medical segmentation.",
+        "limitation_genome": "Designed for natural videos, not optimized for medical imaging modalities; streaming memory adds latency compared to parallel volumetric processing; requires adaptation for modality-specific medical characteristics; still fundamentally a segmentation model without detection, recognition, or clinical reasoning capabilities."
+      }
+    },
+    {
+      "title": "Towards a general-purpose foundation model for computational pathology",
+      "year": 2024,
+      "venue": "Nature Medicine 2024",
+      "arxiv_id": "2308.15474",
+      "paper_type": "research",
+      "key_contribution": "UNI: general-purpose self-supervised pathology foundation model pre-trained on over 100 million tissue patches from 100,000+ diagnostic H&E whole slide images across 20 major tissue types; evaluated on 33 computational pathology tasks with new capabilities including resolution-agnostic classification and few-shot disease subtyping across 108 cancer types.",
+      "idea_genome": {
+        "problem_genome": "Computational pathology models were typically trained on small, task-specific datasets for individual cancer types or tissue sites; no general-purpose pathology foundation model existed that could transfer across diverse tissue types, cancer classifications, and pathology tasks at scale.",
+        "mechanism_genome": "Vision Transformer (ViT-Large) trained with DINOv2 self-supervised learning on 100+ million tissue patches extracted from over 100,000 diagnostic H&E-stained whole slide images spanning 20 major tissue types; pre-training data spans 77+ TB from Mass General Brigham pathology archives; evaluated on 33 representative clinical tasks.",
+        "observation_genome": "UNI outperforms previous state-of-the-art pathology models across 33 clinical tasks; demonstrates novel capabilities: resolution-agnostic tissue classification, slide classification using few-shot class prototypes, and disease subtyping generalization to 108 cancer types in the OncoTree system; establishes the pathology foundation model paradigm.",
+        "limitation_genome": "Pre-trained only on H&E-stained slides without immunohistochemistry or special stains; does not integrate clinical text from pathology reports; focused on patch-level and slide-level classification without spatial understanding of tissue architecture; requires additional slide-level aggregation for whole slide inference."
+      }
+    },
+    {
+      "title": "Virchow: A Million-Slide Digital Pathology Foundation Model",
+      "year": 2024,
+      "venue": "Nature Medicine 2024",
+      "arxiv_id": "2309.07778",
+      "paper_type": "research",
+      "key_contribution": "Virchow: 632M-parameter ViT pathology foundation model trained on 1.5 million H&E whole slide images using DINOv2 self-supervised learning; enables clinical-grade pan-cancer detection with 0.949 AUC across 17 cancer types and 0.937 AUC on 7 rare cancers, demonstrating foundation models can achieve clinical-grade pathology performance.",
+      "idea_genome": {
+        "problem_genome": "UNI trained on 100K WSIs from a single institution (Mass General Brigham); pathology AI needed models trained at truly massive scale with diverse tissue sources to achieve clinical-grade performance, especially for rare cancer detection where training data is inherently scarce.",
+        "mechanism_genome": "ViT-H/14 (632M parameters) trained with DINOv2 self-supervised learning on 1.5 million hematoxylin and eosin stained whole slide images from diverse tissue and specimen types at Paige/Memorial Sloan Kettering; industrial-scale training pipeline processing millions of diagnostic slides; evaluated on pan-cancer detection across 17 cancer types including 7 rare cancers.",
+        "observation_genome": "Virchow achieves 0.949 overall AUC on pan-cancer detection across 17 cancer types; 0.937 AUC on 7 rare cancer types demonstrates strong generalization even for data-scarce conditions; 1.5M WSI training scale is 15x larger than UNI's dataset; establishes that industrial-scale self-supervised pre-training enables clinical-grade pathology AI.",
+        "limitation_genome": "Trained only on H&E slides like UNI, excluding immunohistochemistry and special stains; single-institution bias from MSK pathology archives; does not generate pathology reports or integrate with clinical text; focused on cancer detection without sub-classification or grading; requires separate slide-level aggregation models."
+      }
+    },
+    {
+      "title": "A foundation model for joint segmentation, detection and recognition of biomedical objects across nine modalities",
+      "year": 2024,
+      "venue": "Nature Methods 2024",
+      "arxiv_id": "2405.12971",
+      "paper_type": "research",
+      "key_contribution": "BiomedParse: first biomedical foundation model that jointly performs segmentation, detection, and recognition for 82 object types across 9 imaging modalities using natural language descriptions as prompts; trained on 6 million image-mask-text triples.",
+      "idea_genome": {
+        "problem_genome": "MedSAM achieves universal medical segmentation but treats it as a single task requiring bounding box prompts; clinical workflows require simultaneous detection (finding objects), segmentation (delineating boundaries), and recognition (identifying what was found) — tasks traditionally handled by separate models, creating a fragmented analysis pipeline.",
+        "mechanism_genome": "Unified architecture that jointly performs segmentation, detection, and recognition using text descriptions as prompts; trained on a dataset of 6 million triples (image, segmentation mask, text description) across 9 imaging modalities; text-guided segmentation enables querying with natural language (e.g., 'segment the left ventricle'); cross-modal alignment between visual features and biomedical text descriptions.",
+        "observation_genome": "BiomedParse outperforms existing methods on segmentation across 9 imaging modalities with larger improvements on objects with irregular shapes; handles 82 object types; joint detection-segmentation-recognition eliminates the need for separate task-specific models; text prompts enable more intuitive and automated clinical workflows.",
+        "limitation_genome": "Still operates on 2D images rather than native 3D volumes; text prompts are descriptive labels rather than full clinical reasoning; cannot generate diagnostic reports or engage in clinical dialogue about findings; training requires curated text descriptions that may not capture the full clinical context of each image."
+      }
+    },
+    {
+      "title": "CheXagent: Towards a Foundation Model for Chest X-Ray Interpretation",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "2401.12208",
+      "paper_type": "research",
+      "key_contribution": "CheXagent: first vision-language foundation model specifically designed for comprehensive chest X-ray interpretation; introduces CheXinstruct (instruction-tuning dataset from 28 datasets), CheXbench (8-task benchmark), and demonstrates that AI-drafted reports improve radiologist writing efficiency in 81% of cases.",
+      "idea_genome": {
+        "problem_genome": "BiomedParse and MedSAM perform visual tasks (segmentation, detection) but cannot generate the clinical text interpretation that radiologists produce; chest X-ray interpretation requires integrating visual findings with clinical reasoning to produce structured reports — a fundamentally multimodal vision-language task that pure vision models cannot address.",
+        "mechanism_genome": "Three-component architecture: clinical LLM for parsing and generating radiology text, vision encoder (ViT) for representing CXR images, and bridging network for cross-modal alignment; instruction-tuned on CheXinstruct dataset curated from 28 public CXR datasets covering diverse interpretation tasks; evaluated on CheXbench spanning 8 clinically-relevant tasks from abnormality detection to report generation.",
+        "observation_genome": "CheXagent outperforms prior general-domain and medical-domain foundation models on CheXbench; AI-drafted reports improve writing efficiency for radiology residents (81% of cases) and attending radiologists (61% of cases) without loss of quality; demonstrates end-to-end chest X-ray interpretation from image to structured report.",
+        "limitation_genome": "Specialized to chest X-rays only — does not generalize to other imaging modalities; instruction-tuning data primarily from English-language datasets limiting multilingual clinical deployment; generates reports but does not support multi-turn clinical dialogue or follow-up questioning; no integration with patient history or prior imaging for longitudinal analysis."
+      }
+    },
+    {
+      "title": "RadVLM: A Multitask Conversational Vision-Language Model for Radiology",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "arxiv_id": "2502.03333",
+      "paper_type": "research",
+      "key_contribution": "RadVLM: 7B-parameter multitask conversational VLM for chest X-ray interpretation supporting report generation, abnormality classification, visual grounding, and multi-turn conversational interaction in a single unified model; trained on 1M+ instruction instances; achieves state-of-the-art conversational and grounding capabilities while remaining competitive across all radiology tasks.",
+      "idea_genome": {
+        "problem_genome": "CheXagent generates reports and performs classification but does not support interactive multi-turn dialogue about radiological findings; clinicians need to ask follow-up questions, request visual grounding of specific findings, and engage in conversational workflows rather than receiving static one-shot outputs.",
+        "mechanism_genome": "7B-parameter vision-language model fine-tuned on 1M+ image-instruction pairs curated from public CXR datasets; supports both single-turn tasks (report generation, abnormality classification, visual grounding) and multi-turn conversational interactions within a unified architecture; visual grounding enables the model to point to specific anatomical regions referenced in text.",
+        "observation_genome": "RadVLM achieves state-of-the-art on conversational capabilities and visual grounding tasks while remaining competitive on report generation and classification; demonstrates that a single compact model can serve as a multitask clinical assistant for CXR interpretation; visual grounding enables clinicians to verify AI reasoning by inspecting which image regions support each finding.",
+        "limitation_genome": "Still specialized to chest X-rays, not generalizing to CT, MRI, pathology, or other modalities; 7B parameters may limit complex clinical reasoning compared to larger models; multi-turn dialogue capability is demonstrated but not validated in real clinical workflows; no integration with patient EHR data or longitudinal imaging."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "nnU-Net is a directed mutation of the U-Net lineage: rather than proposing a new architecture, it systematically optimizes the entire U-Net pipeline (preprocessing, architecture configuration, training, post-processing) through automated parameter selection. The core U-Net encoder-decoder with skip connections remains the unchanged genetic backbone, but the surrounding infrastructure evolves — analogous to a mutation that improves an organism's regulatory genes rather than its structural genes, producing superior environmental adaptation without changing the fundamental body plan."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "STU-Net is a direct mutation of the nnU-Net paradigm: it inherits the core convolutional U-Net architecture and refines its scaling properties by redesigning blocks to enable width and depth scaling up to 1.4B parameters. The key mutation is adding large-scale supervised pre-training on TotalSegmentator, transforming nnU-Net from a train-from-scratch pipeline into a pre-train-then-transfer paradigm while keeping the fundamental architecture unchanged — analogous to an organism developing larger body size to access new ecological resources."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "SAM represents a speciation event from the biomedical segmentation lineage. While nnU-Net perfected task-specific segmentation through automated configuration, SAM evolves in a completely different ecological niche: promptable, zero-shot, universal segmentation trained on natural images at unprecedented scale. The reproductive isolation is complete — different training data (natural vs. biomedical), different paradigm (promptable foundation model vs. self-configuring specialist), and different target users (general computer vision vs. biomedical researchers). This creates a new species that later enables cross-pollination with the medical domain."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "MedSAM is a directed mutation of SAM: the same promptable segmentation architecture (ViT encoder + prompt encoder + mask decoder) is fine-tuned on 1.57 million medical image-mask pairs to adapt from natural images to the biomedical domain. The core mechanism is unchanged — what evolves is the model's internal representations through domain-specific training data. This is analogous to an organism adapting to a new habitat through accumulated beneficial mutations rather than a fundamentally new body plan, inheriting SAM's promptable interface while specializing its visual features for medical imaging characteristics."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "SAM 2 is a direct mutation of SAM that extends the promptable segmentation paradigm from static images to video sequences. The core ViT encoder and promptable interface are preserved, but a streaming memory architecture is added to enable temporal propagation across frames. This mutation is critical for medical imaging because it enables treating 3D volumetric scans (CT, MRI) as video sequences, naturally extending SAM's 2D capabilities to volumetric segmentation without redesigning the fundamental architecture."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "UNI radiates from the general medical image segmentation niche occupied by MedSAM into the specialized computational pathology niche. While MedSAM provides universal segmentation across modalities, UNI adapts self-supervised pretraining specifically for pathology — training on 100M+ tissue patches from 100K diagnostic WSIs. This adaptive radiation produces a specialist organism exquisitely adapted to the pathology ecosystem, with new capabilities (few-shot cancer subtyping, resolution-agnostic classification) that a generalist segmentation model cannot achieve."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "Virchow competes directly with UNI in the pathology foundation model niche but with a different competitive strategy: 15x more training data (1.5M vs. 100K WSIs), larger model (632M vs. 307M parameters), and industrial-scale infrastructure from Paige/MSK. Both use DINOv2 self-supervised learning on H&E slides, targeting the same ecological niche of general-purpose pathology representations, but Virchow demonstrates that clinical-grade performance (0.949 AUC pan-cancer) requires data scale beyond what academic institutions can achieve."
+    },
+    {
+      "from_idx": 7,
+      "to_idx": 8,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "BiomedParse hybridizes MedSAM's visual segmentation foundation with natural language processing from the vision-language model lineage. From MedSAM it inherits universal medical image segmentation across modalities, and from CLIP-style vision-language models it inherits text-guided visual understanding. The offspring is a new hybrid organism that can simultaneously segment, detect, and recognize — using text descriptions rather than geometric prompts, combining the visual perception strength of the segmentation lineage with the semantic understanding of the language model lineage."
+    },
+    {
+      "from_idx": 8,
+      "to_idx": 9,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "CheXagent radiates from the general biomedical image parsing niche into the specialized clinical radiology interpretation niche. Where BiomedParse treats images as objects to segment and label, CheXagent adapts into a fundamentally richer ecological role: generating full radiology reports, answering clinical questions about findings, and assisting radiologists in their workflow. This is an adaptive radiation into a new functional niche — from visual parsing to clinical reasoning and report generation — enabled by instruction-tuning on 28 chest X-ray datasets and bridging vision with clinical language generation."
+    },
+    {
+      "from_idx": 9,
+      "to_idx": 10,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "RadVLM is a directed mutation of the CheXagent lineage that adds multi-turn conversational capability and visual grounding to the radiology VLM paradigm. The core architecture (vision encoder + language model + bridging network) remains the same, but the training data and interface evolve to support interactive dialogue and spatial grounding of findings. This mutation transforms the static report-generation model into an interactive clinical assistant that can answer follow-up questions and point to specific regions, representing the adaptation needed for real clinical deployment."
+    }
+  ],
+  "open_question": "RadVLM makes chest-X-ray interpretation conversational, but radiology practice is multimodal, longitudinal, and workflow-bound. What clinically deployable medical vision-language agent would integrate CT, MRI, X-ray, pathology, ultrasound, prior studies, reports, and EHR context while producing calibrated findings, grounded dialogue, and auditable evidence under real hospital workflow and safety constraints?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Medical Imaging / Biomedical Image Foundation Models."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 11 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 5,
+    "Speciation": 1,
+    "Adaptive Radiation": 2,
+    "Niche Competition": 1,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "RadVLM: A Multitask Conversational Vision-Language Model for Radiology",
+      "year": 2025,
+      "venue": "arXiv 2025",
+      "identifier": "2502.03333",
+      "unresolved_gap": "Conversational chest-X-ray models improve interaction, but clinical radiology still needs multimodal, longitudinal, EHR-aware, calibrated, and auditable image reasoning across modalities.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

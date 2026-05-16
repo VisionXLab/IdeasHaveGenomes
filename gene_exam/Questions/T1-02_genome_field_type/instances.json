@@ -1,0 +1,645 @@
+[
+  {
+    "instance_id": "T1-02_genome_field_type_0045",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"ned in randomized simulation can serve as a single low-level policy for [text omitted]\"\n  GenomeField2: \"nomously solve competitive programming problems at about the level of a [text omitted]\"\n  GenomeField3: \"ion studies and a real-data example indicate that the proposed model can [text omitted]\"\n  GenomeField4: \"interference can produce scrubber allocation policies that reduce mortal [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "claim"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "claim",
+        "GenomeField2": "claim"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0043",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"e central insight is that the complex conjugate of the correlation funct [text omitted]\"\n  GenomeField2: \"turized image pyramids, or weak multi-scale representations, this work r [text omitted]\"\n  GenomeField3: \"ystallization-boosted LTC achieves an approximately 3.73 mV/K Seebeck co [text omitted]\"\n  GenomeField4: \"ormer trunk with reduced MSA features and a coordinate-space diffusion d [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "observation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "observation",
+        "GenomeField2": "delta"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0039",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"ly in terms of build maintenance burden, this paper shifts the unit of a [text omitted]\"\n  GenomeField2: \"w finds that AI can substantially accelerate and improve pharmaceutical [text omitted]\"\n  GenomeField3: \"that mainly fit static predictive models over the key space, this work c [text omitted]\"\n  GenomeField4: \"information that the post-processing wrapper later discards, so alignin [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "delta"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "delta",
+        "GenomeField2": "observation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0031",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"nsional generalized Dirac oscillator with possibly complex interaction f [text omitted]\"\n  GenomeField2: \"on SQL engine that extends relational planning and execution with first [text omitted]\"\n  GenomeField3: \"ode and curated function data can synthesize Python functions from docst [text omitted]\"\n  GenomeField4: \"hter utility guarantees and typically better empirical accuracy than out [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "niche"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "niche",
+        "GenomeField2": "mechanism"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0024",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"lightweight approximation based on compact branch information, so execut [text omitted]\"\n  GenomeField2: \"rnating or approximate joint training procedure to coordinate the RPN an [text omitted]\"\n  GenomeField3: \"onolingual data with unsupervised denoising and cross-lingual objectives [text omitted]\"\n  GenomeField4: \"tests whether early-type galaxies in different environments, especially [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "limitation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "limitation",
+        "GenomeField2": "limitation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0066",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"ecentralized speculative ordering can commit commands faster than leader [text omitted]\"\n  GenomeField2: \"ection uncertainty yields more reliable place recognition in large appea [text omitted]\"\n  GenomeField3: \"uctive and structural arguments in metric geometry and topological group [text omitted]\"\n  GenomeField4: \"ional institutional repository designs centered on deposit and preservat [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "observation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "observation",
+        "GenomeField2": "observation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0046",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"es exact provenance state with approximate learned embeddings, it may lo [text omitted]\"\n  GenomeField2: \"neural networks with ensemble-uncertainty-guided active learning and lar [text omitted]\"\n  GenomeField3: \"hed filtering against a large bank of relativistic compact-binary templa [text omitted]\"\n  GenomeField4: \"mics of non-local observables, especially magnetization fluctuations and [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "limitation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "limitation",
+        "GenomeField2": "mechanism"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0029",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"mplementation-specific data-dependent latency in arithmetic routines, so [text omitted]\"\n  GenomeField2: \"fully soft robot with embedded fluidic actuation can generate multiple d [text omitted]\"\n  GenomeField3: \"pport budget the forward-KL optimal approximation to the full posterior [text omitted]\"\n  GenomeField4: \"adversarial examples arise not mainly from overfitting but from inheren [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "limitation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "limitation",
+        "GenomeField2": "claim"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0049",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"nalytic, then their values on an arbitrarily small region fix the entire [text omitted]\"\n  GenomeField2: \"rative modeling learns a neural network to estimate the score (gradient [text omitted]\"\n  GenomeField3: \"ing uncertainties, the combined evidence is sufficient to robustly attri [text omitted]\"\n  GenomeField4: \"cal image representation learning from paired radiology images and descr [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "observation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "observation",
+        "GenomeField2": "mechanism"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0036",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"enchmark experiments and does not establish broad generality, computatio [text omitted]\"\n  GenomeField2: \"needs better prediction of human clinical efficacy by using high-dimens [text omitted]\"\n  GenomeField3: \"nteroperability and query answering across autonomous, heterogeneous inf [text omitted]\"\n  GenomeField4: \"d mitigating disparate impact in predictive decision-making when protect [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "limitation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "limitation",
+        "GenomeField2": "niche"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0051",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"ce burden of automated build systems in software projects practicing ong [text omitted]\"\n  GenomeField2: \"tions are tied to a coarse fixed grid with a limited number of boxes per [text omitted]\"\n  GenomeField3: \"SPT-3G and compares that reference against compiled 2019-2026 measuremen [text omitted]\"\n  GenomeField4: \"heat content has increased robustly and acceleratingly over recent decad [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "niche"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "niche",
+        "GenomeField2": "limitation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0041",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"trusion detection systems that appear effective under closed-world bench [text omitted]\"\n  GenomeField2: \"evaluation rather than a new architecture or training objective, it lea [text omitted]\"\n  GenomeField3: \"r be consolidated, the design introduces extra indirection and chain-tra [text omitted]\"\n  GenomeField4: \"rather than uniform, with persistent political-market underconfidence a [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "claim"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "claim",
+        "GenomeField2": "limitation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0032",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"izing expensive spatial convolutions into smaller and asymmetric operati [text omitted]\"\n  GenomeField2: \"geneous multi-agent systems under bounded disturbances to satisfy cooper [text omitted]\"\n  GenomeField3: \"is most concrete for ordered or numerical features through rank-based ma [text omitted]\"\n  GenomeField4: \"last-level cache side-channel attacks solely from sandboxed JavaScript i [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "mechanism"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "mechanism",
+        "GenomeField2": "niche"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0023",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"pin-related magnetic properties across NMR, MRI, and Zeeman spectroscopy [text omitted]\"\n  GenomeField2: \"g contexts as information-flow security boundaries and randomizing their [text omitted]\"\n  GenomeField3: \"d with prior work that treated the three-state chain or more restricted [text omitted]\"\n  GenomeField4: \"ined on features extracted from volatile memory can identify obfuscated [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "niche"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "niche",
+        "GenomeField2": "observation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0060",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"guage models for verifiable domains such as mathematics, coding, and STE [text omitted]\"\n  GenomeField2: \"EOS-Chem adjoint 4D-Var with a novel joint mass balance can simultaneous [text omitted]\"\n  GenomeField3: \"s-structured surveys, this work contributes a more explicit taxonomy-dri [text omitted]\"\n  GenomeField4: \"ve framework rather than a newly benchmarked model, the paper is limited [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "niche"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "niche",
+        "GenomeField2": "claim"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0059",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"lly factorized and regularized Inception architecture can be made deeper [text omitted]\"\n  GenomeField2: \"earlier work that treated SQL injection as a general web-application vul [text omitted]\"\n  GenomeField3: \"rning multiple related fuzzing prediction tasks yields more robust mutat [text omitted]\"\n  GenomeField4: \"l-overlap similarity and graph-construction choices such as cosine thres [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "claim"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "claim",
+        "GenomeField2": "delta"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0030",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"and derivative modeling assumptions, which may limit scalability or rel [text omitted]\"\n  GenomeField2: \"up to 725.6 Wh kg–1, long cycling stability with 90% capacity retention [text omitted]\"\n  GenomeField3: \"eurite centerline tracing and split/merge error correction in 3D electro [text omitted]\"\n  GenomeField4: \"ose parameterization and grasp-quality objectives for generated samples, [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "limitation"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "limitation",
+        "GenomeField2": "observation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0044",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"ly translate raw peak lists into peptide sequences more accurately and e [text omitted]\"\n  GenomeField2: \", so proposal generation remains a separate computational bottleneck out [text omitted]\"\n  GenomeField3: \"that start from Hartree-Fock references, this work substitutes a broken [text omitted]\"\n  GenomeField4: \"eanly separates model specification from inference and greatly expands e [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "claim"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "claim",
+        "GenomeField2": "limitation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0055",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"y attacked to recover key information by using many high-resolution timi [text omitted]\"\n  GenomeField2: \"CI data and repeated executions, making it less effective for newly adde [text omitted]\"\n  GenomeField3: \"nsupervised pipelines supports credible repeater candidates and suggests [text omitted]\"\n  GenomeField4: \"the normalized cationic potential captures electron density, polarizabil [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "claim"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "claim",
+        "GenomeField2": "limitation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0020",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"pared with conventional JPEG and prior sequential-pattern approaches, a [text omitted]\"\n  GenomeField2: \"se the characterization is entirely empirical and device-specific, the p [text omitted]\"\n  GenomeField3: \"that PyPI exposes measurable but highly heterogeneous deployment behavio [text omitted]\"\n  GenomeField4: \"linear dynamics can reproduce complex curved demonstrations more faithfu [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "delta"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "delta",
+        "GenomeField2": "limitation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0064",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"wave signal from compact binary coalescence in Advanced LIGO data, speci [text omitted]\"\n  GenomeField2: \"oblem of providing trusted execution and verifiable software identity fo [text omitted]\"\n  GenomeField3: \"lized facts and evaluates cryptocurrency returns, cross-sectional factor [text omitted]\"\n  GenomeField4: \"text-to-speech synthesis needs precise, controllable emotional expressio [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "niche"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "niche",
+        "GenomeField2": "niche"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0038",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"ical regions in domains where training data are mostly normal, to suppor [text omitted]\"\n  GenomeField2: \"rained on parallel code–pseudo-code pairs to learn token/phrase alignmen [text omitted]\"\n  GenomeField3: \"chical crack networks formed during drying of thin colloidal or polymer [text omitted]\"\n  GenomeField4: \"ools and earlier code modeling work focused on token prediction or narro [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "niche"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "niche",
+        "GenomeField2": "mechanism"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0053",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"Z trains a single multitask behavior-cloning policy that maps visual ob [text omitted]\"\n  GenomeField2: \"ok treatments that emphasized only quasi-equipotential interiors and nor [text omitted]\"\n  GenomeField3: \"al modules including evolutionary feature extraction, contact/distogram/ [text omitted]\"\n  GenomeField4: \"can reliably and accurately recover multiple excited states and observab [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "mechanism"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "mechanism",
+        "GenomeField2": "delta"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0069",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"rior work using a single end objective or manually fixed auxiliary tasks [text omitted]\"\n  GenomeField2: \"ized for standard utility can still generate substantial group dispariti [text omitted]\"\n  GenomeField3: \"ct shorter-period period-luminosity sequence and likely evolve onto the [text omitted]\"\n  GenomeField4: \"ely independently, this work explicitly conditions single-step predictio [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "delta"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "delta",
+        "GenomeField2": "observation"
+      }
+    }
+  },
+  {
+    "instance_id": "T1-02_genome_field_type_0062",
+    "task_type": "T1-02_genome_field_type",
+    "prompt": "Classify the type of each genome field below. The snippets are short excerpts with obvious template words removed.\nOptions: mechanism, niche, limitation, observation, delta, claim\n\n  GenomeField1: \"GEOS-Chem nested-grid sensitivity simulations with sequentially fixed o [text omitted]\"\n  GenomeField2: \"tation learning from demonstrations where expert behavior is multi-modal [text omitted]\"\n  GenomeField3: \"standard symbolic regression, Class SR adds a hierarchical parameterizat [text omitted]\"\n  GenomeField4: \"al structure for long-horizon robotic control from unlabeled, task-agnos [text omitted]\"\n\nAnswer with one line per genome field:\nGenomeField1Type = [mechanism|niche|limitation|observation|delta|claim]",
+    "choices": {},
+    "gold_answer": {
+      "GenomeField1Type": "mechanism"
+    },
+    "metadata": {
+      "baseline": "0.08%",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L1-6_genome_field_type_id",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Genome-Field Type"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "genome_abstraction",
+    "diagnostic_gold": {
+      "genome_field_types": {
+        "GenomeField1": "mechanism",
+        "GenomeField2": "niche"
+      }
+    }
+  }
+]

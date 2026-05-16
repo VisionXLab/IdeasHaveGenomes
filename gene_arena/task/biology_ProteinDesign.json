@@ -1,0 +1,164 @@
+{
+  "trace_id": "biology_ProteinDesign",
+  "domain": "biology",
+  "direction": "ProteinDesign",
+  "subfield": "Computational Biology / Protein Structure & Design",
+  "frontier_justification": "Computational protein design is one of the most transformative scientific developments of 2024-2026. AlphaFold3, RFDiffusion, and ProteinMPNN have jointly enabled the de novo design of functional proteins, enzymes, and protein-ligand binders at unprecedented success rates, directly impacting drug discovery and synthetic biology.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Highly accurate protein structure prediction with AlphaFold",
+      "year": 2021,
+      "venue": "Nature 2021",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-021-03819-2)",
+      "paper_type": "research",
+      "key_contribution": "AlphaFold2: end-to-end protein structure prediction at atomic accuracy; Evoformer trunk processes MSA and pairwise representations; achieves 92.4 GDT on CASP14, effectively solving the structure prediction problem.",
+      "idea_genome": {
+        "problem_genome": "Protein structure prediction from sequence (the 50-year 'protein folding problem') remained unsolved; existing methods (Rosetta, homology modeling) were slow and inaccurate for novel folds.",
+        "mechanism_genome": "Evoformer: iterative attention over Multiple Sequence Alignment (MSA) and pairwise residue distance representation; Structure Module refines 3D frames via invariant point attention; end-to-end training on PDB structures.",
+        "observation_genome": "AlphaFold2 achieves median GDT 92.4 on CASP14 targets (many near experimental accuracy); essentially solves single-chain structure prediction; released 200M+ structure predictions publicly.",
+        "limitation_genome": "Predicts static equilibrium structure only; cannot model conformational dynamics; no protein-ligand co-structure; no direct design (sequence→structure, not structure→sequence)."
+      }
+    },
+    {
+      "title": "Robust deep learning-based protein sequence design using ProteinMPNN",
+      "year": 2022,
+      "venue": "Science 2022",
+      "arxiv_id": "N/A (Science doi:10.1126/science.add2187)",
+      "paper_type": "research",
+      "key_contribution": "ProteinMPNN: message-passing neural network for inverse folding (structure→sequence); given a protein backbone, designs amino acid sequences that fold to that structure with 52.4% experimental success rate.",
+      "idea_genome": {
+        "problem_genome": "AlphaFold2 solves structure prediction but not inverse design: given a target backbone shape (from de novo design), what amino acid sequence will fold to it? Classical Rosetta design is slow and low success rate.",
+        "mechanism_genome": "Message-passing GNN over protein backbone graph; node features: residue coordinates and backbone dihedral angles; edge features: pairwise distances and orientations; autoregressive sequence decoding; trained on PDB structures.",
+        "observation_genome": "ProteinMPNN achieves 52.4% experimental validation rate (vs ~20% for Rosetta); widely adopted as the 'design oracle' paired with any structure backbone generator; 1000× faster than Rosetta.",
+        "limitation_genome": "Designs sequences for fixed backbones only; backbone itself must come from another method (Rosetta, hallucination); no explicit optimization for function beyond foldability; no binding specificity."
+      }
+    },
+    {
+      "title": "De novo design of protein structure and function with RFDiffusion",
+      "year": 2023,
+      "venue": "Nature 2023",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-023-06415-8)",
+      "paper_type": "research",
+      "key_contribution": "RFDiffusion: diffusion model over protein backbone structure conditioned on functional motifs; de novo designs binders, symmetric assemblies, and enzymes with experimental success rates up to 30× higher than previous methods.",
+      "idea_genome": {
+        "problem_genome": "ProteinMPNN designs sequences for given backbones, but generating novel functional backbones (not just folding existing ones) still required slow Rosetta hallucination with low success rates.",
+        "mechanism_genome": "Denoising diffusion over SE(3) backbone frames; conditioned on functional motifs (binding sites, active sites); leverages RoseTTAFold architecture as denoiser; ProteinMPNN then designs sequences for generated backbones.",
+        "observation_genome": "RFDiffusion designs binders with 19% experimental success rate (vs 0.5% for Rosetta); symmetric assemblies validated by cryo-EM; enzyme active site scaffolding for new folds; widely adopted in wet labs worldwide.",
+        "limitation_genome": "Backbone-only; no side chains or small molecule interaction during diffusion; limited to protein-protein or motif scaffolding; no joint protein-ligand co-design; no sequence evolution information used."
+      }
+    },
+    {
+      "title": "Evolutionary-scale prediction of atomic-level protein structure with a language model",
+      "year": 2023,
+      "venue": "Science 2023",
+      "arxiv_id": "N/A (Science doi:10.1126/science.ade2574)",
+      "paper_type": "research",
+      "key_contribution": "ESMFold: protein language model (ESM-2, 15B parameters) predicts structure from single sequence without MSA; 60× faster than AlphaFold2; enables structure prediction at proteome scale.",
+      "idea_genome": {
+        "problem_genome": "AlphaFold2 requires Multiple Sequence Alignment (MSA) computation which takes hours per protein; cannot scale to billions of protein sequences; evolutionary information embedded in MSA limits single-sequence organisms.",
+        "mechanism_genome": "ESM-2 protein language model (3B/15B parameters) pretrained on 250M protein sequences learns evolutionary representations implicitly; ESMFold folding trunk produces 3D structure from single-sequence ESM embeddings without MSA.",
+        "observation_genome": "ESMFold achieves TM-score within 0.04 of AlphaFold2 on CAMEO; 60× faster; predicts structures for 617M metagenomic proteins (ESM Metagenomic Atlas); enables discovery of novel protein families.",
+        "limitation_genome": "Less accurate than AlphaFold2 on hard targets with deep MSA; single-sequence representation misses co-evolutionary constraints; no direct application to protein design; no protein-ligand prediction."
+      }
+    },
+    {
+      "title": "Accurate structure prediction of biomolecular interactions with AlphaFold 3",
+      "year": 2024,
+      "venue": "Nature 2024",
+      "arxiv_id": "N/A (Nature doi:10.1038/s41586-024-07487-w)",
+      "paper_type": "research",
+      "key_contribution": "AlphaFold3: unified diffusion-based model predicting structures of proteins, DNA, RNA, small molecules, and all their complexes; 50% improvement on protein-ligand prediction; replaces separate tools for each complex type.",
+      "idea_genome": {
+        "problem_genome": "ESMFold (fast, single-chain) and AlphaFold2 (accurate, single-chain) cannot predict complexes; RFDiffusion designs backbones but not full atomic detail with small molecules; no single model covers protein-DNA/RNA/ligand interactions.",
+        "mechanism_genome": "Pairformer replaces Evoformer; diffusion module generates all-atom 3D coordinates for any molecular complex type; trained on PDB structures of all complex types; MSA-free option via single-sequence trunk.",
+        "observation_genome": "AlphaFold3 improves protein-ligand complex prediction by 50% over prior methods; covers all biomolecular complex types; enables structure-based drug design and protein-nucleic acid interaction modeling.",
+        "limitation_genome": "Closed-source weights for commercial use; no generative design capability (prediction only, not design); does not model binding kinetics or conformational ensembles; large gaps in accuracy for RNA-protein complexes."
+      }
+    },
+    {
+      "title": "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute",
+      "year": 2026,
+      "venue": "ICLR 2026",
+      "arxiv_id": "2603.27950",
+      "paper_type": "research",
+      "key_contribution": "Proteina-Complexa: flow-based latent generative model for protein binder design pretrained on synthetic binder-target pairs; test-time inference scaling via iterative optimization; achieves new state-of-the-art on computational binder design benchmarks; oral presentation at ICLR 2026.",
+      "idea_genome": {
+        "problem_genome": "AlphaFold3 predicts binding structures but cannot generate novel binders; RFDiffusion designs backbones without exploiting generative pretraining at scale; need a model that combines generative pretraining with inference-time optimization for binder design.",
+        "mechanism_genome": "Flow-based latent generative model pretrained on synthetic binder-target pairs (Teddymer dataset); inference-time scaling via iterative optimization; applicable to hydrogen bond optimization and enzyme design beyond basic binder generation.",
+        "observation_genome": "Sets new state-of-the-art on computational binder design benchmarks; demonstrates applications to hydrogen bond optimization and enzyme active site design; accepted as oral at ICLR 2026.",
+        "limitation_genome": "Experimental validation rates remain low due to gap between in silico binding scores and in vivo functional activity; optimizes binding affinity without explicit joint optimization of selectivity, stability, and in vivo efficacy."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "AlphaFold2's structure-prediction framework radiates to the inverse problem: ProteinMPNN uses AlphaFold2-solved structures as training targets and designs sequences that fold to those backbones — applying the same protein graph representations to the design direction."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "RFDiffusion hybridizes ProteinMPNN's sequence design (used as post-processing) with diffusion model backbone generation (from diffusion model literature); jointly creates a full design pipeline: diffusion generates backbone, ProteinMPNN designs sequence."
+    },
+    {
+      "from_idx": 0,
+      "to_idx": 3,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "ESMFold competes with AlphaFold2 (not RFDiffusion) by occupying the fast-inference niche: sacrifices some accuracy for 60× speedup via language model pretraining; targets different use cases (proteome-scale vs. precision design) rather than improving RFDiffusion."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "AlphaFold 3 hybridizes the diffusion-based structure generation paradigm (from RFDiffusion lineage) with Pairformer (evolution of AF2's Evoformer), enabling unified biomolecular complex prediction"
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Proteina-Complexa hybridizes AlphaFold3-era structure prediction insights with generative flow models and test-time compute scaling; combines pretraining on synthetic complex data with inference-time optimization for active binder design."
+    }
+  ],
+  "open_question": "Proteina-Complexa designs high-affinity binders computationally but experimental validation rates remain low due to the gap between in silico binding scores and in vivo functional activity. What mechanism would enable generative protein design that jointly optimizes binding affinity, selectivity, stability, and in vivo efficacy within a single end-to-end framework?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Biology / Protein Structure & Design."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Adaptive Radiation": 1,
+    "Hybridization": 3,
+    "Niche Competition": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute",
+      "year": 2026,
+      "venue": "ICLR 2026",
+      "identifier": "2603.27950",
+      "unresolved_gap": "Experimental validation rates remain low due to gap between in silico binding scores and in vivo functional activity; optimizes binding affinity without explicit joint optimization of selectivity, stability, and in vivo efficacy.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

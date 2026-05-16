@@ -1,0 +1,205 @@
+{
+  "trace_id": "neuro_VisualCortex",
+  "domain": "neuroscience",
+  "direction": "Visual Cortex Decoding and Neural Representation",
+  "subfield": "Neuroscience / Neural Decoding",
+  "frontier_justification": "This direction remains a May 2026 frontier because neural decoding now uses powerful generative priors to reconstruct images and video from brain activity, but scientific validity depends on separating measured neural evidence from prior-driven hallucination. Subject generalization, temporal precision, calibrated uncertainty, and mechanistic interpretability remain unsolved.",
+  "verified": false,
+  "papers": [
+    {
+      "title": "Identifying natural images from human brain activity",
+      "year": 2008,
+      "venue": "Nature (2008)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper showed that fMRI activity in human visual cortex can be used to identify which natural image a subject saw from a large candidate set. It established a practical voxel-wise encoding/decoding framework linking visual features to cortical responses and back to stimulus inference.",
+      "idea_genome": {
+        "problem_genome": "Can distributed fMRI responses in visual cortex be used to decode or identify natural visual stimuli viewed by a subject?",
+        "mechanism_genome": "The paper builds voxel-wise encoding models from visual image features to BOLD responses, then performs Bayesian-style decoding by comparing predicted and observed activity patterns across candidate images.",
+        "observation_genome": "Natural images could be identified from measured brain activity at above-chance levels, demonstrating that visual cortical population responses contain decodable information about complex natural scenes.",
+        "limitation_genome": "The method performs identification among candidates rather than true image synthesis or reconstruction, and depends on hand-engineered feature spaces and subject-specific models."
+      }
+    },
+    {
+      "title": "Reconstructing visual experiences from brain activity evoked by natural movies",
+      "year": 2011,
+      "venue": "Current Biology (2011)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This work extended visual decoding from image identification to approximate reconstruction of seen natural movies from fMRI signals. It used motion-energy encoding models and a large natural movie prior to synthesize dynamic visual content from cortical activity.",
+      "idea_genome": {
+        "problem_genome": "Can ongoing visual experience, not just static-image identity, be reconstructed from human brain activity during naturalistic viewing?",
+        "mechanism_genome": "The method fits voxel-wise motion-energy encoding models and reconstructs movie clips by searching a large database of natural video segments for those whose predicted brain responses best match observed fMRI activity.",
+        "observation_genome": "The reconstructed movies preserved coarse motion and scene structure, showing that dynamic visual content can be approximately recovered from visual cortex activity.",
+        "limitation_genome": "Reconstructions are blurry and heavily constrained by the retrieval database and low-level feature model, limiting semantic fidelity and generative flexibility."
+      }
+    },
+    {
+      "title": "Brain-Score: Which Artificial Neural Network for Object Recognition is most Brain-Like?",
+      "year": 2018,
+      "venue": "bioRxiv (2018); later Neuron (2020)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper systematized the comparison between artificial neural networks and primate visual representations by introducing Brain-Score, a benchmark based on neural and behavioral predictivity. It helped formalize the idea that better ANN-brain alignment can guide both neuroscience models and decoding feature spaces.",
+      "idea_genome": {
+        "problem_genome": "Which artificial vision models best match biological visual representations and behavior, and how should such alignment be measured?",
+        "mechanism_genome": "The paper defines a benchmark aggregating neural predictivity for ventral-stream recordings and behavioral similarity, then evaluates many object-recognition networks against these criteria.",
+        "observation_genome": "Some deep convolutional networks trained for object recognition show substantial correspondence to primate visual cortex, but no model fully matches the brain.",
+        "limitation_genome": "The benchmark focuses on representational similarity rather than direct brain-to-image decoding, and alignment scores do not automatically yield generative reconstruction methods."
+      }
+    },
+    {
+      "title": "Deep image reconstruction from human brain activity",
+      "year": 2019,
+      "venue": "PLoS Computational Biology (2019)",
+      "arxiv_id": "1711.09248",
+      "paper_type": "research",
+      "key_contribution": "This paper introduced a major shift from hand-crafted visual features to deep neural network feature decoding for image reconstruction from fMRI. By decoding hierarchical DNN features from brain activity and optimizing images to match them, it produced recognizable reconstructions of natural images, artificial shapes, and even mental imagery.",
+      "idea_genome": {
+        "problem_genome": "How can one reconstruct richer and more semantically meaningful images from brain activity than is possible with low-level encoding models alone?",
+        "mechanism_genome": "The approach decodes features from multiple layers of a pretrained deep neural network from fMRI signals, then reconstructs an image by iterative optimization, optionally with a deep generator network prior.",
+        "observation_genome": "Hierarchical DNN features can be predicted from visual cortex activity and used to reconstruct images with substantially improved semantic content over earlier low-level methods.",
+        "limitation_genome": "Optimization-based reconstruction is slow and still limited in realism and diversity; performance depends strongly on the chosen DNN feature space and subject-specific decoding."
+      }
+    },
+    {
+      "title": "High-resolution image reconstruction with latent diffusion models from human brain activity",
+      "year": 2023,
+      "venue": "CVPR 2023",
+      "arxiv_id": "2301.13156",
+      "paper_type": "research",
+      "key_contribution": "This paper showed that latent diffusion models can reconstruct high-resolution images from fMRI with minimal additional training by mapping brain activity to latent and text-conditioning spaces. It marked a transition from optimization over decoded features to leveraging powerful pretrained generative priors for semantically rich reconstruction.",
+      "idea_genome": {
+        "problem_genome": "Can modern generative foundation models dramatically improve the realism and semantic accuracy of image reconstruction from fMRI?",
+        "mechanism_genome": "The method linearly decodes fMRI signals into the latent image representation and conditioning signals of a pretrained latent diffusion model, then uses the diffusion model to generate images consistent with the decoded brain-derived constraints.",
+        "observation_genome": "Reconstructions became substantially more realistic and semantically faithful than prior methods, demonstrating that pretrained diffusion priors can unlock high-quality brain decoding with limited neuroimaging data.",
+        "limitation_genome": "The method can be prior-dominated, may hallucinate details not supported by neural data, and remains largely subject-specific with limited guarantees of mechanistic interpretability."
+      }
+    },
+    {
+      "title": "MindEye: fMRI-to-Image with Contrastive Retrieval and Iterative Reconstruction",
+      "year": 2023,
+      "venue": "NeurIPS 2023",
+      "arxiv_id": "2305.18274",
+      "paper_type": "research",
+      "key_contribution": "MindEye combined contrastive retrieval with diffusion-based reconstruction to improve both semantic matching and image synthesis from fMRI. It emphasized learned multimodal embedding alignment and iterative reconstruction, helping bridge retrieval-style decoding and generative decoding.",
+      "idea_genome": {
+        "problem_genome": "How can fMRI-to-image decoding better preserve semantic identity and generalization, rather than relying only on direct latent regression into a generative model?",
+        "mechanism_genome": "The system learns a brain-to-embedding mapping aligned with image representations for contrastive retrieval, then uses retrieved candidates and iterative generative refinement to reconstruct images.",
+        "observation_genome": "The hybrid retrieval-plus-generation pipeline improved semantic correspondence and produced strong reconstructions, showing that representation alignment is a powerful intermediate step for brain decoding.",
+        "limitation_genome": "The method still depends on large pretrained models and retrieval scaffolding, and it remains unclear how much of the final output is uniquely constrained by neural data versus external priors."
+      }
+    },
+    {
+      "title": "Brain-Diffuser: Natural scene reconstruction from fMRI signals using generative latent diffusion",
+      "year": 2023,
+      "venue": "Scientific Reports (2023)",
+      "arxiv_id": "2303.05334",
+      "paper_type": "research",
+      "key_contribution": "Brain-Diffuser adapted latent diffusion for natural-scene reconstruction from fMRI and helped establish diffusion-based decoding as a broader methodological family beyond a single implementation. It demonstrated that diffusion priors could be integrated into end-to-end neural decoding pipelines for visually plausible reconstructions.",
+      "idea_genome": {
+        "problem_genome": "Can diffusion-based image generation be turned into a general-purpose framework for reconstructing natural scenes from brain activity?",
+        "mechanism_genome": "The paper maps fMRI-derived representations into a latent diffusion pipeline to generate images consistent with decoded neural information, emphasizing natural-scene reconstruction.",
+        "observation_genome": "The study reported plausible natural-scene reconstructions and reinforced the effectiveness of diffusion models as strong priors for brain decoding.",
+        "limitation_genome": "Compared with the strongest contemporaneous systems, robustness, benchmark breadth, and neuroscientific interpretability remain limited; subject transfer and faithful uncertainty quantification are unresolved."
+      }
+    },
+    {
+      "title": "Neurons: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "arxiv_id": "2503.11167",
+      "paper_type": "research",
+      "key_contribution": "Paper B introduces a biologically inspired fMRI-to-video reconstruction framework that emulates the hierarchical human visual cortex to improve both reconstruction fidelity and interpretability for dynamic visual stimuli.",
+      "idea_genome": {
+        "problem_genome": "Paper B addresses the challenge of reconstructing videos from fMRI by decoding spatiotemporal visual dynamics such as motion and scene transitions from coarse neural measurements.",
+        "mechanism_genome": "Its core approach models the hierarchical organization of the visual cortex so that different levels of neural processing are aligned with corresponding visual features for video generation. By structuring decoding around biologically motivated cortical stages, it better integrates coarse fMRI signals with detailed spatial and temporal representations.",
+        "observation_genome": "Empirically, the method yields more faithful and interpretable video reconstructions than prior approaches, improving semantic, perceptual, and temporal consistency.",
+        "limitation_genome": "Despite these gains, reconstructing fine-grained temporal detail from low-resolution, noisy fMRI remains difficult and the method likely still depends on strong generative priors."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Extends single-image identification to continuous visual experience reconstruction from fMRI."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Replaces hand-crafted features with hierarchical DNN feature decoding for richer semantic image reconstruction."
+    },
+    {
+      "from_idx": 0,
+      "to_idx": 2,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Brain-Score formalizes ANN-brain alignment as a separate evaluation paradigm diverging from the reconstruction lineage."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Combines DNN-based brain decoding with latent diffusion generative models to produce high-resolution reconstructions."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "MindEye adds contrastive retrieval to latent diffusion reconstruction, improving fidelity."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 6,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "Brain-Diffuser competes with other latent diffusion reconstruction approaches using generative latent conditioning."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 7,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Extends contrastive brain decoding with biological cortex emulation for improved generalization."
+    }
+  ],
+  "open_question": "Generative fMRI-to-video decoders now improve perceptual fidelity with visual-cortex-inspired priors, but low-resolution neural measurements and strong diffusion priors can hallucinate content not actually supported by brain activity. What uncertainty-calibrated decoding architecture would disentangle neural evidence from generative prior, generalize across subjects and time, and produce mechanistically interpretable reconstructions of dynamic visual perception?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Neuroscience / Neural Decoding."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 8 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 4,
+    "Speciation": 1,
+    "Hybridization": 1,
+    "Niche Competition": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Neurons: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "identifier": "2503.11167",
+      "unresolved_gap": "Despite these gains, reconstructing fine-grained temporal detail from low-resolution, noisy fMRI remains difficult and the method likely still depends on strong generative priors.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

@@ -1,0 +1,523 @@
+[
+  {
+    "instance_id": "T3-17_multi_citation_0008",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 2 citation contexts from different sections of Paper X.\n\n  Context 1: \" [text omitted]LLM alignment, learned loss functions (Lu et al., 2024a) out-perform most hand-designed ones such as DPO (Rafailov et al., 2024); Paper X (Lu et al., 2024b) demonstrates an automated research pipeline, including the development of novel ML algorithms; and an endless number of robotics [text omitted]\"\n\n  Context 2: \"For example, the current best-performing CNN models come from Neural Architecture Search (Elsken et al., 2019; Shen et al., 2023) instead of manual design; in LLM alignment, learned loss functions (Lu et al., 2024a) out-perform most hand-designed ones such as DPO (Rafailov et al., 2024); Paper X (Lu et al., 2024b) demonstrates an automated research pipeline, including the development of novel ML algorithms; and an endless number of robotics learning environments can be automatically generated in works like OMNI-EPIC (Faldor et al., 2024), which demonstrate surprising creativity in generated environments and allow more efficient environment creation than the manual approach (see more examples in Section 5).\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Lineage"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 2,
+      "dominant_role": "limitation_or_mutation_pressure",
+      "role_distribution": {
+        "limitation_or_mutation_pressure": 1,
+        "dataset_or_benchmark_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0014",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \" [text omitted]et al., 2023; Zhou et al., 2024; Xie et al., 2024), whose input observation is lengthy (more than 4K), and the length increases as the complexity of the GUI grows (Xie et al., 2024), limiting generalization and increasing computational overhead compared to more natural image-based representations.\"\n\n  Context 2: \"Graphical User Interfaces (GUIs) represent the primary medium of human-computer interaction in digital environments, from websites to desktop and mobile applications (Deng et al., 2023; Zhou et al., 2024; Xie et al., 2024; Rawles et al., 2024b).\"\n\n  Context 3: \" [text omitted]focused on the Web (Deng et al., 2023; Zhou et al., 2024; Koh et al., 2024a; L`u et al., 2024; Drouin et al., 2024; Pan et al., 2024), desktop (Xie et al., 2024; Bonatti et al., 2024), and mobile environments (Rawles et al., 2024a;b; Zhang et al., 2024b; Chai et al., 2024; Lu et al., 2024; Li [text omitted]\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Foundation"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "dataset_or_benchmark_use",
+      "role_distribution": {
+        "baseline_or_comparison": 1,
+        "dataset_or_benchmark_use": 2
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0034",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"As shown in figure 6 and table 4, our method consistently outperforms all baselines approaches (GRPO w/ Clip-higher, Entropy-RL, and Pass@k Training) across the spectrum of pass@k metrics (k=2 to k=32) on both in-distribution benchmarks and out-of-distribution benchmarks.\"\n\n  Context 2: \"The relatively weaker performance of GPRO w/ Clip-higher indicates that merely increasing constraints without strategic direction fails to fundamentally enhance model generalization capabilities.\"\n\n  Context 3: \"DIVER consistently outperforms baselines, improving over GRPO w/ Clip-higher by +1.7, +1.7, and +1.5 points on in-domain tasks respectively, with even larger gains of +1.5, +1.3, and +1.9 points on out-of-domain tasks.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Convergent"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "dataset_or_benchmark_use",
+      "role_distribution": {
+        "dataset_or_benchmark_use": 1,
+        "limitation_or_mutation_pressure": 1,
+        "baseline_or_comparison": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0043",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"In alignment with these upgrades, we also refined our training strategy into a comprehensive five-phase curriculum—(i) visual pretraining, (ii) multimodal pretraining, (iii) instruction tuning, (iv) DPO (Rafailov et al., 2023), and (v) reinforcement learning (GRPO, Shao et al., 2024)—which progressively builds the model from foundational perception to advanced reasoning.\"\n\n  Context 2: \"We use Paper X (DPO) (Rafailov et al., 2023) as the primary preference objective, augmented with an auxiliary Negative Log-Likelihood (NLL) objective to stabilize optimization.\"\n\n  Context 3: \"The DPO dataset covers multimodal preference data spanning text-only, single-image, multi-image, and video modalities.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Lineage"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "limitation_or_mutation_pressure",
+      "role_distribution": {
+        "limitation_or_mutation_pressure": 2,
+        "dataset_or_benchmark_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0016",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"Even for bigger models, the gap between predictions with and without API calls remains high. closer inspection shows that improvements on T EMP LAMA can not be attributed to the calendar tool, which is only used for 0.2% of all examples, but mostly to the Wikipedia search and question answering tools.\"\n\n  Context 2: \"As LAMA is based on statements obtained directly from Wikipedia, we prevent Toolformer from using the Wikipedia Search API to avoid giving it an unfair advantage.\"\n\n  Context 3: \"However, Figure 4: Average performance on LAMA, our math benchmarks and our QA benchmarks for GPT-2 models of different sizes and GPT-J finetuned with our approach, both with and without API calls.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Convergent"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "tool_use",
+      "role_distribution": {
+        "tool_use": 2,
+        "dataset_or_benchmark_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0046",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"To address this, we adopt the widely-used SWE-bench benchmark and multiple evaluation metrics commonly used in the issue resolution domain [Zhang et al., 2024b,a, Ruan et al., 2025, Wang et al., 2025b].\"\n\n  Context 2: \"It is worth noting that Pass@1 is a stringent evaluation criterion, making improvements to this metric both technically challenging and practically meaningful [Xia et al., 2025, Ruan et al., 2025].\"\n\n  Context 3: \"This performance gap underscores the difficulty of real-world software issue resolution, which often requires global understanding of large codebases, cross-file reasoning, and the detection of subtle, multi-component bugs [Ruan et al., 2025, Xia et al., 2025].\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Non-homologous"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "dataset_or_benchmark_use",
+      "role_distribution": {
+        "dataset_or_benchmark_use": 1,
+        "baseline_or_comparison": 1,
+        "tool_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0039",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"Large language models achieve impressive zero and few-shot results on a variety of natural language processing tasks (Brown et al., 2020; Chowdhery et al., 2022, i.a.).\"\n\n  Context 2: \"We additionally compare to OPT (66B) (Zhang et al., 2022) and the original davinci variant of GPT-3 (175B) (Brown et al., 2020), two models that are about 10 and 25 times larger than GPT-J.\"\n\n  Context 3: \" [text omitted]that after learning to use tools, Toolformer, which is based on a pretrained GPT-J model (Wang and Komatsuzaki, 2021) with 6.7B parameters, achieves much stronger zero-shot results, clearly outperforming a much larger GPT-3 model (Brown et al., 2020) and several other baselines on various tasks.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Non-homologous"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "background",
+      "role_distribution": {
+        "background": 1,
+        "baseline_or_comparison": 1,
+        "tool_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0041",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"Building on this, [Gao et al. , 2023a] takes the concept further by constructing vast networks comprising 8,563 and 17,945 agents, respectively, designed to simulate social networks focused on the topics of Gender Discrimination and Nuclear Energy.\"\n\n  Context 2: \"1 (inspired by the design in [Gao et al. , 2023b]), thus broadening the impact of LLM-based Multi-Agent research.\"\n\n  Context 3: \"Tool-use: LLM-based agents’ tool-use capability allows them to leverage external tools and resources to accomplish tasks, enhancing their functional capabilities and operate more effectively in diverse and dynamic environments [Li et al. , 2023d; Ruan et al. , 2023; Gao et al. , 2023b].\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Foundation"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "background",
+      "role_distribution": {
+        "background": 1,
+        "methodological_dependency": 1,
+        "dataset_or_benchmark_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0033",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"In attack methods [55, 66], the target LLM is typically used to calculate perplexity, which can serve as a metric of jailbreak.\"\n\n  Context 2: \"[1, 55, 66] Since many defense methods filter high-perplexity prompts to provide protection, attack methods with low-perplexity jailbreak prompts have become increasingly noteworthy.\"\n\n  Context 3: \" [text omitted]questions in both Chinese and English that cover various safety concerns to assess the safety of popular LLMs. AdvBench [120] is initially proposed by GCG to construct suffixes for gradient-based attacks, and has been utilized by other studies like Paper X [66] in various jail-break scenarios.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Lineage"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "methodological_dependency",
+      "role_distribution": {
+        "methodological_dependency": 1,
+        "background": 1,
+        "result_comparison": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0040",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"[ Chen et al. , 2023b ] proposes an LLM-based consensus-seeking framework, which can be applied as a co-operative planner to a multi-robot aggregation task.\"\n\n  Context 2: \"Recent studies such as [Chen et al. , 2023b; Kaiya et al. , 2023; Li et al. , 2023a; Li et al. , 2023f; Ziems et al. , 2023] highlight the evolving complexity in multi-agent systems, LLM impacts on social networks, and their integration into social science research.\"\n\n  Context 3: \"In some scenarios, the system can generate new agents on-the-fly during its operation [ Chen et al. , 2023a; Chen et al. , 2023c ] .\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Foundation"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "background",
+      "role_distribution": {
+        "tool_use": 1,
+        "background": 2
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0030",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 2 citation contexts from different sections of Paper X.\n\n  Context 1: \"The development of LLM-based agents has made significant progress in the community by endowing LLMs with the ability to perceive surroundings and make decisions individually (Wang et al., 2023a; Yao et al., 2022; Nakajima, 2023; Xie et al., 2023; Zhou et al., 2023).\"\n\n  Context 2: \" [text omitted]Touvron et al., 2023; OpenAI, 2023) have exhibited notable generalization abilities across a wide range of tasks and applications (Lu et al., 2023; Zhou et al., 2023; Park et al., 2023), with these capabilities stemming from their extensive training on vast comprehensive corpora covering diverse [text omitted]\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Foundation"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 2,
+      "dominant_role": "background",
+      "role_distribution": {
+        "background": 2
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0031",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"In the context of LLMs as web-agents, some papers use existing, reusable environments [61, 20, 25] to collect training data trajectories from their web-agents in an on-policy fashion [35, 55, 32, 30].\"\n\n  Context 2: \"The simplest way to collect more data for the E XECUTOR is to collect more trajectories from the environment, a technique that has been used in previous works [35, 28].\"\n\n  Context 3: \"This initial process is depicted in Figure 3 in the first row for the web-navigation task and the prompts for the query generation are adapted from [35].\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Foundation"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "dataset_or_benchmark_use",
+      "role_distribution": {
+        "dataset_or_benchmark_use": 2,
+        "idea_inheritance": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0015",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 2 citation contexts from different sections of Paper X.\n\n  Context 1: \" [text omitted]limitations: for example, some benchmarks introduce LLM-generated rubrics and evaluation metrics reliant upon LLM-generated reference reports [8], thus raising concerns about circularity and limited oversight [7], while others are far more † narrow in their scope, assessing only one specific [text omitted]\"\n\n  Context 2: \"To summarize, existing benchmarks thus face two primary limitations: a reliance on static datasets or answer keys [15, 16], and the use of non-expert or automated evaluation, including coarse metrics [20] or auto-generated rubrics [8, 11, 24].\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Non-homologous"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 2,
+      "dominant_role": "dataset_or_benchmark_use",
+      "role_distribution": {
+        "dataset_or_benchmark_use": 2
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0045",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 2 citation contexts from different sections of Paper X.\n\n  Context 1: \"In contrast, fully autonomous frameworks like ReAct [110] interleaves planning and execution, and has shown benefits in allowing fully autonomous AI agents to readjust their plans after seeing partial execution results.\"\n\n  Context 2: \" [text omitted]work, we build on recent advances in AI research support tools, but rather than focusing on generating predetermined research artifacts, we contribute an interaction design pattern that allows for flexible specification of the final artifact and collaboration between a researcher and an AI agent.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Foundation"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 2,
+      "dominant_role": "tool_use",
+      "role_distribution": {
+        "tool_use": 1,
+        "idea_inheritance": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0003",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"As shown in the figure, Paper Y Chat (RL) demonstrates considerable proficiency in Paper X, achieving a Pass@1 score that even surpasses some giant models.\"\n\n  Context 2: \"Moreover, we employ Paper X (Jain et al., 2024) questions from September 1st, 2023 to April 1st, 2024 to evaluate chat models.\"\n\n  Context 3: \"The evaluation employs the SC-Math6 We further share more results in Figure 5 on HumanEval and Paper X, where the questions of Paper X are selected from the period between September 1st, 2023, and April 1st, 2024.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Lineage"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "methodological_dependency",
+      "role_distribution": {
+        "methodological_dependency": 2,
+        "baseline_or_comparison": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0026",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 2 citation contexts from different sections of Paper X.\n\n  Context 1: \"Similar to the Llama-3 baseline, this model uses an accessibility tree representation of the current webpage as its input observation (but this baseline does not include image captions).\"\n\n  Context 2: \"This is competitive with other prompt-based agents on WA, but in future work it will be interesting to explore introducing search to stronger baseline agents that incorporate domain-specific techniques, such as SteP (Sodhi et al., 2024) or AutoGuide (Fu et al., 2024).\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Convergent"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 2,
+      "dominant_role": "baseline_or_comparison",
+      "role_distribution": {
+        "baseline_or_comparison": 2
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0037",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 2 citation contexts from different sections of Paper X.\n\n  Context 1: \"Besides fuzzing, researchers have also proposed to leverage LLMs for unit test generation to test individual software units (e.g., methods/classes) [56], such as CodeMosa [52], ChatTester [102], TestPilot [83], and CoverUp [78].\"\n\n  Context 2: \"While there is not a fixed definition for agent-based approaches, they generally equip LLMs with a set of tools and allow agents to iteratively and autonomously perform actions, observe feedback, and plan future steps [56].\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Lineage"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 2,
+      "dominant_role": "methodological_dependency",
+      "role_distribution": {
+        "methodological_dependency": 1,
+        "tool_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0024",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"Additional multi-agent baselines from ADAS (Hu et al., 2024a) and the two best-found ADAS designs are included. with the number of agents in the network.\"\n\n  Context 2: \"We report ADAS with 30 rounds of search, and each round is evaluated on the validation set 3 times to stablize the prediction.\"\n\n  Context 3: \"We note that for the baselines: CoT, SC, Self-Refine, and Multi-Agent Debate, we follow the prompts given in ADAS (Hu et al., 2024a).\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Foundation"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "baseline_or_comparison",
+      "role_distribution": {
+        "baseline_or_comparison": 3
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0001",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 3 citation contexts from different sections of Paper X.\n\n  Context 1: \"Following prior work [35], we customize an automated framework for failure attribution tailored to agentic workflows, as Figure 3 shows.\"\n\n  Context 2: \"Lu et al. [16] and Zhu et al. [35] analyzed failures from the perspectives of execution stages and agent capabilities, respectively.\"\n\n  Context 3: \"Zhu et al. [35] proposed AgentErrorTaxonomy, a failure modes spanning memory, reflection, planning, action, and system-level operations.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Lineage"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 3,
+      "dominant_role": "limitation_or_mutation_pressure",
+      "role_distribution": {
+        "tool_use": 1,
+        "limitation_or_mutation_pressure": 2
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T3-17_multi_citation_0004",
+    "task_type": "T3-17_multi_citation",
+    "prompt": "Paper X cites Paper Y in multiple places. Below are 2 citation contexts from different sections of Paper X.\n\n  Context 1: \"The Qwen DeepResearch [22, 13, 36] team has also made pivotal contributions to the open-source ecosystem by systematically diagnosing and addressing the multi-dimensional challenges inherent in long-horizon research tasks.\"\n\n  Context 2: \"Multi‑agent systems [41, 31, 22, 21] partially alleviate these issues: a powerful planner agent is responsible for decision‑making, while tool‑specialized agents execute designated subtasks.\"\n\nConsidering ALL contexts together, classify the dominant relationship between Paper X and Paper Y:\n  Lineage | Convergent | Foundation | Non-homologous\n--- Relation Label Definitions ---\nLineage: Direct ancestor–descendant inheritance of the driver gene from Paper Y to Paper X.\nFoundation: Paper Y provides a foundational framework, paradigm, or key building block that Paper X builds upon broadly.\nConvergent: Papers independently developed similar approaches without direct inheritance — parallel evolution.\nNon-homologous: Superficially similar methods from unrelated origins; no shared ancestry or evolutionary connection.\n\nAnswer with exactly one line:\nRelation = [Lineage|Foundation|Convergent|Non-homologous]",
+    "choices": {},
+    "gold_answer": {
+      "relation": "Lineage"
+    },
+    "metadata": {
+      "level": "L3",
+      "capability": "Evolutionary Reasoning",
+      "source_domain": "cs",
+      "n_contexts": 2,
+      "dominant_role": "limitation_or_mutation_pressure",
+      "role_distribution": {
+        "limitation_or_mutation_pressure": 1,
+        "tool_use": 1
+      },
+      "original_task_type": "C4_multi_citation",
+      "display_title": "Multi-Citation Relation"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  }
+]

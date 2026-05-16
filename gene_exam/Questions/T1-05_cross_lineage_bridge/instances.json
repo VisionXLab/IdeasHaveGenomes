@@ -1,0 +1,776 @@
+[
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_045",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"The paper derives geometric and torsional rules for cross-β motif formation using structured β-arch loops and helices, then applies Rosetta-based backbone assembly, ABEGO-guided loop selection, hydrogen-bond constraints, sequence design, and folding-based filtering to build 7-stranded Ig domains.\"\n\nA. AI辅助抗体设计 ↔ 地震多次波衰减\nB. AI辅助抗体设计 ↔ 台风风压关系\nC. AI辅助抗体设计 ↔ Neural PDE Solvers and Scientific Computing\nD. Neural PDE Solvers and Scientific Computing ↔ q-fin.GN\nE. AI Drug Discovery ↔ AI辅助抗体设计\nF. Neural PDE Solvers and Scientific Computing ↔ q-fin.PM\nG. AI辅助抗体设计 ↔ 地震波检测\nH. AI辅助抗体设计 ↔ 引力波检测与参数估计(GW Detection & Parameter Estimation)\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI辅助抗体设计 ↔ 地震多次波衰减",
+      "B": "AI辅助抗体设计 ↔ 台风风压关系",
+      "C": "AI辅助抗体设计 ↔ Neural PDE Solvers and Scientific Computing",
+      "D": "Neural PDE Solvers and Scientific Computing ↔ q-fin.GN",
+      "E": "AI Drug Discovery ↔ AI辅助抗体设计",
+      "F": "Neural PDE Solvers and Scientific Computing ↔ q-fin.PM",
+      "G": "AI辅助抗体设计 ↔ 地震波检测",
+      "H": "AI辅助抗体设计 ↔ 引力波检测与参数估计(GW Detection & Parameter Estimation)"
+    },
+    "gold_answer": {
+      "label": "C"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI辅助抗体设计+Neural PDE Solvers and Scientific Computing",
+      "bridge_title": "By elucidating the geometric and torsional determinants for forming cross-β motifs via structured β-arch loops and helic",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_037",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"It synthesizes evidence from industrial platforms, case studies, and regulatory literature into a multi-stage AI-augmented pipeline spanning data curation, feature engineering, model development, validation, and deployment using ML, DL, GANs, ensemble methods, and reinforcement learning.\"\n\nA. AI Drug Discovery ↔ Materials Property Prediction with Machine Learning\nB. AI Drug Discovery ↔ 快速射电暴探测与本地化(Detection and localization of Fast Radio Burst)\nC. AI Drug Discovery ↔ Structural Biology\nD. AI Drug Discovery ↔ physics.optics\nE. AI Drug Discovery ↔ cond-mat.dis-nn\nF. AI Drug Discovery ↔ RNA三级结构预测\nG. Structural Biology ↔ 蛋白质从头测序\nH. AI Drug Discovery ↔ 冰川估计\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI Drug Discovery ↔ Materials Property Prediction with Machine Learning",
+      "B": "AI Drug Discovery ↔ 快速射电暴探测与本地化(Detection and localization of Fast Radio Burst)",
+      "C": "AI Drug Discovery ↔ Structural Biology",
+      "D": "AI Drug Discovery ↔ physics.optics",
+      "E": "AI Drug Discovery ↔ cond-mat.dis-nn",
+      "F": "AI Drug Discovery ↔ RNA三级结构预测",
+      "G": "Structural Biology ↔ 蛋白质从头测序",
+      "H": "AI Drug Discovery ↔ 冰川估计"
+    },
+    "gold_answer": {
+      "label": "C"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+Structural Biology",
+      "bridge_title": "This review elucidates how AI transforms pharmaceutical research by integrating advanced machine learning and deep learn",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_019",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"Model-B pre-trains a deep transformer architecture encoder with fully bidirectional self-attention mechanism using masked language modeling and next sentence prediction over inputs represented by summed token, segment, and position embeddings, then fine-tunes the same network with minimal task-specific heads.\"\n\nA. AI Agents ↔ AI Alignment\nB. AI Agents ↔ Quantum Chemistry and Density Functional Theory\nC. AI Alignment ↔ eess.SY\nD. AI Alignment ↔ 最短路径规划\nE. AI Agents ↔ Information Retrieval and Recommendation\nF. AI Alignment ↔ econ.GN\nG. AI Agents ↔ LLM Alignment and RLHF\nH. AI Agents ↔ Database Systems\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI Agents ↔ AI Alignment",
+      "B": "AI Agents ↔ Quantum Chemistry and Density Functional Theory",
+      "C": "AI Alignment ↔ eess.SY",
+      "D": "AI Alignment ↔ 最短路径规划",
+      "E": "AI Agents ↔ Information Retrieval and Recommendation",
+      "F": "AI Alignment ↔ econ.GN",
+      "G": "AI Agents ↔ LLM Alignment and RLHF",
+      "H": "AI Agents ↔ Database Systems"
+    },
+    "gold_answer": {
+      "label": "A"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Agents+AI Alignment",
+      "bridge_title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_036",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"The paper integrates AI-driven de novo compound design with iterative two-week synthesis and pharmacology cycles, an optogenetic OFC-VMS circuit-based OCD mouse model, and cross-species pupillometry to select, validate, and clinically advance DSP-1181.\"\n\nA. RNA三级结构预测 ↔ astro-ph.GA\nB. AI Drug Discovery ↔ astro-ph.GA\nC. AI Drug Discovery ↔ 微分方程的数值解法\nD. astro-ph.GA ↔ math.LO\nE. astro-ph.GA ↔ 最短路径规划\nF. astro-ph.GA ↔ 电路系统中的混沌行为\nG. AI Drug Discovery ↔ q-bio.GN\nH. AI Drug Discovery ↔ Condensed Matter Physics and Phase Transitions\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "RNA三级结构预测 ↔ astro-ph.GA",
+      "B": "AI Drug Discovery ↔ astro-ph.GA",
+      "C": "AI Drug Discovery ↔ 微分方程的数值解法",
+      "D": "astro-ph.GA ↔ math.LO",
+      "E": "astro-ph.GA ↔ 最短路径规划",
+      "F": "astro-ph.GA ↔ 电路系统中的混沌行为",
+      "G": "AI Drug Discovery ↔ q-bio.GN",
+      "H": "AI Drug Discovery ↔ Condensed Matter Physics and Phase Transitions"
+    },
+    "gold_answer": {
+      "label": "B"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+astro-ph.GA",
+      "bridge_title": "The authors synergize advanced AI-driven compound generation, optogenetic neural circuit manipulation, and translational",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_007",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"Swin transformer architecture builds a hierarchical multi-stage vision transformer architecture by applying self-attention mechanism only within fixed non-overlapping local windows, alternating regular and shifted window partitions across layers to enable cross-window communication, and using patch merging to form pyramidal multi-scale features.\"\n\nA. Deep Learning ↔ 电路系统中的混沌行为\nB. Deep Learning ↔ astro-ph.IM\nC. AI for Science and Drug Discovery ↔ Computer Vision\nD. Deep Learning ↔ math.GR\nE. Computer Vision ↔ Deep Learning\nF. Computer Vision ↔ Diffusion Models and Generative AI\nG. Computer Vision ↔ physics.optics\nH. AI Agents ↔ Computer Vision\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Deep Learning ↔ 电路系统中的混沌行为",
+      "B": "Deep Learning ↔ astro-ph.IM",
+      "C": "AI for Science and Drug Discovery ↔ Computer Vision",
+      "D": "Deep Learning ↔ math.GR",
+      "E": "Computer Vision ↔ Deep Learning",
+      "F": "Computer Vision ↔ Diffusion Models and Generative AI",
+      "G": "Computer Vision ↔ physics.optics",
+      "H": "AI Agents ↔ Computer Vision"
+    },
+    "gold_answer": {
+      "label": "E"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Computer Vision+Deep Learning",
+      "bridge_title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_021",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"The paper synthesizes prior literature by categorizing AI paradigms such as supervised learning, unsupervised learning, reinforcement learning, deep learning, and generative models and mapping their use cases, benefits, and regulatory implications across pharmaceutical workflows.\"\n\nA. AI Drug Discovery ↔ stat.ME\nB. stat.ME ↔ stat.OT\nC. AI Drug Discovery ↔ 蛋白质从头测序\nD. stat.OT ↔ 分子相互作用\nE. AI Drug Discovery ↔ astro-ph.IM\nF. KrF树脂聚合反应 ↔ stat.OT\nG. physics.plasm-ph ↔ stat.OT\nH. AI Drug Discovery ↔ stat.OT\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI Drug Discovery ↔ stat.ME",
+      "B": "stat.ME ↔ stat.OT",
+      "C": "AI Drug Discovery ↔ 蛋白质从头测序",
+      "D": "stat.OT ↔ 分子相互作用",
+      "E": "AI Drug Discovery ↔ astro-ph.IM",
+      "F": "KrF树脂聚合反应 ↔ stat.OT",
+      "G": "physics.plasm-ph ↔ stat.OT",
+      "H": "AI Drug Discovery ↔ stat.OT"
+    },
+    "gold_answer": {
+      "label": "H"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+stat.OT",
+      "bridge_title": "This review elucidates how AI—spanning machine learning, deep learning, and generative models—revolutionizes pharmaceuti",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_024",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"Generative Adversarial Nets train a generator that maps latent noise to synthetic data and a discriminator that predicts real versus generated inputs in a simultaneous differentiable minimax game, with the generator updated through gradients propagated across the discriminator.\"\n\nA. Deep Learning ↔ 植被覆盖率\nB. Computer Vision ↔ astro-ph.IM\nC. AI Agents and Autonomous Systems ↔ Deep Learning\nD. Deep Learning ↔ 基于局地质量守恒的排放反演\nE. Deep Learning ↔ Natural Language Processing\nF. Computer Vision ↔ Deep Learning\nG. Computer Vision ↔ Diffusion Models and Generative AI\nH. Deep Learning ↔ astro-ph\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Deep Learning ↔ 植被覆盖率",
+      "B": "Computer Vision ↔ astro-ph.IM",
+      "C": "AI Agents and Autonomous Systems ↔ Deep Learning",
+      "D": "Deep Learning ↔ 基于局地质量守恒的排放反演",
+      "E": "Deep Learning ↔ Natural Language Processing",
+      "F": "Computer Vision ↔ Deep Learning",
+      "G": "Computer Vision ↔ Diffusion Models and Generative AI",
+      "H": "Deep Learning ↔ astro-ph"
+    },
+    "gold_answer": {
+      "label": "F"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Computer Vision+Deep Learning",
+      "bridge_title": "Generative Adversarial Nets",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_042",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"Conditional Model-GAN augments the standard Model-GAN minimax game by feeding the same conditioning variable y into both the generator, which maps noise and y to samples, and the discriminator, which judges whether a sample-y pair is real or generated.\"\n\nA. Diffusion Models and Generative AI ↔ 风光新能源功率预测\nB. Diffusion Models and Generative AI ↔ 基于靶点的药物设计\nC. Diffusion Models and Generative AI ↔ 电镜神经元分割\nD. Diffusion Models and Generative AI ↔ 分子相互作用\nE. Diffusion Models and Generative AI ↔ Generative Models\nF. Computer Vision ↔ Diffusion Models and Generative AI\nG. Diffusion Models and Generative AI ↔ Molecular Generation and De Novo Drug Design\nH. Computer Vision ↔ 矩阵补全\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Diffusion Models and Generative AI ↔ 风光新能源功率预测",
+      "B": "Diffusion Models and Generative AI ↔ 基于靶点的药物设计",
+      "C": "Diffusion Models and Generative AI ↔ 电镜神经元分割",
+      "D": "Diffusion Models and Generative AI ↔ 分子相互作用",
+      "E": "Diffusion Models and Generative AI ↔ Generative Models",
+      "F": "Computer Vision ↔ Diffusion Models and Generative AI",
+      "G": "Diffusion Models and Generative AI ↔ Molecular Generation and De Novo Drug Design",
+      "H": "Computer Vision ↔ 矩阵补全"
+    },
+    "gold_answer": {
+      "label": "F"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Computer Vision+Diffusion Models and Generative AI",
+      "bridge_title": "Conditional Generative Adversarial Nets",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_012",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"It performs a structured systematic review and comparative meta-analysis that categorizes methods by computational formalism, data requirements, application scope, and reported performance using benchmark tables and case studies.\"\n\nA. AI Drug Discovery ↔ AI辅助抗体设计\nB. AI辅助抗体设计 ↔ 引力波检测与参数估计(GW Detection & Parameter Estimation)\nC. Quantum Chemistry and Density Functional Theory ↔ math.GR\nD. math.GR ↔ q-fin.PM\nE. math.GR ↔ physics.plasm-ph\nF. AI辅助抗体设计 ↔ Structural Biology\nG. math.GR ↔ 蛋白质从头测序\nH. AI辅助抗体设计 ↔ math.GR\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI Drug Discovery ↔ AI辅助抗体设计",
+      "B": "AI辅助抗体设计 ↔ 引力波检测与参数估计(GW Detection & Parameter Estimation)",
+      "C": "Quantum Chemistry and Density Functional Theory ↔ math.GR",
+      "D": "math.GR ↔ q-fin.PM",
+      "E": "math.GR ↔ physics.plasm-ph",
+      "F": "AI辅助抗体设计 ↔ Structural Biology",
+      "G": "math.GR ↔ 蛋白质从头测序",
+      "H": "AI辅助抗体设计 ↔ math.GR"
+    },
+    "gold_answer": {
+      "label": "H"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI辅助抗体设计+math.GR",
+      "bridge_title": "This review systematically dissects and benchmarks protein characterization techniques—traditional, sequence-based, stru",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_040",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"Deep SVDD learns a neural network that maps normal samples into a latent space tightly concentrated around a fixed or robustly estimated center by minimizing hypersphere volume, and scores anomalies by distance from that center under constraints that prevent trivial collapse.\"\n\nA. Computer Vision ↔ Data Mining\nB. Data Mining ↔ 超导机制研究、超导材料发现与工艺优化\nC. Machine Learning ↔ cond-mat\nD. Data Mining ↔ eess.IV\nE. Data Mining ↔ Diffusion Models and Generative AI\nF. Data Mining ↔ Machine Learning\nG. Data Mining ↔ cond-mat.dis-nn\nH. Data Mining ↔ Large Language Models and Foundation Models\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Computer Vision ↔ Data Mining",
+      "B": "Data Mining ↔ 超导机制研究、超导材料发现与工艺优化",
+      "C": "Machine Learning ↔ cond-mat",
+      "D": "Data Mining ↔ eess.IV",
+      "E": "Data Mining ↔ Diffusion Models and Generative AI",
+      "F": "Data Mining ↔ Machine Learning",
+      "G": "Data Mining ↔ cond-mat.dis-nn",
+      "H": "Data Mining ↔ Large Language Models and Foundation Models"
+    },
+    "gold_answer": {
+      "label": "F"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Data Mining+Machine Learning",
+      "bridge_title": "Deep One-Class Classification",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_001",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"It compiles public pipeline data from more than 100 AI-native biotech firms, classifies molecules by AI mode-of-discovery and modality, counts phase entries and completions, computes phase transition rates, and benchmarks them against historical industry averages.\"\n\nA. AI Drug Discovery ↔ Structural Biology\nB. AI Drug Discovery ↔ stat.OT\nC. AI Drug Discovery ↔ 基于 ZTF 的实时光学瞬变巡天(ZTF-based real-time optical transient survey)\nD. AI Drug Discovery ↔ 基于卫星遥感和四维变分方法的排放反演\nE. AI Drug Discovery ↔ physics.chem-ph\nF. AI Drug Discovery ↔ 视觉解码\nG. AI Drug Discovery ↔ 化学分子合成路径规划\nH. 代码生成 ↔ 基于卫星遥感和四维变分方法的排放反演\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI Drug Discovery ↔ Structural Biology",
+      "B": "AI Drug Discovery ↔ stat.OT",
+      "C": "AI Drug Discovery ↔ 基于 ZTF 的实时光学瞬变巡天(ZTF-based real-time optical transient survey)",
+      "D": "AI Drug Discovery ↔ 基于卫星遥感和四维变分方法的排放反演",
+      "E": "AI Drug Discovery ↔ physics.chem-ph",
+      "F": "AI Drug Discovery ↔ 视觉解码",
+      "G": "AI Drug Discovery ↔ 化学分子合成路径规划",
+      "H": "代码生成 ↔ 基于卫星遥感和四维变分方法的排放反演"
+    },
+    "gold_answer": {
+      "label": "D"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+基于卫星遥感和四维变分方法的排放反演",
+      "bridge_title": "This study systematically assesses the clinical trial success rates of AI-discovered drugs by analyzing pipelines from o",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_029",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"It compiles public pipeline data from more than 100 AI-native biotech firms, classifies molecules by AI mode-of-discovery and modality, counts phase entries and completions, computes phase transition rates, and benchmarks them against historical industry averages.\"\n\nA. Drug Discovery and Molecular Generation ↔ q-fin.PM\nB. AI Drug Discovery ↔ 冰川估计\nC. Drug Discovery and Molecular Generation ↔ q-bio.MN\nD. AI Drug Discovery ↔ Drug Discovery and Molecular Generation\nE. Drug Discovery and Molecular Generation ↔ 运动解码\nF. AI Drug Discovery ↔ 大气（流体）微分方程\nG. AI Drug Discovery ↔ 揭示肿瘤微环境（TME）机制\nH. AI Drug Discovery ↔ AI辅助抗体设计\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Drug Discovery and Molecular Generation ↔ q-fin.PM",
+      "B": "AI Drug Discovery ↔ 冰川估计",
+      "C": "Drug Discovery and Molecular Generation ↔ q-bio.MN",
+      "D": "AI Drug Discovery ↔ Drug Discovery and Molecular Generation",
+      "E": "Drug Discovery and Molecular Generation ↔ 运动解码",
+      "F": "AI Drug Discovery ↔ 大气（流体）微分方程",
+      "G": "AI Drug Discovery ↔ 揭示肿瘤微环境（TME）机制",
+      "H": "AI Drug Discovery ↔ AI辅助抗体设计"
+    },
+    "gold_answer": {
+      "label": "D"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+Drug Discovery and Molecular Generation",
+      "bridge_title": "This study systematically assesses the clinical trial success rates of AI-discovered drugs by analyzing pipelines from o",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_002",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"Constitutional AI trains an assistant with a written constitution by having the model self-critique and revise its answers under those rules for supervised finetuning, then generate constitution-based preference comparisons to train a preference model and optimize the assistant with reinforcement learning.\"\n\nA. Deep Learning ↔ Information Retrieval and Recommendation\nB. AI Drug Discovery ↔ Deep Learning\nC. Computer Security and Cryptography ↔ Deep Learning\nD. Deep Learning ↔ LLM Alignment and RLHF\nE. Deep Learning ↔ 增强模型表达能力的深度PDE求解\nF. Code Generation and AI for Software Engineering ↔ Deep Learning\nG. LLM Alignment and RLHF ↔ 增强模型表达能力的深度PDE求解\nH. LLM Alignment and RLHF ↔ stat.ME\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Deep Learning ↔ Information Retrieval and Recommendation",
+      "B": "AI Drug Discovery ↔ Deep Learning",
+      "C": "Computer Security and Cryptography ↔ Deep Learning",
+      "D": "Deep Learning ↔ LLM Alignment and RLHF",
+      "E": "Deep Learning ↔ 增强模型表达能力的深度PDE求解",
+      "F": "Code Generation and AI for Software Engineering ↔ Deep Learning",
+      "G": "LLM Alignment and RLHF ↔ 增强模型表达能力的深度PDE求解",
+      "H": "LLM Alignment and RLHF ↔ stat.ME"
+    },
+    "gold_answer": {
+      "label": "D"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Deep Learning+LLM Alignment and RLHF",
+      "bridge_title": "Constitutional AI: Harmlessness from AI Feedback",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_013",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"SDXL is a staged latent diffusion system that trains a larger high-resolution base model with a stronger text-conditioning pathway and revised denoising architecture in latent space, then applies a separate refiner model to add local detail and perceptual sharpness.\"\n\nA. Computer Graphics ↔ eess.IV\nB. Computer Graphics ↔ Networking and Distributed Systems\nC. Code Generation and Program Synthesis ↔ Computer Vision\nD. Computer Vision ↔ 蛋白质从头测序\nE. Computer Graphics ↔ 塞曼效应实验\nF. Computer Graphics ↔ Computer Vision\nG. Computer Vision ↔ 多模态理解\nH. AI Agents ↔ Computer Graphics\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Computer Graphics ↔ eess.IV",
+      "B": "Computer Graphics ↔ Networking and Distributed Systems",
+      "C": "Code Generation and Program Synthesis ↔ Computer Vision",
+      "D": "Computer Vision ↔ 蛋白质从头测序",
+      "E": "Computer Graphics ↔ 塞曼效应实验",
+      "F": "Computer Graphics ↔ Computer Vision",
+      "G": "Computer Vision ↔ 多模态理解",
+      "H": "AI Agents ↔ Computer Graphics"
+    },
+    "gold_answer": {
+      "label": "F"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Computer Graphics+Computer Vision",
+      "bridge_title": "SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_016",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"It proposes a variational autoencoder for collaborative filtering that encodes each user's sparse interaction vector into an amortized Gaussian latent distribution and decodes it with a multinomial likelihood over all items, trained with a variational objective using a tunable KL weight.\"\n\nA. Generative Models ↔ Information Extraction and Relation Mining\nB. Data Mining ↔ Generative Models\nC. Data Mining ↔ 最短路径规划\nD. Data Mining ↔ 计算凝聚态物理2\nE. Data Mining ↔ 计算凝聚态物理1\nF. Data Mining ↔ q-fin.ST\nG. Generative Models ↔ 医学图像理解\nH. Generative Models ↔ q-fin.GN\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Generative Models ↔ Information Extraction and Relation Mining",
+      "B": "Data Mining ↔ Generative Models",
+      "C": "Data Mining ↔ 最短路径规划",
+      "D": "Data Mining ↔ 计算凝聚态物理2",
+      "E": "Data Mining ↔ 计算凝聚态物理1",
+      "F": "Data Mining ↔ q-fin.ST",
+      "G": "Generative Models ↔ 医学图像理解",
+      "H": "Generative Models ↔ q-fin.GN"
+    },
+    "gold_answer": {
+      "label": "B"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Data Mining+Generative Models",
+      "bridge_title": "Variational Autoencoders for Collaborative Filtering",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_027",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"The paper synthesizes prior literature by categorizing AI paradigms such as supervised learning, unsupervised learning, reinforcement learning, deep learning, and generative models and mapping their use cases, benefits, and regulatory implications across pharmaceutical workflows.\"\n\nA. cond-mat ↔ q-bio.SC\nB. AI Drug Discovery ↔ 免疫治疗靶点发现\nC. AI Drug Discovery ↔ 台风风压关系\nD. Catalysis and Electrocatalysis ↔ cond-mat\nE. cond-mat ↔ 肿瘤新抗原发现\nF. Quantum Chemistry and Density Functional Theory ↔ cond-mat\nG. AI Drug Discovery ↔ cond-mat\nH. AI Drug Discovery ↔ 传感器空间特性无相位重构\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "cond-mat ↔ q-bio.SC",
+      "B": "AI Drug Discovery ↔ 免疫治疗靶点发现",
+      "C": "AI Drug Discovery ↔ 台风风压关系",
+      "D": "Catalysis and Electrocatalysis ↔ cond-mat",
+      "E": "cond-mat ↔ 肿瘤新抗原发现",
+      "F": "Quantum Chemistry and Density Functional Theory ↔ cond-mat",
+      "G": "AI Drug Discovery ↔ cond-mat",
+      "H": "AI Drug Discovery ↔ 传感器空间特性无相位重构"
+    },
+    "gold_answer": {
+      "label": "G"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+cond-mat",
+      "bridge_title": "This review elucidates how AI—spanning machine learning, deep learning, and generative models—revolutionizes pharmaceuti",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_035",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"PaiNN extends message passing neural networks with jointly updated scalar and equivariant vector features so that interactions respect rotations and enable direct prediction of tensor-valued outputs.\"\n\nA. Catalysis and Electrocatalysis ↔ physics.optics\nB. Catalysis and Electrocatalysis ↔ LLM Alignment and RLHF\nC. Condensed Matter Physics and Phase Transitions ↔ 通用机器学习势函数模型架构研究\nD. Catalysis and Electrocatalysis ↔ Condensed Matter Physics and Phase Transitions\nE. Catalysis and Electrocatalysis ↔ 微分方程的数值解法\nF. Condensed Matter Physics and Phase Transitions ↔ Information Extraction and Relation Mining\nG. Condensed Matter Physics and Phase Transitions ↔ Efficient Training\nH. Condensed Matter Physics and Phase Transitions ↔ 坐标下降优化算法\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Catalysis and Electrocatalysis ↔ physics.optics",
+      "B": "Catalysis and Electrocatalysis ↔ LLM Alignment and RLHF",
+      "C": "Condensed Matter Physics and Phase Transitions ↔ 通用机器学习势函数模型架构研究",
+      "D": "Catalysis and Electrocatalysis ↔ Condensed Matter Physics and Phase Transitions",
+      "E": "Catalysis and Electrocatalysis ↔ 微分方程的数值解法",
+      "F": "Condensed Matter Physics and Phase Transitions ↔ Information Extraction and Relation Mining",
+      "G": "Condensed Matter Physics and Phase Transitions ↔ Efficient Training",
+      "H": "Condensed Matter Physics and Phase Transitions ↔ 坐标下降优化算法"
+    },
+    "gold_answer": {
+      "label": "D"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Catalysis and Electrocatalysis+Condensed Matter Physics and Phase Transitions",
+      "bridge_title": "Equivariant message passing for the prediction of tensorial properties and molecular spectra",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_015",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior.\"\n\nA. LLM Alignment and RLHF ↔ Quantum Computing and Quantum Error Correction\nB. LLM Alignment and RLHF ↔ math.GN\nC. Deep Learning ↔ 蛋白质相互作用预测\nD. Deep Learning ↔ LLM Alignment and RLHF\nE. Deep Learning ↔ 大气（流体）微分方程\nF. Deep Learning ↔ 对话系统\nG. LLM Alignment and RLHF ↔ 视觉解码\nH. Diffusion Models and Generative AI ↔ LLM Alignment and RLHF\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "LLM Alignment and RLHF ↔ Quantum Computing and Quantum Error Correction",
+      "B": "LLM Alignment and RLHF ↔ math.GN",
+      "C": "Deep Learning ↔ 蛋白质相互作用预测",
+      "D": "Deep Learning ↔ LLM Alignment and RLHF",
+      "E": "Deep Learning ↔ 大气（流体）微分方程",
+      "F": "Deep Learning ↔ 对话系统",
+      "G": "LLM Alignment and RLHF ↔ 视觉解码",
+      "H": "Diffusion Models and Generative AI ↔ LLM Alignment and RLHF"
+    },
+    "gold_answer": {
+      "label": "D"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Deep Learning+LLM Alignment and RLHF",
+      "bridge_title": "Finetuned Language Models Are Zero-Shot Learners",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_006",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"FLUSH+RELOAD repeatedly flushes a chosen shared last-level-cache line with a cross-core invalidating instruction and then reloads the same shared address while timing the access, so fast reloads reveal that the victim accessed that exact cache line in the interim.\"\n\nA. Computer Security ↔ math.GR\nB. Computer Security ↔ 增强模型表达能力的深度PDE求解\nC. Computer Architecture ↔ Computer Security\nD. Computer Architecture ↔ 电镜神经元分割\nE. Computer Security ↔ 超导机制研究、超导材料发现与工艺优化\nF. Computer Architecture ↔ astro-ph.IM\nG. Computer Architecture ↔ Deep Learning Architectures\nH. Computer Architecture ↔ stat.ML\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Computer Security ↔ math.GR",
+      "B": "Computer Security ↔ 增强模型表达能力的深度PDE求解",
+      "C": "Computer Architecture ↔ Computer Security",
+      "D": "Computer Architecture ↔ 电镜神经元分割",
+      "E": "Computer Security ↔ 超导机制研究、超导材料发现与工艺优化",
+      "F": "Computer Architecture ↔ astro-ph.IM",
+      "G": "Computer Architecture ↔ Deep Learning Architectures",
+      "H": "Computer Architecture ↔ stat.ML"
+    },
+    "gold_answer": {
+      "label": "C"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Computer Architecture+Computer Security",
+      "bridge_title": "FLUSH+RELOAD: A High Resolution, Low Noise, L3 Cache Side-Channel Attack",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_014",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"FLEX is a forward-learning continual evolution framework that stores a persistent history of agent-environment interactions, converts accumulated experience and self-generated trajectories into reusable training targets, and incrementally updates the policy with stabilization mechanisms to prevent drift under nonstationary long-horizon learning.\"\n\nA. Code Generation and AI for Software Engineering ↔ q-fin.PM\nB. LLM Alignment and RLHF ↔ q-bio.CB\nC. Code Generation and AI for Software Engineering ↔ LLM Alignment and RLHF\nD. LLM Alignment and RLHF ↔ q-fin.MF\nE. Code Generation and AI for Software Engineering ↔ Diffusion Models and Generative AI\nF. LLM Alignment and RLHF ↔ eess.AS\nG. LLM Alignment and RLHF ↔ Structural Biology\nH. Code Generation and AI for Software Engineering ↔ eess.IV\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Code Generation and AI for Software Engineering ↔ q-fin.PM",
+      "B": "LLM Alignment and RLHF ↔ q-bio.CB",
+      "C": "Code Generation and AI for Software Engineering ↔ LLM Alignment and RLHF",
+      "D": "LLM Alignment and RLHF ↔ q-fin.MF",
+      "E": "Code Generation and AI for Software Engineering ↔ Diffusion Models and Generative AI",
+      "F": "LLM Alignment and RLHF ↔ eess.AS",
+      "G": "LLM Alignment and RLHF ↔ Structural Biology",
+      "H": "Code Generation and AI for Software Engineering ↔ eess.IV"
+    },
+    "gold_answer": {
+      "label": "C"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Code Generation and AI for Software Engineering+LLM Alignment and RLHF",
+      "bridge_title": "FLEX: Continuous Agent Evolution via Forward Learning from Experience",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_044",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"The paper synthesizes prior literature by categorizing AI paradigms such as supervised learning, unsupervised learning, reinforcement learning, deep learning, and generative models and mapping their use cases, benefits, and regulatory implications across pharmaceutical workflows.\"\n\nA. Molecular Property Prediction and Drug Design ↔ 情绪识别\nB. Molecular Property Prediction and Drug Design ↔ 基于靶点的药物设计\nC. AI Drug Discovery ↔ 快速射电暴探测与本地化(Detection and localization of Fast Radio Burst)\nD. Molecular Property Prediction and Drug Design ↔ cond-mat\nE. Molecular Property Prediction and Drug Design ↔ q-fin.PM\nF. AI Drug Discovery ↔ 蛋白质结构预测\nG. AI Drug Discovery ↔ Molecular Property Prediction and Drug Design\nH. AI Drug Discovery ↔ 基于局地质量守恒的排放反演\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Molecular Property Prediction and Drug Design ↔ 情绪识别",
+      "B": "Molecular Property Prediction and Drug Design ↔ 基于靶点的药物设计",
+      "C": "AI Drug Discovery ↔ 快速射电暴探测与本地化(Detection and localization of Fast Radio Burst)",
+      "D": "Molecular Property Prediction and Drug Design ↔ cond-mat",
+      "E": "Molecular Property Prediction and Drug Design ↔ q-fin.PM",
+      "F": "AI Drug Discovery ↔ 蛋白质结构预测",
+      "G": "AI Drug Discovery ↔ Molecular Property Prediction and Drug Design",
+      "H": "AI Drug Discovery ↔ 基于局地质量守恒的排放反演"
+    },
+    "gold_answer": {
+      "label": "G"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+Molecular Property Prediction and Drug Design",
+      "bridge_title": "This review elucidates how AI—spanning machine learning, deep learning, and generative models—revolutionizes pharmaceuti",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_031",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"CollAFL is a path-sensitive greybox fuzzing method that augments traditional edge coverage with compact branch-behavior-derived path identifiers so the fuzzer can distinguish and prioritize inputs that follow different decision contexts within already-covered code.\"\n\nA. Software Engineering ↔ q-bio.SC\nB. Distributed Systems and Cloud Computing ↔ Software Engineering\nC. Software Engineering ↔ 生物标志物发现\nD. Deep Learning Architectures ↔ Software Engineering\nE. Computer Security ↔ Software Engineering\nF. AI Drug Discovery ↔ Software Engineering\nG. Computer Security ↔ 胰腺癌的早筛和风险分层\nH. Computer Security ↔ Image Generation\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Software Engineering ↔ q-bio.SC",
+      "B": "Distributed Systems and Cloud Computing ↔ Software Engineering",
+      "C": "Software Engineering ↔ 生物标志物发现",
+      "D": "Deep Learning Architectures ↔ Software Engineering",
+      "E": "Computer Security ↔ Software Engineering",
+      "F": "AI Drug Discovery ↔ Software Engineering",
+      "G": "Computer Security ↔ 胰腺癌的早筛和风险分层",
+      "H": "Computer Security ↔ Image Generation"
+    },
+    "gold_answer": {
+      "label": "E"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "Computer Security+Software Engineering",
+      "bridge_title": "CollAFL: Path Sensitive Fuzzing",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_043",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"The paper synthesizes prior literature by categorizing AI paradigms such as supervised learning, unsupervised learning, reinforcement learning, deep learning, and generative models and mapping their use cases, benefits, and regulatory implications across pharmaceutical workflows.\"\n\nA. AI Drug Discovery ↔ eess.IV\nB. KrF树脂聚合反应 ↔ 小分子推断\nC. AI Drug Discovery ↔ 小分子推断\nD. AI Drug Discovery ↔ 冰川估计\nE. math.LO ↔ 小分子推断\nF. AI Drug Discovery ↔ Quantum Computing and Quantum Error Correction\nG. AI Drug Discovery ↔ eess.SP\nH. 基于靶点的药物设计 ↔ 小分子推断\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI Drug Discovery ↔ eess.IV",
+      "B": "KrF树脂聚合反应 ↔ 小分子推断",
+      "C": "AI Drug Discovery ↔ 小分子推断",
+      "D": "AI Drug Discovery ↔ 冰川估计",
+      "E": "math.LO ↔ 小分子推断",
+      "F": "AI Drug Discovery ↔ Quantum Computing and Quantum Error Correction",
+      "G": "AI Drug Discovery ↔ eess.SP",
+      "H": "基于靶点的药物设计 ↔ 小分子推断"
+    },
+    "gold_answer": {
+      "label": "C"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+小分子推断",
+      "bridge_title": "This review elucidates how AI—spanning machine learning, deep learning, and generative models—revolutionizes pharmaceuti",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_022",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"The paper integrates AI-driven de novo compound design with iterative two-week synthesis and pharmacology cycles, an optogenetic OFC-VMS circuit-based OCD mouse model, and cross-species pupillometry to select, validate, and clinically advance DSP-1181.\"\n\nA. Quantum Computing and Quantum Error Correction ↔ 高分子热电\nB. AI Drug Discovery ↔ 计算凝聚态物理2\nC. AI Drug Discovery ↔ 臭氧污染及成因\nD. AI Drug Discovery ↔ 多模态理解\nE. AI Drug Discovery ↔ 情绪识别\nF. AI Drug Discovery ↔ 高分子热电\nG. AI Drug Discovery ↔ Code Generation and Program Synthesis\nH. AI Drug Discovery ↔ Quantum Chemistry and Density Functional Theory\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "Quantum Computing and Quantum Error Correction ↔ 高分子热电",
+      "B": "AI Drug Discovery ↔ 计算凝聚态物理2",
+      "C": "AI Drug Discovery ↔ 臭氧污染及成因",
+      "D": "AI Drug Discovery ↔ 多模态理解",
+      "E": "AI Drug Discovery ↔ 情绪识别",
+      "F": "AI Drug Discovery ↔ 高分子热电",
+      "G": "AI Drug Discovery ↔ Code Generation and Program Synthesis",
+      "H": "AI Drug Discovery ↔ Quantum Chemistry and Density Functional Theory"
+    },
+    "gold_answer": {
+      "label": "F"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+高分子热电",
+      "bridge_title": "The authors synergize advanced AI-driven compound generation, optogenetic neural circuit manipulation, and translational",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  },
+  {
+    "instance_id": "T1-05_cross_lineage_bridge_009",
+    "task_type": "T1-05_cross_lineage_bridge",
+    "prompt": "This genome appears at the intersection of two research subfields.\nWhich pair of subfields does it bridge? Only the mechanism genome field is shown.\n\nGenome:\n  Mechanism: \"It compiles public pipeline data from more than 100 AI-native biotech firms, classifies molecules by AI mode-of-discovery and modality, counts phase entries and completions, computes phase transition rates, and benchmarks them against historical industry averages.\"\n\nA. AI Drug Discovery ↔ 肿瘤新抗原发现\nB. AI Drug Discovery ↔ astro-ph.SR\nC. 肿瘤新抗原发现 ↔ 胰腺癌的早筛和风险分层\nD. AI Drug Discovery ↔ 代码生成\nE. AI Drug Discovery ↔ 电路系统中的混沌行为\nF. 析氧反应催化材料 ↔ 肿瘤新抗原发现\nG. 氯化物固态电解质 ↔ 肿瘤新抗原发现\nH. AI Drug Discovery ↔ 最优潮流计算\n\nPart 1: Select the subfield pair (A-H)\n  Contribution type: method | dataset | analysis | system | theory\n  Dynamics of the genome's lineage context: Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly one line:\nLabel = [A|B|C|D|E|F|G|H]\n",
+    "choices": {
+      "A": "AI Drug Discovery ↔ 肿瘤新抗原发现",
+      "B": "AI Drug Discovery ↔ astro-ph.SR",
+      "C": "肿瘤新抗原发现 ↔ 胰腺癌的早筛和风险分层",
+      "D": "AI Drug Discovery ↔ 代码生成",
+      "E": "AI Drug Discovery ↔ 电路系统中的混沌行为",
+      "F": "析氧反应催化材料 ↔ 肿瘤新抗原发现",
+      "G": "氯化物固态电解质 ↔ 肿瘤新抗原发现",
+      "H": "AI Drug Discovery ↔ 最优潮流计算"
+    },
+    "gold_answer": {
+      "label": "A"
+    },
+    "metadata": {
+      "baseline": "12.5%",
+      "subfield": "AI Drug Discovery+肿瘤新抗原发现",
+      "bridge_title": "This study systematically assesses the clinical trial success rates of AI-discovered drugs by analyzing pipelines from o",
+      "capability": "Genome Abstraction",
+      "original_task_type": "L4-2_cross_lineage_bridge",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Cross-Lineage Bridge"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage"
+  }
+]

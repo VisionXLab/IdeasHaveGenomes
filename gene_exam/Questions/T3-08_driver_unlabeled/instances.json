@@ -1,0 +1,814 @@
+[
+  {
+    "instance_id": "T3-08_driver_unlabeled_000",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"This paper targets understanding how machine-clear recovery events create transient execution attack opportunities and broaden the space of exploitable speculative leakage beyond previously studied cases.\" -> \"This paper targets understanding how speculative and transient execution attacks compromise the confidentiality guarantees of Intel SGX enclaves.\"\n CHANGED: \"A systematic machine-clear-centric transient-execution analysis that induces diverse pipeline recovery events and measures stale-state persistence across rollback boundaries to generalize speculative leakage beyond single-source attacks.\" -> \"A taxonomy-centric SGX transient-execution security analysis that canonically maps recurring speculative microarchitectural leakage mechanisms to enclave entry/exit, exception, memory, and paging threat surfaces with attacker-capability and defense-layer distinctions.\"\n NEW: A taxonomy-driven framework that classifies SGX-breaking attacks by root cause, transient trigger, leakage channel, attacker capability, and violated protection boundary, while mapping generic transient-execution primitives onto enclave interfaces such as entry, exit, exceptions, memory accesses, and page management.\n NEW: An explicit unification layer that links processor-level transient-execution phenomena to SGX enclave lifecycle events, privilege assumptions, and defense layers.\n REMOVED: The reverse-engineering methodology based on crafted instruction sequences, induced machine clears, and timing probes for stale-state persistence is discarded as the core method.\n REMOVED: The processor-specific limitation stemming from incomplete vendor visibility and partial coverage of machine-clear causes/hardware generations is no longer central.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Hybridization",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_002",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Both papers rely on large-scale empirical mining of software repository traces to study collaborative development behavior in many projects.\n KEPT: Both papers use observational data and quantitative comparison/modeling rather than controlled experiments or purely qualitative analysis.\n CHANGED: \"It uses large-scale mining of GitHub repository metadata, pull request histories, and discussion traces combined with statistical modeling that treats pull request acceptance and integration latency as separate dependent variables and relates them to technical, social, contributor-level, and project-level factors.\" -> \"It uses a large-scale repository-mining before/after observational design that identifies the point of continuous integration adoption in many projects and compares longitudinal changes in commit behavior, pull requests, issue handling, and testing activity around that event.\"\n CHANGED: \"This paper targets understanding what determines whether GitHub pull requests are accepted and how long they take to be integrated in large-scale distributed collaborative software development.\" -> \"This paper targets understanding how the adoption of continuous integration affects surrounding software development practices in collaborative software projects.\"\n CHANGED: \"A large-scale empirical GitHub pull-request study whose distinctive core is separating acceptance from integration latency and showing through statistical modeling across many repositories that social familiarity and responsiveness materially predict contribution outcomes.\" -> \"A large-scale empirical analysis that treats continuous integration adoption as a natural intervention and mines before/after repository histories to infer how CI reshapes neighboring engineering practices.\"\n NEW: B introduces identification of the continuous integration adoption point as the anchor event for analysis.\n NEW: B introduces a longitudinal before/after design that treats CI adoption as a natural intervention.\n NEW: B expands the outcome space to surrounding practices such as commit behavior, issue handling, and testing activity rather than focusing on pull request outcomes alone.\n NEW: B explicitly frames itself as extending prior mining-based software process evolution studies to CI at larger scale and with broader metrics.\n REMOVED: B discards A's specific separation of pull request acceptance versus integration latency as distinct dependent variables.\n REMOVED: B no longer centers discussion traces, social familiarity, and responsiveness as key explanatory variables.\n REMOVED: B drops A's explicit multivariate framing around technical, social, contributor-level, and project-level determinants of individual pull request outcomes.\n REMOVED: A's explicit limitation about inability to explain why specific pull requests are accepted or delayed is not carried over because B studies a different unit of analysis and intervention framing.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Adaptive Radiation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Software Engineering",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_005",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"Detection and characterization of client-side request hijacking vulnerabilities in web applications, where attacker-controlled browser inputs can alter outbound requests.\" -> \"Generation of blind cross-site scripting payloads that can execute in unknown downstream web rendering contexts without direct feedback.\"\n NEW: B introduces automated synthesis of blind-XSS polyglot payloads by modeling parser/context transitions across HTML, attributes, scripts, and URLs, then using search or constraint-guided generation to create mutation-tolerant executable strings with out-of-band signaling.\n NEW: B explicitly reframes the problem from visible-reflection XSS or post-exploitation request manipulation to pre-exploitation generation of blind-XSS polyglots that survive unknown context transitions and self-report success out-of-band.\n NEW: An automated blind-XSS polyglot synthesis paradigm that models multi-context parser transitions and emits out-of-band-reporting payloads for unknown downstream sinks.\n REMOVED: The hybrid static-plus-dynamic client-side request-flow analysis framework for tracing untrusted inputs to request-construction sinks and validating exploitability in browser executions is discarded.\n REMOVED: The validation-coverage limitation tied to exercising realistic browser paths during dynamic confirmation is absent because B no longer relies on targeted dynamic exploitability validation.\n REMOVED: The empirical web-app security analysis lineage centered on modeling attacker-controlled client-side data flows into outbound request construction and building a taxonomy of request hijacking behaviors is not retained.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_008",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"Fast Gradient Sign Method (FGSM): linearize the loss around the input, compute the gradient of the loss with respect to the input, take its elementwise sign, and add a small epsilon-sized perturbation in that direction to generate an approximate worst-case example under an L-infinity constraint, including for adversarial training.\" -> \"A first-order linearity analysis explains adversarial examples by modeling modern differentiable classifiers as locally linear in high-dimensional input spaces, where perturbations chosen along the input gradient under a norm bound can accumulate across dimensions to strongly change class scores.\"\n CHANGED: \"This paper targets understanding and improving the robustness of neural network classifiers to intentionally crafted, small input perturbations that cause misclassification.\" -> \"This paper targets understanding why deep neural network classifiers are vulnerable to adversarial perturbations despite strong generalization on natural inputs.\"\n CHANGED: \"The canonical core is the FGSM-plus-adversarial-training paradigm grounded in the claim that high-dimensional local linearity makes tiny L-infinity perturbations disproportionately effective against neural classifiers.\" -> \"A first-order high-dimensional linearity account of adversarial fragility that elevates adversarial examples from isolated curiosities to a structural limitation of standard deep learning objectives and architectures.\"\n NEW: B emphasizes that adversarial perturbations transfer across different models, making the phenomenon broader than a single-model artifact.\n NEW: B introduces the claim that standard training objectives favor accuracy on natural data while failing to enforce adversarial robustness.\n NEW: B reframes adversarial examples as a general structural consequence of high-dimensional local linearity in modern deep networks rather than merely an attack construction.\n REMOVED: The explicit focus on a single-step L-infinity attack procedure and adversarial training as a practical defense is discarded as a central genome field in B.\n REMOVED: The concrete elementwise-sign perturbation recipe for generating attacks is no longer the centerpiece; B abstracts away from the specific attack algorithm to a broader linear explanation.\n REMOVED: The use of adversarial examples for training to improve robustness, present in A's mechanism/fingerprint, is absent from B's core contribution.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Mutation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_011",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Both papers treat named entity recognition as a task driven by large language models using instruction-style natural-language prompting rather than relying purely on conventional fixed token-classification formulations.\n CHANGED: \"UniversalNER uses targeted distillation from an instruction-following large language model by prompting it to generate structured open-entity annotations, filtering and normalizing those outputs, and training a compact discriminative NER model on the resulting supervision for span and type prediction.\" -> \"The method instruction-tunes a large generative language model to perform biomedical NER as an instruction-following text generation task, using natural-language task definitions, annotation guidelines, and output format constraints to directly generate entity spans and types instead of token-level labels.\"\n CHANGED: \"This paper targets open named entity recognition, where systems must detect entity spans and assign flexible, fine-grained types beyond a fixed label ontology.\" -> \"This paper targets biomedical named entity recognition in highly specialized scientific text with ambiguous terminology, complex morphology, and difficult boundary/type distinctions.\"\n CHANGED: \"An open-NER distillation method that turns structured, filtered annotations from an instruction-tuned LLM into supervision for a compact discriminative extractor, preserving broad type openness without using the LLM at test time.\" -> \"Instruction-tuned biomedical NER that recasts sequence labeling as guided span-and-type generation from domain-specific natural-language annotation instructions within a unified multi-entity prompting framework.\"\n NEW: Paper B introduces biomedical annotation guidelines and domain-specific task definitions directly into prompts to handle specialized terminology and boundary/type ambiguity.\n NEW: Paper B adds a single prompt interface spanning multiple biomedical entity categories instead of separate task-specific tagging heads.\n NEW: Paper B newly centers on an instruction-tuned generative model that directly outputs entity spans and types as text rather than training a separate discriminative extractor from generated supervision.\n REMOVED: Paper B discards the teacher-generated annotation distillation setup in which an LLM produces supervision for a separate compact discriminative student model.\n REMOVED: The explicit filtering and normalization of LLM-produced annotations used to clean distillation targets in Paper A is absent in Paper B.\n REMOVED: Paper A's design goal of transferring capability into a compact extractor that avoids LLM inference at test time is not retained in Paper B.\n REMOVED: The strong emphasis on open-ended, ontology-flexible entity typing from Paper A is not central in Paper B, which instead focuses on biomedical entity categories under a unified prompt interface.\n REMOVED: The specific dependence on noisy teacher-generated annotations as the main bottleneck disappears because Paper B no longer uses LLM outputs as distillation labels for a student.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Adaptive Radiation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Information Extraction and Relation Mining",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_014",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"This paper targets the problem of triggering hardware memory disturbance faults remotely from within a standard web browser's JavaScript environment.\" -> \"This paper targets the problem of extracting privileged kernel memory contents from an unprivileged user-space process on modern CPUs.\"\n NEW: A transient-execution disclosure mechanism in which a faulting user-mode load from kernel-mapped memory transiently forwards secret data, encodes it into cache state via a probe array, and reveals it through cache timing after exception recovery.\n NEW: The key insight that deferred permission checks on faulting privileged loads enable direct data exfiltration, distinct from branch-misprediction-centered speculative attacks.\n NEW: A transient-execution attack fingerprint that converts faulting kernel loads into bytewise kernel disclosure through cache-state encoding before architectural exception delivery.\n REMOVED: The Rowhammer.js mechanism of JavaScript cache eviction, high-resolution timing, and typed-array-based memory massaging to induce DRAM bit flips is discarded.\n REMOVED: Dependence on favorable allocator behavior, vulnerable DRAM modules, and browser/hardware-specific eviction tuning is absent in B.\n REMOVED: The browser-native rowhammer fingerprint centered on remote DRAM fault induction from sandboxed JavaScript does not carry over.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_015",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"This paper targets test-time evasion of machine-learning classifiers, where malicious inputs are modified to be misclassified as benign without losing their intended malicious functionality.\" -> \"This paper targets understanding why deep feedforward neural networks can often be optimized and generalize well despite their highly nonconvex training objectives.\"\n NEW: A theoretical and empirical study of multilayer nonlinear network optimization centered on loss-surface geometry, overparameterization, random initialization, parameter scaling, and signal propagation.\n NEW: A reframing of training success from being blocked by bad local minima or expressivity limits to being governed by high-dimensional geometry, redundancy, and conditioning from initialization.\n NEW: The introduction of adversarial examples as an inherent property of neural networks, broadening vulnerability from attacker-crafted evasion in security settings to a general phenomenon of learned models.\n NEW: An early deep-learning optimization account in which overparameterized multilayer networks trained from random initialization are trainable because poor local minima are rare and signal propagation/conditioning dominate.\n REMOVED: The gradient-based constrained optimization attack framework for functionality-preserving test-time evasion, including differentiable/kernelized approximations and surrogate-model transfer, is discarded.\n REMOVED: The feature-space realism limitation tied to attacker-constrained manipulations in the original application domain is absent in B.\n REMOVED: The explicit adversarial threat-model framing around discriminative classifiers and attacker knowledge/manipulation constraints is not retained.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "observation",
+      "dynamics": "Hybridization",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST",
+        "observation": "MUTATED"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_016",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Paper B inherits the core idea that a pretrained language model can be adapted to follow natural-language instructions through supervised fine-tuning on instruction-response examples.\n CHANGED: \"Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior.\" -> \"The method combines supervised fine-tuning on human-written instruction demonstrations with reinforcement learning from a learned reward model trained on pairwise human preference rankings, using a KL penalty to keep the policy close to the supervised model during policy optimization.\"\n CHANGED: \"This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\" -> \"This paper targets adapting large language models to reliably follow natural-language instructions and align their outputs with human preferences for helpfulness, relevance, and harmlessness.\"\n CHANGED: \"A seq2seq language model turned into a zero-shot instruction follower by finetuning on a broad cross-task mixture of natural-language instruction/output pairs in a unified text-to-text format.\" -> \"InstructGPT-style alignment: supervised instruction tuning plus a preference-trained reward model and KL-constrained PPO on a pretrained autoregressive LM to optimize human-preferred instruction-following behavior.\"\n NEW: Paper B introduces a learned reward model trained on pairwise human preference rankings to score candidate responses.\n NEW: Paper B introduces reinforcement learning with a KL penalty to optimize the model toward human-preferred outputs while constraining drift from the supervised policy.\n NEW: Paper B adds an explicit optimization target for helpfulness, relevance, and harmlessness rather than only task completion from instructions.\n NEW: Paper B explicitly positions itself as going beyond prompting or supervised instruction tuning alone by directly optimizing for human preferences.\n REMOVED: Paper A's emphasis on a broad heterogeneous NLP benchmark mixture reformatted into a single text-to-text schema is not central in Paper B, which instead centers on human-written demonstrations and preference data.\n REMOVED: The explicit framing around zero-shot transfer to unseen NLP tasks without task-specific finetuning is de-emphasized in Paper B.\n REMOVED: Paper A's specific limitation about dependence on a manually curated supervised task mixture is not retained as a defining genome field in Paper B's genome.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Natural Language Processing",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_027",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Paper B retains the core grasp-analysis foundation that represents contacts through object wrench space and uses closure conditions derived from geometric and algebraic structure.\n KEPT: Paper B preserves the central objective of determining contact sets that immobilize a rigid object via form-closure conditions.\n CHANGED: \"A geometric-algebraic grasp closure analysis models each contact by a local friction force cone, maps the combined contact forces into object wrench space, and tests closure through convex hull, spanning, and rank conditions in a coordinate-invariant rigid-body formulation.\" -> \"A constructive grasp-synthesis optimization searches over contact placements and associated wrench constraints using geometric wrench-space structure and algebraic form-closure conditions to jointly enforce feasibility and maximize grasp-quality criteria without exhaustive contact enumeration.\"\n CHANGED: \"This paper targets the problem of determining when a multi-contact robotic grasp can either resist arbitrary external disturbances or immobilize an object under frictional contact.\" -> \"This paper targets the synthesis of optimal frictionless form-closure grasps that immobilize rigid polygonal or polyhedral objects.\"\n CHANGED: \"A foundational grasp-analysis framework that defines force and form closure via friction-cone-generated wrench spaces and tests them with coordinate-invariant convex and linear-algebraic conditions.\" -> \"An optimization-based form-closure grasp synthesizer that uses wrench-space geometry and algebraic closure constraints to compute robust frictionless contact sets efficiently instead of merely certifying existence.\"\n NEW: Paper B introduces a direct computational pipeline that searches over contact placements to synthesize grasps rather than only analyze given ones.\n NEW: Paper B adds explicit optimization of grasp-quality criteria alongside closure feasibility.\n NEW: Paper B introduces an efficient alternative to exhaustive contact enumeration for computing valid grasp configurations.\n NEW: Paper B explicitly positions its contribution as converting form-closure theory from existence testing into practical optimal grasp computation.\n REMOVED: Paper B drops the broader force-closure analysis of resisting arbitrary disturbances and concentrates on frictionless form-closure synthesis.\n REMOVED: The explicit local friction force cone modeling central to Paper A is absent in Paper B's frictionless setting.\n REMOVED: Paper A's emphasis on analytical testing and certification of closure without constructing grasps is discarded.\n REMOVED: The predecessor's explicit framing around idealized rigid-body statics limitations is not carried forward as a defining genome field in Paper B.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Mutation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Robotics",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_033",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Use of machine learning over extracted program features to automatically detect or categorize malware rather than relying purely on hand-written signatures.\n CHANGED: \"A behavior-based malware analysis framework executes programs in a controlled environment, converts traces of system calls, file, registry, process, and network activity into machine-learning features, and uses statistical clustering or classification to group samples by behavioral similarity.\" -> \"DREBIN performs lightweight static analysis of Android application packages to extract sparse, interpretable manifest- and code-derived features and applies a linear classifier that scores apps by weighted feature presence for efficient, explainable malware detection.\"\n CHANGED: \"This paper targets automated analysis and categorization of malware based on observed runtime behavior across large collections of samples.\" -> \"This paper targets practical detection of Android malware directly on end-user mobile devices.\"\n CHANGED: \"A sandbox-driven malware behavior analysis system that learns from runtime event traces to automatically cluster or classify malware families by behavioral similarity rather than by static code signatures.\" -> \"An Android malware detector defined by broad package/code static feature engineering and a sparse linear, weight-interpretable classifier designed for efficient on-device, explainable detection.\"\n NEW: B introduces Android-focused manifest and code feature extraction tailored to APK structure and platform semantics.\n NEW: B introduces a linear weighted model whose decisions can be explained through per-feature contributions.\n NEW: B explicitly optimizes for lightweight deployment and fast detection on end-user mobile devices.\n NEW: B adds explicit explanation of each malware decision as a first-class design objective.\n REMOVED: Execution in a controlled sandbox to elicit runtime behavior before analysis was discarded.\n REMOVED: System-call, file, registry, process, and network event traces as the primary feature source are absent in B.\n REMOVED: The emphasis on clustering or family grouping by behavioral similarity is dropped in favor of direct detection.\n REMOVED: The specific limitation of missing malicious behavior not triggered during sandbox execution disappears because B no longer depends on runtime triggering.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Adaptive Radiation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_034",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"It uses a controlled ablation and evaluation framework that equalizes model capacity, preprocessing, optimization, initialization, stopping criteria, and tuning budget, then tests individual modules and their combinations across repeated trials and stress-test conditions.\" -> \"DataFusion is a modular analytic query engine that uses Apache Arrow columnar in-memory batches with separable SQL parsing, logical planning, rule- and cost-based optimization, and vectorized physical execution connected through trait-based extension interfaces.\"\n CHANGED: \"This paper targets the problem of determining whether reported gains from a recently proposed model and evaluation recipe are real, robust, and causally attributable in the studied benchmark setting.\" -> \"This paper targets embeddable high-performance analytical SQL query processing inside larger data systems.\"\n CHANGED: \"A rigorous reproducibility-first ablation audit that equalizes all training and evaluation factors to separate true module-level gains from benchmark, tuning, and implementation artifacts in a high-profile claimed improvement.\" -> \"A trait-extensible, Arrow-native SQL analytics engine that separates parsing, planning, optimization, and vectorized execution into swappable modules over standardized columnar batches.\"\n NEW: B introduces Apache Arrow columnar in-memory batches as the standard execution and interchange substrate.\n NEW: B introduces trait-based APIs that make storage, functions, plans, and execution components swappable and embeddable.\n NEW: B introduces an end-to-end decomposition of SQL parsing, logical planning, optimization, and vectorized physical execution into separable modules.\n NEW: B introduces the goal of serving as a high-performance analytical SQL engine embedded inside larger systems.\n NEW: B introduces explicit query optimization machinery combining rule-based and cost-based planning.\n REMOVED: The re-examination-specific limitation about conclusions not transferring beyond one contemporaneous approach, benchmark regime, architecture set, and scale is discarded.\n REMOVED: The core emphasis on controlled ablation, repeated trials, stress testing, and causal attribution of claimed gains is absent in B.\n REMOVED: The explicit equalization of preprocessing, optimization, initialization, stopping criteria, and tuning budget does not carry over into B.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Database Systems",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_035",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Paper B preserves the core empirical strategy from Paper A: use static analysis to identify candidate client-side security-relevant flows and dynamic browser execution to validate whether those flows are actually exploitable.\n KEPT: Paper B inherits the end-to-end reasoning pattern of tracing attacker-controlled inputs through event-driven JavaScript to security-sensitive sinks rather than analyzing isolated code fragments.\n KEPT: Both papers target scalable, systematic security analysis of real-world web applications using automated program analysis plus execution-based confirmation.\n CHANGED: \"PMForce is a hybrid static-dynamic analysis system that extracts postMessage event listeners, reconstructs their message-processing logic, systematically explores message formats and control-flow paths, and checks end-to-end flows from message receipt through origin validation and sanitization to security-sensitive sinks.\" -> \"It introduces a hybrid client-side request-flow analysis framework that statically traces untrusted inputs through event-driven JavaScript to security-sensitive request-construction sinks and then dynamically validates candidate flows in realistic browser executions to confirm exploitability.\"\n CHANGED: \"This paper targets the large-scale security analysis of client-side postMessage handlers in web applications, focusing on whether cross-origin messages are safely validated before triggering dangerous actions.\" -> \"This paper targets the detection and characterization of client-side request hijacking vulnerabilities in web applications, where attacker-controlled browser inputs can alter outbound requests.\"\n CHANGED: \"A scalable hybrid system for extracting and systematically exploring web postMessage handlers to verify origin/data checks along end-to-end flows into dangerous client-side sinks.\" -> \"A hybrid empirical security method for web apps that models attacker-controlled client-side data flows into outbound request construction across diverse browser APIs and validates them dynamically to build a taxonomy of request hijacking behaviors.\"\n NEW: Paper B introduces request-construction sinks as the primary security-sensitive endpoint, focusing on how client-side data influences outbound web requests.\n NEW: Paper B adds a characterization goal beyond detection by building a taxonomy of request hijacking behaviors.\n NEW: Paper B expands the attacker model from one communication primitive to a broader set of attacker-controlled browser inputs and APIs that can affect requests.\n NEW: Paper B emphasizes dynamic confirmation in realistic browser executions specifically to establish exploitability of candidate request-manipulation flows.\n REMOVED: The explicit focus on extracting postMessage event listeners and reconstructing message-handler logic as the central analysis unit is discarded.\n REMOVED: Systematic exploration of postMessage-specific message formats and handler control-flow branches is no longer the defining analysis object in Paper B.\n REMOVED: The specific security question of whether cross-origin messages are protected by origin checks and sanitization before dangerous actions is not retained as the main target.\n REMOVED: Paper A's stated limitation around approximating highly dynamic JavaScript behavior and message semantics for scalability is not explicitly carried forward as a defining genome field in Paper B's genome description.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Adaptive Radiation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_017",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"Using linked population-wide administrative records from Romagna (2017-2023), it anchors event time at each patient's first CHF admission and applies dynamic event-study methods plus an interaction-weighted staggered-adoption difference-in-differences design, with HonestDiD sensitivity checks for parallel-trends violations.\" -> \"It applies a fourth-order compact finite-difference discretization for the local spatial operators within an IMEX Crank-Nicolson time-stepping scheme and uses Simpson quadrature to evaluate the jump integral.\"\n CHANGED: \"The paper studies how a first hospitalization for congestive heart failure changes subsequent care behavior and whether a nurse-led chronic-care program sustains those changes in a regional Italian health system.\" -> \"This paper addresses numerical pricing of options in the two-dimensional Bates stochastic volatility jump-diffusion model via its transformed partial integro-differential equation.\"\n CHANGED: \"A first CHF hospitalization causes an immediate post-discharge increase in beta-blocker adherence, cardiology follow-up, and echocardiography, while emergency-room use spikes just before admission and then stabilizes, and NPCP appears to reinforce long-run preventive engagement with little clear effect on ER use.\" -> \"Experiments show near-fourth-order spatial convergence for the HOC-FD method, near-second-order convergence for quadratic FEM and standard FD baselines, and substantially lower runtime for HOC-FD at comparable accuracy.\"\n NEW: An explicit contribution claim that the work introduces a high-order compact finite-difference baseline for Bates PIDEs that preserves second-order time integration while greatly improving spatial accuracy-efficiency over prior second-order FD and quadratic FEM solvers.\n REMOVED: The predecessor's concern about causal fragility under parallel-trends violations and limited certainty about program effects is dropped.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "econ.GN",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_019",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Both papers center on named entity recognition and use LLM-derived knowledge to improve entity extraction performance.\n CHANGED: \"Instruction-tunes a large generative language model to perform biomedical NER as an instruction-following text generation task, directly generating entity spans and types from natural-language task definitions and guidelines.\" -> \"Uses an instruction-following LLM offline to generate token/span annotations, then filters and normalizes them to pre-train a discriminative sequence-labeling encoder for later NER fine-tuning.\"\n CHANGED: \"Biomedical named entity recognition in highly specialized scientific text with ambiguous terminology, complex morphology, and difficult boundary/type distinctions.\" -> \"Named entity recognition more broadly, with emphasis on improving generalization beyond narrow manually labeled corpora.\"\n CHANGED: \"Instruction-tuned biomedical NER that recasts sequence labeling as guided span-and-type generation from domain-specific natural-language annotation instructions within a unified multi-entity prompting framework.\" -> \"An NER pre-training framework that converts quality-controlled instruction-LLM generations into token-level weak supervision to distill broad entity knowledge into a deployable discriminative encoder.\"\n NEW: B introduces large-scale pre-training of an encoder using LLM-generated weak labels before standard supervised NER fine-tuning.\n NEW: B adds post-processing and filtering to normalize labels and remove hallucinated, inconsistent, or malformed spans from LLM-generated annotations.\n NEW: B introduces the goal of distilling LLM-derived entity knowledge into a reusable, efficient discriminative sequence-labeling model.\n NEW: B explicitly reframes the LLM from a direct extractor to an offline annotation generator that supports downstream model building.\n REMOVED: B discards the idea of using the generative LLM itself as the deployed NER extractor at inference time.\n REMOVED: B no longer centers domain-specific biomedical task definitions and unified multi-entity prompting as the core operating interface.\n REMOVED: The predecessor's concern about exact span-boundary preservation and output-format validity in generated structured outputs is no longer central because B returns to token-level discriminative labeling.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Information Extraction and Relation Mining",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_006",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Both papers target abstractive document summarization and emphasize gains in low-resource or transfer settings.\n CHANGED: \"Seq2seq summarization is improved by initializing the encoder, and sometimes decoder, with large self-supervised pretrained contextual representations and then fine-tuning end-to-end.\" -> \"A standard encoder-decoder is pre-trained directly for summarization by masking heuristic-selected salient sentences and generating those missing sentences from the remaining document context.\"\n CHANGED: \"Pretrained-encoder abstractive summarization via transfer of bidirectional contextual representations from large unlabeled corpora into seq2seq summarizers through encoder-only or hybrid encoder-decoder initialization followed by fine-tuning.\" -> \"Task-specific seq2seq pre-training for summarization via extraction and regeneration of salient missing sentences rather than generic representation transfer or token-level denoising.\"\n NEW: B introduces a self-supervised objective that removes salient whole sentences and trains the model to regenerate them, making the pre-training target structurally similar to summarization.\n NEW: B adds heuristic selection of important sentences to omit, so the corruption process preferentially targets summary-like content rather than random tokens or spans.\n NEW: B explicitly aligns pre-training with downstream summarization behavior by making the model practice compressive content recovery at sentence level.\n NEW: Compared with earlier encoder-decoder pre-training based on random token or span corruption, B changes the target to generation of omitted salient whole sentences chosen to mimic summaries.\n REMOVED: The need to reconcile bidirectional pretrained encoders with autoregressive decoding through awkward hybrid architectural transfer choices is discarded because B pre-trains a standard encoder-decoder jointly.\n REMOVED: A's emphasis on encoder-only or partial decoder initialization from external pretrained representations is absent in B.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "niche": "INHERITED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Natural Language Processing",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "INHERITED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_012",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"This paper targets low-latency, high-throughput analytical querying over very large datasets under real-world mixed ingestion and interactive analytics workloads.\" -> \"This paper targets the problem of determining whether reported gains from a recently proposed model and evaluation recipe are real, robust, and causally attributable in the studied benchmark setting.\"\n NEW: A reproducibility-first audit methodology using controlled ablations, matched-capacity baselines, standardized preprocessing and optimization, repeated trials, and stress tests to isolate causal contributions.\n NEW: An explicit replacement of headline end-to-end comparisons with module-wise attribution, equalized training conditions, broader robustness metrics, and tuning-budget control.\n NEW: A benchmark-audit style contribution whose core identity is separating true gains from implementation, tuning, and evaluation artifacts in a prominent claimed improvement.\n REMOVED: The entire ClickHouse system design based on compressed immutable columnar parts, sparse indexing, partition pruning, late materialization, and a parallel vectorized execution engine is discarded.\n REMOVED: The predecessor's concern with tradeoffs of a specialized storage/execution co-design for scan-heavy analytical workloads is absent in the successor.\n REMOVED: The identity of the work as a production analytical database for large-scale interactive analytics is not retained.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "limitation",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Database Systems",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_009",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"This paper targets network intrusion detection under realistic open-world conditions where future attack types may differ from those seen during training.\" -> \"This paper targets the problem of generating benchmark datasets for intrusion detection that faithfully represent operational network environments and support reliable evaluation.\"\n CHANGED: \"An open-world evaluation analysis for ML network intrusion detection that operationalizes novelty-aware train/test splits over traffic features to show the gap between closed-world benchmark accuracy and real-world detection of unseen attacks.\" -> \"A requirement-driven pipeline for intrusion-detection benchmark construction that integrates realistic environment modeling, curated benign and malicious activity generation, and provenance-rich labeling/validation to yield reproducible, traceable datasets.\"\n NEW: A staged, requirement-driven benchmark-generation process with environment modeling, benign behavior synthesis, attack injection, traffic capture, provenance-preserving labeling, and validation.\n NEW: An explicit claim that benchmark creation should replace ad hoc, static, synthetic, or poorly documented dataset assembly with an end-to-end engineering process emphasizing realism, coverage, reproducibility, and traceability.\n NEW: Ground-truth labels are tied to capture provenance and validation steps so dataset contents remain auditable and reproducible.\n REMOVED: The supervised-learning evaluation setup with novelty-aware train/test splits and classifier comparison is discarded; B no longer studies detector performance directly.\n REMOVED: A's self-identified limitation of offering critique without a concrete robust detection method is no longer central, because B shifts from detection algorithms to benchmark construction.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "limitation",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "MUTATED",
+        "mechanism": "LOST",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_020",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Both papers target aligning pretrained language models to follow diverse natural-language instructions and improve generalization across varied tasks.\n CHANGED: \"Starting from pretrained autoregressive language models, the method performs supervised instruction tuning on a large mixture of heterogeneous datasets rewritten as natural-language instruction–output pairs within a unified text-to-text format, while systematically varying model scale and task diversity.\" -> \"Self-Instruct is a self-bootstrapping instruction-tuning pipeline in which a pretrained language model, prompted with a small seed set of tasks, generates new instructions plus optional inputs and outputs, then heuristic filtering, deduplication, and validation select synthetic examples for fine-tuning the same model.\"\n CHANGED: \"A scaling study of supervised instruction tuning that unifies many NLP tasks as text-to-text instruction–response pairs and shows emergent unseen-task instruction following as model size and instruction diversity increase.\" -> \"A self-bootstrapped instruction-alignment method where an LM recursively generates, filters, and learns from its own synthetic instruction-input-output triples to scale instruction tuning beyond human-authored datasets.\"\n NEW: Paper B introduces recursive model-generated instruction, input, and output creation from a small seed set.\n NEW: Paper B adds heuristic filtering, deduplication, and validation to control the quality of self-generated instruction-tuning data.\n NEW: Paper B explicitly reframes instruction tuning as reducing reliance on expensive human-authored instruction datasets.\n NEW: Paper B explicitly positions its contribution as replacing most manual instruction-data creation with model-driven task expansion.\n REMOVED: Paper A's central emphasis on systematically varying model scale and instruction-task diversity to study emergent behavior is not a defining component of Paper B.\n REMOVED: Paper A's dependence on large heterogeneous existing datasets manually rewritten into a unified instruction text-to-text format is discarded.\n REMOVED: Paper A's framing around coverage limits of curated supervised instruction mixtures is no longer the main bottleneck formulation in Paper B.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "limitation",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "niche": "INHERITED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "LLM Alignment and RLHF",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "INHERITED",
+        "mechanism": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_010",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"Quantum Imaginary Time Evolution with broken-symmetry initialization, S^2 penalty augmentation, and measurement-assisted unitary approximation for molecular Hamiltonians\" -> \"Asymptotic spectral-gap analysis via a different analytical framework proving bounds, extending prior arguments, and settling a conjecture for discrete Schrödinger operators\"\n CHANGED: \"Ground-state estimation for open-shell and strongly correlated molecular systems in quantum chemistry\" -> \"Infinite-volume spectral-gap behavior for discrete Schrödinger operators on a path graph under broad potentials\"\n CHANGED: \"Broken-symmetry initialization improves QITE convergence in multiconfigurational regimes, with Hartree-Fock better before a correlation threshold\" -> \"The spectral gap vanishes with increasing volume in a characterizable way across a broader class of potentials\"\n NEW: Explicit confirmation of earlier asymptotics, generalization to a larger family of potentials, and proof of a standing conjecture using entirely different methods.\n REMOVED: The predecessor's concern with small-molecule demonstrations, simulation-only evidence, and uncertain scalability to realistic quantum hardware is dropped.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "physics.chem-ph",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_023",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"It models consciousness-relevant physical implementations as effective causal graphs over a finite integration window τ and applies standard black hole causal structure to test whether a single strongly connected component can extend across the horizon.\" -> \"It measures fragment anion yields for 1-propanol over 3.5 to 16 eV and uses DFT calculations to estimate threshold energies for the observed dissociation channels.\"\n CHANGED: \"The paper addresses whether a single unified conscious field, as defined by integration-based theories of consciousness, can persist when its physical substrate is distributed across a black hole event horizon.\" -> \"The paper studies low-energy electron-induced dissociation pathways of 1-propanol in the context of dissociative electron attachment in alcohol molecules.\"\n CHANGED: \"The central theoretical result is that no strongly connected component can span an event horizon, so any integration-based theory requiring such connectivity must treat cross-horizon unity as impossible.\" -> \"Four anions, H−, O−, OH−, and C3H7O−, are observed, with OH− peaking strongly near 8.7 eV and H− and C3H7O− sharing a sharp resonance near 6 eV plus broad features from 7 to 12 eV.\"\n NEW: B introduces an explicit comparative contribution claim: the first detailed fragment-yield and threshold-energy characterization for 1-propanol within prior alcohol DEA studies, supporting site-specific fragmentation.\n REMOVED: The predecessor's explicit discussion of theory-internal scope limits, alternative consciousness theories, and nonstandard horizon physics is dropped.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "physics.pop-ph",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED",
+        "limitation": "LOST"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_004",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"Atomistic simulation of an uncharged polymer in mixed-salt aqueous solution to study ion-specific accumulation/depletion and conformational change.\" -> \"Hybrid Bayesian inference sampler combining Gibbs updates for Pólya-Gamma variables with NUTS and Kalman filtering to fit binomial-logit dynamic structural equation models.\"\n CHANGED: \"Explaining non-additive mixed-anion effects on polymer coil-globule equilibrium and LCST-like behavior without specific polymer-ion binding.\" -> \"Estimating dynamic structural equation models for intensive longitudinal data with binomial outcomes under a logit link.\"\n CHANGED: \"Qualitative mixed-salt trends arise from SCN-/I- enrichment near the polymer coupled to sulfate depletion, with stronger effects at higher sulfate background.\" -> \"The hybrid NUTS-Gibbs sampler is more efficient than alternatives and makes larger or more complex binomial DSEMs practical.\"\n NEW: Introduced latent-variable augmentation tailored to binomial-logit models.\n NEW: Introduced exact marginalization of latent states via Kalman filtering instead of explicit state sampling.\n NEW: Introduced an inference architecture that alternates Gibbs and NUTS steps for improved efficiency.\n NEW: Introduced a methodological contribution for intensive longitudinal dynamic structural equation modeling with binomial outcomes.\n NEW: Added simulation-based evidence of superior computational efficiency relative to alternative samplers.\n REMOVED: The focus on thermoresponsive polymers, ion-specific solvation, coil-globule transitions, and LCST-like behavior was dropped.\n REMOVED: The concern with qualitative generic force fields and lack of chemistry-specific quantitative agreement was dropped.\n REMOVED: The central question of reproducing non-additive salt effects without specific binding was dropped.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "stat.CO",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_022",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Both papers target cross-core last-level-cache side-channel monitoring to extract sensitive information from a victim's execution and memory-access behavior on multi-core systems.\n CHANGED: \"FLUSH+RELOAD repeatedly flushes a chosen shared last-level-cache line with a cross-core invalidating instruction and then reloads the same shared address while timing the access, so fast reloads reveal that the victim accessed that exact cache line in the interim.\" -> \"It introduces a Prime+Probe-style last-level cache attack that builds eviction sets for shared LLC cache sets, primes them with unprivileged memory accesses, and infers victim activity by probing latency changes caused by cross-core contention and evictions.\"\n CHANGED: \"The attack depends on attacker and victim sharing physical pages such as shared libraries or deduplicated memory, so it does not directly apply when no shared cache lines are available.\" -> \"The successor removes the shared-memory requirement by using generic LLC set contention and eviction behavior, making the attack applicable even when attacker and victim do not share pages.\"\n CHANGED: \"A shared-page, inclusive-L3, cache-line-level side channel built from a flush instruction plus timed reload to convert exact line residency into low-noise cross-core execution traces.\" -> \"A practical cross-core LLC Prime+Probe attack genome: unprivileged eviction-set construction plus latency probing of shared last-level cache sets to replace shared-memory Flush+Reload assumptions.\"\n NEW: B introduces the construction of eviction sets that map attacker-controlled addresses onto target LLC sets.\n NEW: B introduces a fully unprivileged prime-and-probe workflow based on filling cache sets and measuring eviction-induced latency changes.\n NEW: B explicitly broadens the attack model to realistic systems where no shared memory exists between attacker and victim.\n REMOVED: B discards A's dependence on attacker-victim shared physical pages or shared cache lines.\n REMOVED: B no longer relies on a privileged or special cache-line invalidation primitive such as flush to create the signal.\n REMOVED: B gives up A's exact shared-cache-line observability in favor of coarser cache-set-level inference.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "limitation",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "niche": "INHERITED",
+        "mechanism": "MUTATED",
+        "limitation": "MUTATED"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "niche": "INHERITED",
+        "mechanism": "MUTATED",
+        "limitation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_032",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n KEPT: Both papers aim to obtain exact criteria that sharply characterize a central property of the objects under study.\n KEPT: Both works are mathematically rigorous analysis papers centered on deriving necessary and sufficient or threshold-type results for structured operators/equations.\n CHANGED: \"Variational methods using interpolation Hardy-Gagliardo-Nirenberg optimizers, Pohozaev identities, and compactness arguments for a nonlinear PDE.\" -> \"Measure-theoretic construction of generalized Hilbert matrix operators and boundedness analysis via interaction with weighted sequence norms.\"\n CHANGED: \"Cauchy problem for nonlinear Schrödinger equations with critical Hardy potential and nonlocal Choquard nonlinearity in the energy-subcritical regime.\" -> \"Generalized Hilbert matrix operators induced by positive finite Borel measures on (0,1) acting on weighted sequence spaces.\"\n CHANGED: \"Competition between singular Hardy potential and nonlocal Choquard interaction creates sharp thresholds for ground states, global existence, and blow-up.\" -> \"An exact necessary-and-sufficient boundedness condition characterizes when the generalized Hilbert matrix operators act boundedly on the weighted sequence spaces.\"\n NEW: B introduces a generalized family of Hilbert matrix operators whose entries are generated by positive finite Borel measures on (0,1).\n NEW: B shifts the setting to weighted sequence spaces and studies boundedness relative to their norms.\n NEW: B contributes a necessary and sufficient condition precisely characterizing boundedness of the generalized operators.\n NEW: B explicitly generalizes earlier special-case results from the 2023 literature to a broader operator family.\n REMOVED: The focus on ground states, Pohozaev identities, and variational threshold analysis disappears.\n REMOVED: Global well-posedness, finite-time blow-up, and minimal-mass blow-up characterization are dropped.\n REMOVED: The predecessor's regime-specific energy-subcritical framing is no longer relevant.\n REMOVED: The singular Hardy potential and nonlocal Choquard nonlinearity are absent in the successor.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "math.GR",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  },
+  {
+    "instance_id": "T3-08_driver_unlabeled_018",
+    "task_type": "T3-08_driver_unlabeled",
+    "prompt": "The following changes were observed (genome field names hidden):\n\n CHANGED: \"A composite-likelihood EM procedure with importance sampling and a Monte Carlo EM baseline for approximate maximum-likelihood inference in latent-variable count models.\" -> \"Atomistic molecular simulations of a generic uncharged polymer in aqueous mixed-salt environments to track ion distributions and conformational changes.\"\n CHANGED: \"Parameter inference for multivariate count data under the Poisson log-normal model.\" -> \"Explaining mixed-anion effects on polymer coil-globule equilibrium and LCST-like behavior without invoking specific binding.\"\n CHANGED: \"Approximate ML remains computationally feasible and preserves asymptotic inferential benefits on moderately large problems.\" -> \"Non-additive mixed-salt behavior can arise generically from coupled ion enrichment and sulfate depletion near the polymer.\"\n NEW: A chemically generic uncharged linear polymer in water is introduced as the system of study.\n NEW: The work newly varies NaSCN or NaI concentration at fixed Na2SO4 background to probe mixed-salt effects.\n NEW: It introduces the claim that non-additive behavior can be reproduced without chemically specific polymer-ion binding.\n NEW: The paper identifies SCN-/I- enrichment near the polymer coupled with sulfate depletion as the source of the observed non-additivity.\n REMOVED: The EM/composite-likelihood/importance-sampling machinery for likelihood-based estimation and hypothesis testing was dropped.\n REMOVED: The Poisson log-normal latent-variable setting for multivariate count data is no longer present.\n REMOVED: The concern about approximation efficiency degrading in very high-dimensional statistical problems disappeared with the shift away from that domain.\n\nAnswer ALL parts:\nPart 1: What drove this change?\n mechanism | niche | observation | limitation\n Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nAnswer with exactly one line per field:\nNiche = [INHERITED|MUTATED|LOST]\nMechanism = [INHERITED|MUTATED|LOST]\nLimitation = [INHERITED|MUTATED|LOST]\nObservation = [INHERITED|MUTATED|LOST]\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation",
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "stat.CO",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-25_driver_dynamics_unlabeled",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Unlabeled Driver Inference"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance",
+    "diagnostic_gold": {
+      "source_genome_status": {
+        "mechanism": "MUTATED",
+        "niche": "MUTATED",
+        "observation": "MUTATED"
+      }
+    }
+  }
+]

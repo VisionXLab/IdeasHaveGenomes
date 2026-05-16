@@ -1,0 +1,165 @@
+{
+  "trace_id": "biology_SpatialTranscriptomics",
+  "domain": "biology",
+  "direction": "SpatialTranscriptomics",
+  "subfield": "Computational Biology / Spatial Transcriptomics Analysis",
+  "frontier_justification": "Spatial transcriptomics was named Nature Method of the Year 2020 and has since exploded with deep learning methods for spatial domain identification, multimodal integration, and tissue atlas construction. By 2025, foundation models trained on tens of millions of spatially resolved cells represent the frontier, enabling zero-shot tissue architecture analysis across organs and species.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "Visualization and analysis of gene expression in tissue sections by spatial transcriptomics",
+      "year": 2016,
+      "venue": "Science 2016",
+      "arxiv_id": "N/A (Science doi:10.1126/science.aaf2403)",
+      "paper_type": "research",
+      "key_contribution": "Introduced the spatial transcriptomics technique: positional barcoding on arrayed reverse transcription primers enables high-quality RNA-seq with maintained 2D spatial information from tissue sections; demonstrated on mouse brain and human breast cancer.",
+      "idea_genome": {
+        "problem_genome": "Single-cell RNA-seq loses spatial context of cells within tissues; prior in situ methods (FISH) measure only a handful of genes. No technique existed that could profile the whole transcriptome while preserving spatial coordinates at tissue scale.",
+        "mechanism_genome": "Tissue sections placed on glass slides arrayed with barcoded oligo-dT capture probes at defined positions; mRNA captured and reverse-transcribed in situ with positional barcodes; cDNA libraries sequenced and mapped back to spatial coordinates via barcode identity.",
+        "observation_genome": "Generated spatially resolved transcriptome-wide expression maps of mouse olfactory bulb (revealing known anatomical layers) and human breast cancer tissue (identifying tumor heterogeneity); ~100 μm resolution per capture spot.",
+        "limitation_genome": "Resolution limited to ~100 μm spots (each containing 5-50 cells, not single-cell); low capture efficiency; no computational framework for spatial domain identification or integration with single-cell data; purely experimental methodology paper."
+      }
+    },
+    {
+      "title": "SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network",
+      "year": 2021,
+      "venue": "Nature Methods 2021",
+      "arxiv_id": "N/A (Nature Methods doi:10.1038/s41592-021-01255-8)",
+      "paper_type": "research",
+      "key_contribution": "First graph convolutional network for spatial transcriptomics that jointly integrates gene expression, physical spatial location, and histology image features to identify spatial domains and spatially variable genes; applicable to both imaging-based and sequencing-based spatial platforms.",
+      "idea_genome": {
+        "problem_genome": "Spatial transcriptomics data have three information layers (gene expression, spatial coordinates, tissue morphology) but existing clustering methods (PCA + Louvain) ignore spatial location and histology entirely, failing to identify coherent spatial domains.",
+        "mechanism_genome": "Constructs a weighted graph where nodes are spatial spots and edge weights encode physical distance and histology similarity; graph convolutional network aggregates expression features from spatial neighbors; unsupervised clustering with iterative refinement identifies spatial domains; domain-guided differential expression detects spatially variable genes.",
+        "observation_genome": "Across 7 SRT datasets (10x Visium, MERFISH, Slide-seq, etc.), SpaGCN identifies spatial domains that align with known anatomical structures; detects genes with more enriched spatial patterns than competing non-spatial methods; runs efficiently on standard hardware.",
+        "limitation_genome": "Shallow GCN architecture limits capacity to capture complex long-range spatial dependencies; fixed graph construction (k-nearest neighbors) may not adapt well to tissue regions with varying cell densities; no mechanism to learn adaptive edge weights from data; single-section analysis only."
+      }
+    },
+    {
+      "title": "Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram",
+      "year": 2021,
+      "venue": "Nature Methods 2021",
+      "arxiv_id": "N/A (Nature Methods doi:10.1038/s41592-021-01264-7)",
+      "paper_type": "research",
+      "key_contribution": "Tangram: a deep learning framework that aligns single-cell/single-nucleus RNA-seq data onto spatial transcriptomics measurements to produce genome-wide spatially resolved maps at single-cell resolution; demonstrated reconstruction of whole mouse brain atlas at cellular resolution.",
+      "idea_genome": {
+        "problem_genome": "Single-cell RNA-seq provides comprehensive transcriptomes but loses spatial information; spatial transcriptomics preserves location but measures limited genes or at coarse resolution. No method could produce whole-transcriptome spatial maps at single-cell resolution by integrating both modalities.",
+        "mechanism_genome": "Deep learning optimization maps each single cell to spatial locations by learning a soft assignment matrix; objective function maximizes cosine similarity between predicted spatial gene expression (from mapped cells) and observed spatial measurements; supports MERFISH, STARmap, smFISH, Visium, and histological images as spatial references.",
+        "observation_genome": "Reconstructed genome-wide spatial maps of mouse visual and somatomotor cortex at single-cell resolution; mapped multimodal SHARE-seq data to reveal spatial chromatin accessibility patterns; outperforms linear methods on gene imputation benchmarks across multiple spatial platforms.",
+        "limitation_genome": "Assumes cells in scRNA-seq reference exist in the spatial data (closed-world assumption); does not model spatial dependencies between neighboring cells; mapping quality depends heavily on shared gene panel between modalities; no graph-based spatial structure learning."
+      }
+    },
+    {
+      "title": "Deciphering spatial domains from spatially resolved transcriptomics with an adaptive graph attention auto-encoder",
+      "year": 2022,
+      "venue": "Nature Communications 2022",
+      "arxiv_id": "N/A (Nature Communications doi:10.1038/s41467-022-29439-6)",
+      "paper_type": "research",
+      "key_contribution": "STAGATE: an adaptive graph attention auto-encoder that learns cell-cell similarity weights from data rather than using fixed spatial graphs; introduces attention-based edge weight learning for spatial domain identification, data denoising, and 3D tissue reconstruction from serial sections.",
+      "idea_genome": {
+        "problem_genome": "SpaGCN and similar GCN methods use fixed, pre-defined spatial graphs where all neighbors contribute equally; this fails in heterogeneous tissues where boundary cells should attend differently to neighbors in different domains. Need adaptive, learnable spatial relationships.",
+        "mechanism_genome": "Graph attention auto-encoder where the attention mechanism in encoder/decoder layers adaptively learns edge weights between spatial neighbors; cell type-aware module optionally integrates pre-clustering information; reconstructs gene expression through bottleneck latent space for denoising; extendable to multiple serial sections for batch correction and 3D domain extraction.",
+        "observation_genome": "STAGATE substantially outperforms SpaGCN and BayesSpace on spatial domain identification across DLPFC, mouse brain, and embryo datasets; attention weights reveal biologically meaningful cell-cell interactions at domain boundaries; 3D reconstruction from serial sections identifies volumetric tissue architecture.",
+        "limitation_genome": "Trained independently per dataset with no transfer learning; limited to spatial neighbor graphs within a single tissue type; cannot generalize across tissues, species, or spatial technologies without retraining; no foundation model scaling to leverage large multi-tissue corpora."
+      }
+    },
+    {
+      "title": "Novae: a graph-based foundation model for spatial transcriptomics data",
+      "year": 2025,
+      "venue": "Nature Methods 2025",
+      "arxiv_id": "2024.09.09.612009 (bioRxiv); Nature Methods doi:10.1038/s41592-025-02899-6",
+      "paper_type": "research",
+      "key_contribution": "Novae: first graph-based foundation model for spatial transcriptomics, pretrained on ~30 million cells across 18 tissues; enables zero-shot spatial domain inference across unseen gene panels, tissues, and technologies; natively corrects batch effects and constructs nested hierarchical spatial domains.",
+      "idea_genome": {
+        "problem_genome": "STAGATE and other graph attention methods must be retrained for each new dataset; they cannot transfer knowledge across tissues, species, or technology platforms. No spatial transcriptomics model exists that generalizes in zero-shot to unseen experimental conditions.",
+        "mechanism_genome": "Self-supervised graph attention network pretrained on ~30 million cells from 18 tissues using a domain-agnostic contrastive objective; learns universal spatial cell representations independent of specific gene panels; zero-shot inference via learned spatial prototypes; hierarchical domain construction through multi-scale graph pooling; native batch effect correction via domain-invariant embeddings.",
+        "observation_genome": "Novae achieves zero-shot spatial domain identification across multiple unseen tissues and gene panels without fine-tuning; outperforms STAGATE and other methods on cross-tissue benchmarks; constructs biologically meaningful nested hierarchies (e.g., cortical layers within brain regions); natively handles batch effects across different spatial platforms (Visium, MERFISH, Xenium).",
+        "limitation_genome": "Graph-only architecture processes spatial cell graphs but does not incorporate dissociated single-cell transcriptomes or tissue morphology images; limited to spatial data modality alone; cannot perform cross-modality tasks like predicting spatial gene expression from histology; does not scale to the hundreds of millions of cells available in combined single-cell + spatial atlases."
+      }
+    },
+    {
+      "title": "Nicheformer: a foundation model for single-cell and spatial omics",
+      "year": 2025,
+      "venue": "Nature Methods 2025",
+      "arxiv_id": "2024.04.15.589472 (bioRxiv); Nature Methods doi:10.1038/s41592-025-02814-z",
+      "paper_type": "research",
+      "key_contribution": "Nicheformer: transformer-based foundation model jointly pretrained on 57 million dissociated single cells and 53 million spatially resolved cells (SpatialCorpus-110M) across 73 tissues; unifies single-cell and spatial omics in one model; excels at spatial composition prediction, niche-aware cell type annotation, and cross-modality spatial label transfer.",
+      "idea_genome": {
+        "problem_genome": "Novae and other spatial foundation models operate exclusively on spatial data, ignoring the vast corpus of dissociated single-cell data; conversely, single-cell foundation models (scGPT, Geneformer) lack spatial awareness. No model jointly leverages both modalities at foundation-model scale to enable cross-modality spatial reasoning.",
+        "mechanism_genome": "Transformer architecture pretrained on SpatialCorpus-110M: 57M dissociated single cells + 53M spatially resolved cells across 73 tissues from human and mouse; masked gene expression prediction as pretraining objective; spatial context tokens encode neighborhood composition; fine-tuning heads for spatial domain identification, cell type deconvolution, spatial composition prediction, and niche-level label transfer.",
+        "observation_genome": "Nicheformer outperforms both spatial-only models (Novae, STAGATE) and single-cell-only models (scGPT) on spatial composition prediction and spatial label prediction tasks; learns transferable representations across tissues and species; demonstrates that joint pretraining on dissociated + spatial data produces superior spatial embeddings compared to spatial-only pretraining.",
+        "limitation_genome": "Relies on tokenized gene expression (binning continuous values); does not incorporate tissue morphology (H&E histology images); limited to transcriptomics modality without integrating proteomics or epigenomics spatial data; inference cost is high for whole-tissue analysis at subcellular resolution platforms like Xenium or MERFISH with millions of cells per section."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "The experimental spatial transcriptomics platform (Stahl 2016) radiates into a new computational niche: SpaGCN applies graph convolutional networks to the spatial data, creating the first deep learning method specifically designed to exploit the spatial graph structure inherent in these datasets for automated domain identification."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Tangram hybridizes spatial transcriptomics analysis (from SpaGCN's spatial domain framework) with dissociated single-cell RNA-seq by learning a deep learning mapping between modalities; this cross-pollination produces genome-wide spatial maps at single-cell resolution, combining the completeness of scRNA-seq with the spatial fidelity of ST."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "STAGATE returns to the spatial domain identification problem (from SpaGCN) and mutates its fixed-graph paradigm by introducing adaptive attention-based edge weight learning: instead of treating all spatial neighbors equally as SpaGCN did, the graph attention auto-encoder learns which neighbor relationships are informative. While Tangram demonstrated the value of learning data-driven spatial relationships across modalities, STAGATE applies this principle within-modality — a targeted architectural mutation on SpaGCN's graph approach that substantially improves spatial domain boundary detection."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "Novae speciates from per-dataset graph attention models (STAGATE) into a new species: the spatial transcriptomics foundation model. By pretraining on 30M cells across 18 tissues, it achieves zero-shot generalization — a fundamentally different operational paradigm (train once, infer everywhere) that constitutes speciation into a new methodological niche."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Nicheformer hybridizes Novae's spatial foundation model paradigm with the massive dissociated single-cell corpus (57M cells from scRNA-seq atlases), unifying both modalities in a single transformer pretrained on SpatialCorpus-110M. This cross-modality hybridization produces representations that outperform either spatial-only or dissociated-only foundation models."
+    }
+  ],
+  "open_question": "Nicheformer unifies single-cell and spatial transcriptomics in a foundation model but does not incorporate tissue morphology (histology images), spatial proteomics, or epigenomics data. What architecture and pretraining strategy would enable a truly multimodal spatial foundation model that jointly reasons over gene expression, protein abundance, chromatin accessibility, and tissue morphology at subcellular resolution?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Computational Biology / Spatial Transcriptomics Analysis."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Adaptive Radiation": 1,
+    "Hybridization": 2,
+    "Mutation": 1,
+    "Speciation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Nicheformer: a foundation model for single-cell and spatial omics",
+      "year": 2025,
+      "venue": "Nature Methods 2025",
+      "identifier": "2024.04.15.589472 (bioRxiv); Nature Methods doi:10.1038/s41592-025-02814-z",
+      "unresolved_gap": "Relies on tokenized gene expression (binning continuous values); does not incorporate tissue morphology (H&E histology images); limited to transcriptomics modality without integrating proteomics or epigenomics spatial data; inference cost is high for whole-tissue analysis at subcellular resolution platforms like Xenium or MERFISH with millions of cells per section.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "trace_id": "neuro_BrainComputer",
+  "domain": "neuroscience",
+  "direction": "Brain-Computer Interface and Motor Decoding",
+  "subfield": "Neuroscience / Brain-Computer Interface",
+  "frontier_justification": "This direction remains a May 2026 frontier because BCIs are moving from controlled demonstrations toward clinically useful motor and speech restoration, while noninvasive and semi-invasive neural signals remain unstable across subjects, sessions, and tasks. Foundation-model pretraining is promising, but plug-and-play decoding with minimal calibration is unresolved.",
+  "verified": false,
+  "papers": [
+    {
+      "title": "Neuronal ensemble control of prosthetic devices by a human with tetraplegia",
+      "year": 2006,
+      "venue": "Nature 2006",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This landmark BrainGate paper showed that intracortical recordings from motor cortex in a person with tetraplegia could be used to control external devices, including a computer cursor and simple prosthetic actions. It established the feasibility of human intracortical BCI for motor intention decoding.",
+      "idea_genome": {
+        "problem_genome": "Can neural activity recorded directly from human motor cortex be translated into useful control signals for assistive devices after paralysis?",
+        "mechanism_genome": "Implanted intracortical microelectrode arrays recorded ensemble spiking activity, which was mapped to cursor and device control using population decoding methods.",
+        "observation_genome": "A human participant with tetraplegia achieved real-time control of external devices from cortical activity alone.",
+        "limitation_genome": "Performance was limited, calibration-heavy, and demonstrated in a small-scale setting with relatively simple decoding and task structure."
+      }
+    },
+    {
+      "title": "Reach and grasp by people with tetraplegia using a neurally controlled robotic arm",
+      "year": 2012,
+      "venue": "Nature 2012",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This BrainGate study extended intracortical BCI from basic cursor control to multi-degree-of-freedom robotic arm control for reach-and-grasp tasks in people with tetraplegia. It demonstrated more naturalistic motor decoding and functional object interaction.",
+      "idea_genome": {
+        "problem_genome": "How can intracortical BCIs move beyond simple cursor control to restore richer arm and hand function?",
+        "mechanism_genome": "Motor cortical population activity from implanted arrays was decoded into continuous robotic arm kinematics and grasp commands for online control.",
+        "observation_genome": "Participants used neural activity to control a robotic arm to reach, grasp, and manipulate objects in 3D space.",
+        "limitation_genome": "The system still required substantial supervised calibration and did not solve long-term robustness or broad generalization across sessions."
+      }
+    },
+    {
+      "title": "EEGNet: a compact convolutional neural network for EEG-based brain-computer interfaces",
+      "year": 2018,
+      "venue": "Journal of Neural Engineering 2018",
+      "arxiv_id": "1611.08024",
+      "paper_type": "research",
+      "key_contribution": "EEGNet introduced a compact deep neural architecture tailored to EEG BCI signals, using depthwise and separable convolutions to capture temporal and spatial structure efficiently. It became a widely used template for deep-learning-based neural decoding under limited-data conditions.",
+      "idea_genome": {
+        "problem_genome": "How can neural decoding improve when hand-engineered features and classical classifiers struggle to capture complex EEG structure across BCI paradigms?",
+        "mechanism_genome": "A compact CNN with temporal convolutions followed by depthwise spatial filtering and separable convolutions learned task-relevant EEG representations end-to-end.",
+        "observation_genome": "The model achieved competitive or superior performance across multiple EEG BCI paradigms while remaining parameter-efficient.",
+        "limitation_genome": "It focused on noninvasive EEG and relatively modest-scale supervised decoding, leaving open transfer, scaling, and applicability to intracortical high-bandwidth signals."
+      }
+    },
+    {
+      "title": "An integrated brain-machine interface platform with thousands of channels",
+      "year": 2019,
+      "venue": "Journal of Medical Internet Research 2019",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This Neuralink paper presented the N1-style high-channel-count implanted BCI platform concept, including flexible electrode threads, a neurosurgical robot, and custom electronics for large-scale neural recording. It shifted attention from decoding alone to scalable neural interface hardware needed for future high-capacity BCIs.",
+      "idea_genome": {
+        "problem_genome": "How can implanted BCIs scale channel count and surgical practicality to support richer decoding and long-term clinical deployment?",
+        "mechanism_genome": "Flexible polymer threads, custom low-power electronics, and robotic insertion were combined into an integrated high-channel-count recording platform.",
+        "observation_genome": "The paper demonstrated a path toward thousands-channel implanted recording systems rather than conventional lower-channel rigid-array setups.",
+        "limitation_genome": "It was primarily a hardware platform paper and did not yet establish broad clinical decoding performance or long-term human outcomes."
+      }
+    },
+    {
+      "title": "A high-performance speech neuroprosthesis",
+      "year": 2023,
+      "venue": "Nature 2023",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper showed that intracortical recordings from speech-related cortex can drive a high-performance speech neuroprosthesis, decoding intended words from neural activity at unprecedented rates for a person with severe paralysis. It marked a major expansion of BCI motor decoding into clinically meaningful communication decoding.",
+      "idea_genome": {
+        "problem_genome": "Can implanted BCIs decode attempted speech rapidly and accurately enough to restore practical communication?",
+        "mechanism_genome": "Intracortical array recordings were decoded with modern neural sequence modeling and language-constrained output to map cortical activity to words in real time.",
+        "observation_genome": "The system achieved substantially faster communication rates than prior speech BCIs, demonstrating practical vocabulary-level decoding from cortex.",
+        "limitation_genome": "The approach remained participant-specific, data-intensive, and constrained by vocabulary/task design rather than fully open-ended speech generation."
+      }
+    },
+    {
+      "title": "BrainBERT: Self-supervised representation learning for intracranial recordings",
+      "year": 2023,
+      "venue": "arXiv 2023",
+      "arxiv_id": "2302.14367",
+      "paper_type": "research",
+      "key_contribution": "BrainBERT proposed a self-supervised transformer-style pretraining framework for intracranial neural signals, aiming to learn transferable representations from large unlabeled neural datasets. It represents the shift from task-specific decoders toward foundation-model-style neural signal modeling.",
+      "idea_genome": {
+        "problem_genome": "How can neural decoders become more data-efficient and transferable across tasks, sessions, and subjects when labeled neural data are scarce?",
+        "mechanism_genome": "A BERT-like self-supervised pretraining strategy was applied to intracranial neural time series to learn general-purpose latent representations before downstream fine-tuning.",
+        "observation_genome": "Pretrained representations improved downstream decoding performance and data efficiency relative to training from scratch on limited labeled neural data.",
+        "limitation_genome": "Foundation-style neural models remain early, with unresolved questions about cross-subject generalization, scaling laws, multimodal alignment, and clinical reliability."
+      }
+    },
+    {
+      "title": "Large Cognition Model: Towards Pretrained EEG Foundation Model",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "arxiv_id": "2502.17464",
+      "paper_type": "research",
+      "key_contribution": "Paper B introduces a pretrained EEG foundation model, the Large Cognition Model, designed to learn generalizable representations from large-scale heterogeneous EEG data for downstream brain analysis and BCI tasks.",
+      "idea_genome": {
+        "problem_genome": "Paper B addresses the lack of robust, transferable EEG models caused by limited labeled datasets and strong variability across subjects, sessions, and recording conditions.",
+        "mechanism_genome": "Its core approach is to pretrain a large foundation model on diverse EEG data so it can capture broadly useful neural representations before being adapted to specific downstream tasks. This combines large-scale self-supervised or pretrained modeling ideas from foundation models with EEG signal analysis to improve generalization and data efficiency.",
+        "observation_genome": "The paper reports that pretrained large-scale EEG representations improve performance and transfer across multiple downstream tasks and settings compared with task-specific training baselines.",
+        "limitation_genome": "Despite improved generalization, EEG foundation models still face challenges from data heterogeneity, limited standardization, and the gap between non-invasive EEG signals and high-fidelity neural decoding needed for complex cognition or speech."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The 2012 paper directly extends the original BrainGate human intracortical decoding paradigm from low-dimensional cursor/device control to higher-dimensional reach-and-grasp control of a robotic arm."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "EEGNet branches from the broader BCI decoding problem by focusing on noninvasive EEG and replacing classical feature engineering with compact deep learning architectures tailored to neural time series."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The Neuralink platform combines the decoding ambitions of BCI research with a hardware-scaling agenda, arguing that richer deep decoders will require much larger, more practical implanted recording systems."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "With higher-bandwidth implanted recording ecosystems in view, the field radiates from arm-movement decoding into speech decoding, where modern neural sequence decoders unlock a new communication application of intracortical BCI."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "BrainBERT evolves beyond task-specific supervised speech/motor decoders by introducing self-supervised pretraining, aiming for reusable neural representations that can support many downstream BCI tasks."
+    },
+    {
+      "from_idx": 5,
+      "to_idx": 6,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "The shift from A to B is a hybridization because the field moves from a specialized participant-specific invasive speech decoder to combining BCI/EEG analysis with foundation-model pretraining paradigms from mainstream AI to build broadly transferable neural models."
+    }
+  ],
+  "open_question": "Large Cognition Model explores EEG foundation modeling, but plug-and-play BCI remains unsolved because noninvasive signals drift across sessions, tasks, and people and labels are sparse. What self-supervised neural foundation model would align EEG, MEG, ECoG, movement, and speech data across subjects and days to enable calibrated motor and speech decoding with minimal patient-specific calibration?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Neuroscience / Brain-Computer Interface."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 7 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 2,
+    "Speciation": 1,
+    "Hybridization": 2,
+    "Adaptive Radiation": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Large Cognition Model: Towards Pretrained EEG Foundation Model",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "identifier": "2502.17464",
+      "unresolved_gap": "EEG foundation models improve representation learning, but real BCI deployment still needs cross-subject, cross-session, cross-task transfer with minimal calibration and calibrated uncertainty.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a still-open limitation at the endpoint of this lineage, not a solved benchmark task."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

@@ -1,0 +1,573 @@
+[
+  {
+    "instance_id": "T3-13_hidden_gene_fate_000",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. Simultaneous testing of edge sets in multiple high-dimensional matrix-variate Gaussian graphical models for spatiotemporal neural recordings with heterogeneous groups and temporal dependence.\nG2. The paper combines joint group-penalized regression across groups with a high-dimensional Gaussian approximation parametric bootstrap to perform global inference on arbitrary subsets of graph edges without naive pooling\nG3. The framework is specialized to matrix-variate Gaussian graphical models with shared sparsity structure assumptions and relies on model-based bootstrap and convex estimation conditions that may limit robustness to strong misspecification.\nG4. Compared with prior work that typically handles single graphs, simpler dependence structures, or estimation without valid simultaneous inference, this paper enables multi-group edge-set testing while borrowing strength across groups unde [text omitted]\n\nGenome B gene candidates:\nG1. The method depends on a smoothing design for discrete outcomes and on sequential classifier estimation, which may introduce tuning sensitivity and error propagation across stages.\nG2. The paper addresses estimation of quantile optimal treatment regimes that maximize a chosen outcome quantile, including the difficult case of discrete outcomes.\nG3. uses a smoothing map from discrete outcomes to continuous surrogates for discrete-response settings\nG4. It reformulates quantile OTR estimation as successive classification by training a sequence of classifiers whose later stages depend on earlier outputs\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_001",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. updates the controller with policy-gradient optimization to favor better designs\nG2. Neural Architecture Search with Reinforcement Learning uses an RNN controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward\nG3. The method depends on training and evaluating many sampled architectures, making search extremely computationally expensive even when mitigated by proxy training, early stopping, or weight sharing.\nG4. This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n\nGenome B gene candidates:\nG1. Compared with earlier NAS methods that searched entire networks end-to-end, this work changes the search target to transferable modular cells separated into normal and downsampling functions and reuses them to scale depth and resolution [text omitted]\nG2. This paper targets scalable automated architecture design for large-scale image classification by learning models that can transfer from small benchmarks to larger visual recognition tasks.\nG3. NASNet uses reinforcement-learning-based neural architecture search to discover two repeatable cell types—normal and reduction cells—modeled as small directed acyclic graphs over a restricted operation set, learned on a proxy dataset and [text omitted]\nG4. The method still depends on an expensive controller-and-child-model reinforcement learning search loop and on a hand-designed cell search space with only two predefined cell roles, which may exclude better architectures outside that temp [text omitted]\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "MUTATED",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "level": "L1",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_002",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. The method reformulates aspect-based sentiment analysis as BERT sentence-pair classification by converting the target aspect\nG2. The approach depends on manually designed auxiliary-sentence templates and candidate-hypothesis constructions, and the paper does not resolve how sensitive performance is to prompt wording or how to generalize beyond these handcrafted fo [text omitted]\nG3. optionally aspect-polarity candidates, into an auxiliary text sentence paired with the original review and classifying either polarity directly or the truth of an aspect-sentiment hypothesis from the joint representation\nG4. This paper targets aspect-based sentiment analysis, including determining sentiment polarity for a given aspect in a review sentence.\n\nGenome B gene candidates:\nG1. This paper targets sentiment reasoning with a conversational language model, focusing on nuanced sentiment understanding involving context, implicit opinions, compositionality, and target-dependent interpretation rather than simple label [text omitted]\nG2. Compared with prior encoder-based sentiment systems fine-tuned for narrow aspect or label classification tasks, this work shifts to evaluating a generative conversational model's zero-shot instruction-following capacity for broader senti [text omitted]\nG3. Because the work is a preliminary evaluation centered on zero-shot prompting rather than a controlled training or benchmarking framework, it leaves unclear how robust and consistently superior ChatGPT is across sentiment phenomena and da [text omitted]\nG4. A zero-shot prompt-based evaluation procedure uses carefully written natural-language instructions to elicit sentiment predictions and explanatory rationales from ChatGPT without task-specific fine-tuning\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "LOST",
+      "dynamics": "Adaptive Radiation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "level": "L1",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_003",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. The paper studies geometric tomography characterizations of the Euclidean ball or ellipsoid from relations between sections, projections, and support-cone data of two nested convex bodies with L contained in the interior of K.\nG2. The results are specialized to nested convex-body pairs under particular geometric relations and do not provide a general characterization framework for arbitrary convex bodies or broader non-nested settings.\nG3. It derives sufficient geometric conditions by comparing corresponding sections or projections of the nested pair and by analyzing support cones or point-source shadow boundaries with apexes on the boundary of K\nG4. Unlike most prior characterizations that infer spherical or ellipsoidal structure from data attached to a single convex body, this work shifts the setting to a pair of nested bodies and obtains apparently new ball and ellipsoid character [text omitted]\n\nGenome B gene candidates:\nG1. The analysis is restricted to the defocusing mKdV case with ordered positive backgrounds c_l > c_r and does not address more general sign configurations, focusing cases, or broader step data classes.\nG2. Large-time asymptotics of the defocusing mKdV equation with step-like initial data tending to unequal positive constants with c_l > c_r, producing a rarefaction-wave regime.\nG3. The paper develops inverse scattering for these nonzero step-like boundary conditions, formulates the solution as a Riemann-Hilbert problem\nG4. applies nonlinear steepest descent to extract asymptotics in distinct space-time regions\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "MUTATED",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_004",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\nG2. Neural Architecture Search with Reinforcement Learning uses an RNN controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward\nG3. The method depends on training and evaluating many sampled architectures, making search extremely computationally expensive even when mitigated by proxy training, early stopping, or weight sharing.\nG4. updates the controller with policy-gradient optimization to favor better designs\n\nGenome B gene candidates:\nG1. NASNet uses reinforcement-learning-based neural architecture search to discover two repeatable cell types—normal and reduction cells—modeled as small directed acyclic graphs over a restricted operation set, learned on a proxy dataset and [text omitted]\nG2. This paper targets scalable automated architecture design for large-scale image classification by learning models that can transfer from small benchmarks to larger visual recognition tasks.\nG3. Compared with earlier NAS methods that searched entire networks end-to-end, this work changes the search target to transferable modular cells separated into normal and downsampling functions and reuses them to scale depth and resolution [text omitted]\nG4. The method still depends on an expensive controller-and-child-model reinforcement learning search loop and on a hand-designed cell search space with only two predefined cell roles, which may exclude better architectures outside that temp [text omitted]\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "MUTATED",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "level": "L1",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_005",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. The paper is limited by its case-study scope on a single IoT board and instrument comparison setup, which constrains generalization across devices, workloads, and measurement environments.\nG2. It compares dedicated source measurement units as instruments for measuring very small device currents and applies them in a measurement procedure on the MoleNet IoT platform\nG3. Compared with common practice relying on multimeters or oscilloscopes, this work shifts to a focused evaluation of SMUs for ultra-low-current IoT power characterization.\nG4. The paper addresses precise low-current supply measurement for battery-powered IoT devices, especially during sleep-mode operation, using the MoleNet sensor board as a case study.\n\nGenome B gene candidates:\nG1. The paper systematically organizes prior work by introducing JCAS and STAR-RIS fundamentals and then classifying existing studies across system architectures, waveform and beamforming design, resource allocation, optimization methods\nG2. As a survey, the paper does not itself propose or experimentally validate a new STAR-RIS-JCAS algorithm or system, so its conclusions depend on the scope and maturity of the literature reviewed.\nG3. This paper addresses the emerging domain of STAR-RIS-enabled joint communications and sensing in 6G wireless networks by surveying how full-space programmable surfaces can support integrated communication and environmental sensing.\nG4. Compared with prior surveys on either JCAS or RIS separately, this work specifically consolidates and structures the nascent literature at their intersection around STAR-RIS-enabled JCAS and highlights open problems unique to full-space [text omitted]\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_006",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. Producing up-to-date world averages for b-hadron, c-hadron, and tau-lepton properties from heterogeneous heavy-flavor measurements.\nG2. Compared with earlier HFAG/HFLAV compilations, this edition updates the averages with results available through 2023 and in rare cases a few later significant measurements while reapplying the common-input and correlation treatment.\nG3. It is primarily a synthesis of existing measurements whose accuracy and scope are limited by the quality, consistency, and correlation information of the underlying experiments rather than by a new measurement or theory.\nG4. The Heavy Flavour Averaging Group compiles pre-October 2023 results, rescales analyses to common external inputs, accounts for known correlations, and combines them into global averages\n\nGenome B gene candidates:\nG1. It characterizes all such fields via energy functions that are linear combinations of area, perimeter\nG2. The paper studies low-temperature phase behavior of isometrically invariant strictly local binary Markov fields, a geometric extension of the Ising model parameterized by area, perimeter, and Euler characteristic terms.\nG3. analyzes their low-temperature limits to derive phase regions and coexistence boundaries\nG4. The results are specialized to binary, strictly local, isometrically invariant models and focus on low-temperature behavior rather than full finite-temperature dynamics or higher-state generalizations.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_007",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. It synthesizes and organizes recent computational approaches for single-cell GRN inference across modalities by comparing how they model regulatory interactions, dynamic state changes, and perturbation responses\nG2. As a review, the paper does not introduce a new inference algorithm or benchmark dataset and is limited by the current incompleteness, heterogeneity, and validation challenges of available single-cell GRN methods.\nG3. This paper addresses the problem of inferring gene regulatory networks from single-cell omics data with emphasis on cell type specificity, temporal dynamics, and perturbation-aware causal regulation.\nG4. Compared with earlier GRN reviews, it shifts focus toward the opportunities and challenges created by single-cell omics for modeling dynamics and perturbations rather than mainly static bulk-data network inference.\n\nGenome B gene candidates:\nG1. Because this is a high-level commentary, it does not present new datasets, algorithms, experiments, or quantitative validation of synthetic data performance in infectious disease settings.\nG2. The paper uses a commentary-style overview to synthesize recent developments in generative AI and synthetic data and map their potential uses and risks for infectious disease research\nG3. This paper addresses how synthetic data generated by modern generative AI could be applied to infectious disease research while considering privacy, bias, and misuse concerns.\nG4. Compared with prior general discussions of synthetic data in healthcare, this paper specifically reframes the topic around current and future opportunities in infectious disease research.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "MUTATED",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_008",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. This paper targets efficient automatic design of high-performing neural network architectures for tasks such as image classification without exhaustive manual or black-box search.\nG2. DARTS performs neural architecture search by relaxing discrete operation and connection choices in a cell-based directed acyclic graph into continuous softmax-weighted mixtures and optimizing architecture parameters and network weights w [text omitted]\nG3. Compared with prior NAS methods that trained many sampled architectures via reinforcement learning, evolution, or less principled parameter sharing, this work replaces discrete candidate evaluation with a fully differentiable continuous [text omitted]\nG4. Because search is conducted in an over-parameterized continuous supernet and then projected to a discrete architecture by selecting strongest operations, the optimized relaxed solution can mismatch the final discrete model and bias searc [text omitted]\n\nGenome B gene candidates:\nG1. EfficientNet uses a compound scaling method that starts from a NAS-discovered efficient baseline and applies a single global scaling coefficient with fixed exponents to jointly scale network depth, width\nG2. input resolution under a compute constraint\nG3. The method depends on a particular searched baseline architecture and fixed scaling exponents, which may not remain optimal for other tasks, hardware targets, or architectural families.\nG4. This paper targets improving image classification model accuracy under fixed computational and parameter budgets for convolutional neural networks across deployment scales.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "LOST",
+      "dynamics": "Niche Competition"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "level": "L1",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_009",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. This paper targets improving abstractive document summarization, particularly transfer and low-resource fine-tuning performance.\nG2. PEGASUS pre-trains a standard encoder-decoder by removing heuristic-selected salient sentences from a document and training the model to generate those missing gap sentences from the remaining context\nG3. Compared with earlier encoder-decoder pre-training that corrupted random tokens or spans, this work changes the self-supervised target to generation of omitted salient whole sentences chosen to mimic summaries.\nG4. The method depends on heuristic sentence-importance extraction during pre-training, so its effectiveness is tied to how well those heuristics approximate truly summary-worthy content.\n\nGenome B gene candidates:\nG1. The method depends on generating multiple candidate summaries and scoring them with an external metric against references, making training more computationally expensive and tied to the fidelity of that metric.\nG2. This paper targets abstractive summarization, specifically the mismatch between training objectives and the quality of summaries produced at decoding time.\nG3. Compared with prior summarization fine-tuning that optimizes only token-level likelihood on a single reference, this work adds preference-based ranking supervision over multiple candidate summaries with length-normalized sequence scoring.\nG4. BRIO trains a summarization model with a hybrid objective that combines standard maximum-likelihood loss with a margin-based ranking loss over multiple model-generated candidate summaries, using externally scored quality preferences and [text omitted]\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "LOST",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "level": "L1",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_010",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. The paper derives an approximate Stein's Unbiased Risk Estimator for binomial mean-squared error and uses it to tune machine-learning-assisted linear shrinkage estimators directly on binomial data without assuming an identified prior or [text omitted]\nG2. Estimating many binomial means with heterogeneous sample sizes in one-sample and two-sample compound decision settings, especially when counts or probabilities are small.\nG3. Compared with empirical Bayes approaches that require a prior over binomial parameters or Gaussian approximations, this work treats sample sizes and means as fixed and provides a direct binomial SURE-based shrinkage framework for heterog [text omitted]\nG4. The method relies on an approximate rather than exact SURE and is restricted to a particular linear shrinkage estimator class, so its performance may depend on approximation quality and may not cover richer nonlinear estimators.\n\nGenome B gene candidates:\nG1. asymptotic inference supported by a positive semi-definite covariance estimator and a bootstrap correction\nG2. The method is distorted by small infinite-activity price jumps under standard asymptotics, requiring bootstrap repair and leaving robustness to such jump behavior as a key weakness.\nG3. Testing whether intraday volatility variation in noisy high-frequency asset prices is fully explained by a deterministic recurrent diurnal pattern in the presence of jumps and market microstructure noise.\nG4. The paper builds a nonparametric test by deflating returns with the diurnal component and applying a pre-averaged, jump-truncated bipower-variation statistic for general It\\u00f4 semimartingales\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_011",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Two anonymous genomes are shown. Infer how Genome A's genes behave in Genome B. Do not assume surface similarity alone implies inheritance.\n\nGenome A gene candidates:\nG1. This paper studies how stellar bar formation and bar strength affect the observed galaxy spin proxy λ_R and its connection to stellar populations and star formation in disk galaxies.\nG2. The study relies on a λ_R proxy and observational bar classifications that are sensitive to viewing geometry and uses indirect evidence to infer evolutionary stages rather than directly tracking individual galaxies over time.\nG3. The authors generate mock observations of a simulated barred galaxy to measure orientation-dependent changes in mass-weighted λ_R and then compare weakly and strongly barred galaxies in the SAMI survey using stellar age, λ_R\nG4. specific star formation rate within one effective radius\n\nGenome B gene candidates:\nG1. It analyzes the effect of neutrino flavor conversion inside the proto-neutron star on convection and predicts the resulting changes in gravitational-wave emission amplitude and frequency content during the post-bounce phase\nG2. Compared with prior work that treated supernova gravitational waves mainly as probes of hydrodynamics and standard neutrino physics, this paper proposes them as a multimessenger signature of nonstandard neutrino properties and BSM effects.\nG3. The paper addresses how nonstandard neutrino properties and BSM-induced flavor conversion in collapsing stellar cores could be probed through gravitational-wave signals from proto-neutron stars during core-collapse supernovae.\nG4. A main limitation is that the work appears to provide a model-based proof of concept rather than direct observational validation, leaving detectability and robustness across supernova models uncertain.\n\n--- SourceGenomeStatus Definitions ---\nSourceGenomeStatus is judged from the predecessor/source paper only.\nINHERITED: the same scientific role and same core mechanism/constraint/claim remain active in the successor.\nMUTATED: the same role remains causally active, but the implementation, domain, measured effect, or constraint changes.\nLOST: the source genome field no longer plays the same causal role in the successor, even if the successor has a different genome field of the same type.\nFor limitations: compare the limiting condition, not the mere fact that both papers have limitations.\nFor observations: compare the empirical/theoretical finding, not the mere fact that both papers report findings.\n\nFate labels: INHERITED, MUTATED, LOST.\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "MUTATED",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate",
+      "trap_type": "hidden_diff",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "G1_hidden_gene_fate",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_900",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"It introduces a preconditioned iPEPS optimization scheme that uses an efficient approximation to the metric tensor based on its leading term to rescale gradients and accelerate convergence.\"\n  Niche: \"The paper addresses gradient-based optimization of infinite projected entangled pair states for two-dimensional strongly correlated quantum lattice models where energy and gradient evaluation are expensive and the optimization landscape is ill-conditioned.\"\n  Limitation: \"The method mitigates but does not remove the fundamental cost of iPEPS contractions and is validated mainly on benchmark models rather than a broad set of difficult real-world systems.\"\n\nSuccessor genome:\n  Mechanism: \"It introduces a variational framework that decomposes Bloch bands into generalized Landau levels and applies it, together with first-principles-derived moire Hamiltonians, Hartree-Fock band renormalization, exact-diagonalization-style spectral diagnostics, entanglement spectra, and interpolation to conventional Landau levels.\"\n  Niche: \"The paper addresses how to quantitatively determine and exploit generalized Landau-level structure in realistic moire Chern bands of twisted bilayer MoTe2 to understand Abelian and non-Abelian fractionalized phases.\"\n  Limitation: \"The evidence for the non-Abelian phase is numerical and parameter-specific, and its stability is limited by bandwidth competition and demonstrated only for selected twist angles within a model-based treatment rather than direct experimental validation.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "chemistry",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_901",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"The paper analyzes Kelly-rule growth optimality by modeling returns with a stochastic clock and comparing the resulting average growth rate and ruin thresholds to less aggressive leverage choices.\"\n  Niche: \"Long-term portfolio sizing under time-changed return dynamics in a general semimartingale setting.\"\n  Limitation: \"The work is primarily theoretical and illustrative, relying on literature-based stochastic clock variance examples rather than broad empirical validation on real investment data.\"\n\nSuccessor genome:\n  Mechanism: \"The paper uses an LSTM model trained on differenced trend targets Δ_t and compares it exhaustively against OLS, Ridge, Lasso, and LightGBM in forecasting and portfolio simulation settings.\"\n  Niche: \"Next-day equity trend-difference forecasting for the top 30 S&P 500 stocks under nonlinear and nonstationary market regimes.\"\n  Limitation: \"The study is limited to 30 large-cap U.S. equities and a next-day horizon, leaving unclear how well the approach generalizes across assets, frequencies, transaction costs, and broader market universes.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_902",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior.\"\n  Niche: \"This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\"\n  Limitation: \"The approach depends on access to a broad, manually curated collection of supervised instruction-formatted tasks, leaving open how well it scales to truly novel capabilities or domains not represented in the tuning mixture.\"\n\nSuccessor genome:\n  Mechanism: \"SFT on demonstrator data → reward model from preference data → PPO fine-tuning against reward model with KL penalty.\"\n  Niche: \"GPT-3 follows literal prompts but not user intent; misaligned outputs: toxic, hallucinated, or unhelpful.\"\n  Limitation: \"Requires expensive human labeler workforce; reward model overoptimization at high KL; reward model captures labeler biases.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "MUTATED",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_903",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"The Volta V100 architecture introduces Tensor Cores inside each SM to execute mixed-precision matrix fused multiply-add operations at very high throughput, alongside a redesigned SM, cache/memory hierarchy, and high-bandwidth HBM2 memory system to keep those units fed efficiently.\"\n  Niche: \"This paper targets data-center acceleration for both high-performance scientific computing and deep learning training/inference workloads.\"\n  Limitation: \"The largest gains depend on workloads that can exploit reduced-precision matrix operations and sufficient software support, so applications dominated by non-matrix code or strict full-precision execution benefit less from the new hardware.\"\n\nSuccessor genome:\n  Mechanism: \"It uses a reverse-engineering microbenchmarking methodology in which many tightly controlled kernels and instruction-level timing probes independently stress specific Volta subsystems—pipelines, caches, shared memory, registers, schedulers, translation paths, synchronization, and tensor units—to infer undocumented latency, throughput, granularity, and contention properties.\"\n  Niche: \"This paper targets the problem of obtaining an accurate, programmer-relevant characterization of the NVIDIA Volta GPU's real microarchitectural behavior and performance limits.\"\n  Limitation: \"Because the characterization is entirely empirical and device-specific, the paper cannot directly explain the internal design causes of the measured behaviors or guarantee that the inferred properties generalize across all Volta variants, firmware versions, or future GPUs.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "MUTATED",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_904",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"The authors generate mock observations of a simulated barred galaxy to measure orientation-dependent changes in mass-weighted λ_R and then compare weakly and strongly barred galaxies in the SAMI survey using stellar age, λ_R, and specific star formation rate within one effective radius.\"\n  Niche: \"This paper studies how stellar bar formation and bar strength affect the observed galaxy spin proxy λ_R and its connection to stellar populations and star formation in disk galaxies.\"\n  Limitation: \"The study relies on a λ_R proxy and observational bar classifications that are sensitive to viewing geometry and uses indirect evidence to infer evolutionary stages rather than directly tracking individual galaxies over time.\"\n\nSuccessor genome:\n  Mechanism: \"It analyzes the effect of neutrino flavor conversion inside the proto-neutron star on convection and predicts the resulting changes in gravitational-wave emission amplitude and frequency content during the post-bounce phase.\"\n  Niche: \"The paper addresses how nonstandard neutrino properties and BSM-induced flavor conversion in collapsing stellar cores could be probed through gravitational-wave signals from proto-neutron stars during core-collapse supernovae.\"\n  Limitation: \"A main limitation is that the work appears to provide a model-based proof of concept rather than direct observational validation, leaving detectability and robustness across supernova models uncertain.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "astronomy",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_905",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"Starting from pretrained autoregressive language models, the method performs supervised instruction tuning on a large mixture of heterogeneous datasets rewritten as natural-language instruction–output pairs within a unified text-to-text format, while systematically varying model scale and task diversity.\"\n  Niche: \"This paper targets improving language models' ability to follow natural-language instructions and generalize to unseen tasks across diverse NLP problem types.\"\n  Limitation: \"The study relies on supervised instruction datasets reformulated from existing tasks, leaving open how well the approach covers real user intents and whether performance extends beyond the curated instruction mixtures used for finetuning and evaluation.\"\n\nSuccessor genome:\n  Mechanism: \"A family of decoder-only autoregressive transformers is pretrained at scale on expanded public text-and-code corpora and then split into base models and chat models produced by supervised instruction fine-tuning plus human-preference optimization and safety red-teaming.\"\n  Niche: \"This paper targets building broadly useful open large language models for general text generation and aligned multi-turn conversational assistance suitable for research and deployment.\"\n  Limitation: \"Despite post-training safety interventions, the chat models still require extensive adversarial evaluation and do not fully eliminate harmful or policy-violating outputs.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_906",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"Two-level VAE: encode/decode junction tree (scaffold) then assemble full graph via subgraph attachment; validity enforced by construction.\"\n  Niche: \"SMILES VAE generates many invalid SMILES strings; no guarantee of chemical validity during generation.\"\n  Limitation: \"Substructure vocabulary must be predefined; limited to 2D graph topology; no 3D conformation; no explicit binding target conditioning.\"\n\nSuccessor genome:\n  Mechanism: \"RL agent adds atoms/bonds sequentially to build molecular graph; GCN encodes current graph state; reward from property scores + validity penalties; PPO training.\"\n  Niche: \"JT-VAE is VAE-based and requires expensive posterior optimization; cannot directly optimize non-differentiable molecular property objectives.\"\n  Limitation: \"RL is sample-inefficient; still 2D graph only; no protein target conditioning; exploration in discrete molecular space remains challenging.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "chemistry",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_907",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"A progressive future-envisioning method models long-range visual change as a rollout of small temporally coherent latent transitions, where each step conditions on the current state, accumulated memory, and uncertainty-aware context before a conditional decoder synthesizes the next visual state.\"\n  Niche: \"This paper targets long-horizon future visual transformation or synthesis, aiming to generate plausible future states of a scene or image sequence over extended time horizons.\"\n  Limitation: \"Because the method relies on iterative rollout of its own prior predictions, it still faces residual drift and error accumulation over many steps despite explicit regularization and memory mechanisms.\"\n\nSuccessor genome:\n  Mechanism: \"Dynamic Chain Optimization decomposes LLM adaptation into modular inference/specialization stages and uses a controller to estimate each stage's marginal utility and resource cost so it can selectively route, reorder, skip, and schedule lightweight frozen-backbone updates across heterogeneous on-device resources under latency, memory, energy, and privacy constraints.\"\n  Niche: \"This paper targets private, resource-constrained adaptation of large language models for edge-device inference under variable hardware, connectivity, and workload conditions.\"\n  Limitation: \"The framework depends on accurate online estimates of per-stage benefit and cost, so its gains may degrade when the controller mispredicts utility-resource tradeoffs across changing devices or inputs.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "LOST",
+      "G2_status": "LOST",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_909",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"It identifies Normal, High, and Extreme market regimes using an EMD-based Hilbert–Huang Transform with instantaneous energy, profiles them via Holo–Hilbert Spectral Analysis, and models discretized return transitions within each regime using variable-length Markov chains estimated by context trees.\"\n  Niche: \"The paper studies regime discovery and regime-specific return dynamics in developed and developing global equity index markets.\"\n  Limitation: \"The study relies on discretized daily index returns and a specific unsupervised regime-partitioning pipeline, which may miss finer intraday structure, cross-asset interactions, and sensitivity to modeling choices.\"\n\nSuccessor genome:\n  Mechanism: \"The paper constructs XRP transaction graphs, extracts topological features from them, and uses those features to predict atypical future price dynamics.\"\n  Niche: \"Forecasting anomalous or extreme XRP price movements from XRP transaction-network structure is the specific task addressed.\"\n  Limitation: \"The study appears narrowly focused on XRP and extreme surges, which may limit generalization across assets, market regimes, or non-anomalous price behavior.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "LOST",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "economics",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_910",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"SE(3)-equivariant diffusion over atom positions and types; conditions generation on protein pocket point cloud; joint denoising of molecule geometry and chemistry.\"\n  Niche: \"GCPN generates 2D molecules without 3D awareness; cannot design molecules that fit into specific protein binding pockets.\"\n  Limitation: \"Slow generation (many diffusion steps); synthesizability not guaranteed; limited to the training distribution of pocket geometries.\"\n\nSuccessor genome:\n  Mechanism: \"Ablation study of: noise schedules (linear, cosine, learned), equivariant architectures (E-GNN, EGNN, PaiNN), conditioning strategies; incorporates synthesizability score.\"\n  Niche: \"TargetDiff and EDM have many design choices (architecture, noise schedule, conditioning); no systematic analysis of what matters most for generation quality.\"\n  Limitation: \"Still requires known protein pocket; challenging optimization of multiple objectives (binding, synthesizability, toxicity) simultaneously.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "LOST",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "chemistry",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_911",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"T-step Markov forward process q(x_t|x_{t-1}) = N(sqrt(1-β)x_{t-1}, βI); reverse p_θ(x_{t-1}|x_t) learned by U-Net noise predictor; ELBO training.\"\n  Niche: \"GANs are unstable to train and mode-collapse; VAEs have blurry outputs; need a principled probabilistic generative model for high-quality images.\"\n  Limitation: \"1000 DDPM steps required for high-quality samples; sampling is extremely slow; operates in pixel space limiting resolution.\"\n\nSuccessor genome:\n  Mechanism: \"It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous forward noising process and generating data by simulating the corresponding reverse-time SDE or its probability-flow ODE, with predictor-corrector refinement.\"\n  Niche: \"This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images.\"\n  Limitation: \"The method depends on numerically integrating reverse-time dynamics and often using predictor-corrector steps, making sampling computationally expensive and sensitive to discretization and solver choices.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "MUTATED",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  },
+  {
+    "instance_id": "T3-13_hidden_gene_fate_912",
+    "task_type": "T3-13_hidden_gene_fate",
+    "prompt": "Predecessor genome:\n  Mechanism: \"It uses an adversarial representation-learning framework with an encoder, a target-label predictor, and a sensitive-attribute adversary, training the encoder to maximize target performance while minimizing the adversary’s ability to recover protected information from the latent code.\"\n  Niche: \"The paper targets learning fair predictive models whose internal features suppress sensitive-attribute information while remaining useful for the main task and reusable across downstream settings.\"\n  Limitation: \"The method relies on the chosen adversary and fairness objective to define what protected information is removed, so any sensitive structure not captured by that adversarial game may remain in the learned representation.\"\n\nSuccessor genome:\n  Mechanism: \"It uses adversarial debiasing: a predictor is trained jointly with an auxiliary discriminator that tries to infer the protected attribute from the model’s representation or outputs, while gradient reversal or negation makes the predictor learn features that are useful for the main task but uninformative about the sensitive variable.\"\n  Niche: \"The paper targets reducing unwanted dependence of supervised model predictions on protected attributes in order to improve fairness without sacrificing too much predictive utility.\"\n  Limitation: \"The method depends on access to protected-attribute labels during training and on a manually chosen trade-off weight and adversary attachment point, making results sensitive to these design choices.\"\n\nGene labels:\n  G1 (limitation)\n  G2 (mechanism)\n  G3 (niche)\n  G4 (observation)\n\nFor each gene, classify its fate: INHERITED | MUTATED | LOST\n\nAlso identify the dynamics type:\n  Mutation | Adaptive Radiation | Hybridization | Speciation | Niche Competition\n\nAnswer with exactly three lines:\nG1Status = [INHERITED|MUTATED|LOST]\nG2Status = [INHERITED|MUTATED|LOST]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": null,
+    "gold_answer": {
+      "G1_status": "MUTATED",
+      "G2_status": "MUTATED",
+      "dynamics": "Niche Competition"
+    },
+    "metadata": {
+      "target_skill": "gene_fate_inference",
+      "trap_type": "hidden_label",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "T3-13_hidden_gene_fate",
+      "source": "supplement_v1",
+      "domain": "cs",
+      "display_title": "Hidden Gene Fate"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "counterfactual_synthesis"
+  }
+]

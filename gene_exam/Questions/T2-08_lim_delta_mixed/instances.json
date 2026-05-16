@@ -1,0 +1,597 @@
+[
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0040",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"Because the method depends on precomputed item co-occurrence neighborhoods, it is less able to immediately model newly introduced items or rapidly shifting cross-item relationships until offline recomputation occurs.\"\n  L2: \"The core formulation is still a low-rank inner-product model whose expressiveness depends on manually chosen extensions for effects like time drift and implicit feedback rather than capturing such structure in a unified richer interaction model.\"\n  L3: \"The framework is primarily limited to second-order interactions with a fixed latent rank, so it does not directly capture richer higher-order or more adaptive interaction structures.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior general-purpose efficient detectors, this work changes the pipeline by co-designing industrial on-device data acquisition with a rail-specific lightweight multi-scale detector optimized for elongated small defects and edge deployment.\"\n  D2: \"Compared with earlier NAS methods that searched entire networks end-to-end, this work changes the search target to transferable modular cells separated into normal and downsampling functions and reuses them to scale depth and resolution on new tasks.\"\n  D3: \"Compared with prior latent factor collaborative filtering, the key change is replacing linear low-rank factorization with direct nonlinear autoencoder-based reconstruction of user or item rating vectors under an observed-entry-only objective.\"\n  D4: \"Compared with earlier CNNs that stacked single-scale convolutional layers and large fully connected heads, this work replaces uniform layers with parallel multi-scale Inception blocks using 1×1 bottlenecks, auxiliary supervision, and global average pooling.\"\n  D5: \"Compared with earlier matrix factorization methods tied to user-item matrices, this work generalizes latent interaction modeling to arbitrary engineered sparse features while replacing explicit pairwise parameters with shared feature embeddings and a linear-time interaction computation.\"\n  D6: \"Compared with earlier memory-based and neighborhood collaborative filtering, this work replaces hand-crafted similarity aggregation with directly optimized latent user/item embeddings plus bias terms fit on observed ratings only.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D5"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Data Mining",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0044",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"Because the work is primarily conceptual and legal-analytic, it does not provide a single fully specified optimization procedure or broad empirical benchmark demonstrating how the proposed interventions trade off fairness and utility in practice.\"\n  L2: \"The framework depends critically on an externally provided, normatively valid task-specific similarity metric, but the paper does not solve how to construct, validate, or contest that metric in practice.\"\n  L3: \"The repair procedure is most concrete for ordered or numerical features through rank-based mappings, making the method less directly specified for complex categorical or unstructured representations.\"\n\nDeltas (shuffled):\n  D1: \"Compared with earlier Inception architectures, it replaces more dense large-kernel convolutions with factorized and asymmetric convolutions, redesigns spatial reduction to avoid representational bottlenecks, and reinterprets auxiliary heads plus label smoothing as regularization tools.\"\n  D2: \"Compared with prior work that mainly pointed out that discrimination can persist without explicit protected attributes, this paper adds a formal certifiability criterion based on protected-attribute predictability and a concrete model-agnostic preprocessing repair algorithm.\"\n  D3: \"Compared with prior fairness approaches centered on statistical parity or blindness to sensitive attributes, this work shifts the target to metric-based individual fairness and explicitly allows use of sensitive attributes to achieve fair treatment.\"\n  D4: \"Compared with prior work focused on unconditional statistical parity, this paper redefines fairness relative to the ground-truth label and relaxes parity requirements to true positive rates rather than matching overall prediction rates or all error rates.\"\n  D5: \"Compared with prior general-purpose efficient detectors, this work changes the pipeline by co-designing industrial on-device data acquisition with a rail-specific lightweight multi-scale detector optimized for elongated small defects and edge deployment.\"\n  D6: \"Compared with prior work that manually or independently scaled depth, width, or resolution after designing a convolutional architecture, this paper replaces ad hoc single-axis scaling with a principled compound rule derived from resource-constrained optimization on a searched seed model.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Machine Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0047",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The paper's exact training and inference results rely on linear-chain structure, so extending the approach to more complex graphical structures is not addressed with the same tractability guarantees.\"\n  L2: \"Its core architectures rely mainly on fixed local context windows and relatively simple sentence-level models, which limits their ability to capture richer long-range structure without additional task-specific components.\"\n  L3: \"Although it reduces manual feature design, the approach still depends on supervised labeled NER data and does not fully resolve domain shift when entity distributions and surface forms differ strongly across corpora.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior general-purpose efficient detectors, this work changes the pipeline by co-designing industrial on-device data acquisition with a rail-specific lightweight multi-scale detector optimized for elongated small defects and edge deployment.\"\n  D2: \"Compared with prior NLP systems built around handcrafted lexical, orthographic, and syntactic features for each task, this work replaces manual feature engineering with a single shared neural architecture that learns token representations and task features jointly, optionally initialized by unsupervised pretraining.\"\n  D3: \"Compared with earlier CNNs that stacked single-scale convolutional layers and large fully connected heads, this work replaces uniform layers with parallel multi-scale Inception blocks using 1×1 bottlenecks, auxiliary supervision, and global average pooling.\"\n  D4: \"Compared with prior CRF-style and other statistical NER systems built on handcrafted lexical, orthographic, and syntactic feature templates, this work replaces most manual features with jointly learned character-aware token embeddings and neural contextual sequence modeling.\"\n  D5: \"Compared with prior supervised neural taggers and separate pretraining-style semi-supervised approaches, this work adds simultaneous joint training with unlabeled data plus hard shared parameters across multiple sequence labeling tasks within a single BiLSTM-CRF framework.\"\n  D6: \"Compared with prior convolution-heavy underwater detectors and less efficient attention mechanism-based pipelines, this work replaces uniformly expensive feature processing with an efficient transformer architecture backbone plus dynamic hierarchical multi-scale fusion tailored to variable-size marine targets.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0046",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The method increases depth and local nonlinear complexity but does not expand receptive fields by itself, so it still depends on separate spatial convolutions and does not fully address broader spatial modeling.\"\n  L2: \"Its hand-designed Inception modules and auxiliary heads introduce considerable architectural complexity and rely on manually chosen branch widths and filter sizes rather than a principled or automatically optimized design.\"\n  L3: \"The method relies on partial-budget performance being predictive enough for early stopping, so it is less well matched to problems where low-budget rankings are noisy or misleading.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work focused on particular cache-eviction or buffer-specific leakage mechanisms, this paper reframes the problem around machine clears as a unifying abstraction spanning a wider family of fault and recovery events.\"\n  D2: \"Compared with EfficientNet and related NAS-designed efficient CNNs, it explicitly optimizes for training speed during search, replaces early depthwise bottlenecks with fused blocks, and adopts a more training-aware scaling and progressive regularization strategy.\"\n  D3: \"Compared with earlier CNNs that stacked single-scale convolutional layers and large fully connected heads, this work replaces uniform layers with parallel multi-scale Inception blocks using 1×1 bottlenecks, auxiliary supervision, and global average pooling.\"\n  D4: \"Compared with earlier Inception architectures, it replaces more dense large-kernel convolutions with factorized and asymmetric convolutions, redesigns spatial reduction to avoid representational bottlenecks, and reinterprets auxiliary heads plus label smoothing as regularization tools.\"\n  D5: \"Compared with prior manual architecture design and simpler search baselines like random exploration, this work replaces fixed human heuristics with a learned sequential controller optimized directly from validation performance feedback.\"\n  D6: \"Compared with prior successive halving and black-box hyperparameter search methods, Hyperband replaces a single fixed resource-allocation schedule with a principled collection of brackets that hedge over unknown optimal exploration-versus-exploitation tradeoffs.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D6"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Deep Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0054",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The approach is simplified and pedagogical, relying on averaged statistical assumptions and spherical geometry, so it is less general and precise than full transport or Monte Carlo treatments.\"\n  L2: \"The analysis appears centered on effective theory and minimal dissipative settings like dephasing, leaving broader validation across more general open-system models and concrete many-body examples unresolved.\"\n  L3: \"The treatment is restricted to one dimension, representative MS and leading-order AC realizations, and mainly analytical exactly solvable cases, so its conclusions may not directly extend to higher-dimensional or more general DSR formulations.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior generalized Dirac oscillator studies in standard relativistic quantum mechanics, this work adds a DSR embedding that separates unchanged pseudo-Hermitian spatial solvability from deformed relativistic energy reconstruction and bound-state truncation effects.\"\n  D2: \"Compared with prior closed-system work where Lanczos coefficients define deterministic geometric operator growth, this paper shows that coupling to an environment broadens and eventually destroys the hyperbolic mechanism behind exponential complexity growth.\"\n  D3: \"Compared with prior technical literature focused mainly on either dark matter phenomenology or specific alternative theories, this work reframes the issue through a combined historical and epistemological synthesis.\"\n  D4: \"Compared with prior work focused on relativistic formulations or two-coordinate geometries, this paper provides a simpler explicitly three-dimensional demonstration, adds a guiding-center correction estimate, and emphasizes chaotic advection of \\(\\vec{\\mathcal{B}}\\).\"\n  D5: \"Compared with prior textbook treatments that emphasized only quasi-equipotential interiors and normal external fields at boundaries, this work explicitly characterizes the entire exterior response as outer-surface-determined.\"\n  D6: \"Compared with prior work on Integrated Information Theory, Global Workspace Theory, and Predictive Processing in ordinary settings, this paper introduces relativistic spacetime geometry—specifically event horizons—as a decisive constraint on conscious unity boundaries.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "physics.pop-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0027",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"Its detection accuracy depends sensitively on filter size, hash count, and update granularity because hash collisions in the counting Bloom filters can blur true traffic changes and distort anomaly statistics.\"\n  L2: \"The paper mainly contributes an evaluation critique rather than a new detection algorithm, so it demonstrates the failure of existing protocols without providing a concrete method that robustly handles unseen attacks.\"\n  L3: \"The framework is primarily a methodological blueprint and does not itself resolve how to instantiate, scale, and maintain such richly modeled benchmark-generation pipelines across diverse real-world organizations and evolving threats.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior mobile NAS and hand-designed efficient networks that optimized accuracy alone or proxy efficiency measures, this work changes the objective to include real measured latency and uses a hierarchical search over both block choices and network-level layer repetitions.\"\n  D2: \"Compared with prior benchmark efforts based on static, synthetic, or poorly documented traffic collections, this work replaces ad hoc dataset assembly with a requirement-driven, end-to-end process that explicitly models environment realism, attack coverage, and traceable labeling.\"\n  D3: \"Compared with earlier Inception architectures, it replaces more dense large-kernel convolutions with factorized and asymmetric convolutions, redesigns spatial reduction to avoid representational bottlenecks, and reinterprets auxiliary heads plus label smoothing as regularization tools.\"\n  D4: \"Compared with prior efficient vision backbones that leaned on convolutions or conventional ViTs that used full self-attention mechanism, this work introduces cascaded channel-group attention mechanism and low-traffic backbone blocks to preserve token mixing with much lower memory movement.\"\n  D5: \"Compared with prior signature-based or conventionally evaluated ML intrusion detectors, it shifts the focus from in-distribution recognition accuracy to open-world experimental design that tests detection on attack classes absent from training.\"\n  D6: \"Compared with prior work that used KDD Cup 99 as a trusted benchmark for comparing detectors, this paper shifts the contribution from proposing or testing detection methods to systematically auditing the dataset itself for structural biases and evaluation distortions.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0022",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"Because the architecture removes recurrence and convolution, it must inject sequence order externally through positional encodings rather than learning order structure intrinsically through the core computation.\"\n  L2: \"The approach relies entirely on zero-shot prompting without task-specific fine-tuning or calibrated output heads, so performance remains inconsistent and often below supervised systems on many benchmarks.\"\n  L3: \"Despite strong few-shot gains, the model remains inconsistent across benchmarks and still underperforms specialized supervised systems on some tasks while inheriting biases and inefficiencies from brute-force scaling.\"\n\nDeltas (shuffled):\n  D1: \"Compared with earlier NAS methods that searched entire networks end-to-end, this work changes the search target to transferable modular cells separated into normal and downsampling functions and reuses them to scale depth and resolution on new tasks.\"\n  D2: \"Compared with EfficientNet and related NAS-designed efficient CNNs, it explicitly optimizes for training speed during search, replaces early depthwise bottlenecks with fused blocks, and adopts a more training-aware scaling and progressive regularization strategy.\"\n  D3: \"Compared with prior smaller language models and supervised multitask or fine-tuned transfer setups, this work increases scale dramatically and replaces task-specific adaptation with prompt-based zero-shot evaluation from a single pretrained decoder.\"\n  D4: \"Compared with prior transformer architecture language models and fine-tuned NLP systems, this work primarily changes the regime by scaling autoregressive pretraining to unprecedented size and using in-context prompting as the main adaptation mechanism instead of gradient-based task-specific updates.\"\n  D5: \"Compared with prior work that manually or independently scaled depth, width, or resolution after designing a convolutional architecture, this paper replaces ad hoc single-axis scaling with a principled compound rule derived from resource-constrained optimization on a searched seed model.\"\n  D6: \"Compared with prior work centered on in-context learning in autoregressive LMs, this paper shifts task adaptation into model parameters by supervised finetuning on many instruction-formatted tasks using a seq2seq text-to-text setup.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Deep Learning",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0035",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The model is constrained by then-current graphics hardware, supporting mainly gather-style access and only limited reduction-like patterns, so many computations still fit awkwardly or require workarounds.\"\n  L2: \"The model requires programmers to manually manage thread decomposition, synchronization scope, and locality-sensitive use of shared versus global memory, making performance strongly dependent on hardware-aware coding.\"\n  L3: \"Despite broadening applicability, the architecture still fundamentally inherits SIMT execution behavior, so performance remains sensitive to thread divergence and irregular access patterns rather than eliminating those costs.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work that mainly introduced the programmable GPU architecture and emphasized peak or architectural capabilities, this paper adds a systematic application-level performance study of CUDA implementations across representative general-purpose workloads.\"\n  D2: \"Compared with the prior CUDA generation, Fermi introduces coherent L1/L2 caching, larger and more flexible SM resources, better warp scheduling, ECC, concurrent kernel execution, faster atomics, and significantly improved double-precision throughput.\"\n  D3: \"Compared with earlier NAS methods that searched entire networks end-to-end, this work changes the search target to transferable modular cells separated into normal and downsampling functions and reuses them to scale depth and resolution on new tasks.\"\n  D4: \"Compared with prior general-purpose efficient detectors, this work changes the pipeline by co-designing industrial on-device data acquisition with a rail-specific lightweight multi-scale detector optimized for elongated small defects and edge deployment.\"\n  D5: \"Compared with earlier CNNs that stacked single-scale convolutional layers and large fully connected heads, this work replaces uniform layers with parallel multi-scale Inception blocks using 1×1 bottlenecks, auxiliary supervision, and global average pooling.\"\n  D6: \"Compared with earlier stream computing systems, CUDA replaces rigid stream operators and graphics-centric abstractions with a general kernel language plus thread-block synchronization, explicit memory hierarchy, and a full compiler/runtime/library software stack.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Architecture",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0056",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"It is primarily a synthesis of existing measurements whose accuracy and scope are limited by the quality, consistency, and correlation information of the underlying experiments rather than by a new measurement or theory.\"\n  L2: \"The results are specialized to binary, strictly local, isometrically invariant models and focus on low-temperature behavior rather than full finite-temperature dynamics or higher-state generalizations.\"\n  L3: \"The paper does not remove these failures at the formal method level but mainly identifies, characterizes, and suggests ways to detect them.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work centered on standard pairwise Ising variants, this paper extends the framework to the full Hadwiger-class of local geometric energies and provides a corresponding low-temperature phase diagram.\"\n  D2: \"Compared with prior work that presented MRSF-TDDFT as an efficient and versatile photochemistry tool, this study shifts the focus to two concrete failure modes and their practical diagnosis.\"\n  D3: \"Compared with prior work that proposed and experimentally used inverse-designed metainterfaces under independence and half-space assumptions, this paper explicitly quantifies when those assumptions hold or fail using detailed 3D modeling.\"\n  D4: \"Compared with prior textbook treatments that emphasized only quasi-equipotential interiors and normal external fields at boundaries, this work explicitly characterizes the entire exterior response as outer-surface-determined.\"\n  D5: \"Compared with prior quantum reservoir computing work that used quantum dynamics as a resource without a clear many-body chaos design rule, this paper links optimal performance to concrete many-body chaos indicators in the Sachdev-Ye-Kitaev model.\"\n  D6: \"Compared with standard philosophical treatments that take smoothness as the default background assumption, it shows that replacing smooth with analytic structure can radically alter conclusions about indeterminism and spacetime ontology.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "hep-ex",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0026",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The attack depends on obtaining many timing samples and on implementation-specific data-dependent latency in arithmetic routines, so its effectiveness is reduced by low-resolution timing, high noise, or constant-time code.\"\n  L2: \"The attack depends on the adversary being able to run code on the same machine and repeatedly probe shared-cache behavior, so it is less applicable when such co-residency or repeated measurements are unavailable.\"\n  L3: \"The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-table implementations.\"\n\nDeltas (shuffled):\n  D1: \"Compared with earlier timing attacks that treated total runtime as a single noisy signal, this work shifts the observable to fine-grained cache state and eviction effects tied to specific memory accesses.\"\n  D2: \"Compared with Prime+Probe-style predecessors that infer activity from cache-set occupancy via eviction patterns, this work switches to explicit flush-and-timed-reload on shared L3 lines, improving spatial precision, interpretability, and signal quality.\"\n  D3: \"Compared with prior convolution-heavy underwater detectors and less efficient attention mechanism-based pipelines, this work replaces uniformly expensive feature processing with an efficient transformer architecture backbone plus dynamic hierarchical multi-scale fusion tailored to variable-size marine targets.\"\n  D4: \"Compared with prior work that manually or independently scaled depth, width, or resolution after designing a convolutional architecture, this paper replaces ad hoc single-axis scaling with a principled compound rule derived from resource-constrained optimization on a searched seed model.\"\n  D5: \"Compared with prior mobile NAS and hand-designed efficient networks that optimized accuracy alone or proxy efficiency measures, this work changes the objective to include real measured latency and uses a hierarchical search over both block choices and network-level layer repetitions.\"\n  D6: \"Compared with earlier side-channel work that inferred only coarse implementation properties or relied on more direct leakage sources, this paper shows full practical attackability of a specific mainstream AES software implementation using only aggregate remote-style timing tied to cache effects.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D6"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Security",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0020",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The method depends on a fixed pre-upsampling interpolation step before the network, which adds computational cost and constrains the model to refine an already enlarged image rather than learn upsampling directly.\"\n  L2: \"Because the model relies on many recursions of a single shared transformation, optimization remains difficult and representational diversity is constrained compared with architectures that use distinct layers at different depths.\"\n  L3: \"The method still depends on a pre-upsampled input and learns only the residual in image space, which increases computation at high-resolution and does not address end-to-end upsampling within the network.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior general-purpose efficient detectors, this work changes the pipeline by co-designing industrial on-device data acquisition with a rail-specific lightweight multi-scale detector optimized for elongated small defects and edge deployment.\"\n  D2: \"Compared with earlier shallow SRCNN-style super-resolution models that directly predicted the HR image, this work replaces them with a much deeper small-filter convolutional architecture trained to predict only the residual and optimized using aggressive learning rates plus gradient clipping.\"\n  D3: \"Compared with earlier feed-forward super-resolution CNNs that deepened models by stacking separate parameterized layers, this work replaces most added depth with recursive weight sharing and adds supervision at intermediate recursion steps plus a global residual skip path.\"\n  D4: \"Compared with prior work that manually or independently scaled depth, width, or resolution after designing a convolutional architecture, this paper replaces ad hoc single-axis scaling with a principled compound rule derived from resource-constrained optimization on a searched seed model.\"\n  D5: \"Compared with prior convolutional architecture super-resolution methods that first upsampled the input with bicubic interpolation or used heavier enlarged-domain processing, this work replaces pre-upsampling with learned low-resolution convolutions plus a final pixel-shuffle upscaling layer.\"\n  D6: \"Compared with prior manual architecture design and simpler search baselines like random exploration, this work replaces fixed human heuristics with a learned sequential controller optimized directly from validation performance feedback.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Computer Vision",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0058",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The result requires a restrictive thin-part assumption on short geodesics and does not cover sequences where short closed geodesics contribute non-negligibly or where convergence fails to be local weak convergence.\"\n  L2: \"The paper provides only negative necessary conditions and does not give a full characterization or constructive description of all rational numbers realizable as |Aut(G)|/|G|.\"\n  L3: \"A main limitation is that the paper appears to validate the approach mainly through an illustrative duplicate-detection example rather than broad large-scale empirical benchmarking across many datasets and baselines.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior double-copy work focused mainly on scattering amplitudes, point particles, and classical field solutions, this paper extends the idea to classical string motion and explicitly contrasts open-string gauge-background dynamics with closed-string motion in the double-copied geometry.\"\n  D2: \"Compared with prior textbook treatments that emphasized only quasi-equipotential interiors and normal external fields at boundaries, this work explicitly characterizes the entire exterior response as outer-surface-determined.\"\n  D3: \"Compared with prior classical metric-space approaches, the paper replaces set-like distance notions that collapse repeated values with a multiset-based multi-real framework that treats frequency as part of the distance itself.\"\n  D4: \"Compared with prior work framed by the open question of whether every positive rational is realizable, this note disproves that possibility by identifying explicit arithmetic obstructions.\"\n  D5: \"Unlike prior work that improves HGP codes through local transformations or machine-learning-based search, this paper imposes hard-to-discover global cyclic symmetries and searches exhaustively within that constrained design space.\"\n  D6: \"Compared with prior Euclidean or non-parabolic porosity-weight correspondences, this work extends the equivalence to the anisotropic parabolic setting with time-lag and develops new stopping time machinery for that context.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D4",
+        "L2": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "math.SP",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0057",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The study is demonstrated only on small benchmark molecules and simulations, so the scalability, robustness, and practical advantage on larger realistic quantum hardware remain unproven.\"\n  L2: \"Because the work is a theoretical note focused on path-graph discrete Schrödinger operators, its conclusions may not directly transfer to more general graphs, operators, or noncovered potential classes.\"\n  L3: \"The results are specialized to Sturm-Liouville settings with Schatten-class resolvents and mainly provide structural asymptotic theory rather than broadly applicable computational algorithms or treatment of operators outside this analytic framework.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior slow-light and vortex-light studies, this work specifically introduces vector vortices with opposite-spin opposite-OAM components in a coherently prepared tripod configuration to reveal dynamically induced anisotropy and controllable polarization cycling.\"\n  D2: \"Unlike prior multimode-fiber supercontinuum control approaches that tune spectra mainly by altering spatial mode composition and often degrade beam quality, this work tunes the spectrum through bend-induced dispersion modification while keeping the spatial mode essentially fixed.\"\n  D3: \"Compared with prior work on numerical methods for geometric flows and PINNs for other PDE classes, this paper extends PINNs to hyperbolic mean curvature flow and presents what it claims is the first such numerical study.\"\n  D4: \"Compared with prior sphere-packing or pairwise-interaction explanations, this work attributes the magic numbers to many-body proton coordination effects captured by higher-level quantum simulations.\"\n  D5: \"Compared with the closest prior results, it confirms earlier asymptotics, generalizes them to a larger family of potentials, and proves a previously conjectured statement using entirely different methods.\"\n  D6: \"Compared with prior work that established contour-integral zeta representations mainly for quasi-regular problems or isolated examples, this paper extends such results to general Sturm-Liouville problems with Schatten p-class resolvents via a unified entire-function approach.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D6"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "physics.chem-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0029",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"Because the collection is grounded in a fixed corpus and human assessment protocol, its coverage of question types and acceptable answers is constrained by corpus answerability and assessor consistency.\"\n  L2: \"The paper mainly provides a conceptual and evaluative framework rather than a fully specified or broadly validated implementation, leaving the concrete construction and empirical testing of the intermediate representations underdeveloped.\"\n  L3: \"The system still depends on a pipeline of imperfect upstream NLP modules whose errors propagate, leaving extracted knowledge uncertain and limiting precision and completeness in the resulting knowledge base.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior general-purpose efficient detectors, this work changes the pipeline by co-designing industrial on-device data acquisition with a rail-specific lightweight multi-scale detector optimized for elongated small defects and edge deployment.\"\n  D2: \"Compared with prior work that manually or independently scaled depth, width, or resolution after designing a convolutional architecture, this paper replaces ad hoc single-axis scaling with a principled compound rule derived from resource-constrained optimization on a searched seed model.\"\n  D3: \"Compared with prior work that mostly formulated the task or relied on shallow lexical matching and hand-engineered pipelines, this paper shifts to end-to-end learned recurrent document–query modeling with query-conditioned contextual reasoning.\"\n  D4: \"Compared with earlier natural-language-to-database systems that assumed a predefined schema and curated backend, this work shifts the focus to automatically building the underlying knowledge from open-domain text using learned extraction over web-scale corpora.\"\n  D5: \"Compared with prior efficient vision backbones that leaned on convolutions or conventional ViTs that used full self-attention mechanism, this work introduces cascaded channel-group attention mechanism and low-traffic backbone blocks to preserve token mixing with much lower memory movement.\"\n  D6: \"Compared with earlier NLIDB systems built as isolated rule-driven interfaces, this work recasts the area as a principled QA problem with explicit intent/schema/query decomposition and reusable evaluation methodology.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D6",
+        "L2": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Natural Language Processing",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0064",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The strongest results depend on transitivity or additional aura separation assumptions, and the paper mainly provides structural theory and counterexamples rather than broader applications or complete equivalence among the new compactness notions.\"\n  L2: \"The evidence is primarily empirical on tested synthetic benchmarks and does not establish theoretical guarantees, full optimality certification, or robustness across all possible p-spin instance families.\"\n  L3: \"The study is demonstrated on a single TFT material/device platform and relatively constrained encoding tasks, so generalization to other reservoirs, larger-scale datasets, and broader operating regimes is not yet established.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior ML or annealing-based solvers focused mainly on pairwise interactions or lacking explicit symmetry handling, this work introduces a symmetry-aware hypergraph RL framework that natively optimizes arbitrary p-body terms and transfers from small to much larger instances.\"\n  D2: \"Compared with prior empirically tuned physical reservoir operation, this work introduces a systematic machine-learning-based search for reservoir operating conditions and shows cross-task transfer from simpler 4-bit optimization to more complex 6-bit encoding.\"\n  D3: \"Compared with prior quantum reservoir computing work that used quantum dynamics as a resource without a clear many-body chaos design rule, this paper links optimal performance to concrete many-body chaos indicators in the Sachdev-Ye-Kitaev model.\"\n  D4: \"Compared with prior approaches that linked real-space and momentum-space topologies mainly through expensive numerical calculations, this paper introduces an explicit symmetry-based Hamiltonian framework that makes the connection analytically designable and interpretable.\"\n  D5: \"Compared with prior terahertz spectroscopy implementations, this work extends broadband time-domain measurements into a dilution-refrigerator environment with simultaneous multi-tesla magnetic field operation.\"\n  D6: \"Compared with prior sphere-packing or pairwise-interaction explanations, this work attributes the magic numbers to many-body proton coordination effects captured by higher-level quantum simulations.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "math.GN",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0062",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The framework is mainly foundational and metatheoretic, so its practical scope is limited to probabilistic arguments that can be encoded within the proposed tame logical systems and transfer principles.\"\n  L2: \"The paper mainly serves as a curated update table and does not introduce a new general construction method or prove broad new theoretical bounds.\"\n  L3: \"The paper appears to rely on extended search and case analysis rather than a complete general classification theorem ruling out all other nontrivial liftings.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior MAS scattering formulations that target perfect conductors or frequency-domain settings, this work extends MAS into the time domain for finite but moderate conductivity via first-order SIBC.\"\n  D2: \"Compared with the prior Miller-Siran survey, this work adds post-2013 results and revises the table of best-known large undirected graphs accordingly.\"\n  D3: \"Compared with prior textbook treatments that emphasized only quasi-equipotential interiors and normal external fields at boundaries, this work explicitly characterizes the entire exterior response as outer-surface-determined.\"\n  D4: \"Compared with Lam's 1977 table and Pott's 1995 classification for odd n and small k, this paper pushes the search further and explicitly connects the outcomes to circulant weighing matrix existence questions.\"\n  D5: \"Compared with prior slow-light and vortex-light studies, this work specifically introduces vector vortices with opposite-spin opposite-OAM components in a coherently prepared tripod configuration to reveal dynamically induced anisotropy and controllable polarization cycling.\"\n  D6: \"Compared with prior work establishing Kohnert polynomials and posets in broader generality, this paper isolates the northeast-diagram regime and turns abstract structural questions into concrete polynomial-time classifications.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "math.LO",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0043",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The approach depends on reduced-order dynamic models and lower-dimensional balance objectives, which likely limit fidelity for highly complex whole-body motions and contact-rich maneuvers requiring detailed joint-level planning.\"\n  L2: \"The study is restricted to a highly idealized rigid-link walker on a shallow downhill slope with simplified foot-contact assumptions, so its results do not directly establish passive stable walking on level ground or in more realistic multijoint robots.\"\n  L3: \"The approach depends on carefully designed reduced-order gait representations and periodic-motion structure, which limits its direct applicability to highly nonperiodic maneuvers or locomotion regimes far from the nominal gait.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior manual architecture design and simpler search baselines like random exploration, this work replaces fixed human heuristics with a learned sequential controller optimized directly from validation performance feedback.\"\n  D2: \"Compared with prior passive dynamic walking approaches that relied mainly on morphology and gravity for self-stabilization, this work adds explicit state-dependent continuous feedback and impact-based hybrid corrections to systematically stabilize the gait.\"\n  D3: \"Compared with earlier control-centered locomotion work that generated gait through prescribed trajectories and active regulation, this paper replaced explicit control with a physically tuned passive mechanism whose morphology and hybrid dynamics produce the gait.\"\n  D4: \"Compared with prior work on general feedback stabilization of bipedal locomotion, this paper explicitly derives a concrete hopping template as an exact hybrid zero dynamics of a full-order mechanism rather than only stabilizing locomotion behaviors in the full model.\"\n  D5: \"Compared with EfficientNet and related NAS-designed efficient CNNs, it explicitly optimizes for training speed during search, replaces early depthwise bottlenecks with fused blocks, and adopts a more training-aware scaling and progressive regularization strategy.\"\n  D6: \"Compared with prior convolution-heavy underwater detectors and less efficient attention mechanism-based pipelines, this work replaces uniformly expensive feature processing with an efficient transformer architecture backbone plus dynamic hierarchical multi-scale fusion tailored to variable-size marine targets.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D3",
+        "L2": "D2"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0036",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The framework mainly establishes probabilistic correctness and feasibility under existing file organizations and access costs, but does not provide a fully general optimization strategy for pushing sampling through arbitrary relational query plans or handling all storage layouts equally well.\"\n  L2: \"Because the synopsis prioritizes a bounded set of high-magnitude coefficients, it can lose fidelity on low-energy or rapidly changing fine-scale details that are not selected into the retained coefficient set.\"\n  L3: \"The approach is specialized to distributive grouped aggregates and depends on known or maintained group structure and budget allocation, limiting its direct applicability to more complex aggregates or poorly characterized group domains.\"\n\nDeltas (shuffled):\n  D1: \"Compared with earlier compact synopsis methods and single-sample approaches, this work replaces one-size-fits-all summaries with a multi-component sample explicitly optimized for group-by error behavior, especially protection of low-frequency groups.\"\n  D2: \"Compared with earlier synopsis methods centered on random sampling, this work replaces sample-based summaries with an online-maintained wavelet coefficient sketch that better captures hierarchical structure for range and frequency aggregates in a single pass.\"\n  D3: \"Compared with prior efficient vision backbones that leaned on convolutions or conventional ViTs that used full self-attention mechanism, this work introduces cascaded channel-group attention mechanism and low-traffic backbone blocks to preserve token mixing with much lower memory movement.\"\n  D4: \"Compared with earlier NAS methods that searched entire networks end-to-end, this work changes the search target to transferable modular cells separated into normal and downsampling functions and reuses them to scale depth and resolution on new tasks.\"\n  D5: \"Compared with earlier approximate query answering based on single samples or weaker best-effort behavior, BlinkDB adds a distributed architecture with a sample-selection optimizer over multiple stratified samples to provide explicit probabilistic bounds on either response time or error for ad hoc queries.\"\n  D6: \"Compared with prior lightweight convolutional architecture-based steel defect detectors, this work replaces purely local feature modeling with a position-guided hybrid of convolutional and transformer architecture components that explicitly preserves spatial priors during feature fusion.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0055",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The paper appears to offer no operational definitions, formal model, or empirical validation that would test whether its physics-to-society and consciousness-based analogies are scientifically predictive.\"\n  L2: \"As a historical reconstruction, the paper does not introduce new physical formalism or experimentally testable results and depends on interpretation of historical sources.\"\n  L3: \"The study is limited to idealized nanocluster models and collision conditions, so its conclusions may not directly generalize to more complex materials, shapes, environments, or strongly plastic regimes.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work that applied standard restitution concepts from macroscopic collisions, this paper identifies their breakdown at the nanoscale for oblique impacts and introduces a corrected definition supported by theory and simulation.\"\n  D2: \"Unlike prior work that improves HGP codes through local transformations or machine-learning-based search, this paper imposes hard-to-discover global cyclic symmetries and searches exhaustively within that constrained design space.\"\n  D3: \"Compared with prior work focused on more common χc1(3872) decay modes such as J/ψπ+π−, this study newly establishes the dimuon decay channel and quantifies its suppression relative to the hadronic reference mode.\"\n  D4: \"Compared with prior MAS scattering formulations that target perfect conductors or frequency-domain settings, this work extends MAS into the time domain for finite but moderate conductivity via first-order SIBC.\"\n  D5: \"Compared with prior accounts that may present Fermi statistics mainly as a formal physics advance, this paper emphasizes the continuity between Fermi's formative interests and his conceptual generalization of the Exclusion Principle.\"\n  D6: \"Compared with prior work that proposed and experimentally used inverse-designed metainterfaces under independence and half-space assumptions, this paper explicitly quantifies when those assumptions hold or fail using detailed 3D modeling.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D1"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "physics.pop-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0030",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"Because the framework abstracts grasping to low-dimensional rigid-body statics with idealized contact models, it does not address embodiment-specific hand kinematics, compliance, or dynamic manipulation effects.\"\n  L2: \"The method is specialized to frictionless contacts and cleanly parameterized polygonal or polyhedral object models, limiting its direct applicability to more general frictional or complex-shape grasping settings.\"\n  L3: \"The learned policy depends on hundreds of hours of robot interaction and simple binary success labels, making it data-hungry and leaving richer structure about why grasps fail or how to generalize more efficiently unmodeled.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior grasping pipelines that separated perception, object modeling, and analytic grasp planning or relied on smaller datasets and simulation, this work replaces those components with a single deep network trained from large-scale real interaction data to directly evaluate action success.\"\n  D2: \"Compared with prior mobile NAS and hand-designed efficient networks that optimized accuracy alone or proxy efficiency measures, this work changes the objective to include real measured latency and uses a hierarchical search over both block choices and network-level layer repetitions.\"\n  D3: \"Compared with prior lightweight convolutional architecture-based steel defect detectors, this work replaces purely local feature modeling with a position-guided hybrid of convolutional and transformer architecture components that explicitly preserves spatial priors during feature fusion.\"\n  D4: \"Compared with prior grasping work that relied on physics-based synthesis, antipodal geometric rules, or limited supervised examples, this paper replaces hand-engineered grasp scoring with large-scale autonomous self-supervised learning from real robot outcomes.\"\n  D5: \"Compared with prior work that mainly provided analytical existence tests or closure certification, this paper turns form-closure theory into an efficient optimization-based pipeline for actually computing optimal grasp configurations.\"\n  D6: \"Compared with prior efficient vision backbones that leaned on convolutions or conventional ViTs that used full self-attention mechanism, this work introduces cascaded channel-group attention mechanism and low-traffic backbone blocks to preserve token mixing with much lower memory movement.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Robotics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0031",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"Because prediction quality depends on a hand-constructed decision-tree factorization over mostly local contextual cues, the model may miss longer-range program dependencies and is constrained by the chosen tree structure.\"\n  L2: \"Although syntax is enforced, the model still relies on grammar-specified action spaces and ad hoc mechanisms for identifiers and literals, leaving semantic correctness and flexible handling of open-vocabulary program content only partially solved.\"\n  L3: \"Because the system depends on phrase-based alignments over a structure-preserving but SMT-compatible code representation rather than deeper semantic analysis, it is limited in capturing long-range program semantics and more complex code patterns.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior mobile NAS and hand-designed efficient networks that optimized accuracy alone or proxy efficiency measures, this work changes the objective to include real measured latency and uses a hierarchical search over both block choices and network-level layer repetitions.\"\n  D2: \"Compared with prior Model-B-style pre-training, this work adapts pre-training to the software domain by combining code-text pairs with unimodal code data and replacing pure masked-token prediction with a hybrid MLM plus replaced-token detection objective.\"\n  D3: \"Compared with earlier rule systems and statistical methods focused on local code prediction like completion, this work extends statistical modeling to full sequence generation of pseudo-code from source using phrase-based SMT on parallel examples.\"\n  D4: \"Compared with prior convolution-heavy underwater detectors and less efficient attention mechanism-based pipelines, this work replaces uniformly expensive feature processing with an efficient transformer architecture backbone plus dynamic hierarchical multi-scale fusion tailored to variable-size marine targets.\"\n  D5: \"Compared with prior probabilistic or decision-tree semantic parsers and unconstrained neural sequence decoders, this work replaces hand-engineered local decisions or flat token generation with end-to-end learned AST action prediction under explicit grammar constraints.\"\n  D6: \"Compared with prior lightweight convolutional architecture-based steel defect detectors, this work replaces purely local feature modeling with a position-guided hybrid of convolutional and transformer architecture components that explicitly preserves spatial priors during feature fusion.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D5",
+        "L2": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Software Engineering",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0033",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The design increases read-path complexity because queries may need to search multiple components and rely on background merge maintenance, so read latency and lookup cost can worsen relative to a single balanced tree.\"\n  L2: \"Because ART is specialized for in-memory bytewise key processing, its benefits depend on key decomposition and local fanout patterns, and the paper leaves open how well the design transfers to other memory hierarchies or less prefix-structured workloads.\"\n  L3: \"Because updates accumulate as delta chains that must later be consolidated, the design introduces extra indirection and chain-traversal overhead whose performance depends on keeping those chains short.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior fixed-node radix tries and comparison-based balanced trees, ART replaces uniform radix-node layouts with occupancy-dependent node types plus path compression and lazy expansion tuned for main-memory execution.\"\n  D2: \"Compared with earlier NAS methods that searched entire networks end-to-end, this work changes the search target to transferable modular cells separated into normal and downsampling functions and reuses them to scale depth and resolution on new tasks.\"\n  D3: \"Compared with earlier main-memory B-tree variants that mainly changed node layout or branching structure, this work shifts to a lock-free indirection-mapped tree where splits, merges, inserts, and deletes are encoded as append-only deltas instead of modifying nodes in place.\"\n  D4: \"Compared with prior work that manually or independently scaled depth, width, or resolution after designing a convolutional architecture, this paper replaces ad hoc single-axis scaling with a principled compound rule derived from resource-constrained optimization on a searched seed model.\"\n  D5: \"Compared with prior mobile NAS and hand-designed efficient networks that optimized accuracy alone or proxy efficiency measures, this work changes the objective to include real measured latency and uses a hierarchical search over both block choices and network-level layer repetitions.\"\n  D6: \"Compared with traditional B-trees, hash tables, and handcrafted partitioning schemes, this work replaces fixed structural heuristics with trained predictive models that estimate record locations and route queries through a hierarchy of specialized submodels.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "Database Systems",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0066",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The study is limited by its focus on idealized benchmark geometries and modeled parameter scans rather than validation on complex experimental targets or direct comparison to measured SAXS data.\"\n  L2: \"The work appears primarily theoretical and abstract-level, leaving open how broadly and robustly the framework performs under experimental imperfections, material losses, and full-wave validation in concrete devices.\"\n  L3: \"The main limitation is that the result is exact only in the ideal infinite-permeability limit, with finite-permeability support provided mainly by numerical approximation rather than broad experimental validation or sharp error bounds.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior work focused on relativistic formulations or two-coordinate geometries, this paper provides a simpler explicitly three-dimensional demonstration, adds a guiding-center correction estimate, and emphasizes chaotic advection of \\(\\vec{\\mathcal{B}}\\).\"\n  D2: \"Compared with prior approaches that linked real-space and momentum-space topologies mainly through expensive numerical calculations, this paper introduces an explicit symmetry-based Hamiltonian framework that makes the connection analytically designable and interpretable.\"\n  D3: \"Compared with prior double-copy work focused mainly on scattering amplitudes, point particles, and classical field solutions, this paper extends the idea to classical string motion and explicitly contrasts open-string gauge-background dynamics with closed-string motion in the double-copied geometry.\"\n  D4: \"Compared with prior MAS scattering formulations that target perfect conductors or frequency-domain settings, this work extends MAS into the time domain for finite but moderate conductivity via first-order SIBC.\"\n  D5: \"Compared with prior sphere-packing or pairwise-interaction explanations, this work attributes the magic numbers to many-body proton coordination effects captured by higher-level quantum simulations.\"\n  D6: \"Compared with prior textbook treatments that emphasized only quasi-equipotential interiors and normal external fields at boundaries, this work explicitly characterizes the entire exterior response as outer-surface-determined.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D2",
+        "L2": "D6"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "physics.plasm-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0051",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The study is limited by its focus on idealized benchmark geometries and modeled parameter scans rather than validation on complex experimental targets or direct comparison to measured SAXS data.\"\n  L2: \"The work appears primarily theoretical and abstract-level, leaving open how broadly and robustly the framework performs under experimental imperfections, material losses, and full-wave validation in concrete devices.\"\n  L3: \"The main limitation is that the result is exact only in the ideal infinite-permeability limit, with finite-permeability support provided mainly by numerical approximation rather than broad experimental validation or sharp error bounds.\"\n\nDeltas (shuffled):\n  D1: \"Compared with prior approaches that linked real-space and momentum-space topologies mainly through expensive numerical calculations, this paper introduces an explicit symmetry-based Hamiltonian framework that makes the connection analytically designable and interpretable.\"\n  D2: \"Compared with prior work focused on relativistic formulations or two-coordinate geometries, this paper provides a simpler explicitly three-dimensional demonstration, adds a guiding-center correction estimate, and emphasizes chaotic advection of \\(\\vec{\\mathcal{B}}\\).\"\n  D3: \"Compared with prior textbook treatments that emphasized only quasi-equipotential interiors and normal external fields at boundaries, this work explicitly characterizes the entire exterior response as outer-surface-determined.\"\n  D4: \"Compared with prior work that proposed and experimentally used inverse-designed metainterfaces under independence and half-space assumptions, this paper explicitly quantifies when those assumptions hold or fail using detailed 3D modeling.\"\n  D5: \"Compared with prior MAS scattering formulations that target perfect conductors or frequency-domain settings, this work extends MAS into the time domain for finite but moderate conductivity via first-order SIBC.\"\n  D6: \"Compared with prior technical literature focused mainly on either dark matter phenomenology or specific alternative theories, this work reframes the issue through a combined historical and epistemological synthesis.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D3"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "physics.plasm-ph",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T2-08_lim_delta_mixed_0052",
+    "task_type": "T2-08_lim_delta_mixed",
+    "prompt": "Each limitation was addressed by a specific delta (improvement) from the next paper.\nMatch each limitation to its correct delta.\n\nLimitations:\n  L1: \"The work stops at proposing optimization strategies and foundational parameter extraction rather than demonstrating robust, selective, permanent internal writing across a broad set of semiconductor devices.\"\n  L2: \"The gains come with larger block lengths and the study is confined to cyclic-code-based HGP families rather than more general quantum LDPC constructions.\"\n  L3: \"The paper is limited by relying on numerical assessment of normal-contact-based friction surrogates for dry elastic systems rather than directly solving broader frictional, material, or dynamic contact behaviors in experiments.\"\n\nDeltas (shuffled):\n  D1: \"Unlike prior work that improves HGP codes through local transformations or machine-learning-based search, this paper imposes hard-to-discover global cyclic symmetries and searches exhaustively within that constrained design space.\"\n  D2: \"Unlike prior multimode-fiber supercontinuum control approaches that tune spectra mainly by altering spatial mode composition and often degrade beam quality, this work tunes the spectrum through bend-induced dispersion modification while keeping the spatial mode essentially fixed.\"\n  D3: \"Compared with prior closed-system work where Lanczos coefficients define deterministic geometric operator growth, this paper shows that coupling to an environment broadens and eventually destroys the hyperbolic mechanism behind exponential complexity growth.\"\n  D4: \"Compared with prior work that proposed and experimentally used inverse-designed metainterfaces under independence and half-space assumptions, this paper explicitly quantifies when those assumptions hold or fail using detailed 3D modeling.\"\n  D5: \"Compared with prior dissociative electron attachment studies on other alcohols, this work adds the first detailed fragment-yield and threshold-energy characterization for 1-propanol and uses those comparisons to argue site-specific fragmentation.\"\n  D6: \"Compared with prior slow-light and vortex-light studies, this work specifically introduces vector vortices with opposite-spin opposite-OAM components in a coherently prepared tripod configuration to reveal dynamically induced anisotropy and controllable polarization cycling.\"\n  Options: M, AR, H, S, NC\n\n--- Dynamics Label Definitions ---\nMutation: Direct inheritance with local modification of the driver gene.\nAdaptive Radiation: The inherited mechanism is applied to a shifted problem niche.\nHybridization: The driver gene combines elements from 2+ distinct lineages.\nSpeciation: A new lineage-founding mechanism replaces the predecessor's approach.\nNiche Competition: Papers target the same niche without inheriting the driver gene.\n\nKey distinction — Mutation requires that the successor's mechanism is clearly derived from (extends/refines) the predecessor's mechanism. If mechanisms are fundamentally different approaches even for a related problem, classify as Speciation.\nHybridization vs Speciation: if the successor's mechanism combines recognizable elements from the predecessor with ideas from another lineage, use Hybridization. Speciation means the mechanism shares no ancestry with the predecessor.\nSpeciation vs Niche Competition: Speciation means the successor IS in the same lineage but replaced the mechanism. Niche Competition means no lineage relationship — independent work targeting the same niche.\n\nAnswer with exactly two mapping lines:\nL1 = [D1|D2|D3|D4|D5|D6]\nL2 = [D1|D2|D3|D4|D5|D6]\n",
+    "choices": {},
+    "gold_answer": {
+      "mapping": {
+        "L1": "D1",
+        "L2": "D4"
+      }
+    },
+    "metadata": {
+      "baseline": "0.83%",
+      "subfield": "physics.optics",
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-12_lim_delta_mixed",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Mixed Limitation-Delta Match"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "pairwise_inheritance"
+  }
+]

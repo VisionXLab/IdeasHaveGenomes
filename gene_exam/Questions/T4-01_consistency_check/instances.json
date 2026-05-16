@@ -1,0 +1,1152 @@
+[
+  {
+    "instance_id": "T4-01_consistency_check_0001",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"The key insight is that intrusion detectors evaluated on a dataset with realistic background traffic, contemporary attack types, and temporal structure can be trained effectively while better reflecting operational deployment conditions than legacy benchmarks.\"\n\nB. \"A realistically generated and properly labeled contemporary flow-based dataset enables more credible training and evaluation of machine-learning intrusion detection systems than older synthetic benchmark datasets.\"\n\nC. \"This paper targets the problem of generating benchmark datasets for intrusion detection that faithfully represent operational network environments and support reliable evaluation.\"\n\nD. \"Compared with prior work centered on outdated datasets such as KDD-style benchmarks, this paper replaces them with a contemporarily generated, realistically mixed, flow-based labeled corpus and an accompanying ML evaluation pipeline.\"\n\nE. \"The paper's novelty is concentrated in dataset construction and evaluation setup rather than a new detection algorithm, so its results remain tied to the specific simulated environment, attack schedule, and chosen flow features.\"\n\nF. \"The approach builds a realistic testbed to capture benign and attack traffic, converts packet traces into labeled bidirectional network flows with statistical and header-derived features, and trains standard machine-learning classifiers for intrusion detection.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"benchmark\"\n  S2: The fingerprint mentions \"performance\"\n  S3: The niche concerns \"image\"\n  S4: The mechanism involves \"feature\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Observation",
+      "B": "Claim",
+      "C": "Niche",
+      "D": "Delta",
+      "E": "Limitation",
+      "F": "Mechanism"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "dataset",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "cs",
+      "swapped_atom": "niche_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "niche_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 0,
+        "similarity_min": 0.4402,
+        "similarity_avg": 0.4402,
+        "similarity_max": 0.4402
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0002",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"This paper targets the problem of quantifying the maintenance burden of automated build systems in software projects practicing ongoing integration.\"\n\nB. \"An empirical repository-mining analysis operationalizes build maintenance effort by identifying and measuring version-history changes to build scripts, configuration files, dependency declarations, and related metadata, then comparing their evolution over time with general development activity.\"\n\nC. \"Build maintenance is a distinct, measurable engineering activity whose effort can be estimated from repository traces and meaningfully compared against broader code evolution in continuous-integration-style projects.\"\n\nD. \"Because the analysis infers continuous deployment practice from externally visible PyPI release and metadata signals alone, it cannot directly verify internal CI/CD workflows or the causal reasons behind observed release patterns.\"\n\nE. \"Compared with prior work that mainly framed continuous integration and build practices conceptually or procedurally, this paper shifts the discussion to quantitative empirical evidence by measuring build-maintenance changes directly from software repositories.\"\n\nF. \"The study finds that build definitions evolve regularly and measurably over project history, with nontrivial maintenance effort that is unevenly distributed across projects and time periods relative to source-code evolution.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The mechanism involves \"neural\"\n  S2: The contribution type is \"analysis\"\n  S3: The niche concerns \"prediction\"\n  S4: The fingerprint mentions \"adaptive\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Mechanism",
+      "C": "Claim",
+      "D": "Limitation",
+      "E": "Delta",
+      "F": "Observation"
+    },
+    "gold_answer": {
+      "label": "D",
+      "contribution_type": "analysis",
+      "verify": [
+        "F",
+        "T",
+        "F",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "cs",
+      "swapped_atom": "limitation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "limitation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3953,
+        "similarity_avg": 0.3953,
+        "similarity_max": 0.3953
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0003",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"CoverAgent is an LLM-centered closed-loop test generation framework that iteratively analyzes source code, existing tests, execution results, and fine-grained coverage gaps to prompt the model to synthesize, repair, and refine tests aimed at uncovered branches.\"\n\nB. \"The approach's gains depend heavily on orchestration quality—especially prompt construction, feedback localization, and iterative repair—rather than introducing a fundamentally new generation model, leaving performance sensitive to these design choices.\"\n\nC. \"Compared with prior zero-shot fuzzing or single-pass LLM test generation, this work adds repeated execution, coverage measurement, localized feedback selection, and iterative test repair to guide subsequent generations.\"\n\nD. \"The paper finds that this directed hybrid of concrete random execution and symbolic path constraint solving achieves substantially better branch coverage and bug discovery than unguided random testing or manual driver-based approaches.\"\n\nE. \"An LLM-driven agent that repeatedly uses execution and coverage feedback to target uncovered code can generate tests that achieve higher structural coverage than unguided single-pass LLM generation.\"\n\nF. \"This paper targets automated unit test generation for improving structural code coverage in existing software codebases.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The contribution type is \"method\"\n  S2: The niche concerns \"detection\"\n  S3: The niche concerns \"generation\"\n  S4: The fingerprint mentions \"baseline\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Mechanism",
+      "B": "Limitation",
+      "C": "Delta",
+      "D": "Observation",
+      "E": "Claim",
+      "F": "Niche"
+    },
+    "gold_answer": {
+      "label": "D",
+      "contribution_type": "method",
+      "verify": [
+        "T",
+        "F",
+        "T",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "cs",
+      "swapped_atom": "observation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "observation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3684,
+        "similarity_avg": 0.3684,
+        "similarity_max": 0.3684
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0004",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Parametric UMAP replaces pointwise optimization of embedding coordinates with a neural encoder trained end-to-end on the UMAP fuzzy simplicial set objective so that embedding-space pairwise similarities match input-space neighbor affinities, optionally with a learned decoder for inverse mapping.\"\n\nB. \"The paper finds that optimizing the UMAP objective through a parametric encoder yields embeddings that retain UMAP’s neighborhood-preserving structure while enabling inductive inference, scalable representation learning, and improved class organization when label-informed graphs are used.\"\n\nC. \"Because the method depends on a learned neural mapping and graph construction, it introduces extra model-training complexity and only provides approximate inverse reconstruction rather than the direct non-parametric embedding quality of standard UMAP.\"\n\nD. \"A neural network can be trained with the UMAP objective to produce inductive low-dimensional embeddings that preserve local structure comparably to UMAP while also supporting semi-supervised representation learning and approximate decoding.\"\n\nE. \"This paper targets nonlinear dimensionality reduction for visualization and representation of high-dimensional data while preserving neighborhood structure and manifold organization.\"\n\nF. \"Compared with standard non-parametric UMAP, the key change is replacing direct optimization of training-point embeddings with a differentiable neural mapping trained on the same fuzzy topological loss, plus optional supervision through label-modified neighborhood graphs.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The mechanism involves \"optimization\"\n  S2: The fingerprint mentions \"approach\"\n  S3: The niche concerns \"detection\"\n  S4: The mechanism involves \"embedding\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Mechanism",
+      "B": "Observation",
+      "C": "Limitation",
+      "D": "Claim",
+      "E": "Niche",
+      "F": "Delta"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "method",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "cs",
+      "swapped_atom": "niche_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "niche_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.4297,
+        "similarity_avg": 0.4297,
+        "similarity_max": 0.4297
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0005",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Adding explicit cross-lingual alignment objectives from parallel data to multilingual pretraining yields substantially better cross-lingual transfer and semantic matching than training language models independently on mixed multilingual corpora.\"\n\nB. \"A shared multilingual encoder trained with both monolingual masked language modeling and translation-aware cross-lingual objectives learns a common semantic space that improves zero-shot and low-resource transfer across languages.\"\n\nC. \"Compared with earlier multilingual pre-training that relied mainly on shared subwords and encoder-decoder text-to-text transfer, this work adds direct representation-level semantic alignment during encoder pre-training while leveraging monolingual corpora more heavily.\"\n\nD. \"This paper targets learning language representations that transfer effectively across languages, especially from high-resource to low-resource languages, for cross-lingual understanding tasks.\"\n\nE. \"XLM pretrains a single shared transformer architecture encoder over multilingual text using masked language modeling plus translation-aware objectives on parallel sentences, with shared subword vocabulary, shared parameters, and language embeddings to align token and sentence representations across languages.\"\n\nF. \"The approach depends on the availability and quality of parallel text for its strongest alignment objectives, which limits gains for language pairs with little or no bitext.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The mechanism involves \"representation\"\n  S2: The fingerprint mentions \"efficient\"\n  S3: The mechanism involves \"embedding\"\n  S4: The mechanism involves \"training\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Observation",
+      "B": "Claim",
+      "C": "Delta",
+      "D": "Niche",
+      "E": "Mechanism",
+      "F": "Limitation"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "method",
+      "verify": [
+        "T",
+        "F",
+        "T",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "cs",
+      "swapped_atom": "delta_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "delta_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.4738,
+        "similarity_avg": 0.4738,
+        "similarity_max": 0.4738
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0006",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"A transformer architecture encoder pre-trained on both code-natural language pairs and standalone code with MLM and replaced-token detection will outperform prior pre-trained models on code understanding and code-search-style tasks.\"\n\nB. \"CodeBERT is an encoder-only transformer architecture jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings.\"\n\nC. \"Joint bimodal-unimodal pre-training with replaced-token detection yields better code-text representation quality and stronger downstream performance than general-domain pre-training or simpler code-text pre-training objectives.\"\n\nD. \"Compared with prior Model-B-style pre-training, this work adapts pre-training to the software domain by combining code-text pairs with unimodal code data and replacing pure masked-token prediction with a hybrid MLM plus replaced-token detection objective.\"\n\nE. \"This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\"\n\nF. \"Because the system depends on phrase-based alignments over a structure-preserving but SMT-compatible code representation rather than deeper semantic analysis, it is limited in capturing long-range program semantics and more complex code patterns.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"model\"\n  S2: The niche concerns \"generation\"\n  S3: The mechanism involves \"embedding\"\n  S4: The niche concerns \"text\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Claim",
+      "B": "Mechanism",
+      "C": "Observation",
+      "D": "Delta",
+      "E": "Niche",
+      "F": "Limitation"
+    },
+    "gold_answer": {
+      "label": "F",
+      "contribution_type": "method",
+      "verify": [
+        "T",
+        "F",
+        "T",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "cs",
+      "swapped_atom": "limitation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "limitation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.4133,
+        "similarity_avg": 0.4133,
+        "similarity_max": 0.4133
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0007",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"The paper addresses supervised prediction of molecular and quantum chemical properties from graph-structured representations of small molecules.\"\n\nB. \"A properly designed message passing neural network can learn molecular representations from graphs that predict quantum chemical properties more accurately than previous methods on QM9.\"\n\nC. \"Compared with prior molecular graph models presented as separate architectures, this work reframes them under a common message passing formalism and demonstrates stronger variants tailored to quantum chemistry tasks.\"\n\nD. \"It introduces a unified Message Passing Neural Network framework in which node states are iteratively updated by learned messages along bonds and then aggregated by a readout function to predict molecular properties.\"\n\nE. \"SchNet achieves strong accuracy on molecular and materials property prediction benchmarks, showing that learned continuous distance-based interactions can effectively model quantum systems.\"\n\nF. \"The paper is mainly validated on relatively small molecules and benchmark datasets, leaving scalability and performance on larger, more diverse chemical spaces less established.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"framework\"\n  S2: The mechanism involves \"neural\"\n  S3: The niche concerns \"graph\"\n  S4: The niche concerns \"recommendation\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Claim",
+      "C": "Delta",
+      "D": "Mechanism",
+      "E": "Observation",
+      "F": "Limitation"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "method",
+      "verify": [
+        "F",
+        "T",
+        "T",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "cs",
+      "swapped_atom": "observation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "observation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.386,
+        "similarity_avg": 0.386,
+        "similarity_max": 0.386
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0018",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"The paper addresses de novo peptide sequencing from high-resolution tandem mass spectra, especially for peptides not present in reference databases.\"\n\nB. \"Casanovo uses a single transformer architecture encoder-decoder that embeds continuous m/z values with sinusoidal functions and intensities with linear projection, conditions decoding on precursor information and amino acid prefixes, and autoregressively predicts peptide sequences without m/z discretization or dynamic-programming post-processing.\"\n\nC. \"Compared with prior de novo sequencing systems that combine convolutional architecture/recurrent architecture components, discretized spectra, and separate post-processing, this work replaces the pipeline with an end-to-end single-transformer architecture operating directly on continuous peak sequences.\"\n\nD. \"The model achieves state-of-the-art peptide sequencing accuracy while substantially reducing inference time relative to prior modular architectures.\"\n\nE. \"The paper still depends on engineered mass constraints and decoder design, which may limit generalization and leave some spectrum-peptide relationships only partially modeled.\"\n\nF. \"A unified transformer architecture can directly translate raw peak lists into peptide sequences more accurately and efficiently than previous de novo peptide sequencing methods.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"model\"\n  S2: The niche concerns \"detection\"\n  S3: The fingerprint mentions \"adaptive\"\n  S4: The contribution type is \"method\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Mechanism",
+      "C": "Delta",
+      "D": "Observation",
+      "E": "Limitation",
+      "F": "Claim"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "method",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "life_science",
+      "swapped_atom": "limitation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "limitation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.454,
+        "similarity_avg": 0.454,
+        "similarity_max": 0.454
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0019",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"RankNovo aggregates candidates from several base de novo models, represents them as a multiple-sequence-alignment-like matrix, applies axial attention mechanism for inter-candidate feature mixing, injects spectrum information through cross-attention mechanism, and jointly predicts peptide-level and residue-level mass deviation scores for list-wise reranking.\"\n\nB. \"A universal deep reranking framework that jointly models candidate peptides and spectra with PMD/RMD supervision can more accurately identify the optimal peptide sequence than existing base-model-only or conventional reranking methods.\"\n\nC. \"Compared with prior de novo sequencing and reranking approaches that score single outputs or use weak labels such as correctness or edit distance, this work introduces list-wise multi-candidate modeling with axial attention mechanism and explicit mass-deviation supervision.\"\n\nD. \"De novo peptide sequencing reranking for MS/MS spectra by selecting the best peptide from multiple model-generated candidates.\"\n\nE. \"Explicitly aligning spectra and peptides while enforcing mass-aware decoding improves sequencing accuracy and helps resolve ambiguities better than sequence-mapping-only approaches.\"\n\nF. \"The method depends on having diverse candidate lists from multiple upstream de novo models, which adds system complexity and may limit gains when base candidates are poor or insufficiently varied.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The contribution type is \"method\"\n  S2: The fingerprint mentions \"scalable\"\n  S3: The fingerprint mentions \"model\"\n  S4: The fingerprint mentions \"robust\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Mechanism",
+      "B": "Claim",
+      "C": "Delta",
+      "D": "Niche",
+      "E": "Observation",
+      "F": "Limitation"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "method",
+      "verify": [
+        "T",
+        "F",
+        "T",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "life_science",
+      "swapped_atom": "observation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "observation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3794,
+        "similarity_avg": 0.3794,
+        "similarity_max": 0.3794
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0020",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Compared with prior biomarker work centered on PD-L1 expression or broad smoking history, this study quantitatively links exomic mutation burden, candidate neoantigen load, mutational processes, and dynamic neoantigen-specific immunity to anti-PD-1 efficacy in NSCLC.\"\n\nB. \"This paper addresses prediction of clinical benefit from PD-1 blockade in non-small-cell lung cancer using tumor mutational and neoantigen features.\"\n\nC. \"In NSCLC, nonsynonymous mutation burden and derived neoantigen burden are predictive biomarkers of pembrolizumab benefit because they reflect an immunogenic tumor genotype capable of eliciting effective neoantigen-specific CD8+ T cell responses under PD-1 blockade.\"\n\nD. \"It combines whole-exome sequencing of tumors and matched normals, HLA-aware neoantigen prediction, mutational signature and DNA repair defect analysis, and functional assays of neoantigen-specific CD8+ T cells to relate tumor genomics to pembrolizumab response.\"\n\nE. \"The study is limited by a relatively modest human cohort and observational associations that, despite supportive mouse FMT experiments, may not fully capture confounding factors or generalize across cancers, therapies, and populations.\"\n\nF. \"Higher nonsynonymous mutation burden and neoantigen load, particularly with tobacco-associated mutational signatures and DNA repair pathway alterations, are associated with improved objective response and durable benefit to PD-1 blockade, and therapy can induce neoantigen-specific T cell responses that track tumor regression.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The niche concerns \"text\"\n  S2: The fingerprint mentions \"novel\"\n  S3: The niche concerns \"prediction\"\n  S4: The contribution type is \"analysis\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Delta",
+      "B": "Niche",
+      "C": "Claim",
+      "D": "Mechanism",
+      "E": "Limitation",
+      "F": "Observation"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "analysis",
+      "verify": [
+        "F",
+        "F",
+        "T",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "life_science",
+      "swapped_atom": "limitation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "limitation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3985,
+        "similarity_avg": 0.3985,
+        "similarity_max": 0.3985
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0021",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Producing up-to-date world averages for b-hadron, c-hadron, and tau-lepton properties from heterogeneous heavy-flavor measurements.\"\n\nB. \"A statistically consistent combination of available heavy-flavor and tau measurements, after harmonizing inputs and correlations, yields the most reliable world-average values as of 2023 for the listed observables.\"\n\nC. \"Compared with earlier HFAG/HFLAV compilations, this edition updates the averages with results available through 2023 and in rare cases a few later significant measurements while reapplying the common-input and correlation treatment.\"\n\nD. \"The paper delivers consolidated averages for branching fractions, lifetimes, neutral meson mixing, CP-violation observables, semileptonic-decay parameters, and CKM matrix elements based on the current measurement set.\"\n\nE. \"It analyzes classical field theories and general relativity under an analyticity assumption, using the unique continuation properties of analytic functions to reassess determinism and the hole argument.\"\n\nF. \"It is primarily a synthesis of existing measurements whose accuracy and scope are limited by the quality, consistency, and correlation information of the underlying experiments rather than by a new measurement or theory.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The contribution type is \"dataset\"\n  S2: The fingerprint mentions \"model\"\n  S3: The niche concerns \"prediction\"\n  S4: The mechanism involves \"learning\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Claim",
+      "C": "Delta",
+      "D": "Observation",
+      "E": "Mechanism",
+      "F": "Limitation"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "dataset",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "physics",
+      "swapped_atom": "mechanism_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "mechanism_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 0,
+        "similarity_min": 0.2238,
+        "similarity_avg": 0.2238,
+        "similarity_max": 0.2238
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0022",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"This paper addresses the one-dimensional generalized Dirac oscillator with possibly complex interaction functions under doubly special relativity, focusing on pseudo-Hermitian and PT-symmetric solvable models such as the complexified Morse interaction.\"\n\nB. \"Compared with prior generalized Dirac oscillator studies in standard relativistic quantum mechanics, this work adds a DSR embedding that separates unchanged pseudo-Hermitian spatial solvability from deformed relativistic energy reconstruction and bound-state truncation effects.\"\n\nC. \"They find that DSR leaves the spatial spectrum problem intact but nontrivially deforms the mapping from spatial eigenvalues to relativistic energies, with MS producing branch-asymmetric effective-mass deformation and AC imposing a leading-order admissibility bound of the form epsilon_n < 4k^2.\"\n\nD. \"For pseudo-Hermitian complexified Morse-type generalized Dirac oscillators, the spatial eigenvalue set can remain real while DSR predictably modifies the allowed relativistic energy spectrum, including AC-specific cutoff conditions and an MS massless limit that reduces to the undeformed map.\"\n\nE. \"The analysis appears centered on effective theory and minimal dissipative settings like dephasing, leaving broader validation across more general open-system models and concrete many-body examples unresolved.\"\n\nF. \"The authors factorize the generalized Dirac oscillator into supersymmetric partner Schrödinger-like equations to obtain real spatial eigenvalues and then reconstruct relativistic energies through deformed Magueijo-Smolin and Amelino-Camelia DSR energy maps.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"framework\"\n  S2: The niche concerns \"generation\"\n  S3: The niche concerns \"speech\"\n  S4: The contribution type is \"theory\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Delta",
+      "C": "Observation",
+      "D": "Claim",
+      "E": "Limitation",
+      "F": "Mechanism"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "theory",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "physics",
+      "swapped_atom": "limitation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "limitation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3013,
+        "similarity_avg": 0.3013,
+        "similarity_max": 0.3013
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0023",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Compared with prior fragmented glacier mass-balance assessments, this work introduces a coordinated, homogenized, community-driven framework that integrates 233 estimates from four methods into consistent annual regional and global time series.\"\n\nB. \"Including elevation range and continentality and optimizing for absolute rather than logarithmic error yields less biased regional and global glacier volume estimates than conventional area-volume scaling.\"\n\nC. \"Estimating globally consistent glacier and ice-cap volume from the Randolph Glacier Inventory while reducing bias from simplistic area-only scaling.\"\n\nD. \"A multivariate, absdev-optimized scaling law applied to the full Randolph Glacier Inventory can produce a more accurate and less biased estimate of total global glacier and ice-cap volume and sea-level equivalent than previous scaling-based methods.\"\n\nE. \"The method remains an empirical scaling approach whose accuracy is constrained by the representativeness and coverage of observed-volume calibration data and by inventory-level assumptions in the Randolph Glacier Inventory.\"\n\nF. \"The paper calibrates multivariate area-volume scaling laws against observed glacier volumes using area, elevation range, and continentality, separates models by glacier type and size, optimizes parameters by minimizing absolute volume error, and propagates uncertainty with cross-validation and Monte Carlo analysis.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The niche concerns \"segmentation\"\n  S2: The contribution type is \"analysis\"\n  S3: The fingerprint mentions \"robust\"\n  S4: The niche concerns \"recommendation\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Delta",
+      "B": "Observation",
+      "C": "Niche",
+      "D": "Claim",
+      "E": "Limitation",
+      "F": "Mechanism"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "analysis",
+      "verify": [
+        "F",
+        "T",
+        "F",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "earth_science",
+      "swapped_atom": "delta_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "delta_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3525,
+        "similarity_avg": 0.3525,
+        "similarity_max": 0.3525
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0024",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"A main limitation of this paper is that it primarily contributes workflow integration rather than a new core picking or location algorithm, so performance remains dependent on the behavior and assumptions of the constituent external tools.\"\n\nB. \"A unified pipeline that starts from continuous waveforms and iteratively performs robust picking, association, relocation, and GPU-accelerated matched filtering can produce more complete and precise earthquake catalogs than existing fragmented or prior-catalog-dependent approaches.\"\n\nC. \"Compared with prior fragmented approaches built from isolated packages and incompatible formats, LOC-FLOW adds an open-source, automated, modular framework that standardizes data exchange and enables direct end-to-end execution across the full cataloging pipeline.\"\n\nD. \"The paper addresses automated generation of high-precision earthquake catalogs from continuous seismic waveform data by unifying picking, association, absolute location, and relative relocation in one workflow.\"\n\nE. \"LOC-FLOW implements a modular end-to-end pipeline that chains data preprocessing, ML-based phase picking with PhaseNet or STA/LTA, phase association with REAL, velocity-model and station correction with VELEST, absolute location with HYPOINVERSE, and double-difference relocation with hypoDD or GrowClust through automated I/O conversion.\"\n\nF. \"The central empirical insight is that seamless integration of modern ML pickers with established seismological location tools can directly process continuous data into accurate earthquake catalogs with minimal user intervention.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"framework\"\n  S2: The niche concerns \"generation\"\n  S3: The fingerprint mentions \"state-of-the-art\"\n  S4: The contribution type is \"system\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Limitation",
+      "B": "Claim",
+      "C": "Delta",
+      "D": "Niche",
+      "E": "Mechanism",
+      "F": "Observation"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "system",
+      "verify": [
+        "F",
+        "T",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "earth_science",
+      "swapped_atom": "claim_atom",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "claim_atom",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.4227,
+        "similarity_avg": 0.4227,
+        "similarity_max": 0.4227
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0025",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"The paper studies the Cauchy problem for nonlinear Schrödinger equations with a critical Hardy potential and a nonlocal Choquard nonlinearity in the energy-subcritical regime.\"\n\nB. \"For any finite universe U and any induced community M_U, there exists an element a in U such that D_{M_U}(a) >= 1/2.\"\n\nC. \"Compared with prior work that studied union-closed families in standard set-system terms, this paper reframes the problem through the new notions of universes, communities, cells, and spots and claims a full proof.\"\n\nD. \"It introduces a new formal language of universes, induced communities, cells, and spots and uses this framework to derive a proof of the conjecture.\"\n\nE. \"The central theoretical insight is that every finite universe with an induced community contains a spot whose density is at least 1/2.\"\n\nF. \"The abstract does not indicate whether the proof yields broader structural characterizations, algorithmic consequences, or simplifications relative to existing formulations.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The niche concerns \"speech\"\n  S2: The contribution type is \"theory\"\n  S3: The niche concerns \"retrieval\"\n  S4: The mechanism involves \"layer\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Claim",
+      "C": "Delta",
+      "D": "Mechanism",
+      "E": "Observation",
+      "F": "Limitation"
+    },
+    "gold_answer": {
+      "label": "A",
+      "contribution_type": "theory",
+      "verify": [
+        "F",
+        "T",
+        "F",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "mathematics",
+      "swapped_atom": "niche_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "niche_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3538,
+        "similarity_avg": 0.3538,
+        "similarity_max": 0.3538
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0026",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"The results are specialized to Sturm-Liouville settings with Schatten-class resolvents and mainly provide structural asymptotic theory rather than broadly applicable computational algorithms or treatment of operators outside this analytic framework.\"\n\nB. \"It applies complex analytic theory of entire functions of finite order to the Sturm-Liouville eigenvalue equation to derive solution growth/decay asymptotics, build a minimal-order characteristic function, and obtain contour-integral formulas for spectral zeta-functions.\"\n\nC. \"The paper studies the infinite-volume asymptotic behavior of the spectral gap for discrete Schrödinger operators on a path graph under a broad class of potentials.\"\n\nD. \"The main theoretical insight is that the asymptotic blowup or decay rate of eigenvalue-equation solutions has a universal spectral form determined solely by the largest integer p for which the resolvent is not in the Schatten p-class.\"\n\nE. \"For any Sturm-Liouville problem with Schatten p-class resolvent, one can construct a characteristic function of minimal order and derive universal solution asymptotics and contour-integral spectral zeta representations governed by the resolvent's Schatten threshold.\"\n\nF. \"Compared with prior work that established contour-integral zeta representations mainly for quasi-regular problems or isolated examples, this paper extends such results to general Sturm-Liouville problems with Schatten p-class resolvents via a unified entire-function approach.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"generalize\"\n  S2: The mechanism involves \"feature\"\n  S3: The niche concerns \"translation\"\n  S4: The contribution type is \"theory\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Limitation",
+      "B": "Mechanism",
+      "C": "Niche",
+      "D": "Observation",
+      "E": "Claim",
+      "F": "Delta"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "theory",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "mathematics",
+      "swapped_atom": "niche_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "niche_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.363,
+        "similarity_avg": 0.363,
+        "similarity_max": 0.363
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0027",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"A single end-to-end PyCBC-based reanalysis of all public 2015-2020 LIGO/Virgo data can yield a more consistent and reproducible merger catalog with reliable significance estimates, parameter posteriors, and population inferences than prior piecemeal cataloging efforts.\"\n\nB. \"Compared with prior catalogs built from heterogeneous searches and thresholds, this work reprocesses the entire 2015-2020 public dataset under one consistent PyCBC framework and publicly releases both confident and sub-threshold candidates with updated parameter estimates.\"\n\nC. \"Using this unified pipeline, the study identifies 94 confident mergers including 7 newly reported BBH events and produces updated event significances, source parameters, and population-level inferences from the full public dataset.\"\n\nD. \"This paper addresses the construction of a uniform, reproducible gravitational-wave merger catalog from all public LIGO/Virgo data collected between 2015 and 2020 across BBH, BNS, and NSBH sources.\"\n\nE. \"Because the catalog is restricted to public LIGO/Virgo data and a specific matched-filter and waveform-modeling framework, its results may miss signals or incur biases that alternative pipelines, private data products, or different waveform assumptions could reveal.\"\n\nF. \"The study combines two independent detection pipelines—matched filtering against a large bank of relativistic compact-binary templates and an unmodeled excess-power burst search—with instrumental and environmental vetoes plus Bayesian waveform-based parameter estimation.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The mechanism involves \"inference\"\n  S2: The mechanism involves \"attention\"\n  S3: The niche concerns \"detection\"\n  S4: The contribution type is \"analysis\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Claim",
+      "B": "Delta",
+      "C": "Observation",
+      "D": "Niche",
+      "E": "Limitation",
+      "F": "Mechanism"
+    },
+    "gold_answer": {
+      "label": "F",
+      "contribution_type": "analysis",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "astronomy",
+      "swapped_atom": "mechanism_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "mechanism_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3636,
+        "similarity_avg": 0.3636,
+        "similarity_max": 0.3636
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0028",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Compared with prior Gravity Spy-style glitch classifiers, this work updates the training set with new site-specific classes, uses expanded multi-timescale inputs, and scales inference and population analysis to the full LIGO O1 to O3 archive.\"\n\nB. \"The paper extends the Gravity Spy supervised convolutional architecture pipeline by training on updated Omega scan spectrogram datasets with 23 glitch morphology classes, using multi-timescale image inputs to output class probabilities, labels, and confidence scores for all candidate glitches.\"\n\nC. \"Automated large-scale classification and population analysis of transient noise glitches in LIGO Hanford and Livingston data across observing runs O1 to O3.\"\n\nD. \"Because the catalog is restricted to public LIGO/Virgo data and a specific matched-filter and waveform-modeling framework, its results may miss signals or incur biases that alternative pipelines, private data products, or different waveform assumptions could reveal.\"\n\nE. \"An updated Gravity Spy convolutional architecture can accurately and scalably classify glitches across all LIGO O1 to O3 data well enough to support reliable temporal and site-specific detector characterization.\"\n\nF. \"Applying the updated model to all O1 to O3 data reveals distinct glitch population patterns across time and between detector sites, including site-dependent distributions of newly added glitch classes.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The contribution type is \"theory\"\n  S2: The niche concerns \"recommendation\"\n  S3: The mechanism involves \"training\"\n  S4: The contribution type is \"system\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Delta",
+      "B": "Mechanism",
+      "C": "Niche",
+      "D": "Limitation",
+      "E": "Claim",
+      "F": "Observation"
+    },
+    "gold_answer": {
+      "label": "D",
+      "contribution_type": "system",
+      "verify": [
+        "F",
+        "F",
+        "T",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "astronomy",
+      "swapped_atom": "limitation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "limitation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 0,
+        "similarity_min": 0.2436,
+        "similarity_avg": 0.2436,
+        "similarity_max": 0.2436
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0029",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Using this framework, the authors find a critical spin-density wavelength exponent of 1/2 in the boundary-driven XY model, gapless dispersive spin-response modes tied to spin-density-wave order, non-monotonic diamagnetic response with occupation in dissipative Bernal bilayer graphene, and dissipation-enabled second-harmonic and shift-current responses otherwise forbidden in the closed centrosymmetric case.\"\n\nB. \"A quadratic Lindblad-Keldysh response formalism can predict distinctive steady-state spectroscopic signatures of open systems, including critical scaling, weak/ultra-strong dissipation correspondence, and dissipation-induced optical nonlinearities absent in analogous closed systems.\"\n\nC. \"It formulates a minimal mean-field model with pairing and quadrupolar channels, computes the free-energy density, and solves coupled self-consistent equations to map phase diagrams versus interaction strength and temperature.\"\n\nD. \"Compared with prior work that mainly analyzed spectra, steady states, or equilibrium-style response, this paper extends response theory to a unified finite-frequency linear and non-linear Keldysh-Lindblad treatment for open quadratic systems and applies it across spin, electronic, and bosonic examples.\"\n\nE. \"The study is restricted to quadratic, effectively non-interacting Lindbladians and illustrative model systems, so its conclusions may not directly extend to generic interacting open quantum matter or experimentally realistic dissipative environments.\"\n\nF. \"The paper addresses how to characterize finite-frequency linear and non-linear steady-state responses and dissipative phase transitions in quadratic Lindbladian open quantum systems, including fermionic and bosonic models.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The contribution type is \"theory\"\n  S2: The fingerprint mentions \"framework\"\n  S3: The fingerprint mentions \"benchmark\"\n  S4: The mechanism involves \"representation\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Observation",
+      "B": "Claim",
+      "C": "Mechanism",
+      "D": "Delta",
+      "E": "Limitation",
+      "F": "Niche"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "theory",
+      "verify": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "chemistry",
+      "swapped_atom": "mechanism_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "mechanism_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3264,
+        "similarity_avg": 0.3264,
+        "similarity_max": 0.3264
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0030",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"A single solid-state ionic thermoelectric polymer composite can deliver reversible, electrode-selectable positive or negative Seebeck coefficients and thereby support cyclic power generation under an unchanged heat gradient.\"\n\nB. \"Unlike prior ionic thermoelectric systems that mainly operate in capacitive mode with fixed thermopower polarity and discontinuous output, this work introduces an external electrode-switching strategy that reversibly flips thermopower sign without resetting the thermal field.\"\n\nC. \"The paper is limited by its dependence on specific humidity-controlled conditions and selected electrode/material combinations, leaving long-term stability, generality, and practical device-scale performance insufficiently established.\"\n\nD. \"This work addresses continuous solid-state ionic thermoelectric energy harvesting and thermal sensing by enabling reversible sign-switching of thermopower within a single polymer composite under a fixed temperature gradient.\"\n\nE. \"They observe reversible electrode-dependent bipolar thermopower ranging from +20.2 mV/K to -10.2 mV/K, with interfacial ion adsorption and redistribution controlling whether cationic or anionic thermodiffusion dominates.\"\n\nF. \"The system adds guanidinium cations to a Fe(CN)6 redox electrolyte so that an applied temperature gradient drives reversible cold-side crystallization and hot-side dissolution of Fe(CN)6^4−, creating a persistent concentration gradient that boosts thermopower while reducing heat transport.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"efficient\"\n  S2: The fingerprint mentions \"performance\"\n  S3: The niche concerns \"text\"\n  S4: The contribution type is \"system\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Claim",
+      "B": "Delta",
+      "C": "Limitation",
+      "D": "Niche",
+      "E": "Observation",
+      "F": "Mechanism"
+    },
+    "gold_answer": {
+      "label": "F",
+      "contribution_type": "system",
+      "verify": [
+        "F",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "materials",
+      "swapped_atom": "mechanism_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "mechanism_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3458,
+        "similarity_avg": 0.3458,
+        "similarity_max": 0.3458
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0031",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Both TKA and THA patients showed progressive preoperative activity decline and a staged postoperative recovery pattern with rapid gains in weeks 1-6, slower improvement through about weeks 19-20, later stabilization, and different median recovery times to remote versus immediate baselines.\"\n\nB. \"This paper addresses cross-country measurement of disruptive innovation when the CD index is computed from patent citation data that omit international citations.\"\n\nC. \"Compared with prior arthroplasty outcome studies that relied on short follow-up and subjective or sparse functional measures, this work uses continuous real-world wearable monitoring over two years before and after surgery to distinguish remote from immediate baseline recovery trajectories.\"\n\nD. \"In TKA and THA, wearable-derived step counts reveal measurable preoperative decline and procedure-specific staged postoperative recovery, and higher immediate preoperative activity predicts a greater likelihood of returning to habitual activity levels.\"\n\nE. \"The study is an observational analysis with a modest wearable-linked sample that may be affected by selection bias, device adherence variability, and limited causal interpretability or generalizability.\"\n\nF. \"It links All of Us electronic health records with continuous Fitbit step counts across a four-year perioperative window and applies piecewise linear mixed-effects models plus Kaplan-Meier and Cox models under remote and immediate preoperative baseline definitions to estimate decline, recovery, and predictors.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"approach\"\n  S2: The contribution type is \"analysis\"\n  S3: The fingerprint mentions \"model\"\n  S4: The contribution type is \"system\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Observation",
+      "B": "Niche",
+      "C": "Delta",
+      "D": "Claim",
+      "E": "Limitation",
+      "F": "Mechanism"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "analysis",
+      "verify": [
+        "F",
+        "T",
+        "T",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "economics",
+      "swapped_atom": "niche_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "niche_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3287,
+        "similarity_avg": 0.3287,
+        "similarity_max": 0.3287
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0032",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"The method trains LSSVM and RBFNN predictors, computes regime-specific grey relational coefficients between each model and measurements, and uses Weibull-segmented wind speed distributions plus NWP wind forecasts to select adaptive fusion weights from a dynamic monthly database.\"\n\nB. \"Very-short-term wind power forecasting for 15-minute-ahead prediction under changing wind speed regimes.\"\n\nC. \"Compared with prior hybrid wind power forecasters, this work adds wind-speed-regime-aware adaptive weighting via grey relational analysis and Weibull-indexed weight lookup rather than fixed or globally learned model combinations.\"\n\nD. \"The approach depends on predefined Weibull-based wind speed segmentation and a maintained monthly weight database, which may limit robustness when regime statistics shift or transfer to other sites is required.\"\n\nE. \"Separating PV signals by frequency before sequence modeling and then adaptively recombining the outputs yields more accurate and robust forecasts than treating the PV series as a single undifferentiated sequence.\"\n\nF. \"A dynamic LSSVM-RBFNN hybrid whose weights are chosen by grey relational similarity within Weibull-derived wind speed regimes yields more accurate 15-minute-ahead wind power forecasts than the constituent models and conventional hybrids.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The fingerprint mentions \"state-of-the-art\"\n  S2: The niche concerns \"prediction\"\n  S3: The niche concerns \"sequence\"\n  S4: The contribution type is \"method\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Mechanism",
+      "B": "Niche",
+      "C": "Delta",
+      "D": "Limitation",
+      "E": "Observation",
+      "F": "Claim"
+    },
+    "gold_answer": {
+      "label": "E",
+      "contribution_type": "method",
+      "verify": [
+        "F",
+        "T",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "energy",
+      "swapped_atom": "observation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "observation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3437,
+        "similarity_avg": 0.3437,
+        "similarity_max": 0.3437
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0033",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Streaming hidden Markov model inference for online latent regime identification with accurate one-step-ahead prediction under fixed computational budgets.\"\n\nB. \"The study appears limited to one regional climate application and a narrow comparison baseline, leaving generality across datasets, tasks, and alternative tensor methods unclear.\"\n\nC. \"The key insight is that under a fixed support budget the forward-KL optimal approximation to the full posterior predictive is exactly the renormalized top-S mixture over regime paths, which yields principled beam truncation and competitive prequential accuracy.\"\n\nD. \"The paper formulates streaming inference as a forward-KL projection in predictive-distribution space and derives a fully recursive deterministic beam-search algorithm that keeps the renormalized top-S posterior-weighted regime paths with closed-form predictive updates.\"\n\nE. \"A deterministic top-S forward-KL projection algorithm for streaming HMMs can approximate the full posterior predictive well enough to achieve competitive prequential performance against Online EM and SMC at matched compute.\"\n\nF. \"Compared with classical HMM filtering, Online EM, and Sequential Monte Carlo, the paper shifts the objective from posterior recovery under a full generative model to predictive-first online inference via deterministic top-S path projection instead of EM or sampling.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The contribution type is \"method\"\n  S2: The contribution type is \"theory\"\n  S3: The niche concerns \"prediction\"\n  S4: The niche concerns \"graph\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Limitation",
+      "C": "Observation",
+      "D": "Mechanism",
+      "E": "Claim",
+      "F": "Delta"
+    },
+    "gold_answer": {
+      "label": "B",
+      "contribution_type": "method",
+      "verify": [
+        "T",
+        "F",
+        "T",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "statistics",
+      "swapped_atom": "limitation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "limitation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3084,
+        "similarity_avg": 0.3084,
+        "similarity_max": 0.3084
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0034",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Mean-field reduction and synchrony analysis for networks of coupled Izhikevich neurons.\"\n\nB. \"The paper derives an equivalent phase representation of the Izhikevich neuron network, applies the Ott-Antonsen ansatz to obtain low-dimensional dynamics in terms of the Kuramoto order parameter, and defines a matching order parameter in the voltage-firing-rate formulation to preserve the Montbrio conformal mapping.\"\n\nC. \"The model predicts logarithmic growth of mean in-degree with network size, bounded degree variance, emergent broad approximately power-law connection-length distributions from proximity-ordered encounters, and small-world structure whose dynamical basin boundaries are governed mainly by degree statistics.\"\n\nD. \"Compared with prior Lorentz-ansatz reductions of Izhikevich networks and the Montbrio mean-field framework, this paper recasts the model as a phase system amenable to the Ott-Antonsen ansatz and explicitly connects the resulting Kuramoto-order-parameter dynamics back to the voltage-rate description.\"\n\nE. \"The work is primarily a theoretical reduction for idealized coupled Izhikevich populations and does not establish broad empirical validation on heterogeneous biological data or more complex network structures.\"\n\nF. \"An equivalent phase model of coupled Izhikevich neurons can be reduced via the Ott-Antonsen ansatz to low-dimensional mean-field equations, while a suitably defined voltage-rate order parameter preserves the Montbrio conformal correspondence between the two descriptions.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The mechanism involves \"representation\"\n  S2: The contribution type is \"theory\"\n  S3: The contribution type is \"method\"\n  S4: The niche concerns \"retrieval\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Niche",
+      "B": "Mechanism",
+      "C": "Observation",
+      "D": "Delta",
+      "E": "Limitation",
+      "F": "Claim"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "theory",
+      "verify": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "biology",
+      "swapped_atom": "observation_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "observation_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.308,
+        "similarity_avg": 0.308,
+        "similarity_max": 0.308
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  },
+  {
+    "instance_id": "T4-01_consistency_check_0035",
+    "task_type": "T4-01_consistency_check",
+    "prompt": "The following six unlabeled genome fields are supposedly from the SAME genome, but one has been swapped in from a closely related paper.\nAnswer ALL parts.\n\nA. \"Across HumanEval, MBPP, APPS, and MultiPL-E, Code Model-Ll variants achieve state-of-the-art performance among open models while adding strong infilling, instruction-following, and up to 100k-token context support.\"\n\nB. \"Compared with prior open code LLMs, this work combines larger Model-Ll 2 backbones, staged code/Python/instruction specialization, explicit infilling capability, and long-context fine-tuning into a publicly released family with commercial usability.\"\n\nC. \"The paper builds Codex by fine-tuning Model-G on filtered public GitHub Python code and then further supervised fine-tuning on curated standalone correct functions, using stochastic sampling and log-probability-based reranking to generate candidate programs.\"\n\nD. \"A Model-Ll 2-derived, openly released family of code-specialized models can outperform prior open code models on major synthesis benchmarks while supporting infilling, robust instruction following, and 100k-token contexts.\"\n\nE. \"Open code-focused large language modeling for program synthesis, infilling, multilingual code generation, instruction following, and long-context code understanding.\"\n\nF. \"Despite strong open-model results, the work is still constrained by the general limitations of large code LLMs, including imperfect safety/reliability and remaining gaps relative to the best closed models.\"\n\nPart 1: Which genome field does NOT belong? (letter A-F)\n  S1: The niche concerns \"generation\"\n  S2: The mechanism involves \"representation\"\n  S3: The fingerprint mentions \"baseline\"\n  S4: The mechanism involves \"training\"\n\nAnswer:\nLabel = [A|B|C|D|E|F]\nType = [method|dataset|analysis|system|theory]\nVerify = [T|F, T|F, T|F, T|F]",
+    "choices": {
+      "A": "Observation",
+      "B": "Delta",
+      "C": "Mechanism",
+      "D": "Claim",
+      "E": "Niche",
+      "F": "Limitation"
+    },
+    "gold_answer": {
+      "label": "C",
+      "contribution_type": "system",
+      "verify": [
+        "T",
+        "F",
+        "F",
+        "T"
+      ]
+    },
+    "metadata": {
+      "baseline": "0.21%",
+      "domain": "information_science",
+      "swapped_atom": "mechanism_genome_field",
+      "intrinsic_hardness": {
+        "strategy": "hard_negative_genome_similarity",
+        "atom_key": "mechanism_genome_field",
+        "n_distractors": 1,
+        "same_domain": 1,
+        "same_subfield": 1,
+        "same_contribution_type": 1,
+        "similarity_min": 0.3554,
+        "similarity_avg": 0.3554,
+        "similarity_max": 0.3554
+      },
+      "capability": "Lineage Verification",
+      "original_task_type": "L0-2_consistency_check",
+      "display_title": "Genome Consistency Check"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "evidence_integrity"
+  }
+]

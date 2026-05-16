@@ -1,0 +1,165 @@
+{
+  "trace_id": "climate_AtmosphericChemistry",
+  "domain": "climate",
+  "direction": "Atmospheric Chemistry and Emission Inversion",
+  "subfield": "Atmospheric Science / Emission Inversion",
+  "frontier_justification": "This direction remains a May 2026 frontier because satellite-based carbon monitoring is moving from concentration mapping toward decision-grade MRV. Recent ML mapping systems improve spatial coverage for CO2 and CH4, but credible city-to-facility attribution still requires calibrated uncertainty, atmospheric transport/chemistry coupling, ground-sensor fusion, and separation of retrieval, inventory, and transport errors.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "The on-orbit performance of the Orbiting Carbon Observatory-2 (OCO-2) instrument and its radiometrically calibrated products",
+      "year": 2017,
+      "venue": "Atmospheric Measurement Techniques (2017)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper established the radiometric and spectroscopic performance basis for OCO-2 using its first 18 months of on-orbit data. It underpinned confidence in the mission's ability to retrieve precise column-averaged dry-air mole fractions of CO2 (XCO2), which are the observational foundation for later atmospheric inversions.",
+      "idea_genome": {
+        "problem_genome": "How to validate that a spaceborne CO2 spectrometer can deliver retrieval-quality measurements suitable for carbon cycle science and inversion.",
+        "mechanism_genome": "Instrument characterization through on-orbit performance analysis including radiometric calibration, bad-pixel tracking, and spectroscopic evaluation.",
+        "observation_genome": "The study showed that OCO-2 met stringent performance requirements needed for high-precision XCO2 retrievals during its first 18 months in orbit.",
+        "limitation_genome": "Instrument performance alone does not solve the inverse problem of attributing observed atmospheric CO2 to surface fluxes or emissions."
+      }
+    },
+    {
+      "title": "The Orbiting Carbon Observatory-2 early science investigations of regional carbon dioxide fluxes",
+      "year": 2017,
+      "venue": "Science (2017)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This early OCO-2 science paper demonstrated that satellite XCO2 observations can constrain regional-scale carbon fluxes beyond what was possible with the sparse in situ network alone. It marked a transition from instrument validation to practical atmospheric inversion for carbon-cycle inference.",
+      "idea_genome": {
+        "problem_genome": "How to use newly available OCO-2 observations to improve estimates of regional carbon sources and sinks.",
+        "mechanism_genome": "Assimilation of OCO-2 XCO2 retrievals into atmospheric inverse modeling frameworks for regional flux estimation.",
+        "observation_genome": "The paper showed that OCO-2 data add meaningful information on regional flux patterns and improve flux attribution in several regions.",
+        "limitation_genome": "The inversions remained computationally intensive and strongly dependent on transport models, priors, and retrieval biases."
+      }
+    },
+    {
+      "title": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "year": 2019,
+      "venue": "Journal of Computational Physics (2019)",
+      "arxiv_id": "1711.10561",
+      "paper_type": "research",
+      "key_contribution": "This foundational PINN paper introduced a framework for embedding PDE residuals into neural-network training for both forward and inverse problems. For atmospheric transport and chemistry, it provided a principled route to combine sparse observations with governing equations rather than relying on purely black-box inversion.",
+      "idea_genome": {
+        "problem_genome": "How to solve inverse problems when observations are sparse but governing physical equations are known.",
+        "mechanism_genome": "Neural networks trained with losses that penalize violation of the underlying PDE alongside data mismatch.",
+        "observation_genome": "The paper showed that PINNs can recover latent parameters and states in nonlinear PDE systems from limited data.",
+        "limitation_genome": "Scaling PINNs to stiff, high-dimensional, advection-dominated geophysical transport remains difficult."
+      }
+    },
+    {
+      "title": "OCO-3 early mission operations and initial (vEarly) XCO2 and SIF retrievals",
+      "year": 2020,
+      "venue": "Remote Sensing of Environment (2020)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper described OCO-3's early on-orbit performance and highlighted its snapshot area map (SAM) mode, which is especially relevant for urban and point-source emission studies. It expanded the observational regime from global track-based monitoring toward targeted mapping needed for emission inversion and carbon-neutrality MRV.",
+      "idea_genome": {
+        "problem_genome": "How to obtain more flexible and spatially targeted satellite CO2 observations for urban and regional emission analysis.",
+        "mechanism_genome": "Deployment and characterization of OCO-3 observing modes, including snapshot area maps from the International Space Station platform.",
+        "observation_genome": "The study showed that OCO-3 could provide novel spatial sampling patterns suitable for city-scale and targeted source investigations.",
+        "limitation_genome": "Observation coverage improved, but converting these measurements into robust emissions still requires better inversion algorithms and transport treatment."
+      }
+    },
+    {
+      "title": "Atmospheric Transport Modeling of CO2 with Neural Networks",
+      "year": 2025,
+      "venue": "Journal of Advances in Modeling Earth Systems (2025)",
+      "arxiv_id": "2408.11032",
+      "paper_type": "research",
+      "key_contribution": "This paper demonstrated that neural networks can emulate atmospheric CO2 transport, replacing expensive numerical transport models with learned surrogates. It provides a key building block toward fast, differentiable inversion systems for estimating surface carbon fluxes from satellite observations.",
+      "idea_genome": {
+        "problem_genome": "How to reduce the computational burden of atmospheric transport modeling needed for CO2 flux inversions.",
+        "mechanism_genome": "Graph neural networks trained on transport model output to emulate atmospheric CO2 transport approximately 1000x faster than conventional models.",
+        "observation_genome": "The neural transport emulator accurately reproduced CO2 concentration fields and showed promise for integration into inversion frameworks.",
+        "limitation_genome": "Generalization to out-of-distribution forcing scenarios and integration with full Bayesian inversion workflows remain open challenges."
+      }
+    },
+    {
+      "title": "Improved estimation of carbon dioxide and methane using machine learning with satellite observations over the Arabian Peninsula",
+      "year": 2025,
+      "venue": "Scientific Reports (2025)",
+      "arxiv_id": "N/A",
+      "paper_type": "research",
+      "key_contribution": "This paper develops a machine-learning-based framework (XGBoost) to generate high-fidelity 1 km spatiotemporal maps of CO2 and CH4 over the Arabian Peninsula from satellite observations (OCO-2 and Sentinel-5P) despite data gaps and coarse model limitations.",
+      "idea_genome": {
+        "problem_genome": "How to accurately estimate fine-scale spatiotemporal distributions of atmospheric CO2 and CH4 when satellite observations are incomplete and conventional numerical models are too coarse.",
+        "mechanism_genome": "Machine learning (XGBoost) to fuse satellite observations with auxiliary predictors to reconstruct and downscale greenhouse-gas fields into continuous 1 km maps.",
+        "observation_genome": "The study showed that the machine-learning method can produce improved high-resolution CO2 and CH4 maps, capturing spatiotemporal variability more effectively than conventional coarse-resolution approaches.",
+        "limitation_genome": "Because the method is strongly data-driven, its reliability may depend on training data quality and it does not by itself fully resolve transport-model and emission-attribution uncertainties."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The second paper evolves from instrument-performance validation to actual scientific use of OCO-2 observations in regional carbon flux inversion. It converts measurement capability into carbon-cycle inference."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "From satellite-enabled classical inversion, PINNs branch toward a new paradigm that embeds governing PDE constraints into neural networks for solving inverse problems, offering a principled route to combine sparse satellite observations with atmospheric transport physics."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "With OCO-3, the observational side of the field diversifies toward targeted urban and point-source mapping, creating new niches for physics-aware inversion methods. The richer observation geometry raises demand for methods that can exploit sparse but structured data."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "Benson et al. combine neural-network learning with atmospheric transport physics to create a fast CO2 transport emulator, hybridizing data-driven efficiency with physical transport structure to accelerate flux inversions."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The final paper shifts from building general transport emulators to applying machine learning for direct high-resolution greenhouse-gas mapping from satellite data, changing the methodological core toward practical regional estimation."
+    }
+  ],
+  "open_question": "Recent ML systems can map CO2 and CH4 from satellite observations at high spatial resolution, but they still do not cleanly separate retrieval gaps, atmospheric transport error, prior-inventory bias, and source-attribution uncertainty. What inversion architecture would couple OCO/TROPOMI-style satellite retrievals, differentiable transport and chemistry, ground sensors, and calibrated uncertainty to deliver MRV-grade city-to-facility CO2/CH4 emissions in near real time?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Atmospheric Science / Emission Inversion."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2025,
+  "dynamics_distribution": {
+    "Mutation": 2,
+    "Speciation": 1,
+    "Adaptive Radiation": 1,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "Improved estimation of carbon dioxide and methane using machine learning with satellite observations over the Arabian Peninsula",
+      "year": 2025,
+      "venue": "Scientific Reports (2025)",
+      "identifier": "N/A",
+      "unresolved_gap": "Because the method is strongly data-driven, its reliability may depend on training data quality and it does not by itself fully resolve transport-model and emission-attribution uncertainties.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

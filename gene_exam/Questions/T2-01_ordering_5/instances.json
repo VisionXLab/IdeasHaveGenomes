@@ -1,0 +1,872 @@
+[
+  {
+    "instance_id": "T2-01_ordering_5_0052",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: The paper addresses magnetic reconnection in plasmas when electron inertia is the sole non-ideal effect, especially in fully three-dimensional systems.\n  Mechanism: It analyzes the generalized magnetic field \\(\\vec{\\mathcal{B}} = \\vec{B} + \\nabla\\times((c/\\omega_{pe})^2\\mu_0\\vec{j})\\) and proves in 3D that this field is Lie-dragged by an evolution velocity even when ordinary magnetic field lines reconnect.\n  Limitation: The paper is limited by its idealized assumption that electron inertia is the only non-ideal effect, leaving realistic competition with resistivity and other dissipative processes largely outside the formal treatment.\n  Observation: The key insight is that electron inertia permits reconnection of \\(\\vec{B}\\) while preserving connectivity of \\(\\vec{\\mathcal{B}}\\), and that the associated 3D evolution velocity is generically chaotic.\n\n[Genome 2]\n  Niche: The paper addresses diagnosing the plasma parameters and source morphology of low-dI/dt copper X-pinch soft x-ray emitters when detector nonlinearity complicates standard interpretation.\n  Mechanism: It characterizes AXUV-HS5 photodiode nonlinear response with pulsed-laser calibration and then estimates plasma density, size, temperature, and duration by combining charge-conserving soft x-ray measurements with a spherical emission model and the Bennett relation.\n  Limitation: The analysis relies on simplified assumptions including spherical symmetry, Bennett equilibrium, and indirect inversion from nonlinear detector data on a single low-dI/dt copper-wire X-pinch platform.\n  Observation: Although intense soft x-ray pulses distort the temporal waveform of the AXUV signals, the total collected charge remains proportional to incident pulse energy and supports inference of a bright-spot plasma with ne about 10^21 cm^-3, diameter 30-40 μm, Te about 1 keV, and duration about 1 ns.\n\n[Genome 3]\n  Niche: This paper addresses the historical and epistemological evaluation of dark matter versus modified gravity as explanations for major cosmological and galactic phenomena.\n  Mechanism: It synthesizes the historical development, observational motivations, conceptual implications, and competing theoretical frameworks surrounding dark matter and alternative gravitational laws.\n  Limitation: Because it is a narrative review rather than a new empirical or formal study, the paper does not provide novel data, quantitative tests, or decisive criteria to resolve the dark matter versus modified gravity debate.\n  Observation: The paper argues that while dark matter underpins the standard cosmological model and explains several observations, important open questions and model limitations keep modified gravity as a live alternative.\n\n[Genome 4]\n  Niche: This paper addresses the unexplained magic numbers and structural stability patterns of protonated argon clusters.\n  Mechanism: It combines quantum Monte Carlo calculations with many-body ab initio interaction potentials that explicitly represent the proton coordination environment across cluster sizes.\n  Limitation: The paper is limited by its focus on protonated argon clusters and does not establish how broadly the identified mechanism transfers to other rare-gas or molecular cluster systems.\n  Observation: The study finds that argon atoms remain largely localized near the classical minimum, producing unusually rigid clusters and a size-dependent transition from coordination-driven stability to two-body-interaction-dominated behavior.\n\n[Genome 5]\n  Niche: This paper studies how the classical double copy can be extended from point-particle and field configurations to the dynamics of strings, specifically an open string in a constant abelian electric background and its putative closed-string double copy.\n  Mechanism: The authors analyze the classical motion of an open string coupled to a constant electric field and map it via the double-copy prescription to a closed string propagating in the corresponding double-copied spacetime background, then compare the resulting dynamics and pathologies.\n  Limitation: The study is restricted to a case-study setting with an abelian constant electric field and does not yet provide a fully systematic or general framework for classical double copy of arbitrary string motions or backgrounds.\n  Observation: They find that the open string develops pathological behavior above a critical electric field while the closed-string double-copy system shows no analogous critical pathology, although the closed string still retains information about the single-copy gauge background.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        2,
+        1,
+        4,
+        5,
+        3
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0067",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper addresses the historical and epistemological evaluation of dark matter versus modified gravity as explanations for major cosmological and galactic phenomena.\n  Mechanism: It synthesizes the historical development, observational motivations, conceptual implications, and competing theoretical frameworks surrounding dark matter and alternative gravitational laws.\n  Limitation: Because it is a narrative review rather than a new empirical or formal study, the paper does not provide novel data, quantitative tests, or decisive criteria to resolve the dark matter versus modified gravity debate.\n  Observation: The paper argues that while dark matter underpins the standard cosmological model and explains several observations, important open questions and model limitations keep modified gravity as a live alternative.\n\n[Genome 2]\n  Niche: This paper studies how the classical double copy can be extended from point-particle and field configurations to the dynamics of strings, specifically an open string in a constant abelian electric background and its putative closed-string double copy.\n  Mechanism: The authors analyze the classical motion of an open string coupled to a constant electric field and map it via the double-copy prescription to a closed string propagating in the corresponding double-copied spacetime background, then compare the resulting dynamics and pathologies.\n  Limitation: The study is restricted to a case-study setting with an abelian constant electric field and does not yet provide a fully systematic or general framework for classical double copy of arbitrary string motions or backgrounds.\n  Observation: They find that the open string develops pathological behavior above a critical electric field while the closed-string double-copy system shows no analogous critical pathology, although the closed string still retains information about the single-copy gauge background.\n\n[Genome 3]\n  Niche: The paper addresses magnetic reconnection in plasmas when electron inertia is the sole non-ideal effect, especially in fully three-dimensional systems.\n  Mechanism: It analyzes the generalized magnetic field \\(\\vec{\\mathcal{B}} = \\vec{B} + \\nabla\\times((c/\\omega_{pe})^2\\mu_0\\vec{j})\\) and proves in 3D that this field is Lie-dragged by an evolution velocity even when ordinary magnetic field lines reconnect.\n  Limitation: The paper is limited by its idealized assumption that electron inertia is the only non-ideal effect, leaving realistic competition with resistivity and other dissipative processes largely outside the formal treatment.\n  Observation: The key insight is that electron inertia permits reconnection of \\(\\vec{B}\\) while preserving connectivity of \\(\\vec{\\mathcal{B}}\\), and that the associated 3D evolution velocity is generically chaotic.\n\n[Genome 4]\n  Niche: The paper addresses diagnosing the plasma parameters and source morphology of low-dI/dt copper X-pinch soft x-ray emitters when detector nonlinearity complicates standard interpretation.\n  Mechanism: It characterizes AXUV-HS5 photodiode nonlinear response with pulsed-laser calibration and then estimates plasma density, size, temperature, and duration by combining charge-conserving soft x-ray measurements with a spherical emission model and the Bennett relation.\n  Limitation: The analysis relies on simplified assumptions including spherical symmetry, Bennett equilibrium, and indirect inversion from nonlinear detector data on a single low-dI/dt copper-wire X-pinch platform.\n  Observation: Although intense soft x-ray pulses distort the temporal waveform of the AXUV signals, the total collected charge remains proportional to incident pulse energy and supports inference of a bright-spot plasma with ne about 10^21 cm^-3, diameter 30-40 μm, Te about 1 keV, and duration about 1 ns.\n\n[Genome 5]\n  Niche: This paper addresses the unexplained magic numbers and structural stability patterns of protonated argon clusters.\n  Mechanism: It combines quantum Monte Carlo calculations with many-body ab initio interaction potentials that explicitly represent the proton coordination environment across cluster sizes.\n  Limitation: The paper is limited by its focus on protonated argon clusters and does not establish how broadly the identified mechanism transfers to other rare-gas or molecular cluster systems.\n  Observation: The study finds that argon atoms remain largely localized near the classical minimum, producing unusually rigid clusters and a size-dependent transition from coordination-driven stability to two-body-interaction-dominated behavior.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        4,
+        3,
+        5,
+        2,
+        1
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0022",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets broad natural-language task generalization across diverse NLP problems using only a model's prompt-conditioned behavior rather than task-specific training.\n  Mechanism: GPT-3-style autoregressive language model is a massively scaled decoder-only autoregressive transformer architecture trained on next-token prediction over a huge diverse text corpus and evaluated by placing natural-language instructions plus zero, one, or a few input-output examples directly in the context window without updating parameters.\n  Limitation: Despite strong few-shot gains, the model remains inconsistent across benchmarks and still underperforms specialized supervised systems on some tasks while inheriting biases and inefficiencies from brute-force scaling.\n  Observation: The paper finds that sufficiently scaling model size, data, and compute causes strong zero-shot, one-shot, and few-shot performance to emerge, allowing a single pretrained language model to perform many tasks competitively without fine-tuning.\n\n[Genome 2]\n  Niche: This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n  Mechanism: Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior.\n  Limitation: The approach depends on access to a broad, manually curated collection of supervised instruction-formatted tasks, leaving open how well it scales to truly novel capabilities or domains not represented in the tuning mixture.\n  Observation: A model instruction-tuned on sufficiently diverse tasks can outperform prompting and few-shot exemplar baselines on held-out task families in zero-shot settings while being more robust to prompt formulation.\n\n[Genome 3]\n  Niche: This paper targets adapting large language models to reliably follow natural-language instructions and align their outputs with human preferences for helpfulness, relevance, and harmlessness.\n  Mechanism: The method combines supervised fine-tuning on human-written instruction demonstrations with reinforcement learning from a learned reward model trained on pairwise human preference rankings, using a KL penalty to keep the policy close to the supervised model during policy optimization.\n  Limitation: The approach depends on expensive and potentially narrow human annotation and reward-model supervision, so the learned behavior is constrained by annotator preferences and can inherit reward-model imperfections.\n  Observation: The authors find that this two-stage alignment pipeline produces outputs that humans prefer over standard few-shot prompted pretrained models, with better instruction following, concision, and safer refusals.\n\n[Genome 4]\n  Niche: This paper targets general-purpose zero-shot transfer across many NLP tasks using only raw text pretraining and no task-specific supervision.\n  Mechanism: A large autoregressive transformer architecture decoder with causal masked self-attention mechanism is trained on massive web text using next-token prediction, and downstream tasks are performed by formatting inputs and desired outputs as a single text prompt for conditional generation without parameter updates.\n  Limitation: The approach relies entirely on zero-shot prompting without task-specific fine-tuning or calibrated output heads, so performance remains inconsistent and often below supervised systems on many benchmarks.\n  Observation: Scaling unsupervised autoregressive language modeling in model size and data produces substantial zero-shot multitask competence, improved long-range dependency handling, and strong text generation quality across diverse tasks.\n\n[Genome 5]\n  Niche: This paper targets sequence transduction tasks such as machine translation that require modeling dependencies between input and output token sequences.\n  Mechanism: The transformer architecture is an encoder–decoder architecture built entirely from stacked multi-head self-attention mechanism, encoder–decoder attention mechanism, and position-wise feed-forward layers, with positional encodings added to represent token order and masking used for autoregressive decoding.\n  Limitation: Because the architecture removes recurrence and convolution, it must inject sequence order externally through positional encodings rather than learning order structure intrinsically through the core computation.\n  Observation: The paper finds that a pure attention mechanism-based model can outperform recurrent and convolutional sequence models while training faster and modeling long-range dependencies more effectively due to shorter path lengths and full parallelization.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        4,
+        1,
+        2,
+        3
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Mutation",
+        "Speciation",
+        "Hybridization"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0041",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets the creation of a broad-coverage lexical resource for fine-grained opinion mining by assigning prior sentiment to individual word senses.\n  Mechanism: SentiWordNet labels each WordNet synset with normalized positivity, negativity, and objectivity scores by semi-supervisedly expanding a small set of paradigm sentiment terms through lexical and gloss cues, running multiple sentiment classifiers, and combining their outputs so the three scores sum to one.\n  Limitation: Because the scores are automatically inferred from seed expansion and classifier combination rather than comprehensively hand-validated, individual synset annotations can be noisy or inaccurate despite broad coverage.\n  Observation: The paper finds that sense-level prior-polarity annotation can be induced at large scale from limited seeds and yields a reusable sentiment lexicon suitable for downstream opinion mining.\n\n[Genome 2]\n  Niche: This paper targets document-level sentiment classification for texts such as reviews that contain a mixture of opinionated and objective content.\n  Mechanism: It uses a two-stage subjectivity-summarization pipeline in which sentence-level subjectivity scores are combined with inter-sentence coherence links in a source/sink graph and a minimum cut selects the optimal subjective extract, which is then fed to a standard polarity classifier.\n  Limitation: The approach depends on a separately trained sentence-level subjectivity detector and hand-designed sentence association weights, while the final polarity classifier is otherwise conventional and not jointly optimized with the extraction stage.\n  Observation: The paper finds that classifying sentiment on graph-extracted subjective portions of documents can outperform applying conventional text classification directly to the full document text.\n\n[Genome 3]\n  Niche: This paper targets fine-grained sentiment analysis of sentences and phrases where sentiment depends on compositional semantic interactions such as negation, intensification, and contrast.\n  Mechanism: It uses a recursive neural tensor network over syntactic parse trees that composes child distributed representations into parent phrase vectors and predicts sentiment labels at every tree node with supervision on all labeled constituents.\n  Limitation: The approach depends on accurate syntactic parse trees and densely labeled sentiment subspans, making it tied to treebank-style annotation and vulnerable to parsing errors.\n  Observation: Training recursive distributed representations with phrase-level supervision yields substantially better handling of local polarity shifts and improves fine-grained sentiment prediction over bag-of-words, rule-based compositional systems, and lexicon-driven baselines.\n\n[Genome 4]\n  Niche: This paper targets document-level binary sentiment classification of user-written reviews.\n  Mechanism: It models each review as a high-dimensional sparse lexical feature vector and trains supervised classifiers such as Naive Bayes, maximum entropy, and support vector machines to predict positive versus negative polarity while comparing unigram, bigram, and POS-informed encodings.\n  Limitation: The study is limited to shallow bag-of-words-style document representations and binary labels, leaving negation, discourse, compositional sentiment, and finer-grained opinion structure largely unmodeled.\n  Observation: The key finding is that sentiment classification differs from topic classification in that word presence is often more informative than frequency, and simple unigram features are surprisingly strong despite ignoring deeper linguistic structure.\n\n[Genome 5]\n  Niche: This paper targets supervised sentence-level text classification across tasks such as sentiment and question categorization.\n  Mechanism: A sentence convolutional architecture encodes a sentence as a matrix of word embeddings, applies multiple 1D convolutional filters over contiguous token windows spanning the full embedding dimension, performs max-over-time pooling on each feature map, concatenates the pooled features, and feeds them to a softmax classifier with dropout and an ℓ2 norm constraint, optionally using static and trainable embedding channels.\n  Limitation: The model collapses each filter's activations to a single global maximum and uses only shallow local n-gram features, limiting its ability to represent multiple relevant spans or richer long-range compositional structure within a sentence.\n  Observation: A simple convolution-plus-max-pooling architecture with pretrained word vectors, especially when fine-tuned or combined in static/trainable channels, achieves strong or state-of-the-art sentence classification performance without syntactic parsing or heavy task-specific engineering.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        4,
+        2,
+        1,
+        3,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0040",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets rating prediction in collaborative filtering from sparse user–item interaction matrices.\n  Mechanism: AutoRec uses a single-hidden-layer feedforward autoencoder that takes a partially observed user or item rating vector as input and reconstructs that vector while computing loss only on observed entries to predict missing ratings.\n  Limitation: The method relies on a shallow autoencoder over raw sparse rating vectors and only models observed explicit ratings, leaving side information, deeper architectures, and richer handling of missingness unexplored.\n  Observation: The paper finds that this simple nonlinear reconstruction model captures higher-order user/item dependencies and outperforms standard linear matrix-factorization-style recommenders on recommendation benchmarks.\n\n[Genome 2]\n  Niche: This paper targets top-N recommendation from implicit user–item interaction data in collaborative filtering settings.\n  Mechanism: Neural Collaborative Filtering learns user and item embeddings and replaces the fixed matrix-factorization inner product with a neural interaction function, combining a generalized matrix factorization branch and an MLP branch in the joint NeuMF architecture trained with pointwise loss and negative sampling.\n  Limitation: The method still relies only on user and item IDs with pointwise training on sampled negatives, leaving side information and potentially stronger pairwise/listwise optimization unaddressed.\n  Observation: Empirically, learning non-linear user–item interaction functions with the fused NeuMF model yields better recommendation accuracy on implicit-feedback tasks than standard matrix factorization baselines.\n\n[Genome 3]\n  Niche: This paper targets real-time personalized product recommendation in very large e-commerce catalogs with sparse, rapidly changing user activity.\n  Mechanism: Item-to-item collaborative filtering precomputes offline, for each item, a neighborhood of similar co-occurring items from historical purchases/ratings/clicks, then serves recommendations by aggregating the neighborhoods of a user's current or past items with similarity- and context-based ranking.\n  Limitation: Because the method depends on precomputed item co-occurrence neighborhoods, it is less able to immediately model newly introduced items or rapidly shifting cross-item relationships until offline recomputation occurs.\n  Observation: The key insight is that item-item relationships are much more stable and tractable than user-user neighborhoods in large retail systems, enabling faster and more robust recommendations without online nearest-user search.\n\n[Genome 4]\n  Niche: This paper targets personalized recommendation from sparse user-item preference data in collaborative filtering systems.\n  Mechanism: Regularized matrix factorization models each user and item with low-dimensional latent vectors and optional global/user/item bias terms, learning them by optimizing prediction error only on observed ratings via methods such as regularized least squares or stochastic gradient descent.\n  Limitation: The core formulation is still a low-rank inner-product model whose expressiveness depends on manually chosen extensions for effects like time drift and implicit feedback rather than capturing such structure in a unified richer interaction model.\n  Observation: The paper finds that low-rank latent factor models trained directly on sparse observed entries outperform neighborhood-based recommenders in accuracy, scalability, and robustness to sparsity, while naturally accommodating temporal and implicit-feedback extensions.\n\n[Genome 5]\n  Niche: This paper targets prediction on extremely sparse, high-dimensional feature data such as recommender systems and click-through rate estimation with arbitrary side information.\n  Mechanism: Factorization Machines predict with a global bias, linear feature weights, and pairwise feature interactions parameterized by inner products of per-feature latent vectors, using an algebraic reformulation to compute second-order terms in time linear in nonzero features times latent dimension.\n  Limitation: The framework is primarily limited to second-order interactions with a fixed latent rank, so it does not directly capture richer higher-order or more adaptive interaction structures.\n  Observation: The paper finds that low-rank factorized interaction modeling can accurately estimate useful second-order effects in sparse settings where explicit pairwise parameters would be unlearnable or computationally impractical.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        3,
+        4,
+        5,
+        1,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Hybridization",
+        "Hybridization"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0038",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets understanding the true source of performance differences between column-oriented and row-oriented database architectures for read-mostly analytical query workloads.\n  Mechanism: It uses a controlled architectural decomposition study that incrementally adds column-store techniques—vertical partitioning, late materialization, block/vectorized processing, aggressive compression, and lightweight positional metadata for tuple reassembly—into a row-store to isolate each mechanism’s effect.\n  Limitation: Because the evaluation is centered on read-mostly scans, aggregations, and joins under targeted row-store modifications, it does not fully resolve how the two designs compare under update-heavy workloads or broader end-to-end system tradeoffs.\n  Observation: The study finds that much of the analytical performance commonly attributed to column-stores can be reproduced in a row-store once these specific techniques are adopted, making the architectural gap substantially smaller than usually assumed.\n\n[Genome 2]\n  Niche: This paper targets interactive ad hoc analysis of web-scale, semi-structured datasets with deeply nested and repeated fields.\n  Mechanism: Dremel stores hierarchical records as columnar leaf fields annotated with compact repetition/definition encodings for nested structure and executes queries through a distributed multi-level aggregation tree that reads only referenced columns and hierarchically combines partial results.\n  Limitation: The system's strongest benefits are concentrated on read-heavy exploratory aggregation workloads, leaving more complex processing and non-aggregation query patterns less clearly addressed by the presented design.\n  Observation: The paper finds that preserving nested structure in columnar form while using tree-based distributed aggregation enables simple analytical queries over trillions of values to run with interactive latency and much lower I/O than record-oriented scans.\n\n[Genome 3]\n  Niche: This paper targets the problem of deciding when a column-oriented DBMS should reconstruct full tuples from separately stored attributes during query execution.\n  Mechanism: It introduces a materialization-aware columnar execution strategy that keeps data in separate aligned columns with lightweight tuple identifiers through selections, joins, projections, and aggregations, and chooses among early, late, and hybrid tuple reconstruction points based on operator needs and cost tradeoffs.\n  Limitation: The paper analyzes and compares early, late, and hybrid materialization strategies but does not provide a fully general automatic optimizer that robustly chooses the best reconstruction points for all query patterns and hardware conditions.\n  Observation: The key insight is that tuple materialization timing is a first-class optimization dimension in column stores, with late materialization often improving performance by reducing intermediate width and preserving compression/cache benefits, while selective hybrid reconstruction can outperform both extremes on some workloads.\n\n[Genome 4]\n  Niche: This paper targets high-performance storage and query execution for read-mostly large-scale analytic and data warehousing workloads.\n  Mechanism: C-Store is a column-oriented DBMS that stores attributes separately in sorted compressed projections, uses a write-optimized update store merged into a read-optimized main store, and executes queries with late materialization over replicated and partitioned projections.\n  Limitation: The design is specialized for read-mostly workloads and relies on managing multiple projections plus background merge processing, making frequent updates and physical design complexity a remaining weakness.\n  Observation: The paper finds that combining column-wise storage, sorted projections, aggressive compression, and late materialization greatly reduces I/O and memory traffic and substantially speeds scan-heavy analytic queries compared with row-store systems.\n\n[Genome 5]\n  Niche: This paper targets efficient execution of analytical relational queries on modern superscalar CPUs, where traditional database engines underutilize processor and memory hierarchies.\n  Mechanism: MonetDB/X100 uses a vectorized, column-oriented execution engine in which relational operators run as tight kernels over small batches of typed column values, exchanging vectors between operators to balance pipelining with limited materialization and late tuple reconstruction.\n  Limitation: The design still relies on fixed-size vector boundaries and explicit operator kernels, so it does not fully eliminate intermediate materialization or achieve full cross-operator code fusion available in later compiled query engines.\n  Observation: The key insight is that tuple-at-a-time volcano execution wastes CPU potential through interpretation overhead, branch mispredictions, and poor cache locality, while vector-at-a-time processing exposes instruction-level parallelism and substantially improves hardware efficiency.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        4,
+        5,
+        3,
+        1,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Mutation",
+        "Adaptive Radiation",
+        "Adaptive Radiation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0057",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: The paper studies asymptotic behavior of Laplacian determinants for sequences of compact hyperbolic surfaces with growing volume that locally converge to a random rooted hyperbolic surface.\n  Mechanism: It analyzes the normalized logarithm of the Laplacian determinant under Benjamini-Schramm-type local convergence while controlling degeneration through a vanishing normalized sum of reciprocals of lengths of very short simple closed geodesics.\n  Limitation: The result requires a restrictive thin-part assumption on short geodesics and does not cover sequences where short closed geodesics contribute non-negligibly or where convergence fails to be local weak convergence.\n  Observation: The main insight is that local weak convergence plus negligible contribution from very short geodesics is sufficient to force convergence of the normalized log-determinant to a universal constant determined only by the limiting random surface law.\n\n[Genome 2]\n  Niche: The paper studies which positive rational numbers can occur as the ratio of the automorphism-group size to the group size for finite abelian groups.\n  Mechanism: It uses number-theoretic and structural analysis of finite abelian groups and their automorphism counts to derive necessary constraints on any rational value represented by |Aut(G)|/|G|.\n  Limitation: The paper provides only negative necessary conditions and does not give a full characterization or constructive description of all rational numbers realizable as |Aut(G)|/|G|.\n  Observation: The main insight is that if a reduced rational number a/b equals |Aut(G)|/|G| for some finite abelian group G, then the denominator b must be squarefree, and in particular no odd prime can occur as such a ratio.\n\n[Genome 3]\n  Niche: The paper addresses frequency-sensitive duplicate detection in data domains such as transactional databases, sensor logs, and record linkage where repeated values matter.\n  Mechanism: It defines multi-metric spaces on multisets with distances valued in a multi-real number system so that multiplicity information is explicitly incorporated into similarity computation.\n  Limitation: A main limitation is that the paper appears to validate the approach mainly through an illustrative duplicate-detection example rather than broad large-scale empirical benchmarking across many datasets and baselines.\n  Observation: The paper finds that modeling data with multi-metrics preserves frequency information and improves duplicate detection accuracy compared with classical metric-based methods that ignore multiplicity.\n\n[Genome 4]\n  Niche: The paper addresses the characterization of parabolic Muckenhoupt A_1 weights with time-lag via geometric properties of closed sets in the parabolic setting.\n  Mechanism: It introduces parabolic weak porosity and proves the characterization using a stopping time argument together with translation and doubling properties for parabolic weakly porous sets.\n  Limitation: The results are specialized to the parabolic A_1 time-lag framework and distance-to-set weights, leaving broader weight classes and more general geometries untreated.\n  Observation: The central insight is that a nonempty closed set is parabolic weakly porous exactly when a negative power of its parabolic distance function belongs to the parabolic Muckenhoupt A_1 class.\n\n[Genome 5]\n  Niche: The paper studies stopping times and possible cycle structure in the normalized 3n+1/Collatz process, especially for integers congruent to 3 modulo 4.\n  Mechanism: It develops a recursive characterization of admissible binary parity sequences to uniquely generate such integers and derive bounds on their stopping and cycle numbers.\n  Limitation: The results are confined to the normalized iteration and a specific recursive encoding, so the argument may not fully resolve the broader Collatz conjecture outside this formulation.\n  Observation: The analysis shows that every m ≡ 3 mod 4 arises uniquely in this framework and that F_q(m)/m approaches 1 as sequence length grows, while never equaling 1 for any finite sequence.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0048",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets robotic manipulation task generalization where a robot must perform a previously unseen task after seeing only a single expert demonstration.\n  Mechanism: One-Shot Imitation Learning uses meta-imitation learning to train a task-conditioned policy that encodes one demonstration with temporal visual/state encoders and correspondence-style attention mechanism, then maps current observations plus the inferred task embedding to actions with optional one-step gradient-based adaptation.\n  Limitation: The method depends on training over a distribution of related tasks and demonstrations, so its one-shot generalization is limited to tasks that are sufficiently similar to those seen during meta-training.\n  Observation: The key finding is that a robot can infer and execute new manipulation objectives from just one demonstration, substantially reducing the number of demonstrations per task compared with prior imitation learning methods.\n\n[Genome 2]\n  Niche: This paper targets learning robotic manipulation policies that map camera observations and robot state to continuous control actions for real-world visuomotor tasks.\n  Mechanism: An end-to-end deep visuomotor imitation policy combines a convolutional network over raw images with fully connected layers that fuse proprioceptive state and predict motor torques or control commands, with the visual front end often pretrained on auxiliary perception objectives before joint fine-tuning on demonstrations.\n  Limitation: The approach depends on expert demonstration data and typically requires externally supervised or auxiliary pretraining of the visual representation to achieve sufficient data efficiency.\n  Observation: The paper finds that jointly training perception and control from demonstrations can produce manipulation controllers that generalize across varied object configurations and task stages without hand-engineered vision pipelines.\n\n[Genome 3]\n  Niche: This paper targets learning from demonstrations of continuous-time motion policies that can autonomously reproduce nonlinear reaching and movement behaviors while converging to a desired goal state.\n  Mechanism: It learns a stable nonlinear dynamical system by fitting a Gaussian mixture model to joint state-velocity data and using Gaussian-mixture regression to blend locally affine linear dynamics whose parameters are constrained through optimization to guarantee global asymptotic convergence to the target equilibrium.\n  Limitation: Its stability guarantee depends on a fixed attractor-centered mixture of locally linear components, which limits the class of behaviors to motions converging to one equilibrium and does not naturally handle richer tasks with multiple goals, cycles, or contact-driven mode switches.\n  Observation: The paper finds that a mixture of stability-constrained local linear dynamics can reproduce complex curved demonstrations more faithfully than a single global linear attractor while avoiding the unstable rollouts common in unconstrained regression-based imitation methods.\n\n[Genome 4]\n  Niche: This paper targets sequential imitation learning and structured prediction under distribution shift caused by compounding errors when a learned policy is executed at test time.\n  Mechanism: DAgger iteratively runs a mixture of the current policy and the expert, queries the expert on learner-visited states, aggregates all collected state-action pairs across rounds, and reduces policy learning to a no-regret online learning problem over the growing dataset.\n  Limitation: The method requires repeated expert action queries on states encountered during iterative rollouts, making it dependent on an available and affordable expert during training.\n  Observation: Training on aggregated supervision from the learner’s own induced state distribution substantially reduces error accumulation over long horizons compared with behavior cloning trained only on expert-visited states.\n\n[Genome 5]\n  Niche: The paper targets imitation learning from observation when expert demonstrations and learner experience come from different viewpoints, visual domains, or embodiments without shared action labels or aligned state spaces.\n  Mechanism: Third-Person Imitation Learning trains a policy with reinforcement learning to fool a behavior discriminator operating on transition features, while a representation network is adversarially optimized with a domain-confusion objective so those features predict expert-vs-novice behavior but not demonstrator-vs-learner domain identity.\n  Limitation: The method still depends on learning a sufficiently shared feature space between domains, so large embodiment or scene differences can leave residual domain cues that degrade imitation quality.\n  Observation: The key finding is that enforcing domain-invariant transition representations enables successful imitation from raw third-person observations despite substantial visual and embodiment mismatch between expert and learner.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        3,
+        4,
+        2,
+        1,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Hybridization",
+        "Speciation",
+        "Hybridization"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0061",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper studies a run-and-tumble particle on the half-line with stochastic resetting and a sticky boundary that allows temporary binding, desorption, and eventual absorption at the target.\n  Mechanism: It uses a renewal-theoretic decomposition over successive boundary-binding events to derive nonequilibrium stationary states and mean first-passage statistics under two desorption protocols: reset-to-initial-state and continuous release from the boundary.\n  Limitation: The model is restricted to a one-dimensional RTP with constant tumbling and resetting rates, a single sticky boundary, and analytically idealized desorption/absorption kinetics, which may limit direct applicability to more complex geometries or heterogeneous environments.\n  Observation: The analysis shows that both the stationary accumulation at the boundary and the MFPT depend strongly on the initial orientation and desorption rule, with desorption-induced resetting sometimes outperforming non-resetting release when the particle initially points toward the boundary.\n\n[Genome 2]\n  Niche: The paper addresses the degree-diameter problem by compiling updated records of large undirected graphs for specified maximum degree and diameter values.\n  Mechanism: It extends the existing survey table by collecting, verifying, and organizing graph constructions and best-known lower-bound examples reported since the 2013 Miller and Siran survey.\n  Limitation: The paper mainly serves as a curated update table and does not introduce a new general construction method or prove broad new theoretical bounds.\n  Observation: The update shows that newer constructions improve the best-known sizes for multiple degree-diameter parameter pairs in the undirected case.\n\n[Genome 3]\n  Niche: The paper studies how to characterize structural properties of Kohnert polynomials and Kohnert posets when the indexing objects are northeast diagrams, with special attention mechanism to lock diagrams.\n  Mechanism: It derives separate combinatorial classification criteria for when the Kohnert poset of a northeast diagram is bounded, ranked, or multiplicity-free, and shows these criteria are decidable in polynomial time in the number of cells.\n  Limitation: The results are specialized to northeast diagrams and do not provide equally general classifications for arbitrary diagram classes indexing Kohnert polynomials and posets.\n  Observation: For northeast diagrams, boundedness, rankedness, and multiplicity-freeness admit explicit efficiently checkable characterizations, which further simplify to especially clean criteria for lock diagrams.\n\n[Genome 4]\n  Niche: The paper studies the existence and classification of cyclic relative difference sets beyond the previously known Singer-complement lifting families and uses these results to assess the existence of circulant weighing matrices.\n  Mechanism: It extends earlier parameter searches for cyclic relative difference sets, analyzes possible liftings of cyclic difference sets to relative difference sets, and translates the resulting existence or nonexistence information into consequences for circulant weighing matrices.\n  Limitation: The paper appears to rely on extended search and case analysis rather than a complete general classification theorem ruling out all other nontrivial liftings.\n  Observation: The work finds that extended searches still support the view that only the known liftings of Singer-complement parameter sets occur nontrivially, while also yielding new existence constraints relevant to circulant weighing matrices.\n\n[Genome 5]\n  Niche: The paper addresses how to extract effective quantitative bounds from seemingly non-constructive proofs in probability theory, including results involving algebras of sets, probability contents, Lebesgue integration, sigma-algebras, and convergence of random variables.\n  Mechanism: It develops proof-theoretically tame logical systems and general proof-mining metatheorems, plus an intensional treatment of infinite unions and a transfer principle for convergence modes, to formalize probabilistic reasoning and extract uniform computational bounds.\n  Limitation: The framework is mainly foundational and metatheoretic, so its practical scope is limited to probabilistic arguments that can be encoded within the proposed tame logical systems and transfer principles.\n  Observation: The central insight is that broad classes of ineffective existence proofs in probability theory can be formalized so that proof mining yields highly uniform bounds independent of the underlying probability space and related measure parameters.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        2,
+        4,
+        3,
+        1
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0020",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets single-image super-resolution, i.e. reconstructing a high-resolution image from one low-resolution input image.\n  Mechanism: SRCNN uses a shallow three-layer fully convolutional network applied to an interpolated low-resolution image to jointly perform patch feature extraction, nonlinear low-to-high feature mapping, and high-resolution image reconstruction under supervised pixel-wise loss.\n  Limitation: The method depends on a fixed pre-upsampling interpolation step before the network, which adds computational cost and constrains the model to refine an already enlarged image rather than learn upsampling directly.\n  Observation: The paper finds that this small end-to-end learned convolutional model produces higher-fidelity and sharper super-resolved images than prior example-based, sparse-coding, and patch-matching pipelines.\n\n[Genome 2]\n  Niche: This paper targets single-image super-resolution, i.e. reconstructing a high-resolution image from one low-resolution input image.\n  Mechanism: VDSR uses a very deep stack of small-kernel convolutional layers on an interpolated low-resolution image and trains the network to predict the high-frequency residual to the ground-truth image, with high learning rates stabilized by gradient clipping.\n  Limitation: The method still depends on a pre-upsampled input and learns only the residual in image space, which increases computation at high-resolution and does not address end-to-end upsampling within the network.\n  Observation: The paper finds that combining much greater convolutional architecture depth with residual-target prediction substantially improves super-resolution accuracy and convergence, especially on fine edges, textures, and repetitive patterns.\n\n[Genome 3]\n  Niche: This paper targets single-image super-resolution with the goal of recovering visually convincing high-resolution images from a single low-resolution input.\n  Mechanism: SRGAN uses a deep residual convolutional generator trained with a joint loss that combines adversarial supervision from a discriminator with perceptual content loss measured in the feature space of a pretrained recognition network rather than only pixel-wise error.\n  Limitation: Because the method prioritizes perceptual realism over pixel fidelity, it can hallucinate details and underperform distortion-optimized baselines on PSNR-oriented reconstruction accuracy.\n  Observation: The paper finds that optimizing super-resolution for perceptual and adversarial objectives produces sharper, more photo-realistic textures than MSE-driven methods, even when traditional distortion metrics like PSNR are worse.\n\n[Genome 4]\n  Niche: This paper targets real-time single-image and video super-resolution, i.e., reconstructing high-resolution outputs from low-resolution visual inputs.\n  Mechanism: It introduces an Efficient Sub-Pixel Convolutional Neural Network (ESPCN) that performs feature extraction entirely in low-resolution space and then uses a learned final convolution followed by a deterministic sub-pixel pixel-shuffle rearrangement to generate the high-resolution image.\n  Limitation: The architecture is intentionally shallow and compact, so while efficient, it leaves open whether richer temporal modeling for video or deeper feature hierarchies could further improve reconstruction quality.\n  Observation: The key finding is that delaying upsampling to the final sub-pixel rearrangement stage preserves or improves super-resolution quality while reducing computation by roughly the square of the upscale factor, enabling real-time performance.\n\n[Genome 5]\n  Niche: This paper targets single-image super-resolution, i.e., reconstructing a high-resolution image from one low-resolution input image.\n  Mechanism: It proposes a deeply-recursive convolutional network (DRCN) that applies the same convolutional inference block repeatedly between feature embedding and reconstruction, while using recursive supervision on intermediate unfolded outputs and a global skip connection to predict residual high-frequency details.\n  Limitation: Because the model relies on many recursions of a single shared transformation, optimization remains difficult and representational diversity is constrained compared with architectures that use distinct layers at different depths.\n  Observation: The paper finds that repeatedly reusing one convolutional module can achieve the benefits of much greater effective depth and larger receptive fields for super-resolution without a proportional increase in parameters, especially when stabilized by recursive supervision and residual learning.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        5,
+        2,
+        4,
+        3
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Hybridization"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0059",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: The paper studies a degenerate limit of the generalized Zwegers' mu-function in the setting of the Ramanujan second-order q-difference equation and related special-function identities.\n  Mechanism: It defines a little mu-function as a degeneration of the generalized mu-function and derives it via q-Borel summation of a divergent solution to the Ramanujan difference equation, then develops symmetry, connection, contiguous, and Wronskian formulas for this new object.\n  Limitation: The work appears primarily theoretical and specialized to a particular degenerate q-difference setting, with no indication of broader computational validation, applications, or extension beyond this class of equations.\n  Observation: The main insight is that the little mu-function inherits structural properties analogous to the generalized mu-function while also linking naturally to q,t-Fibonacci sequences and the Rogers-Ramanujan continued fraction through contiguous and Wronskian relations.\n\n[Genome 2]\n  Niche: Large-time asymptotics of the defocusing mKdV equation with step-like initial data tending to unequal positive constants with c_l > c_r, producing a rarefaction-wave regime.\n  Mechanism: The paper develops inverse scattering for these nonzero step-like boundary conditions, formulates the solution as a Riemann-Hilbert problem, and applies nonlinear steepest descent to extract asymptotics in distinct space-time regions.\n  Limitation: The analysis is restricted to the defocusing mKdV case with ordered positive backgrounds c_l > c_r and does not address more general sign configurations, focusing cases, or broader step data classes.\n  Observation: The solution decomposes at large times into three regimes: a left region approaching c_l with small oscillations, a central rarefaction region with a slowly varying transition profile, and a right region approaching c_r with algebraically small corrections.\n\n[Genome 3]\n  Niche: The paper studies geometric tomography characterizations of the Euclidean ball or ellipsoid from relations between sections, projections, and support-cone data of two nested convex bodies with L contained in the interior of K.\n  Mechanism: It derives sufficient geometric conditions by comparing corresponding sections or projections of the nested pair and by analyzing support cones or point-source shadow boundaries with apexes on the boundary of K.\n  Limitation: The results are specialized to nested convex-body pairs under particular geometric relations and do not provide a general characterization framework for arbitrary convex bodies or broader non-nested settings.\n  Observation: The main theoretical insight is that certain imposed correspondences between the section, projection, or support-cone structures of nested convex bodies force the outer or associated body to be a Euclidean ball or an ellipsoid.\n\n[Genome 4]\n  Niche: The paper studies which finitely generated groups can have word problems that are EDT0L languages, with emphasis on the infinite cyclic group and structural closure properties.\n  Mechanism: It uses formal-language and group-theoretic arguments to prove non-EDT0Lness for the infinite cyclic group's word problem and to derive invariance under changing generators and passing to finitely generated subgroups.\n  Limitation: The paper does not resolve the full conjecture that every finitely generated group with EDT0L word problem is finite, leaving open whether any infinite torsion examples exist.\n  Observation: The central insight is that if a finitely generated group had an EDT0L word problem then it could not contain an infinite cyclic subgroup, so such a group must be torsion.\n\n[Genome 5]\n  Niche: The paper studies local shock formation near singularities in one-dimensional first-order strictly hyperbolic systems of PDEs.\n  Mechanism: It derives similarity variables and an analytical local self-similar solution by reducing general strictly hyperbolic dynamics near shock onset to Burgers-like behavior.\n  Limitation: The results are restricted to first-order strictly hyperbolic systems in one spatial dimension and focus on local behavior near shock formation rather than broader classes of PDEs or post-shock evolution.\n  Observation: The key insight is that shock formation in these general systems is universal and locally self-similar with the same scaling structure as inviscid Burgers' equation, independent of initial conditions.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        4,
+        5,
+        3,
+        2,
+        1
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0062",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: The paper addresses the emergence of macroscopic irreversibility and free-expansion equilibration in a one-dimensional free fermion chain evolving unitarily from an arbitrary initial state with a fixed macroscopic particle number.\n  Mechanism: It proves that for sufficiently large typical times the coarse-grained particle density becomes nearly uniform with probability extremely close to one by combining exact free-fermion dynamics with a large-deviation bound that holds for every energy eigenstate.\n  Limitation: The result is restricted to a specific noninteracting nearest-neighbor fermion chain and coarse-grained density observables, so it does not directly establish analogous irreversibility for generic interacting systems or finer observables.\n  Observation: The central insight is that even a deterministic, non-random, integrable quantum system can exhibit effectively irreversible ballistic spreading to a uniform macroscopic density profile from any initial state.\n\n[Genome 2]\n  Niche: This paper addresses how to predict liquid viscosity from dielectric response in highly polar liquids by modeling dissipation caused by dipolar interactions.\n  Mechanism: It develops a stochastic field theory for thermal dipole-field dynamics coupled to hydrodynamic flow, derives a general Kubo response relation and a Green-Kubo viscosity formula based on body-force correlations, and uses these to compute the dipolar contribution to viscosity.\n  Limitation: The work is primarily a theoretical derivation whose validity depends on model assumptions about dipole-field and hydrodynamic coupling and is not established here by broad quantitative comparison across many real liquids.\n  Observation: The theory shows that in strongly polar liquids such as water thermal van der Waals dipolar interactions can dominate viscous dissipation and that coupling also generates a second dielectric relaxation time even when only one microscopic relaxation process exists.\n\n[Genome 3]\n  Niche: This paper addresses how surface texture morphology and composition in sputtered Cu, Ag, and CuAg thin films on textured silicon govern wetting and optical behavior.\n  Mechanism: The study combines magnetron-sputtered thin-film fabrication with texture, optical, and wetting measurements, then applies data mining, K-Means clustering, and Random Forest regression to relate morphology descriptors to contact angle.\n  Limitation: The work is limited to a specific Cu/Ag/CuAg thin-film system on textured silicon and provides correlative rather than mechanistic causal validation of the inferred morphology-property relationships.\n  Observation: It finds strong correlations between contact angle and surface fractal dimension consistent with Cassie-Baxter wetting, links layer thickness to entropy deficit in surface topography, and predicts water contact angle with about 5 degrees MAE from texture and optical features alone.\n\n[Genome 4]\n  Niche: The paper addresses how to improve reproducibility and replicability practices across the research lifecycle in condensed matter physics.\n  Mechanism: It synthesizes recommendations from a multi-stakeholder May 2024 conference involving researchers, journalists, legal professionals, publishers, societies, and other experts to formulate best practices and policy guidance.\n  Limitation: Because it is a consensus report rather than a controlled empirical study, it does not quantitatively test the effectiveness of its recommendations.\n  Observation: The report identifies reproducibility and replicability in condensed matter physics as a growing challenge that requires coordinated procedural and policy interventions at all stages of scientific work.\n\n[Genome 5]\n  Niche: This paper addresses the analysis and synthetic generation of planar hierarchical crack networks formed during drying of thin colloidal or polymer films on substrates.\n  Mechanism: It extracts crack graphs from images, classifies crack generations using connection hierarchy, and compares three hierarchy-aware generators: random uniform partitioning, recursive Voronoi partitioning, and a crack growth simulation model.\n  Limitation: The study notes that existing generation-classification methods are limited by discrete time assumptions and partial-pattern usage, and its own evaluation remains based mainly on summary morphology statistics rather than full physical validation.\n  Observation: Among the tested generators, the crack growth simulation most closely matches real crack networks in geometric and topological statistics, especially the prevalence of near-right-angle junctions.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0049",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets high-quality and likelihood-competitive generative modeling of complex data, especially images, with more stable training and practical sampling.\n  Mechanism: Improved DDPM trains a diffusion generative model by reversing a fixed Gaussian noising process with a neural network that predicts the added noise at each timestep, while using a hybrid variational-plus-simplified denoising objective, learned or controlled reverse variances, and importance-sampled timesteps.\n  Limitation: Although sampling is faster than earlier DDPMs, the method still requires many sequential denoising steps and exposes a persistent trade-off between optimizing likelihood and maximizing perceptual sample quality.\n  Observation: The paper finds that directly predicting injected noise with a simplified loss often trains better than optimizing the full variational bound alone, and that learning reverse-process variances both improves log-likelihood and enables substantially fewer sampling steps.\n\n[Genome 2]\n  Niche: This paper targets high-quality deep generative modeling and likelihood-based sample generation from complex data distributions such as images.\n  Mechanism: It introduces score-based generative modeling through stochastic differential equations, learning a time-conditioned score function over a continuous forward noising process and generating data by simulating the corresponding reverse-time SDE or its probability-flow ODE, with predictor-corrector refinement.\n  Limitation: The method depends on numerically integrating reverse-time dynamics and often using predictor-corrector steps, making sampling computationally expensive and sensitive to discretization and solver choices.\n  Observation: The paper finds that a continuous-time score/SDE formulation unifies diffusion and score-matching methods while improving sample quality, flexibility of noise schedules, and enabling exact likelihood computation via an equivalent ODE.\n\n[Genome 3]\n  Niche: This paper targets high-quality and high-coverage natural image synthesis with strong likelihood performance.\n  Mechanism: It uses a denoising diffusion probabilistic model in which a U-Net-like network with attention mechanism is trained across many timesteps to predict added Gaussian noise under a carefully designed variance schedule, then samples by iteratively reversing the fixed noising process from pure noise.\n  Limitation: The model still requires many sequential denoising steps for generation, making sampling substantially slower and more computationally expensive than adversarial generators.\n  Observation: With the revised noise schedule, simplified noise-prediction objective, and improved denoising architecture, diffusion models achieve better fidelity-diversity trade-offs and can outperform GANs on image synthesis benchmarks while maintaining strong likelihoods.\n\n[Genome 4]\n  Niche: The paper targets high-quality likelihood-based generative modeling and sample synthesis for complex data distributions such as images.\n  Mechanism: Denoising Diffusion Probabilistic Models define a fixed Gaussian forward Markov chain that gradually corrupts data and train a timestep-conditioned neural network to parameterize the reverse chain by predicting the added noise under a simplified variational objective.\n  Limitation: A main limitation is that generation requires many sequential reverse denoising steps, making sampling slow and computationally expensive.\n  Observation: The paper finds that this simple noise-prediction training formulation is stable and produces substantially better sample quality and robustness than earlier score-matching and Langevin-based generative approaches.\n\n[Genome 5]\n  Niche: This paper targets high-quality generative modeling and sampling of complex multimodal data distributions without requiring explicit likelihood evaluation or adversarial training.\n  Mechanism: Noise-conditional score-based generative modeling learns a neural network to estimate the score (gradient of log density) of Gaussian-perturbed data at multiple noise scales and generates samples by annealed Langevin dynamics that progressively denoise random initialization from coarse to fine scales.\n  Limitation: The method depends on computationally expensive iterative annealed Langevin sampling and careful choice of noise scales and step sizes, making generation slower and more tuning-sensitive than direct one-shot generators.\n  Observation: Estimating scores on a hierarchy of noisy data distributions yields stable training and informative gradients in low-density regions, enabling better sample quality and mode coverage than prior energy-based and likelihood-based approaches.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        4,
+        2,
+        1,
+        3
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Hybridization",
+        "Hybridization",
+        "Hybridization"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0063",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: Optimizing multi-bit temporal pulse encoding for physical reservoir computing using solution-processed Al2O3/In2O3 thin-film transistors in time-series and in-sensor data processing tasks.\n  Mechanism: The paper applies Bayesian optimization over five TFT pulse-operation parameters using normalized degree of separation as the objective, then validates the resulting settings on 4-bit and 6-bit temporal encoding and image-sequence reconstruction, with SHAP used for parameter-importance analysis.\n  Limitation: The study is demonstrated on a single TFT material/device platform and relatively constrained encoding tasks, so generalization to other reservoirs, larger-scale datasets, and broader operating regimes is not yet established.\n  Observation: Bayesian optimization enables high-fidelity 6-bit encoding, a model trained on 4-bit data transfers effectively to 6-bit optimization with lower experimental cost, and gate pulse amplitude plus drain voltage are the most influential variables.\n\n[Genome 2]\n  Niche: The paper addresses scalable ground-state optimization of generic high-order p-spin glass models and related NP-hard combinatorial optimization problems on hypergraphs.\n  Mechanism: It proposes PLANCK, a physics-inspired deep reinforcement learning solver built on hypergraph neural networks that directly models arbitrary high-order interactions and exploits gauge symmetry during training and inference.\n  Limitation: The evidence is primarily empirical on tested synthetic benchmarks and does not establish theoretical guarantees, full optimality certification, or robustness across all possible p-spin instance families.\n  Observation: When trained only on small synthetic instances, PLANCK shows strong zero-shot generalization to much larger systems and outperforms thermal annealing baselines across tested topologies and coupling distributions while also solving k-XORSAT, hypergraph max-cut, and max-cut near-optimally.\n\n[Genome 3]\n  Niche: The paper studies compactness, convergence, connectedness, subspaces, and products in aura topological spaces equipped with a scope function.\n  Mechanism: It defines several aura-specific compactness and connectedness notions, constructs subspace and product aura topologies, and proves implication, preservation, and equivalence theorems under conditions such as transitivity and aura separation axioms.\n  Limitation: The strongest results depend on transitivity or additional aura separation assumptions, and the paper mainly provides structural theory and counterexamples rather than broader applications or complete equivalence among the new compactness notions.\n  Observation: A central insight is that transitive aura functions make convergence in the induced aura topology concrete via eventual membership in the target point's scope, while also enabling product equalities and a Tychonoff-type compactness theorem.\n\n[Genome 4]\n  Niche: Broadband terahertz time-domain spectroscopy of quantum materials at dilution-refrigerator temperatures and high magnetic fields is addressed for probing low-energy electrodynamics such as cyclotron resonance.\n  Mechanism: The paper builds a terahertz time-domain spectroscopy setup integrated with a Bluefors dilution refrigerator and a 7 T split-coil magnet, then measures terahertz waveforms from a GaAs single quantum well between 0 and 6 T at 145 mK.\n  Limitation: The demonstration is limited to a single sample system and mainly validates instrument capability rather than providing broad material comparisons or a detailed explanation of the mass enhancement.\n  Observation: Cyclotron-resonance measurements on the GaAs single quantum well yield an effective mass of 0.073 me, exceeding the commonly accepted bulk GaAs value of 0.068 me.\n\n[Genome 5]\n  Niche: This paper addresses first-principles thermodynamic modeling of materials with many configurational and magnetic states, focusing on entropy evaluation for Fe3Pt Invar behavior.\n  Mechanism: It introduces pyzentropy, an open-source Python package that computes total thermodynamic entropy by recursively decomposing contributions from high-probability configurations in a first-principles framework.\n  Limitation: The study is demonstrated mainly on a single case material and depends on identifying key high-probability configurations, which may limit robustness or transferability to more complex systems.\n  Observation: Using a 12-atom Fe3Pt supercell with multiple magnetic configurations, the recursive entropy approach reproduces Invar behavior and anomalous temperature trends in LCTE, heat capacity, bulk modulus, and phase diagrams consistent with experiment.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        3,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0068",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper addresses the one-dimensional generalized Dirac oscillator with possibly complex interaction functions under doubly special relativity, focusing on pseudo-Hermitian and PT-symmetric solvable models such as the complexified Morse interaction.\n  Mechanism: The authors factorize the generalized Dirac oscillator into supersymmetric partner Schrödinger-like equations to obtain real spatial eigenvalues and then reconstruct relativistic energies through deformed Magueijo-Smolin and Amelino-Camelia DSR energy maps.\n  Limitation: The treatment is restricted to one dimension, representative MS and leading-order AC realizations, and mainly analytical exactly solvable cases, so its conclusions may not directly extend to higher-dimensional or more general DSR formulations.\n  Observation: They find that DSR leaves the spatial spectrum problem intact but nontrivially deforms the mapping from spatial eigenvalues to relativistic energies, with MS producing branch-asymmetric effective-mass deformation and AC imposing a leading-order admissibility bound of the form epsilon_n < 4k^2.\n\n[Genome 2]\n  Niche: The paper studies how Krylov operator growth and Krylov complexity are modified in open quantum systems governed by Lindblad dynamics, especially under dephasing.\n  Mechanism: It uses a Schwinger-Keldysh full-counting-statistics formulation of Krylov position to derive an effective emergent phase-space action for operator growth in the presence of environmental coupling.\n  Limitation: The analysis appears centered on effective theory and minimal dissipative settings like dephasing, leaving broader validation across more general open-system models and concrete many-body examples unresolved.\n  Observation: The main insight is that dissipation turns the closed-system Hamiltonian Krylov flow into stochastic non-Hamiltonian dynamics by inducing diffusion in the variable conjugate to Krylov depth.\n\n[Genome 3]\n  Niche: Determining the critical radius and mass of a spherical fissile material assembly using a simple pedagogical neutronics calculation.\n  Mechanism: The method separates neutron transport geometry from nuclear reaction processes and uses a neutron balance threshold condition with average path length, scattering distance, and leakage/absorption arguments to derive the critical radius without solving the diffusion equation.\n  Limitation: The approach is simplified and pedagogical, relying on averaged statistical assumptions and spherical geometry, so it is less general and precise than full transport or Monte Carlo treatments.\n  Observation: This elementary path-length-based formulation reproduces known critical masses for fissile spheres to within a few percent and can be adapted to impure or isotopically mixed materials.\n\n[Genome 4]\n  Niche: The paper studies low-energy electron-induced dissociation pathways of 1-propanol in the context of dissociative electron attachment in alcohol molecules.\n  Mechanism: It measures fragment anion yields for 1-propanol over 3.5 to 16 eV and uses DFT calculations to estimate threshold energies for the observed dissociation channels.\n  Limitation: The study is limited to one alcohol and a modest energy window, so mechanistic generalization and resonance assignment remain partly inferential rather than directly resolved.\n  Observation: Four anions, H−, O−, OH−, and C3H7O−, are observed, with OH− peaking strongly near 8.7 eV and H− and C3H7O− sharing a sharp resonance near 6 eV plus broad features from 7 to 12 eV.\n\n[Genome 5]\n  Niche: The paper addresses whether a single unified conscious field, as defined by integration-based theories of consciousness, can persist when its physical substrate is distributed across a black hole event horizon.\n  Mechanism: It models consciousness-relevant physical implementations as effective causal graphs over a finite integration window τ and applies standard black hole causal structure to test whether a single strongly connected component can extend across the horizon.\n  Limitation: The argument is purely structural and theory-internal, leaving open whether alternative consciousness theories, nonstandard horizon physics, or different notions of integration could avoid the conclusion.\n  Observation: The central theoretical result is that no strongly connected component can span an event horizon, so any integration-based theory requiring such connectivity must treat cross-horizon unity as impossible.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        3,
+        2,
+        1,
+        5,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0045",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets correct transaction execution for relational database operations that span multiple autonomous database sites in a distributed/federated environment.\n  Mechanism: It introduces an R* distributed transaction management architecture in which a global transaction coordinator drives two-phase commit and distributed concurrency control across sites while local resource managers independently handle execution, locking, logging, and recovery for subordinate actions.\n  Limitation: The design depends on blocking two-phase commit and explicit coordination among sites, leaving transactions vulnerable to delays and uncertainty during site or communication failures until recovery completes.\n  Observation: The key insight is that ACID semantics for high-level distributed relational requests can be achieved systematically by separating global commit/state coordination from local database control and by using log-based recovery to resolve failures and in-doubt transactions.\n\n[Genome 2]\n  Niche: This paper targets strongly consistent state-machine replication for distributed systems that need low-latency, high-throughput agreement on client commands.\n  Mechanism: EPaxos is a leaderless consensus protocol in which replicas independently propose commands with dependency sets capturing conflicting predecessors, commit non-conflicting commands via a fast path, and use a slower recovery path to resolve disagreements or failures by deriving execution order from a partial-order graph rather than a single global log.\n  Limitation: EPaxos loses much of its advantage when workloads contain many conflicting commands or unstable dependency agreement, because operations then fall back to a more expensive slow path and incur extra dependency-management complexity.\n  Observation: The key insight is that many commands do not conflict, so agreeing on per-command dependencies instead of forcing all operations through one leader and one total order yields lower common-case latency and better balanced-load throughput.\n\n[Genome 3]\n  Niche: This paper targets the problem of reaching distributed consensus on a single value in asynchronous systems with crash failures, recoveries, and unreliable communication.\n  Mechanism: Paxos uses numbered proposals and a two-phase quorum protocol in which proposers first obtain promises from a majority of acceptors not to accept lower-numbered proposals, then submit a value constrained by the highest-numbered prior acceptance reported, with learners determining the chosen value from quorum intersections.\n  Limitation: The paper does not by itself guarantee liveness under contention, instead requiring eventual stability and some external or implicit mechanism to suppress competing proposers.\n  Observation: The key insight is that safety can be guaranteed under arbitrary message delay, loss, duplication, and reordering if every chosen value is forced through intersecting quorums that preserve the highest-priority previously accepted information.\n\n[Genome 4]\n  Niche: This paper targets the problem of achieving distributed consensus in an asynchronous message-passing system with crash failures, as the basis for replicated state machine agreement.\n  Mechanism: Paxos uses proposers, acceptors, and learners in a two-phase protocol with monotonically increasing proposal numbers, where prepare requests establish an ordering and accept requests are constrained to preserve any value that may already have been chosen.\n  Limitation: The paper mainly simplifies and explains the single-decree core, leaving liveness dependent on extra assumptions like eventual leadership and not fully developing the practical multi-instance engineering details.\n  Observation: The key insight is that consensus safety can be reduced to a single invariant: once some value could have been chosen, every higher-numbered successful proposal must carry that same value.\n\n[Genome 5]\n  Niche: This paper targets the problem of making replicated state machine consensus usable for a real production storage service that must remain consistent despite crashes, network faults, and operational failures.\n  Mechanism: It implements a production Paxos-based replication system that separates the core safety protocol from engineering subsystems such as persistent logging, leader failover, replica recovery and catch-up, membership handling, checksums, retransmission/timeout control, monitoring, and service interfaces around an ordered durable log.\n  Limitation: The paper does not provide a new formal model or proof for the full production implementation, leaving a gap between the concise verified algorithm and the much larger real codebase whose behavior can drift from the specification.\n  Observation: The key insight is that the mathematically small Paxos algorithm is only a minor part of a deployable system, and preserving its safety in practice requires substantial additional machinery for recovery, operations, testing, and debugging.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        3,
+        4,
+        5,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Mutation",
+        "Mutation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0053",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper addresses the one-dimensional generalized Dirac oscillator with possibly complex interaction functions under doubly special relativity, focusing on pseudo-Hermitian and PT-symmetric solvable models such as the complexified Morse interaction.\n  Mechanism: The authors factorize the generalized Dirac oscillator into supersymmetric partner Schrödinger-like equations to obtain real spatial eigenvalues and then reconstruct relativistic energies through deformed Magueijo-Smolin and Amelino-Camelia DSR energy maps.\n  Limitation: The treatment is restricted to one dimension, representative MS and leading-order AC realizations, and mainly analytical exactly solvable cases, so its conclusions may not directly extend to higher-dimensional or more general DSR formulations.\n  Observation: They find that DSR leaves the spatial spectrum problem intact but nontrivially deforms the mapping from spatial eigenvalues to relativistic energies, with MS producing branch-asymmetric effective-mass deformation and AC imposing a leading-order admissibility bound of the form epsilon_n < 4k^2.\n\n[Genome 2]\n  Niche: The paper studies low-energy electron-induced dissociation pathways of 1-propanol in the context of dissociative electron attachment in alcohol molecules.\n  Mechanism: It measures fragment anion yields for 1-propanol over 3.5 to 16 eV and uses DFT calculations to estimate threshold energies for the observed dissociation channels.\n  Limitation: The study is limited to one alcohol and a modest energy window, so mechanistic generalization and resonance assignment remain partly inferential rather than directly resolved.\n  Observation: Four anions, H−, O−, OH−, and C3H7O−, are observed, with OH− peaking strongly near 8.7 eV and H− and C3H7O− sharing a sharp resonance near 6 eV plus broad features from 7 to 12 eV.\n\n[Genome 3]\n  Niche: Determining the critical radius and mass of a spherical fissile material assembly using a simple pedagogical neutronics calculation.\n  Mechanism: The method separates neutron transport geometry from nuclear reaction processes and uses a neutron balance threshold condition with average path length, scattering distance, and leakage/absorption arguments to derive the critical radius without solving the diffusion equation.\n  Limitation: The approach is simplified and pedagogical, relying on averaged statistical assumptions and spherical geometry, so it is less general and precise than full transport or Monte Carlo treatments.\n  Observation: This elementary path-length-based formulation reproduces known critical masses for fissile spheres to within a few percent and can be adapted to impure or isotopically mixed materials.\n\n[Genome 4]\n  Niche: The paper studies how Krylov operator growth and Krylov complexity are modified in open quantum systems governed by Lindblad dynamics, especially under dephasing.\n  Mechanism: It uses a Schwinger-Keldysh full-counting-statistics formulation of Krylov position to derive an effective emergent phase-space action for operator growth in the presence of environmental coupling.\n  Limitation: The analysis appears centered on effective theory and minimal dissipative settings like dephasing, leaving broader validation across more general open-system models and concrete many-body examples unresolved.\n  Observation: The main insight is that dissipation turns the closed-system Hamiltonian Krylov flow into stochastic non-Hamiltonian dynamics by inducing diffusion in the variable conjugate to Krylov depth.\n\n[Genome 5]\n  Niche: The paper addresses whether a single unified conscious field, as defined by integration-based theories of consciousness, can persist when its physical substrate is distributed across a black hole event horizon.\n  Mechanism: It models consciousness-relevant physical implementations as effective causal graphs over a finite integration window τ and applies standard black hole causal structure to test whether a single strongly connected component can extend across the horizon.\n  Limitation: The argument is purely structural and theory-internal, leaving open whether alternative consciousness theories, nonstandard horizon physics, or different notions of integration could avoid the conclusion.\n  Observation: The central theoretical result is that no strongly connected component can span an event horizon, so any integration-based theory requiring such connectivity must treat cross-horizon unity as impossible.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        3,
+        4,
+        1,
+        5,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0034",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets automatic discovery of crashes and security-relevant bugs in native programs by generating high-value test inputs at scale.\n  Mechanism: AFL is a greybox fuzzing system that uses lightweight compile-time or binary instrumentation to record approximate edge coverage in a shared-memory bitmap, then retains inputs that trigger new coverage and mutates them with deterministic and randomized strategies in an evolutionary queue.\n  Limitation: Because AFL relies on coarse bitmap-based coverage and mutation without solving path constraints, it struggles with hard input checks and deep program states that require highly structured or constraint-satisfying inputs.\n  Observation: The key insight is that extremely cheap coverage feedback combined with high-throughput mutation and simple seed-selection heuristics is sufficient to outperform more heavyweight symbolic approaches in practical bug finding on real binaries.\n\n[Genome 2]\n  Niche: This paper targets the problem of improving greybox fuzzing guidance when many semantically different executions are collapsed into the same coarse coverage signal.\n  Mechanism: CollAFL is a path-sensitive greybox fuzzing method that augments traditional edge coverage with compact branch-behavior-derived path identifiers so the fuzzer can distinguish and prioritize inputs that follow different decision contexts within already-covered code.\n  Limitation: Its path sensitivity is only a lightweight approximation based on compact branch information, so executions that differ in deeper semantic state but map to the same encoded path variant can still be conflated.\n  Observation: The key insight is that distinguishing path variants inside the same covered region provides substantially better search guidance than edge-only novelty in programs with dense branching, nested predicates, and high path aliasing.\n\n[Genome 3]\n  Niche: This paper targets automatic generation of high-coverage tests for individual program units in order to expose bugs such as assertion violations and memory errors without manually writing test drivers.\n  Mechanism: DART combines automatic interface-level harness extraction with concolic execution: it runs the unit on random concrete inputs, records symbolic branch predicates along the executed path, negates one observed predicate to form a new path constraint, solves it, and re-executes with the resulting concrete inputs to drive exploration into alternative branches.\n  Limitation: DART is limited to path exploration expressible through the extracted interface and lightweight symbolic constraints, so it does not fully handle complex environments, external interactions, or path conditions that the solver cannot model or solve.\n  Observation: The paper finds that this directed hybrid of concrete random execution and symbolic path constraint solving achieves substantially better branch coverage and bug discovery than unguided random testing or manual driver-based approaches.\n\n[Genome 4]\n  Niche: This paper targets automatic generation of high-coverage test inputs for complex low-level systems programs without requiring manual test specifications.\n  Mechanism: KLEE is a symbolic execution system that runs programs on symbolic inputs at the compiler IR level, accumulates path constraints, systematically negates branch conditions, solves the resulting formulas to generate new concrete tests, and models memory, libraries, and environment interactions to explore realistic systems code.\n  Limitation: The system still depends on heuristic path search and selective modeling of external code and environment behavior, leaving path explosion and incomplete handling of some real-world interactions unresolved.\n  Observation: The paper finds that a fully automatic symbolic-execution engine operating on real systems code can achieve substantially higher path coverage and expose more bugs than prior concolic-style approaches while producing replayable concrete tests.\n\n[Genome 5]\n  Niche: This paper targets the problem of validating C compiler correctness by uncovering miscompilations, crashes, and other wrong-code behaviors.\n  Mechanism: Random differential compiler testing automatically generates many small legal executable C programs, compiles them across different compilers or optimization settings, runs the binaries, and flags crashes or output inconsistencies as evidence of compiler bugs.\n  Limitation: The approach depends on practical consistency oracles rather than a full correctness specification, so it is constrained to programs whose behavior is well-defined enough for cross-run output mismatches to be meaningfully interpreted.\n  Observation: High-volume randomized generation of valid C programs exposes numerous deep compiler defects that manual regression tests and user-reported failures are unlikely to find.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        3,
+        4,
+        1,
+        2
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation",
+        "Speciation",
+        "Mutation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0031",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets probabilistic modeling and next-element prediction for source code in the presence of large vocabularies and structured program context.\n  Mechanism: It introduces a decision-tree-based probabilistic code model that factorizes the probability of each code element into a sequence of learned context-conditioned branching decisions over sparse lexical and syntactic features.\n  Limitation: Because prediction quality depends on a hand-constructed decision-tree factorization over mostly local contextual cues, the model may miss longer-range program dependencies and is constrained by the chosen tree structure.\n  Observation: The paper finds that organizing code prediction as hierarchical tree decisions can yield sharper conditional distributions and better scalability than flat n-gram-style token predictors on code.\n\n[Genome 2]\n  Niche: This paper targets general-purpose code generation from natural language or other source inputs into executable programs.\n  Mechanism: It uses a syntax-driven neural decoder that generates code as a sequence of grammar-constrained actions over an abstract syntax tree, predicting nonterminal expansions, production rules, and terminals while conditioning on the encoded input and the partially built tree, with copying or specialized handling for open-vocabulary tokens.\n  Limitation: Although syntax is enforced, the model still relies on grammar-specified action spaces and ad hoc mechanisms for identifiers and literals, leaving semantic correctness and flexible handling of open-vocabulary program content only partially solved.\n  Observation: The paper finds that aligning neural decoding with formal program syntax yields more accurate code generation and substantially reduces syntactically invalid outputs compared with flat token-sequence decoders and earlier feature-engineered semantic parsers.\n\n[Genome 3]\n  Niche: This paper targets automatic generation of human-readable pseudo-code descriptions from program source code.\n  Mechanism: A phrase-based statistical machine translation approach is trained on parallel code–pseudo-code pairs to learn token/phrase alignments, translation probabilities, and a target-side language model, then decodes pseudo-code by jointly optimizing faithfulness to source code and fluency.\n  Limitation: Because the system depends on phrase-based alignments over a structure-preserving but SMT-compatible code representation rather than deeper semantic analysis, it is limited in capturing long-range program semantics and more complex code patterns.\n  Observation: The study finds that treating source code and pseudo-code as parallel symbolic languages enables data-driven generation of readable algorithmic descriptions with less manual engineering than rule-based alternatives.\n\n[Genome 4]\n  Niche: This paper targets the evaluation of whether large language models can perform practically useful software engineering tasks such as code generation, completion, and problem solving.\n  Mechanism: Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code, and systematically probes them across scales, prompts, and task formats using both open-ended generation and constrained prediction benchmarks.\n  Limitation: Because the work mainly provides controlled empirical evaluation rather than a new architecture or training objective, it leaves open which specific modeling or data interventions would most improve semantic correctness and robustness.\n  Observation: The study finds that larger code-trained autoregressive models produce more syntactically valid and functionally useful programs, and that few-shot prompt formatting strongly affects performance beyond what token-level metrics predict.\n\n[Genome 5]\n  Niche: This paper targets learning general-purpose representations for source code and natural-language descriptions to support code understanding tasks such as code search, documentation matching, and code classification.\n  Mechanism: CodeBERT is an encoder-only transformer architecture jointly pre-trained on paired code-documentation data and unpaired code corpora using masked language modeling plus ELECTRA-style replaced token detection with a lightweight generator to learn shared code-text embeddings.\n  Limitation: Because the model is encoder-only and trained mainly on token sequences with limited explicit structural supervision, it is less suited to generative tasks and may underuse deeper program structure beyond surface token patterns.\n  Observation: Joint bimodal-unimodal pre-training with replaced-token detection yields better code-text representation quality and stronger downstream performance than general-domain pre-training or simpler code-text pre-training objectives.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        2,
+        3,
+        5,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Hybridization",
+        "Speciation",
+        "Adaptive Radiation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0032",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets the problem of understanding and defending against SQL injection vulnerabilities in web applications that construct database queries from untrusted input.\n  Mechanism: It introduces an attack-centric taxonomy method that classifies SQL injection attacks by the way malicious input transforms the syntactic or semantic structure of server-side SQL queries and explicitly maps each class to corresponding countermeasure families across validation, query construction, analysis, and runtime enforcement layers.\n  Limitation: Because the work is primarily a conceptual classification and comparative analysis, it does not provide a unified formal model or experimentally validated end-to-end defense that proves the taxonomy-to-countermeasure mapping in practice.\n  Observation: The paper's key insight is that SQL injection attacks are best understood as distinct query-transformation behaviors, and that defenses are effective only when they preserve intended query structure rather than relying on brittle ad hoc filtering.\n\n[Genome 2]\n  Niche: This paper targets the problem of understanding and characterizing cross-site scripting vulnerabilities in web applications and browsers.\n  Mechanism: A web-architecture threat analysis decomposes XSS into attacker-controlled input injection, server reflection or storage of that input in generated pages, and browser execution of the resulting script under the trusted site's origin and privileges.\n  Limitation: The paper mainly provides a conceptual taxonomy and threat model rather than a concrete prevention mechanism or formal enforcement technique for eliminating XSS in deployed systems.\n  Observation: The key insight is that XSS arises from a failure to preserve the boundary between data and executable content across server output generation and browser interpretation, allowing injected code to access cookies, session state, and the DOM as if it came from the trusted site.\n\n[Genome 3]\n  Niche: This paper targets browser-side prevention of cross-site scripting by stopping untrusted page data from being interpreted in executable or otherwise privileged web document contexts.\n  Mechanism: Noncespaces assigns fresh unpredictable tokens to fine-grained syntactic regions of a page and enforces in the browser that markup, attributes, and script-bearing contexts only accept content carrying the correct token relationships, so injected strings cannot cross parsing-context boundaries into active code.\n  Limitation: The approach requires coordinated token insertion by trusted server-side output generation and corresponding browser enforcement, limiting deployability and leaving compatibility dependent on correctly instrumenting all relevant content-generation paths.\n  Observation: The key insight is that treating HTML parsing contexts as information-flow security boundaries and randomizing their admissible syntax can block many XSS payloads without breaking intended page behavior.\n\n[Genome 4]\n  Niche: This paper targets the problem of preventing cross-site request forgery against authenticated web applications, especially for state-changing user actions.\n  Mechanism: The method is a CSRF request-binding defense that embeds unpredictable session-associated nonces in sensitive requests and validates them server-side, optionally supplemented by provenance checks such as the Referer header while exempting safe read-only operations.\n  Limitation: The paper's secondary provenance-based checks depend on browser-supplied headers like Referer that are inconsistently present or deployable, limiting standalone reliability and complicating universal adoption.\n  Observation: The key insight is that CSRF succeeds because browsers automatically attach ambient authentication without proof of user intent, so robust defense must bind each unsafe request to attacker-unforgeable evidence of same-site origin rather than rely on input sanitization.\n\n[Genome 5]\n  Niche: This paper targets prevention of cross-site scripting attacks in existing web applications running on legacy, unmodified browsers.\n  Mechanism: Blueprint is a client-side system that interposes on document and DOM processing in the browser environment to mediate multiple script-introduction channels and enforce strict separation so untrusted strings cannot be reinterpreted as executable code via dynamic updates, event handlers, or script-bearing markup.\n  Limitation: Because Blueprint must preserve compatibility with unmodified browsers and existing applications, it depends on client-side instrumentation of exposed browser APIs and processing paths, leaving its protection bounded by what can be intercepted without changing browser internals.\n  Observation: The key insight is that robust XSS defense in legacy browsers can be achieved by uniformly mediating the browser's dynamic code-introduction paths on the client side, covering more attack vectors than context-specific randomization schemes.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        2,
+        1,
+        4,
+        3,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Adaptive Radiation",
+        "Speciation",
+        "Hybridization",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0029",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets natural language access to relational databases by treating user questions over structured data as a well-defined question answering task.\n  Mechanism: It proposes a theory-driven NLIDB framework that decomposes processing into user-intent representation, schema-level semantic interpretation, and translation into executable formal database queries, mediated by constrained intermediate semantic forms.\n  Limitation: The paper mainly provides a conceptual and evaluative framework rather than a fully specified or broadly validated implementation, leaving the concrete construction and empirical testing of the intermediate representations underdeveloped.\n  Observation: The key insight is that natural language database interfaces become clearer to design and compare when framed as question answering with explicit semantic layers and standardized answer-based evaluation rather than as collections of ad hoc parsing rules.\n\n[Genome 2]\n  Niche: The paper targets open-domain machine reading: automatically constructing structured, queryable knowledge from large volumes of unstructured free text.\n  Mechanism: It proposes an end-to-end machine reading system that combines statistical entity recognition, relation extraction, coreference resolution, and confidence-aware evidence aggregation to populate a growing knowledge base from web-scale corpora.\n  Limitation: The system still depends on a pipeline of imperfect upstream NLP modules whose errors propagate, leaving extracted knowledge uncertain and limiting precision and completeness in the resulting knowledge base.\n  Observation: The key insight is that integrating multiple imperfect NLP components in a probabilistic architecture and exploiting redundancy across many documents can yield useful large-scale knowledge extraction despite local ambiguity and extraction errors.\n\n[Genome 3]\n  Niche: This paper targets machine reading comprehension, where a system must answer a question about a given document.\n  Mechanism: It introduces a neural reader that uses recurrent sequence encoders for both document and query and predicts an answer token or span by conditioning the document representation on the query in an end-to-end supervised model trained from raw text.\n  Limitation: The model depends heavily on large-scale automatically constructed supervision and mainly predicts answers already present in the passage, limiting its applicability to settings without such data or with more abstractive reasoning demands.\n  Observation: The study finds that query-conditioned recurrent neural readers trained on large automatically generated document–question datasets substantially outperform earlier shallow matching and simpler baseline approaches on reading comprehension.\n\n[Genome 4]\n  Niche: This paper targets large-scale machine reading comprehension from natural text passages, where a system must answer questions about a given passage.\n  Mechanism: SQuAD constructs a benchmark by collecting crowd-authored questions on Wikipedia passages and defining each answer as a contiguous text span in the passage, enabling supervised training and evaluation as span prediction with exact match and token-overlap metrics.\n  Limitation: Because answers are restricted to exact contiguous spans from the provided passage, the benchmark excludes questions requiring abstractive, multi-passage, or non-span answers.\n  Observation: The dataset is large and diverse enough to support end-to-end neural readers and reveals a substantial gap between model performance and human reading comprehension.\n\n[Genome 5]\n  Niche: This paper targets the problem of creating a standardized evaluation benchmark for open-domain question answering over a fixed document corpus.\n  Mechanism: A reusable QA test collection construction procedure adapts classical IR test-collection methodology by assembling natural-language questions, a large corpus, and human relevance judgments that mark answer-bearing documents or snippets while accounting for paraphrase, ambiguity, and multiple valid answer forms.\n  Limitation: Because the collection is grounded in a fixed corpus and human assessment protocol, its coverage of question types and acceptable answers is constrained by corpus answerability and assessor consistency.\n  Observation: The paper shows that formalizing QA evaluation around a shared corpus, realistic questions, and human answer judgments makes system comparison more reproducible, comparable, and scalable than earlier informal evaluations.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Hybridization",
+        "Speciation",
+        "Adaptive Radiation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0046",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets the automated design of high-performing neural network architectures for a given task without manual architecture engineering.\n  Mechanism: Neural Architecture Search with Reinforcement Learning uses an recurrent architecture controller policy to sequentially emit architectural decisions, trains each sampled architecture to obtain validation reward, and updates the controller with policy-gradient optimization to favor better designs.\n  Limitation: The method depends on training and evaluating many sampled architectures, making search extremely computationally expensive even when mitigated by proxy training, early stopping, or weight sharing.\n  Observation: The paper finds that a reinforcement-learned controller can progressively discover neural architectures that outperform manually designed or simpler searched alternatives on target tasks.\n\n[Genome 2]\n  Niche: This paper targets hyperparameter optimization when evaluating configurations is expensive and only limited computational budget is available.\n  Mechanism: Hyperband allocates a fixed budget across multiple successive-halving brackets, each starting with randomly sampled hyperparameter configurations evaluated at small resource levels and repeatedly promoting only the top fraction to larger budgets, with different brackets trading off number of configurations versus training depth.\n  Limitation: The method relies on partial-budget performance being predictive enough for early stopping, so it is less well matched to problems where low-budget rankings are noisy or misleading.\n  Observation: The paper finds that sweeping across multiple early-stopping schedules yields strong anytime performance and much higher resource efficiency than methods that spend equal full evaluations on each configuration.\n\n[Genome 3]\n  Niche: This paper targets scalable automated architecture design for large-scale image classification by learning models that can transfer from small benchmarks to larger visual recognition tasks.\n  Mechanism: NASNet uses reinforcement-learning-based neural architecture search to discover two repeatable cell types—normal and reduction cells—modeled as small directed acyclic graphs over a restricted operation set, learned on a proxy dataset and then stacked to form deep networks for larger tasks.\n  Limitation: The method still depends on an expensive controller-and-child-model reinforcement learning search loop and on a hand-designed cell search space with only two predefined cell roles, which may exclude better architectures outside that template.\n  Observation: The key finding is that cells searched on a small image benchmark transfer effectively to larger image recognition settings, yielding strong accuracy while requiring far less search cost than searching full architectures directly on the target task.\n\n[Genome 4]\n  Niche: This paper targets large-scale image classification and visual recognition with deep convolutional networks.\n  Mechanism: GoogLeNet/Inception uses repeated multi-branch modules that run 1×1, 3×3, 5×5, and pooling paths in parallel, applies 1×1 convolutions for dimensionality reduction before costly spatial filters, concatenates branch outputs, and trains with auxiliary classifiers plus global average pooling.\n  Limitation: Its hand-designed Inception modules and auxiliary heads introduce considerable architectural complexity and rely on manually chosen branch widths and filter sizes rather than a principled or automatically optimized design.\n  Observation: The paper finds that explicitly combining multi-scale branches with aggressive 1×1 bottlenecks yields substantially better accuracy per parameter and enables much deeper CNNs than more uniform widening or deepening strategies.\n\n[Genome 5]\n  Niche: This paper targets image classification and visual recognition with convolutional neural networks.\n  Mechanism: Network In Network replaces simple linear convolutional filters with per-location micro multilayer perceptrons implemented by stacked 1×1 convolutions and nonlinearities, and uses global average pooling instead of large fully connected classifier layers.\n  Limitation: The method increases depth and local nonlinear complexity but does not expand receptive fields by itself, so it still depends on separate spatial convolutions and does not fully address broader spatial modeling.\n  Observation: Using embedded local MLPs and global average pooling yields more discriminative feature maps, fewer classifier parameters, and improved image classification performance over earlier convolutional architecture designs built mainly from linear convolution stages plus dense heads.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        4,
+        2,
+        1,
+        3
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Hybridization",
+        "Speciation",
+        "Mutation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0042",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets robot learning of object manipulation tasks from only a few human demonstrations, with the goal of reproducing the task under new initial conditions.\n  Mechanism: A learning-from-demonstration method encodes a small set of demonstrations as segmented, parameterized manipulation trajectories over task-relevant state variables and contact events, then extracts spatial constraints, temporal ordering, and robot-centered policy parameters to adapt the skill online to novel situations.\n  Limitation: Because the learned representation is built from a very small number of demonstrations and hand-identified task-relevant variables/primitives, performance is likely sensitive to segmentation quality and may not cover task variations outside the demonstrated structure.\n  Observation: The paper finds that a robot can acquire usable manipulation skills from very few demonstrations by preserving relational task structure such as approach geometry, grasp pose, and placement constraints rather than relying on extensive autonomous exploration.\n\n[Genome 2]\n  Niche: This paper targets robotic manipulation task generalization where a robot must perform a previously unseen task after seeing only a single expert demonstration.\n  Mechanism: One-Shot Imitation Learning uses meta-imitation learning to train a task-conditioned policy that encodes one demonstration with temporal visual/state encoders and correspondence-style attention mechanism, then maps current observations plus the inferred task embedding to actions with optional one-step gradient-based adaptation.\n  Limitation: The method depends on training over a distribution of related tasks and demonstrations, so its one-shot generalization is limited to tasks that are sufficiently similar to those seen during meta-training.\n  Observation: The key finding is that a robot can infer and execute new manipulation objectives from just one demonstration, substantially reducing the number of demonstrations per task compared with prior imitation learning methods.\n\n[Genome 3]\n  Niche: The paper targets long-horizon, high-dimensional dexterous in-hand manipulation with a multi-fingered robotic hand, such as reorienting objects under sparse rewards and contact-rich dynamics.\n  Mechanism: It uses deep reinforcement learning augmented with expert demonstrations by seeding an off-policy replay buffer with demonstration trajectories, applying reward shaping and reset/curriculum design during policy optimization, and using domain randomization to train sim-to-real robust dexterous control policies.\n  Limitation: The approach depends on task-specific engineering such as curated demonstrations, shaped rewards, and carefully designed resets/curricula, which limits how automatic and broadly reusable the method is.\n  Observation: The key finding is that combining demonstrations with reinforcement learning enables successful learning of complex dexterous manipulation behaviors that pure RL or one-shot imitation methods struggle to achieve, while also supporting transfer from simulation to real hardware.\n\n[Genome 4]\n  Niche: This paper targets autonomous acquisition of a robot's own action capabilities and effect-producing behaviors in a mobile manipulation setting without relying on human instruction.\n  Mechanism: A developmental self-exploration method lets the robot execute parameterized motor commands, observe sensory state changes, and incrementally learn predictive and competence-based sensorimotor mappings from actions and conditions to achievable effects and likely success.\n  Limitation: The learned abilities are constrained by the coverage and efficiency of the robot's own exploratory experience, so behaviors not sufficiently sampled or requiring structured guidance may remain poorly modeled.\n  Observation: The study finds that unguided intrinsic exploration can produce a usable affordance-like model that allows the robot to estimate achievable outcomes and select motor behaviors to realize desired effects without demonstration.\n\n[Genome 5]\n  Niche: This paper targets the problem of enabling a robot to acquire task control behavior from observed demonstrations instead of requiring manually programmed controllers.\n  Mechanism: Learning from Demonstration is formulated as recording demonstration trajectories, encoding task-relevant state and action variables, and fitting a policy that maps observed states to motor commands so the robot can autonomously reproduce the demonstrated behavior.\n  Limitation: Its success depends on careful alignment between demonstrations and the robot's controllable state-action representation, plus preprocessing to handle noise and trial-to-trial variability, which limits robustness and generalization.\n  Observation: The paper shows that example trajectories can be converted into executable robot control policies, making it possible to capture practical skills without explicitly hand-specifying the full control logic.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        5,
+        4,
+        1,
+        2,
+        3
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Hybridization",
+        "Speciation",
+        "Hybridization"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0066",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: The paper addresses how ultrashort laser pulses propagate and deposit energy inside bulk semiconductors for in-volume laser writing and internal material modification.\n  Mechanism: It experimentally and analytically characterizes nonlinear pulse propagation across multiple semiconductors, extracts effective high-intensity nonlinear parameters and their temporal scaling laws, and proposes temporal-spectral pulse shaping to improve internal energy deposition.\n  Limitation: The work stops at proposing optimization strategies and foundational parameter extraction rather than demonstrating robust, selective, permanent internal writing across a broad set of semiconductor devices.\n  Observation: The central finding is that filamentation universally governs ultrashort-pulse propagation in diverse semiconductors and that the effective nonlinear parameters under these conditions differ strongly from values measured with low-intensity probes.\n\n[Genome 2]\n  Niche: The paper studies dry elastic microarchitected metainterfaces, focusing on how finite substrate size and asperity microcontact interactions affect the inverse design of target friction laws via normal contact behavior.\n  Mechanism: It uses full 3D finite element simulations to test the common design assumptions that asperities act independently and are supported by a linear elastic half-space, while systematically varying asperity layout, spacing, and base size.\n  Limitation: The paper is limited by relying on numerical assessment of normal-contact-based friction surrogates for dry elastic systems rather than directly solving broader frictional, material, or dynamic contact behaviors in experiments.\n  Observation: The study finds that the existing metainterface design strategy remains valid in the experimental regimes previously used, but breaks down when asperities are too strongly coupled or the supporting elastic base is not large enough to approximate a half-space.\n\n[Genome 3]\n  Niche: Designing quantum LDPC hypergraph product codes with improved logical error rates, qubit overhead, and hardware-friendly structure for trapped-ion QCCD implementations.\n  Mechanism: The paper restricts hypergraph product constructions to products involving cyclic codes, performs exhaustive search over C2 and CxR families under these global symmetries, and exploits the resulting cyclic structure to build a constant-depth planar syndrome-extraction layout.\n  Limitation: The gains come with larger block lengths and the study is confined to cyclic-code-based HGP families rather than more general quantum LDPC constructions.\n  Observation: C2 and CxR codes found by exhaustive search can significantly outperform previously optimized HGP codes, with up to three orders of magnitude lower logical error rate per logical qubit and in some cases better overhead-error tradeoffs than bivariate bicycle codes.\n\n[Genome 4]\n  Niche: This paper addresses how slow-light optical vector vortices carrying opposite circular polarizations and opposite OAM charges propagate through a coherently prepared four-level tripod atomic medium.\n  Mechanism: It models a weak vector-vortex probe interacting with a tripod system whose two ground states are initially in coherent superposition and whose third ground state is driven by a stronger non-OAM control field, enabling phase-dependent OAM-to-medium coherence mapping and tunable slow-light evolution.\n  Limitation: The work appears limited to an idealized linear-regime theoretical treatment without experimental validation and may not capture nonlinearities, disorder, decoherence, or practical beam imperfections in real media.\n  Observation: The analysis predicts that the mapped OAM creates symmetric azimuthal absorption, reduced overall loss, complementary gain and absorption between circular components at small detuning, periodic polarization conversion during propagation, and eventual petal-like stationary intensity patterns with stabilized polarization.\n\n[Genome 5]\n  Niche: The paper studies how to identify operating regimes that maximize performance in quantum reservoir computing using many-body quantum dynamics, specifically in the Sachdev-Ye-Kitaev model.\n  Mechanism: It implements quantum reservoir computing on the Sachdev-Ye-Kitaev model and analyzes task performance as a function of evolution time and system parameters relative to spectral signatures of integrability, chaos, and the Thouless time.\n  Limitation: The study is limited by its focus on a specific model system and does not establish how broadly the identified edge-of-chaos principle transfers to other quantum reservoirs, tasks, or experimentally realistic settings.\n  Observation: Reservoir performance is strongly enhanced near two boundaries: around the Thouless-time crossover to random-matrix behavior and near the parameter transition between integrable and chaotic many-body regimes.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        3,
+        2,
+        4,
+        5
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Speciation"
+      ]
+    }
+  },
+  {
+    "instance_id": "T2-01_ordering_5_0044",
+    "task_type": "T2-01_ordering_5",
+    "prompt": "Below are 5 genome descriptions from a single research lineage, in RANDOM order.\n\n[Genome 1]\n  Niche: This paper targets the problem of identifying and mitigating unequal decision outcomes across protected groups in scoring, ranking, and threshold-based selection systems.\n  Mechanism: A disparate-impact analysis framework evaluates fairness by comparing group-level selection rates and acceptance probabilities, then studies mitigation through constrained rules, threshold adjustment, and post hoc auditing rather than by changing the predictive model itself.\n  Limitation: Because the work is primarily conceptual and legal-analytic, it does not provide a single fully specified optimization procedure or broad empirical benchmark demonstrating how the proposed interventions trade off fairness and utility in practice.\n  Observation: The paper shows that facially neutral decision rules optimized for standard utility can still generate substantial group disparities because historical data and proxy variables encode structural inequities, so omitting protected attributes alone does not prevent discrimination.\n\n[Genome 2]\n  Niche: This paper targets the problem of defining and enforcing fairness in supervised binary classification for protected groups when decisions allocate beneficial outcomes.\n  Mechanism: The method introduces equality of opportunity, a fairness constraint requiring equal true positive rates across protected groups conditional on the true label being positive, and analyzes satisfying it via group-specific thresholds on calibrated risk scores.\n  Limitation: The framework is tailored to settings where fairness is primarily about access for truly qualified positives, so it does not by itself address harms arising from unequal false positive rates unless the stronger equalized-odds variant is imposed.\n  Observation: The paper finds that enforcing parity only on true positive rates can better preserve predictive utility and avoid the distortions of demographic parity, while still addressing unfair denial of beneficial outcomes across groups.\n\n[Genome 3]\n  Niche: This paper targets detecting and mitigating disparate impact in predictive decision-making when protected attributes are omitted but may still be encoded in other features.\n  Mechanism: It introduces a certify-and-repair preprocessing method that tests disparate impact by measuring how accurately the protected class can be inferred from non-protected features, then optimizes a transformed representation—via rank-preserving distributional repair for ordered attributes—to reduce that predictability while retaining task utility.\n  Limitation: The repair procedure is most concrete for ordered or numerical features through rank-based mappings, making the method less directly specified for complex categorical or unstructured representations.\n  Observation: The paper's key insight is that a representation is vulnerable to proxy discrimination precisely when protected-group membership remains predictable from ostensibly neutral variables, and reducing that predictability can lower disparate impact while preserving useful signal.\n\n[Genome 4]\n  Niche: This paper targets the problem of mitigating socially problematic gender bias encoded in pretrained word embeddings while preserving useful semantic structure.\n  Mechanism: The hard-debiasing method estimates a low-dimensional gender bias subspace from definitional male–female word pairs, then neutralizes designated gender-neutral words by projecting out that subspace and equalizes selected gendered word pairs so they are symmetrically positioned relative to the gender direction.\n  Limitation: The approach depends on manually specifying definitional versus neutral words and a binary bias direction, making it sensitive to curated word lists and less suited to subtle, contextual, or non-binary forms of bias.\n  Observation: The study finds that common distributional embeddings encode strong gender stereotypes in analogy and neighborhood structure, and that much of this bias can be reduced by post-processing without retraining the embeddings.\n\n[Genome 5]\n  Niche: This paper targets the problem of defining and enforcing fairness in classification and ranking decisions at the level of individuals rather than only protected groups.\n  Mechanism: Fairness Through Awareness imposes a Lipschitz-style individual fairness constraint requiring that a randomized decision rule map nearby individuals under a task-specific similarity metric to similar outcome distributions while optimizing utility subject to that constraint.\n  Limitation: The framework depends critically on an externally provided, normatively valid task-specific similarity metric, but the paper does not solve how to construct, validate, or contest that metric in practice.\n  Observation: The paper's key insight is that if a suitable similarity metric is specified, then treating similar individuals similarly can provide a principled fairness guarantee and can under certain conditions also bound disparities between protected groups.\n\nArrange the genomes in chronological order (earliest → latest).\n\nAnswer with exactly one line:\nOrder = [first_genome_number, second_genome_number, third_genome_number, fourth_genome_number, fifth_genome_number]",
+    "choices": {},
+    "gold_answer": {
+      "correct_order": [
+        1,
+        5,
+        3,
+        2,
+        4
+      ]
+    },
+    "metadata": {
+      "baseline": "0.0013%",
+      "n_genomes": 5,
+      "capability": "Inheritance Tracing",
+      "original_task_type": "L1-1_pure_ordering",
+      "display_title": "Five-Genome Lineage Reconstruction"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "calibrated_core",
+    "capability_axis": "directional_lineage",
+    "diagnostic_gold": {
+      "correct_dynamics": [
+        "Speciation",
+        "Speciation",
+        "Speciation",
+        "Hybridization"
+      ]
+    }
+  }
+]

@@ -1,0 +1,165 @@
+{
+  "trace_id": "cs_AgentFramework",
+  "domain": "cs",
+  "direction": "AgentFramework",
+  "subfield": "LLM Agents / Agentic AI",
+  "frontier_justification": "LLM agent frameworks are evolving rapidly in 2025-2026 toward production-grade, multi-agent, long-horizon systems. SWE-agent, OpenDevin, and Claude Computer Use define the current frontier of autonomous software engineering and computer use.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "year": 2023,
+      "venue": "ICLR 2023",
+      "arxiv_id": "2210.03629",
+      "paper_type": "research",
+      "key_contribution": "ReAct: interleaves reasoning traces and tool-use actions in the LLM context; Thought→Action→Observation loop enables complex multi-step task completion.",
+      "idea_genome": {
+        "problem_genome": "LLMs can either reason (CoT) or act (tool use) but not synergistically integrate both in a principled loop.",
+        "mechanism_genome": "ReAct prompt: chain Thought (reasoning), Action (tool call with args), Observation (result) in the context; LLM generates next thought based on observations.",
+        "observation_genome": "ReAct outperforms chain-of-thought alone on HotpotQA (+6%), Fever (+4%), and interactive task completion; interpretable reasoning traces.",
+        "limitation_genome": "No memory across episodes; single-agent; cannot learn from feedback; error propagation in long action sequences; no structured reflection."
+      }
+    },
+    {
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "year": 2023,
+      "venue": "NeurIPS 2023",
+      "arxiv_id": "2303.11366",
+      "paper_type": "research",
+      "key_contribution": "Reflexion: agent verbally reflects on task failures and stores reflections in episodic memory; enables improvement over multiple trials without gradient updates.",
+      "idea_genome": {
+        "problem_genome": "ReAct agents repeat same errors across episodes; no mechanism to learn from failure without expensive model fine-tuning.",
+        "mechanism_genome": "After each episode: evaluator judges success/failure; reflector generates verbal analysis of errors; store in episodic memory; next episode uses memory in prompt.",
+        "observation_genome": "Reflexion achieves 91% on HumanEval coding (vs 80% CoT); significantly improves over multiple trials on sequential decision-making tasks.",
+        "limitation_genome": "Memory grows unboundedly; reflection quality depends on evaluator accuracy; single-agent; no collaboration; memory not persistent across sessions."
+      }
+    },
+    {
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "year": 2024,
+      "venue": "arXiv 2024 / NeurIPS 2024",
+      "arxiv_id": "2405.15793",
+      "paper_type": "research",
+      "key_contribution": "SWE-agent: designs Agent-Computer Interface (ACI) with specialized file editing, bash commands, and context management; resolves 12.5% of SWE-bench issues.",
+      "idea_genome": {
+        "problem_genome": "Reflexion-based agents lack proper interfaces for software engineering: need file navigation, code editing, test execution at repository scale.",
+        "mechanism_genome": "ACI: specialized commands (open, scroll, search_file, edit); command history in context; linting feedback on edits; bash subprocess integration.",
+        "observation_genome": "SWE-agent resolves 12.47% of SWE-bench (real GitHub issues) with Claude 3.5 Sonnet; best single-agent on benchmark at release.",
+        "limitation_genome": "Single-agent struggles on large codebases; no parallel execution; no long-term memory; requires complete task specification in context."
+      }
+    },
+    {
+      "title": "AutoGen: Enabling Next-Generation LLM Applications via Multi-Agent Conversation",
+      "year": 2024,
+      "venue": "ICLR 2024 LLM Agents Workshop (Best Paper)",
+      "arxiv_id": "2308.08155",
+      "paper_type": "research",
+      "key_contribution": "AutoGen: multi-agent conversation framework where specialized agents (assistant, code executor, critic) communicate via structured conversation to solve complex tasks.",
+      "idea_genome": {
+        "problem_genome": "Single-agent systems (SWE-agent) bottleneck on complex tasks requiring planning, execution, and verification simultaneously.",
+        "mechanism_genome": "Agents with defined roles (AssistantAgent, UserProxyAgent, GroupChatManager) communicate through a shared conversation buffer; code execution in sandbox.",
+        "observation_genome": "AutoGen enables multi-agent workflows for math, coding, data analysis; demonstrably solves tasks that single agents cannot; widely adopted (>100K stars).",
+        "limitation_genome": "Inter-agent communication overhead; agents can get stuck in loops; no principled role assignment; scalability to many agents unclear."
+      }
+    },
+    {
+      "title": "OpenDevin: An Open Platform for AI Software Developers as Generalist Agents",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "2407.16741",
+      "paper_type": "research",
+      "key_contribution": "OpenDevin (now OpenHands): open-source platform unifying SWE-agent's ACI with AutoGen's multi-agent framework; sandbox environment with browser + bash + file system.",
+      "idea_genome": {
+        "problem_genome": "SWE-agent (single-agent) and AutoGen (multi-agent, no ACI) are separate; need unified open platform combining ACI, multi-agent, and diverse computer use.",
+        "mechanism_genome": "Event-driven multi-agent architecture; sandbox with Docker isolation; CodeAct framework: code as actions; delegates to specialist sub-agents.",
+        "observation_genome": "OpenDevin achieves 26.7% on SWE-bench with CodeAct; 28.8% on SWE-bench verified; broad task coverage including web browsing and file editing.",
+        "limitation_genome": "Docker overhead; still fails on >50% of SWE-bench issues; long-horizon planning remains brittle; communication protocol between agents not standardized."
+      }
+    },
+    {
+      "title": "SWE-World: Building Software Engineering Agents in Docker-Free Environments",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "arxiv_id": "2602.03419",
+      "paper_type": "research",
+      "key_contribution": "Replaces physical Docker execution sandbox with LLM surrogate that simulates test feedback; enables Docker-free SFT and RL training for SE agents; raises Qwen2.5-Coder-32B on SWE-bench Verified from 6.2% to 52.0% via SFT, 55.0% with RL, and 68.2% with test-time scaling.",
+      "idea_genome": {
+        "problem_genome": "OpenDevin requires Docker for physical code execution; Docker overhead limits training throughput; scaling RL training for SE agents requires millions of execution calls infeasible at physical execution speed.",
+        "mechanism_genome": "LLM-based surrogate environment trained on actual agent-interaction data to predict execution outcomes and test results; enables agent training without costly Docker setup; test-time scaling via simulated evaluation of candidate solutions.",
+        "observation_genome": "Docker-free SFT achieves 52.0%, Docker-free RL achieves 55.0%, and TTS achieves 68.2% on SWE-bench Verified — a 62-point gain from the 6.2% baseline.",
+        "limitation_genome": "Simulated environment diverges from real execution for complex multi-file refactors; agent-environment gap grows with task complexity; no mechanism for the agent and environment model to co-evolve."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Reflexion adds verbal reinforcement and episodic memory to ReAct's action loop; same Thought-Action-Observation structure, new self-improvement mechanism."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Reflexion's reflection mechanism applied to software engineering domain with specialized ACI; adapts the agent feedback loop to repository-scale coding tasks."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "AutoGen shifts from single-agent with specialized interface to multi-agent conversation paradigm; role-based agent specialization is a fundamentally different architectural approach."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Hybridization",
+      "evolution_focus": "OpenDevin hybridizes SWE-agent's specialized ACI (single-agent) with AutoGen's multi-agent conversation framework into a unified open-source platform."
+    },
+    {
+      "from_idx": 4,
+      "to_idx": 5,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "SWE-World replaces physical Docker execution environment with a learned world model surrogate; paradigm shift from agents operating in real execution environments to agents trained and tested in simulated world models."
+    }
+  ],
+  "open_question": "SWE-World achieves 68.2% on SWE-bench via learned environment simulation, but the simulated environment diverges from real execution for complex multi-file refactors. What mechanism would enable a continuously self-improving agent-environment co-evolution — where the agent's failures update the environment model and the improved environment produces better agent training signal?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in LLM Agents / Agentic AI."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 6 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Mutation": 1,
+    "Adaptive Radiation": 1,
+    "Speciation": 2,
+    "Hybridization": 1
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "SWE-World: Building Software Engineering Agents in Docker-Free Environments",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "identifier": "2602.03419",
+      "unresolved_gap": "Simulated environment diverges from real execution for complex multi-file refactors; agent-environment gap grows with task complexity; no mechanism for the agent and environment model to co-evolve.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

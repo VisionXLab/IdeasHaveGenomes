@@ -1,0 +1,245 @@
+{
+  "trace_id": "medicine_MedicalFoundationModels",
+  "domain": "medicine",
+  "direction": "MedicalFoundationModels",
+  "subfield": "Clinical AI / Medical Large Language Models",
+  "frontier_justification": "Medical foundation models have progressed from domain-specific biomedical GPT pretraining (BioGPT, 2022) through passing medical licensing exams (Med-PaLM, 2023) and open-source medical LLMs (PMC-LLaMA, Meditron, 2023) to multimodal clinical reasoning (Med-Gemini, 2024) and real-world clinical deployment (AMIE prospective study, 2026). This trajectory represents the fastest-moving frontier in clinical AI, with Google, Microsoft, open-source communities, and EPFL racing to build models that can serve as autonomous diagnostic assistants.",
+  "verified": true,
+  "papers": [
+    {
+      "title": "BioGPT: Generative Pre-trained Transformer for Biomedical Text Generation and Mining",
+      "year": 2022,
+      "venue": "Briefings in Bioinformatics 2022",
+      "arxiv_id": "2210.10341",
+      "paper_type": "research",
+      "key_contribution": "BioGPT: first domain-specific generative pre-trained Transformer for biomedical text, pre-trained on 15 million PubMed abstracts; achieves 78.2% on PubMedQA and state-of-the-art on biomedical relation extraction tasks, demonstrating the value of domain-specific generative pretraining for biomedicine.",
+      "idea_genome": {
+        "problem_genome": "General-purpose language models lack deep biomedical knowledge; existing biomedical NLP models (BioBERT, PubMedBERT) are encoder-only and cannot generate text, limiting their utility for tasks like biomedical text generation, question answering, and document summarization.",
+        "mechanism_genome": "GPT-2 medium architecture (347M parameters, 24 layers, 1024 hidden units) pre-trained from scratch on 15 million PubMed abstracts; uses autoregressive language modeling objective specifically on biomedical literature to learn domain-specific knowledge and generation capabilities.",
+        "observation_genome": "BioGPT achieves 78.2% accuracy on PubMedQA, 44.98% F1 on BC5CDR relation extraction, and strong performance on KD-DTI and DDI extraction tasks; demonstrates that domain-specific generative pretraining yields superior biomedical NLP performance compared to general-purpose models.",
+        "limitation_genome": "Relatively small model (347M parameters) compared to general LLMs; pre-trained only on PubMed abstracts without clinical notes or medical textbooks; cannot handle clinical question answering or medical licensing exams; no instruction tuning or alignment for interactive use."
+      }
+    },
+    {
+      "title": "Large language models encode clinical knowledge",
+      "year": 2023,
+      "venue": "Nature 2023",
+      "arxiv_id": "2212.13138",
+      "paper_type": "research",
+      "key_contribution": "Med-PaLM: first LLM to surpass the passing threshold on USMLE-style questions (67.6% on MedQA); introduces MultiMedQA benchmark and instruction prompt tuning for medical domain alignment.",
+      "idea_genome": {
+        "problem_genome": "General-purpose LLMs perform poorly on medical question answering due to lack of clinical knowledge alignment; no comprehensive benchmark existed to evaluate LLMs across diverse medical QA tasks from professional, research, and consumer perspectives.",
+        "mechanism_genome": "Flan-PaLM (540B parameter instruction-tuned LLM) combined with instruction prompt tuning — a parameter-efficient method that learns soft prompts from a few medical exemplars to align the model to the clinical domain without full fine-tuning.",
+        "observation_genome": "Flan-PaLM achieves 67.6% on MedQA (USMLE), surpassing prior state-of-the-art by 17%; Med-PaLM (with prompt tuning) generates answers that approach clinician quality on open-ended questions but still fall short on factuality and reasoning axes.",
+        "limitation_genome": "Text-only model cannot interpret medical images (radiology, pathology, dermatology); single-turn QA format does not capture real clinical dialogue; answers sometimes contain factual inaccuracies and incomplete reasoning chains; closed-source model."
+      }
+    },
+    {
+      "title": "Capabilities of GPT-4 on Medical Challenge Problems",
+      "year": 2023,
+      "venue": "arXiv 2023",
+      "arxiv_id": "2303.13375",
+      "paper_type": "research",
+      "key_contribution": "First systematic evaluation of GPT-4 on medical challenge problems; GPT-4 exceeds the USMLE passing score by over 20 points without any specialized prompt crafting, outperforming both GPT-3.5 and domain-fine-tuned models like Med-PaLM, demonstrating that scale alone can encode substantial clinical knowledge.",
+      "idea_genome": {
+        "problem_genome": "Med-PaLM showed that specialized prompt tuning of large models could achieve passing-level medical performance, but it remained unclear whether general-purpose frontier models at sufficient scale could encode clinical knowledge without any medical-specific training or prompt engineering.",
+        "mechanism_genome": "Zero-shot and few-shot evaluation of GPT-4 (general-purpose LLM) on USMLE practice exams and the MultiMedQA benchmark suite without any medical domain fine-tuning or specialized prompt crafting; systematic comparison against GPT-3.5 and medical-domain models.",
+        "observation_genome": "GPT-4 exceeds USMLE passing score by over 20 points; significantly outperforms GPT-3.5 and Med-PaLM (a model specifically fine-tuned for medicine); demonstrates much better calibration than GPT-3.5 in predicting answer correctness; shows emergent clinical reasoning without medical training.",
+        "limitation_genome": "Evaluated only on multiple-choice benchmarks, not open-ended clinical reasoning or dialogue; closed-source commercial model with unknown training data composition; cannot be adapted or fine-tuned by the research community; no multimodal medical capabilities assessed."
+      }
+    },
+    {
+      "title": "PMC-LLaMA: Towards Building Open-source Language Models for Medicine",
+      "year": 2023,
+      "venue": "arXiv 2023 (later JAMIA 2024)",
+      "arxiv_id": "2304.14454",
+      "paper_type": "research",
+      "key_contribution": "PMC-LLaMA: first open-source medical LLM built by fine-tuning LLaMA on 4.8M biomedical papers and 30K medical textbooks with instruction tuning on 202M tokens; 13B-parameter model surpasses ChatGPT on medical QA benchmarks, democratizing access to medical AI.",
+      "idea_genome": {
+        "problem_genome": "Med-PaLM and GPT-4 demonstrate strong medical capabilities but are closed-source, preventing community adaptation, safety auditing, and deployment in privacy-sensitive healthcare settings; no high-quality open-source medical LLM existed that could compete with proprietary models.",
+        "mechanism_genome": "Domain-adaptive pretraining of LLaMA (7B/13B) on 4.8 million PubMed Central papers and 30K medical textbooks for knowledge injection; followed by instruction tuning on a curated dataset of 202M tokens comprising medical QA, reasoning chains, and conversational dialogues for alignment.",
+        "observation_genome": "PMC-LLaMA-13B surpasses ChatGPT on multiple medical QA benchmarks; ablation studies demonstrate the effectiveness of each component (continued pretraining, instruction tuning, data curation); establishes the open-source medical LLM paradigm adopted by subsequent work.",
+        "limitation_genome": "Significantly smaller than proprietary models (13B vs. hundreds of billions); English-only with limited multilingual medical capability; evaluated on benchmarks rather than real clinical settings; knowledge limited to training data cutoff without retrieval augmentation."
+      }
+    },
+    {
+      "title": "A Study of Generative Large Language Model for Medical Research and Healthcare",
+      "year": 2023,
+      "venue": "npj Digital Medicine 2023",
+      "arxiv_id": "2305.13523",
+      "paper_type": "research",
+      "key_contribution": "GatorTronGPT: 20B-parameter clinical generative LLM trained on 277 billion words including 82 billion words of real clinical notes from 2 million patients; demonstrates that clinical-note-trained LLMs can generate synthetic clinical text indistinguishable from human-written notes by physicians, and synthetic NLP models outperform real-data models.",
+      "idea_genome": {
+        "problem_genome": "Existing medical LLMs (BioGPT, Med-PaLM) were trained primarily on biomedical literature (PubMed) rather than real clinical notes from electronic health records; clinical language has distinct characteristics (abbreviations, structured formats, patient-specific context) that literature-trained models cannot capture.",
+        "mechanism_genome": "GPT-3 architecture scaled to 20 billion parameters; trained from scratch on 277 billion words combining 82 billion words of de-identified clinical text from University of Florida Health (126 departments, 2M patients) with 195 billion words of general English text; evaluated on biomedical NLP tasks and physician Turing tests.",
+        "observation_genome": "GatorTronGPT-generated clinical notes pass physician Turing tests with no significant difference in linguistic readability (p=0.22) or clinical relevance (p=0.91); synthetic NLP models trained on GatorTronGPT-generated text outperform models trained on real clinical text; improves biomedical relation extraction and QA benchmarks.",
+        "limitation_genome": "Trained on data from a single healthcare system (UF Health), potentially limiting generalizability across institutions; 20B parameters still smaller than frontier models; does not handle medical images or multimodal clinical data; requires de-identification infrastructure limiting reproducibility."
+      }
+    },
+    {
+      "title": "MEDITRON-70B: Scaling Medical Pretraining for Large Language Models",
+      "year": 2023,
+      "venue": "arXiv 2023",
+      "arxiv_id": "2311.16079",
+      "paper_type": "research",
+      "key_contribution": "Meditron-70B: largest open-source medical LLM at the time, extending LLaMA-2 70B with domain-adaptive pretraining on 48.1B tokens from PubMed, clinical guidelines, and medical papers; achieves 6% absolute gain over best open-source baseline and outperforms GPT-3.5 and Med-PaLM on medical benchmarks.",
+      "idea_genome": {
+        "problem_genome": "PMC-LLaMA and similar open-source medical LLMs were limited to 13B parameters, significantly underperforming larger proprietary models; the gap between open-source and closed-source medical AI hindered equitable access to medical AI, especially in low-resource healthcare settings.",
+        "mechanism_genome": "Domain-adaptive pretraining of LLaMA-2 (7B and 70B) on GAP-Replay corpus: 48.1 billion tokens from curated PubMed articles, PubMed Central papers, and internationally recognized clinical practice guidelines, combined with 400M tokens of general-domain data for knowledge retention; systematic investigation of pretraining data composition and scale.",
+        "observation_genome": "Meditron-70B achieves 6% absolute performance gain over best public baseline in its parameter class; outperforms GPT-3.5 and Med-PaLM; within 5% of GPT-4 and 10% of Med-PaLM-2; comprehensive ablation demonstrates the importance of data curation, clinical guidelines, and scale for medical LLM performance.",
+        "limitation_genome": "Text-only model with no multimodal capability; performance still lags behind GPT-4 and Med-PaLM-2 on most benchmarks; evaluated primarily on English medical QA; does not support clinical dialogue or conversational diagnostic interaction; no integration with clinical workflows."
+      }
+    },
+    {
+      "title": "Towards Expert-Level Medical Question Answering with Large Language Models",
+      "year": 2023,
+      "venue": "arXiv 2023 (later Nature Medicine 2025)",
+      "arxiv_id": "2305.09617",
+      "paper_type": "research",
+      "key_contribution": "Med-PaLM 2: achieves 86.5% on MedQA (expert-level performance) via PaLM 2 base model improvements, ensemble refinement prompting, and medical domain fine-tuning; reaches physician-level quality on 8 of 9 evaluation axes.",
+      "idea_genome": {
+        "problem_genome": "Med-PaLM's 67.6% accuracy on MedQA remained below expert physician performance (~87%); human evaluation revealed gaps in factuality, reasoning completeness, and potential for harm compared to clinician-generated answers.",
+        "mechanism_genome": "PaLM 2 base model with improved pretraining; ensemble refinement — a novel prompting strategy that generates multiple candidate answers, then synthesizes them into a refined final response; combined with medical domain fine-tuning on curated clinical datasets.",
+        "observation_genome": "Med-PaLM 2 achieves 86.5% on MedQA, approaching expert physician level; physician evaluation rates it as equivalent to physicians on 8 of 9 axes; performance gains on MedMCQA, PubMedQA, and MMLU clinical topics; 19% absolute improvement over Med-PaLM.",
+        "limitation_genome": "Still text-only with no multimodal capability; evaluated primarily on multiple-choice benchmarks rather than open-ended clinical scenarios; ensemble refinement adds inference cost; does not engage in multi-turn diagnostic dialogue."
+      }
+    },
+    {
+      "title": "Capabilities of Gemini Models in Medicine",
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "arxiv_id": "2404.18416",
+      "paper_type": "research",
+      "key_contribution": "Med-Gemini: family of multimodal medical models built on Gemini that integrate text, images, and web search; achieves state-of-the-art on 10 of 14 medical benchmarks and surpasses GPT-4V by 44.5% on multimodal tasks.",
+      "idea_genome": {
+        "problem_genome": "Med-PaLM 2 achieves expert-level text QA but cannot process medical images (X-rays, pathology slides, dermatology photos) or leverage real-time clinical knowledge from the web; clinical decision-making inherently requires multimodal reasoning.",
+        "mechanism_genome": "Gemini multimodal foundation model fine-tuned for medicine with custom medical encoders for novel modalities (e.g., genomics, ECG); integrates native web search for real-time medical knowledge retrieval; long-context reasoning over extended clinical records.",
+        "observation_genome": "Med-Gemini achieves state-of-the-art on 10 of 14 medical benchmarks; surpasses GPT-4V by 44.5% average relative margin on 7 multimodal benchmarks including NEJM Image Challenges; demonstrates emergent clinical reasoning capabilities with web search grounding.",
+        "limitation_genome": "Evaluated on benchmarks rather than real-world clinical deployments; closed-source commercial model limiting reproducibility; multimodal integration still processes each modality somewhat independently rather than true cross-modal fusion; no real-time patient interaction capability."
+      }
+    },
+    {
+      "title": "Towards conversational diagnostic artificial intelligence",
+      "year": 2025,
+      "venue": "Nature 2025",
+      "arxiv_id": "2401.05654",
+      "paper_type": "research",
+      "key_contribution": "AMIE (Articulate Medical Intelligence Explorer): LLM-based conversational diagnostic AI optimized for multi-turn clinical dialogue; outperforms primary care physicians on 30 of 32 specialist evaluation axes and 25 of 26 patient-actor axes in a randomized crossover study.",
+      "idea_genome": {
+        "problem_genome": "Med-Gemini and Med-PaLM 2 excel at single-turn QA benchmarks but real clinical practice requires multi-turn diagnostic dialogue — history taking, differential diagnosis generation, and shared decision-making through conversation; no prior AI system had been systematically optimized and evaluated for this.",
+        "mechanism_genome": "Self-play based simulated dialogue environment for large-scale training on diverse clinical scenarios; automated feedback mechanisms for iterative self-improvement; dialogue-specific fine-tuning on clinical communication skills including empathy, thoroughness, and information gathering.",
+        "observation_genome": "In a randomized double-blind crossover study with 149 clinical scenarios and 20 PCPs, AMIE was rated superior on 30 of 32 specialist axes and 25 of 26 patient-actor axes; demonstrates better diagnostic accuracy, information gathering, and communication quality than board-certified physicians in text-based consultations.",
+        "limitation_genome": "Evaluation conducted in simulated text-based consultations with actor patients, not real clinical encounters; does not handle physical examination or procedural guidance; text-only format excludes the multimodal reality of clinical practice; no prospective clinical validation."
+      }
+    },
+    {
+      "title": "A prospective clinical feasibility study of a conversational diagnostic AI in an ambulatory primary care clinic",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "arxiv_id": "2603.08448",
+      "paper_type": "research",
+      "key_contribution": "First prospective clinical feasibility study of conversational diagnostic AI (AMIE) deployed with 100 real patients in ambulatory primary care; achieves 90% diagnostic accuracy with no safety interventions required, demonstrating clinical viability.",
+      "idea_genome": {
+        "problem_genome": "AMIE demonstrated superiority over PCPs in simulated consultations, but the critical gap between simulated evaluation and real-world clinical deployment remained unaddressed; no prior study had prospectively tested a conversational diagnostic AI with actual patients in a clinical setting.",
+        "mechanism_genome": "Prospective single-center feasibility study at Beth Israel Deaconess Medical Center; 100 adult patients complete pre-visit AMIE text-chat interactions up to 5 days before appointments; real-time human safety monitoring; blinded comparison of AMIE vs. PCP differential diagnoses and management plans; 8-week post-encounter chart review for ground truth.",
+        "observation_genome": "AMIE differential diagnosis includes the final diagnosis in 90% of cases (75% top-3 accuracy); blinded assessment shows similar overall quality to PCP diagnoses (p=0.6); patient satisfaction is high and attitudes toward AI improve significantly (p<0.001); no safety interventions needed during any consultation.",
+        "limitation_genome": "Single-center study with 100 patients limits generalizability; PCPs outperform AMIE on practicality (p=0.003) and cost-effectiveness (p=0.004) of management plans; text-only interaction misses physical examination findings; no integration with electronic health records or clinical decision support systems."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_idx": 0,
+      "to_idx": 1,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Med-PaLM represents a mutation from BioGPT's domain-specific pretraining paradigm: while BioGPT pre-trained a small model on PubMed from scratch, Med-PaLM takes a vastly larger general-purpose LLM (Flan-PaLM 540B) and adapts it to medicine via instruction prompt tuning. Both target biomedical text understanding, but the mechanism evolves from small-scale domain pretraining to large-scale prompt-based alignment, achieving a qualitative leap from literature mining to clinical exam performance."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 2,
+      "taxonomy_type": "Niche Competition",
+      "evolution_focus": "GPT-4's medical evaluation directly competes with Med-PaLM in the same niche of medical QA benchmarks. While Med-PaLM relies on specialized medical prompt tuning, GPT-4 achieves superior performance through sheer scale and general pretraining alone, without any medical-specific adaptation. This niche competition demonstrates that scale can substitute for specialization, pressuring the field to reconsider whether medical fine-tuning is necessary when general models become sufficiently capable."
+    },
+    {
+      "from_idx": 2,
+      "to_idx": 3,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "PMC-LLaMA speciates from the closed-source Med-PaLM lineage into an entirely different ecological niche: open-source medical AI. While Med-PaLM uses proprietary PaLM with prompt tuning, PMC-LLaMA fine-tunes the open-source LLaMA on biomedical literature and medical instructions, creating a reproducible, community-adaptable species. This speciation reflects a fundamental divergence in how medical AI is developed and deployed — from centralized corporate research to distributed open-source collaboration."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 4,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "GatorTronGPT radiates from the biomedical-literature-trained LLM niche into the clinical notes niche. While PMC-LLaMA was trained on published papers and textbooks, GatorTronGPT adapts the medical LLM paradigm to real clinical EHR data — 82 billion words of clinical notes from actual patient encounters. This radiation into the clinical documentation niche produces a model that can generate realistic clinical text and perform clinical NLP tasks that literature-trained models cannot address."
+    },
+    {
+      "from_idx": 3,
+      "to_idx": 5,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Meditron-70B is a direct mutation of the open-source medical LLM paradigm established by PMC-LLaMA: same strategy (domain-adaptive pretraining of LLaMA on medical text + instruction tuning) but scaled dramatically from 13B to 70B parameters and from a few million papers to 48.1 billion tokens of curated medical content including clinical guidelines. The core mechanism is unchanged — what evolves is the scale and data quality, pushing open-source performance within striking distance of GPT-4."
+    },
+    {
+      "from_idx": 1,
+      "to_idx": 6,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "Med-PaLM 2 represents a directed mutation of Med-PaLM: the same research group refines the core approach (medical LLM for QA) by upgrading the base model (PaLM to PaLM 2), introducing ensemble refinement prompting, and adding medical fine-tuning. The problem formulation, evaluation framework (MultiMedQA), and overall architecture remain unchanged — what evolves is the strength of the base model and the sophistication of the prompting strategy, pushing accuracy from 67.6% to 86.5% on MedQA."
+    },
+    {
+      "from_idx": 6,
+      "to_idx": 7,
+      "taxonomy_type": "Adaptive Radiation",
+      "evolution_focus": "Med-Gemini radiates from the text-only medical QA niche into multiple new modalities and capabilities. While Med-PaLM 2 mastered text-based medical question answering, Med-Gemini inherits this capability and diversifies into medical image interpretation (radiology, pathology, dermatology), real-time web search grounding, and long-context clinical reasoning — occupying multiple ecological niches from a single ancestral lineage, much like Darwin's finches adapting to different food sources."
+    },
+    {
+      "from_idx": 7,
+      "to_idx": 8,
+      "taxonomy_type": "Speciation",
+      "evolution_focus": "AMIE represents a speciation event from the Med-Gemini lineage. Rather than continuing to improve benchmark performance across modalities, AMIE diverges into a fundamentally different species of medical AI: conversational diagnostic agents. The ecological niche shifts from static QA to dynamic multi-turn clinical dialogue, requiring entirely new training methodology (self-play simulation), evaluation paradigms (randomized crossover against physicians), and optimization targets (empathy, information gathering, diagnostic reasoning through conversation)."
+    },
+    {
+      "from_idx": 8,
+      "to_idx": 9,
+      "taxonomy_type": "Mutation",
+      "evolution_focus": "The prospective AMIE study is a direct mutation of the original AMIE system — the same model architecture and conversational AI approach is refined and stress-tested in the real-world clinical environment rather than simulated settings. The mutation involves adapting the deployment protocol (adding safety monitoring, pre-visit workflow integration) while the core diagnostic dialogue mechanism remains unchanged. This represents the critical adaptation required for clinical survival: moving from controlled laboratory fitness to environmental fitness in actual patient care."
+    }
+  ],
+  "open_question": "The AMIE prospective study demonstrates feasibility in text-based pre-visit consultations, but real-world clinical AI requires multimodal interaction (interpreting physical signs, reviewing imaging alongside conversation), longitudinal patient relationship management, and integration with electronic health records and clinical workflows. What architectural and training paradigm would enable a medical foundation model to serve as a continuous, multimodal clinical companion that maintains coherent longitudinal patient understanding across encounters while operating safely within existing healthcare systems?",
+  "genesis_settings": {
+    "question": {
+      "name": "Question",
+      "description": "Present only the domain/subfield and the curated May-2026 research question; ask the model to propose a next-step research direction in Clinical AI / Medical Large Language Models."
+    },
+    "library": {
+      "name": "Library",
+      "description": "Present the curated research frontier plus 10 trace papers in random order with paper titles and brief abstracts, but without explicit lineage order, genome fields, or dynamics labels; ask the model to propose the next research direction."
+    },
+    "lineage": {
+      "name": "Lineage",
+      "description": "Present the curated research frontier plus the ordered trace with genome metadata, GenomeDiff-style change evidence, and parent-child relationships; ask the model to predict the next evolutionary step without naming predefined category labels."
+    }
+  },
+  "frontier_year": 2026,
+  "dynamics_distribution": {
+    "Mutation": 4,
+    "Niche Competition": 1,
+    "Speciation": 2,
+    "Adaptive Radiation": 2
+  },
+  "frontier_evidence": [
+    {
+      "role": "latest_lineage_endpoint",
+      "title": "A prospective clinical feasibility study of a conversational diagnostic AI in an ambulatory primary care clinic",
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "identifier": "2603.08448",
+      "unresolved_gap": "Single-center study with 100 patients limits generalizability; PCPs outperform AMIE on practicality (p=0.003) and cost-effectiveness (p=0.004) of management plans; text-only interaction misses physical examination findings; no integration with electronic health records or clinical decision support systems.",
+      "why_frontier": "Used as the May 2026 frontier anchor: the arena question targets a limitation that remains unresolved at the endpoint of this lineage."
+    }
+  ],
+  "frontier_status": {
+    "curated_as_of": "2026-05-05",
+    "status": "open_research_frontier",
+    "manual_review": "Re-audited on 2026-05-05 for appendix release: active arena trace has a 2025/2026 frontier endpoint, a non-solved open research question, valid forward lineage edges, and generation settings aligned with post-hoc dynamics evaluation.",
+    "prompt_role": "The same research question is shown in Question, Library, and Lineage settings; only the supporting literature/lineage context changes."
+  }
+}

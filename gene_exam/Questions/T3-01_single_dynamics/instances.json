@@ -1,0 +1,541 @@
+[
+  {
+    "instance_id": "T3-01_single_dynamics_002",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets the evaluation of whether large language models can perform practically useful software engineering tasks such as code generation, completion, and problem solving.\n Mechanism: Autoregressive code language model evaluation treats source code as a token sequence, trains large next-token predictors on code, and systematically probes them across scales, prompts, and task formats using both open-ended generation and constrained prediction benchmarks.\n Limitation: Because the work mainly provides controlled empirical evaluation rather than a new architecture or training objective, it leaves open which specific modeling or data interventions would most improve semantic correctness and robustness.\n Observation: The study finds that larger code-trained autoregressive models produce more syntactically valid and functionally useful programs, and that few-shot prompt formatting strongly affects performance beyond what token-level metrics predict.\n\n[Genome B (successor)]\n Niche: This paper targets solving difficult competitive programming problems from natural-language statements and example input-output behavior under hidden-test evaluation.\n Mechanism: AlphaCode uses a large autoregressive code model to massively sample candidate programs per task, then filters them through compilation and execution checks, clusters them by behavioral similarity, and ranks a small diverse subset likely to generalize.\n Limitation: The system depends on generating and evaluating an extremely large number of candidate programs, making inference computationally expensive and reliant on strong filtering infrastructure.\n Observation: The paper finds that treating code generation as large-scale search with aggressive execution-based filtering and semantic deduplication enables competition-level performance on realistic programming contests.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Adaptive Radiation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Code Generation and AI for Software Engineering",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_006",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets the large-scale security analysis of client-side postMessage handlers in web applications, focusing on whether cross-origin messages are safely validated before triggering dangerous actions.\n Mechanism: PMForce is a hybrid static-dynamic analysis system that extracts postMessage event listeners, reconstructs their message-processing logic, systematically explores message formats and control-flow paths, and checks end-to-end flows from message receipt through origin validation and sanitization to security-sensitive sinks.\n Limitation: To remain scalable across many sites, PMForce uses approximations for highly dynamic JavaScript behavior and message semantics, which can miss some handlers or imprecisely model complex validation logic.\n Observation: The study finds that many real-world sites contain postMessage handlers with inconsistent or missing origin and data validation, enabling exploitable flows to sensitive browser operations that simpler analyses would overlook.\n\n[Genome B (successor)]\n Niche: This paper targets the detection and characterization of client-side request hijacking vulnerabilities in web applications, where attacker-controlled browser inputs can alter outbound requests.\n Mechanism: It introduces a hybrid client-side request-flow analysis framework that statically traces untrusted inputs through event-driven JavaScript to security-sensitive request-construction sinks and then dynamically validates candidate flows in realistic browser executions to confirm exploitability.\n Limitation: Because exploitability confirmation relies on targeted dynamic validation in realistic browser contexts, the framework may miss vulnerabilities whose triggering conditions or execution paths are not exercised during validation.\n Observation: The study finds that request hijacking is a broader and more varied client-side vulnerability class than previously captured by single-primitive analyses, with exploitability depending on specific combinations of input sources, program transformations, and request sinks.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Adaptive Radiation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_010",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets the problem of specifying complex stochastic models with latent variables and performing inference in a unified, general-purpose framework.\n Mechanism: Probabilistic programming represents a probabilistic model as an executable program with primitives for random choice and conditioning, and performs generic inference over the resulting execution traces using reusable algorithms such as exact, Monte Carlo, MCMC, importance, and variational methods.\n Limitation: As a pedagogical introduction, the paper does not resolve how to guarantee efficient or scalable inference across the full range of highly expressive programs it advocates.\n Observation: The key insight is that treating probabilistic models as programs cleanly separates model specification from inference and greatly expands expressivity to include hierarchy, recursion, control flow, and data-dependent structure.\n\n[Genome B (successor)]\n Niche: This paper targets AI alignment under human values when observed preferences and feedback are incomplete, inconsistent, ambiguous, or context-dependent.\n Mechanism: It proposes a probabilistic-programming alignment framework that models human demonstrations, judgments, critiques, and other weak signals as noisy observations generated by latent normative variables such as goals, constraints, uncertainty, and context-sensitive values, then performs posterior inference over what should be optimized.\n Limitation: The approach depends on explicitly specifying the generative model and normative priors, so its performance and conclusions are sensitive to model misspecification and the chosen assumptions.\n Observation: The key insight is that treating alignment as inference over structured latent normative factors rather than direct preference fitting yields a more expressive and robust representation of conflicting, underspecified, or strategically distorted human feedback.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Adaptive Radiation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Machine Learning",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_011",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets high-throughput visual recognition with transformer architecture-like global modeling under strict memory and latency constraints on modern hardware.\n Mechanism: EfficientViT replaces standard dense multi-head self-attention mechanism with cascaded group attention mechanism, where channels are split into groups and attention mechanism is applied sequentially so later groups reuse information from earlier ones within an efficiency-oriented vision backbone built from hardware-friendly low-memory blocks.\n Limitation: Its efficiency gains depend on a carefully specialized attention mechanism/block design that may restrict the flexibility and full expressiveness of standard global self-attention mechanism, especially outside the targeted deployment regime.\n Observation: The paper finds that reducing memory access and activation movement, not just FLOPs, enables a ViT-style backbone to achieve strong accuracy while substantially improving inference speed and memory efficiency.\n\n[Genome B (successor)]\n Niche: This paper targets efficient and accurate detection of underwater organisms in images with large object scale variation, dense distributions, occlusion, blur, and low-contrast degradation.\n Mechanism: It proposes a dynamic multi-scale underwater detector built on an efficient transformer architecture-style backbone that reduces full self-attention mechanism cost by combining lightweight local feature extraction with selective global context modeling and hierarchical cross-scale feature fusion.\n Limitation: The framework appears specialized to underwater imagery and its gains seem to depend on carefully designed dynamic multi-scale fusion, leaving unclear how well it generalizes to other domains or under more extreme image degradation.\n Observation: The key finding is that explicitly coupling efficient attention mechanism with dynamic multi-scale fusion improves the accuracy-speed trade-off for underwater organism detection, especially for small-target recall.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Adaptive Radiation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Deep Learning",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_014",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets the extraction of secret information from software cryptographic implementations running on shared hardware by exploiting microarchitectural side channels.\n Mechanism: It introduces a cache-timing attack that repeatedly measures access latency to chosen memory locations to detect cache hits and evictions caused by victim secret-dependent table lookups, then statistically maps those cache traces to key-dependent intermediate values.\n Limitation: The attack depends on the adversary being able to run code on the same machine and repeatedly probe shared-cache behavior, so it is less applicable when such co-residency or repeated measurements are unavailable.\n Observation: The key insight is that cache residency patterns reveal secret-dependent memory accesses with much higher resolution and robustness than aggregate execution-time measurements, making practical key recovery feasible on modern processors.\n\n[Genome B (successor)]\n Niche: This paper targets practical secret-key recovery from mainstream software AES implementations by exploiting information leaked through execution-time variation.\n Mechanism: A cache-timing key-recovery attack repeatedly measures end-to-end AES encryption latency for chosen or known inputs and statistically correlates timing differences with candidate key-byte hypotheses via their predicted table-lookup cache behavior.\n Limitation: The attack depends on table-based AES software and a timing environment with enough measurement resolution and sample volume for weak cache effects to be statistically amplified, so it does not directly apply to constant-time or non-table implementations.\n Observation: The key insight is that AES T-table software implementations leak key-dependent timing because secret-influenced table indices determine cache-line residency and thus total encryption time, even when only external timing is observed.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_016",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets understanding and improving the robustness of neural network classifiers to intentionally crafted, small input perturbations that cause misclassification.\n Mechanism: Fast Gradient Sign Method (FGSM): linearize the loss around the input, compute the gradient of the loss with respect to the input, take its elementwise sign, and add a small epsilon-sized perturbation in that direction to generate an approximate worst-case example under an L-infinity constraint, including for adversarial training.\n Limitation: The proposed attack and training procedure are based on a single first-order linearization and primarily target L-infinity-bounded perturbations, so they do not fully address stronger iterative attacks or broader threat models.\n Observation: The paper finds that modern high-dimensional neural networks can be reliably fooled by tiny but targeted perturbations, and that this vulnerability is well explained by local linearity rather than by extreme nonlinearity alone.\n\n[Genome B (successor)]\n Niche: This paper targets understanding why deep neural network classifiers are vulnerable to adversarial perturbations despite strong generalization on natural inputs.\n Mechanism: A first-order linearity analysis explains adversarial examples by modeling modern differentiable classifiers as locally linear in high-dimensional input spaces, where perturbations chosen along the input gradient under a norm bound can accumulate across dimensions to strongly change class scores.\n Limitation: The study is primarily a conceptual and first-order analysis, so it does not provide a concrete training procedure that substantially improves robustness beyond diagnosing why standard models fail.\n Observation: The paper finds that adversarial vulnerability is widespread across architectures and training setups, with gradient-aligned perturbations transferring between separately trained models and causing confident misclassification even when perturbations are tiny.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_018",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets zero-shot generalization to unseen NLP tasks from natural-language task descriptions without requiring task-specific finetuning or in-context examples at inference time.\n Mechanism: Instruction tuning finetunes a large pretrained sequence-to-sequence model on a diverse mixture of heterogeneous NLP datasets reformatted into a unified text-to-text instruction/output format so the model learns to map natural-language instructions directly to task behavior.\n Limitation: The approach depends on access to a broad, manually curated collection of supervised instruction-formatted tasks, leaving open how well it scales to truly novel capabilities or domains not represented in the tuning mixture.\n Observation: A model instruction-tuned on sufficiently diverse tasks can outperform prompting and few-shot exemplar baselines on held-out task families in zero-shot settings while being more robust to prompt formulation.\n\n[Genome B (successor)]\n Niche: This paper targets adapting large language models to reliably follow natural-language instructions and align their outputs with human preferences for helpfulness, relevance, and harmlessness.\n Mechanism: The method combines supervised fine-tuning on human-written instruction demonstrations with reinforcement learning from a learned reward model trained on pairwise human preference rankings, using a KL penalty to keep the policy close to the supervised model during policy optimization.\n Limitation: The approach depends on expensive and potentially narrow human annotation and reward-model supervision, so the learned behavior is constrained by annotator preferences and can inherit reward-model imperfections.\n Observation: The authors find that this two-stage alignment pipeline produces outputs that humans prefer over standard few-shot prompted pretrained models, with better instruction following, concision, and safer refusals.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Machine Learning",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_019",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets the problem of extracting secrets from isolated or protected code during transient execution, especially in trusted-execution environments such as enclaves.\n Mechanism: LVI is a transient-execution attack that induces faults or assists on victim loads and arranges microarchitectural state so attacker-controlled stale values are forwarded into the victim’s transient dataflow, which is then used to encode secrets into side channels such as the cache.\n Limitation: The attack depends on creating specific fault/assist conditions and precise microarchitectural forwarding states at suitable victim load sites, which constrains exploitability and makes deployment highly platform- and code-path-dependent.\n Observation: The key insight is that before a faulting or assist-generating load is architecturally resolved, dependent transient instructions can consume injected microarchitectural values and thereby leak victim secrets even from enclave-like protected regions.\n\n[Genome B (successor)]\n Niche: This paper targets understanding how speculative and transient execution attacks compromise the confidentiality guarantees of Intel SGX enclaves.\n Mechanism: It introduces a systematic taxonomy-driven analysis that classifies SGX-breaking attacks by root cause, transient trigger, leakage channel, attacker capability, and violated protection boundary, and maps generic transient-execution primitives onto enclave-specific interfaces such as entry, exit, exceptions, memory accesses, and page management.\n Limitation: Because the work is primarily a structured retrospective analysis rather than a new defense or formal model, it does not itself validate comprehensive mitigations or guarantee coverage of future SGX attack variants beyond the surveyed taxonomy.\n Observation: The study finds that many seemingly distinct SGX attacks reduce to a small set of recurring microarchitectural mechanisms—such as branch misprediction, fault-assisted transient execution, cache disclosure, and machine-clear-induced transient windows—that repeatedly expose enclave state across different threat surfaces.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_022",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets low-level image restoration tasks such as super-resolution, denoising, and compression artifact reduction.\n Mechanism: SwinIR uses a hierarchical Swin transformer architecture restoration network that performs self-attention mechanism within non-overlapping local windows, alternates shifted-window attention mechanism across layers for cross-window communication, and combines this deep transformer architecture trunk with residual connections, shallow feature extraction, and task-specific reconstruction heads.\n Limitation: Because SwinIR restricts attention mechanism to local windows and relies on shifted-window propagation rather than true global attention mechanism, long-range interactions are only captured indirectly and may remain suboptimal for very large spatial dependencies.\n Observation: The paper finds that shifted local-window transformer architecture attention mechanism models both local textures and longer-range spatial dependencies more effectively than prior convolution-dominant restoration networks while remaining computationally practical for high-resolution images.\n\n[Genome B (successor)]\n Niche: This paper targets efficient single-image super-resolution under realistic deployment constraints where image quality must be balanced against runtime, model size, and practical inference cost.\n Mechanism: It introduces a unified NTIRE challenge benchmark and comparative analysis framework that evaluates lightweight super-resolution entries with multi-objective metrics and categorizes their recurring design patterns such as hierarchical feature extraction, attention mechanism or gating, re-parameterizable convolutions, compact upsampling, hybrid local-global context, and inference-time simplification.\n Limitation: Because the work is a challenge report synthesizing submitted systems under one benchmark, it does not isolate the causal contribution of each architectural choice through controlled ablations across methods.\n Observation: The key finding is that top-performing efficient super-resolution systems consistently occupy a quality-efficiency trade-off frontier by combining lightweight hierarchical backbones with selective feature modulation and deployment-oriented simplifications rather than maximizing reconstruction fidelity alone.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Vision",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_023",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: The paper targets automatic acquisition of hyponym–hypernym relations for building lexical taxonomies from unrestricted large text corpora.\n Mechanism: It uses high-precision lexico-syntactic pattern matching over shallowly parsed text to detect noun phrases in diagnostic constructions like 'such as,' 'including,' appositives, and enumerations, then converts those contexts into candidate hyponym–hypernym pairs.\n Limitation: Because the method only harvests relations expressed in a narrow set of explicit high-precision patterns, it misses many valid hyponym links that are not stated in those forms and therefore has limited recall.\n Observation: The key insight is that a small set of recurring surface constructions in natural text provides reliable direct evidence of taxonomic relations, enabling precise extraction without deep semantic analysis or handcrafted ontologies.\n\n[Genome B (successor)]\n Niche: This paper targets sentence-level semantic relation extraction between pairs of entities mentioned in text.\n Mechanism: The shortest path dependency kernel computes similarity between candidate entity pairs by extracting the shortest dependency path between them in a parsed sentence and applying a structured kernel over the sequence of path nodes and dependency edges annotated with lexical, POS, and dependency-label information.\n Limitation: Because the method only models the shortest dependency path in a single dependency parse, it can miss relation cues expressed outside that path or be degraded by parsing errors and path-selection mistakes.\n Observation: The key insight is that the shortest dependency path between two entities concentrates most of the syntactic evidence needed to identify their semantic relation while filtering out much irrelevant sentence context.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Natural Language Processing",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_029",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets automatic repair of buggy programs using only a faulty program and a test suite as the correctness criterion.\n Mechanism: It introduces a genetic-programming-based repair method that evolves populations of source-level program variants by deleting, inserting, or replacing suspicious statements with code fragments reused from elsewhere in the same program, scoring candidates by compilation success and test-suite performance.\n Limitation: Because candidate correctness is judged only by the available tests, the method can return patches that merely satisfy the test suite without guaranteeing true semantic correctness.\n Observation: The paper finds that restricting edits to fault-localized suspicious code and reusing existing in-program statements enables the search to discover test-passing patches for real defects more effectively than unguided or manual alternatives.\n\n[Genome B (successor)]\n Niche: This paper targets automatic repair of buggy software programs using only the program source and a test suite as the correctness criterion.\n Mechanism: GenProg uses genetic programming to search over source-level program variants generated by mutating fault-localized statements with delete, insert, and replace edits that copy existing code fragments, scoring candidates by how many tests they pass.\n Limitation: Because repair correctness is defined only by the available test suite, the system can return patches that satisfy observed tests without guaranteeing true semantic correctness beyond those cases.\n Observation: The paper finds that test-suite-guided evolutionary search over plausible code reuse edits can automatically produce nontrivial patches for real defects without requiring formal specifications or hand-written fix rules.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Software Engineering",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_031",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets benchmarked removal of raindrop degradations from paired dual-focused images captured in both daytime and nighttime conditions.\n Mechanism: It formulates restoration as a dual-image raindrop removal benchmark where methods must align and fuse complementary information from two differently focused contaminated inputs under a standardized train/test evaluation protocol.\n Limitation: Because the work is primarily a challenge benchmark and results report, it does not itself resolve how to robustly handle the hardest combined cases of localized droplet occlusion, defocus mismatch, glare, low contrast, and sensor noise at night.\n Observation: The study finds that exploiting complementary focus cues from paired inputs improves recovery of clean scene content across heterogeneous day/night conditions, while revealing tradeoffs between distortion-based fidelity and perceptual quality strategies.\n\n[Genome B (successor)]\n Niche: This paper targets benchmark-based evaluation of real-world face restoration under severe, mixed, and unconstrained degradations encountered in practical image capture.\n Mechanism: The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors, with multi-scale fusion, facial-component emphasis, and perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details.\n Limitation: Because the study is challenge-driven and comparative rather than a single controlled method paper, it leaves unresolved which individual design choices most causally drive gains and how to best balance fidelity, realism, efficiency, and cross-degradation generalization.\n Observation: Across the NTIRE 2026 benchmark, synthesis-guided restoration with generative priors and perceptual-semantic objectives consistently outperforms purely pixel-wise regression by producing sharper, more realistic, and more degradation-robust face reconstructions.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Vision",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_033",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets making GPUs broadly effective for general-purpose parallel computing workloads, especially irregular, memory-intensive, and high-performance scientific applications.\n Mechanism: Fermi is a many-core CUDA architecture that scales streaming multiprocessors while adding coherent hardware-managed caches, configurable on-chip local memory, improved warp scheduling, stronger atomics and concurrency, ECC memory, and much higher double-precision capability.\n Limitation: Despite broadening applicability, the architecture still fundamentally inherits SIMT execution behavior, so performance remains sensitive to thread divergence and irregular access patterns rather than eliminating those costs.\n Observation: The key insight is that adding a coherent cache hierarchy and stronger architectural support for irregular control flow, scattered memory access, and numerical precision substantially expands GPU usefulness beyond traditional throughput-oriented kernels.\n\n[Genome B (successor)]\n Niche: This paper targets understanding which classes of general-purpose applications achieve high performance on CUDA-programmed GPUs and which do not.\n Mechanism: It uses a systematic empirical workload characterization methodology that implements representative kernels and applications in CUDA and analyzes their behavior under the GPU execution model, including thread grouping, shared memory use, memory access regularity, branch divergence, latency hiding, and host-device transfer costs.\n Limitation: Because the evaluation is based on a selected set of representative workloads on a vendor-specific CUDA platform, its conclusions are constrained by benchmark coverage and may not generalize to other architectures, programming models, or broader application mixes.\n Observation: The study finds that CUDA GPUs deliver large speedups for highly data-parallel workloads with regular memory access and high arithmetic intensity, while performance degrades for applications with irregular control flow, synchronization needs, poor locality, or significant host-device communication overhead.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "observation",
+      "dynamics": "Mutation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Architecture",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_034",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets the problem of building efficient database index structures for ordered key lookup, range access, and membership testing.\n Mechanism: It introduces learned index structures, especially a recursive model index that trains hierarchical models to approximate the key-to-position mapping given by the data CDF and then uses tracked error bounds with bounded local search to recover exact results.\n Limitation: The approach depends on relatively stable and regular key distributions and requires explicit error modeling and fallback search, making its benefits less clear under changing, adversarial, or poorly learnable data layouts.\n Observation: The key insight is that many classical indexes can be reinterpreted as models of data distributions, and on structured, stable real-world key distributions learned models can replace much of the index metadata while improving space and often lookup latency.\n\n[Genome B (successor)]\n Niche: This paper targets the problem of understanding and comparing hashing-based access methods for database query processing across diverse workloads and system constraints.\n Mechanism: It introduces a seven-dimensional analytical taxonomy that decomposes hashing methods by hash behavior, bucket organization, collision handling, storage layout, workload sensitivity, update support, and query semantics, then uses this framework to map index design choices to query-processing requirements.\n Limitation: Because the work is primarily a diagnostic framework rather than a new executable index design, it does not itself provide a concrete optimized hashing method or a unified implementation that validates all seven dimensions jointly.\n Observation: The study finds that retrieval performance depends strongly on interactions among collision strategy, bucket locality, adaptivity to skew, and workload/query type, so assumptions like uniform keys or lookup-only usage often mispredict real-system behavior.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Database Systems",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_037",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This work targets blind restoration of flash-degraded portrait images to recover visually pleasing, identity-consistent faces under real-world harsh flash illumination.\n Mechanism: It introduces the NTIRE 2026 RAIM AI Flash Portrait challenge as a benchmark system with a flash-specific realistic degradation setting, paired train/validation data, and an evaluation protocol that ranks single-pipeline methods jointly correcting illumination, facial detail, color, and flash artifacts.\n Limitation: As a challenge paper, it standardizes data and evaluation for flash portrait restoration but does not itself provide a definitive restoration model or resolve how well benchmark performance transfers beyond the curated challenge distribution.\n Observation: The paper finds that portrait restoration under flash requires benchmark formulations beyond generic blind super-resolution because multiple coupled degradations such as overexposure, shadows, specularities, red-eye, and color shifts must be handled together while preserving identity and perceptual quality.\n\n[Genome B (successor)]\n Niche: This paper targets benchmark-based evaluation of real-world face restoration under severe, mixed, and unconstrained degradations encountered in practical image capture.\n Mechanism: The challenge methods are centered on hybrid face restoration pipelines that use degradation-aware encoders to condition strong generative priors, with multi-scale fusion, facial-component emphasis, and perceptual/adversarial supervision to synthesize identity-consistent high-frequency facial details.\n Limitation: Because the study is challenge-driven and comparative rather than a single controlled method paper, it leaves unresolved which individual design choices most causally drive gains and how to best balance fidelity, realism, efficiency, and cross-degradation generalization.\n Observation: Across the NTIRE 2026 benchmark, synthesis-guided restoration with generative priors and perceptual-semantic objectives consistently outperforms purely pixel-wise regression by producing sharper, more realistic, and more degradation-robust face reconstructions.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Hybridization"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Vision",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_021",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: The paper studies local shock formation near singularities in one-dimensional first-order strictly hyperbolic systems of PDEs.\n Mechanism: It derives similarity variables and an analytical local self-similar solution by reducing general strictly hyperbolic dynamics near shock onset to Burgers-like behavior.\n Limitation: The results are restricted to first-order strictly hyperbolic systems in one spatial dimension and focus on local behavior near shock formation rather than broader classes of PDEs or post-shock evolution.\n Observation: The key insight is that shock formation in these general systems is universal and locally self-similar with the same scaling structure as inviscid Burgers' equation, independent of initial conditions.\n\n[Genome B (successor)]\n Niche: The paper studies geometric tomography characterizations of the Euclidean ball or ellipsoid from relations between sections, projections, and support-cone data of two nested convex bodies with L contained in the interior of K.\n Mechanism: It derives sufficient geometric conditions by comparing corresponding sections or projections of the nested pair and by analyzing support cones or point-source shadow boundaries with apexes on the boundary of K.\n Limitation: The results are specialized to nested convex-body pairs under particular geometric relations and do not provide a general characterization framework for arbitrary convex bodies or broader non-nested settings.\n Observation: The main theoretical insight is that certain imposed correspondences between the section, projection, or support-cone structures of nested convex bodies force the outer or associated body to be a Euclidean ball or an ellipsoid.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "math.GR",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_008",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets mitigation of side-channel information leakage in trusted-execution environments, especially enclaves whose observable execution behavior can reveal secret-dependent state.\n Mechanism: Obelix is a runtime dynamic obfuscation system that selectively diversifies sensitive enclave code by injecting interchangeable execution variants and perturbing control flow, memory-access patterns, and timing-visible behavior while preserving program correctness.\n Limitation: Because Obelix avoids full-program randomization and focuses on selective runtime obfuscation for compatibility and overhead reasons, residual leakage may remain in unprotected regions or channels not sufficiently perturbed.\n Observation: The key insight is that continuously changing enclave-visible execution characteristics makes repeated trace collection far less useful for statistical side-channel inference than static hardening alone.\n\n[Genome B (successor)]\n Niche: This paper targets cross-isolation leakage of protected memory accesses on Apple Silicon through a previously unexploited speculative execution side channel in the load pipeline.\n Mechanism: SLAP is a speculative data-leakage method that deliberately creates load-address ambiguity to trigger load address prediction before dependency resolution, then uses cache-observable transient accesses from mispredicted loads to infer protected memory activity.\n Limitation: The attack depends on carefully engineered aliasing, dependency patterns, and predictor-trigger conditions whose exact behavior is microarchitecture-specific and may limit portability or reliability across Apple Silicon variants and software contexts.\n Observation: The key finding is that Apple Silicon speculatively predicts in-flight load addresses early enough that attacker-steered mispredictions leave measurable cache footprints capable of leaking information across realistic security boundaries.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_032",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: High-dimensional financial return scenario generation under small-sample conditions using latent factor structure.\n Mechanism: The paper builds a diffusion generative model whose score function is decomposed through time-varying orthogonal projections onto a low-dimensional latent factor subspace and encoded in a tailored neural architecture.\n Limitation: The framework depends on the validity and recoverability of a low-dimensional factor structure, which may limit performance when returns exhibit weak, unstable, or misspecified factors.\n Observation: Theoretical and empirical results indicate that estimation and generation errors scale mainly with intrinsic factor dimension k rather than asset dimension d, enabling effective simulation and subspace recovery in markets with many assets and limited data.\n\n[Genome B (successor)]\n Niche: This paper studies how increasing the number of investors who use the same fundamental or technical trading strategy affects each investor's profit in an artificial financial market.\n Mechanism: The authors extend a prior agent-based artificial financial market model by adding additional agents, split into additional fundamental agents and additional technical agents, each following a simple one-parameter strategy, and then vary their population to measure earnings effects.\n Limitation: The study relies on a simplified simulated market with very simple one-parameter strategies and no real-market validation, which limits how strongly the results generalize to actual investors.\n Observation: Increasing additional fundamental agents stabilizes market prices and reduces per-agent profits, whereas increasing additional technical agents destabilizes prices and increases their profits.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "econ.GN",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_017",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets certifying the robustness of image classifiers against adversarial perturbations in the ℓ2 norm.\n Mechanism: Randomized smoothing converts any base classifier into a smoothed classifier that predicts the most likely class under isotropic Gaussian input noise, and certifies an ℓ2 robustness radius by Monte Carlo estimation of class probabilities with confidence bounds mapped through Gaussian concentration.\n Limitation: The method provides certificates only for ℓ2 perturbations and often must abstain or use many noisy samples when class probability gaps are small, making certification computationally expensive and sometimes conservative.\n Observation: A class that remains sufficiently more probable than its competitors under Gaussian perturbations yields a nontrivial, statistically valid robustness certificate, especially when the base classifier is trained with matching Gaussian noise.\n\n[Genome B (successor)]\n Niche: This paper targets the reliable measurement of adversarial robustness of machine learning models under adversarial perturbations.\n Mechanism: The method evaluates each model with an ensemble of diverse adaptive attacks—combining first-order, score-based, targeted, untargeted, and transfer/black-box checks with strong hyperparameter tuning and many restarts—and reports the worst-case robust accuracy over the suite.\n Limitation: Because the framework is still limited to the chosen attack pool and hand-tuned configurations, it cannot guarantee finding the true worst-case adversary and can be computationally expensive to run thoroughly.\n Observation: The paper finds that many defenses appearing robust under single or weak attacks lose much of their claimed robustness when tested with a stronger, more diverse attack ensemble.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "observation",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_007",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets biomedical named entity recognition in highly specialized scientific text with ambiguous terminology, complex morphology, and difficult boundary/type distinctions.\n Mechanism: The method instruction-tunes a large generative language model to perform biomedical NER as an instruction-following text generation task, using natural-language task definitions, annotation guidelines, and output format constraints to directly generate entity spans and types instead of token-level labels.\n Limitation: Because the approach relies on generated structured outputs rather than constrained token-level decoding, it leaves unresolved how reliably the model preserves exact span boundaries and output validity in dense biomedical text.\n Observation: The paper finds that carefully designed biomedical instructions and domain-adapted supervision let a single generative model handle multiple biomedical entity extraction subtasks more consistently, including challenging cases like nested mentions, abbreviations, and context-sensitive terms.\n\n[Genome B (successor)]\n Niche: This paper targets named entity recognition, especially improving generalization of NER models beyond narrow manually labeled corpora.\n Mechanism: NuNER pre-trains a discriminative sequence-labeling encoder on large-scale token/span annotations generated by an instruction-following LLM, with post-processing and filtering to normalize labels and suppress hallucinated or inconsistent spans before standard NER fine-tuning.\n Limitation: The method still depends on imperfect generated labels whose span boundaries and type assignments require heuristic normalization and filtering, leaving residual noise that can limit the quality of the learned encoder.\n Observation: The key insight is that LLM-produced annotations, when quality-controlled and used as weak supervision for encoder pre-training, can transfer broad semantic coverage into a compact NER encoder that is more efficient and stable at deployment than using the generator directly.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Information Extraction and Relation Mining",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_009",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: Producing up-to-date world averages for b-hadron, c-hadron, and tau-lepton properties from heterogeneous heavy-flavor measurements.\n Mechanism: The Heavy Flavour Averaging Group compiles pre-October 2023 results, rescales analyses to common external inputs, accounts for known correlations, and combines them into global averages.\n Limitation: It is primarily a synthesis of existing measurements whose accuracy and scope are limited by the quality, consistency, and correlation information of the underlying experiments rather than by a new measurement or theory.\n Observation: The paper delivers consolidated averages for branching fractions, lifetimes, neutral meson mixing, CP-violation observables, semileptonic-decay parameters, and CKM matrix elements based on the current measurement set.\n\n[Genome B (successor)]\n Niche: The paper studies low-temperature phase behavior of isometrically invariant strictly local binary Markov fields, a geometric extension of the Ising model parameterized by area, perimeter, and Euler characteristic terms.\n Mechanism: It characterizes all such fields via energy functions that are linear combinations of area, perimeter, and Euler characteristic, then analyzes their low-temperature limits to derive phase regions and coexistence boundaries.\n Limitation: The results are specialized to binary, strictly local, isometrically invariant models and focus on low-temperature behavior rather than full finite-temperature dynamics or higher-state generalizations.\n Observation: The analysis shows that this Hadwiger-model family exhibits parameter regimes with three distinct geometric phases, regimes with a unique phase, and lines where phases coexist.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "niche",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "hep-ex",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_036",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: This paper targets dynamic malware detection and classification from runtime behavioral observations in instrumented execution environments.\n Mechanism: A hybrid dynamic analysis method fuses manually engineered behavioral features from API, file, registry, process, and network activity with neural latent representations learned from execution traces, then combines them in a joint classification pipeline.\n Limitation: The framework still depends on sandboxed runtime trace collection and preprocessing quality, so its effectiveness is constrained by the fidelity and coverage of the instrumented analysis environment.\n Observation: The key insight is that engineered dynamic features contribute interpretable security-relevant signals while learned embeddings capture higher-order and temporal behavior patterns, yielding more robust detection than either feature type alone.\n\n[Genome B (successor)]\n Niche: This paper targets efficient malware analysis tasks such as similarity search, clustering, and malware family discrimination over binary program artifacts.\n Mechanism: It uses a metric-learning embedding method that trains on semantically related and unrelated malware pairs or triplets to map binaries into a vector space where behaviorally similar samples are close and dissimilar ones are far apart, enabling distance-based analysis.\n Limitation: Because the approach depends on supervision in the form of meaningful similarity relations among malware samples, its effectiveness is constrained by the quality and coverage of the pairwise or triplet training signal used to shape the embedding space.\n Observation: The key insight is that a learned malware metric space can capture latent malicious similarity more robustly than handcrafted feature pipelines while also supporting fast reuse across multiple downstream analysis tasks.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "Computer Security",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_003",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: Designing quantum LDPC hypergraph product codes with improved logical error rates, qubit overhead, and hardware-friendly structure for trapped-ion QCCD implementations.\n Mechanism: The paper restricts hypergraph product constructions to products involving cyclic codes, performs exhaustive search over C2 and CxR families under these global symmetries, and exploits the resulting cyclic structure to build a constant-depth planar syndrome-extraction layout.\n Limitation: The gains come with larger block lengths and the study is confined to cyclic-code-based HGP families rather than more general quantum LDPC constructions.\n Observation: C2 and CxR codes found by exhaustive search can significantly outperform previously optimized HGP codes, with up to three orders of magnitude lower logical error rate per logical qubit and in some cases better overhead-error tradeoffs than bivariate bicycle codes.\n\n[Genome B (successor)]\n Niche: The paper studies dry elastic microarchitected metainterfaces, focusing on how finite substrate size and asperity microcontact interactions affect the inverse design of target friction laws via normal contact behavior.\n Mechanism: It uses full 3D finite element simulations to test the common design assumptions that asperities act independently and are supported by a linear elastic half-space, while systematically varying asperity layout, spacing, and base size.\n Limitation: The paper is limited by relying on numerical assessment of normal-contact-based friction surrogates for dry elastic systems rather than directly solving broader frictional, material, or dynamic contact behaviors in experiments.\n Observation: The study finds that the existing metainterface design strategy remains valid in the experimental regimes previously used, but breaks down when asperities are too strongly coupled or the supporting elastic base is not large enough to approximate a half-space.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "physics.optics",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_035",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: Broadband terahertz time-domain spectroscopy of quantum materials at dilution-refrigerator temperatures and high magnetic fields is addressed for probing low-energy electrodynamics such as cyclotron resonance.\n Mechanism: The paper builds a terahertz time-domain spectroscopy setup integrated with a Bluefors dilution refrigerator and a 7 T split-coil magnet, then measures terahertz waveforms from a GaAs single quantum well between 0 and 6 T at 145 mK.\n Limitation: The demonstration is limited to a single sample system and mainly validates instrument capability rather than providing broad material comparisons or a detailed explanation of the mass enhancement.\n Observation: Cyclotron-resonance measurements on the GaAs single quantum well yield an effective mass of 0.073 me, exceeding the commonly accepted bulk GaAs value of 0.068 me.\n\n[Genome B (successor)]\n Niche: This paper addresses first-principles thermodynamic modeling of materials with many configurational and magnetic states, focusing on entropy evaluation for Fe3Pt Invar behavior.\n Mechanism: It introduces pyzentropy, an open-source Python package that computes total thermodynamic entropy by recursively decomposing contributions from high-probability configurations in a first-principles framework.\n Limitation: The study is demonstrated mainly on a single case material and depends on identifying key high-probability configurations, which may limit robustness or transferability to more complex systems.\n Observation: Using a 12-atom Fe3Pt supercell with multiple magnetic configurations, the recursive entropy approach reproduces Invar behavior and anomalous temperature trends in LCTE, heat capacity, bulk modulus, and phase diagrams consistent with experiment.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "math.GN",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  },
+  {
+    "instance_id": "T3-01_single_dynamics_030",
+    "task_type": "T3-01_single_dynamics",
+    "prompt": "[Genome A (predecessor)]\n Niche: The paper studies social learning and expert ranking when multiple reputation-motivated experts provide signals about a persistent state but their precisions are unknown to the observer.\n Mechanism: It builds equilibrium models in binary and Gaussian settings where experts strategically report under unknown precision, information aggregates additively in log-likelihood ratios or linearly under filtering, and light-touch design uses proper scoring windows or small convex misreporting costs to induce informative reporting.\n Limitation: The framework relies on stylized signal structures and equilibrium assumptions about reputational motives and strategic reporting, which may limit direct applicability to richer institutional settings with multidimensional actions or bounded rationality.\n Observation: The main insight is that high-precision experts report truthfully while low-precision experts distort in a one-sided mixed way around the prior, yet suitable evaluation design restores strict informativeness and asymptotically efficient learning of both the state and expert quality.\n\n[Genome B (successor)]\n Niche: Estimating a firm-level stochastic discount factor that jointly captures predictive characteristics and cross-asset return spillovers in the cross section of equities.\n Mechanism: The paper jointly estimates signal weights and directed spillover effects by maximizing the Sharpe ratio, producing an interpretable SDF that ranks characteristics and maps predictive influence across assets.\n Limitation: The framework’s conclusions depend on the stability and correct specification of the estimated spillover network and are demonstrated primarily through empirical backtests rather than causal identification.\n Observation: Out of sample, the resulting SDF beats self-predictive and expected-return benchmark models across multiple investment universes and market regimes, while the inferred network identifies large, low-turnover firms as net information transmitters.\n\nAnswer with exactly two lines:\nDriver = [mechanism|niche|observation|limitation]\nDynamics = [Mutation|Adaptive Radiation|Hybridization|Speciation|Niche Competition]",
+    "choices": {},
+    "gold_answer": {
+      "driver": "mechanism",
+      "dynamics": "Speciation"
+    },
+    "metadata": {
+      "baseline": "0.06%",
+      "subfield": "q-fin.ST",
+      "capability": "Evolutionary Reasoning",
+      "original_task_type": "L1-2_single_dynamics",
+      "source": "science_supplement",
+      "domain": "science",
+      "display_title": "Single-Step Dynamics"
+    },
+    "split": "test",
+    "response_format": "multi_slot",
+    "core_split": "hard_probe",
+    "capability_axis": "pairwise_inheritance"
+  }
+]
