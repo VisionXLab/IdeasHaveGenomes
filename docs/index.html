@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ideas Have Genomes</title>
+    <meta
+      name="description"
+      content="Ideas Have Genomes is a benchmark for tracing how scientific ideas inherit, mutate, recombine, and evolve."
+    />
+    <meta property="og:title" content="Ideas Have Genomes" />
+    <meta
+      property="og:description"
+      content="Scientific ideas are not isolated papers. They have genomes."
+    />
+    <meta property="og:image" content="assets/hero/first.png" />
+    <link rel="icon" href="assets/hero/idea.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Ideas Have Genomes home">
+        <span class="brand-mark"><img src="assets/hero/idea.jpg" alt="" /></span>
+        <span>Ideas Have Genomes</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#genome">Genome</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#results">Results</a>
+        <a href="#community">Community</a>
+      </nav>
+
+      <div class="resource-actions" aria-label="Resources">
+        <a href="assets/paper/ideas-have-genomes.pdf">Paper</a>
+        <a href="https://github.com/VisionXLab/IdeasHaveGenomes" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="#" aria-disabled="true">Hugging Face</a>
+        <a href="#" aria-disabled="true">Data</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <span class="monster-sticker sticker-green" aria-hidden="true"></span>
+        <span class="monster-sticker sticker-purple" aria-hidden="true"></span>
+        <span class="monster-sticker sticker-blue" aria-hidden="true"></span>
+
+        <div class="hero-copy">
+          <p class="eyebrow">IdeaGene-Bench for scientific lineage reasoning</p>
+          <div class="hero-title-row">
+            <img class="hero-mascot" src="assets/hero/idea.jpg" alt="" />
+            <h1>Ideas Have Genomes</h1>
+          </div>
+          <p class="tagline">Scientific ideas are not isolated papers. They have genomes.</p>
+          <p class="hero-summary">
+            A benchmark for tracing how scientific ideas inherit, mutate, recombine, and evolve.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="assets/paper/ideas-have-genomes.pdf">Paper</a>
+            <a class="button" href="https://github.com/VisionXLab/IdeasHaveGenomes" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button muted" href="#" aria-disabled="true">Hugging Face</a>
+            <a class="button muted" href="#" aria-disabled="true">Data</a>
+          </div>
+        </div>
+
+        <figure class="hero-figure">
+          <img src="assets/hero/first.png" alt="Idea evolution overview with idea genomes and evolutionary dynamics" />
+        </figure>
+      </section>
+
+      <section class="overview section-shell" id="overview">
+        <div class="section-heading">
+          <p class="eyebrow">Why it matters</p>
+          <h2>Can AI scientists follow the ancestry of an idea?</h2>
+          <p>
+            Research ideas do not appear from nowhere. They inherit mechanisms, repair limitations,
+            and branch into new niches.
+          </p>
+        </div>
+
+        <div class="stats-grid" aria-label="Benchmark statistics">
+          <article class="stat-card accent-green">
+            <span>1,961</span>
+            <p>golden lineage traces</p>
+          </article>
+          <article class="stat-card accent-blue">
+            <span>1,085</span>
+            <p>Idea Genome objects</p>
+          </article>
+          <article class="stat-card accent-orange">
+            <span>920</span>
+            <p>GenomeDiff records</p>
+          </article>
+          <article class="stat-card accent-purple">
+            <span>10</span>
+            <p>scientific domains</p>
+          </article>
+          <article class="stat-card accent-teal">
+            <span>42</span>
+            <p>IG-Exam task types</p>
+          </article>
+          <article class="stat-card accent-red">
+            <span>1,029</span>
+            <p>closed-form instances</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="genome section-shell" id="genome">
+        <span class="monster-sticker sticker-pink" aria-hidden="true"></span>
+        <div class="section-heading compact">
+          <p class="eyebrow">Idea as genome</p>
+          <h2>From papers to inheritable idea atoms.</h2>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card">
+            <span class="concept-icon icon-green"></span>
+            <h3>Idea Genome</h3>
+            <p>The mechanism-level DNA of a scientific idea.</p>
+          </article>
+          <article class="concept-card">
+            <span class="concept-icon icon-orange"></span>
+            <h3>GenomeDiff</h3>
+            <p>What is inherited, mutated, lost, or newly introduced.</p>
+          </article>
+          <article class="concept-card">
+            <span class="concept-icon icon-blue"></span>
+            <h3>Lineage Graph</h3>
+            <p>How ideas move through a research population.</p>
+          </article>
+        </div>
+
+        <div class="dynamics-grid" aria-label="Evolutionary dynamics">
+          <span>Mutation</span>
+          <span>Adaptive Radiation</span>
+          <span>Hybridization</span>
+          <span>Speciation</span>
+          <span>Niche Competition</span>
+          <span>Isolation</span>
+        </div>
+      </section>
+
+      <section class="benchmark section-shell" id="benchmark">
+        <div class="section-heading compact">
+          <p class="eyebrow">Benchmark</p>
+          <h2>Two tracks for lineage understanding and lineage-grounded generation.</h2>
+        </div>
+
+        <figure class="wide-figure">
+          <img src="assets/figures/bench.png" alt="IdeaGene-Bench pipeline" />
+        </figure>
+
+        <div class="track-grid">
+          <article class="track-card">
+            <h3>IG-Exam</h3>
+            <p>Closed-form tests for genome abstraction, inheritance tracing, evolutionary reasoning, and lineage verification.</p>
+          </article>
+          <article class="track-card">
+            <h3>IG-Arena</h3>
+            <p>Open-ended proposal evaluation with PES: Heredity, Variation, and Selection.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="results section-shell" id="results">
+        <span class="monster-sticker sticker-reader" aria-hidden="true"></span>
+        <div class="section-heading compact">
+          <p class="eyebrow">Results</p>
+          <h2>Current AI scientists still struggle with exact lineage reasoning.</h2>
+        </div>
+
+        <div class="result-takeaways" aria-label="Result takeaways">
+          <span>Best exact accuracy: <strong>27.3%</strong></span>
+          <span>Best T4 verification: <strong>17.4%</strong></span>
+          <span>Best PES: <strong>86.7</strong></span>
+        </div>
+
+        <div class="table-wrap" role="region" aria-label="IdeaGene-Bench main leaderboard" tabindex="0">
+          <table>
+            <caption>
+              IdeaGene-Bench main leaderboard. IG-Exam reports exact accuracy (%);
+              IG-Arena reports PES and ELO.
+            </caption>
+            <thead>
+              <tr>
+                <th rowspan="2">LLM-based Scientist</th>
+                <th colspan="5">IG-Exam</th>
+                <th colspan="2">IG-Arena</th>
+              </tr>
+              <tr>
+                <th>T1<br />Abstraction</th>
+                <th>T2<br />Tracing</th>
+                <th>T3<br />Reasoning</th>
+                <th>T4<br />Verification</th>
+                <th>Total</th>
+                <th>PES</th>
+                <th>ELO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group-row"><th colspan="8">Direct LLMs</th></tr>
+              <tr><th>GPT-5.5</th><td>27.5</td><td>25.7</td><td>23.3</td><td>16.0</td><td>23.1</td><td>86.5</td><td>1213.2</td></tr>
+              <tr><th>Claude Opus 4.7</th><td>28.5</td><td>21.9</td><td>17.1</td><td>14.5</td><td>19.3</td><td>82.6</td><td>1007.2</td></tr>
+              <tr><th>Qwen3.6-Max-Preview</th><td>26.9</td><td>22.5</td><td>18.8</td><td><strong>17.4</strong></td><td>20.6</td><td>79.8</td><td>882.7</td></tr>
+              <tr><th>Gemini-3.1-pro-preview</th><td>32.4</td><td>24.6</td><td>17.8</td><td>10.7</td><td>20.1</td><td>82.1</td><td>705.7</td></tr>
+              <tr><th>Kimi-K2-Thinking</th><td>27.9</td><td>22.1</td><td>19.6</td><td>14.8</td><td>20.4</td><td>81.1</td><td>793.9</td></tr>
+              <tr><th>DeepSeek-V4-Pro</th><td>23.9</td><td>20.6</td><td>18.6</td><td>8.5</td><td>17.9</td><td>82.7</td><td>918.8</td></tr>
+              <tr><th>GLM-5.1</th><td>28.5</td><td>19.7</td><td>17.4</td><td>8.5</td><td>17.7</td><td>80.7</td><td>668.0</td></tr>
+              <tr><th>MiniMax-M2.7</th><td>22.9</td><td>9.1</td><td>10.9</td><td>11.6</td><td>11.9</td><td>70.5</td><td>540.8</td></tr>
+
+              <tr class="group-row"><th colspan="8">Research agents</th></tr>
+              <tr><th>AI Scientist v2 (GPT 5.5)</th><td>28.1</td><td>26.9</td><td>22.3</td><td>15.1</td><td>23.0</td><td>80.6</td><td>1253.3</td></tr>
+              <tr><th>CoI-Agent (GPT 5.5)</th><td>26.9</td><td>27.4</td><td>22.4</td><td>13.4</td><td>22.7</td><td>80.5</td><td>1249.9</td></tr>
+
+              <tr class="group-row"><th colspan="8">CLI harnesses</th></tr>
+              <tr><th>Codex (GPT-5.5)</th><td><strong>31.8</strong></td><td>30.3</td><td>23.6</td><td>13.7</td><td>24.6</td><td><strong>86.7</strong></td><td><strong>1476.1</strong></td></tr>
+              <tr><th>Claude Code (GPT-5.5)</th><td>31.5</td><td><strong>37.9</strong></td><td><strong>25.3</strong></td><td>12.7</td><td><strong>27.3</strong></td><td>86.1</td><td>1420.6</td></tr>
+              <tr><th>Codex (Claude Opus 4.7)</th><td>34.4</td><td>29.7</td><td>17.0</td><td>10.5</td><td>21.8</td><td>82.7</td><td>900.8</td></tr>
+              <tr><th>Claude Code (Claude Opus 4.7)</th><td>27.9</td><td>26.3</td><td>21.0</td><td>13.8</td><td>22.0</td><td>83.3</td><td>1159.7</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="community section-shell" id="community">
+        <div class="community-panel">
+          <div>
+            <p class="eyebrow">Community</p>
+            <h2>Discuss idea genomes with us.</h2>
+            <p>Join the community for updates, benchmark discussion, and future releases.</p>
+          </div>
+          <div class="community-actions">
+            <a class="button primary" href="https://discord.gg/SrAvenJgg" target="_blank" rel="noreferrer">Join Discord</a>
+            <button class="button" type="button" data-open-wechat>Join WeChat</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="citation-block">
+        <h2>Citation</h2>
+        <pre><code>@misc{ideas_have_genomes_2026,
+  title = {Ideas Have Genomes: An Evaluation Benchmark for Scientific Lineage Reasoning and Lineage-Grounded Idea Generation},
+  author = {Ideas Have Genomes Team},
+  year = {2026},
+  note = {Project page: https://visionxlab.github.io/IdeasHaveGenomes/}
+}</code></pre>
+      </div>
+    </footer>
+
+    <div class="modal" data-wechat-modal hidden>
+      <div class="modal-backdrop" data-close-wechat></div>
+      <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="wechat-title">
+        <button class="modal-close" type="button" aria-label="Close WeChat QR code" data-close-wechat>&times;</button>
+        <h2 id="wechat-title">Join the WeChat group</h2>
+        <p>Scan the QR code to join the Ideas Have Genomes discussion group.</p>
+        <img src="assets/community/wechat.jpg" alt="Ideas Have Genomes WeChat group QR code" />
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
