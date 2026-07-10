@@ -126,14 +126,21 @@
           </article>
         </div>
 
-        <div class="dynamics-grid" aria-label="Evolutionary dynamics">
-          <span>Mutation</span>
-          <span>Adaptive Radiation</span>
-          <span>Hybridization</span>
-          <span>Speciation</span>
-          <span>Niche Competition</span>
-          <span>Isolation</span>
-        </div>
+        <figure class="genome-figure" aria-label="Interactive GenomeDiff dynamics explorer">
+          <figcaption class="genome-figure-head">
+            <p class="eyebrow">Interactive · Table 2</p>
+            <h3>Explore the six evolutionary dynamics</h3>
+            <p>Pick a dynamics to see its canonical <b>GenomeDiff</b> example. Each paper is an <b>Idea Genome</b> — a cluster of
+              typed idea units; edges are colored by unit fate; the green spine is the <b>driver mechanism</b> inherited across the
+              transition. The last two are <b>co-location</b>, not descent. Hover a node for its role.</p>
+          </figcaption>
+          <div class="genome-select" id="genomeSelect" role="tablist" aria-label="Evolutionary dynamics"></div>
+          <div class="genome-viz-stage">
+            <svg id="genomeGraph" role="img" aria-label="Idea Genome and GenomeDiff visualization"></svg>
+          </div>
+          <div class="genome-info" id="genomeInfo"></div>
+          <div class="genome-legend" id="genomeLegend"></div>
+        </figure>
       </section>
 
       <section class="benchmark section-shell" id="benchmark">
@@ -259,5 +266,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="genome-viz.js" defer></script>
   </body>
 </html>
