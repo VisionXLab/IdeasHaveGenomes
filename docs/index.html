@@ -126,6 +126,20 @@
           </article>
         </div>
 
+        <figure class="genome-figure" aria-label="Interactive idea-lineage graph">
+          <figcaption class="genome-figure-head">
+            <p class="eyebrow">Interactive lineage</p>
+            <h3>One trace, made auditable: Transformer → ViT → LLaVA</h3>
+            <p>Each paper becomes an <b>Idea Genome</b> — a cluster of typed idea units. Consecutive papers are aligned by a
+              <b>GenomeDiff</b> whose edges are colored by unit fate; the green spine is the <b>driver mechanism</b> inherited
+              across the whole lineage, and each transition is tagged with its evolutionary dynamics. Hover a node for details; drag to explore.</p>
+          </figcaption>
+          <div class="genome-viz-stage">
+            <svg id="genomeGraph" role="img" aria-label="Idea Genome and GenomeDiff lineage graph"></svg>
+          </div>
+          <div class="genome-legend" id="genomeLegend"></div>
+        </figure>
+
         <div class="dynamics-grid" aria-label="Evolutionary dynamics">
           <span>Mutation</span>
           <span>Adaptive Radiation</span>
@@ -259,5 +273,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="genome-viz.js" defer></script>
   </body>
 </html>
