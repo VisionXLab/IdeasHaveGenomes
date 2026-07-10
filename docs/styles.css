@@ -263,7 +263,8 @@ h1 {
 }
 
 .section-heading h2,
-.community-panel h2 {
+.community-panel h2,
+.citation-block h2 {
   margin: 0;
   font-size: 42px;
   line-height: 1.08;
@@ -282,7 +283,8 @@ h1 {
 .genome,
 .benchmark,
 .results,
-.community {
+.community,
+.citation {
   padding: 88px 0;
 }
 
@@ -506,6 +508,31 @@ tbody tr:hover th {
   box-shadow: var(--shadow);
 }
 
+.citation {
+  padding-top: 16px;
+}
+
+.citation-block {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.citation-block h2 {
+  font-size: 28px;
+}
+
+pre {
+  overflow-x: auto;
+  margin: 16px 0 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbf8f0;
+  color: #2d2d2d;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .modal[hidden] {
   display: none;
 }
@@ -644,7 +671,8 @@ tbody tr:hover th {
   }
 
   .section-heading h2,
-  .community-panel h2 {
+  .community-panel h2,
+  .citation-block h2 {
     font-size: 32px;
   }
 
@@ -652,7 +680,8 @@ tbody tr:hover th {
   .genome,
   .benchmark,
   .results,
-  .community {
+  .community,
+  .citation {
     padding: 58px 0;
   }
 
