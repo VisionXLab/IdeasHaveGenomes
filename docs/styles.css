@@ -236,6 +236,22 @@ h1 {
   border-radius: 8px;
 }
 
+.hero-purple {
+  position: absolute;
+  top: 62px;
+  right: -8px;
+  z-index: 1;
+  width: 152px;
+  height: 152px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 42px rgba(70, 42, 112, 0.14);
+  transform: rotate(4deg);
+  pointer-events: none;
+}
+
 .section-heading {
   max-width: 820px;
   margin: 0 auto 32px;
@@ -490,12 +506,6 @@ tbody tr:hover th {
   box-shadow: var(--shadow);
 }
 
-.site-footer {
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
 .modal[hidden] {
   display: none;
 }
@@ -602,8 +612,7 @@ tbody tr:hover th {
     font-size: 16px;
   }
 
-  .section-shell,
-  .site-footer {
+  .section-shell {
     width: min(100% - 24px, 1180px);
   }
 
@@ -628,6 +637,10 @@ tbody tr:hover th {
 
   .hero-figure {
     padding: 8px;
+  }
+
+  .hero-purple {
+    display: none;
   }
 
   .section-heading h2,
